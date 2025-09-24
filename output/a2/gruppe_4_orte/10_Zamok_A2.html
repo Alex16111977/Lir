@@ -956,9 +956,9 @@ body {
                     </div>
                     <div class="translations-column">
 
-                <div class="translation-item match" data-pair-id="8" 
+                <div class="translation-item match" data-pair-id="7" 
                      data-type="match" onclick="handleWordClick(this, 'match')">
-                    темница
+                    крепость
                 </div>
                 
                 <div class="translation-item match" data-pair-id="6" 
@@ -966,9 +966,9 @@ body {
                     трон
                 </div>
                 
-                <div class="translation-item match" data-pair-id="4" 
+                <div class="translation-item match" data-pair-id="5" 
                      data-type="match" onclick="handleWordClick(this, 'match')">
-                    зал
+                    комната, покои
                 </div>
                 
                 <div class="translation-item match" data-pair-id="2" 
@@ -976,19 +976,9 @@ body {
                     ворота
                 </div>
                 
-                <div class="translation-item match" data-pair-id="1" 
+                <div class="translation-item match" data-pair-id="0" 
                      data-type="match" onclick="handleWordClick(this, 'match')">
-                    стена
-                </div>
-                
-                <div class="translation-item match" data-pair-id="10" 
-                     data-type="match" onclick="handleWordClick(this, 'match')">
-                    окно
-                </div>
-                
-                <div class="translation-item match" data-pair-id="5" 
-                     data-type="match" onclick="handleWordClick(this, 'match')">
-                    комната, покои
+                    замок
                 </div>
                 
                 <div class="translation-item match" data-pair-id="11" 
@@ -996,24 +986,34 @@ body {
                     лестница
                 </div>
                 
-                <div class="translation-item match" data-pair-id="3" 
-                     data-type="match" onclick="handleWordClick(this, 'match')">
-                    башня
-                </div>
-                
-                <div class="translation-item match" data-pair-id="0" 
-                     data-type="match" onclick="handleWordClick(this, 'match')">
-                    замок
-                </div>
-                
                 <div class="translation-item match" data-pair-id="9" 
                      data-type="match" onclick="handleWordClick(this, 'match')">
                     мост
                 </div>
                 
-                <div class="translation-item match" data-pair-id="7" 
+                <div class="translation-item match" data-pair-id="10" 
                      data-type="match" onclick="handleWordClick(this, 'match')">
-                    крепость
+                    окно
+                </div>
+                
+                <div class="translation-item match" data-pair-id="3" 
+                     data-type="match" onclick="handleWordClick(this, 'match')">
+                    башня
+                </div>
+                
+                <div class="translation-item match" data-pair-id="1" 
+                     data-type="match" onclick="handleWordClick(this, 'match')">
+                    стена
+                </div>
+                
+                <div class="translation-item match" data-pair-id="4" 
+                     data-type="match" onclick="handleWordClick(this, 'match')">
+                    зал
+                </div>
+                
+                <div class="translation-item match" data-pair-id="8" 
+                     data-type="match" onclick="handleWordClick(this, 'match')">
+                    темница
                 </div>
                 
                     </div>
@@ -1217,23 +1217,23 @@ body {
                 
                 <div class="synonym-item">
                     <div class="word-center">
+                        <span class="word-main">die Welt</span>
+                        <small>мир</small>
+                    </div>
+                    <div class="options">
+                        <input type="text" placeholder="Синоним" data-correct="der Friede" data-hint="мир">
+                        <input type="text" placeholder="Антоним" data-correct="der Krieg" data-hint="война">
+                    </div>
+                </div>
+                
+                <div class="synonym-item">
+                    <div class="word-center">
                         <span class="word-main">vertrauen</span>
                         <small>доверять</small>
                     </div>
                     <div class="options">
                         <input type="text" placeholder="Синоним" data-correct="trauen" data-hint="доверять">
                         <input type="text" placeholder="Антоним" data-correct="misstrauen" data-hint="не доверять">
-                    </div>
-                </div>
-                
-                <div class="synonym-item">
-                    <div class="word-center">
-                        <span class="word-main">der Friede</span>
-                        <small>мир</small>
-                    </div>
-                    <div class="options">
-                        <input type="text" placeholder="Синоним" data-correct="die Welt" data-hint="мир">
-                        <input type="text" placeholder="Антоним" data-correct="der Krieg" data-hint="война">
                     </div>
                 </div>
                 
@@ -1273,15 +1273,15 @@ body {
                 <h3>Що означає німецьке слово?</h3>
 
                 <div class="word-display">
-                    <span class="german-word">der Kerker</span>
-                    <span class="transcription">[дер КЕРК-ер]</span>
+                    <span class="german-word">der Saal</span>
+                    <span class="transcription">[дер ЗААЛ]</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">темница</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">зал</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">крепость</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">замок</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">стена</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">трон</button>
                 </div>
             </div>
         </div>
@@ -1297,15 +1297,15 @@ body {
                 <h3>Що означає німецьке слово?</h3>
 
                 <div class="word-display">
-                    <span class="german-word">das Tor</span>
-                    <span class="transcription">[дас ТОР]</span>
+                    <span class="german-word">die Festung</span>
+                    <span class="transcription">[ди ФЕСТ-унг]</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">темница</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">замок</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">окно</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">ворота</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">трон</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">крепость</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">лестница</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">комната, покои</button>
                 </div>
             </div>
         </div>
@@ -1321,15 +1321,15 @@ body {
                 <h3>Що означає німецьке слово?</h3>
 
                 <div class="word-display">
-                    <span class="german-word">die Mauer</span>
-                    <span class="transcription">[ди МАУ-ер]</span>
+                    <span class="german-word">der Thron</span>
+                    <span class="transcription">[дер ТРОН]</span>
                 </div>
 
                 <div class="answer-buttons">
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">башня</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">трон</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">ворота</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">окно</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">темница</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">стена</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">лестница</button>
                 </div>
             </div>
         </div>
@@ -1345,15 +1345,15 @@ body {
                 <h3>Що означає німецьке слово?</h3>
 
                 <div class="word-display">
-                    <span class="german-word">der Turm</span>
-                    <span class="transcription">[дер ТУРМ]</span>
+                    <span class="german-word">das Fenster</span>
+                    <span class="transcription">[дас ФЕН-стер]</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">замок</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">трон</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">башня</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">окно</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">ворота</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">зал</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">мост</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">окно</button>
                 </div>
             </div>
         </div>
@@ -1369,15 +1369,15 @@ body {
                 <h3>Що означає німецьке слово?</h3>
 
                 <div class="word-display">
-                    <span class="german-word">die Kammer</span>
-                    <span class="transcription">[ди КАМ-мер]</span>
+                    <span class="german-word">die Brücke</span>
+                    <span class="transcription">[ди БРЮК-ке]</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">замок</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">мост</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">башня</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">комната, покои</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">лестница</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">мост</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">зал</button>
                 </div>
             </div>
         </div>
@@ -1393,15 +1393,15 @@ body {
                 <h3>Що означає німецьке слово?</h3>
 
                 <div class="word-display">
-                    <span class="german-word">die Brücke</span>
-                    <span class="transcription">[ди БРЮК-ке]</span>
+                    <span class="german-word">das Schloss</span>
+                    <span class="transcription">[дас ШЛОС]</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">лестница</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">комната, покои</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">ворота</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">мост</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">темница</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">замок</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">башня</button>
                 </div>
             </div>
         </div>
@@ -1417,15 +1417,15 @@ body {
                 <h3>Що означає німецьке слово?</h3>
 
                 <div class="word-display">
-                    <span class="german-word">das Fenster</span>
-                    <span class="transcription">[дас ФЕН-стер]</span>
+                    <span class="german-word">der Kerker</span>
+                    <span class="transcription">[дер КЕРК-ер]</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">замок</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">ворота</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">стена</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">окно</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">темница</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">окно</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">комната, покои</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">трон</button>
                 </div>
             </div>
         </div>
@@ -1441,15 +1441,15 @@ body {
                 <h3>Що означає німецьке слово?</h3>
 
                 <div class="word-display">
-                    <span class="german-word">der Saal</span>
-                    <span class="transcription">[дер ЗААЛ]</span>
+                    <span class="german-word">die Treppe</span>
+                    <span class="transcription">[ди ТРЕП-пе]</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">зал</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">окно</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">башня</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">трон</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">ворота</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">крепость</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">лестница</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">стена</button>
                 </div>
             </div>
         </div>
@@ -1465,15 +1465,15 @@ body {
                 <h3>Що означає німецьке слово?</h3>
 
                 <div class="word-display">
-                    <span class="german-word">die Treppe</span>
-                    <span class="transcription">[ди ТРЕП-пе]</span>
+                    <span class="german-word">das Tor</span>
+                    <span class="transcription">[дас ТОР]</span>
                 </div>
 
                 <div class="answer-buttons">
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">башня</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">лестница</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">замок</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">мост</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">ворота</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">лестница</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">темница</button>
                 </div>
             </div>
         </div>
@@ -1489,15 +1489,15 @@ body {
                 <h3>Що означає німецьке слово?</h3>
 
                 <div class="word-display">
-                    <span class="german-word">der Thron</span>
-                    <span class="transcription">[дер ТРОН]</span>
+                    <span class="german-word">die Mauer</span>
+                    <span class="transcription">[ди МАУ-ер]</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">окно</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">трон</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">ворота</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">лестница</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">зал</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">башня</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">стена</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">темница</button>
                 </div>
             </div>
         </div>
@@ -1513,15 +1513,15 @@ body {
                 <h3>Що означає німецьке слово?</h3>
 
                 <div class="word-display">
-                    <span class="german-word">die Festung</span>
-                    <span class="transcription">[ди ФЕСТ-унг]</span>
+                    <span class="german-word">die Kammer</span>
+                    <span class="transcription">[ди КАМ-мер]</span>
                 </div>
 
                 <div class="answer-buttons">
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">трон</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">комната, покои</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">мост</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">окно</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">башня</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">замок</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">крепость</button>
                 </div>
             </div>
         </div>
@@ -1537,15 +1537,15 @@ body {
                 <h3>Що означає німецьке слово?</h3>
 
                 <div class="word-display">
-                    <span class="german-word">das Schloss</span>
-                    <span class="transcription">[дас ШЛОС]</span>
+                    <span class="german-word">der Turm</span>
+                    <span class="transcription">[дер ТУРМ]</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">крепость</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">стена</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">замок</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">лестница</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">крепость</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">мост</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">башня</button>
                 </div>
             </div>
         </div>
@@ -1561,14 +1561,14 @@ body {
                 <h3>Як німецькою буде:</h3>
 
                 <div class="word-display">
-                    <span class="russian-word">лестница</span>
+                    <span class="russian-word">темница</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Brücke</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">das Schloss</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">der Saal</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">die Treppe</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">der Turm</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">der Kerker</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Treppe</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Festung</button>
                 </div>
             </div>
         </div>
@@ -1584,14 +1584,14 @@ body {
                 <h3>Як німецькою буде:</h3>
 
                 <div class="word-display">
-                    <span class="russian-word">комната, покои</span>
+                    <span class="russian-word">трон</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">die Kammer</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">der Saal</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">der Thron</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">das Tor</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">das Schloss</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">der Kerker</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Festung</button>
                 </div>
             </div>
         </div>
@@ -1607,14 +1607,14 @@ body {
                 <h3>Як німецькою буде:</h3>
 
                 <div class="word-display">
-                    <span class="russian-word">стена</span>
+                    <span class="russian-word">мост</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">die Mauer</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Kammer</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">der Turm</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">das Fenster</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Treppe</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">der Turm</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">die Brücke</button>
                 </div>
             </div>
         </div>
@@ -1630,14 +1630,14 @@ body {
                 <h3>Як німецькою буде:</h3>
 
                 <div class="word-display">
-                    <span class="russian-word">башня</span>
+                    <span class="russian-word">окно</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Festung</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">der Turm</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">das Fenster</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Treppe</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Brücke</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">der Saal</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">der Thron</button>
                 </div>
             </div>
         </div>
@@ -1653,14 +1653,14 @@ body {
                 <h3>Як німецькою буде:</h3>
 
                 <div class="word-display">
-                    <span class="russian-word">крепость</span>
+                    <span class="russian-word">ворота</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Treppe</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">der Thron</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Brücke</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">die Festung</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Mauer</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">das Tor</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">das Fenster</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Kammer</button>
                 </div>
             </div>
         </div>
@@ -1676,14 +1676,14 @@ body {
                 <h3>Як німецькою буде:</h3>
 
                 <div class="word-display">
-                    <span class="russian-word">ворота</span>
+                    <span class="russian-word">крепость</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Treppe</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">der Saal</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">das Tor</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">das Schloss</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">der Thron</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">die Festung</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Brücke</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">der Kerker</button>
                 </div>
             </div>
         </div>
@@ -1699,14 +1699,14 @@ body {
                 <h3>Як німецькою буде:</h3>
 
                 <div class="word-display">
-                    <span class="russian-word">окно</span>
+                    <span class="russian-word">лестница</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Mauer</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">der Turm</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">das Fenster</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">das Tor</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">die Treppe</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">der Saal</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Brücke</button>
                 </div>
             </div>
         </div>
@@ -1726,10 +1726,10 @@ body {
                 </div>
 
                 <div class="answer-buttons">
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">das Tor</button>
                     <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">der Saal</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">das Schloss</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Kammer</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Mauer</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">der Turm</button>
                 </div>
             </div>
         </div>
@@ -1745,14 +1745,14 @@ body {
                 <h3>Як німецькою буде:</h3>
 
                 <div class="word-display">
-                    <span class="russian-word">трон</span>
+                    <span class="russian-word">башня</span>
                 </div>
 
                 <div class="answer-buttons">
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Festung</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">der Kerker</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">der Turm</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Mauer</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">das Schloss</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">der Thron</button>
                 </div>
             </div>
         </div>
@@ -1768,14 +1768,14 @@ body {
                 <h3>Як німецькою буде:</h3>
 
                 <div class="word-display">
-                    <span class="russian-word">мост</span>
+                    <span class="russian-word">стена</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">der Saal</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">die Brücke</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">das Schloss</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">das Tor</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Treppe</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">die Mauer</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">das Fenster</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Brücke</button>
                 </div>
             </div>
         </div>
@@ -1791,14 +1791,14 @@ body {
                 <h3>Як німецькою буде:</h3>
 
                 <div class="word-display">
-                    <span class="russian-word">темница</span>
+                    <span class="russian-word">комната, покои</span>
                 </div>
 
                 <div class="answer-buttons">
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Treppe</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">das Schloss</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">die Kammer</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">der Saal</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">der Kerker</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Brücke</button>
                 </div>
             </div>
         </div>
@@ -1818,10 +1818,10 @@ body {
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">das Schloss</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Kammer</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Festung</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">der Kerker</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Treppe</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">das Schloss</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">der Turm</button>
                 </div>
             </div>
         </div>
@@ -1906,7 +1906,7 @@ body {
                 
                 <div class="sentence-builder" data-sentence-idx="0">
                     <p class="translation">Этот замок принадлежал мне</p>
-                    <div class="word-pool"><span class="draggable" draggable="true">Dieses</span><span class="draggable" draggable="true">Schloss</span><span class="draggable" draggable="true">gehörte</span><span class="draggable" draggable="true">mir</span></div>
+                    <div class="word-pool"><span class="draggable" draggable="true">mir</span><span class="draggable" draggable="true">Schloss</span><span class="draggable" draggable="true">Dieses</span><span class="draggable" draggable="true">gehörte</span></div>
                     <div class="drop-zone" data-correct="Dieses Schloss gehörte mir">
                         <span class="placeholder">Перетащите слова сюда</span>
                     </div>
@@ -1923,7 +1923,7 @@ body {
                 
                 <div class="sentence-builder" data-sentence-idx="1">
                     <p class="translation">У этих стен есть уши</p>
-                    <div class="word-pool"><span class="draggable" draggable="true">Mauern</span><span class="draggable" draggable="true">Diese</span><span class="draggable" draggable="true">haben</span><span class="draggable" draggable="true">Ohren</span></div>
+                    <div class="word-pool"><span class="draggable" draggable="true">haben</span><span class="draggable" draggable="true">Ohren</span><span class="draggable" draggable="true">Diese</span><span class="draggable" draggable="true">Mauern</span></div>
                     <div class="drop-zone" data-correct="Diese Mauern haben Ohren">
                         <span class="placeholder">Перетащите слова сюда</span>
                     </div>
@@ -1940,7 +1940,7 @@ body {
                 
                 <div class="sentence-builder" data-sentence-idx="2">
                     <p class="translation">Закройте ворота перед ним!</p>
-                    <div class="word-pool"><span class="draggable" draggable="true">Tore</span><span class="draggable" draggable="true">die</span><span class="draggable" draggable="true">vor</span><span class="draggable" draggable="true">Schließt</span><span class="draggable" draggable="true">ihm</span></div>
+                    <div class="word-pool"><span class="draggable" draggable="true">Schließt</span><span class="draggable" draggable="true">ihm</span><span class="draggable" draggable="true">die</span><span class="draggable" draggable="true">Tore</span><span class="draggable" draggable="true">vor</span></div>
                     <div class="drop-zone" data-correct="Schließt die Tore vor ihm">
                         <span class="placeholder">Перетащите слова сюда</span>
                     </div>
@@ -1957,7 +1957,7 @@ body {
                 
                 <div class="sentence-builder" data-sentence-idx="3">
                     <p class="translation">С башни я увидел армию</p>
-                    <div class="word-pool"><span class="draggable" draggable="true">Armee</span><span class="draggable" draggable="true">sah</span><span class="draggable" draggable="true">Vom</span><span class="draggable" draggable="true">die</span><span class="draggable" draggable="true">Turm</span><span class="draggable" draggable="true">ich</span></div>
+                    <div class="word-pool"><span class="draggable" draggable="true">Armee</span><span class="draggable" draggable="true">ich</span><span class="draggable" draggable="true">Vom</span><span class="draggable" draggable="true">die</span><span class="draggable" draggable="true">Turm</span><span class="draggable" draggable="true">sah</span></div>
                     <div class="drop-zone" data-correct="Vom Turm sah ich die Armee">
                         <span class="placeholder">Перетащите слова сюда</span>
                     </div>
@@ -1974,7 +1974,7 @@ body {
                 
                 <div class="sentence-builder" data-sentence-idx="4">
                     <p class="translation">В этом зале я разделил королевство</p>
-                    <div class="word-pool"><span class="draggable" draggable="true">diesem</span><span class="draggable" draggable="true">mein</span><span class="draggable" draggable="true">ich</span><span class="draggable" draggable="true">In</span><span class="draggable" draggable="true">Saal</span><span class="draggable" draggable="true">Reich</span><span class="draggable" draggable="true">teilte</span></div>
+                    <div class="word-pool"><span class="draggable" draggable="true">Reich</span><span class="draggable" draggable="true">In</span><span class="draggable" draggable="true">mein</span><span class="draggable" draggable="true">ich</span><span class="draggable" draggable="true">diesem</span><span class="draggable" draggable="true">Saal</span><span class="draggable" draggable="true">teilte</span></div>
                     <div class="drop-zone" data-correct="In diesem Saal teilte ich mein Reich">
                         <span class="placeholder">Перетащите слова сюда</span>
                     </div>
@@ -1991,7 +1991,7 @@ body {
                 
                 <div class="sentence-builder" data-sentence-idx="5">
                     <p class="translation">Он получит самую маленькую комнату</p>
-                    <div class="word-pool"><span class="draggable" draggable="true">Kammer</span><span class="draggable" draggable="true">bekommt</span><span class="draggable" draggable="true">kleinste</span><span class="draggable" draggable="true">Er</span><span class="draggable" draggable="true">die</span></div>
+                    <div class="word-pool"><span class="draggable" draggable="true">Kammer</span><span class="draggable" draggable="true">die</span><span class="draggable" draggable="true">kleinste</span><span class="draggable" draggable="true">bekommt</span><span class="draggable" draggable="true">Er</span></div>
                     <div class="drop-zone" data-correct="Er bekommt die kleinste Kammer">
                         <span class="placeholder">Перетащите слова сюда</span>
                     </div>
@@ -2025,7 +2025,7 @@ body {
                 
                 <div class="sentence-builder" data-sentence-idx="7">
                     <p class="translation">Эта крепость будет моей</p>
-                    <div class="word-pool"><span class="draggable" draggable="true">wird</span><span class="draggable" draggable="true">Festung</span><span class="draggable" draggable="true">mir</span><span class="draggable" draggable="true">Diese</span><span class="draggable" draggable="true">gehören</span></div>
+                    <div class="word-pool"><span class="draggable" draggable="true">Festung</span><span class="draggable" draggable="true">gehören</span><span class="draggable" draggable="true">Diese</span><span class="draggable" draggable="true">mir</span><span class="draggable" draggable="true">wird</span></div>
                     <div class="drop-zone" data-correct="Diese Festung wird mir gehören">
                         <span class="placeholder">Перетащите слова сюда</span>
                     </div>
@@ -2042,7 +2042,7 @@ body {
                 
                 <div class="sentence-builder" data-sentence-idx="8">
                     <p class="translation">В темнице с тобой был бы рай</p>
-                    <div class="word-pool"><span class="draggable" draggable="true">wäre</span><span class="draggable" draggable="true">Paradies</span><span class="draggable" draggable="true">Kerker</span><span class="draggable" draggable="true">Im</span><span class="draggable" draggable="true">das</span><span class="draggable" draggable="true">mit</span><span class="draggable" draggable="true">dir</span></div>
+                    <div class="word-pool"><span class="draggable" draggable="true">Im</span><span class="draggable" draggable="true">das</span><span class="draggable" draggable="true">mit</span><span class="draggable" draggable="true">wäre</span><span class="draggable" draggable="true">dir</span><span class="draggable" draggable="true">Kerker</span><span class="draggable" draggable="true">Paradies</span></div>
                     <div class="drop-zone" data-correct="Im Kerker mit dir wäre das Paradies">
                         <span class="placeholder">Перетащите слова сюда</span>
                     </div>
@@ -2059,7 +2059,7 @@ body {
                 
                 <div class="sentence-builder" data-sentence-idx="9">
                     <p class="translation">По этому мосту я бегу</p>
-                    <div class="word-pool"><span class="draggable" draggable="true">Über</span><span class="draggable" draggable="true">fliehe</span><span class="draggable" draggable="true">ich</span><span class="draggable" draggable="true">diese</span><span class="draggable" draggable="true">Brücke</span></div>
+                    <div class="word-pool"><span class="draggable" draggable="true">Brücke</span><span class="draggable" draggable="true">Über</span><span class="draggable" draggable="true">fliehe</span><span class="draggable" draggable="true">ich</span><span class="draggable" draggable="true">diese</span></div>
                     <div class="drop-zone" data-correct="Über diese Brücke fliehe ich">
                         <span class="placeholder">Перетащите слова сюда</span>
                     </div>
@@ -2076,7 +2076,7 @@ body {
                 
                 <div class="sentence-builder" data-sentence-idx="10">
                     <p class="translation">Через это окно я вижу правду</p>
-                    <div class="word-pool"><span class="draggable" draggable="true">Fenster</span><span class="draggable" draggable="true">Wahrheit</span><span class="draggable" draggable="true">Durch</span><span class="draggable" draggable="true">ich</span><span class="draggable" draggable="true">die</span><span class="draggable" draggable="true">dieses</span><span class="draggable" draggable="true">sehe</span></div>
+                    <div class="word-pool"><span class="draggable" draggable="true">Fenster</span><span class="draggable" draggable="true">dieses</span><span class="draggable" draggable="true">ich</span><span class="draggable" draggable="true">Durch</span><span class="draggable" draggable="true">sehe</span><span class="draggable" draggable="true">die</span><span class="draggable" draggable="true">Wahrheit</span></div>
                     <div class="drop-zone" data-correct="Durch dieses Fenster sehe ich die Wahrheit">
                         <span class="placeholder">Перетащите слова сюда</span>
                     </div>
@@ -2093,7 +2093,7 @@ body {
                 
                 <div class="sentence-builder" data-sentence-idx="11">
                     <p class="translation">Эта лестница ведёт к предательству</p>
-                    <div class="word-pool"><span class="draggable" draggable="true">Verrat</span><span class="draggable" draggable="true">führt</span><span class="draggable" draggable="true">zum</span><span class="draggable" draggable="true">Diese</span><span class="draggable" draggable="true">Treppe</span></div>
+                    <div class="word-pool"><span class="draggable" draggable="true">zum</span><span class="draggable" draggable="true">Treppe</span><span class="draggable" draggable="true">Verrat</span><span class="draggable" draggable="true">Diese</span><span class="draggable" draggable="true">führt</span></div>
                     <div class="drop-zone" data-correct="Diese Treppe führt zum Verrat">
                         <span class="placeholder">Перетащите слова сюда</span>
                     </div>

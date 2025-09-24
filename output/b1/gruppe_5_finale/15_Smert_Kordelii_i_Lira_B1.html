@@ -4,6 +4,7 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>🎭 Смерть Корделии и Лира</title>
+    <link rel="stylesheet" href="../../css/exercises.css"/>
     <style>
         
 body {
@@ -853,7 +854,472 @@ body {
                 button.classList.toggle('success');
             }
         </script>
+
         
+        <!-- РОЗДЕЛ: ИНТЕРАКТИВНЫЕ УПРАЖНЕНИЯ -->
+        <section class="exercises-section">
+            <h2 class="section-title">
+                <span class="icon">📚</span> Упражнения
+            </h2>
+            <div class="exercises-accordion">
+
+                <details class="exercise-accordion-item">
+                    <summary>🔗 Подбор слов</summary>
+                    <div class="exercise-content">
+                        
+            <div class="exercise-block" id="word-matching">
+                <h3 class="exercise-title">🔗 Подбор слов</h3>
+                <p class="exercise-intro">Соотнесите немецкие слова урока с русскими переводами.</p>
+                <div class="matching-container">
+                    <div class="words-column">
+
+                <div class="word-item" data-id="0" data-answer="вешать">
+                    <span class="word-main">erhängen</span>
+                    <small class="word-hint">[ер-ХЕН-ген]</small>
+                </div>
+                
+                <div class="word-item" data-id="1" data-answer="дышать">
+                    <span class="word-main">hauchen</span>
+                    <small class="word-hint">[ХАУ-хен]</small>
+                </div>
+                
+                <div class="word-item" data-id="2" data-answer="слишком поздно">
+                    <span class="word-main">zu spät</span>
+                    <small class="word-hint">[цу-ШПЕТ]</small>
+                </div>
+                
+                <div class="word-item" data-id="3" data-answer="труп">
+                    <span class="word-main">die Leiche</span>
+                    <small class="word-hint">[ди ЛАЙ-хе]</small>
+                </div>
+                
+                <div class="word-item" data-id="4" data-answer="конец">
+                    <span class="word-main">das Ende</span>
+                    <small class="word-hint">[дас ЕН-де]</small>
+                </div>
+                
+                <div class="word-item" data-id="5" data-answer="смерть">
+                    <span class="word-main">der Tod</span>
+                    <small class="word-hint">[дер ТОД]</small>
+                </div>
+                
+                <div class="word-item" data-id="6" data-answer="боль">
+                    <span class="word-main">der Schmerz</span>
+                    <small class="word-hint">[дер ШМЕРЦ]</small>
+                </div>
+                
+                <div class="word-item" data-id="7" data-answer="разбиваться">
+                    <span class="word-main">brechen</span>
+                    <small class="word-hint">[БРЕ-хен]</small>
+                </div>
+                
+                    </div>
+                    <div class="translations-column">
+
+                <div class="translation-item" data-id="0" data-trans="конец">
+                    конец
+                </div>
+                
+                <div class="translation-item" data-id="1" data-trans="боль">
+                    боль
+                </div>
+                
+                <div class="translation-item" data-id="2" data-trans="дышать">
+                    дышать
+                </div>
+                
+                <div class="translation-item" data-id="3" data-trans="смерть">
+                    смерть
+                </div>
+                
+                <div class="translation-item" data-id="4" data-trans="слишком поздно">
+                    слишком поздно
+                </div>
+                
+                <div class="translation-item" data-id="5" data-trans="вешать">
+                    вешать
+                </div>
+                
+                <div class="translation-item" data-id="6" data-trans="труп">
+                    труп
+                </div>
+                
+                <div class="translation-item" data-id="7" data-trans="разбиваться">
+                    разбиваться
+                </div>
+                
+                    </div>
+                </div>
+                <button class="check-btn" data-action="check-matching" type="button">Проверить</button>
+            </div>
+            
+                    </div>
+                </details>
+                
+
+                <details class="exercise-accordion-item">
+                    <summary>🎯 Артикли и род</summary>
+                    <div class="exercise-content">
+                        
+            <div class="exercise-block" id="articles">
+                <h3 class="exercise-title">🎯 Артикли и род</h3>
+                <p class="exercise-intro">Выберите правильный артикль для существительных из урока.</p>
+                <div class="articles-grid">
+
+                <div class="article-item" data-correct="das">
+                    <div class="article-word">
+                        <span class="noun">Ende</span>
+                        <small>конец</small>
+                    </div>
+                    <div class="article-buttons">
+                        <button type="button" data-article="der">der</button>
+                        <button type="button" data-article="die">die</button>
+                        <button type="button" data-article="das">das</button>
+                    </div>
+                </div>
+                
+                <div class="article-item" data-correct="der">
+                    <div class="article-word">
+                        <span class="noun">Tod</span>
+                        <small>смерть</small>
+                    </div>
+                    <div class="article-buttons">
+                        <button type="button" data-article="der">der</button>
+                        <button type="button" data-article="die">die</button>
+                        <button type="button" data-article="das">das</button>
+                    </div>
+                </div>
+                
+                <div class="article-item" data-correct="das">
+                    <div class="article-word">
+                        <span class="noun">Herz</span>
+                        <small>сердце</small>
+                    </div>
+                    <div class="article-buttons">
+                        <button type="button" data-article="der">der</button>
+                        <button type="button" data-article="die">die</button>
+                        <button type="button" data-article="das">das</button>
+                    </div>
+                </div>
+                
+                <div class="article-item" data-correct="der">
+                    <div class="article-word">
+                        <span class="noun">Schmerz</span>
+                        <small>боль</small>
+                    </div>
+                    <div class="article-buttons">
+                        <button type="button" data-article="der">der</button>
+                        <button type="button" data-article="die">die</button>
+                        <button type="button" data-article="das">das</button>
+                    </div>
+                </div>
+                
+                <div class="article-item" data-correct="die">
+                    <div class="article-word">
+                        <span class="noun">Trauer</span>
+                        <small>скорбь</small>
+                    </div>
+                    <div class="article-buttons">
+                        <button type="button" data-article="der">der</button>
+                        <button type="button" data-article="die">die</button>
+                        <button type="button" data-article="das">das</button>
+                    </div>
+                </div>
+                
+                <div class="article-item" data-correct="der">
+                    <div class="article-word">
+                        <span class="noun">Abschied</span>
+                        <small>прощание</small>
+                    </div>
+                    <div class="article-buttons">
+                        <button type="button" data-article="der">der</button>
+                        <button type="button" data-article="die">die</button>
+                        <button type="button" data-article="das">das</button>
+                    </div>
+                </div>
+                
+                <div class="article-item" data-correct="die">
+                    <div class="article-word">
+                        <span class="noun">Leiche</span>
+                        <small>труп</small>
+                    </div>
+                    <div class="article-buttons">
+                        <button type="button" data-article="der">der</button>
+                        <button type="button" data-article="die">die</button>
+                        <button type="button" data-article="das">das</button>
+                    </div>
+                </div>
+                
+                </div>
+                <button class="check-btn" data-action="check-articles" type="button">Проверить</button>
+            </div>
+            
+                    </div>
+                </details>
+                
+
+                <details class="exercise-accordion-item">
+                    <summary>🌈 Синонимы и антонимы</summary>
+                    <div class="exercise-content">
+                        
+            <div class="exercise-block" id="synonyms">
+                <h3 class="exercise-title">🌈 Синонимы и антонимы</h3>
+                <p class="exercise-intro">Подберите синоним из урока и вспомните противоположное значение.</p>
+
+                <div class="synonym-item">
+                    <div class="word-center">
+                        <span class="word-main">der Friede</span>
+                        <small>мир</small>
+                    </div>
+                    <div class="options">
+                        <input type="text" placeholder="Синоним" data-correct="die Welt" data-hint="мир">
+                        <input type="text" placeholder="Антоним" data-correct="der Krieg" data-hint="война">
+                    </div>
+                </div>
+                
+                <div class="synonym-item">
+                    <div class="word-center">
+                        <span class="word-main">die Welt</span>
+                        <small>мир</small>
+                    </div>
+                    <div class="options">
+                        <input type="text" placeholder="Синоним" data-correct="der Friede" data-hint="мир">
+                        <input type="text" placeholder="Антоним" data-correct="der Krieg" data-hint="война">
+                    </div>
+                </div>
+                
+                <div class="synonym-item">
+                    <div class="word-center">
+                        <span class="word-main">vertrauen</span>
+                        <small>доверять</small>
+                    </div>
+                    <div class="options">
+                        <input type="text" placeholder="Синоним" data-correct="trauen" data-hint="доверять">
+                        <input type="text" placeholder="Антоним" data-correct="misstrauen" data-hint="не доверять">
+                    </div>
+                </div>
+                
+                <button class="check-btn" data-action="check-synonyms" type="button">Проверить</button>
+            </div>
+            
+                    </div>
+                </details>
+                
+
+                <details class="exercise-accordion-item">
+                    <summary>🧠 Викторина по словам</summary>
+                    <div class="exercise-content">
+                        
+            <div class="exercise-block" id="quiz">
+                <h3 class="exercise-title">🧠 Викторина по словам</h3>
+
+                <div class="quiz-question" data-question="0">
+                    <p class="question">Как переводится: <strong>brechen</strong>?</p>
+                    <div class="quiz-options">
+                    
+                        <label>
+                            <input type="radio" name="quiz-0" data-correct="true">
+                            <span>разбиваться</span>
+                        </label>
+                    
+                        <label>
+                            <input type="radio" name="quiz-0" data-correct="false">
+                            <span>смерть</span>
+                        </label>
+                    
+                        <label>
+                            <input type="radio" name="quiz-0" data-correct="false">
+                            <span>конец</span>
+                        </label>
+                    
+                        <label>
+                            <input type="radio" name="quiz-0" data-correct="false">
+                            <span>вешать</span>
+                        </label>
+                    
+                    </div>
+                </div>
+                
+                <div class="quiz-question" data-question="1">
+                    <p class="question">Как переводится: <strong>das Herz</strong>?</p>
+                    <div class="quiz-options">
+                    
+                        <label>
+                            <input type="radio" name="quiz-1" data-correct="false">
+                            <span>разбиваться</span>
+                        </label>
+                    
+                        <label>
+                            <input type="radio" name="quiz-1" data-correct="false">
+                            <span>конец</span>
+                        </label>
+                    
+                        <label>
+                            <input type="radio" name="quiz-1" data-correct="true">
+                            <span>сердце</span>
+                        </label>
+                    
+                        <label>
+                            <input type="radio" name="quiz-1" data-correct="false">
+                            <span>скорбь</span>
+                        </label>
+                    
+                    </div>
+                </div>
+                
+                <div class="quiz-question" data-question="2">
+                    <p class="question">Как переводится: <strong>erhängen</strong>?</p>
+                    <div class="quiz-options">
+                    
+                        <label>
+                            <input type="radio" name="quiz-2" data-correct="false">
+                            <span>труп</span>
+                        </label>
+                    
+                        <label>
+                            <input type="radio" name="quiz-2" data-correct="true">
+                            <span>вешать</span>
+                        </label>
+                    
+                        <label>
+                            <input type="radio" name="quiz-2" data-correct="false">
+                            <span>сердце</span>
+                        </label>
+                    
+                        <label>
+                            <input type="radio" name="quiz-2" data-correct="false">
+                            <span>дышать</span>
+                        </label>
+                    
+                    </div>
+                </div>
+                
+                <div class="quiz-question" data-question="3">
+                    <p class="question">Как переводится: <strong>die Leiche</strong>?</p>
+                    <div class="quiz-options">
+                    
+                        <label>
+                            <input type="radio" name="quiz-3" data-correct="false">
+                            <span>сердце</span>
+                        </label>
+                    
+                        <label>
+                            <input type="radio" name="quiz-3" data-correct="false">
+                            <span>боль</span>
+                        </label>
+                    
+                        <label>
+                            <input type="radio" name="quiz-3" data-correct="false">
+                            <span>слишком поздно</span>
+                        </label>
+                    
+                        <label>
+                            <input type="radio" name="quiz-3" data-correct="true">
+                            <span>труп</span>
+                        </label>
+                    
+                    </div>
+                </div>
+                
+                <div class="quiz-question" data-question="4">
+                    <p class="question">Как переводится: <strong>die Trauer</strong>?</p>
+                    <div class="quiz-options">
+                    
+                        <label>
+                            <input type="radio" name="quiz-4" data-correct="false">
+                            <span>конец</span>
+                        </label>
+                    
+                        <label>
+                            <input type="radio" name="quiz-4" data-correct="false">
+                            <span>сердце</span>
+                        </label>
+                    
+                        <label>
+                            <input type="radio" name="quiz-4" data-correct="false">
+                            <span>слишком поздно</span>
+                        </label>
+                    
+                        <label>
+                            <input type="radio" name="quiz-4" data-correct="true">
+                            <span>скорбь</span>
+                        </label>
+                    
+                    </div>
+                </div>
+                
+                <button class="check-btn" data-action="check-quiz" type="button">Проверить</button>
+            </div>
+            
+                    </div>
+                </details>
+                
+
+                <details class="exercise-accordion-item">
+                    <summary>📝 Контекстный перевод</summary>
+                    <div class="exercise-content">
+                        
+            <div class="exercise-block" id="context">
+                <h3 class="exercise-title">📝 Контекстный перевод</h3>
+
+                <div class="context-item">
+                    <p class="context-german">Der _____ nimmt alles</p>
+                    <p class="context-hint">Подсказка: Смерть забирает всё</p>
+                    <input type="text" placeholder="Введите слово" data-correct="Tod">
+                </div>
+                
+                <div class="context-item">
+                    <p class="context-german">Er trägt ihre _____</p>
+                    <p class="context-hint">Подсказка: Он несёт её тело</p>
+                    <input type="text" placeholder="Введите слово" data-correct="Leiche">
+                </div>
+                
+                <div class="context-item">
+                    <p class="context-german">Mein Befehl kam _____</p>
+                    <p class="context-hint">Подсказка: Мой приказ пришёл слишком поздно</p>
+                    <input type="text" placeholder="Введите слово" data-correct="zu spät">
+                </div>
+                
+                <button class="check-btn" data-action="check-context" type="button">Проверить</button>
+            </div>
+            
+                    </div>
+                </details>
+                
+
+                <details class="exercise-accordion-item">
+                    <summary>🧩 Конструктор предложений</summary>
+                    <div class="exercise-content">
+                        
+            <div class="exercise-block" id="builder">
+                <h3 class="exercise-title">🧩 Конструктор предложений</h3>
+
+                <div class="sentence-builder">
+                    <p class="translation">Почему собака, лошадь, крыса имеют жизнь, а ты — нет</p>
+                    <div class="word-pool"><span class="draggable" draggable="true">haben</span><span class="draggable" draggable="true">Leben</span><span class="draggable" draggable="true">ein</span><span class="draggable" draggable="true">du</span><span class="draggable" draggable="true">eine</span><span class="draggable" draggable="true">sollte</span><span class="draggable" draggable="true">Hund</span><span class="draggable" draggable="true">Ratte</span><span class="draggable" draggable="true">Pferd</span><span class="draggable" draggable="true">Warum</span><span class="draggable" draggable="true">nicht</span><span class="draggable" draggable="true">ein</span><span class="draggable" draggable="true">und</span></div>
+                    <div class="drop-zone" data-correct="Warum sollte ein Hund ein Pferd eine Ratte Leben haben und du nicht">
+                        <span class="placeholder">Перетащите слова сюда</span>
+                    </div>
+                </div>
+                
+                <div class="sentence-builder">
+                    <p class="translation">Это ли обещанный конец</p>
+                    <div class="word-pool"><span class="draggable" draggable="true">Ist</span><span class="draggable" draggable="true">das</span><span class="draggable" draggable="true">Ende</span><span class="draggable" draggable="true">versprochene</span><span class="draggable" draggable="true">das</span></div>
+                    <div class="drop-zone" data-correct="Ist das das versprochene Ende">
+                        <span class="placeholder">Перетащите слова сюда</span>
+                    </div>
+                </div>
+                
+                <button class="check-btn" data-action="check-builder" type="button">Проверить</button>
+            </div>
+            
+                    </div>
+                </details>
+                
+            </div>
+        </section>
+        
+
         <!-- НАВІГАЦІЯ ПІСЛЯ УПРАЖНЕННЯ -->
         <div class="bottom-navigation">
             <a href="../index.html" class="nav-btn">
@@ -1141,7 +1607,9 @@ body {
         </script>
         
     </div>
-    
+
+    <script src="../../js/exercises.js" defer></script>
+
     <!-- JavaScript для копіювання уроку -->
     <script>
     function copyLesson() {

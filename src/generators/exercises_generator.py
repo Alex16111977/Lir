@@ -46,7 +46,9 @@ class ExercisesGenerator:
             "quiz": self._generate_vocabulary_quiz(vocabulary),
             "context": self._generate_context_translation(vocabulary),
             "builder": self._generate_sentence_builder(
-                lesson_data.get("dialogues", []), lesson_data.get("story")
+                lesson_data.get("dialogues", []),
+                lesson_data.get("story"),
+                vocabulary,
             ),
         }
 
@@ -632,28 +634,50 @@ class ExercisesGenerator:
         )
 
     def _generate_sentence_builder(
-        self, dialogues: Iterable[Dict[str, Any]], story: Optional[Dict[str, Any]]
+        self,
+        dialogues: Iterable[Dict[str, Any]],
+        story: Optional[Dict[str, Any]],
+        vocabulary: Iterable[Dict[str, Any]],
     ) -> str:
-        """[FIXED] Генерує більше речень для конструктора з індивідуальними кнопками."""
-        sentences = self._collect_dialogue_sentences(dialogues)
-        if not sentences and story:
-            sentences = self._collect_story_sentences(story)
+        """Сформувати конструктор речень з покриттям усіх слів уроку."""
+
+        vocab_entries = list(vocabulary or [])
+        sentences: List[Dict[str, Any]] = []
+        seen: set[str] = set()
+
+        def extend(items: Iterable[Dict[str, Any]]) -> None:
+            for item in items or []:
+                parts = [part for part in item.get("parts", []) if part]
+                translation = (item.get("translation") or "").strip()
+                if len(parts) < 2:
+                    continue
+                key = " ".join(parts).lower()
+                if key in seen:
+                    continue
+                seen.add(key)
+                display_text = translation or "Складіть речення"
+                sentences.append({"parts": parts, "translation": display_text})
+
+        extend(self._collect_vocabulary_sentences(vocab_entries))
+        extend(self._collect_dialogue_sentences(dialogues))
+        if story:
+            extend(self._collect_story_sentences(story))
+
         if not sentences:
             return ""
 
-        # Збільшуємо до 3-4 речень замість 2
+        target_count = len(vocab_entries) if vocab_entries else len(sentences)
+        selected = sentences[:target_count]
+
         blocks = []
-        for idx, sentence in enumerate(sentences[:4]):
+        for idx, sentence in enumerate(selected):
             shuffled = sentence["parts"][:]
             random.shuffle(shuffled)
             word_pool = "".join(
                 f"<span class=\"draggable\" draggable=\"true\">{escape(word)}</span>"
                 for word in shuffled
             )
-            # Підготовка підказки (перші 2 слова)
-            hint_words = sentence["parts"][:2]
-            hint_text = " ".join(hint_words) + "..."
-            
+
             blocks.append(
                 f"""
                 <div class=\"sentence-builder\" data-sentence-idx=\"{idx}\">
@@ -663,7 +687,7 @@ class ExercisesGenerator:
                         <span class=\"placeholder\">Перетащите слова сюда</span>
                     </div>
                     <div class=\"sentence-controls\">
-                        <button class=\"hint-btn\" onclick=\"showHint(this)\" data-sentence-idx=\"{idx}\" data-hint=\"{escape(hint_text)}\" type=\"button\">
+                        <button class=\"hint-btn\" onclick=\"showHint(this)\" data-sentence-idx=\"{idx}\" type=\"button\">
                             💡 Підказка
                         </button>
                         <button class=\"check-sentence-btn\" onclick=\"checkSentence(this)\" type=\"button\">
@@ -676,18 +700,18 @@ class ExercisesGenerator:
             )
 
         total_sentences = len(blocks)
-        
+
         return (
             f"""\n            <div class=\"exercise-block sentence-builder-section\" id=\"builder\">
                 <h3 class=\"exercise-title\">🧩 Конструктор предложений</h3>
-                
+
                 <!-- Прогрес-бар -->
                 <div class=\"builder-progress\">
                     <h4 style=\"margin-bottom: 10px; color: #6b7280;\">📊 Загальний прогрес</h4>
                     <div class=\"builder-progress-bar\">
                         <div class=\"builder-progress-fill\"></div>
                     </div>
-                    <div class=\"builder-stats\">Виконано: <span id=\"builder-correct\">0</span> з {total_sentences}</div>
+                    <div class=\"builder-stats\">Виконано: 0 з {total_sentences}</div>
                 </div>
                 """
             + "".join(blocks)
@@ -764,6 +788,37 @@ class ExercisesGenerator:
     # ------------------------------------------------------------------
     # Sentence helpers
     # ------------------------------------------------------------------
+    def _collect_vocabulary_sentences(
+        self, vocabulary: Iterable[Dict[str, Any]]
+    ) -> List[Dict[str, Any]]:
+        """Створити речення на основі реплік для кожного слова уроку."""
+
+        sentences: List[Dict[str, Any]] = []
+        for entry in vocabulary or []:
+            voice = entry.get("character_voice") or {}
+            german = (voice.get("german") or "").strip()
+            translation = (voice.get("russian") or entry.get("translation") or "").strip()
+            if not german:
+                continue
+
+            fragments = [frag.strip() for frag in re.split(r"[.!?]+", german) if frag.strip()]
+            chosen: Optional[List[str]] = None
+            for fragment in fragments:
+                tokens = self._tokenize_sentence(fragment)
+                if len(tokens) >= 2:
+                    chosen = tokens
+                    break
+
+            if chosen is None:
+                tokens = self._tokenize_sentence(german)
+                if len(tokens) < 2:
+                    continue
+                chosen = tokens
+
+            sentences.append({"parts": chosen, "translation": translation})
+
+        return sentences
+
     def _collect_dialogue_sentences(
         self, dialogues: Iterable[Dict[str, Any]]
     ) -> List[Dict[str, Any]]:
@@ -781,7 +836,7 @@ class ExercisesGenerator:
                     continue
                 translation = russian_parts[idx] if idx < len(russian_parts) else russian
                 sentences.append({"parts": tokens, "translation": translation})
-                if len(sentences) >= 5:  # Збільшено з 3 до 5
+                if len(sentences) >= 12:
                     return sentences
         return sentences
 
@@ -800,7 +855,7 @@ class ExercisesGenerator:
             if len(tokens) < 3:
                 continue
             sentences.append({"parts": tokens, "translation": fragment})
-            if len(sentences) >= 4:  # Збільшено з 2 до 4
+            if len(sentences) >= 12:
                 break
         return sentences
 

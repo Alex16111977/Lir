@@ -342,85 +342,223 @@ class ExercisesGenerator:
         )
 
     def _generate_vocabulary_quiz(self, vocabulary: List[Dict[str, Any]]) -> str:
-        """Generate interactive quiz with instant feedback like KingLearComic."""
-        selectable = [word for word in vocabulary if word.get("german") and word.get("translation")]
+        """Generate a bidirectional quiz for German and Russian vocabulary."""
+
+        selectable = [
+            word
+            for word in vocabulary
+            if word.get("german") and word.get("translation")
+        ]
         if not selectable:
             return ""
 
-        # 10 питань максимум
-        questions = random.sample(selectable, min(10, len(selectable)))
-        questions_html = []
-        
-        for idx, word in enumerate(questions):
-            correct = word.get("translation", "")
-            # Збираємо дистрактори
-            distractors = [w.get("translation", "") for w in selectable if w is not word and w.get("translation")]
-            distractors = list({d for d in distractors if d and d != correct})
-            random.shuffle(distractors)
-            options = [correct] + distractors[:3]
-            random.shuffle(options)
+        random.shuffle(selectable)
 
-            # HTML для одного питання
-            question_html = f"""
-            <div class="quiz-question" data-question-id="{idx}" style="display: {'block' if idx == 0 else 'none'};">
-                <div class="quiz-header">
-                    <span class="question-number">Питання {idx + 1} з {len(questions)}</span>
-                </div>
-                
-                <div class="quiz-content">
-                    <h3>Що означає німецьке слово?</h3>
-                    
-                    <div class="word-display">
-                        <span class="german-word">{escape(word.get('german', ''))}</span>
-                        <span class="transcription">{escape(word.get('transcription', ''))}</span>
-                    </div>
-                    
-                    <div class="answer-buttons">
-            """
-            
-            # Додаємо кнопки відповідей
-            for opt_idx, option in enumerate(options):
-                is_correct = "true" if option == correct else "false"
-                question_html += f"""
-                        <button 
-                            class="answer-btn" 
-                            data-correct="{is_correct}"
-                            onclick="checkQuizAnswer(this, {is_correct})">
-                            {escape(option)}
-                        </button>
-                """
-            
-            question_html += """
-                    </div>
-                </div>
-            </div>
-            """
-            questions_html.append(question_html)
-        
-        return f"""
+        translation_pool = [
+            entry.get("translation", "")
+            for entry in selectable
+            if entry.get("translation")
+        ]
+        german_pool = [
+            entry.get("german", "")
+            for entry in selectable
+            if entry.get("german")
+        ]
+
+        de_ru_words = selectable[:]
+        random.shuffle(de_ru_words)
+        de_ru_words = de_ru_words[: min(5, len(de_ru_words))]
+
+        ru_de_words = selectable[:]
+        random.shuffle(ru_de_words)
+        ru_de_words = ru_de_words[: min(5, len(ru_de_words))]
+
+        total_questions = len(de_ru_words) + len(ru_de_words)
+        if not total_questions:
+            return ""
+
+        questions_html: List[str] = []
+        question_index = 0
+
+        for word in de_ru_words:
+            questions_html.append(
+                self._render_de_ru_question(
+                    word,
+                    question_index,
+                    total_questions,
+                    translation_pool,
+                    is_first=question_index == 0,
+                )
+            )
+            question_index += 1
+
+        for word in ru_de_words:
+            questions_html.append(
+                self._render_ru_de_question(
+                    word,
+                    question_index,
+                    total_questions,
+                    german_pool,
+                    is_first=question_index == 0,
+                )
+            )
+            question_index += 1
+
+        questions_markup = "\n".join(questions_html)
+
+        return (
+            f"""
             <div class="exercise-block quiz-container" id="word-quiz">
                 <h3 class="exercise-title">🧠 Викторина по словам</h3>
-                
+
                 <div class="quiz-progress">
                     <div class="progress-bar">
                         <div class="progress-fill" style="width: 0%"></div>
                     </div>
                     <div class="progress-text">
-                        Правильних: <span id="correct-count">0</span> / <span id="total-count">{len(questions)}</span>
+                        Правильних: <span id="correct-count">0</span> / <span id="total-count">{total_questions}</span>
                     </div>
                 </div>
-                
+
                 <div id="quiz-questions">
-                    {"" .join(questions_html)}
+                    {questions_markup}
                 </div>
-                
-                <div id="quiz-result" style="display: none;">
-                    <h2>Результати вікторини</h2>
-                    <p class="result-text"></p>
-                    <button onclick="restartQuiz()" class="restart-btn">Спробувати знову</button>
+
+                <div id="quiz-result" class="quiz-results" style="display: none;">
+                    <div class="result-text"></div>
+                    <button onclick="restartQuiz()" class="restart-btn" type="button">Спробувати знову</button>
                 </div>
             </div>
             """
+        )
+
+    def _render_de_ru_question(
+        self,
+        word: Dict[str, Any],
+        question_index: int,
+        total_questions: int,
+        translations: List[str],
+        *,
+        is_first: bool,
+    ) -> str:
+        """Render a single DE→RU quiz question."""
+
+        correct_answer = word.get("translation", "")
+        options = self._build_quiz_options(correct_answer, translations)
+        transcription = word.get("transcription") or ""
+        transcription_html = (
+            f'<span class="transcription">{escape(transcription)}</span>'
+            if transcription
+            else ""
+        )
+
+        buttons = self._render_answer_buttons(options, correct_answer)
+        display = "block" if is_first else "none"
+
+        return (
+            f"""
+        <div class="quiz-question" data-question-id="{question_index}" data-mode="de-ru" style="display: {display};">
+            <div class="quiz-header">
+                <span class="question-number">Питання {question_index + 1} з {total_questions}</span>
+                <span class="question-mode">DE → RU</span>
+            </div>
+
+            <div class="quiz-content">
+                <h3>Що означає німецьке слово?</h3>
+
+                <div class="word-display">
+                    <span class="german-word">{escape(word.get('german', ''))}</span>
+                    {transcription_html}
+                </div>
+
+                <div class="answer-buttons">
+{buttons}
+                </div>
+            </div>
+        </div>
+            """
+        )
+
+    def _render_ru_de_question(
+        self,
+        word: Dict[str, Any],
+        question_index: int,
+        total_questions: int,
+        german_words: List[str],
+        *,
+        is_first: bool,
+    ) -> str:
+        """Render a single RU→DE quiz question."""
+
+        correct_answer = word.get("german", "")
+        options = self._build_quiz_options(correct_answer, german_words)
+        buttons = self._render_answer_buttons(options, correct_answer)
+        display = "block" if is_first else "none"
+
+        return (
+            f"""
+        <div class="quiz-question" data-question-id="{question_index}" data-mode="ru-de" style="display: {display};">
+            <div class="quiz-header">
+                <span class="question-number">Питання {question_index + 1} з {total_questions}</span>
+                <span class="question-mode">RU → DE</span>
+            </div>
+
+            <div class="quiz-content">
+                <h3>Як німецькою буде:</h3>
+
+                <div class="word-display">
+                    <span class="russian-word">{escape(word.get('translation', ''))}</span>
+                </div>
+
+                <div class="answer-buttons">
+{buttons}
+                </div>
+            </div>
+        </div>
+            """
+        )
+
+    def _render_answer_buttons(
+        self, options: List[str], correct_answer: str
+    ) -> str:
+        """Render answer buttons for quiz options."""
+
+        buttons: List[str] = []
+        for option in options:
+            value = option or ""
+            is_correct = "true" if value == correct_answer else "false"
+            buttons.append(
+                f'                    <button class="answer-btn" data-correct="{is_correct}" onclick="checkAnswer(this, {is_correct})">{escape(value)}</button>'
+            )
+        return "\n".join(buttons)
+
+    def _build_quiz_options(
+        self, correct_answer: str, pool: Iterable[str], size: int = 4
+    ) -> List[str]:
+        """Return shuffled answer options including distractors."""
+
+        options: List[str] = [correct_answer] if correct_answer else []
+        candidates = [value for value in pool if value and value != correct_answer]
+        random.shuffle(candidates)
+
+        for value in candidates:
+            if len(options) >= size:
+                break
+            if value not in options:
+                options.append(value)
+
+        while len(options) < size and candidates:
+            candidate = random.choice(candidates)
+            options.append(candidate)
+
+        if correct_answer and correct_answer not in options:
+            options.append(correct_answer)
+
+        if len(options) > size:
+            options = options[:size]
+
+        random.shuffle(options)
+        return options
 
     def _generate_context_translation(self, vocabulary: List[Dict[str, Any]]) -> str:
         contexts = []

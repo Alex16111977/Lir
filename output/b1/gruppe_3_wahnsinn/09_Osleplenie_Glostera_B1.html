@@ -863,88 +863,113 @@ body {
                         
             <div class="exercise-block" id="word-matching">
                 <h3 class="exercise-title">🔗 Подбор слов</h3>
-                <p class="exercise-intro">Соотнесите немецкие слова урока с русскими переводами.</p>
+                <p class="exercise-intro">Нажмите на немецкое слово, затем на его русский перевод. При правильном ответе пара станет зелёной.</p>
+                
+                <!-- Прогрес-бар -->
+                <div class="matching-progress">
+                    <div class="progress-track">
+                        <div class="progress-fill" style="width: 0%"></div>
+                    </div>
+                    <div class="progress-text">0 з 8</div>
+                </div>
+                
                 <div class="matching-container">
                     <div class="words-column">
 
-                <div class="word-item" data-id="0" data-answer="кричать">
-                    <span class="word-main">schreien</span>
-                    <small class="word-hint">[ШРАЙ-ен]</small>
-                </div>
-                
-                <div class="word-item" data-id="1" data-answer="вырывать">
-                    <span class="word-main">ausreißen</span>
-                    <small class="word-hint">[АУС-райсен]</small>
-                </div>
-                
-                <div class="word-item" data-id="2" data-answer="милость">
-                    <span class="word-main">die Gnade</span>
-                    <small class="word-hint">[ди ГНА-де]</small>
-                </div>
-                
-                <div class="word-item" data-id="3" data-answer="темнота">
-                    <span class="word-main">die Dunkelheit</span>
-                    <small class="word-hint">[ди ДУН-кель-хайт]</small>
-                </div>
-                
-                <div class="word-item" data-id="4" data-answer="связывать">
-                    <span class="word-main">binden</span>
-                    <small class="word-hint">[БИН-ден]</small>
-                </div>
-                
-                <div class="word-item" data-id="5" data-answer="глаза">
+                <div class="word-item prompt" data-pair-id="0" data-type="prompt" 
+                     onclick="handleWordClick(this, 'prompt')">
                     <span class="word-main">die Augen</span>
                     <small class="word-hint">[ди АУ-ген]</small>
                 </div>
                 
-                <div class="word-item" data-id="6" data-answer="месть">
+                <div class="word-item prompt" data-pair-id="1" data-type="prompt" 
+                     onclick="handleWordClick(this, 'prompt')">
                     <span class="word-main">die Rache</span>
                     <small class="word-hint">[ди РА-хе]</small>
                 </div>
                 
-                <div class="word-item" data-id="7" data-answer="предатель">
+                <div class="word-item prompt" data-pair-id="2" data-type="prompt" 
+                     onclick="handleWordClick(this, 'prompt')">
                     <span class="word-main">der Verräter</span>
                     <small class="word-hint">[дер фер-РЕ-тер]</small>
+                </div>
+                
+                <div class="word-item prompt" data-pair-id="3" data-type="prompt" 
+                     onclick="handleWordClick(this, 'prompt')">
+                    <span class="word-main">binden</span>
+                    <small class="word-hint">[БИН-ден]</small>
+                </div>
+                
+                <div class="word-item prompt" data-pair-id="4" data-type="prompt" 
+                     onclick="handleWordClick(this, 'prompt')">
+                    <span class="word-main">ausreißen</span>
+                    <small class="word-hint">[АУС-райсен]</small>
+                </div>
+                
+                <div class="word-item prompt" data-pair-id="5" data-type="prompt" 
+                     onclick="handleWordClick(this, 'prompt')">
+                    <span class="word-main">das Blut</span>
+                    <small class="word-hint">[дас БЛУТ]</small>
+                </div>
+                
+                <div class="word-item prompt" data-pair-id="6" data-type="prompt" 
+                     onclick="handleWordClick(this, 'prompt')">
+                    <span class="word-main">grausam</span>
+                    <small class="word-hint">[ГРАУ-зам]</small>
+                </div>
+                
+                <div class="word-item prompt" data-pair-id="7" data-type="prompt" 
+                     onclick="handleWordClick(this, 'prompt')">
+                    <span class="word-main">die Folter</span>
+                    <small class="word-hint">[ди ФОЛТ-ер]</small>
                 </div>
                 
                     </div>
                     <div class="translations-column">
 
-                <div class="translation-item" data-id="0" data-trans="темнота">
-                    темнота
-                </div>
-                
-                <div class="translation-item" data-id="1" data-trans="предатель">
-                    предатель
-                </div>
-                
-                <div class="translation-item" data-id="2" data-trans="милость">
-                    милость
-                </div>
-                
-                <div class="translation-item" data-id="3" data-trans="кричать">
-                    кричать
-                </div>
-                
-                <div class="translation-item" data-id="4" data-trans="глаза">
-                    глаза
-                </div>
-                
-                <div class="translation-item" data-id="5" data-trans="месть">
-                    месть
-                </div>
-                
-                <div class="translation-item" data-id="6" data-trans="связывать">
+                <div class="translation-item match" data-pair-id="3" 
+                     data-type="match" onclick="handleWordClick(this, 'match')">
                     связывать
                 </div>
                 
-                <div class="translation-item" data-id="7" data-trans="вырывать">
+                <div class="translation-item match" data-pair-id="5" 
+                     data-type="match" onclick="handleWordClick(this, 'match')">
+                    кровь
+                </div>
+                
+                <div class="translation-item match" data-pair-id="7" 
+                     data-type="match" onclick="handleWordClick(this, 'match')">
+                    пытка
+                </div>
+                
+                <div class="translation-item match" data-pair-id="0" 
+                     data-type="match" onclick="handleWordClick(this, 'match')">
+                    глаза
+                </div>
+                
+                <div class="translation-item match" data-pair-id="6" 
+                     data-type="match" onclick="handleWordClick(this, 'match')">
+                    жестокий
+                </div>
+                
+                <div class="translation-item match" data-pair-id="2" 
+                     data-type="match" onclick="handleWordClick(this, 'match')">
+                    предатель
+                </div>
+                
+                <div class="translation-item match" data-pair-id="4" 
+                     data-type="match" onclick="handleWordClick(this, 'match')">
                     вырывать
+                </div>
+                
+                <div class="translation-item match" data-pair-id="1" 
+                     data-type="match" onclick="handleWordClick(this, 'match')">
+                    месть
                 </div>
                 
                     </div>
                 </div>
-                <button class="check-btn" data-action="check-matching" type="button">Проверить</button>
+                <!-- Кнопка видалена - миттєва перевірка! -->
             </div>
             
                     </div>
@@ -958,77 +983,27 @@ body {
             <div class="exercise-block" id="articles">
                 <h3 class="exercise-title">🎯 Артикли и род</h3>
                 <p class="exercise-intro">Выберите правильный артикль для существительных из урока.</p>
+                
+                <!-- Прогрес-бар -->
+                <div class="articles-progress">
+                    <div class="progress-track">
+                        <div class="progress-fill" style="width: 0%"></div>
+                    </div>
+                    <div class="progress-stats">
+                        <span id="articles-correct">0</span> з <span id="articles-total">7</span>
+                    </div>
+                </div>
                 <div class="articles-grid">
 
-                <div class="article-item" data-correct="die">
-                    <div class="article-word">
-                        <span class="noun">Rache</span>
-                        <small>месть</small>
-                    </div>
-                    <div class="article-buttons">
-                        <button type="button" data-article="der">der</button>
-                        <button type="button" data-article="die">die</button>
-                        <button type="button" data-article="das">das</button>
-                    </div>
-                </div>
-                
-                <div class="article-item" data-correct="das">
-                    <div class="article-word">
-                        <span class="noun">Blut</span>
-                        <small>кровь</small>
-                    </div>
-                    <div class="article-buttons">
-                        <button type="button" data-article="der">der</button>
-                        <button type="button" data-article="die">die</button>
-                        <button type="button" data-article="das">das</button>
-                    </div>
-                </div>
-                
-                <div class="article-item" data-correct="der">
-                    <div class="article-word">
-                        <span class="noun">Verräter</span>
-                        <small>предатель</small>
-                    </div>
-                    <div class="article-buttons">
-                        <button type="button" data-article="der">der</button>
-                        <button type="button" data-article="die">die</button>
-                        <button type="button" data-article="das">das</button>
-                    </div>
-                </div>
-                
                 <div class="article-item" data-correct="die">
                     <div class="article-word">
                         <span class="noun">Dunkelheit</span>
                         <small>темнота</small>
                     </div>
                     <div class="article-buttons">
-                        <button type="button" data-article="der">der</button>
-                        <button type="button" data-article="die">die</button>
-                        <button type="button" data-article="das">das</button>
-                    </div>
-                </div>
-                
-                <div class="article-item" data-correct="die">
-                    <div class="article-word">
-                        <span class="noun">Augen</span>
-                        <small>глаза</small>
-                    </div>
-                    <div class="article-buttons">
-                        <button type="button" data-article="der">der</button>
-                        <button type="button" data-article="die">die</button>
-                        <button type="button" data-article="das">das</button>
-                    </div>
-                </div>
-                
-                <div class="article-item" data-correct="die">
-                    <div class="article-word">
-                        <span class="noun">Gnade</span>
-                        <small>милость</small>
-                    </div>
-                    <div class="article-buttons">
-                        <button type="button" data-article="der">der</button>
-                        <button type="button" data-article="die">die</button>
-                        <button type="button" data-article="das">das</button>
+                        <button type="button" data-article="der" onclick="checkArticleInstant(this, 'der')">der</button>
+                        <button type="button" data-article="die" onclick="checkArticleInstant(this, 'die')">die</button>
+                        <button type="button" data-article="das" onclick="checkArticleInstant(this, 'das')">das</button>
                     </div>
                 </div>
                 
@@ -1038,14 +1013,74 @@ body {
                         <small>пытка</small>
                     </div>
                     <div class="article-buttons">
-                        <button type="button" data-article="der">der</button>
-                        <button type="button" data-article="die">die</button>
-                        <button type="button" data-article="das">das</button>
+                        <button type="button" data-article="der" onclick="checkArticleInstant(this, 'der')">der</button>
+                        <button type="button" data-article="die" onclick="checkArticleInstant(this, 'die')">die</button>
+                        <button type="button" data-article="das" onclick="checkArticleInstant(this, 'das')">das</button>
+                    </div>
+                </div>
+                
+                <div class="article-item" data-correct="die">
+                    <div class="article-word">
+                        <span class="noun">Gnade</span>
+                        <small>милость</small>
+                    </div>
+                    <div class="article-buttons">
+                        <button type="button" data-article="der" onclick="checkArticleInstant(this, 'der')">der</button>
+                        <button type="button" data-article="die" onclick="checkArticleInstant(this, 'die')">die</button>
+                        <button type="button" data-article="das" onclick="checkArticleInstant(this, 'das')">das</button>
+                    </div>
+                </div>
+                
+                <div class="article-item" data-correct="der">
+                    <div class="article-word">
+                        <span class="noun">Verräter</span>
+                        <small>предатель</small>
+                    </div>
+                    <div class="article-buttons">
+                        <button type="button" data-article="der" onclick="checkArticleInstant(this, 'der')">der</button>
+                        <button type="button" data-article="die" onclick="checkArticleInstant(this, 'die')">die</button>
+                        <button type="button" data-article="das" onclick="checkArticleInstant(this, 'das')">das</button>
+                    </div>
+                </div>
+                
+                <div class="article-item" data-correct="das">
+                    <div class="article-word">
+                        <span class="noun">Blut</span>
+                        <small>кровь</small>
+                    </div>
+                    <div class="article-buttons">
+                        <button type="button" data-article="der" onclick="checkArticleInstant(this, 'der')">der</button>
+                        <button type="button" data-article="die" onclick="checkArticleInstant(this, 'die')">die</button>
+                        <button type="button" data-article="das" onclick="checkArticleInstant(this, 'das')">das</button>
+                    </div>
+                </div>
+                
+                <div class="article-item" data-correct="die">
+                    <div class="article-word">
+                        <span class="noun">Augen</span>
+                        <small>глаза</small>
+                    </div>
+                    <div class="article-buttons">
+                        <button type="button" data-article="der" onclick="checkArticleInstant(this, 'der')">der</button>
+                        <button type="button" data-article="die" onclick="checkArticleInstant(this, 'die')">die</button>
+                        <button type="button" data-article="das" onclick="checkArticleInstant(this, 'das')">das</button>
+                    </div>
+                </div>
+                
+                <div class="article-item" data-correct="die">
+                    <div class="article-word">
+                        <span class="noun">Rache</span>
+                        <small>месть</small>
+                    </div>
+                    <div class="article-buttons">
+                        <button type="button" data-article="der" onclick="checkArticleInstant(this, 'der')">der</button>
+                        <button type="button" data-article="die" onclick="checkArticleInstant(this, 'die')">die</button>
+                        <button type="button" data-article="das" onclick="checkArticleInstant(this, 'das')">das</button>
                     </div>
                 </div>
                 
                 </div>
-                <button class="check-btn" data-action="check-articles" type="button">Проверить</button>
+                <!-- Кнопка видалена - миттєва перевірка! -->
             </div>
             
                     </div>
@@ -1104,145 +1139,497 @@ body {
                     <summary>🧠 Викторина по словам</summary>
                     <div class="exercise-content">
                         
-            <div class="exercise-block" id="quiz">
+            <div class="exercise-block quiz-container" id="word-quiz">
                 <h3 class="exercise-title">🧠 Викторина по словам</h3>
-
-                <div class="quiz-question" data-question="0">
-                    <p class="question">Как переводится: <strong>der Verräter</strong>?</p>
-                    <div class="quiz-options">
-                    
-                        <label>
-                            <input type="radio" name="quiz-0" data-correct="false">
-                            <span>кричать</span>
-                        </label>
-                    
-                        <label>
-                            <input type="radio" name="quiz-0" data-correct="true">
-                            <span>предатель</span>
-                        </label>
-                    
-                        <label>
-                            <input type="radio" name="quiz-0" data-correct="false">
-                            <span>жестокий</span>
-                        </label>
-                    
-                        <label>
-                            <input type="radio" name="quiz-0" data-correct="false">
-                            <span>связывать</span>
-                        </label>
-                    
+                
+                <div class="quiz-progress">
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 0%"></div>
+                    </div>
+                    <div class="progress-text">
+                        Правильних: <span id="correct-count">0</span> / <span id="total-count">10</span>
                     </div>
                 </div>
                 
-                <div class="quiz-question" data-question="1">
-                    <p class="question">Как переводится: <strong>die Gnade</strong>?</p>
-                    <div class="quiz-options">
+                <div id="quiz-questions">
                     
-                        <label>
-                            <input type="radio" name="quiz-1" data-correct="false">
-                            <span>месть</span>
-                        </label>
-                    
-                        <label>
-                            <input type="radio" name="quiz-1" data-correct="false">
-                            <span>связывать</span>
-                        </label>
-                    
-                        <label>
-                            <input type="radio" name="quiz-1" data-correct="false">
-                            <span>предатель</span>
-                        </label>
-                    
-                        <label>
-                            <input type="radio" name="quiz-1" data-correct="true">
-                            <span>милость</span>
-                        </label>
-                    
-                    </div>
+            <div class="quiz-question" data-question-id="0" style="display: block;">
+                <div class="quiz-header">
+                    <span class="question-number">Питання 1 з 10</span>
                 </div>
                 
-                <div class="quiz-question" data-question="2">
-                    <p class="question">Как переводится: <strong>blind</strong>?</p>
-                    <div class="quiz-options">
+                <div class="quiz-content">
+                    <h3>Що означає німецьке слово?</h3>
                     
-                        <label>
-                            <input type="radio" name="quiz-2" data-correct="false">
-                            <span>пытка</span>
-                        </label>
+                    <div class="word-display">
+                        <span class="german-word">grausam</span>
+                        <span class="transcription">[ГРАУ-зам]</span>
+                    </div>
                     
-                        <label>
-                            <input type="radio" name="quiz-2" data-correct="false">
-                            <span>связывать</span>
-                        </label>
-                    
-                        <label>
-                            <input type="radio" name="quiz-2" data-correct="true">
-                            <span>слепой</span>
-                        </label>
-                    
-                        <label>
-                            <input type="radio" name="quiz-2" data-correct="false">
-                            <span>кричать</span>
-                        </label>
-                    
+                    <div class="answer-buttons">
+            
+                        <button 
+                            class="answer-btn" 
+                            data-correct="true"
+                            onclick="checkQuizAnswer(this, true)">
+                            жестокий
+                        </button>
+                
+                        <button 
+                            class="answer-btn" 
+                            data-correct="false"
+                            onclick="checkQuizAnswer(this, false)">
+                            вырывать
+                        </button>
+                
+                        <button 
+                            class="answer-btn" 
+                            data-correct="false"
+                            onclick="checkQuizAnswer(this, false)">
+                            кровь
+                        </button>
+                
+                        <button 
+                            class="answer-btn" 
+                            data-correct="false"
+                            onclick="checkQuizAnswer(this, false)">
+                            темнота
+                        </button>
+                
                     </div>
                 </div>
-                
-                <div class="quiz-question" data-question="3">
-                    <p class="question">Как переводится: <strong>die Augen</strong>?</p>
-                    <div class="quiz-options">
-                    
-                        <label>
-                            <input type="radio" name="quiz-3" data-correct="false">
-                            <span>милость</span>
-                        </label>
-                    
-                        <label>
-                            <input type="radio" name="quiz-3" data-correct="true">
-                            <span>глаза</span>
-                        </label>
-                    
-                        <label>
-                            <input type="radio" name="quiz-3" data-correct="false">
-                            <span>месть</span>
-                        </label>
-                    
-                        <label>
-                            <input type="radio" name="quiz-3" data-correct="false">
-                            <span>связывать</span>
-                        </label>
-                    
-                    </div>
+            </div>
+            
+            <div class="quiz-question" data-question-id="1" style="display: none;">
+                <div class="quiz-header">
+                    <span class="question-number">Питання 2 з 10</span>
                 </div>
                 
-                <div class="quiz-question" data-question="4">
-                    <p class="question">Как переводится: <strong>die Rache</strong>?</p>
-                    <div class="quiz-options">
+                <div class="quiz-content">
+                    <h3>Що означає німецьке слово?</h3>
                     
-                        <label>
-                            <input type="radio" name="quiz-4" data-correct="false">
-                            <span>глаза</span>
-                        </label>
+                    <div class="word-display">
+                        <span class="german-word">binden</span>
+                        <span class="transcription">[БИН-ден]</span>
+                    </div>
                     
-                        <label>
-                            <input type="radio" name="quiz-4" data-correct="false">
-                            <span>темнота</span>
-                        </label>
-                    
-                        <label>
-                            <input type="radio" name="quiz-4" data-correct="false">
-                            <span>кричать</span>
-                        </label>
-                    
-                        <label>
-                            <input type="radio" name="quiz-4" data-correct="true">
-                            <span>месть</span>
-                        </label>
-                    
+                    <div class="answer-buttons">
+            
+                        <button 
+                            class="answer-btn" 
+                            data-correct="true"
+                            onclick="checkQuizAnswer(this, true)">
+                            связывать
+                        </button>
+                
+                        <button 
+                            class="answer-btn" 
+                            data-correct="false"
+                            onclick="checkQuizAnswer(this, false)">
+                            предатель
+                        </button>
+                
+                        <button 
+                            class="answer-btn" 
+                            data-correct="false"
+                            onclick="checkQuizAnswer(this, false)">
+                            вырывать
+                        </button>
+                
+                        <button 
+                            class="answer-btn" 
+                            data-correct="false"
+                            onclick="checkQuizAnswer(this, false)">
+                            глаза
+                        </button>
+                
                     </div>
                 </div>
+            </div>
+            
+            <div class="quiz-question" data-question-id="2" style="display: none;">
+                <div class="quiz-header">
+                    <span class="question-number">Питання 3 з 10</span>
+                </div>
                 
-                <button class="check-btn" data-action="check-quiz" type="button">Проверить</button>
+                <div class="quiz-content">
+                    <h3>Що означає німецьке слово?</h3>
+                    
+                    <div class="word-display">
+                        <span class="german-word">der Verräter</span>
+                        <span class="transcription">[дер фер-РЕ-тер]</span>
+                    </div>
+                    
+                    <div class="answer-buttons">
+            
+                        <button 
+                            class="answer-btn" 
+                            data-correct="false"
+                            onclick="checkQuizAnswer(this, false)">
+                            кричать
+                        </button>
+                
+                        <button 
+                            class="answer-btn" 
+                            data-correct="false"
+                            onclick="checkQuizAnswer(this, false)">
+                            месть
+                        </button>
+                
+                        <button 
+                            class="answer-btn" 
+                            data-correct="false"
+                            onclick="checkQuizAnswer(this, false)">
+                            кровь
+                        </button>
+                
+                        <button 
+                            class="answer-btn" 
+                            data-correct="true"
+                            onclick="checkQuizAnswer(this, true)">
+                            предатель
+                        </button>
+                
+                    </div>
+                </div>
+            </div>
+            
+            <div class="quiz-question" data-question-id="3" style="display: none;">
+                <div class="quiz-header">
+                    <span class="question-number">Питання 4 з 10</span>
+                </div>
+                
+                <div class="quiz-content">
+                    <h3>Що означає німецьке слово?</h3>
+                    
+                    <div class="word-display">
+                        <span class="german-word">die Dunkelheit</span>
+                        <span class="transcription">[ди ДУН-кель-хайт]</span>
+                    </div>
+                    
+                    <div class="answer-buttons">
+            
+                        <button 
+                            class="answer-btn" 
+                            data-correct="false"
+                            onclick="checkQuizAnswer(this, false)">
+                            пытка
+                        </button>
+                
+                        <button 
+                            class="answer-btn" 
+                            data-correct="false"
+                            onclick="checkQuizAnswer(this, false)">
+                            вырывать
+                        </button>
+                
+                        <button 
+                            class="answer-btn" 
+                            data-correct="false"
+                            onclick="checkQuizAnswer(this, false)">
+                            месть
+                        </button>
+                
+                        <button 
+                            class="answer-btn" 
+                            data-correct="true"
+                            onclick="checkQuizAnswer(this, true)">
+                            темнота
+                        </button>
+                
+                    </div>
+                </div>
+            </div>
+            
+            <div class="quiz-question" data-question-id="4" style="display: none;">
+                <div class="quiz-header">
+                    <span class="question-number">Питання 5 з 10</span>
+                </div>
+                
+                <div class="quiz-content">
+                    <h3>Що означає німецьке слово?</h3>
+                    
+                    <div class="word-display">
+                        <span class="german-word">ausreißen</span>
+                        <span class="transcription">[АУС-райсен]</span>
+                    </div>
+                    
+                    <div class="answer-buttons">
+            
+                        <button 
+                            class="answer-btn" 
+                            data-correct="false"
+                            onclick="checkQuizAnswer(this, false)">
+                            слепой
+                        </button>
+                
+                        <button 
+                            class="answer-btn" 
+                            data-correct="true"
+                            onclick="checkQuizAnswer(this, true)">
+                            вырывать
+                        </button>
+                
+                        <button 
+                            class="answer-btn" 
+                            data-correct="false"
+                            onclick="checkQuizAnswer(this, false)">
+                            кровь
+                        </button>
+                
+                        <button 
+                            class="answer-btn" 
+                            data-correct="false"
+                            onclick="checkQuizAnswer(this, false)">
+                            жестокий
+                        </button>
+                
+                    </div>
+                </div>
+            </div>
+            
+            <div class="quiz-question" data-question-id="5" style="display: none;">
+                <div class="quiz-header">
+                    <span class="question-number">Питання 6 з 10</span>
+                </div>
+                
+                <div class="quiz-content">
+                    <h3>Що означає німецьке слово?</h3>
+                    
+                    <div class="word-display">
+                        <span class="german-word">die Folter</span>
+                        <span class="transcription">[ди ФОЛТ-ер]</span>
+                    </div>
+                    
+                    <div class="answer-buttons">
+            
+                        <button 
+                            class="answer-btn" 
+                            data-correct="false"
+                            onclick="checkQuizAnswer(this, false)">
+                            жестокий
+                        </button>
+                
+                        <button 
+                            class="answer-btn" 
+                            data-correct="true"
+                            onclick="checkQuizAnswer(this, true)">
+                            пытка
+                        </button>
+                
+                        <button 
+                            class="answer-btn" 
+                            data-correct="false"
+                            onclick="checkQuizAnswer(this, false)">
+                            месть
+                        </button>
+                
+                        <button 
+                            class="answer-btn" 
+                            data-correct="false"
+                            onclick="checkQuizAnswer(this, false)">
+                            связывать
+                        </button>
+                
+                    </div>
+                </div>
+            </div>
+            
+            <div class="quiz-question" data-question-id="6" style="display: none;">
+                <div class="quiz-header">
+                    <span class="question-number">Питання 7 з 10</span>
+                </div>
+                
+                <div class="quiz-content">
+                    <h3>Що означає німецьке слово?</h3>
+                    
+                    <div class="word-display">
+                        <span class="german-word">schreien</span>
+                        <span class="transcription">[ШРАЙ-ен]</span>
+                    </div>
+                    
+                    <div class="answer-buttons">
+            
+                        <button 
+                            class="answer-btn" 
+                            data-correct="true"
+                            onclick="checkQuizAnswer(this, true)">
+                            кричать
+                        </button>
+                
+                        <button 
+                            class="answer-btn" 
+                            data-correct="false"
+                            onclick="checkQuizAnswer(this, false)">
+                            месть
+                        </button>
+                
+                        <button 
+                            class="answer-btn" 
+                            data-correct="false"
+                            onclick="checkQuizAnswer(this, false)">
+                            пытка
+                        </button>
+                
+                        <button 
+                            class="answer-btn" 
+                            data-correct="false"
+                            onclick="checkQuizAnswer(this, false)">
+                            милость
+                        </button>
+                
+                    </div>
+                </div>
+            </div>
+            
+            <div class="quiz-question" data-question-id="7" style="display: none;">
+                <div class="quiz-header">
+                    <span class="question-number">Питання 8 з 10</span>
+                </div>
+                
+                <div class="quiz-content">
+                    <h3>Що означає німецьке слово?</h3>
+                    
+                    <div class="word-display">
+                        <span class="german-word">blind</span>
+                        <span class="transcription">[БЛИНД]</span>
+                    </div>
+                    
+                    <div class="answer-buttons">
+            
+                        <button 
+                            class="answer-btn" 
+                            data-correct="false"
+                            onclick="checkQuizAnswer(this, false)">
+                            кричать
+                        </button>
+                
+                        <button 
+                            class="answer-btn" 
+                            data-correct="false"
+                            onclick="checkQuizAnswer(this, false)">
+                            кровь
+                        </button>
+                
+                        <button 
+                            class="answer-btn" 
+                            data-correct="true"
+                            onclick="checkQuizAnswer(this, true)">
+                            слепой
+                        </button>
+                
+                        <button 
+                            class="answer-btn" 
+                            data-correct="false"
+                            onclick="checkQuizAnswer(this, false)">
+                            вырывать
+                        </button>
+                
+                    </div>
+                </div>
+            </div>
+            
+            <div class="quiz-question" data-question-id="8" style="display: none;">
+                <div class="quiz-header">
+                    <span class="question-number">Питання 9 з 10</span>
+                </div>
+                
+                <div class="quiz-content">
+                    <h3>Що означає німецьке слово?</h3>
+                    
+                    <div class="word-display">
+                        <span class="german-word">das Blut</span>
+                        <span class="transcription">[дас БЛУТ]</span>
+                    </div>
+                    
+                    <div class="answer-buttons">
+            
+                        <button 
+                            class="answer-btn" 
+                            data-correct="false"
+                            onclick="checkQuizAnswer(this, false)">
+                            кричать
+                        </button>
+                
+                        <button 
+                            class="answer-btn" 
+                            data-correct="false"
+                            onclick="checkQuizAnswer(this, false)">
+                            слепой
+                        </button>
+                
+                        <button 
+                            class="answer-btn" 
+                            data-correct="false"
+                            onclick="checkQuizAnswer(this, false)">
+                            пытка
+                        </button>
+                
+                        <button 
+                            class="answer-btn" 
+                            data-correct="true"
+                            onclick="checkQuizAnswer(this, true)">
+                            кровь
+                        </button>
+                
+                    </div>
+                </div>
+            </div>
+            
+            <div class="quiz-question" data-question-id="9" style="display: none;">
+                <div class="quiz-header">
+                    <span class="question-number">Питання 10 з 10</span>
+                </div>
+                
+                <div class="quiz-content">
+                    <h3>Що означає німецьке слово?</h3>
+                    
+                    <div class="word-display">
+                        <span class="german-word">die Gnade</span>
+                        <span class="transcription">[ди ГНА-де]</span>
+                    </div>
+                    
+                    <div class="answer-buttons">
+            
+                        <button 
+                            class="answer-btn" 
+                            data-correct="false"
+                            onclick="checkQuizAnswer(this, false)">
+                            кровь
+                        </button>
+                
+                        <button 
+                            class="answer-btn" 
+                            data-correct="false"
+                            onclick="checkQuizAnswer(this, false)">
+                            слепой
+                        </button>
+                
+                        <button 
+                            class="answer-btn" 
+                            data-correct="false"
+                            onclick="checkQuizAnswer(this, false)">
+                            кричать
+                        </button>
+                
+                        <button 
+                            class="answer-btn" 
+                            data-correct="true"
+                            onclick="checkQuizAnswer(this, true)">
+                            милость
+                        </button>
+                
+                    </div>
+                </div>
+            </div>
+            
+                </div>
+                
+                <div id="quiz-result" style="display: none;">
+                    <h2>Результати вікторини</h2>
+                    <p class="result-text"></p>
+                    <button onclick="restartQuiz()" class="restart-btn">Спробувати знову</button>
+                </div>
             </div>
             
                     </div>
@@ -1290,7 +1677,7 @@ body {
 
                 <div class="sentence-builder">
                     <p class="translation">СВЯЖИТЕ ПРЕДАТЕЛЯ</p>
-                    <div class="word-pool"><span class="draggable" draggable="true">VERRÄTER</span><span class="draggable" draggable="true">BINDET</span><span class="draggable" draggable="true">den</span></div>
+                    <div class="word-pool"><span class="draggable" draggable="true">VERRÄTER</span><span class="draggable" draggable="true">den</span><span class="draggable" draggable="true">BINDET</span></div>
                     <div class="drop-zone" data-correct="BINDET den VERRÄTER">
                         <span class="placeholder">Перетащите слова сюда</span>
                     </div>
@@ -1298,7 +1685,7 @@ body {
                 
                 <div class="sentence-builder">
                     <p class="translation">Его ГЛАЗА увидят МЕСТЬ</p>
-                    <div class="word-pool"><span class="draggable" draggable="true">die</span><span class="draggable" draggable="true">werden</span><span class="draggable" draggable="true">sehen</span><span class="draggable" draggable="true">AUGEN</span><span class="draggable" draggable="true">Seine</span><span class="draggable" draggable="true">RACHE</span></div>
+                    <div class="word-pool"><span class="draggable" draggable="true">AUGEN</span><span class="draggable" draggable="true">werden</span><span class="draggable" draggable="true">die</span><span class="draggable" draggable="true">RACHE</span><span class="draggable" draggable="true">Seine</span><span class="draggable" draggable="true">sehen</span></div>
                     <div class="drop-zone" data-correct="Seine AUGEN werden die RACHE sehen">
                         <span class="placeholder">Перетащите слова сюда</span>
                     </div>

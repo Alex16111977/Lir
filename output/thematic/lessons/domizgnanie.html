@@ -860,88 +860,113 @@ body {
                         
             <div class="exercise-block" id="word-matching">
                 <h3 class="exercise-title">🔗 Подбор слов</h3>
-                <p class="exercise-intro">Соотнесите немецкие слова урока с русскими переводами.</p>
+                <p class="exercise-intro">Нажмите на немецкое слово, затем на его русский перевод. При правильном ответе пара станет зелёной.</p>
+                
+                <!-- Прогрес-бар -->
+                <div class="matching-progress">
+                    <div class="progress-track">
+                        <div class="progress-fill" style="width: 0%"></div>
+                    </div>
+                    <div class="progress-text">0 з 8</div>
+                </div>
+                
                 <div class="matching-container">
                     <div class="words-column">
 
-                <div class="word-item" data-id="0" data-answer="притулок">
-                    <span class="word-main">das Asyl</span>
-                    <small class="word-hint">[дас а-ЗИЛ]</small>
+                <div class="word-item prompt" data-pair-id="0" data-type="prompt" 
+                     onclick="handleWordClick(this, 'prompt')">
+                    <span class="word-main">fortjagen</span>
+                    <small class="word-hint">[ФОРТ-я-ген]</small>
                 </div>
                 
-                <div class="word-item" data-id="1" data-answer="бездомний">
-                    <span class="word-main">obdachlos</span>
-                    <small class="word-hint">[ОБ-дах-лос]</small>
+                <div class="word-item prompt" data-pair-id="1" data-type="prompt" 
+                     onclick="handleWordClick(this, 'prompt')">
+                    <span class="word-main">der Fremde</span>
+                    <small class="word-hint">[дер ФРЕМ-де]</small>
                 </div>
                 
-                <div class="word-item" data-id="2" data-answer="відкинути">
-                    <span class="word-main">verstoßen</span>
-                    <small class="word-hint">[фер-ШТО-сен]</small>
-                </div>
-                
-                <div class="word-item" data-id="3" data-answer="блукати">
-                    <span class="word-main">wandern</span>
-                    <small class="word-hint">[ВАН-дерн]</small>
-                </div>
-                
-                <div class="word-item" data-id="4" data-answer="вигнати">
+                <div class="word-item prompt" data-pair-id="2" data-type="prompt" 
+                     onclick="handleWordClick(this, 'prompt')">
                     <span class="word-main">verbannen</span>
                     <small class="word-hint">[фер-БАН-нен]</small>
                 </div>
                 
-                <div class="word-item" data-id="5" data-answer="дім">
+                <div class="word-item prompt" data-pair-id="3" data-type="prompt" 
+                     onclick="handleWordClick(this, 'prompt')">
+                    <span class="word-main">das Asyl</span>
+                    <small class="word-hint">[дас а-ЗИЛ]</small>
+                </div>
+                
+                <div class="word-item prompt" data-pair-id="4" data-type="prompt" 
+                     onclick="handleWordClick(this, 'prompt')">
+                    <span class="word-main">die Heimat</span>
+                    <small class="word-hint">[ди ХАЙ-мат]</small>
+                </div>
+                
+                <div class="word-item prompt" data-pair-id="5" data-type="prompt" 
+                     onclick="handleWordClick(this, 'prompt')">
                     <span class="word-main">das Zuhause</span>
                     <small class="word-hint">[дас цу-ХАУ-зе]</small>
                 </div>
                 
-                <div class="word-item" data-id="6" data-answer="без дому">
-                    <span class="word-main">heimatlos</span>
-                    <small class="word-hint">[ХАЙ-мат-лос]</small>
-                </div>
-                
-                <div class="word-item" data-id="7" data-answer="заслання">
+                <div class="word-item prompt" data-pair-id="6" data-type="prompt" 
+                     onclick="handleWordClick(this, 'prompt')">
                     <span class="word-main">die Verbannung</span>
                     <small class="word-hint">[ди фер-БА-нунг]</small>
+                </div>
+                
+                <div class="word-item prompt" data-pair-id="7" data-type="prompt" 
+                     onclick="handleWordClick(this, 'prompt')">
+                    <span class="word-main">das Exil</span>
+                    <small class="word-hint">[дас е-КСИЛ]</small>
                 </div>
                 
                     </div>
                     <div class="translations-column">
 
-                <div class="translation-item" data-id="0" data-trans="притулок">
-                    притулок
-                </div>
-                
-                <div class="translation-item" data-id="1" data-trans="вигнати">
-                    вигнати
-                </div>
-                
-                <div class="translation-item" data-id="2" data-trans="дім">
+                <div class="translation-item match" data-pair-id="5" 
+                     data-type="match" onclick="handleWordClick(this, 'match')">
                     дім
                 </div>
                 
-                <div class="translation-item" data-id="3" data-trans="заслання">
+                <div class="translation-item match" data-pair-id="6" 
+                     data-type="match" onclick="handleWordClick(this, 'match')">
                     заслання
                 </div>
                 
-                <div class="translation-item" data-id="4" data-trans="бездомний">
-                    бездомний
+                <div class="translation-item match" data-pair-id="0" 
+                     data-type="match" onclick="handleWordClick(this, 'match')">
+                    прогнати
                 </div>
                 
-                <div class="translation-item" data-id="5" data-trans="відкинути">
-                    відкинути
+                <div class="translation-item match" data-pair-id="7" 
+                     data-type="match" onclick="handleWordClick(this, 'match')">
+                    вигнання
                 </div>
                 
-                <div class="translation-item" data-id="6" data-trans="блукати">
-                    блукати
+                <div class="translation-item match" data-pair-id="1" 
+                     data-type="match" onclick="handleWordClick(this, 'match')">
+                    чужинець
                 </div>
                 
-                <div class="translation-item" data-id="7" data-trans="без дому">
-                    без дому
+                <div class="translation-item match" data-pair-id="3" 
+                     data-type="match" onclick="handleWordClick(this, 'match')">
+                    притулок
+                </div>
+                
+                <div class="translation-item match" data-pair-id="4" 
+                     data-type="match" onclick="handleWordClick(this, 'match')">
+                    батьківщина
+                </div>
+                
+                <div class="translation-item match" data-pair-id="2" 
+                     data-type="match" onclick="handleWordClick(this, 'match')">
+                    вигнати
                 </div>
                 
                     </div>
                 </div>
-                <button class="check-btn" data-action="check-matching" type="button">Проверить</button>
+                <!-- Кнопка видалена - миттєва перевірка! -->
             </div>
             
                     </div>
@@ -955,6 +980,16 @@ body {
             <div class="exercise-block" id="articles">
                 <h3 class="exercise-title">🎯 Артикли и род</h3>
                 <p class="exercise-intro">Выберите правильный артикль для существительных из урока.</p>
+                
+                <!-- Прогрес-бар -->
+                <div class="articles-progress">
+                    <div class="progress-track">
+                        <div class="progress-fill" style="width: 0%"></div>
+                    </div>
+                    <div class="progress-stats">
+                        <span id="articles-correct">0</span> з <span id="articles-total">6</span>
+                    </div>
+                </div>
                 <div class="articles-grid">
 
                 <div class="article-item" data-correct="die">
@@ -963,21 +998,9 @@ body {
                         <small>заслання</small>
                     </div>
                     <div class="article-buttons">
-                        <button type="button" data-article="der">der</button>
-                        <button type="button" data-article="die">die</button>
-                        <button type="button" data-article="das">das</button>
-                    </div>
-                </div>
-                
-                <div class="article-item" data-correct="der">
-                    <div class="article-word">
-                        <span class="noun">Fremde</span>
-                        <small>чужинець</small>
-                    </div>
-                    <div class="article-buttons">
-                        <button type="button" data-article="der">der</button>
-                        <button type="button" data-article="die">die</button>
-                        <button type="button" data-article="das">das</button>
+                        <button type="button" data-article="der" onclick="checkArticleInstant(this, 'der')">der</button>
+                        <button type="button" data-article="die" onclick="checkArticleInstant(this, 'die')">die</button>
+                        <button type="button" data-article="das" onclick="checkArticleInstant(this, 'das')">das</button>
                     </div>
                 </div>
                 
@@ -987,9 +1010,9 @@ body {
                         <small>батьківщина</small>
                     </div>
                     <div class="article-buttons">
-                        <button type="button" data-article="der">der</button>
-                        <button type="button" data-article="die">die</button>
-                        <button type="button" data-article="das">das</button>
+                        <button type="button" data-article="der" onclick="checkArticleInstant(this, 'der')">der</button>
+                        <button type="button" data-article="die" onclick="checkArticleInstant(this, 'die')">die</button>
+                        <button type="button" data-article="das" onclick="checkArticleInstant(this, 'das')">das</button>
                     </div>
                 </div>
                 
@@ -999,9 +1022,9 @@ body {
                         <small>вигнання</small>
                     </div>
                     <div class="article-buttons">
-                        <button type="button" data-article="der">der</button>
-                        <button type="button" data-article="die">die</button>
-                        <button type="button" data-article="das">das</button>
+                        <button type="button" data-article="der" onclick="checkArticleInstant(this, 'der')">der</button>
+                        <button type="button" data-article="die" onclick="checkArticleInstant(this, 'die')">die</button>
+                        <button type="button" data-article="das" onclick="checkArticleInstant(this, 'das')">das</button>
                     </div>
                 </div>
                 
@@ -1011,9 +1034,21 @@ body {
                         <small>притулок</small>
                     </div>
                     <div class="article-buttons">
-                        <button type="button" data-article="der">der</button>
-                        <button type="button" data-article="die">die</button>
-                        <button type="button" data-article="das">das</button>
+                        <button type="button" data-article="der" onclick="checkArticleInstant(this, 'der')">der</button>
+                        <button type="button" data-article="die" onclick="checkArticleInstant(this, 'die')">die</button>
+                        <button type="button" data-article="das" onclick="checkArticleInstant(this, 'das')">das</button>
+                    </div>
+                </div>
+                
+                <div class="article-item" data-correct="der">
+                    <div class="article-word">
+                        <span class="noun">Fremde</span>
+                        <small>чужинець</small>
+                    </div>
+                    <div class="article-buttons">
+                        <button type="button" data-article="der" onclick="checkArticleInstant(this, 'der')">der</button>
+                        <button type="button" data-article="die" onclick="checkArticleInstant(this, 'die')">die</button>
+                        <button type="button" data-article="das" onclick="checkArticleInstant(this, 'das')">das</button>
                     </div>
                 </div>
                 
@@ -1023,14 +1058,14 @@ body {
                         <small>дім</small>
                     </div>
                     <div class="article-buttons">
-                        <button type="button" data-article="der">der</button>
-                        <button type="button" data-article="die">die</button>
-                        <button type="button" data-article="das">das</button>
+                        <button type="button" data-article="der" onclick="checkArticleInstant(this, 'der')">der</button>
+                        <button type="button" data-article="die" onclick="checkArticleInstant(this, 'die')">die</button>
+                        <button type="button" data-article="das" onclick="checkArticleInstant(this, 'das')">das</button>
                     </div>
                 </div>
                 
                 </div>
-                <button class="check-btn" data-action="check-articles" type="button">Проверить</button>
+                <!-- Кнопка видалена - миттєва перевірка! -->
             </div>
             
                     </div>
@@ -1047,22 +1082,11 @@ body {
 
                 <div class="synonym-item">
                     <div class="word-center">
-                        <span class="word-main">trauen</span>
-                        <small>доверять</small>
-                    </div>
-                    <div class="options">
-                        <input type="text" placeholder="Синоним" data-correct="vertrauen" data-hint="доверять">
-                        <input type="text" placeholder="Антоним" data-correct="misstrauen" data-hint="не доверять">
-                    </div>
-                </div>
-                
-                <div class="synonym-item">
-                    <div class="word-center">
-                        <span class="word-main">die Welt</span>
+                        <span class="word-main">der Friede</span>
                         <small>мир</small>
                     </div>
                     <div class="options">
-                        <input type="text" placeholder="Синоним" data-correct="der Friede" data-hint="мир">
+                        <input type="text" placeholder="Синоним" data-correct="die Welt" data-hint="мир">
                         <input type="text" placeholder="Антоним" data-correct="der Krieg" data-hint="война">
                     </div>
                 </div>
@@ -1078,6 +1102,17 @@ body {
                     </div>
                 </div>
                 
+                <div class="synonym-item">
+                    <div class="word-center">
+                        <span class="word-main">trauen</span>
+                        <small>доверять</small>
+                    </div>
+                    <div class="options">
+                        <input type="text" placeholder="Синоним" data-correct="vertrauen" data-hint="доверять">
+                        <input type="text" placeholder="Антоним" data-correct="misstrauen" data-hint="не доверять">
+                    </div>
+                </div>
+                
                 <button class="check-btn" data-action="check-synonyms" type="button">Проверить</button>
             </div>
             
@@ -1089,145 +1124,497 @@ body {
                     <summary>🧠 Викторина по словам</summary>
                     <div class="exercise-content">
                         
-            <div class="exercise-block" id="quiz">
+            <div class="exercise-block quiz-container" id="word-quiz">
                 <h3 class="exercise-title">🧠 Викторина по словам</h3>
-
-                <div class="quiz-question" data-question="0">
-                    <p class="question">Как переводится: <strong>wandern</strong>?</p>
-                    <div class="quiz-options">
-                    
-                        <label>
-                            <input type="radio" name="quiz-0" data-correct="false">
-                            <span>бездомний</span>
-                        </label>
-                    
-                        <label>
-                            <input type="radio" name="quiz-0" data-correct="false">
-                            <span>вигнати</span>
-                        </label>
-                    
-                        <label>
-                            <input type="radio" name="quiz-0" data-correct="true">
-                            <span>блукати</span>
-                        </label>
-                    
-                        <label>
-                            <input type="radio" name="quiz-0" data-correct="false">
-                            <span>вигнання</span>
-                        </label>
-                    
+                
+                <div class="quiz-progress">
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 0%"></div>
+                    </div>
+                    <div class="progress-text">
+                        Правильних: <span id="correct-count">0</span> / <span id="total-count">10</span>
                     </div>
                 </div>
                 
-                <div class="quiz-question" data-question="1">
-                    <p class="question">Как переводится: <strong>verbannen</strong>?</p>
-                    <div class="quiz-options">
+                <div id="quiz-questions">
                     
-                        <label>
-                            <input type="radio" name="quiz-1" data-correct="false">
-                            <span>чужинець</span>
-                        </label>
-                    
-                        <label>
-                            <input type="radio" name="quiz-1" data-correct="false">
-                            <span>заслання</span>
-                        </label>
-                    
-                        <label>
-                            <input type="radio" name="quiz-1" data-correct="true">
-                            <span>вигнати</span>
-                        </label>
-                    
-                        <label>
-                            <input type="radio" name="quiz-1" data-correct="false">
-                            <span>батьківщина</span>
-                        </label>
-                    
-                    </div>
+            <div class="quiz-question" data-question-id="0" style="display: block;">
+                <div class="quiz-header">
+                    <span class="question-number">Питання 1 з 10</span>
                 </div>
                 
-                <div class="quiz-question" data-question="2">
-                    <p class="question">Как переводится: <strong>fortjagen</strong>?</p>
-                    <div class="quiz-options">
+                <div class="quiz-content">
+                    <h3>Що означає німецьке слово?</h3>
                     
-                        <label>
-                            <input type="radio" name="quiz-2" data-correct="false">
-                            <span>відкинути</span>
-                        </label>
+                    <div class="word-display">
+                        <span class="german-word">die Heimat</span>
+                        <span class="transcription">[ди ХАЙ-мат]</span>
+                    </div>
                     
-                        <label>
-                            <input type="radio" name="quiz-2" data-correct="false">
-                            <span>вигнання</span>
-                        </label>
-                    
-                        <label>
-                            <input type="radio" name="quiz-2" data-correct="false">
-                            <span>без дому</span>
-                        </label>
-                    
-                        <label>
-                            <input type="radio" name="quiz-2" data-correct="true">
-                            <span>прогнати</span>
-                        </label>
-                    
+                    <div class="answer-buttons">
+            
+                        <button 
+                            class="answer-btn" 
+                            data-correct="true"
+                            onclick="checkQuizAnswer(this, true)">
+                            батьківщина
+                        </button>
+                
+                        <button 
+                            class="answer-btn" 
+                            data-correct="false"
+                            onclick="checkQuizAnswer(this, false)">
+                            вигнання
+                        </button>
+                
+                        <button 
+                            class="answer-btn" 
+                            data-correct="false"
+                            onclick="checkQuizAnswer(this, false)">
+                            блукати
+                        </button>
+                
+                        <button 
+                            class="answer-btn" 
+                            data-correct="false"
+                            onclick="checkQuizAnswer(this, false)">
+                            прогнати
+                        </button>
+                
                     </div>
                 </div>
-                
-                <div class="quiz-question" data-question="3">
-                    <p class="question">Как переводится: <strong>das Exil</strong>?</p>
-                    <div class="quiz-options">
-                    
-                        <label>
-                            <input type="radio" name="quiz-3" data-correct="false">
-                            <span>вигнати</span>
-                        </label>
-                    
-                        <label>
-                            <input type="radio" name="quiz-3" data-correct="false">
-                            <span>заслання</span>
-                        </label>
-                    
-                        <label>
-                            <input type="radio" name="quiz-3" data-correct="true">
-                            <span>вигнання</span>
-                        </label>
-                    
-                        <label>
-                            <input type="radio" name="quiz-3" data-correct="false">
-                            <span>блукати</span>
-                        </label>
-                    
-                    </div>
+            </div>
+            
+            <div class="quiz-question" data-question-id="1" style="display: none;">
+                <div class="quiz-header">
+                    <span class="question-number">Питання 2 з 10</span>
                 </div>
                 
-                <div class="quiz-question" data-question="4">
-                    <p class="question">Как переводится: <strong>das Zuhause</strong>?</p>
-                    <div class="quiz-options">
+                <div class="quiz-content">
+                    <h3>Що означає німецьке слово?</h3>
                     
-                        <label>
-                            <input type="radio" name="quiz-4" data-correct="false">
-                            <span>без дому</span>
-                        </label>
+                    <div class="word-display">
+                        <span class="german-word">die Verbannung</span>
+                        <span class="transcription">[ди фер-БА-нунг]</span>
+                    </div>
                     
-                        <label>
-                            <input type="radio" name="quiz-4" data-correct="true">
-                            <span>дім</span>
-                        </label>
-                    
-                        <label>
-                            <input type="radio" name="quiz-4" data-correct="false">
-                            <span>заслання</span>
-                        </label>
-                    
-                        <label>
-                            <input type="radio" name="quiz-4" data-correct="false">
-                            <span>прогнати</span>
-                        </label>
-                    
+                    <div class="answer-buttons">
+            
+                        <button 
+                            class="answer-btn" 
+                            data-correct="false"
+                            onclick="checkQuizAnswer(this, false)">
+                            бездомний
+                        </button>
+                
+                        <button 
+                            class="answer-btn" 
+                            data-correct="true"
+                            onclick="checkQuizAnswer(this, true)">
+                            заслання
+                        </button>
+                
+                        <button 
+                            class="answer-btn" 
+                            data-correct="false"
+                            onclick="checkQuizAnswer(this, false)">
+                            блукати
+                        </button>
+                
+                        <button 
+                            class="answer-btn" 
+                            data-correct="false"
+                            onclick="checkQuizAnswer(this, false)">
+                            вигнати
+                        </button>
+                
                     </div>
                 </div>
+            </div>
+            
+            <div class="quiz-question" data-question-id="2" style="display: none;">
+                <div class="quiz-header">
+                    <span class="question-number">Питання 3 з 10</span>
+                </div>
                 
-                <button class="check-btn" data-action="check-quiz" type="button">Проверить</button>
+                <div class="quiz-content">
+                    <h3>Що означає німецьке слово?</h3>
+                    
+                    <div class="word-display">
+                        <span class="german-word">der Fremde</span>
+                        <span class="transcription">[дер ФРЕМ-де]</span>
+                    </div>
+                    
+                    <div class="answer-buttons">
+            
+                        <button 
+                            class="answer-btn" 
+                            data-correct="true"
+                            onclick="checkQuizAnswer(this, true)">
+                            чужинець
+                        </button>
+                
+                        <button 
+                            class="answer-btn" 
+                            data-correct="false"
+                            onclick="checkQuizAnswer(this, false)">
+                            вигнати
+                        </button>
+                
+                        <button 
+                            class="answer-btn" 
+                            data-correct="false"
+                            onclick="checkQuizAnswer(this, false)">
+                            батьківщина
+                        </button>
+                
+                        <button 
+                            class="answer-btn" 
+                            data-correct="false"
+                            onclick="checkQuizAnswer(this, false)">
+                            відкинути
+                        </button>
+                
+                    </div>
+                </div>
+            </div>
+            
+            <div class="quiz-question" data-question-id="3" style="display: none;">
+                <div class="quiz-header">
+                    <span class="question-number">Питання 4 з 10</span>
+                </div>
+                
+                <div class="quiz-content">
+                    <h3>Що означає німецьке слово?</h3>
+                    
+                    <div class="word-display">
+                        <span class="german-word">verstoßen</span>
+                        <span class="transcription">[фер-ШТО-сен]</span>
+                    </div>
+                    
+                    <div class="answer-buttons">
+            
+                        <button 
+                            class="answer-btn" 
+                            data-correct="false"
+                            onclick="checkQuizAnswer(this, false)">
+                            прогнати
+                        </button>
+                
+                        <button 
+                            class="answer-btn" 
+                            data-correct="false"
+                            onclick="checkQuizAnswer(this, false)">
+                            чужинець
+                        </button>
+                
+                        <button 
+                            class="answer-btn" 
+                            data-correct="false"
+                            onclick="checkQuizAnswer(this, false)">
+                            заслання
+                        </button>
+                
+                        <button 
+                            class="answer-btn" 
+                            data-correct="true"
+                            onclick="checkQuizAnswer(this, true)">
+                            відкинути
+                        </button>
+                
+                    </div>
+                </div>
+            </div>
+            
+            <div class="quiz-question" data-question-id="4" style="display: none;">
+                <div class="quiz-header">
+                    <span class="question-number">Питання 5 з 10</span>
+                </div>
+                
+                <div class="quiz-content">
+                    <h3>Що означає німецьке слово?</h3>
+                    
+                    <div class="word-display">
+                        <span class="german-word">heimatlos</span>
+                        <span class="transcription">[ХАЙ-мат-лос]</span>
+                    </div>
+                    
+                    <div class="answer-buttons">
+            
+                        <button 
+                            class="answer-btn" 
+                            data-correct="false"
+                            onclick="checkQuizAnswer(this, false)">
+                            блукати
+                        </button>
+                
+                        <button 
+                            class="answer-btn" 
+                            data-correct="false"
+                            onclick="checkQuizAnswer(this, false)">
+                            чужинець
+                        </button>
+                
+                        <button 
+                            class="answer-btn" 
+                            data-correct="false"
+                            onclick="checkQuizAnswer(this, false)">
+                            бездомний
+                        </button>
+                
+                        <button 
+                            class="answer-btn" 
+                            data-correct="true"
+                            onclick="checkQuizAnswer(this, true)">
+                            без дому
+                        </button>
+                
+                    </div>
+                </div>
+            </div>
+            
+            <div class="quiz-question" data-question-id="5" style="display: none;">
+                <div class="quiz-header">
+                    <span class="question-number">Питання 6 з 10</span>
+                </div>
+                
+                <div class="quiz-content">
+                    <h3>Що означає німецьке слово?</h3>
+                    
+                    <div class="word-display">
+                        <span class="german-word">verbannen</span>
+                        <span class="transcription">[фер-БАН-нен]</span>
+                    </div>
+                    
+                    <div class="answer-buttons">
+            
+                        <button 
+                            class="answer-btn" 
+                            data-correct="false"
+                            onclick="checkQuizAnswer(this, false)">
+                            заслання
+                        </button>
+                
+                        <button 
+                            class="answer-btn" 
+                            data-correct="true"
+                            onclick="checkQuizAnswer(this, true)">
+                            вигнати
+                        </button>
+                
+                        <button 
+                            class="answer-btn" 
+                            data-correct="false"
+                            onclick="checkQuizAnswer(this, false)">
+                            бездомний
+                        </button>
+                
+                        <button 
+                            class="answer-btn" 
+                            data-correct="false"
+                            onclick="checkQuizAnswer(this, false)">
+                            вигнання
+                        </button>
+                
+                    </div>
+                </div>
+            </div>
+            
+            <div class="quiz-question" data-question-id="6" style="display: none;">
+                <div class="quiz-header">
+                    <span class="question-number">Питання 7 з 10</span>
+                </div>
+                
+                <div class="quiz-content">
+                    <h3>Що означає німецьке слово?</h3>
+                    
+                    <div class="word-display">
+                        <span class="german-word">fortjagen</span>
+                        <span class="transcription">[ФОРТ-я-ген]</span>
+                    </div>
+                    
+                    <div class="answer-buttons">
+            
+                        <button 
+                            class="answer-btn" 
+                            data-correct="true"
+                            onclick="checkQuizAnswer(this, true)">
+                            прогнати
+                        </button>
+                
+                        <button 
+                            class="answer-btn" 
+                            data-correct="false"
+                            onclick="checkQuizAnswer(this, false)">
+                            заслання
+                        </button>
+                
+                        <button 
+                            class="answer-btn" 
+                            data-correct="false"
+                            onclick="checkQuizAnswer(this, false)">
+                            батьківщина
+                        </button>
+                
+                        <button 
+                            class="answer-btn" 
+                            data-correct="false"
+                            onclick="checkQuizAnswer(this, false)">
+                            бездомний
+                        </button>
+                
+                    </div>
+                </div>
+            </div>
+            
+            <div class="quiz-question" data-question-id="7" style="display: none;">
+                <div class="quiz-header">
+                    <span class="question-number">Питання 8 з 10</span>
+                </div>
+                
+                <div class="quiz-content">
+                    <h3>Що означає німецьке слово?</h3>
+                    
+                    <div class="word-display">
+                        <span class="german-word">obdachlos</span>
+                        <span class="transcription">[ОБ-дах-лос]</span>
+                    </div>
+                    
+                    <div class="answer-buttons">
+            
+                        <button 
+                            class="answer-btn" 
+                            data-correct="false"
+                            onclick="checkQuizAnswer(this, false)">
+                            заслання
+                        </button>
+                
+                        <button 
+                            class="answer-btn" 
+                            data-correct="true"
+                            onclick="checkQuizAnswer(this, true)">
+                            бездомний
+                        </button>
+                
+                        <button 
+                            class="answer-btn" 
+                            data-correct="false"
+                            onclick="checkQuizAnswer(this, false)">
+                            вигнання
+                        </button>
+                
+                        <button 
+                            class="answer-btn" 
+                            data-correct="false"
+                            onclick="checkQuizAnswer(this, false)">
+                            чужинець
+                        </button>
+                
+                    </div>
+                </div>
+            </div>
+            
+            <div class="quiz-question" data-question-id="8" style="display: none;">
+                <div class="quiz-header">
+                    <span class="question-number">Питання 9 з 10</span>
+                </div>
+                
+                <div class="quiz-content">
+                    <h3>Що означає німецьке слово?</h3>
+                    
+                    <div class="word-display">
+                        <span class="german-word">das Zuhause</span>
+                        <span class="transcription">[дас цу-ХАУ-зе]</span>
+                    </div>
+                    
+                    <div class="answer-buttons">
+            
+                        <button 
+                            class="answer-btn" 
+                            data-correct="false"
+                            onclick="checkQuizAnswer(this, false)">
+                            вигнати
+                        </button>
+                
+                        <button 
+                            class="answer-btn" 
+                            data-correct="true"
+                            onclick="checkQuizAnswer(this, true)">
+                            дім
+                        </button>
+                
+                        <button 
+                            class="answer-btn" 
+                            data-correct="false"
+                            onclick="checkQuizAnswer(this, false)">
+                            заслання
+                        </button>
+                
+                        <button 
+                            class="answer-btn" 
+                            data-correct="false"
+                            onclick="checkQuizAnswer(this, false)">
+                            відкинути
+                        </button>
+                
+                    </div>
+                </div>
+            </div>
+            
+            <div class="quiz-question" data-question-id="9" style="display: none;">
+                <div class="quiz-header">
+                    <span class="question-number">Питання 10 з 10</span>
+                </div>
+                
+                <div class="quiz-content">
+                    <h3>Що означає німецьке слово?</h3>
+                    
+                    <div class="word-display">
+                        <span class="german-word">wandern</span>
+                        <span class="transcription">[ВАН-дерн]</span>
+                    </div>
+                    
+                    <div class="answer-buttons">
+            
+                        <button 
+                            class="answer-btn" 
+                            data-correct="true"
+                            onclick="checkQuizAnswer(this, true)">
+                            блукати
+                        </button>
+                
+                        <button 
+                            class="answer-btn" 
+                            data-correct="false"
+                            onclick="checkQuizAnswer(this, false)">
+                            батьківщина
+                        </button>
+                
+                        <button 
+                            class="answer-btn" 
+                            data-correct="false"
+                            onclick="checkQuizAnswer(this, false)">
+                            заслання
+                        </button>
+                
+                        <button 
+                            class="answer-btn" 
+                            data-correct="false"
+                            onclick="checkQuizAnswer(this, false)">
+                            відкинути
+                        </button>
+                
+                    </div>
+                </div>
+            </div>
+            
+                </div>
+                
+                <div id="quiz-result" style="display: none;">
+                    <h2>Результати вікторини</h2>
+                    <p class="result-text"></p>
+                    <button onclick="restartQuiz()" class="restart-btn">Спробувати знову</button>
+                </div>
             </div>
             
                     </div>
@@ -1275,7 +1662,7 @@ body {
 
                 <div class="sentence-builder">
                     <p class="translation">Где мой дом</p>
-                    <div class="word-pool"><span class="draggable" draggable="true">Zuhause</span><span class="draggable" draggable="true">mein</span><span class="draggable" draggable="true">ist</span><span class="draggable" draggable="true">Wo</span></div>
+                    <div class="word-pool"><span class="draggable" draggable="true">ist</span><span class="draggable" draggable="true">mein</span><span class="draggable" draggable="true">Zuhause</span><span class="draggable" draggable="true">Wo</span></div>
                     <div class="drop-zone" data-correct="Wo ist mein Zuhause">
                         <span class="placeholder">Перетащите слова сюда</span>
                     </div>
@@ -1283,7 +1670,7 @@ body {
                 
                 <div class="sentence-builder">
                     <p class="translation">Я изгоняю тебя</p>
-                    <div class="word-pool"><span class="draggable" draggable="true">Ich</span><span class="draggable" draggable="true">verbanne</span><span class="draggable" draggable="true">dich</span></div>
+                    <div class="word-pool"><span class="draggable" draggable="true">dich</span><span class="draggable" draggable="true">Ich</span><span class="draggable" draggable="true">verbanne</span></div>
                     <div class="drop-zone" data-correct="Ich verbanne dich">
                         <span class="placeholder">Перетащите слова сюда</span>
                     </div>

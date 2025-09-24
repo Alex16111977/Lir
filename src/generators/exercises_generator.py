@@ -223,7 +223,8 @@ class ExercisesGenerator:
         for idx, word in enumerate(sample):
             words_html.append(
                 f"""
-                <div class=\"word-item\" data-id=\"{idx}\" data-answer=\"{escape(word.get('translation', ''))}\">
+                <div class=\"word-item prompt\" data-pair-id=\"{idx}\" data-type=\"prompt\" 
+                     onclick=\"handleWordClick(this, 'prompt')\">
                     <span class=\"word-main\">{escape(word.get('german', ''))}</span>
                     <small class=\"word-hint\">{escape(word.get('transcription', ''))}</small>
                 </div>
@@ -232,27 +233,21 @@ class ExercisesGenerator:
 
         translations_html = []
         for idx, translation in enumerate(translations):
+            # Знайдемо правильний pair-id для цього перекладу
+            correct_pair_id = next((i for i, word in enumerate(sample) 
+                                   if escape(word.get('translation', '')) == translation), 0)
             translations_html.append(
                 f"""
-                <div class=\"translation-item\" data-id=\"{idx}\" data-trans=\"{translation}\">
+                <div class=\"translation-item match\" data-pair-id=\"{correct_pair_id}\" 
+                     data-type=\"match\" onclick=\"handleWordClick(this, 'match')\">
                     {translation}
                 </div>
                 """
             )
 
-        return (
-            "\n            <div class=\"exercise-block\" id=\"word-matching\">\n"
-            "                <h3 class=\"exercise-title\">🔗 Подбор слов</h3>\n"
-            "                <p class=\"exercise-intro\">Соотнесите немецкие слова урока с русскими переводами.</p>\n"
-            "                <div class=\"matching-container\">\n"
-            "                    <div class=\"words-column\">\n"
-            + "".join(words_html)
-            + "\n                    </div>\n                    <div class=\"translations-column\">\n"
-            + "".join(translations_html)
-            + "\n                    </div>\n                </div>\n"
-            "                <button class=\"check-btn\" data-action=\"check-matching\" type=\"button\">Проверить</button>\n"
-            "            </div>\n            "
-        )
+        total_pairs = len(sample)
+
+        return f"""\n            <div class=\"exercise-block\" id=\"word-matching\">\n                <h3 class=\"exercise-title\">🔗 Подбор слов</h3>\n                <p class=\"exercise-intro\">Нажмите на немецкое слово, затем на его русский перевод. При правильном ответе пара станет зелёной.</p>\n                \n                <!-- Прогрес-бар -->\n                <div class=\"matching-progress\">\n                    <div class=\"progress-track\">\n                        <div class=\"progress-fill\" style=\"width: 0%\"></div>\n                    </div>\n                    <div class=\"progress-text\">0 з {total_pairs}</div>\n                </div>\n                \n                <div class=\"matching-container\">\n                    <div class=\"words-column\">\n{"".join(words_html)}\n                    </div>\n                    <div class=\"translations-column\">\n{"".join(translations_html)}\n                    </div>\n                </div>\n                <!-- Кнопка видалена - миттєва перевірка! -->\n            </div>\n            """
 
     def _generate_articles(self, vocabulary: List[Dict[str, Any]]) -> str:
         nouns = []
@@ -284,22 +279,34 @@ class ExercisesGenerator:
                         <small>{escape(item['translation'])}</small>
                     </div>
                     <div class=\"article-buttons\">
-                        <button type=\"button\" data-article=\"der\">der</button>
-                        <button type=\"button\" data-article=\"die\">die</button>
-                        <button type=\"button\" data-article=\"das\">das</button>
+                        <button type=\"button\" data-article=\"der\" onclick=\"checkArticleInstant(this, 'der')\">der</button>
+                        <button type=\"button\" data-article=\"die\" onclick=\"checkArticleInstant(this, 'die')\">die</button>
+                        <button type=\"button\" data-article=\"das\" onclick=\"checkArticleInstant(this, 'das')\">das</button>
                     </div>
                 </div>
                 """
             )
+            
+        total_items = len(sample)
 
         return (
             "\n            <div class=\"exercise-block\" id=\"articles\">\n"
             "                <h3 class=\"exercise-title\">🎯 Артикли и род</h3>\n"
             "                <p class=\"exercise-intro\">Выберите правильный артикль для существительных из урока.</p>\n"
+            f"""                
+                <!-- Прогрес-бар -->
+                <div class=\"articles-progress\">
+                    <div class=\"progress-track\">
+                        <div class=\"progress-fill\" style=\"width: 0%\"></div>
+                    </div>
+                    <div class=\"progress-stats\">
+                        <span id=\"articles-correct\">0</span> з <span id=\"articles-total\">{total_items}</span>
+                    </div>
+                </div>\n"""
             "                <div class=\"articles-grid\">\n"
             + "".join(cards_html)
             + "\n                </div>\n"
-            "                <button class=\"check-btn\" data-action=\"check-articles\" type=\"button\">Проверить</button>\n"
+            "                <!-- Кнопка видалена - миттєва перевірка! -->\n"
             "            </div>\n            "
         )
 
@@ -335,50 +342,85 @@ class ExercisesGenerator:
         )
 
     def _generate_vocabulary_quiz(self, vocabulary: List[Dict[str, Any]]) -> str:
+        """Generate interactive quiz with instant feedback like KingLearComic."""
         selectable = [word for word in vocabulary if word.get("german") and word.get("translation")]
         if not selectable:
             return ""
 
-        questions = random.sample(selectable, min(5, len(selectable)))
-        blocks = []
+        # 10 питань максимум
+        questions = random.sample(selectable, min(10, len(selectable)))
+        questions_html = []
+        
         for idx, word in enumerate(questions):
             correct = word.get("translation", "")
+            # Збираємо дистрактори
             distractors = [w.get("translation", "") for w in selectable if w is not word and w.get("translation")]
             distractors = list({d for d in distractors if d and d != correct})
             random.shuffle(distractors)
             options = [correct] + distractors[:3]
             random.shuffle(options)
 
-            options_html = []
-            for option in options:
-                state = "true" if option == correct else "false"
-                options_html.append(
-                    f"""
-                        <label>
-                            <input type=\"radio\" name=\"quiz-{idx}\" data-correct=\"{state}\">
-                            <span>{escape(option)}</span>
-                        </label>
-                    """
-                )
-
-            blocks.append(
-                f"""
-                <div class=\"quiz-question\" data-question=\"{idx}\">
-                    <p class=\"question\">Как переводится: <strong>{escape(word.get('german', ''))}</strong>?</p>
-                    <div class=\"quiz-options\">
-                    {''.join(options_html)}
+            # HTML для одного питання
+            question_html = f"""
+            <div class="quiz-question" data-question-id="{idx}" style="display: {'block' if idx == 0 else 'none'};">
+                <div class="quiz-header">
+                    <span class="question-number">Питання {idx + 1} з {len(questions)}</span>
+                </div>
+                
+                <div class="quiz-content">
+                    <h3>Що означає німецьке слово?</h3>
+                    
+                    <div class="word-display">
+                        <span class="german-word">{escape(word.get('german', ''))}</span>
+                        <span class="transcription">{escape(word.get('transcription', ''))}</span>
+                    </div>
+                    
+                    <div class="answer-buttons">
+            """
+            
+            # Додаємо кнопки відповідей
+            for opt_idx, option in enumerate(options):
+                is_correct = "true" if option == correct else "false"
+                question_html += f"""
+                        <button 
+                            class="answer-btn" 
+                            data-correct="{is_correct}"
+                            onclick="checkQuizAnswer(this, {is_correct})">
+                            {escape(option)}
+                        </button>
+                """
+            
+            question_html += """
                     </div>
                 </div>
-                """
-            )
-
-        return (
-            "\n            <div class=\"exercise-block\" id=\"quiz\">\n"
-            "                <h3 class=\"exercise-title\">🧠 Викторина по словам</h3>\n"
-            + "".join(blocks)
-            + "\n                <button class=\"check-btn\" data-action=\"check-quiz\" type=\"button\">Проверить</button>\n"
-            "            </div>\n            "
-        )
+            </div>
+            """
+            questions_html.append(question_html)
+        
+        return f"""
+            <div class="exercise-block quiz-container" id="word-quiz">
+                <h3 class="exercise-title">🧠 Викторина по словам</h3>
+                
+                <div class="quiz-progress">
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 0%"></div>
+                    </div>
+                    <div class="progress-text">
+                        Правильних: <span id="correct-count">0</span> / <span id="total-count">{len(questions)}</span>
+                    </div>
+                </div>
+                
+                <div id="quiz-questions">
+                    {"" .join(questions_html)}
+                </div>
+                
+                <div id="quiz-result" style="display: none;">
+                    <h2>Результати вікторини</h2>
+                    <p class="result-text"></p>
+                    <button onclick="restartQuiz()" class="restart-btn">Спробувати знову</button>
+                </div>
+            </div>
+            """
 
     def _generate_context_translation(self, vocabulary: List[Dict[str, Any]]) -> str:
         contexts = []

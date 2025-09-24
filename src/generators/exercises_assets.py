@@ -157,16 +157,56 @@ class ExercisesAssetsGenerator:
     background: #eef2ff;
 }
 
+/* Миттєва візуальна реакція */
 .word-item.correct,
 .translation-item.correct {
+    background: linear-gradient(135deg, #22c55e, #16a34a) !important;
+    color: white !important;
+    transform: scale(0.95);
+    opacity: 0.9;
+    pointer-events: none;
     border-color: #10b981;
-    background: #d1fae5;
+    transition: all 0.3s ease;
 }
 
 .word-item.incorrect,
 .translation-item.incorrect {
+    background: linear-gradient(135deg, #ef4444, #dc2626) !important;
+    animation: shake 0.5s;
+    color: white !important;
     border-color: #ef4444;
-    background: #fee2e2;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+/* Прогрес-бар */
+.matching-progress {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.progress-track {
+    height: 8px;
+    background: #e2e8f0;
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 10px 0;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #8b5cf6, #ec4899);
+    transition: width 0.3s ease;
+}
+
+.progress-text {
+    font-weight: 600;
+    color: #4b5563;
+    font-size: 14px;
 }
 
 /* Articles */
@@ -182,7 +222,15 @@ class ExercisesAssetsGenerator:
     padding: 16px;
     text-align: center;
     border: 2px solid transparent;
-    transition: border-color 0.2s ease;
+    transition: all 0.3s ease;
+}
+
+/* Картка слова після правильної відповіді */
+.article-item.completed {
+    background: linear-gradient(135deg, #f0fdf4, #dcfce7) !important;
+    border: 2px solid #22c55e;
+    transform: scale(0.98);
+    transition: all 0.3s ease;
 }
 
 .article-word .noun {
@@ -207,9 +255,14 @@ class ExercisesAssetsGenerator:
     padding: 8px 16px;
     border-radius: 8px;
     background: #f3f4f6;
-    border: 1px solid #d1d5db;
+    border: 2px solid #d1d5db;
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: all 0.3s ease;
+}
+
+.article-buttons button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 .article-buttons button.selected {
@@ -218,15 +271,54 @@ class ExercisesAssetsGenerator:
     border-color: #4f46e5;
 }
 
+/* Кнопка з правильною відповіддю */
 .article-buttons button.correct {
-    background: #10b981;
-    border-color: #059669;
+    background: linear-gradient(135deg, #22c55e, #16a34a) !important;
+    color: white;
+    border-color: #16a34a;
+    transform: scale(1.1);
+    pointer-events: none;
 }
 
+/* Кнопка з неправильною відповіддю */
 .article-buttons button.incorrect {
-    background: #ef4444;
-    border-color: #dc2626;
+    background: linear-gradient(135deg, #ef4444, #dc2626) !important;
     color: white;
+    animation: shake 0.5s;
+}
+
+/* Прогрес-бар для вправи артиклів */
+.articles-progress {
+    margin: 20px 0;
+    padding: 15px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 12px;
+}
+
+.articles-progress .progress-track {
+    height: 10px;
+    background: #e2e8f0;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.articles-progress .progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #8b5cf6, #ec4899);
+    transition: width 0.5s ease;
+}
+
+.articles-progress .progress-stats {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #4b5563;
+}
+
+#articles-correct {
+    color: #22c55e;
+    font-weight: bold;
+    font-size: 18px;
 }
 
 /* Synonyms */
@@ -282,51 +374,207 @@ class ExercisesAssetsGenerator:
     background: #fef2f2;
 }
 
-/* Quiz */
-.quiz-question {
-    background: white;
-    border-radius: 12px;
-    padding: 18px;
-    margin-bottom: 16px;
-    box-shadow: 0 8px 18px rgba(148, 163, 184, 0.18);
+/* Interactive Quiz - KingLearComic style */
+.quiz-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 30px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
 }
 
-.quiz-question .question {
-    margin-bottom: 14px;
+/* Quiz Header */
+.quiz-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.question-number {
+    color: #e0e0e0;
+    font-size: 14px;
+    font-weight: 500;
+    display: inline-block;
+    padding: 5px 15px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 20px;
+}
+
+/* Word Display */
+.quiz-content {
+    text-align: center;
+    padding: 20px;
+}
+
+.quiz-content h3 {
+    color: white;
+    font-size: 22px;
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+.word-display {
+    margin: 30px 0;
+    padding: 25px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+}
+
+.german-word {
+    font-size: 42px;
+    font-weight: bold;
+    color: white;
+    display: block;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.transcription {
     font-size: 18px;
-    color: #1f2937;
+    color: #fafafa;
+    font-style: italic;
+    margin-top: 10px;
+    display: block;
+    opacity: 0.9;
 }
 
-.quiz-options {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+/* Answer Buttons */
+.answer-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-top: 30px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.quiz-options label {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    background: #f9fafb;
-    border-radius: 8px;
-    padding: 10px 12px;
-    border: 2px solid transparent;
+.answer-btn {
+    padding: 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    color: white;
     cursor: pointer;
-    transition: border-color 0.2s ease, background 0.2s ease;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    font-weight: 500;
 }
 
-.quiz-options label.correct {
-    border-color: #10b981;
-    background: #ecfdf5;
+.answer-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
 }
 
-.quiz-options label.incorrect {
-    border-color: #ef4444;
-    background: #fee2e2;
+/* Correct/Incorrect States */
+.answer-btn.correct {
+    background: linear-gradient(135deg, #22c55e, #16a34a) !important;
+    animation: pulse 0.5s;
+    transform: scale(0.98);
 }
 
-.quiz-options input[type="radio"] {
-    accent-color: #6366f1;
+.answer-btn.incorrect {
+    background: linear-gradient(135deg, #ef4444, #dc2626) !important;
+    animation: shake 0.5s;
+}
+
+.answer-btn.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.answer-btn.show-correct {
+    background: linear-gradient(135deg, #22c55e, #16a34a) !important;
+    animation: pulse 0.5s;
+}
+
+/* Quiz Progress Bar */
+.quiz-progress {
+    margin-bottom: 30px;
+}
+
+.quiz-progress .progress-bar {
+    height: 20px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.quiz-progress .progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #22c55e, #16a34a);
+    transition: width 0.5s ease;
+}
+
+.quiz-progress .progress-text {
+    text-align: center;
+    color: white;
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+/* Quiz Results */
+#quiz-result {
+    text-align: center;
+    padding: 40px;
+    animation: fadeIn 0.5s;
+}
+
+#quiz-result h2 {
+    color: white;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.result-text {
+    color: #fafafa;
+    font-size: 20px;
+    margin: 20px 0;
+}
+
+.restart-btn {
+    margin-top: 30px;
+    padding: 15px 40px;
+    font-size: 18px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    font-weight: 600;
+}
+
+.restart-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+/* Animations */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    75% { transform: translateX(10px); }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Context */
@@ -480,55 +728,81 @@ class ExercisesAssetsGenerator:
         }
     }
 
-    // 1. Word matching
-    document.addEventListener('click', function(event) {
-        const wordItem = event.target.closest('.word-item');
-        const translationItem = event.target.closest('.translation-item');
-
-        if (wordItem) {
-            document.querySelectorAll('.word-item').forEach(item => {
-                item.classList.remove('selected');
-            });
-            wordItem.classList.add('selected');
-            document.body.dataset.selectedWordId = wordItem.dataset.id;
+    // 1. Word matching with instant feedback
+    let selectedPrompt = null;
+    let selectedMatch = null;
+    let correctPairs = 0;
+    
+    window.handleWordClick = function(element, type) {
+        // Якщо карточка вже правильна - ігнорувати
+        if (element.classList.contains('correct')) return;
+        
+        // Видалити попередній вибір того ж типу
+        document.querySelectorAll(`.word-item.${type}.selected`)
+            .forEach(el => el.classList.remove('selected'));
+        
+        element.classList.add('selected');
+        
+        if (type === 'prompt') {
+            selectedPrompt = element;
+            if (selectedMatch && !selectedMatch.classList.contains('correct')) {
+                checkMatch(selectedPrompt, selectedMatch);
+            }
+        } else {
+            selectedMatch = element;
+            if (selectedPrompt && !selectedPrompt.classList.contains('correct')) {
+                checkMatch(selectedPrompt, selectedMatch);
+            }
         }
-
-        if (translationItem) {
-            const selectedId = document.body.dataset.selectedWordId;
-            if (!selectedId) {
-                return;
+    };
+    
+    function checkMatch(promptCard, matchCard) {
+        const isCorrect = promptCard.dataset.pairId === matchCard.dataset.pairId;
+        
+        if (isCorrect) {
+            // Правильна відповідь
+            promptCard.classList.add('correct');
+            matchCard.classList.add('correct');
+            promptCard.classList.remove('selected');
+            matchCard.classList.remove('selected');
+            
+            correctPairs++;
+            updateProgress();
+            
+            // Перевірка завершення
+            const totalPairs = document.querySelectorAll('#word-matching .word-item.prompt').length;
+            if (correctPairs === totalPairs) {
+                setTimeout(() => {
+                    showResult('Вітаємо! Ви виконали вправу!');
+                }, 500);
             }
-            const word = document.querySelector(`.word-item[data-id="${selectedId}"]`);
-            if (!word) {
-                return;
-            }
-
-            // Remove previous binding for this word
-            if (word.dataset.selectedId) {
-                const previousTranslation = document.querySelector(`.translation-item[data-id="${word.dataset.selectedId}"]`);
-                if (previousTranslation) {
-                    previousTranslation.classList.remove('selected');
-                    delete previousTranslation.dataset.selectedBy;
-                }
-            }
-
-            // If translation already linked to another word - unlink it
-            if (translationItem.dataset.selectedBy) {
-                const previousWord = document.querySelector(`.word-item[data-id="${translationItem.dataset.selectedBy}"]`);
-                if (previousWord) {
-                    delete previousWord.dataset.selectedId;
-                    previousWord.classList.remove('paired');
-                }
-            }
-
-            translationItem.classList.add('selected');
-            translationItem.dataset.selectedBy = selectedId;
-            word.dataset.selectedId = translationItem.dataset.id;
-            word.dataset.selected = translationItem.dataset.trans;
-            word.classList.add('paired');
-            document.body.dataset.selectedWordId = '';
+        } else {
+            // Неправильна відповідь
+            promptCard.classList.add('incorrect');
+            matchCard.classList.add('incorrect');
+            
+            setTimeout(() => {
+                promptCard.classList.remove('incorrect', 'selected');
+                matchCard.classList.remove('incorrect', 'selected');
+            }, 500);
         }
-    });
+        
+        selectedPrompt = null;
+        selectedMatch = null;
+    }
+    
+    function updateProgress() {
+        const progressFill = document.querySelector('#word-matching .progress-fill');
+        const progressText = document.querySelector('#word-matching .progress-text');
+        const totalPairs = document.querySelectorAll('#word-matching .word-item.prompt').length;
+        
+        if (progressFill) {
+            progressFill.style.width = `${(correctPairs/totalPairs)*100}%`;
+        }
+        if (progressText) {
+            progressText.textContent = `${correctPairs} з ${totalPairs}`;
+        }
+    }
 
     document.addEventListener('click', function(event) {
         const action = event.target.closest('[data-action]');
@@ -598,38 +872,86 @@ class ExercisesAssetsGenerator:
         showResult(`Правильно: ${correct} из ${words.length}`);
     }
 
-    // 2. Articles
-    document.addEventListener('click', function(event) {
-        if (!event.target.matches('.article-buttons button')) {
+    // 2. Articles - Миттєва перевірка артиклів
+    let articlesAnswered = 0;
+    let articlesTotal = 0;
+    
+    // Ініціалізація при завантаженні
+    document.addEventListener('DOMContentLoaded', function() {
+        const items = document.querySelectorAll('.article-item');
+        articlesTotal = items.length;
+        const totalElement = document.getElementById('articles-total');
+        if (totalElement) {
+            totalElement.textContent = articlesTotal;
+        }
+    });
+    
+    window.checkArticleInstant = function(button, selectedArticle) {
+        // Отримуємо батьківські елементи
+        const buttonsContainer = button.parentElement;
+        const articleItem = buttonsContainer.parentElement;
+        const correctArticle = articleItem.getAttribute('data-correct');
+        
+        // Перевіряємо чи вже відповідали
+        if (articleItem.classList.contains('completed')) {
             return;
         }
-        const button = event.target;
-        const container = button.closest('.article-buttons');
-        container.querySelectorAll('button').forEach(item => item.classList.remove('selected'));
-        button.classList.add('selected');
-    });
-
-    function checkArticles() {
-        resetClasses('.article-buttons button');
-        const items = document.querySelectorAll('.article-item');
-        let correct = 0;
-
-        items.forEach(item => {
-            const selected = item.querySelector('.article-buttons button.selected');
-            if (!selected) {
-                return;
-            }
-            if (selected.dataset.article === item.dataset.correct) {
-                selected.classList.add('correct');
-                item.classList.add('correct');
-                correct += 1;
-            } else {
-                selected.classList.add('incorrect');
-                item.classList.add('incorrect');
-            }
+        
+        // Видаляємо попередні класи з кнопок
+        buttonsContainer.querySelectorAll('button').forEach(btn => {
+            btn.classList.remove('correct', 'incorrect');
         });
+        
+        if (selectedArticle === correctArticle) {
+            // Правильна відповідь
+            button.classList.add('correct');
+            articleItem.classList.add('completed');
+            articlesAnswered++;
+            
+            // Блокуємо всі кнопки для цього слова
+            buttonsContainer.querySelectorAll('button').forEach(btn => {
+                btn.disabled = true;
+            });
+            
+            // Оновлюємо прогрес
+            updateArticlesProgress();
+            
+            // Перевірка завершення
+            if (articlesAnswered === articlesTotal) {
+                setTimeout(() => {
+                    showResult('Вітаємо! Ви правильно визначили всі артиклі! 🎉');
+                }, 500);
+            }
+        } else {
+            // Неправильна відповідь
+            button.classList.add('incorrect');
+            
+            // Прибираємо червоний колір через 500мс
+            setTimeout(() => {
+                button.classList.remove('incorrect');
+            }, 500);
+        }
+    };
+    
+    function updateArticlesProgress() {
+        // Оновлюємо лічильник
+        const correctElement = document.getElementById('articles-correct');
+        if (correctElement) {
+            correctElement.textContent = articlesAnswered;
+        }
+        
+        // Оновлюємо прогрес-бар
+        const progressFill = document.querySelector('.articles-progress .progress-fill');
+        if (progressFill) {
+            const percentage = articlesTotal > 0 ? (articlesAnswered / articlesTotal) * 100 : 0;
+            progressFill.style.width = percentage + '%';
+        }
+    }
 
-        showResult(`Правильно: ${correct} из ${items.length}`);
+    // Стара функція checkArticles більше не потрібна
+    function checkArticles() {
+        // Залишено для сумісності, якщо хтось викличе старий спосіб
+        showResult('Миттєва перевірка вже включена!');
     }
 
     // 3. Synonyms & Antonyms
@@ -654,25 +976,137 @@ class ExercisesAssetsGenerator:
         showResult(`Правильно: ${correct} из ${inputs.length}`);
     }
 
-    // 4. Quiz
-    function checkQuiz() {
-        const questions = document.querySelectorAll('.quiz-question');
-        let correct = 0;
-        questions.forEach(question => {
-            const options = question.querySelectorAll('label');
-            options.forEach(option => option.classList.remove('correct', 'incorrect'));
-            const selected = question.querySelector('input[type="radio"]:checked');
-            if (!selected) {
-                return;
-            }
-            if (selected.dataset.correct === 'true') {
-                selected.parentElement.classList.add('correct');
-                correct += 1;
-            } else {
-                selected.parentElement.classList.add('incorrect');
+    // 4. Interactive Quiz with instant feedback
+    let currentQuestion = 0;
+    let correctAnswers = 0;
+    let totalQuestions = 10;
+    let answeredQuestions = [];
+
+    // Initialize quiz
+    window.checkQuizAnswer = function(button, isCorrect) {
+        // Prevent double clicking
+        if (button.classList.contains('disabled')) return;
+        
+        // Disable all buttons in current question
+        const allButtons = button.parentElement.querySelectorAll('.answer-btn');
+        allButtons.forEach(btn => {
+            btn.classList.add('disabled');
+            // Show correct answer
+            if (btn.dataset.correct === 'true') {
+                btn.classList.add('show-correct');
             }
         });
-        showResult(`Правильно: ${correct} из ${questions.length}`);
+        
+        // Highlight selected button
+        if (isCorrect) {
+            button.classList.add('correct');
+            correctAnswers++;
+        } else {
+            button.classList.add('incorrect');
+        }
+        
+        // Save answer
+        answeredQuestions.push({
+            question: currentQuestion,
+            correct: isCorrect
+        });
+        
+        // Update progress
+        updateQuizProgress();
+        
+        // Auto-advance after 1.5 seconds
+        setTimeout(() => {
+            if (currentQuestion < totalQuestions - 1) {
+                currentQuestion++;
+                showNextQuestion();
+            } else {
+                showQuizResults();
+            }
+        }, 1500);
+    };
+
+    function showNextQuestion() {
+        const questions = document.querySelectorAll('.quiz-question');
+        questions.forEach((q, i) => {
+            q.style.display = i === currentQuestion ? 'block' : 'none';
+        });
+    }
+
+    function updateQuizProgress() {
+        const progressFill = document.querySelector('#word-quiz .progress-fill');
+        const correctCount = document.getElementById('correct-count');
+        const percentage = (answeredQuestions.length / totalQuestions) * 100;
+        
+        if (progressFill) {
+            progressFill.style.width = percentage + '%';
+        }
+        if (correctCount) {
+            correctCount.textContent = correctAnswers;
+        }
+    }
+
+    function showQuizResults() {
+        const questionsDiv = document.getElementById('quiz-questions');
+        const resultDiv = document.getElementById('quiz-result');
+        const resultText = document.querySelector('.result-text');
+        
+        if (questionsDiv) questionsDiv.style.display = 'none';
+        if (resultDiv) resultDiv.style.display = 'block';
+        
+        const percentage = Math.round((correctAnswers / totalQuestions) * 100);
+        let message = '';
+        
+        if (percentage >= 80) {
+            message = `Чудово! Ви відповіли правильно на ${correctAnswers} з ${totalQuestions} питань (${percentage}%) 🎉`;
+        } else if (percentage >= 60) {
+            message = `Добре! Ви відповіли правильно на ${correctAnswers} з ${totalQuestions} питань (${percentage}%) 👍`;
+        } else {
+            message = `Спробуйте ще раз! Ви відповіли правильно на ${correctAnswers} з ${totalQuestions} питань (${percentage}%) 💪`;
+        }
+        
+        if (resultText) {
+            resultText.textContent = message;
+        }
+    }
+
+    window.restartQuiz = function() {
+        currentQuestion = 0;
+        correctAnswers = 0;
+        answeredQuestions = [];
+        
+        // Clear button states
+        document.querySelectorAll('.answer-btn').forEach(btn => {
+            btn.classList.remove('correct', 'incorrect', 'disabled', 'show-correct');
+        });
+        
+        // Reset progress
+        const progressFill = document.querySelector('#word-quiz .progress-fill');
+        if (progressFill) progressFill.style.width = '0%';
+        
+        const correctCount = document.getElementById('correct-count');
+        if (correctCount) correctCount.textContent = '0';
+        
+        // Show first question
+        document.getElementById('quiz-result').style.display = 'none';
+        document.getElementById('quiz-questions').style.display = 'block';
+        showNextQuestion();
+    };
+
+    // Initialize quiz on page load
+    document.addEventListener('DOMContentLoaded', function() {
+        const quizContainer = document.getElementById('word-quiz');
+        if (quizContainer) {
+            const questions = document.querySelectorAll('.quiz-question');
+            totalQuestions = questions.length || 10;
+            const totalCount = document.getElementById('total-count');
+            if (totalCount) totalCount.textContent = totalQuestions;
+        }
+    });
+
+    // Old checkQuiz for compatibility
+    function checkQuiz() {
+        // Compatibility stub
+        showResult('Використовуйте нову інтерактивну вікторину!');
     }
 
     // 5. Context

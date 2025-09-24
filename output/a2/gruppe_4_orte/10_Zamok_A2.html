@@ -1,0 +1,1400 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>📚 СЦЕНА 10: ЗАМОК - СТЕНЫ ВЛАСТИ</title>
+    <style>
+        
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    font-family: 'Georgia', serif;
+    min-height: 100vh;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.scene-moment {
+    background: linear-gradient(135deg, #FFD700, #8B4513);
+    padding: 30px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.scene-moment::before {
+    content: '👑';
+    position: absolute;
+    font-size: 200px;
+    opacity: 0.1;
+    right: -50px;
+    top: -50px;
+    transform: rotate(-15deg);
+}
+
+.scene-moment h1 {
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    margin: 0 0 20px 0;
+    font-size: 2.5em;
+}
+
+.shakespeare-quote {
+    color: #fff;
+    font-style: italic;
+    font-size: 1.3em;
+    margin: 15px 0;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+.emotion-tags {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.emotion-tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.3);
+    padding: 5px 15px;
+    border-radius: 20px;
+    margin: 5px;
+    font-weight: bold;
+    color: white;
+    backdrop-filter: blur(5px);
+}
+
+.section {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.section-title {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.section-number {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.word-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 25px;
+}
+
+.word-card {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transform: translateY(0);
+    transition: transform 0.3s;
+}
+
+.word-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.word-german {
+    font-size: 2em;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    margin-bottom: 10px;
+}
+
+.word-transcription {
+    color: #fff;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    opacity: 0.9;
+}
+
+.word-russian {
+    color: #fff;
+    font-size: 1.3em;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.word-type {
+    display: inline-block;
+    background: rgba(255,255,255,0.3);
+    padding: 3px 10px;
+    border-radius: 10px;
+    color: white;
+    font-size: 0.9em;
+    margin-bottom: 15px;
+}
+
+.character-voice {
+    border-left: 5px solid #764ba2;
+    padding-left: 20px;
+    margin: 20px 0;
+    font-style: italic;
+    background: rgba(255,255,255,0.95);
+    padding: 20px;
+    border-radius: 10px;
+    color: #333;
+}
+
+.gesture-anchor {
+    background: #fff3cd;
+    border: 2px dashed #ffc107;
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 15px 0;
+    color: #333;
+}
+
+.gesture-icon {
+    font-size: 40px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.navigation {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.navigation a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
+    padding: 10px 20px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.navigation a:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+        
+        /* Додаткові стилі для нових розділів */
+        .story-container {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 5px solid #764ba2;
+        }
+        
+        .story-highlight {
+            background: #ffeaa7;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+        
+        .emotional-peak {
+            background: #ff6b6b;
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        
+        .dialogue-practice {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        
+        .dialogue-line {
+            margin-bottom: 25px;
+            padding: 15px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .dialogue-line strong {
+            color: #764ba2;
+            font-size: 1.1em;
+        }
+        
+        .dialogue-line .german {
+            font-size: 1.2em;
+            color: #2c3e50;
+            margin: 10px 0;
+        }
+        
+        .dialogue-line .russian {
+            color: #7f8c8d;
+            font-style: italic;
+        }
+        
+        .dialogue-line .emotion {
+            margin-top: 10px;
+            color: #e74c3c;
+        }
+        
+        .cheat-sheet-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        
+        .cheat-sheet-table th {
+            background: #764ba2;
+            color: white;
+            padding: 12px;
+            text-align: left;
+        }
+        
+        .cheat-sheet-table td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .memory-trick {
+            background: #fff3cd;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            border: 2px solid #ffc107;
+        }
+        
+        .story-title {
+            color: #764ba2;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+        
+        /* Стилі для кнопки копіювання */
+        .copy-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 15px 25px;
+            border-radius: 25px;
+            font-size: 1.1em;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            transition: all 0.3s;
+            z-index: 1000;
+            font-family: 'Georgia', serif;
+            -webkit-tap-highlight-color: transparent;
+            -webkit-touch-callout: none;
+            touch-action: manipulation;
+        }
+        
+        .copy-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 7px 20px rgba(0,0,0,0.4);
+        }
+        
+        .copy-button:active {
+            transform: scale(0.95);
+        }
+        
+        .copy-button.success {
+            background: linear-gradient(135deg, #00b894, #00cec9);
+        }
+        
+        /* Адаптація для мобільних */
+        @media (max-width: 768px) {
+            .copy-button {
+                top: 10px;
+                right: 10px;
+                padding: 12px 20px;
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Навігація -->
+        <div class="navigation">
+            <a href="../index.html">← К урокам A2</a>
+            <a href="../../index.html">🏠 На главную</a>
+        </div>
+        
+        <!-- Кнопка копіювання -->
+        <button id="copyLessonBtn" class="copy-button" onclick="copyLesson()">
+            📋 Копировать урок
+        </button>
+        
+        <!-- SCENE MOMENT -->
+        <div class="scene-moment">
+            <h1>🏰 📚 СЦЕНА 10: ЗАМОК - СТЕНЫ ВЛАСТИ</h1>
+            <p class="shakespeare-quote">"В этих стенах решаются судьбы королевства..."</p>
+            <div class="emotion-tags">
+                <span class="emotion-tag">⚔️ ВЛАСТЬ</span>
+                <span class="emotion-tag">🛡️ ЗАЩИТА</span>
+                <span class="emotion-tag">👑 ВЕЛИЧИЕ</span>
+            </div>
+        </div>
+        
+        <!-- РОЗДІЛ 1: СЛОВА -->
+        <section class="section">
+            <h2 class="section-title">
+                <span class="section-number">1</span>
+                <span>📚 Слова момента</span>
+            </h2>
+            <div class="word-cards">
+                <div class="word-card">
+                    <div class="word-german">das Schloss</div>
+                    <div class="word-transcription">[дас ШЛОС]</div>
+                    <div class="word-russian">замок</div>
+                    <div class="word-type">существительное</div>
+                    <div class="character-voice">
+                        <strong>Лир:</strong><br/>
+                        "Dieses Schloss gehörte mir"<br/>
+                        (Этот замок принадлежал мне)
+                    </div>
+                    <div class="gesture-anchor">
+                        <span class="gesture-icon">🏰</span>
+                        <div>
+                            <strong>Жест-якорь:</strong> Обводит взглядом<br/>
+                            <strong>Эмоция:</strong> ВЕЛИЧИЕ<br/>
+                            <strong>Ассоциация:</strong> Лир делит свой ЗАМОК между дочерьми в тронном зале
+                        </div>
+                    </div>
+                </div>
+                <div class="word-card">
+                    <div class="word-german">die Mauer</div>
+                    <div class="word-transcription">[ди МАУ-ер]</div>
+                    <div class="word-russian">стена</div>
+                    <div class="word-type">существительное</div>
+                    <div class="character-voice">
+                        <strong>Кент:</strong><br/>
+                        "Diese Mauern haben Ohren"<br/>
+                        (У этих стен есть уши)
+                    </div>
+                    <div class="gesture-anchor">
+                        <span class="gesture-icon">🧱</span>
+                        <div>
+                            <strong>Жест-якорь:</strong> Прикасается к камню<br/>
+                            <strong>Эмоция:</strong> ОПАСНОСТЬ<br/>
+                            <strong>Ассоциация:</strong> За СТЕНАМИ замка Глостера плетутся интриги Эдмунда
+                        </div>
+                    </div>
+                </div>
+                <div class="word-card">
+                    <div class="word-german">das Tor</div>
+                    <div class="word-transcription">[дас ТОР]</div>
+                    <div class="word-russian">ворота</div>
+                    <div class="word-type">существительное</div>
+                    <div class="character-voice">
+                        <strong>Регана:</strong><br/>
+                        "Schließt die Tore vor ihm!"<br/>
+                        (Закройте ворота перед ним!)
+                    </div>
+                    <div class="gesture-anchor">
+                        <span class="gesture-icon">🚪</span>
+                        <div>
+                            <strong>Жест-якорь:</strong> Захлопывает<br/>
+                            <strong>Эмоция:</strong> ЖЕСТОКОСТЬ<br/>
+                            <strong>Ассоциация:</strong> Регана приказывает закрыть ВОРОТА замка перед отцом в бурю
+                        </div>
+                    </div>
+                </div>
+                <div class="word-card">
+                    <div class="word-german">der Turm</div>
+                    <div class="word-transcription">[дер ТУРМ]</div>
+                    <div class="word-russian">башня</div>
+                    <div class="word-type">существительное</div>
+                    <div class="character-voice">
+                        <strong>Глостер:</strong><br/>
+                        "Vom Turm sah ich die Armee"<br/>
+                        (С башни я увидел армию)
+                    </div>
+                    <div class="gesture-anchor">
+                        <span class="gesture-icon">🗼</span>
+                        <div>
+                            <strong>Жест-якорь:</strong> Смотрит вверх<br/>
+                            <strong>Эмоция:</strong> ТРЕВОГА<br/>
+                            <strong>Ассоциация:</strong> С БАШНИ замка видна приближающаяся французская армия
+                        </div>
+                    </div>
+                </div>
+                <div class="word-card">
+                    <div class="word-german">der Saal</div>
+                    <div class="word-transcription">[дер ЗААЛ]</div>
+                    <div class="word-russian">зал</div>
+                    <div class="word-type">существительное</div>
+                    <div class="character-voice">
+                        <strong>Лир:</strong><br/>
+                        "In diesem Saal teilte ich mein Reich"<br/>
+                        (В этом зале я разделил королевство)
+                    </div>
+                    <div class="gesture-anchor">
+                        <span class="gesture-icon">🏛️</span>
+                        <div>
+                            <strong>Жест-якорь:</strong> Широкий жест<br/>
+                            <strong>Эмоция:</strong> ТОРЖЕСТВЕННОСТЬ<br/>
+                            <strong>Ассоциация:</strong> В тронном ЗАЛЕ происходит роковое испытание любви дочерей
+                        </div>
+                    </div>
+                </div>
+                <div class="word-card">
+                    <div class="word-german">die Kammer</div>
+                    <div class="word-transcription">[ди КАМ-мер]</div>
+                    <div class="word-russian">комната, покои</div>
+                    <div class="word-type">существительное</div>
+                    <div class="character-voice">
+                        <strong>Гонерилья:</strong><br/>
+                        "Er bekommt die kleinste Kammer"<br/>
+                        (Он получит самую маленькую комнату)
+                    </div>
+                    <div class="gesture-anchor">
+                        <span class="gesture-icon">🚪</span>
+                        <div>
+                            <strong>Жест-якорь:</strong> Указывает в угол<br/>
+                            <strong>Эмоция:</strong> УНИЖЕНИЕ<br/>
+                            <strong>Ассоциация:</strong> Гонерилья даёт отцу жалкие ПОКОИ вместо королевских
+                        </div>
+                    </div>
+                </div>
+                <div class="word-card">
+                    <div class="word-german">der Thron</div>
+                    <div class="word-transcription">[дер ТРОН]</div>
+                    <div class="word-russian">трон</div>
+                    <div class="word-type">существительное</div>
+                    <div class="character-voice">
+                        <strong>Лир:</strong><br/>
+                        "Ich verlasse meinen Thron"<br/>
+                        (Я покидаю свой трон)
+                    </div>
+                    <div class="gesture-anchor">
+                        <span class="gesture-icon">👑</span>
+                        <div>
+                            <strong>Жест-якорь:</strong> Встаёт с трона<br/>
+                            <strong>Эмоция:</strong> ОТРЕЧЕНИЕ<br/>
+                            <strong>Ассоциация:</strong> Лир добровольно отрекается от ТРОНА в начале пьесы
+                        </div>
+                    </div>
+                </div>
+                <div class="word-card">
+                    <div class="word-german">die Festung</div>
+                    <div class="word-transcription">[ди ФЕСТ-унг]</div>
+                    <div class="word-russian">крепость</div>
+                    <div class="word-type">существительное</div>
+                    <div class="character-voice">
+                        <strong>Эдмунд:</strong><br/>
+                        "Diese Festung wird mir gehören"<br/>
+                        (Эта крепость будет моей)
+                    </div>
+                    <div class="gesture-anchor">
+                        <span class="gesture-icon">🛡️</span>
+                        <div>
+                            <strong>Жест-якорь:</strong> Сжимает кулак<br/>
+                            <strong>Эмоция:</strong> АМБИЦИЯ<br/>
+                            <strong>Ассоциация:</strong> Эдмунд мечтает захватить КРЕПОСТЬ Глостера
+                        </div>
+                    </div>
+                </div>
+                <div class="word-card">
+                    <div class="word-german">der Kerker</div>
+                    <div class="word-transcription">[дер КЕРК-ер]</div>
+                    <div class="word-russian">темница</div>
+                    <div class="word-type">существительное</div>
+                    <div class="character-voice">
+                        <strong>Лир:</strong><br/>
+                        "Im Kerker mit dir wäre das Paradies"<br/>
+                        (В темнице с тобой был бы рай)
+                    </div>
+                    <div class="gesture-anchor">
+                        <span class="gesture-icon">⛓️</span>
+                        <div>
+                            <strong>Жест-якорь:</strong> Обнимает Корделию<br/>
+                            <strong>Эмоция:</strong> ПРИМИРЕНИЕ<br/>
+                            <strong>Ассоциация:</strong> Лир говорит Корделии, что счастлив даже в ТЕМНИЦЕ с ней
+                        </div>
+                    </div>
+                </div>
+                <div class="word-card">
+                    <div class="word-german">die Brücke</div>
+                    <div class="word-transcription">[ди БРЮК-ке]</div>
+                    <div class="word-russian">мост</div>
+                    <div class="word-type">существительное</div>
+                    <div class="character-voice">
+                        <strong>Эдгар:</strong><br/>
+                        "Über diese Brücke fliehe ich"<br/>
+                        (По этому мосту я бегу)
+                    </div>
+                    <div class="gesture-anchor">
+                        <span class="gesture-icon">🌉</span>
+                        <div>
+                            <strong>Жест-якорь:</strong> Перебегает<br/>
+                            <strong>Эмоция:</strong> ПОБЕГ<br/>
+                            <strong>Ассоциация:</strong> Эдгар бежит через МОСТ, спасаясь от преследования
+                        </div>
+                    </div>
+                </div>
+                <div class="word-card">
+                    <div class="word-german">das Fenster</div>
+                    <div class="word-transcription">[дас ФЕН-стер]</div>
+                    <div class="word-russian">окно</div>
+                    <div class="word-type">существительное</div>
+                    <div class="character-voice">
+                        <strong>Шут:</strong><br/>
+                        "Durch dieses Fenster sehe ich die Wahrheit"<br/>
+                        (Через это окно я вижу правду)
+                    </div>
+                    <div class="gesture-anchor">
+                        <span class="gesture-icon">🪟</span>
+                        <div>
+                            <strong>Жест-якорь:</strong> Выглядывает<br/>
+                            <strong>Эмоция:</strong> ПРОНИЦАТЕЛЬНОСТЬ<br/>
+                            <strong>Ассоциация:</strong> Шут смотрит из ОКНА замка на безумие мира
+                        </div>
+                    </div>
+                </div>
+                <div class="word-card">
+                    <div class="word-german">die Treppe</div>
+                    <div class="word-transcription">[ди ТРЕП-пе]</div>
+                    <div class="word-russian">лестница</div>
+                    <div class="word-type">существительное</div>
+                    <div class="character-voice">
+                        <strong>Глостер:</strong><br/>
+                        "Diese Treppe führt zum Verrat"<br/>
+                        (Эта лестница ведёт к предательству)
+                    </div>
+                    <div class="gesture-anchor">
+                        <span class="gesture-icon">🪜</span>
+                        <div>
+                            <strong>Жест-якорь:</strong> Поднимается тяжело<br/>
+                            <strong>Эмоция:</strong> ПРЕДЧУВСТВИЕ<br/>
+                            <strong>Ассоциация:</strong> По ЛЕСТНИЦЕ замка Глостера ведут на пытки
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- РОЗДІЛ 2: ТЕАТРАЛЬНИЙ МОМЕНТ -->
+        <section class="section">
+            <h2 class="section-title">
+                <span class="section-number">2</span>
+                <span>🎭 Театральный момент</span>
+            </h2>
+            <div class="story-container">
+                <h3 class="story-title">ТЕАТРАЛЬНЫЙ МОМЕНТ</h3>
+                <div class="story-text"><p>В величественном <span class="story-highlight">замке</span> начинается трагедия. В тронном <span class="story-highlight">зале</span> старый король отрекается от <span class="story-highlight">трона</span>. Каменные <span class="story-highlight">стены</span> помнят его величие.</p>
+<p>Но теперь <span class="story-highlight">ворота</span> закрываются перед ним. Дочери дают ему жалкие <span class="story-highlight">покои</span> вместо королевских. С <span class="story-highlight">башни</span> уже видна вражеская армия.</p>
+<p>По тайной <span class="story-highlight">лестнице</span> ведут заговорщиков. Через <span class="story-highlight">окно</span> видно, как Эдгар бежит по <span class="story-highlight">мосту</span>. <span class="story-highlight">Крепость</span> становится тюрьмой.</p>
+<p>В финале Лир и Корделия окажутся в <span class="story-highlight">темнице</span>, но даже там старый король найдёт покой рядом с любимой дочерью.</p>
+                </div>
+                <div class="emotional-peak">
+                    Лир у закрытых ворот: 'Дочери мои - не люди, а волчицы!'
+                </div>
+            </div>
+        </section>
+        
+        <!-- РОЗДІЛ 3: ДІАЛОГИ -->
+        <section class="section">
+            <h2 class="section-title">
+                <span class="section-number">3</span>
+                <span>💬 Живые диалоги сцены</span>
+            </h2>
+            <div class="dialogue-practice">
+                <div class="dialogue-line">
+                    <strong>ЛИР (в тронном зале):</strong>
+                    <p class="german">In diesem SCHLOSS, in diesem SAAL, vor meinem THRON - teile ich mein Reich!</p>
+                    <p class="russian">(В этом ЗАМКЕ, в этом ЗАЛЕ, перед моим ТРОНОМ - делю я королевство!)</p>
+                    <p class="emotion">👑 [Торжественно, властно]</p>
+                </div>
+                <div class="dialogue-line">
+                    <strong>РЕГАНА:</strong>
+                    <p class="german">Schließt die TORE! Diese MAUERN sind jetzt meine FESTUNG! Er bekommt keine KAMMER hier!</p>
+                    <p class="russian">(Закройте ВОРОТА! Эти СТЕНЫ теперь моя КРЕПОСТЬ! Он не получит ПОКОЕВ здесь!)</p>
+                    <p class="emotion">😈 [Жестоко, решительно]</p>
+                </div>
+                <div class="dialogue-line">
+                    <strong>ГЛОСТЕР:</strong>
+                    <p class="german">Vom TURM sah ich sie kommen... Diese TREPPE führt zu meinem Untergang...</p>
+                    <p class="russian">(С БАШНИ я видел, как они идут... Эта ЛЕСТНИЦА ведёт к моей погибели...)</p>
+                    <p class="emotion">😰 [Тревожно, обречённо]</p>
+                </div>
+                <div class="dialogue-line">
+                    <strong>ЭДМУНД:</strong>
+                    <p class="german">Dieses SCHLOSS, diese FESTUNG wird mir gehören! Ich werde auf dem THRON sitzen!</p>
+                    <p class="russian">(Этот ЗАМОК, эта КРЕПОСТЬ будут моими! Я буду сидеть на ТРОНЕ!)</p>
+                    <p class="emotion">🔥 [Амбициозно, жадно]</p>
+                </div>
+                <div class="dialogue-line">
+                    <strong>КЕНТ:</strong>
+                    <p class="german">Diese MAUERN haben Ohren... Durch jedes FENSTER spähen Verräter...</p>
+                    <p class="russian">(У этих СТЕН есть уши... Из каждого ОКНА смотрят предатели...)</p>
+                    <p class="emotion">🤫 [Настороженно, предупреждающе]</p>
+                </div>
+                <div class="dialogue-line">
+                    <strong>ЭДГАР (убегая):</strong>
+                    <p class="german">Über die BRÜCKE! Weg von diesem SCHLOSS! Die TORE schließen sich hinter mir!</p>
+                    <p class="russian">(Через МОСТ! Прочь из этого ЗАМКА! ВОРОТА закрываются за мной!)</p>
+                    <p class="emotion">🏃 [В панике, отчаянно]</p>
+                </div>
+                <div class="dialogue-line">
+                    <strong>ЛИР (в темнице):</strong>
+                    <p class="german">Dieser KERKER ist besser als ihr SAAL! Mit dir, Корделия, ist diese KAMMER ein Paradies!</p>
+                    <p class="russian">(Эта ТЕМНИЦА лучше их ЗАЛА! С тобой, Корделия, эти ПОКОИ - рай!)</p>
+                    <p class="emotion">😢 [Нежно, примирённо]</p>
+                </div>
+                <div class="dialogue-line">
+                    <strong>ШУТ:</strong>
+                    <p class="german">Vom FENSTER des TURMS sehe ich: der THRON ist leer, die FESTUNG fällt...</p>
+                    <p class="russian">(Из ОКНА БАШНИ вижу: ТРОН пуст, КРЕПОСТЬ падает...)</p>
+                    <p class="emotion">🎭 [Печально, пророчески]</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- РОЗДІЛ 4: ШПАРГАЛКА -->
+        <section class="section">
+            <h2 class="section-title">
+                <span class="section-number">4</span>
+                <span>📌 Эмоциональная шпаргалка</span>
+            </h2>
+            <div class="cheat-sheet">
+                <h3>ЯКОРЯ ПАМЯТИ</h3>
+                <table class="cheat-sheet-table">
+                    <thead>
+                        <tr>
+                            <th>Немецкий</th>
+                            <th>Русский</th>
+                            <th>Эмоция момента</th>
+                            <th>Жест-якорь</th>
+                            <th>Персонаж</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>das Schloss</strong></td>
+                            <td>замок</td>
+                            <td>ВЕЛИЧИЕ</td>
+                            <td>🏰 Обводит взглядом</td>
+                            <td>Лир</td>
+                        </tr>
+                        <tr>
+                            <td><strong>die Mauer</strong></td>
+                            <td>стена</td>
+                            <td>ОПАСНОСТЬ</td>
+                            <td>🧱 Прикасается к камню</td>
+                            <td>Кент</td>
+                        </tr>
+                        <tr>
+                            <td><strong>das Tor</strong></td>
+                            <td>ворота</td>
+                            <td>ЖЕСТОКОСТЬ</td>
+                            <td>🚪 Захлопывает</td>
+                            <td>Регана</td>
+                        </tr>
+                        <tr>
+                            <td><strong>der Turm</strong></td>
+                            <td>башня</td>
+                            <td>ТРЕВОГА</td>
+                            <td>🗼 Смотрит вверх</td>
+                            <td>Глостер</td>
+                        </tr>
+                        <tr>
+                            <td><strong>der Saal</strong></td>
+                            <td>зал</td>
+                            <td>ТОРЖЕСТВЕННОСТЬ</td>
+                            <td>🏛️ Широкий жест</td>
+                            <td>Лир</td>
+                        </tr>
+                        <tr>
+                            <td><strong>die Kammer</strong></td>
+                            <td>комната, покои</td>
+                            <td>УНИЖЕНИЕ</td>
+                            <td>🚪 Указывает в угол</td>
+                            <td>Гонерилья</td>
+                        </tr>
+                        <tr>
+                            <td><strong>der Thron</strong></td>
+                            <td>трон</td>
+                            <td>ОТРЕЧЕНИЕ</td>
+                            <td>👑 Встаёт с трона</td>
+                            <td>Лир</td>
+                        </tr>
+                        <tr>
+                            <td><strong>die Festung</strong></td>
+                            <td>крепость</td>
+                            <td>АМБИЦИЯ</td>
+                            <td>🛡️ Сжимает кулак</td>
+                            <td>Эдмунд</td>
+                        </tr>
+                        <tr>
+                            <td><strong>der Kerker</strong></td>
+                            <td>темница</td>
+                            <td>ПРИМИРЕНИЕ</td>
+                            <td>⛓️ Обнимает Корделию</td>
+                            <td>Лир</td>
+                        </tr>
+                        <tr>
+                            <td><strong>die Brücke</strong></td>
+                            <td>мост</td>
+                            <td>ПОБЕГ</td>
+                            <td>🌉 Перебегает</td>
+                            <td>Эдгар</td>
+                        </tr>
+                        <tr>
+                            <td><strong>das Fenster</strong></td>
+                            <td>окно</td>
+                            <td>ПРОНИЦАТЕЛЬНОСТЬ</td>
+                            <td>🪟 Выглядывает</td>
+                            <td>Шут</td>
+                        </tr>
+                        <tr>
+                            <td><strong>die Treppe</strong></td>
+                            <td>лестница</td>
+                            <td>ПРЕДЧУВСТВИЕ</td>
+                            <td>🪜 Поднимается тяжело</td>
+                            <td>Глостер</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="memory-trick">
+                    💡 <strong>Мастер-трюк запоминания:</strong><br/>
+                    Представь путь по замку: входишь через ВОРОТА в ЗАМОК - 
+                поднимаешься в тронный ЗАЛ к ТРОНУ - смотришь из ОКНА БАШНИ - 
+                спускаешься по ЛЕСТНИЦЕ в ПОКОИ - СТЕНЫ хранят тайны - 
+                бежишь через МОСТ от КРЕПОСТИ - попадаешь в ТЕМНИЦУ.<br/><br/>
+                    <strong>Цепочка эмоций:</strong> Величие → Отречение → Изгнание → Закрытие → Бегство → Заточение<br/><br/>
+                    <strong>Ритуал:</strong> Нарисуй план замка и подпиши каждую часть по-немецки. 
+                Пройди мысленно путь Лира от трона до темницы, 
+                называя каждое место и связанную с ним сцену.
+                </div>
+            </div>
+        </section>
+        <!-- РОЗДІЛ 5: УПРАЖНЕННЯ -->
+        <section class="section">
+            <h2 class="section-title">
+                <span class="section-number">5</span>
+                <span>📝 🎭 Заповніть пропуски в театральній постановці</span>
+            </h2>
+            
+            <div class="exercise-container">
+                <div class="exercise-section">
+                    <div class="exercise-text">
+                        <p>В величественном <span class="story-highlight"><span class="blank" data-hint="замке" data-answer="das Schloss">_______ (замке)</span></span> начинается трагедия. В тронном <span class="story-highlight"><span class="blank" data-hint="зале" data-answer="der Saal">_______ (зале)</span></span> старый король отрекается от <span class="story-highlight"><span class="blank" data-hint="трона" data-answer="der Thron">_______ (трона)</span></span>. Каменные <span class="story-highlight"><span class="blank" data-hint="стены" data-answer="die Mauer">_______ (стены)</span></span> помнят его величие.</p>
+<p>Но теперь <span class="story-highlight"><span class="blank" data-hint="ворота" data-answer="das Tor">_______ (ворота)</span></span> закрываются перед ним. Дочери дают ему жалкие <span class="story-highlight"><span class="blank" data-hint="покои" data-answer="die Kammer">_______ (покои)</span></span> вместо королевских. С <span class="story-highlight"><span class="blank" data-hint="башни" data-answer="der Turm">_______ (башни)</span></span> уже видна вражеская армия.</p>
+<p>По тайной <span class="story-highlight"><span class="blank" data-hint="лестнице" data-answer="die Treppe">_______ (лестнице)</span></span> ведут заговорщиков. Через <span class="story-highlight"><span class="blank" data-hint="окно" data-answer="das Fenster">_______ (окно)</span></span> видно, как Эдгар бежит по <span class="story-highlight"><span class="blank" data-hint="мосту" data-answer="die Brücke">_______ (мосту)</span></span>. <span class="story-highlight"><span class="blank" data-hint="Крепость" data-answer="die Festung">_______ (Крепость)</span></span> становится тюрьмой.</p>
+<p>В финале Лир и Корделия окажутся в <span class="story-highlight"><span class="blank" data-hint="темнице" data-answer="der Kerker">_______ (темнице)</span></span>, но даже там старый король найдёт покой рядом с любимой дочерью.</p>
+                    </div>
+                    
+                    <button class="show-answer-btn" onclick="toggleAnswers(this)" type="button">
+                        Показать ответы
+                    </button>
+                </div>
+            </div>
+        </section>
+        
+        <script>
+            // Відповіді для вправи  
+            const exerciseAnswers = {"замке": "das Schloss", "зале": "der Saal", "трона": "der Thron", "стены": "die Mauer", "ворота": "das Tor", "покои": "die Kammer", "башни": "der Turm", "лестнице": "die Treppe", "окно": "das Fenster", "мосту": "die Brücke", "Крепость": "die Festung", "темнице": "der Kerker"};
+            
+            function toggleAnswers(button) {
+                const blanks = document.querySelectorAll('.blank');
+                const isShowing = button.textContent === 'Скрыть ответы';
+                
+                blanks.forEach(blank => {
+                    const hint = blank.dataset.hint;
+                    const answer = exerciseAnswers[hint];
+                    
+                    if (isShowing) {
+                        blank.innerHTML = `_______ (${hint})`;
+                        blank.classList.remove('filled');
+                    } else {
+                        if (answer) {
+                            blank.innerHTML = `<strong>${answer}</strong>`;
+                            blank.classList.add('filled');
+                        }
+                    }
+                });
+                
+                button.textContent = isShowing ? 'Показать ответы' : 'Скрыть ответы';
+                button.classList.toggle('success');
+            }
+        </script>
+        
+        <!-- НАВІГАЦІЯ ПІСЛЯ УПРАЖНЕННЯ -->
+        <div class="bottom-navigation">
+            <a href="../index.html" class="nav-btn">
+                <span class="nav-icon">📚</span>
+                <span>К урокам</span>
+            </a>
+            <a href="../../index.html" class="nav-btn nav-btn-home">
+                <span class="nav-icon">🏠</span>
+                <span>На главную</span>
+            </a>
+        </div>
+        
+        <style>
+            /* Стилі для упражнення */
+            .exercise-container {
+                margin-top: 30px;
+            }
+            
+            .exercise-section {
+                background: linear-gradient(135deg, #fff9e6 0%, #fff4d6 100%);
+                border: 2px solid #f6ad55;
+                padding: 30px;
+                border-radius: 15px;
+                position: relative;
+            }
+            
+            .exercise-text {
+                color: #4a5568;
+                font-size: 1.15em;
+                line-height: 1.9;
+                text-align: justify;
+                margin-bottom: 25px;
+            }
+            
+            .exercise-text .blank {
+                display: inline-block;
+                min-width: 100px;
+                border-bottom: 2px solid #f6ad55;
+                margin: 0 4px;
+                color: #a0aec0;
+                font-style: italic;
+                font-size: 0.9em;
+                padding: 0 4px;
+                transition: all 0.3s ease;
+            }
+            
+            .exercise-text .blank.filled {
+                color: #d97706;
+                font-weight: 600;
+                font-style: normal;
+                border-bottom-color: #22c55e;
+            }
+            
+            .show-answer-btn {
+                background: linear-gradient(135deg, #f6ad55 0%, #ed8936 100%);
+                color: white;
+                border: none;
+                padding: 18px 36px;
+                border-radius: 12px;
+                font-size: 1.15em;
+                font-weight: 600;
+                cursor: pointer;
+                margin: 0 auto;
+                display: block;
+                transition: all 0.3s ease;
+                box-shadow: 0 4px 12px rgba(237, 137, 54, 0.3);
+                touch-action: manipulation;
+                -webkit-tap-highlight-color: transparent;
+                -webkit-user-select: none;
+                user-select: none;
+                min-height: 56px;
+                min-width: 200px;
+                -webkit-appearance: none;
+                appearance: none;
+            }
+            
+            .show-answer-btn:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 6px 16px rgba(237, 137, 54, 0.4);
+            }
+            
+            .show-answer-btn:active {
+                transform: scale(0.98);
+                box-shadow: 0 2px 8px rgba(237, 137, 54, 0.3);
+            }
+            
+            .show-answer-btn.success {
+                background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+            }
+            
+            /* Навігація після упражнення */
+            .bottom-navigation {
+                margin-top: 50px;
+                padding: 30px 0;
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+                border-top: 2px solid #e2e8f0;
+            }
+            
+            .nav-btn {
+                display: inline-flex;
+                align-items: center;
+                gap: 10px;
+                padding: 15px 30px;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                color: white;
+                text-decoration: none;
+                border-radius: 25px;
+                font-size: 1.1em;
+                font-weight: 600;
+                transition: all 0.3s ease;
+                box-shadow: 0 4px 15px rgba(118, 75, 162, 0.3);
+                touch-action: manipulation;
+                -webkit-tap-highlight-color: transparent;
+                min-height: 56px;
+            }
+            
+            .nav-btn:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 6px 20px rgba(118, 75, 162, 0.4);
+            }
+            
+            .nav-btn:active {
+                transform: scale(0.98);
+            }
+            
+            .nav-btn-home {
+                background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+                box-shadow: 0 4px 15px rgba(245, 87, 108, 0.3);
+            }
+            
+            .nav-btn-home:hover {
+                box-shadow: 0 6px 20px rgba(245, 87, 108, 0.4);
+            }
+            
+            .nav-icon {
+                font-size: 1.3em;
+            }
+            
+            /* Mobile optimizations */
+            @media (max-width: 768px) {
+                .exercise-section {
+                    padding: 20px;
+                }
+                
+                .exercise-text {
+                    font-size: 1.05em;
+                }
+                
+                .exercise-text .blank {
+                    min-width: 80px;
+                }
+                
+                .show-answer-btn {
+                    width: 90%;
+                    max-width: 300px;
+                    padding: 16px 24px;
+                    font-size: 1.1em;
+                }
+                
+                .bottom-navigation {
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 15px;
+                    padding: 20px;
+                }
+                
+                .nav-btn {
+                    width: 90%;
+                    max-width: 300px;
+                    justify-content: center;
+                }
+            }
+            
+            /* iOS specific */
+            @supports (-webkit-touch-callout: none) {
+                .show-answer-btn,
+                .nav-btn {
+                    -webkit-appearance: none;
+                    appearance: none;
+                }
+            }
+        </style>
+        
+        <script>
+        // Device detection
+        const isTouchDevice = ('ontouchstart' in window) || 
+                              (navigator.maxTouchPoints > 0) || 
+                              (navigator.msMaxTouchPoints > 0);
+        
+        // Exercise answers data
+        const exerciseAnswers = {"замке": "das Schloss", "зале": "der Saal", "трона": "der Thron", "стены": "die Mauer", "ворота": "das Tor", "покои": "die Kammer", "башни": "der Turm", "лестнице": "die Treppe", "окно": "das Fenster", "мосту": "die Brücke", "Крепость": "die Festung", "темнице": "der Kerker"};
+        
+        // Function to toggle answers
+        function toggleAnswers(button) {
+            // Prevent double tap
+            if (button.dataset.processing === 'true') return;
+            button.dataset.processing = 'true';
+            
+            const exerciseText = button.parentElement.querySelector('.exercise-text');
+            const blanks = exerciseText.querySelectorAll('.blank');
+            
+            if (button.textContent === 'Показать ответы') {
+                // Show answers
+                blanks.forEach(blank => {
+                    const hint = blank.getAttribute('data-hint');
+                    const answer = exerciseAnswers[hint];
+                    if (answer) {
+                        blank.innerHTML = answer + ' (' + hint + ')';
+                        blank.classList.add('filled');
+                    }
+                });
+                button.textContent = 'Скрыть ответы';
+                button.classList.add('success');
+            } else {
+                // Hide answers
+                blanks.forEach(blank => {
+                    const hint = blank.getAttribute('data-hint');
+                    blank.innerHTML = '_______ (' + hint + ')';
+                    blank.classList.remove('filled');
+                });
+                button.textContent = 'Показать ответы';
+                button.classList.remove('success');
+            }
+            
+            // Haptic feedback for mobile
+            if (navigator.vibrate && isTouchDevice) {
+                navigator.vibrate(15);
+            }
+            
+            // Reset processing flag
+            setTimeout(() => {
+                button.dataset.processing = 'false';
+            }, 300);
+        }
+        
+        // Initialize button handlers
+        document.addEventListener('DOMContentLoaded', function() {
+            const answerBtn = document.querySelector('.show-answer-btn');
+            
+            if (answerBtn) {
+                // Visual feedback for mobile
+                if (isTouchDevice) {
+                    answerBtn.addEventListener('touchstart', function() {
+                        this.style.transform = 'scale(0.98)';
+                        this.style.opacity = '0.9';
+                    });
+                    
+                    answerBtn.addEventListener('touchend', function() {
+                        setTimeout(() => {
+                            this.style.transform = 'scale(1)';
+                            this.style.opacity = '1';
+                        }, 100);
+                    });
+                }
+            }
+            
+            // Navigation buttons mobile support
+            const navBtns = document.querySelectorAll('.nav-btn');
+            navBtns.forEach(btn => {
+                if (isTouchDevice) {
+                    btn.addEventListener('touchstart', function() {
+                        this.style.transform = 'scale(0.98)';
+                    });
+                    
+                    btn.addEventListener('touchend', function() {
+                        this.style.transform = 'scale(1)';
+                    });
+                }
+            });
+        });
+        
+        // Prevent iOS double-tap zoom
+        if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
+            let lastTouchEnd = 0;
+            document.addEventListener('touchend', function(event) {
+                const now = Date.now();
+                if (now - lastTouchEnd <= 300) {
+                    event.preventDefault();
+                }
+                lastTouchEnd = now;
+            }, false);
+        }
+        </script>
+        
+    </div>
+    
+    <!-- JavaScript для копіювання уроку -->
+    <script>
+    function copyLesson() {
+        // Збір всіх даних уроку
+        let lessonContent = '';
+        
+        // Заголовок
+        const titleElement = document.querySelector('.scene-moment h1');
+        if (titleElement) {
+            lessonContent += '=== ' + titleElement.textContent + ' ===\n\n';
+        }
+        
+        // Цитата
+        const quoteElement = document.querySelector('.shakespeare-quote');
+        if (quoteElement) {
+            lessonContent += 'Цитата: ' + quoteElement.textContent + '\n\n';
+        }
+        
+        // Емоції
+        const emotionTags = document.querySelectorAll('.emotion-tag');
+        if (emotionTags.length > 0) {
+            lessonContent += 'Эмоции: ';
+            emotionTags.forEach((tag, index) => {
+                lessonContent += tag.textContent;
+                if (index < emotionTags.length - 1) lessonContent += ', ';
+            });
+            lessonContent += '\n\n';
+        }
+        
+        // Слова
+        lessonContent += '=== СЛОВА МОМЕНТА ===\n\n';
+        const wordCards = document.querySelectorAll('.word-card');
+        wordCards.forEach(card => {
+            const german = card.querySelector('.word-german');
+            const transcription = card.querySelector('.word-transcription');
+            const russian = card.querySelector('.word-russian');
+            const type = card.querySelector('.word-type');
+            
+            if (german) {
+                lessonContent += german.textContent;
+                if (transcription && transcription.textContent) {
+                    lessonContent += ' ' + transcription.textContent;
+                }
+                if (russian) {
+                    lessonContent += ' - ' + russian.textContent;
+                }
+                if (type && type.textContent) {
+                    lessonContent += ' (' + type.textContent + ')';
+                }
+                lessonContent += '\n';
+                
+                // Додаткова інформація
+                const characterVoice = card.querySelector('.character-voice');
+                if (characterVoice) {
+                    lessonContent += '  ' + characterVoice.textContent.replace(/\n/g, ' ').trim() + '\n';
+                }
+                
+                const gesture = card.querySelector('.gesture-anchor');
+                if (gesture) {
+                    lessonContent += '  ' + gesture.textContent.replace(/\n/g, ' ').trim() + '\n';
+                }
+                
+                lessonContent += '\n';
+            }
+        });
+        
+        // Театральний момент
+        const storyTitle = document.querySelector('.story-title');
+        const storyText = document.querySelector('.story-text');
+        if (storyTitle || storyText) {
+            lessonContent += '\n=== ТЕАТРАЛЬНЫЙ МОМЕНТ ===\n\n';
+            if (storyTitle) {
+                lessonContent += storyTitle.textContent + '\n\n';
+            }
+            if (storyText) {
+                lessonContent += storyText.textContent.trim() + '\n';
+            }
+            
+            const emotionalPeak = document.querySelector('.emotional-peak');
+            if (emotionalPeak) {
+                lessonContent += '\nЭмоциональный пик: ' + emotionalPeak.textContent.trim() + '\n';
+            }
+        }
+        
+        // Діалоги
+        const dialogues = document.querySelectorAll('.dialogue-line');
+        if (dialogues.length > 0) {
+            lessonContent += '\n=== ЖИВЫЕ ДИАЛОГИ ===\n\n';
+            dialogues.forEach(dialogue => {
+                const character = dialogue.querySelector('strong');
+                const germanText = dialogue.querySelector('.german');
+                const russianText = dialogue.querySelector('.russian');
+                const emotionText = dialogue.querySelector('.emotion');
+                
+                if (character) {
+                    lessonContent += character.textContent + '\n';
+                }
+                if (germanText) {
+                    lessonContent += germanText.textContent + '\n';
+                }
+                if (russianText) {
+                    lessonContent += russianText.textContent + '\n';
+                }
+                if (emotionText) {
+                    lessonContent += emotionText.textContent + '\n';
+                }
+                lessonContent += '\n';
+            });
+        }
+        
+        // Шпаргалка
+        const cheatSheetTable = document.querySelector('.cheat-sheet-table');
+        if (cheatSheetTable) {
+            lessonContent += '\n=== ЭМОЦИОНАЛЬНАЯ ШПАРГАЛКА ===\n\n';
+            const rows = cheatSheetTable.querySelectorAll('tbody tr');
+            rows.forEach(row => {
+                const cells = row.querySelectorAll('td');
+                if (cells.length >= 5) {
+                    lessonContent += cells[0].textContent + ' - ' + cells[1].textContent;
+                    lessonContent += ' | Эмоция: ' + cells[2].textContent;
+                    lessonContent += ' | Жест: ' + cells[3].textContent;
+                    lessonContent += ' | Персонаж: ' + cells[4].textContent + '\n';
+                }
+            });
+        }
+        
+        // Memory trick
+        const memoryTrick = document.querySelector('.memory-trick');
+        if (memoryTrick) {
+            lessonContent += '\n' + memoryTrick.textContent.trim() + '\n';
+        }
+        
+        // Функція копіювання з підтримкою iOS
+        function copyToClipboard(text) {
+            const btn = document.getElementById('copyLessonBtn');
+            const originalText = btn.textContent;
+            
+            // Спробуємо сучасний метод
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(text).then(() => {
+                    showSuccess();
+                }).catch(() => {
+                    fallbackCopy();
+                });
+            } else {
+                // Fallback для iOS та старих браузерів
+                fallbackCopy();
+            }
+            
+            function fallbackCopy() {
+                // Створюємо textarea
+                const textarea = document.createElement('textarea');
+                textarea.value = text;
+                textarea.style.position = 'fixed';
+                textarea.style.top = '0';
+                textarea.style.left = '0';
+                textarea.style.width = '2em';
+                textarea.style.height = '2em';
+                textarea.style.padding = '0';
+                textarea.style.border = 'none';
+                textarea.style.outline = 'none';
+                textarea.style.boxShadow = 'none';
+                textarea.style.background = 'transparent';
+                textarea.style.fontSize = '16px'; // Запобігає zoom на iOS
+                
+                document.body.appendChild(textarea);
+                
+                // Для iOS потрібен особливий підхід
+                if (navigator.userAgent.match(/ipad|iphone/i)) {
+                    const range = document.createRange();
+                    range.selectNodeContents(textarea);
+                    const selection = window.getSelection();
+                    selection.removeAllRanges();
+                    selection.addRange(range);
+                    textarea.setSelectionRange(0, 999999);
+                } else {
+                    textarea.select();
+                }
+                
+                try {
+                    const successful = document.execCommand('copy');
+                    if (successful) {
+                        showSuccess();
+                    } else {
+                        showManualCopy();
+                    }
+                } catch (err) {
+                    showManualCopy();
+                }
+                
+                document.body.removeChild(textarea);
+            }
+            
+            function showSuccess() {
+                btn.textContent = '✅ Скопировано!';
+                btn.classList.add('success');
+                setTimeout(() => {
+                    btn.textContent = originalText;
+                    btn.classList.remove('success');
+                }, 2000);
+            }
+            
+            function showManualCopy() {
+                // Показуємо текст для ручного копіювання
+                const modal = document.createElement('div');
+                modal.style.cssText = `
+                    position: fixed;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    background: white;
+                    padding: 20px;
+                    border-radius: 10px;
+                    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+                    z-index: 10000;
+                    max-width: 90%;
+                    max-height: 80vh;
+                `;
+                
+                modal.innerHTML = `
+                    <h3 style="margin-top: 0;">Выделите и скопируйте текст:</h3>
+                    <textarea readonly style="
+                        width: 100%;
+                        min-width: 300px;
+                        height: 300px;
+                        padding: 10px;
+                        border: 1px solid #ccc;
+                        border-radius: 5px;
+                        font-size: 14px;
+                        resize: vertical;
+                    ">${text.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</textarea>
+                    <button onclick="this.parentElement.remove()" style="
+                        margin-top: 10px;
+                        padding: 10px 20px;
+                        background: #764ba2;
+                        color: white;
+                        border: none;
+                        border-radius: 5px;
+                        cursor: pointer;
+                        font-size: 16px;
+                    ">Закрыть</button>
+                `;
+                
+                document.body.appendChild(modal);
+                
+                // Автоматично виділяємо текст
+                const textarea = modal.querySelector('textarea');
+                textarea.select();
+                textarea.setSelectionRange(0, 999999);
+            }
+        }
+        
+        copyToClipboard(lessonContent);
+    }
+    </script>
+</body>
+</html>

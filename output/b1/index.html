@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Продвинутый курс B1</title>
+    <style>
+        
+body {
+    font-family: Georgia, serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.header {
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.header h1 {
+    color: white;
+    margin: 0;
+    font-size: 2.5em;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.header p {
+    color: rgba(255,255,255,0.9);
+    margin: 10px 0 0 0;
+    font-size: 1.2em;
+}
+
+.navigation {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.navigation a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
+    padding: 10px 20px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.navigation a:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+.groups {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.group {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
+
+.group-header {
+    background: linear-gradient(135deg, #f093fb, #f5576c);
+    padding: 20px;
+    color: white;
+}
+
+.group-header h2 {
+    margin: 0;
+    font-size: 1.8em;
+}
+
+.group-lessons {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.lesson-card {
+    display: block;
+    padding: 15px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.lesson-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.lesson-number {
+    font-size: 0.9em;
+    opacity: 0.8;
+    margin-bottom: 5px;
+}
+
+.lesson-title {
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="navigation">
+            <a href="../index.html">← На главную</a>
+        </div>
+        
+        <header class="header">
+            <h1>Продвинутый курс B1</h1>
+            <p>15 уроков в курсе</p>
+        </header>
+        
+        <div class="groups">
+            <div class="group">
+                <div class="group-header">
+                    <h2>Группа 1: Королевский двор</h2>
+                </div>
+                <div class="group-lessons">
+                    <a href="gruppe_1_hof/01_Tronnyy_zal_B1.html" class="lesson-card">
+                        <div class="lesson-number">Урок 1</div>
+                        <div class="lesson-title">🏰 🎭 АКТ I, СЦЕНА 1: ТРОННЫЙ ЗАЛ</div>
+                    </a>
+                    <a href="gruppe_1_hof/02_Ispytanie_lyubvi_B1.html" class="lesson-card">
+                        <div class="lesson-number">Урок 2</div>
+                        <div class="lesson-title">💔 🎭 АКТ I, СЦЕНА 2: ИСПЫТАНИЕ ЛЮБВИ</div>
+                    </a>
+                    <a href="gruppe_1_hof/03_Izgnanie_Kordelii_B1.html" class="lesson-card">
+                        <div class="lesson-number">Урок 3</div>
+                        <div class="lesson-title">⚡ 🎭 АКТ I, СЦЕНА 3: ИЗГНАНИЕ КОРДЕЛИИ</div>
+                    </a>
+                </div>
+            </div>
+            <div class="group">
+                <div class="group-header">
+                    <h2>Группа 2: Предательство</h2>
+                </div>
+                <div class="group-lessons">
+                    <a href="gruppe_2_verrat/04_Intriga_Edmunda_B1.html" class="lesson-card">
+                        <div class="lesson-number">Урок 1</div>
+                        <div class="lesson-title">🗡 🎭 АКТ II, СЦЕНА 1: ИНТРИГА ЭДМУНДА</div>
+                    </a>
+                    <a href="gruppe_2_verrat/05_Obman_Glostera_B1.html" class="lesson-card">
+                        <div class="lesson-number">Урок 2</div>
+                        <div class="lesson-title">🎭 🎭 📜 Сцена 5: Обман Глостера</div>
+                    </a>
+                    <a href="gruppe_2_verrat/06_Unizhenie_Lira_B1.html" class="lesson-card">
+                        <div class="lesson-number">Урок 3</div>
+                        <div class="lesson-title">👑 🎭 Сцена 6: Унижение Лира</div>
+                    </a>
+                </div>
+            </div>
+            <div class="group">
+                <div class="group-header">
+                    <h2>Группа 3: Безумие и буря</h2>
+                </div>
+                <div class="group-lessons">
+                    <a href="gruppe_3_wahnsinn/07_Burya_i_bezumie_B1.html" class="lesson-card">
+                        <div class="lesson-number">Урок 1</div>
+                        <div class="lesson-title">⛈️ 🎭 ⛈ Сцена 7: Буря и безумие</div>
+                    </a>
+                    <a href="gruppe_3_wahnsinn/08_Vstrecha_s_Tomom_B1.html" class="lesson-card">
+                        <div class="lesson-number">Урок 2</div>
+                        <div class="lesson-title">🎭 🎭 Сцена 8: Встреча с Эдгаром-Томом</div>
+                    </a>
+                    <a href="gruppe_3_wahnsinn/09_Osleplenie_Glostera_B1.html" class="lesson-card">
+                        <div class="lesson-number">Урок 3</div>
+                        <div class="lesson-title">👁 🎭 Сцена 9: Ослепление Глостера</div>
+                    </a>
+                </div>
+            </div>
+            <div class="group">
+                <div class="group-header">
+                    <h2>Группа 4: Прозрение героев</h2>
+                </div>
+                <div class="group-lessons">
+                    <a href="gruppe_4_erkenntnis/10_Duvrskie_skaly_B1.html" class="lesson-card">
+                        <div class="lesson-number">Урок 1</div>
+                        <div class="lesson-title">🏔️ 🎭 🏔 Сцена 10: Дуврские скалы</div>
+                    </a>
+                    <a href="gruppe_4_erkenntnis/11_Primirenie_s_Kordeliey_B1.html" class="lesson-card">
+                        <div class="lesson-number">Урок 2</div>
+                        <div class="lesson-title">💔 🎭 →❤ Сцена 11: Примирение с Корделией</div>
+                    </a>
+                    <a href="gruppe_4_erkenntnis/12_Prozrenie_Lira_B1.html" class="lesson-card">
+                        <div class="lesson-number">Урок 3</div>
+                        <div class="lesson-title">👁 🎭 Сцена 12: Прозрение Лира</div>
+                    </a>
+                </div>
+            </div>
+            <div class="group">
+                <div class="group-header">
+                    <h2>Группа 5: Трагический финал</h2>
+                </div>
+                <div class="group-lessons">
+                    <a href="gruppe_5_finale/13_Bitva_B1.html" class="lesson-card">
+                        <div class="lesson-number">Урок 1</div>
+                        <div class="lesson-title">⚔ 🎭 Битва</div>
+                    </a>
+                    <a href="gruppe_5_finale/14_Duel_bratev_B1.html" class="lesson-card">
+                        <div class="lesson-number">Урок 2</div>
+                        <div class="lesson-title">⚔ 🎭 Дуэль братьев</div>
+                    </a>
+                    <a href="gruppe_5_finale/15_Smert_Kordelii_i_Lira_B1.html" class="lesson-card">
+                        <div class="lesson-number">Урок 3</div>
+                        <div class="lesson-title">💔 🎭 Смерть Корделии и Лира</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

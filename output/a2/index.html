@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Базовый курс A2</title>
+    <style>
+        
+body {
+    font-family: Georgia, serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.header {
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.header h1 {
+    color: white;
+    margin: 0;
+    font-size: 2.5em;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.header p {
+    color: rgba(255,255,255,0.9);
+    margin: 10px 0 0 0;
+    font-size: 1.2em;
+}
+
+.navigation {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.navigation a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
+    padding: 10px 20px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.navigation a:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+.groups {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.group {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
+
+.group-header {
+    background: linear-gradient(135deg, #f093fb, #f5576c);
+    padding: 20px;
+    color: white;
+}
+
+.group-header h2 {
+    margin: 0;
+    font-size: 1.8em;
+}
+
+.group-lessons {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.lesson-card {
+    display: block;
+    padding: 15px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.lesson-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.lesson-number {
+    font-size: 0.9em;
+    opacity: 0.8;
+    margin-bottom: 5px;
+}
+
+.lesson-title {
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="navigation">
+            <a href="../index.html">← На главную</a>
+        </div>
+        
+        <header class="header">
+            <h1>Базовый курс A2</h1>
+            <p>15 уроков в курсе</p>
+        </header>
+        
+        <div class="groups">
+            <div class="group">
+                <div class="group-header">
+                    <h2>Группа 1: Семейные отношения</h2>
+                </div>
+                <div class="group-lessons">
+                    <a href="gruppe_1_familie/01_Otets_i_docheri_A2.html" class="lesson-card">
+                        <div class="lesson-number">Урок 1</div>
+                        <div class="lesson-title">👨 📚 СЦЕНА 1: ОТЕЦ И ДОЧЕРИ</div>
+                    </a>
+                    <a href="gruppe_1_familie/02_Bratya_A2.html" class="lesson-card">
+                        <div class="lesson-number">Урок 2</div>
+                        <div class="lesson-title">👬 📚 СЦЕНА 2: БРАТЬЯ - ЭДГАР И ЭДМУНД</div>
+                    </a>
+                    <a href="gruppe_1_familie/03_Predatelstvo_semi_A2.html" class="lesson-card">
+                        <div class="lesson-number">Урок 3</div>
+                        <div class="lesson-title">🗡 📚 СЦЕНА 3: ПРЕДАТЕЛЬСТВО СЕМЬИ</div>
+                    </a>
+                </div>
+            </div>
+            <div class="group">
+                <div class="group-header">
+                    <h2>Группа 2: Эмоции героев</h2>
+                </div>
+                <div class="group-lessons">
+                    <a href="gruppe_2_emotionen/04_Gnev_A2.html" class="lesson-card">
+                        <div class="lesson-number">Урок 1</div>
+                        <div class="lesson-title">🔥 📚 СЦЕНА 4: ГНЕВ - ЯРОСТЬ ЛИРА</div>
+                    </a>
+                    <a href="gruppe_2_emotionen/05_Strah_A2.html" class="lesson-card">
+                        <div class="lesson-number">Урок 2</div>
+                        <div class="lesson-title">😨 📚 СЦЕНА 5: СТРАХ - УЖАС В НОЧИ</div>
+                    </a>
+                    <a href="gruppe_2_emotionen/06_Lyubov_A2.html" class="lesson-card">
+                        <div class="lesson-number">Урок 3</div>
+                        <div class="lesson-title">💕 📚 Сцена 6: Любовь в трагедии</div>
+                    </a>
+                </div>
+            </div>
+            <div class="group">
+                <div class="group-header">
+                    <h2>Группа 3: Действия и поступки</h2>
+                </div>
+                <div class="group-lessons">
+                    <a href="gruppe_3_handlungen/07_Puteshestvie_A2.html" class="lesson-card">
+                        <div class="lesson-number">Урок 1</div>
+                        <div class="lesson-title">🚶 📚 СЦЕНА 7: ПУТЕШЕСТВИЕ</div>
+                    </a>
+                    <a href="gruppe_3_handlungen/08_Poisk_A2.html" class="lesson-card">
+                        <div class="lesson-number">Урок 2</div>
+                        <div class="lesson-title">🔍 📚 СЦЕНА 8: ПОИСК</div>
+                    </a>
+                    <a href="gruppe_3_handlungen/09_Pisma_A2.html" class="lesson-card">
+                        <div class="lesson-number">Урок 3</div>
+                        <div class="lesson-title">✉ 📚 СЦЕНА 9: ПИСЬМА - ИНТРИГИ И ПОСЛАНИЯ</div>
+                    </a>
+                </div>
+            </div>
+            <div class="group">
+                <div class="group-header">
+                    <h2>Группа 4: Места событий</h2>
+                </div>
+                <div class="group-lessons">
+                    <a href="gruppe_4_orte/10_Zamok_A2.html" class="lesson-card">
+                        <div class="lesson-number">Урок 1</div>
+                        <div class="lesson-title">🏰 📚 СЦЕНА 10: ЗАМОК - СТЕНЫ ВЛАСТИ</div>
+                    </a>
+                    <a href="gruppe_4_orte/11_Les_A2.html" class="lesson-card">
+                        <div class="lesson-number">Урок 2</div>
+                        <div class="lesson-title">🌲 📚 СЦЕНА 11: ЛЕС - БУРЯ И БЕЗУМИЕ</div>
+                    </a>
+                    <a href="gruppe_4_orte/12_Temnitsa_A2.html" class="lesson-card">
+                        <div class="lesson-number">Урок 3</div>
+                        <div class="lesson-title">⛓ 📚 СЦЕНА 12: ТЕМНИЦА</div>
+                    </a>
+                </div>
+            </div>
+            <div class="group">
+                <div class="group-header">
+                    <h2>Группа 5: Время в пьесе</h2>
+                </div>
+                <div class="group-lessons">
+                    <a href="gruppe_5_zeit/13_Proshloe_A2.html" class="lesson-card">
+                        <div class="lesson-number">Урок 1</div>
+                        <div class="lesson-title">⏳ 📚 СЦЕНА 13: ПРОШЛОЕ</div>
+                    </a>
+                    <a href="gruppe_5_zeit/14_Nastoyashchee_A2.html" class="lesson-card">
+                        <div class="lesson-number">Урок 2</div>
+                        <div class="lesson-title">⚡ 📚 СЦЕНА 14: НАСТОЯЩЕЕ</div>
+                    </a>
+                    <a href="gruppe_5_zeit/15_Budushchee_A2.html" class="lesson-card">
+                        <div class="lesson-number">Урок 3</div>
+                        <div class="lesson-title">🌅 📚 СЦЕНА 15: БУДУЩЕЕ</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

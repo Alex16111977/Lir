@@ -1,0 +1,1407 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>🎭 →❤ Сцена 11: Примирение с Корделией</title>
+    <style>
+        
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    font-family: 'Georgia', serif;
+    min-height: 100vh;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.scene-moment {
+    background: linear-gradient(135deg, #FFD700, #8B4513);
+    padding: 30px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.scene-moment::before {
+    content: '👑';
+    position: absolute;
+    font-size: 200px;
+    opacity: 0.1;
+    right: -50px;
+    top: -50px;
+    transform: rotate(-15deg);
+}
+
+.scene-moment h1 {
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    margin: 0 0 20px 0;
+    font-size: 2.5em;
+}
+
+.shakespeare-quote {
+    color: #fff;
+    font-style: italic;
+    font-size: 1.3em;
+    margin: 15px 0;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+.emotion-tags {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.emotion-tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.3);
+    padding: 5px 15px;
+    border-radius: 20px;
+    margin: 5px;
+    font-weight: bold;
+    color: white;
+    backdrop-filter: blur(5px);
+}
+
+.section {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.section-title {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.section-number {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.word-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 25px;
+}
+
+.word-card {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transform: translateY(0);
+    transition: transform 0.3s;
+}
+
+.word-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.word-german {
+    font-size: 2em;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    margin-bottom: 10px;
+}
+
+.word-transcription {
+    color: #fff;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    opacity: 0.9;
+}
+
+.word-russian {
+    color: #fff;
+    font-size: 1.3em;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.word-type {
+    display: inline-block;
+    background: rgba(255,255,255,0.3);
+    padding: 3px 10px;
+    border-radius: 10px;
+    color: white;
+    font-size: 0.9em;
+    margin-bottom: 15px;
+}
+
+.character-voice {
+    border-left: 5px solid #764ba2;
+    padding-left: 20px;
+    margin: 20px 0;
+    font-style: italic;
+    background: rgba(255,255,255,0.95);
+    padding: 20px;
+    border-radius: 10px;
+    color: #333;
+}
+
+.gesture-anchor {
+    background: #fff3cd;
+    border: 2px dashed #ffc107;
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 15px 0;
+    color: #333;
+}
+
+.gesture-icon {
+    font-size: 40px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.navigation {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.navigation a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
+    padding: 10px 20px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.navigation a:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+        
+        /* Додаткові стилі для нових розділів */
+        .story-container {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 5px solid #764ba2;
+        }
+        
+        .story-highlight {
+            background: #ffeaa7;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+        
+        .emotional-peak {
+            background: #ff6b6b;
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        
+        .dialogue-practice {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        
+        .dialogue-line {
+            margin-bottom: 25px;
+            padding: 15px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .dialogue-line strong {
+            color: #764ba2;
+            font-size: 1.1em;
+        }
+        
+        .dialogue-line .german {
+            font-size: 1.2em;
+            color: #2c3e50;
+            margin: 10px 0;
+        }
+        
+        .dialogue-line .russian {
+            color: #7f8c8d;
+            font-style: italic;
+        }
+        
+        .dialogue-line .emotion {
+            margin-top: 10px;
+            color: #e74c3c;
+        }
+        
+        .cheat-sheet-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        
+        .cheat-sheet-table th {
+            background: #764ba2;
+            color: white;
+            padding: 12px;
+            text-align: left;
+        }
+        
+        .cheat-sheet-table td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .memory-trick {
+            background: #fff3cd;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            border: 2px solid #ffc107;
+        }
+        
+        .story-title {
+            color: #764ba2;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+        
+        /* Стилі для кнопки копіювання */
+        .copy-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 15px 25px;
+            border-radius: 25px;
+            font-size: 1.1em;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            transition: all 0.3s;
+            z-index: 1000;
+            font-family: 'Georgia', serif;
+            -webkit-tap-highlight-color: transparent;
+            -webkit-touch-callout: none;
+            touch-action: manipulation;
+        }
+        
+        .copy-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 7px 20px rgba(0,0,0,0.4);
+        }
+        
+        .copy-button:active {
+            transform: scale(0.95);
+        }
+        
+        .copy-button.success {
+            background: linear-gradient(135deg, #00b894, #00cec9);
+        }
+        
+        /* Адаптація для мобільних */
+        @media (max-width: 768px) {
+            .copy-button {
+                top: 10px;
+                right: 10px;
+                padding: 12px 20px;
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Навігація -->
+        <div class="navigation">
+            <a href="../index.html">← К урокам B1</a>
+            <a href="../../index.html">🏠 На главную</a>
+        </div>
+        
+        <!-- Кнопка копіювання -->
+        <button id="copyLessonBtn" class="copy-button" onclick="copyLesson()">
+            📋 Копировать урок
+        </button>
+        
+        <!-- SCENE MOMENT -->
+        <div class="scene-moment">
+            <h1>💔 🎭 →❤ Сцена 11: Примирение с Корделией</h1>
+            <p class="shakespeare-quote">"Не смейтесь надо мной, ибо, как я человек,
+                Я думаю, эта дама — мое дитя Корделия."</p>
+            <div class="emotion-tags">
+                <span class="emotion-tag">💔 ПРОЩЕНИЕ</span>
+                <span class="emotion-tag">😭 СЛЕЗЫ РАДОСТИ</span>
+                <span class="emotion-tag">🤗 ОБЪЯТИЯ</span>
+                <span class="emotion-tag">💝 ЛЮБОВЬ ОТЦА</span>
+            </div>
+        </div>
+        
+        <!-- РОЗДІЛ 1: СЛОВА -->
+        <section class="section">
+            <h2 class="section-title">
+                <span class="section-number">1</span>
+                <span>📚 Слова момента</span>
+            </h2>
+            <div class="word-cards">
+                <div class="word-card">
+                    <div class="word-german">verzeihen</div>
+                    <div class="word-transcription">[фер-ЦАЙ-ен]</div>
+                    <div class="word-russian">прощать</div>
+                    <div class="word-type">глагол</div>
+                    <div class="character-voice">
+                        <strong>Корделия:</strong><br/>
+                        "Ich verzeihe dir, mein lieber Vater"<br/>
+                        (Я прощаю тебя, мой дорогой отец)
+                    </div>
+                    <div class="gesture-anchor">
+                        <span class="gesture-icon">🤲</span>
+                        <div>
+                            <strong>Жест-якорь:</strong> Нежное прикосновение к щеке отца<br/>
+                            <strong>Эмоция:</strong> МИЛОСЕРДИЕ<br/>
+                            <strong>Ассоциация:</strong> Корделия касается лица спящего Лира
+                        </div>
+                    </div>
+                </div>
+                <div class="word-card">
+                    <div class="word-german">die Tränen</div>
+                    <div class="word-transcription">[ди ТРЕ-нен]</div>
+                    <div class="word-russian">слёзы</div>
+                    <div class="word-type">существительное</div>
+                    <div class="character-voice">
+                        <strong>Лир:</strong><br/>
+                        "Sind das deine Tränen?"<br/>
+                        (Это твои слёзы?)
+                    </div>
+                    <div class="gesture-anchor">
+                        <span class="gesture-icon">😢</span>
+                        <div>
+                            <strong>Жест-якорь:</strong> Дрожащая рука к глазам<br/>
+                            <strong>Эмоция:</strong> РАСТРОГАННОСТЬ<br/>
+                            <strong>Ассоциация:</strong> Лир чувствует влагу на щеках Корделии
+                        </div>
+                    </div>
+                </div>
+                <div class="word-card">
+                    <div class="word-german">umarmen</div>
+                    <div class="word-transcription">[ум-АР-мен]</div>
+                    <div class="word-russian">обнимать</div>
+                    <div class="word-type">глагол</div>
+                    <div class="character-voice">
+                        <strong>Корделия:</strong><br/>
+                        "Lass mich dich umarmen"<br/>
+                        (Позволь мне обнять тебя)
+                    </div>
+                    <div class="gesture-anchor">
+                        <span class="gesture-icon">🤗</span>
+                        <div>
+                            <strong>Жест-якорь:</strong> Раскрытые объятия дочери<br/>
+                            <strong>Эмоция:</strong> ВОССОЕДИНЕНИЕ<br/>
+                            <strong>Ассоциация:</strong> Первое объятие после долгой разлуки
+                        </div>
+                    </div>
+                </div>
+                <div class="word-card">
+                    <div class="word-german">erkennen</div>
+                    <div class="word-transcription">[ер-КЕН-нен]</div>
+                    <div class="word-russian">узнавать</div>
+                    <div class="word-type">глагол</div>
+                    <div class="character-voice">
+                        <strong>Лир:</strong><br/>
+                        "Ich erkenne dich... Корделия?"<br/>
+                        (Я узнаю тебя... Корделия?)
+                    </div>
+                    <div class="gesture-anchor">
+                        <span class="gesture-icon">👁️</span>
+                        <div>
+                            <strong>Жест-якорь:</strong> Пристальный взгляд сквозь туман безумия<br/>
+                            <strong>Эмоция:</strong> ПРОЗРЕНИЕ<br/>
+                            <strong>Ассоциация:</strong> Момент узнавания дочери
+                        </div>
+                    </div>
+                </div>
+                <div class="word-card">
+                    <div class="word-german">die Tochter</div>
+                    <div class="word-transcription">[ди ТОХ-тер]</div>
+                    <div class="word-russian">дочь</div>
+                    <div class="word-type">существительное</div>
+                    <div class="character-voice">
+                        <strong>Лир:</strong><br/>
+                        "Bist du meine Tochter?"<br/>
+                        (Ты моя дочь?)
+                    </div>
+                    <div class="gesture-anchor">
+                        <span class="gesture-icon">👧</span>
+                        <div>
+                            <strong>Жест-якорь:</strong> Неуверенное протягивание руки<br/>
+                            <strong>Эмоция:</strong> СОМНЕНИЕ<br/>
+                            <strong>Ассоциация:</strong> Лир боится поверить своим глазам
+                        </div>
+                    </div>
+                </div>
+                <div class="word-card">
+                    <div class="word-german">die Liebe</div>
+                    <div class="word-transcription">[ди ЛИ-бе]</div>
+                    <div class="word-russian">любовь</div>
+                    <div class="word-type">существительное</div>
+                    <div class="character-voice">
+                        <strong>Корделия:</strong><br/>
+                        "Meine Liebe war immer bei dir"<br/>
+                        (Моя любовь всегда была с тобой)
+                    </div>
+                    <div class="gesture-anchor">
+                        <span class="gesture-icon">❤️</span>
+                        <div>
+                            <strong>Жест-якорь:</strong> Рука на сердце<br/>
+                            <strong>Эмоция:</strong> ПРЕДАННОСТЬ<br/>
+                            <strong>Ассоциация:</strong> Истинная любовь, которую Лир отверг
+                        </div>
+                    </div>
+                </div>
+                <div class="word-card">
+                    <div class="word-german">weinen</div>
+                    <div class="word-transcription">[ВАЙ-нен]</div>
+                    <div class="word-russian">плакать</div>
+                    <div class="word-type">глагол</div>
+                    <div class="character-voice">
+                        <strong>Лир:</strong><br/>
+                        "Ich muss weinen vor Freude"<br/>
+                        (Я должен плакать от радости)
+                    </div>
+                    <div class="gesture-anchor">
+                        <span class="gesture-icon">😭</span>
+                        <div>
+                            <strong>Жест-якорь:</strong> Слёзы стекают по морщинам<br/>
+                            <strong>Эмоция:</strong> ОСВОБОЖДЕНИЕ<br/>
+                            <strong>Ассоциация:</strong> Старый король плачет как ребёнок
+                        </div>
+                    </div>
+                </div>
+                <div class="word-card">
+                    <div class="word-german">die Reue</div>
+                    <div class="word-transcription">[ди РОЙ-е]</div>
+                    <div class="word-russian">раскаяние</div>
+                    <div class="word-type">существительное</div>
+                    <div class="character-voice">
+                        <strong>Лир:</strong><br/>
+                        "Die Reue brennt in meiner Seele"<br/>
+                        (Раскаяние жжёт мою душу)
+                    </div>
+                    <div class="gesture-anchor">
+                        <span class="gesture-icon">🔥</span>
+                        <div>
+                            <strong>Жест-якорь:</strong> Кулак прижат к груди<br/>
+                            <strong>Эмоция:</strong> МУЧЕНИЕ<br/>
+                            <strong>Ассоциация:</strong> Лир осознаёт свою несправедливость
+                        </div>
+                    </div>
+                </div>
+                <div class="word-card">
+                    <div class="word-german">heilen</div>
+                    <div class="word-transcription">[ХАЙ-лен]</div>
+                    <div class="word-russian">исцелять</div>
+                    <div class="word-type">глагол</div>
+                    <div class="character-voice">
+                        <strong>Врач:</strong><br/>
+                        "Die Zeit wird ihn heilen"<br/>
+                        (Время исцелит его)
+                    </div>
+                    <div class="gesture-anchor">
+                        <span class="gesture-icon">🌿</span>
+                        <div>
+                            <strong>Жест-якорь:</strong> Успокаивающее движение рукой<br/>
+                            <strong>Эмоция:</strong> НАДЕЖДА<br/>
+                            <strong>Ассоциация:</strong> Музыка и покой лечат безумие
+                        </div>
+                    </div>
+                </div>
+                <div class="word-card">
+                    <div class="word-german">das Erwachen</div>
+                    <div class="word-transcription">[дас ер-ВА-хен]</div>
+                    <div class="word-russian">пробуждение</div>
+                    <div class="word-type">существительное</div>
+                    <div class="character-voice">
+                        <strong>Лир:</strong><br/>
+                        "Ist das mein Erwachen?"<br/>
+                        (Это моё пробуждение?)
+                    </div>
+                    <div class="gesture-anchor">
+                        <span class="gesture-icon">🌅</span>
+                        <div>
+                            <strong>Жест-якорь:</strong> Медленное поднятие головы<br/>
+                            <strong>Эмоция:</strong> ВОЗВРАЩЕНИЕ<br/>
+                            <strong>Ассоциация:</strong> Лир выходит из тумана безумия
+                        </div>
+                    </div>
+                </div>
+                <div class="word-card">
+                    <div class="word-german">sanft</div>
+                    <div class="word-transcription">[ЗАНФТ]</div>
+                    <div class="word-russian">нежный</div>
+                    <div class="word-type">прилагательное</div>
+                    <div class="character-voice">
+                        <strong>Корделия:</strong><br/>
+                        "Sei sanft zu dir selbst, Vater"<br/>
+                        (Будь нежен к себе, отец)
+                    </div>
+                    <div class="gesture-anchor">
+                        <span class="gesture-icon">🕊️</span>
+                        <div>
+                            <strong>Жест-якорь:</strong> Лёгкое поглаживание по руке<br/>
+                            <strong>Эмоция:</strong> ЗАБОТА<br/>
+                            <strong>Ассоциация:</strong> Корделия успокаивает отца
+                        </div>
+                    </div>
+                </div>
+                <div class="word-card">
+                    <div class="word-german">die Vergebung</div>
+                    <div class="word-transcription">[ди фер-ГЕ-бунг]</div>
+                    <div class="word-russian">прощение</div>
+                    <div class="word-type">существительное</div>
+                    <div class="character-voice">
+                        <strong>Корделия:</strong><br/>
+                        "Du brauchst keine Vergebung, nur Ruhe"<br/>
+                        (Тебе не нужно прощение, только покой)
+                    </div>
+                    <div class="gesture-anchor">
+                        <span class="gesture-icon">✨</span>
+                        <div>
+                            <strong>Жест-якорь:</strong> Благословляющий жест над головой<br/>
+                            <strong>Эмоция:</strong> ОТПУЩЕНИЕ<br/>
+                            <strong>Ассоциация:</strong> Дочь снимает груз вины с отца
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- РОЗДІЛ 2: ТЕАТРАЛЬНИЙ МОМЕНТ -->
+        <section class="section">
+            <h2 class="section-title">
+                <span class="section-number">2</span>
+                <span>🎭 Театральный момент</span>
+            </h2>
+            <div class="story-container">
+                <h3 class="story-title">ПРОБУЖДЕНИЕ ОТ БЕЗУМИЯ</h3>
+                <div class="story-text"><p>🎭 Палатка у французському таборі. <span class="story-highlight">VERZEIHEN (прощати)</span> - це слово висить у повітрі. Корделія схиляється над сплячим батьком, її <span class="story-highlight">TRÄNEN (сльози)</span> падають на його обличчя, як роса милосердя. Тиха музика лунає - арфа та флейта створюють мелодію <span class="story-highlight">HEILEN (зцілення)</span>.</p>
+
+<p>Лір повільно відкриває очі - <span class="story-highlight">DAS ERWACHEN (пробудження)</span> після довгого сну безумства. "Де я? Хто ти?" - шепоче він. <span class="story-highlight">ERKENNEN (впізнавати)</span> - це болісний процес. Його руки тремтять, коли він торкається обличчя <span class="story-highlight">TOCHTER (дочки)</span>. "Ти дух? Ти не можеш бути реальною..."</p>
+
+<p>«Я твоя дочка Корделія», - каже вона <span class="story-highlight">SANFT (ніжно)</span>. Старий король <span class="story-highlight">WEINEN (плаче)</span> як дитина. <span class="story-highlight">DIE REUE (розкаяння)</span> палить його душу. "Не смійся з мене! Я знаю, ти маєш причини не любити мене. Твої сестри, як я пам'ятаю, зробили мені зло. Ти маєш причину, вони - ні."</p>
+
+<p>Але Корделія обіймає його - <span class="story-highlight">UMARMEN (обнімати)</span> з такою силою <span class="story-highlight">DIE LIEBE (любові)</span>, що всі образи розчиняються. <span class="story-highlight">DIE VERGEBUNG (прощення)</span> стає не словами, а дією. Вона витирає його сльози своїми руками і веде назад до світла розуму.</p>
+                </div>
+                <div class="emotional-peak">
+                    🎭 ЕМОЦІЙНИЙ ПІК: Лір падає на коліна перед Корделією!
+"Не глузуй з мене! Я старий дурний чоловік, вісімдесят років і більше... 
+Якщо у тебе є отрута для мене, я вип'ю її! Я знаю, ти не любиш мене..."
+Корделія піднімає його: "Немає причини, немає причини!" 
+Вона цілує його в чоло - момент повного прощення та безумовної любові!
+                </div>
+            </div>
+        </section>
+        
+        <!-- РОЗДІЛ 3: ДІАЛОГИ -->
+        <section class="section">
+            <h2 class="section-title">
+                <span class="section-number">3</span>
+                <span>💬 Живые диалоги сцены</span>
+            </h2>
+            <div class="dialogue-practice">
+                <div class="dialogue-line">
+                    <strong>Корделия:</strong>
+                    <p class="german">Kennst du mich, mein Herr?</p>
+                    <p class="russian">(Знаешь ли ты меня, милорд?)</p>
+                    <p class="emotion">ТРЕВОГА</p>
+                </div>
+                <div class="dialogue-line">
+                    <strong>Лир:</strong>
+                    <p class="german">Du bist ein Geist, ich weiß es</p>
+                    <p class="russian">(Ты дух, я знаю это)</p>
+                    <p class="emotion">СМЯТЕНИЕ</p>
+                </div>
+                <div class="dialogue-line">
+                    <strong>Корделия:</strong>
+                    <p class="german">Ich bin deine Tochter</p>
+                    <p class="russian">(Я твоя дочь)</p>
+                    <p class="emotion">НЕЖНОСТЬ</p>
+                </div>
+                <div class="dialogue-line">
+                    <strong>ВРАЧ:</strong>
+                    <p class="german">Die Musik heilt seine Seele</p>
+                    <p class="russian">(Музыка исцеляет его душу)</p>
+                    <p class="emotion">НАДЕЖДА</p>
+                </div>
+                <div class="dialogue-line">
+                    <strong>КЕНТ:</strong>
+                    <p class="german">Der König erwacht aus dem Wahnsinn</p>
+                    <p class="russian">(Король пробуждается от безумия)</p>
+                    <p class="emotion">ОБЛЕГЧЕНИЕ</p>
+                </div>
+                <div class="dialogue-line">
+                    <strong>ЛИР:</strong>
+                    <p class="german">Bin ich in Frankreich?</p>
+                    <p class="russian">(Я во Франции?)</p>
+                    <p class="emotion">ЗАМЕШАТЕЛЬСТВО</p>
+                </div>
+                <div class="dialogue-line">
+                    <strong>КОРДЕЛИЯ:</strong>
+                    <p class="german">Nein, in deinem eigenen Königreich</p>
+                    <p class="russian">(Нет, в твоём собственном королевстве)</p>
+                    <p class="emotion">НЕЖНОСТЬ</p>
+                </div>
+                <div class="dialogue-line">
+                    <strong>ЛИР:</strong>
+                    <p class="german">Ich bin ein törichter alter Mann</p>
+                    <p class="russian">(Я глупый старик)</p>
+                    <p class="emotion">СМИРЕНИЕ</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- РОЗДІЛ 4: ШПАРГАЛКА -->
+        <section class="section">
+            <h2 class="section-title">
+                <span class="section-number">4</span>
+                <span>📌 Эмоциональная шпаргалка</span>
+            </h2>
+            <div class="cheat-sheet">
+                <h3>ЯКОРЯ ПАМЯТИ</h3>
+                <table class="cheat-sheet-table">
+                    <thead>
+                        <tr>
+                            <th>Немецкий</th>
+                            <th>Русский</th>
+                            <th>Эмоция момента</th>
+                            <th>Жест-якорь</th>
+                            <th>Персонаж</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>verzeihen</strong></td>
+                            <td>прощать</td>
+                            <td>МИЛОСЕРДИЕ</td>
+                            <td>🤲 Нежное прикосновение к щеке отца</td>
+                            <td>Корделия</td>
+                        </tr>
+                        <tr>
+                            <td><strong>die Tränen</strong></td>
+                            <td>слёзы</td>
+                            <td>РАСТРОГАННОСТЬ</td>
+                            <td>😢 Дрожащая рука к глазам</td>
+                            <td>Лир</td>
+                        </tr>
+                        <tr>
+                            <td><strong>umarmen</strong></td>
+                            <td>обнимать</td>
+                            <td>ВОССОЕДИНЕНИЕ</td>
+                            <td>🤗 Раскрытые объятия дочери</td>
+                            <td>Корделия</td>
+                        </tr>
+                        <tr>
+                            <td><strong>erkennen</strong></td>
+                            <td>узнавать</td>
+                            <td>ПРОЗРЕНИЕ</td>
+                            <td>👁️ Пристальный взгляд сквозь туман безумия</td>
+                            <td>Лир</td>
+                        </tr>
+                        <tr>
+                            <td><strong>die Tochter</strong></td>
+                            <td>дочь</td>
+                            <td>СОМНЕНИЕ</td>
+                            <td>👧 Неуверенное протягивание руки</td>
+                            <td>Лир</td>
+                        </tr>
+                        <tr>
+                            <td><strong>die Liebe</strong></td>
+                            <td>любовь</td>
+                            <td>ПРЕДАННОСТЬ</td>
+                            <td>❤️ Рука на сердце</td>
+                            <td>Корделия</td>
+                        </tr>
+                        <tr>
+                            <td><strong>weinen</strong></td>
+                            <td>плакать</td>
+                            <td>ОСВОБОЖДЕНИЕ</td>
+                            <td>😭 Слёзы стекают по морщинам</td>
+                            <td>Лир</td>
+                        </tr>
+                        <tr>
+                            <td><strong>die Reue</strong></td>
+                            <td>раскаяние</td>
+                            <td>МУЧЕНИЕ</td>
+                            <td>🔥 Кулак прижат к груди</td>
+                            <td>Лир</td>
+                        </tr>
+                        <tr>
+                            <td><strong>heilen</strong></td>
+                            <td>исцелять</td>
+                            <td>НАДЕЖДА</td>
+                            <td>🌿 Успокаивающее движение рукой</td>
+                            <td>Врач</td>
+                        </tr>
+                        <tr>
+                            <td><strong>das Erwachen</strong></td>
+                            <td>пробуждение</td>
+                            <td>ВОЗВРАЩЕНИЕ</td>
+                            <td>🌅 Медленное поднятие головы</td>
+                            <td>Лир</td>
+                        </tr>
+                        <tr>
+                            <td><strong>sanft</strong></td>
+                            <td>нежный</td>
+                            <td>ЗАБОТА</td>
+                            <td>🕊️ Лёгкое поглаживание по руке</td>
+                            <td>Корделия</td>
+                        </tr>
+                        <tr>
+                            <td><strong>die Vergebung</strong></td>
+                            <td>прощение</td>
+                            <td>ОТПУЩЕНИЕ</td>
+                            <td>✨ Благословляющий жест над головой</td>
+                            <td>Корделия</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="memory-trick">
+                    💡 <strong>Мастер-трюк запоминания:</strong><br/>
+                    Представь сцену примирения: старый король просыпается и видит Корделию. Каждое слово — это часть их разговора прощения и любви.<br/><br/>
+                    <strong>Цепочка эмоций:</strong> МИЛОСЕРДИЕ → РАСТРОГАННОСТЬ → ВОССОЕДИНЕНИЕ → ПРОЗРЕНИЕ<br/><br/>
+                    <strong>Ритуал:</strong> Встань і зіграй сцену! Використай жести для кожного слова. Відчуй емоції персонажів!
+                </div>
+            </div>
+        </section>
+        <!-- РОЗДІЛ 5: УПРАЖНЕННЯ -->
+        <section class="section">
+            <h2 class="section-title">
+                <span class="section-number">5</span>
+                <span>📝 🎭 Заповніть пропуски в театральній постановці</span>
+            </h2>
+            
+            <div class="exercise-container">
+                <div class="exercise-section">
+                    <div class="exercise-text">
+                        <p>🎭 Палатка у французському таборі. <span class="story-highlight"><span class="blank" data-hint="прощати" data-answer="verzeihen">_______ (прощати)</span></span> - це слово висить у повітрі. Корделія схиляється над сплячим батьком, її <span class="story-highlight"><span class="blank" data-hint="сльози" data-answer="die Tränen">_______ (сльози)</span></span> падають на його обличчя, як роса милосердя. Тиха музика лунає - арфа та флейта створюють мелодію <span class="story-highlight"><span class="blank" data-hint="зцілення" data-answer="heilen">_______ (зцілення)</span></span>.</p>
+
+<p>Лір повільно відкриває очі - <span class="story-highlight"><span class="blank" data-hint="пробудження" data-answer="das Erwachen">_______ (пробудження)</span></span> після довгого сну безумства. "Де я? Хто ти?" - шепоче він. <span class="story-highlight"><span class="blank" data-hint="впізнавати" data-answer="erkennen">_______ (впізнавати)</span></span> - це болісний процес. Його руки тремтять, коли він торкається обличчя <span class="story-highlight"><span class="blank" data-hint="дочки" data-answer="die Tochter">_______ (дочки)</span></span>. "Ти дух? Ти не можеш бути реальною..."</p>
+
+<p>«Я твоя дочка Корделія», - каже вона <span class="story-highlight"><span class="blank" data-hint="ніжно" data-answer="sanft">_______ (ніжно)</span></span>. Старий король <span class="story-highlight"><span class="blank" data-hint="плаче" data-answer="weinen">_______ (плаче)</span></span> як дитина. <span class="story-highlight"><span class="blank" data-hint="розкаяння" data-answer="die Reue">_______ (розкаяння)</span></span> палить його душу. "Не смійся з мене! Я знаю, ти маєш причини не любити мене. Твої сестри, як я пам'ятаю, зробили мені зло. Ти маєш причину, вони - ні."</p>
+
+<p>Але Корделія обіймає його - <span class="story-highlight"><span class="blank" data-hint="обнімати" data-answer="umarmen">_______ (обнімати)</span></span> з такою силою <span class="story-highlight"><span class="blank" data-hint="любові" data-answer="die Liebe">_______ (любові)</span></span>, що всі образи розчиняються. <span class="story-highlight"><span class="blank" data-hint="прощення" data-answer="die Vergebung">_______ (прощення)</span></span> стає не словами, а дією. Вона витирає його сльози своїми руками і веде назад до світла розуму.</p>
+                    </div>
+                    
+                    <button class="show-answer-btn" onclick="toggleAnswers(this)" type="button">
+                        Показать ответы
+                    </button>
+                </div>
+            </div>
+        </section>
+        
+        <script>
+            // Відповіді для вправи  
+            const exerciseAnswers = {"прощати": "verzeihen", "сльози": "die Tränen", "зцілення": "heilen", "пробудження": "das Erwachen", "впізнавати": "erkennen", "дочки": "die Tochter", "ніжно": "sanft", "плаче": "weinen", "розкаяння": "die Reue", "обнімати": "umarmen", "любові": "die Liebe", "прощення": "die Vergebung"};
+            
+            function toggleAnswers(button) {
+                const blanks = document.querySelectorAll('.blank');
+                const isShowing = button.textContent === 'Скрыть ответы';
+                
+                blanks.forEach(blank => {
+                    const hint = blank.dataset.hint;
+                    const answer = exerciseAnswers[hint];
+                    
+                    if (isShowing) {
+                        blank.innerHTML = `_______ (${hint})`;
+                        blank.classList.remove('filled');
+                    } else {
+                        if (answer) {
+                            blank.innerHTML = `<strong>${answer}</strong>`;
+                            blank.classList.add('filled');
+                        }
+                    }
+                });
+                
+                button.textContent = isShowing ? 'Показать ответы' : 'Скрыть ответы';
+                button.classList.toggle('success');
+            }
+        </script>
+        
+        <!-- НАВІГАЦІЯ ПІСЛЯ УПРАЖНЕННЯ -->
+        <div class="bottom-navigation">
+            <a href="../index.html" class="nav-btn">
+                <span class="nav-icon">📚</span>
+                <span>К урокам</span>
+            </a>
+            <a href="../../index.html" class="nav-btn nav-btn-home">
+                <span class="nav-icon">🏠</span>
+                <span>На главную</span>
+            </a>
+        </div>
+        
+        <style>
+            /* Стилі для упражнення */
+            .exercise-container {
+                margin-top: 30px;
+            }
+            
+            .exercise-section {
+                background: linear-gradient(135deg, #fff9e6 0%, #fff4d6 100%);
+                border: 2px solid #f6ad55;
+                padding: 30px;
+                border-radius: 15px;
+                position: relative;
+            }
+            
+            .exercise-text {
+                color: #4a5568;
+                font-size: 1.15em;
+                line-height: 1.9;
+                text-align: justify;
+                margin-bottom: 25px;
+            }
+            
+            .exercise-text .blank {
+                display: inline-block;
+                min-width: 100px;
+                border-bottom: 2px solid #f6ad55;
+                margin: 0 4px;
+                color: #a0aec0;
+                font-style: italic;
+                font-size: 0.9em;
+                padding: 0 4px;
+                transition: all 0.3s ease;
+            }
+            
+            .exercise-text .blank.filled {
+                color: #d97706;
+                font-weight: 600;
+                font-style: normal;
+                border-bottom-color: #22c55e;
+            }
+            
+            .show-answer-btn {
+                background: linear-gradient(135deg, #f6ad55 0%, #ed8936 100%);
+                color: white;
+                border: none;
+                padding: 18px 36px;
+                border-radius: 12px;
+                font-size: 1.15em;
+                font-weight: 600;
+                cursor: pointer;
+                margin: 0 auto;
+                display: block;
+                transition: all 0.3s ease;
+                box-shadow: 0 4px 12px rgba(237, 137, 54, 0.3);
+                touch-action: manipulation;
+                -webkit-tap-highlight-color: transparent;
+                -webkit-user-select: none;
+                user-select: none;
+                min-height: 56px;
+                min-width: 200px;
+                -webkit-appearance: none;
+                appearance: none;
+            }
+            
+            .show-answer-btn:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 6px 16px rgba(237, 137, 54, 0.4);
+            }
+            
+            .show-answer-btn:active {
+                transform: scale(0.98);
+                box-shadow: 0 2px 8px rgba(237, 137, 54, 0.3);
+            }
+            
+            .show-answer-btn.success {
+                background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+            }
+            
+            /* Навігація після упражнення */
+            .bottom-navigation {
+                margin-top: 50px;
+                padding: 30px 0;
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+                border-top: 2px solid #e2e8f0;
+            }
+            
+            .nav-btn {
+                display: inline-flex;
+                align-items: center;
+                gap: 10px;
+                padding: 15px 30px;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                color: white;
+                text-decoration: none;
+                border-radius: 25px;
+                font-size: 1.1em;
+                font-weight: 600;
+                transition: all 0.3s ease;
+                box-shadow: 0 4px 15px rgba(118, 75, 162, 0.3);
+                touch-action: manipulation;
+                -webkit-tap-highlight-color: transparent;
+                min-height: 56px;
+            }
+            
+            .nav-btn:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 6px 20px rgba(118, 75, 162, 0.4);
+            }
+            
+            .nav-btn:active {
+                transform: scale(0.98);
+            }
+            
+            .nav-btn-home {
+                background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+                box-shadow: 0 4px 15px rgba(245, 87, 108, 0.3);
+            }
+            
+            .nav-btn-home:hover {
+                box-shadow: 0 6px 20px rgba(245, 87, 108, 0.4);
+            }
+            
+            .nav-icon {
+                font-size: 1.3em;
+            }
+            
+            /* Mobile optimizations */
+            @media (max-width: 768px) {
+                .exercise-section {
+                    padding: 20px;
+                }
+                
+                .exercise-text {
+                    font-size: 1.05em;
+                }
+                
+                .exercise-text .blank {
+                    min-width: 80px;
+                }
+                
+                .show-answer-btn {
+                    width: 90%;
+                    max-width: 300px;
+                    padding: 16px 24px;
+                    font-size: 1.1em;
+                }
+                
+                .bottom-navigation {
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 15px;
+                    padding: 20px;
+                }
+                
+                .nav-btn {
+                    width: 90%;
+                    max-width: 300px;
+                    justify-content: center;
+                }
+            }
+            
+            /* iOS specific */
+            @supports (-webkit-touch-callout: none) {
+                .show-answer-btn,
+                .nav-btn {
+                    -webkit-appearance: none;
+                    appearance: none;
+                }
+            }
+        </style>
+        
+        <script>
+        // Device detection
+        const isTouchDevice = ('ontouchstart' in window) || 
+                              (navigator.maxTouchPoints > 0) || 
+                              (navigator.msMaxTouchPoints > 0);
+        
+        // Exercise answers data
+        const exerciseAnswers = {"прощати": "verzeihen", "сльози": "die Tränen", "зцілення": "heilen", "пробудження": "das Erwachen", "впізнавати": "erkennen", "дочки": "die Tochter", "ніжно": "sanft", "плаче": "weinen", "розкаяння": "die Reue", "обнімати": "umarmen", "любові": "die Liebe", "прощення": "die Vergebung"};
+        
+        // Function to toggle answers
+        function toggleAnswers(button) {
+            // Prevent double tap
+            if (button.dataset.processing === 'true') return;
+            button.dataset.processing = 'true';
+            
+            const exerciseText = button.parentElement.querySelector('.exercise-text');
+            const blanks = exerciseText.querySelectorAll('.blank');
+            
+            if (button.textContent === 'Показать ответы') {
+                // Show answers
+                blanks.forEach(blank => {
+                    const hint = blank.getAttribute('data-hint');
+                    const answer = exerciseAnswers[hint];
+                    if (answer) {
+                        blank.innerHTML = answer + ' (' + hint + ')';
+                        blank.classList.add('filled');
+                    }
+                });
+                button.textContent = 'Скрыть ответы';
+                button.classList.add('success');
+            } else {
+                // Hide answers
+                blanks.forEach(blank => {
+                    const hint = blank.getAttribute('data-hint');
+                    blank.innerHTML = '_______ (' + hint + ')';
+                    blank.classList.remove('filled');
+                });
+                button.textContent = 'Показать ответы';
+                button.classList.remove('success');
+            }
+            
+            // Haptic feedback for mobile
+            if (navigator.vibrate && isTouchDevice) {
+                navigator.vibrate(15);
+            }
+            
+            // Reset processing flag
+            setTimeout(() => {
+                button.dataset.processing = 'false';
+            }, 300);
+        }
+        
+        // Initialize button handlers
+        document.addEventListener('DOMContentLoaded', function() {
+            const answerBtn = document.querySelector('.show-answer-btn');
+            
+            if (answerBtn) {
+                // Visual feedback for mobile
+                if (isTouchDevice) {
+                    answerBtn.addEventListener('touchstart', function() {
+                        this.style.transform = 'scale(0.98)';
+                        this.style.opacity = '0.9';
+                    });
+                    
+                    answerBtn.addEventListener('touchend', function() {
+                        setTimeout(() => {
+                            this.style.transform = 'scale(1)';
+                            this.style.opacity = '1';
+                        }, 100);
+                    });
+                }
+            }
+            
+            // Navigation buttons mobile support
+            const navBtns = document.querySelectorAll('.nav-btn');
+            navBtns.forEach(btn => {
+                if (isTouchDevice) {
+                    btn.addEventListener('touchstart', function() {
+                        this.style.transform = 'scale(0.98)';
+                    });
+                    
+                    btn.addEventListener('touchend', function() {
+                        this.style.transform = 'scale(1)';
+                    });
+                }
+            });
+        });
+        
+        // Prevent iOS double-tap zoom
+        if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
+            let lastTouchEnd = 0;
+            document.addEventListener('touchend', function(event) {
+                const now = Date.now();
+                if (now - lastTouchEnd <= 300) {
+                    event.preventDefault();
+                }
+                lastTouchEnd = now;
+            }, false);
+        }
+        </script>
+        
+    </div>
+    
+    <!-- JavaScript для копіювання уроку -->
+    <script>
+    function copyLesson() {
+        // Збір всіх даних уроку
+        let lessonContent = '';
+        
+        // Заголовок
+        const titleElement = document.querySelector('.scene-moment h1');
+        if (titleElement) {
+            lessonContent += '=== ' + titleElement.textContent + ' ===\n\n';
+        }
+        
+        // Цитата
+        const quoteElement = document.querySelector('.shakespeare-quote');
+        if (quoteElement) {
+            lessonContent += 'Цитата: ' + quoteElement.textContent + '\n\n';
+        }
+        
+        // Емоції
+        const emotionTags = document.querySelectorAll('.emotion-tag');
+        if (emotionTags.length > 0) {
+            lessonContent += 'Эмоции: ';
+            emotionTags.forEach((tag, index) => {
+                lessonContent += tag.textContent;
+                if (index < emotionTags.length - 1) lessonContent += ', ';
+            });
+            lessonContent += '\n\n';
+        }
+        
+        // Слова
+        lessonContent += '=== СЛОВА МОМЕНТА ===\n\n';
+        const wordCards = document.querySelectorAll('.word-card');
+        wordCards.forEach(card => {
+            const german = card.querySelector('.word-german');
+            const transcription = card.querySelector('.word-transcription');
+            const russian = card.querySelector('.word-russian');
+            const type = card.querySelector('.word-type');
+            
+            if (german) {
+                lessonContent += german.textContent;
+                if (transcription && transcription.textContent) {
+                    lessonContent += ' ' + transcription.textContent;
+                }
+                if (russian) {
+                    lessonContent += ' - ' + russian.textContent;
+                }
+                if (type && type.textContent) {
+                    lessonContent += ' (' + type.textContent + ')';
+                }
+                lessonContent += '\n';
+                
+                // Додаткова інформація
+                const characterVoice = card.querySelector('.character-voice');
+                if (characterVoice) {
+                    lessonContent += '  ' + characterVoice.textContent.replace(/\n/g, ' ').trim() + '\n';
+                }
+                
+                const gesture = card.querySelector('.gesture-anchor');
+                if (gesture) {
+                    lessonContent += '  ' + gesture.textContent.replace(/\n/g, ' ').trim() + '\n';
+                }
+                
+                lessonContent += '\n';
+            }
+        });
+        
+        // Театральний момент
+        const storyTitle = document.querySelector('.story-title');
+        const storyText = document.querySelector('.story-text');
+        if (storyTitle || storyText) {
+            lessonContent += '\n=== ТЕАТРАЛЬНЫЙ МОМЕНТ ===\n\n';
+            if (storyTitle) {
+                lessonContent += storyTitle.textContent + '\n\n';
+            }
+            if (storyText) {
+                lessonContent += storyText.textContent.trim() + '\n';
+            }
+            
+            const emotionalPeak = document.querySelector('.emotional-peak');
+            if (emotionalPeak) {
+                lessonContent += '\nЭмоциональный пик: ' + emotionalPeak.textContent.trim() + '\n';
+            }
+        }
+        
+        // Діалоги
+        const dialogues = document.querySelectorAll('.dialogue-line');
+        if (dialogues.length > 0) {
+            lessonContent += '\n=== ЖИВЫЕ ДИАЛОГИ ===\n\n';
+            dialogues.forEach(dialogue => {
+                const character = dialogue.querySelector('strong');
+                const germanText = dialogue.querySelector('.german');
+                const russianText = dialogue.querySelector('.russian');
+                const emotionText = dialogue.querySelector('.emotion');
+                
+                if (character) {
+                    lessonContent += character.textContent + '\n';
+                }
+                if (germanText) {
+                    lessonContent += germanText.textContent + '\n';
+                }
+                if (russianText) {
+                    lessonContent += russianText.textContent + '\n';
+                }
+                if (emotionText) {
+                    lessonContent += emotionText.textContent + '\n';
+                }
+                lessonContent += '\n';
+            });
+        }
+        
+        // Шпаргалка
+        const cheatSheetTable = document.querySelector('.cheat-sheet-table');
+        if (cheatSheetTable) {
+            lessonContent += '\n=== ЭМОЦИОНАЛЬНАЯ ШПАРГАЛКА ===\n\n';
+            const rows = cheatSheetTable.querySelectorAll('tbody tr');
+            rows.forEach(row => {
+                const cells = row.querySelectorAll('td');
+                if (cells.length >= 5) {
+                    lessonContent += cells[0].textContent + ' - ' + cells[1].textContent;
+                    lessonContent += ' | Эмоция: ' + cells[2].textContent;
+                    lessonContent += ' | Жест: ' + cells[3].textContent;
+                    lessonContent += ' | Персонаж: ' + cells[4].textContent + '\n';
+                }
+            });
+        }
+        
+        // Memory trick
+        const memoryTrick = document.querySelector('.memory-trick');
+        if (memoryTrick) {
+            lessonContent += '\n' + memoryTrick.textContent.trim() + '\n';
+        }
+        
+        // Функція копіювання з підтримкою iOS
+        function copyToClipboard(text) {
+            const btn = document.getElementById('copyLessonBtn');
+            const originalText = btn.textContent;
+            
+            // Спробуємо сучасний метод
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(text).then(() => {
+                    showSuccess();
+                }).catch(() => {
+                    fallbackCopy();
+                });
+            } else {
+                // Fallback для iOS та старих браузерів
+                fallbackCopy();
+            }
+            
+            function fallbackCopy() {
+                // Створюємо textarea
+                const textarea = document.createElement('textarea');
+                textarea.value = text;
+                textarea.style.position = 'fixed';
+                textarea.style.top = '0';
+                textarea.style.left = '0';
+                textarea.style.width = '2em';
+                textarea.style.height = '2em';
+                textarea.style.padding = '0';
+                textarea.style.border = 'none';
+                textarea.style.outline = 'none';
+                textarea.style.boxShadow = 'none';
+                textarea.style.background = 'transparent';
+                textarea.style.fontSize = '16px'; // Запобігає zoom на iOS
+                
+                document.body.appendChild(textarea);
+                
+                // Для iOS потрібен особливий підхід
+                if (navigator.userAgent.match(/ipad|iphone/i)) {
+                    const range = document.createRange();
+                    range.selectNodeContents(textarea);
+                    const selection = window.getSelection();
+                    selection.removeAllRanges();
+                    selection.addRange(range);
+                    textarea.setSelectionRange(0, 999999);
+                } else {
+                    textarea.select();
+                }
+                
+                try {
+                    const successful = document.execCommand('copy');
+                    if (successful) {
+                        showSuccess();
+                    } else {
+                        showManualCopy();
+                    }
+                } catch (err) {
+                    showManualCopy();
+                }
+                
+                document.body.removeChild(textarea);
+            }
+            
+            function showSuccess() {
+                btn.textContent = '✅ Скопировано!';
+                btn.classList.add('success');
+                setTimeout(() => {
+                    btn.textContent = originalText;
+                    btn.classList.remove('success');
+                }, 2000);
+            }
+            
+            function showManualCopy() {
+                // Показуємо текст для ручного копіювання
+                const modal = document.createElement('div');
+                modal.style.cssText = `
+                    position: fixed;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    background: white;
+                    padding: 20px;
+                    border-radius: 10px;
+                    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+                    z-index: 10000;
+                    max-width: 90%;
+                    max-height: 80vh;
+                `;
+                
+                modal.innerHTML = `
+                    <h3 style="margin-top: 0;">Выделите и скопируйте текст:</h3>
+                    <textarea readonly style="
+                        width: 100%;
+                        min-width: 300px;
+                        height: 300px;
+                        padding: 10px;
+                        border: 1px solid #ccc;
+                        border-radius: 5px;
+                        font-size: 14px;
+                        resize: vertical;
+                    ">${text.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</textarea>
+                    <button onclick="this.parentElement.remove()" style="
+                        margin-top: 10px;
+                        padding: 10px 20px;
+                        background: #764ba2;
+                        color: white;
+                        border: none;
+                        border-radius: 5px;
+                        cursor: pointer;
+                        font-size: 16px;
+                    ">Закрыть</button>
+                `;
+                
+                document.body.appendChild(modal);
+                
+                // Автоматично виділяємо текст
+                const textarea = modal.querySelector('textarea');
+                textarea.select();
+                textarea.setSelectionRange(0, 999999);
+            }
+        }
+        
+        copyToClipboard(lessonContent);
+    }
+    </script>
+</body>
+</html>

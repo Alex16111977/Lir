@@ -1,0 +1,165 @@
+.book-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.book-cover {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.book-title {
+    font-size: 3rem;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.book-author {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+    opacity: 0.9;
+}
+
+.book-meta {
+    margin-top: 2rem;
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    font-size: 1.1rem;
+}
+
+.book-navigation {
+    padding: 1rem;
+    background: var(--book-paper);
+    border-bottom: 1px solid var(--book-border);
+}
+
+.back-to-main {
+    color: var(--book-accent);
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.back-to-main:hover {
+    color: var(--book-primary);
+}
+
+.book-main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.table-of-contents h2 {
+    text-align: center;
+    color: var(--book-primary);
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.chapters-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.chapter-card {
+    background: var(--book-paper);
+    border: 1px solid var(--book-border);
+    border-radius: 10px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.chapter-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.chapter-number {
+    font-size: 0.9rem;
+    color: var(--book-accent);
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+.chapter-link-title {
+    color: var(--book-primary);
+    margin: 0.5rem 0;
+}
+
+.chapter-meta {
+    font-size: 0.9rem;
+    color: var(--book-secondary);
+    margin: 0.5rem 0;
+}
+
+.chapter-link {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background: var(--book-accent);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.chapter-link:hover {
+    background: var(--book-primary);
+}
+
+.reading-features {
+    margin-top: 3rem;
+}
+
+.reading-features h2 {
+    text-align: center;
+    color: var(--book-primary);
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.feature {
+    text-align: center;
+    padding: 1.5rem;
+    background: var(--book-paper);
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.feature-icon {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.feature h3 {
+    color: var(--book-primary);
+    margin: 0.5rem 0;
+}
+
+.feature p {
+    color: var(--book-secondary);
+    font-size: 0.95rem;
+}
+
+.book-footer {
+    text-align: center;
+    padding: 2rem;
+    background: var(--book-paper);
+    border-top: 1px solid var(--book-border);
+    color: var(--book-secondary);
+    margin-top: 3rem;
+}

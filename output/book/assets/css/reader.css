@@ -1,0 +1,29 @@
+/* Додаткові стилі для читача */
+.highlight {
+    background-color: yellow;
+    padding: 2px;
+}
+
+.bookmark-marker {
+    position: absolute;
+    left: -30px;
+    font-size: 1.5rem;
+    color: var(--book-accent);
+}
+
+.search-highlight {
+    background-color: #ffeb3b;
+    padding: 2px;
+    border-radius: 3px;
+}
+
+@media print {
+    .book-nav, .reading-tools, .progress-bar {
+        display: none;
+    }
+    
+    .chapter-content {
+        box-shadow: none;
+        max-width: 100%;
+    }
+}

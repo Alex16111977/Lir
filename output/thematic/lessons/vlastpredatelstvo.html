@@ -1,0 +1,1380 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>🎭 Влада і зрада через Короля Ліра</title>
+    <style>
+        
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    font-family: 'Georgia', serif;
+    min-height: 100vh;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.scene-moment {
+    background: linear-gradient(135deg, #FFD700, #8B4513);
+    padding: 30px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.scene-moment::before {
+    content: '👑';
+    position: absolute;
+    font-size: 200px;
+    opacity: 0.1;
+    right: -50px;
+    top: -50px;
+    transform: rotate(-15deg);
+}
+
+.scene-moment h1 {
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    margin: 0 0 20px 0;
+    font-size: 2.5em;
+}
+
+.shakespeare-quote {
+    color: #fff;
+    font-style: italic;
+    font-size: 1.3em;
+    margin: 15px 0;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+.emotion-tags {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.emotion-tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.3);
+    padding: 5px 15px;
+    border-radius: 20px;
+    margin: 5px;
+    font-weight: bold;
+    color: white;
+    backdrop-filter: blur(5px);
+}
+
+.section {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.section-title {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.section-number {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.word-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 25px;
+}
+
+.word-card {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transform: translateY(0);
+    transition: transform 0.3s;
+}
+
+.word-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.word-german {
+    font-size: 2em;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    margin-bottom: 10px;
+}
+
+.word-transcription {
+    color: #fff;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    opacity: 0.9;
+}
+
+.word-russian {
+    color: #fff;
+    font-size: 1.3em;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.word-type {
+    display: inline-block;
+    background: rgba(255,255,255,0.3);
+    padding: 3px 10px;
+    border-radius: 10px;
+    color: white;
+    font-size: 0.9em;
+    margin-bottom: 15px;
+}
+
+.character-voice {
+    border-left: 5px solid #764ba2;
+    padding-left: 20px;
+    margin: 20px 0;
+    font-style: italic;
+    background: rgba(255,255,255,0.95);
+    padding: 20px;
+    border-radius: 10px;
+    color: #333;
+}
+
+.gesture-anchor {
+    background: #fff3cd;
+    border: 2px dashed #ffc107;
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 15px 0;
+    color: #333;
+}
+
+.gesture-icon {
+    font-size: 40px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.navigation {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.navigation a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
+    padding: 10px 20px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.navigation a:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+        
+        /* Додаткові стилі для нових розділів */
+        .story-container {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 5px solid #764ba2;
+        }
+        
+        .story-highlight {
+            background: #ffeaa7;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+        
+        .emotional-peak {
+            background: #ff6b6b;
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        
+        .dialogue-practice {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        
+        .dialogue-line {
+            margin-bottom: 25px;
+            padding: 15px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .dialogue-line strong {
+            color: #764ba2;
+            font-size: 1.1em;
+        }
+        
+        .dialogue-line .german {
+            font-size: 1.2em;
+            color: #2c3e50;
+            margin: 10px 0;
+        }
+        
+        .dialogue-line .russian {
+            color: #7f8c8d;
+            font-style: italic;
+        }
+        
+        .dialogue-line .emotion {
+            margin-top: 10px;
+            color: #e74c3c;
+        }
+        
+        .cheat-sheet-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        
+        .cheat-sheet-table th {
+            background: #764ba2;
+            color: white;
+            padding: 12px;
+            text-align: left;
+        }
+        
+        .cheat-sheet-table td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .memory-trick {
+            background: #fff3cd;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            border: 2px solid #ffc107;
+        }
+        
+        .story-title {
+            color: #764ba2;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+        
+        /* Стилі для кнопки копіювання */
+        .copy-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 15px 25px;
+            border-radius: 25px;
+            font-size: 1.1em;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            transition: all 0.3s;
+            z-index: 1000;
+            font-family: 'Georgia', serif;
+            -webkit-tap-highlight-color: transparent;
+            -webkit-touch-callout: none;
+            touch-action: manipulation;
+        }
+        
+        .copy-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 7px 20px rgba(0,0,0,0.4);
+        }
+        
+        .copy-button:active {
+            transform: scale(0.95);
+        }
+        
+        .copy-button.success {
+            background: linear-gradient(135deg, #00b894, #00cec9);
+        }
+        
+        /* Адаптація для мобільних */
+        @media (max-width: 768px) {
+            .copy-button {
+                top: 10px;
+                right: 10px;
+                padding: 12px 20px;
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Навігація -->
+        <div class="navigation">
+            <a href="../index.html">← К урокам THEMATIC</a>
+            <a href="../../index.html">🏠 На главную</a>
+        </div>
+        
+        <!-- Кнопка копіювання -->
+        <button id="copyLessonBtn" class="copy-button" onclick="copyLesson()">
+            📋 Копировать урок
+        </button>
+        
+        <!-- SCENE MOMENT -->
+        <div class="scene-moment">
+            <h1>📚 🎭 Влада і зрада через Короля Ліра</h1>
+            <p class="shakespeare-quote">""</p>
+            <div class="emotion-tags">
+            </div>
+        </div>
+        
+        <!-- РОЗДІЛ 1: СЛОВА -->
+        <section class="section">
+            <h2 class="section-title">
+                <span class="section-number">1</span>
+                <span>📚 Слова момента</span>
+            </h2>
+            <div class="word-cards">
+                <div class="word-card">
+                    <div class="word-german">verraten</div>
+                    <div class="word-transcription">[фер-РА-тен]</div>
+                    <div class="word-russian">зраджувати</div>
+                    <div class="word-type">дієслово</div>
+                    <div class="character-voice">
+                        <strong>Едмунд:</strong><br/>
+                        "Ich verrate meinen Bruder"<br/>
+                        (Я предаю своего брата)
+                    </div>
+                    <div class="gesture-anchor">
+                        <span class="gesture-icon">🗡️</span>
+                        <div>
+                            <strong>Жест-якорь:</strong> ховає лист за спиною<br/>
+                            <strong>Эмоция:</strong> ПІДСТУПНІСТЬ<br/>
+                            <strong>Ассоциация:</strong> Едмунд зраджує Едгара фальшивим листом
+                        </div>
+                    </div>
+                </div>
+                <div class="word-card">
+                    <div class="word-german">der Verrat</div>
+                    <div class="word-transcription">[дер фер-РАТ]</div>
+                    <div class="word-russian">зрада</div>
+                    <div class="word-type">іменник</div>
+                    <div class="character-voice">
+                        <strong>Глостер:</strong><br/>
+                        "Der Verrat meines Sohnes!"<br/>
+                        (Предательство моего сына!)
+                    </div>
+                    <div class="gesture-anchor">
+                        <span class="gesture-icon">💔</span>
+                        <div>
+                            <strong>Жест-якорь:</strong> хапається за серце<br/>
+                            <strong>Эмоция:</strong> БІЛЬ<br/>
+                            <strong>Ассоциация:</strong> Глостер вірить у зраду Едгара
+                        </div>
+                    </div>
+                </div>
+                <div class="word-card">
+                    <div class="word-german">der Verräter</div>
+                    <div class="word-transcription">[дер фер-РЕ-тер]</div>
+                    <div class="word-russian">зрадник</div>
+                    <div class="word-type">іменник</div>
+                    <div class="character-voice">
+                        <strong>Регана:</strong><br/>
+                        "Ein Verräter verdient den Tod"<br/>
+                        (Предатель заслуживает смерти)
+                    </div>
+                    <div class="gesture-anchor">
+                        <span class="gesture-icon">⚔️</span>
+                        <div>
+                            <strong>Жест-якорь:</strong> вказує на ешафот<br/>
+                            <strong>Эмоция:</strong> ЖОРСТОКІСТЬ<br/>
+                            <strong>Ассоциация:</strong> Регана засуджує Глостера
+                        </div>
+                    </div>
+                </div>
+                <div class="word-card">
+                    <div class="word-german">loyal</div>
+                    <div class="word-transcription">[ло-ЯЛЬ]</div>
+                    <div class="word-russian">вірний</div>
+                    <div class="word-type">прикметник</div>
+                    <div class="character-voice">
+                        <strong>Кент:</strong><br/>
+                        "Ich bleibe loyal"<br/>
+                        (Я остаюсь верным)
+                    </div>
+                    <div class="gesture-anchor">
+                        <span class="gesture-icon">🛡️</span>
+                        <div>
+                            <strong>Жест-якорь:</strong> стає на коліно<br/>
+                            <strong>Эмоция:</strong> ВІДДАНІСТЬ<br/>
+                            <strong>Ассоциация:</strong> Кент зберігає вірність Ліру
+                        </div>
+                    </div>
+                </div>
+                <div class="word-card">
+                    <div class="word-german">die Treue</div>
+                    <div class="word-transcription">[ди ТРОЙ-е]</div>
+                    <div class="word-russian">вірність</div>
+                    <div class="word-type">іменник</div>
+                    <div class="character-voice">
+                        <strong>Корделія:</strong><br/>
+                        "Meine Treue ist echt"<br/>
+                        (Моя верность истинна)
+                    </div>
+                    <div class="gesture-anchor">
+                        <span class="gesture-icon">💎</span>
+                        <div>
+                            <strong>Жест-якорь:</strong> тримає руку на серці<br/>
+                            <strong>Эмоция:</strong> ЧИСТОТА<br/>
+                            <strong>Ассоциация:</strong> Корделія залишається вірною батькові
+                        </div>
+                    </div>
+                </div>
+                <div class="word-card">
+                    <div class="word-german">hintergehen</div>
+                    <div class="word-transcription">[хин-тер-ГЕ-ен]</div>
+                    <div class="word-russian">обманути</div>
+                    <div class="word-type">дієслово</div>
+                    <div class="character-voice">
+                        <strong>Гонерілья:</strong><br/>
+                        "Wir müssen ihn hintergehen"<br/>
+                        (Мы должны его обмануть)
+                    </div>
+                    <div class="gesture-anchor">
+                        <span class="gesture-icon">🎭</span>
+                        <div>
+                            <strong>Жест-якорь:</strong> шепоче змовницьки<br/>
+                            <strong>Эмоция:</strong> ЗМОВА<br/>
+                            <strong>Ассоциация:</strong> Сестри змовляються проти батька
+                        </div>
+                    </div>
+                </div>
+                <div class="word-card">
+                    <div class="word-german">das Komplott</div>
+                    <div class="word-transcription">[дас ком-ПЛОТТ]</div>
+                    <div class="word-russian">змова</div>
+                    <div class="word-type">іменник</div>
+                    <div class="character-voice">
+                        <strong>Едмунд:</strong><br/>
+                        "Mein Komplott gelingt"<br/>
+                        (Мой заговор удается)
+                    </div>
+                    <div class="gesture-anchor">
+                        <span class="gesture-icon">🕸️</span>
+                        <div>
+                            <strong>Жест-якорь:</strong> плете пальцями павутину<br/>
+                            <strong>Эмоция:</strong> ІНТРИГА<br/>
+                            <strong>Ассоциация:</strong> Едмунд плете змову проти всіх
+                        </div>
+                    </div>
+                </div>
+                <div class="word-card">
+                    <div class="word-german">verschwören</div>
+                    <div class="word-transcription">[фер-ШВЁ-рен]</div>
+                    <div class="word-russian">змовлятися</div>
+                    <div class="word-type">дієслово</div>
+                    <div class="character-voice">
+                        <strong>Регана:</strong><br/>
+                        "Wir verschwören uns"<br/>
+                        (Мы сговариваемся)
+                    </div>
+                    <div class="gesture-anchor">
+                        <span class="gesture-icon">🤝</span>
+                        <div>
+                            <strong>Жест-якорь:</strong> потискає руку таємно<br/>
+                            <strong>Эмоция:</strong> ТАЄМНИЦЯ<br/>
+                            <strong>Ассоциация:</strong> Регана і Гонерілья у змові
+                        </div>
+                    </div>
+                </div>
+                <div class="word-card">
+                    <div class="word-german">täuschen</div>
+                    <div class="word-transcription">[ТОЙ-шен]</div>
+                    <div class="word-russian">обдурити</div>
+                    <div class="word-type">дієслово</div>
+                    <div class="character-voice">
+                        <strong>Едгар:</strong><br/>
+                        "Ich muss alle täuschen"<br/>
+                        (Я должен всех обмануть)
+                    </div>
+                    <div class="gesture-anchor">
+                        <span class="gesture-icon">🎭</span>
+                        <div>
+                            <strong>Жест-якорь:</strong> надягає маску божевільного<br/>
+                            <strong>Эмоция:</strong> МАСКУВАННЯ<br/>
+                            <strong>Ассоциация:</strong> Едгар вдає божевільного Тома
+                        </div>
+                    </div>
+                </div>
+                <div class="word-card">
+                    <div class="word-german">die Intrige</div>
+                    <div class="word-transcription">[ди ин-ТРИ-ге]</div>
+                    <div class="word-russian">інтрига</div>
+                    <div class="word-type">іменник</div>
+                    <div class="character-voice">
+                        <strong>Едмунд:</strong><br/>
+                        "Die Intrige ist perfekt"<br/>
+                        (Интрига совершенна)
+                    </div>
+                    <div class="gesture-anchor">
+                        <span class="gesture-icon">♟️</span>
+                        <div>
+                            <strong>Жест-якорь:</strong> пересуває фігури на дошці<br/>
+                            <strong>Эмоция:</strong> РОЗРАХУНОК<br/>
+                            <strong>Ассоциация:</strong> Едмунд маніпулює всіма як пішками
+                        </div>
+                    </div>
+                </div>
+                <div class="word-card">
+                    <div class="word-german">untreu</div>
+                    <div class="word-transcription">[ун-ТРОЙ]</div>
+                    <div class="word-russian">невірний</div>
+                    <div class="word-type">прикметник</div>
+                    <div class="character-voice">
+                        <strong>Лір:</strong><br/>
+                        "Meine Töchter sind untreu"<br/>
+                        (Мои дочери неверны)
+                    </div>
+                    <div class="gesture-anchor">
+                        <span class="gesture-icon">💔</span>
+                        <div>
+                            <strong>Жест-якорь:</strong> б'є себе в груди<br/>
+                            <strong>Эмоция:</strong> РОЗЧАРУВАННЯ<br/>
+                            <strong>Ассоциация:</strong> Лір усвідомлює зраду дочок
+                        </div>
+                    </div>
+                </div>
+                <div class="word-card">
+                    <div class="word-german">die Verschwörung</div>
+                    <div class="word-transcription">[ди фер-ШВЁ-рунг]</div>
+                    <div class="word-russian">заколот</div>
+                    <div class="word-type">іменник</div>
+                    <div class="character-voice">
+                        <strong>Олбані:</strong><br/>
+                        "Die Verschwörung endet hier"<br/>
+                        (Заговор кончается здесь)
+                    </div>
+                    <div class="gesture-anchor">
+                        <span class="gesture-icon">⚖️</span>
+                        <div>
+                            <strong>Жест-якорь:</strong> піднімає меч правосуддя<br/>
+                            <strong>Эмоция:</strong> СПРАВЕДЛИВІСТЬ<br/>
+                            <strong>Ассоциация:</strong> Олбані розкриває змову
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- РОЗДІЛ 2: ТЕАТРАЛЬНИЙ МОМЕНТ -->
+        <section class="section">
+            <h2 class="section-title">
+                <span class="section-number">2</span>
+                <span>🎭 Театральный момент</span>
+            </h2>
+            <div class="story-container">
+                <h3 class="story-title">ТЕАТРАЛЬНЫЙ МОМЕНТ</h3>
+                <div class="story-text"><p>Початок змови. Едмунд планує <span class="story-highlight">verraten</span> - зрадити брата. <span class="story-highlight">Das Komplott</span> починається з підробленого листа. Він майстерно <span class="story-highlight">täuschen</span> - обдурює батька.</p><p>Павутина зради. <span class="story-highlight">Die Intrige</span> розростається. Сестри <span class="story-highlight">verschwören</span> - змовляються проти Ліра, <span class="story-highlight">hintergehen</span> - обманюють його. <span class="story-highlight">Der Verrat</span> стає нормою. Лише Кент залишається <span class="story-highlight">loyal</span>.</p><p>Розплата. <span class="story-highlight">Der Verräter</span> Едмунд гине від руки брата. <span class="story-highlight">Untreu</span> дочки отруюють одна одну. <span class="story-highlight">Die Verschwörung</span> руйнується. <span class="story-highlight">Die Treue</span> Корделії сяє, але запізно.</p>
+                </div>
+                <div class="emotional-peak">
+                    «Законний син убиває незаконного» - остання правда Едмунда перед смертю
+                </div>
+            </div>
+        </section>
+        
+        <!-- РОЗДІЛ 3: ДІАЛОГИ -->
+        <section class="section">
+            <h2 class="section-title">
+                <span class="section-number">3</span>
+                <span>💬 Живые диалоги сцены</span>
+            </h2>
+            <div class="dialogue-practice">
+                <div class="dialogue-line">
+                    <strong>ЭДМУНД:</strong>
+                    <p class="german">Ich verrate meinen Bruder für die Macht!</p>
+                    <p class="russian">(Я предаю своего брата ради власти!)</p>
+                    <p class="emotion">🗡️ [С холодным расчетом]</p>
+                </div>
+                <div class="dialogue-line">
+                    <strong>ГЛОСТЕР:</strong>
+                    <p class="german">Der Verrat meines Sohnes bricht mein Herz!</p>
+                    <p class="russian">(Предательство моего сына разбивает мое сердце!)</p>
+                    <p class="emotion">💔 [В отчаянии]</p>
+                </div>
+                <div class="dialogue-line">
+                    <strong>РЕГАНА:</strong>
+                    <p class="german">Der Verräter verdient keine Gnade!</p>
+                    <p class="russian">(Предатель не заслуживает пощады!)</p>
+                    <p class="emotion">⚔️ [Безжалостно]</p>
+                </div>
+                <div class="dialogue-line">
+                    <strong>КЕНТ:</strong>
+                    <p class="german">Ich bleibe loyal bis zum Ende!</p>
+                    <p class="russian">(Я остаюсь верным до конца!)</p>
+                    <p class="emotion">🛡️ [С достоинством]</p>
+                </div>
+                <div class="dialogue-line">
+                    <strong>ГОНЕРИЛЬЯ:</strong>
+                    <p class="german">Wir müssen ihn hintergehen, Schwester!</p>
+                    <p class="russian">(Мы должны его обмануть, сестра!)</p>
+                    <p class="emotion">🎭 [Заговорщицки]</p>
+                </div>
+                <div class="dialogue-line">
+                    <strong>ЭДГАР:</strong>
+                    <p class="german">Ich muss alle täuschen, um zu überleben!</p>
+                    <p class="russian">(Я должен всех обмануть, чтобы выжить!)</p>
+                    <p class="emotion">🎭 [В маске безумия]</p>
+                </div>
+                <div class="dialogue-line">
+                    <strong>КОРОЛЬ ЛИР:</strong>
+                    <p class="german">Meine Töchter sind untreu wie Schlangen!</p>
+                    <p class="russian">(Мои дочери неверны как змеи!)</p>
+                    <p class="emotion">💔 [В гневе и боли]</p>
+                </div>
+                <div class="dialogue-line">
+                    <strong>ГЕРЦОГ АЛЬБАНСКИЙ:</strong>
+                    <p class="german">Die Verschwörung endet hier und jetzt!</p>
+                    <p class="russian">(Заговор кончается здесь и сейчас!)</p>
+                    <p class="emotion">⚖️ [Решительно]</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- РОЗДІЛ 4: ШПАРГАЛКА -->
+        <section class="section">
+            <h2 class="section-title">
+                <span class="section-number">4</span>
+                <span>📌 Эмоциональная шпаргалка</span>
+            </h2>
+            <div class="cheat-sheet">
+                <h3>ЯКОРЯ ПАМЯТИ</h3>
+                <table class="cheat-sheet-table">
+                    <thead>
+                        <tr>
+                            <th>Немецкий</th>
+                            <th>Русский</th>
+                            <th>Эмоция момента</th>
+                            <th>Жест-якорь</th>
+                            <th>Персонаж</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>verraten</strong></td>
+                            <td>зраджувати</td>
+                            <td>ПІДСТУПНІСТЬ</td>
+                            <td>🗡️ ховає лист за спиною</td>
+                            <td>Едмунд</td>
+                        </tr>
+                        <tr>
+                            <td><strong>der Verrat</strong></td>
+                            <td>зрада</td>
+                            <td>БІЛЬ</td>
+                            <td>💔 хапається за серце</td>
+                            <td>Глостер</td>
+                        </tr>
+                        <tr>
+                            <td><strong>der Verräter</strong></td>
+                            <td>зрадник</td>
+                            <td>ЖОРСТОКІСТЬ</td>
+                            <td>⚔️ вказує на ешафот</td>
+                            <td>Регана</td>
+                        </tr>
+                        <tr>
+                            <td><strong>loyal</strong></td>
+                            <td>вірний</td>
+                            <td>ВІДДАНІСТЬ</td>
+                            <td>🛡️ стає на коліно</td>
+                            <td>Кент</td>
+                        </tr>
+                        <tr>
+                            <td><strong>die Treue</strong></td>
+                            <td>вірність</td>
+                            <td>ЧИСТОТА</td>
+                            <td>💎 тримає руку на серці</td>
+                            <td>Корделія</td>
+                        </tr>
+                        <tr>
+                            <td><strong>hintergehen</strong></td>
+                            <td>обманути</td>
+                            <td>ЗМОВА</td>
+                            <td>🎭 шепоче змовницьки</td>
+                            <td>Гонерілья</td>
+                        </tr>
+                        <tr>
+                            <td><strong>das Komplott</strong></td>
+                            <td>змова</td>
+                            <td>ІНТРИГА</td>
+                            <td>🕸️ плете пальцями павутину</td>
+                            <td>Едмунд</td>
+                        </tr>
+                        <tr>
+                            <td><strong>verschwören</strong></td>
+                            <td>змовлятися</td>
+                            <td>ТАЄМНИЦЯ</td>
+                            <td>🤝 потискає руку таємно</td>
+                            <td>Регана</td>
+                        </tr>
+                        <tr>
+                            <td><strong>täuschen</strong></td>
+                            <td>обдурити</td>
+                            <td>МАСКУВАННЯ</td>
+                            <td>🎭 надягає маску божевільного</td>
+                            <td>Едгар</td>
+                        </tr>
+                        <tr>
+                            <td><strong>die Intrige</strong></td>
+                            <td>інтрига</td>
+                            <td>РОЗРАХУНОК</td>
+                            <td>♟️ пересуває фігури на дошці</td>
+                            <td>Едмунд</td>
+                        </tr>
+                        <tr>
+                            <td><strong>untreu</strong></td>
+                            <td>невірний</td>
+                            <td>РОЗЧАРУВАННЯ</td>
+                            <td>💔 б'є себе в груди</td>
+                            <td>Лір</td>
+                        </tr>
+                        <tr>
+                            <td><strong>die Verschwörung</strong></td>
+                            <td>заколот</td>
+                            <td>СПРАВЕДЛИВІСТЬ</td>
+                            <td>⚖️ піднімає меч правосуддя</td>
+                            <td>Олбані</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <!-- РОЗДІЛ 5: УПРАЖНЕННЯ -->
+        <section class="section">
+            <h2 class="section-title">
+                <span class="section-number">5</span>
+                <span>📝 🎭 Заповніть пропуски в театральній постановці</span>
+            </h2>
+            
+            <div class="exercise-container">
+                <div class="exercise-section">
+                    <div class="exercise-text">
+                        <p>Початок змови. Едмунд планує <span class="story-highlight"><span class="blank" data-hint="зраджувати" data-answer="verraten">_______ (зраджувати)</span></span> - зрадити брата. <span class="story-highlight">Das <span class="blank" data-hint="змова" data-answer="Komplott">_______ (змова)</span></span> починається з підробленого листа. Він майстерно <span class="story-highlight"><span class="blank" data-hint="обдурити" data-answer="täuschen">_______ (обдурити)</span></span> - обдурює батька.</p><p>Павутина зради. <span class="story-highlight">Die <span class="blank" data-hint="інтрига" data-answer="Intrige">_______ (інтрига)</span></span> розростається. Сестри <span class="story-highlight"><span class="blank" data-hint="змовлятися" data-answer="verschwören">_______ (змовлятися)</span></span> - змовляються проти Ліра, <span class="story-highlight"><span class="blank" data-hint="обманути" data-answer="hintergehen">_______ (обманути)</span></span> - обманюють його. <span class="story-highlight">Der <span class="blank" data-hint="зрада" data-answer="Verrat">_______ (зрада)</span></span> стає нормою. Лише Кент залишається <span class="story-highlight"><span class="blank" data-hint="вірний" data-answer="loyal">_______ (вірний)</span></span>.</p><p>Розплата. <span class="story-highlight">Der <span class="blank" data-hint="зрадник" data-answer="Verräter">_______ (зрадник)</span></span> Едмунд гине від руки брата. <span class="story-highlight"><span class="blank" data-hint="невірний" data-answer="untreu">_______ (невірний)</span></span> дочки отруюють одна одну. <span class="story-highlight">Die <span class="blank" data-hint="заколот" data-answer="Verschwörung">_______ (заколот)</span></span> руйнується. <span class="story-highlight">Die <span class="blank" data-hint="вірність" data-answer="Treue">_______ (вірність)</span></span> Корделії сяє, але запізно.</p>
+                    </div>
+                    
+                    <button class="show-answer-btn" onclick="toggleAnswers(this)" type="button">
+                        Показать ответы
+                    </button>
+                </div>
+            </div>
+        </section>
+        
+        <script>
+            // Відповіді для вправи  
+            const exerciseAnswers = {"зраджувати": "verraten", "змова": "Komplott", "обдурити": "täuschen", "інтрига": "Intrige", "змовлятися": "verschwören", "обманути": "hintergehen", "зрада": "Verrat", "вірний": "loyal", "зрадник": "Verräter", "невірний": "untreu", "заколот": "Verschwörung", "вірність": "Treue"};
+            
+            function toggleAnswers(button) {
+                const blanks = document.querySelectorAll('.blank');
+                const isShowing = button.textContent === 'Скрыть ответы';
+                
+                blanks.forEach(blank => {
+                    const hint = blank.dataset.hint;
+                    const answer = exerciseAnswers[hint];
+                    
+                    if (isShowing) {
+                        blank.innerHTML = `_______ (${hint})`;
+                        blank.classList.remove('filled');
+                    } else {
+                        if (answer) {
+                            blank.innerHTML = `<strong>${answer}</strong>`;
+                            blank.classList.add('filled');
+                        }
+                    }
+                });
+                
+                button.textContent = isShowing ? 'Показать ответы' : 'Скрыть ответы';
+                button.classList.toggle('success');
+            }
+        </script>
+        
+        <!-- НАВІГАЦІЯ ПІСЛЯ УПРАЖНЕННЯ -->
+        <div class="bottom-navigation">
+            <a href="../index.html" class="nav-btn">
+                <span class="nav-icon">📚</span>
+                <span>К урокам</span>
+            </a>
+            <a href="../../index.html" class="nav-btn nav-btn-home">
+                <span class="nav-icon">🏠</span>
+                <span>На главную</span>
+            </a>
+        </div>
+        
+        <style>
+            /* Стилі для упражнення */
+            .exercise-container {
+                margin-top: 30px;
+            }
+            
+            .exercise-section {
+                background: linear-gradient(135deg, #fff9e6 0%, #fff4d6 100%);
+                border: 2px solid #f6ad55;
+                padding: 30px;
+                border-radius: 15px;
+                position: relative;
+            }
+            
+            .exercise-text {
+                color: #4a5568;
+                font-size: 1.15em;
+                line-height: 1.9;
+                text-align: justify;
+                margin-bottom: 25px;
+            }
+            
+            .exercise-text .blank {
+                display: inline-block;
+                min-width: 100px;
+                border-bottom: 2px solid #f6ad55;
+                margin: 0 4px;
+                color: #a0aec0;
+                font-style: italic;
+                font-size: 0.9em;
+                padding: 0 4px;
+                transition: all 0.3s ease;
+            }
+            
+            .exercise-text .blank.filled {
+                color: #d97706;
+                font-weight: 600;
+                font-style: normal;
+                border-bottom-color: #22c55e;
+            }
+            
+            .show-answer-btn {
+                background: linear-gradient(135deg, #f6ad55 0%, #ed8936 100%);
+                color: white;
+                border: none;
+                padding: 18px 36px;
+                border-radius: 12px;
+                font-size: 1.15em;
+                font-weight: 600;
+                cursor: pointer;
+                margin: 0 auto;
+                display: block;
+                transition: all 0.3s ease;
+                box-shadow: 0 4px 12px rgba(237, 137, 54, 0.3);
+                touch-action: manipulation;
+                -webkit-tap-highlight-color: transparent;
+                -webkit-user-select: none;
+                user-select: none;
+                min-height: 56px;
+                min-width: 200px;
+                -webkit-appearance: none;
+                appearance: none;
+            }
+            
+            .show-answer-btn:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 6px 16px rgba(237, 137, 54, 0.4);
+            }
+            
+            .show-answer-btn:active {
+                transform: scale(0.98);
+                box-shadow: 0 2px 8px rgba(237, 137, 54, 0.3);
+            }
+            
+            .show-answer-btn.success {
+                background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+            }
+            
+            /* Навігація після упражнення */
+            .bottom-navigation {
+                margin-top: 50px;
+                padding: 30px 0;
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+                border-top: 2px solid #e2e8f0;
+            }
+            
+            .nav-btn {
+                display: inline-flex;
+                align-items: center;
+                gap: 10px;
+                padding: 15px 30px;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                color: white;
+                text-decoration: none;
+                border-radius: 25px;
+                font-size: 1.1em;
+                font-weight: 600;
+                transition: all 0.3s ease;
+                box-shadow: 0 4px 15px rgba(118, 75, 162, 0.3);
+                touch-action: manipulation;
+                -webkit-tap-highlight-color: transparent;
+                min-height: 56px;
+            }
+            
+            .nav-btn:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 6px 20px rgba(118, 75, 162, 0.4);
+            }
+            
+            .nav-btn:active {
+                transform: scale(0.98);
+            }
+            
+            .nav-btn-home {
+                background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+                box-shadow: 0 4px 15px rgba(245, 87, 108, 0.3);
+            }
+            
+            .nav-btn-home:hover {
+                box-shadow: 0 6px 20px rgba(245, 87, 108, 0.4);
+            }
+            
+            .nav-icon {
+                font-size: 1.3em;
+            }
+            
+            /* Mobile optimizations */
+            @media (max-width: 768px) {
+                .exercise-section {
+                    padding: 20px;
+                }
+                
+                .exercise-text {
+                    font-size: 1.05em;
+                }
+                
+                .exercise-text .blank {
+                    min-width: 80px;
+                }
+                
+                .show-answer-btn {
+                    width: 90%;
+                    max-width: 300px;
+                    padding: 16px 24px;
+                    font-size: 1.1em;
+                }
+                
+                .bottom-navigation {
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 15px;
+                    padding: 20px;
+                }
+                
+                .nav-btn {
+                    width: 90%;
+                    max-width: 300px;
+                    justify-content: center;
+                }
+            }
+            
+            /* iOS specific */
+            @supports (-webkit-touch-callout: none) {
+                .show-answer-btn,
+                .nav-btn {
+                    -webkit-appearance: none;
+                    appearance: none;
+                }
+            }
+        </style>
+        
+        <script>
+        // Device detection
+        const isTouchDevice = ('ontouchstart' in window) || 
+                              (navigator.maxTouchPoints > 0) || 
+                              (navigator.msMaxTouchPoints > 0);
+        
+        // Exercise answers data
+        const exerciseAnswers = {"зраджувати": "verraten", "змова": "Komplott", "обдурити": "täuschen", "інтрига": "Intrige", "змовлятися": "verschwören", "обманути": "hintergehen", "зрада": "Verrat", "вірний": "loyal", "зрадник": "Verräter", "невірний": "untreu", "заколот": "Verschwörung", "вірність": "Treue"};
+        
+        // Function to toggle answers
+        function toggleAnswers(button) {
+            // Prevent double tap
+            if (button.dataset.processing === 'true') return;
+            button.dataset.processing = 'true';
+            
+            const exerciseText = button.parentElement.querySelector('.exercise-text');
+            const blanks = exerciseText.querySelectorAll('.blank');
+            
+            if (button.textContent === 'Показать ответы') {
+                // Show answers
+                blanks.forEach(blank => {
+                    const hint = blank.getAttribute('data-hint');
+                    const answer = exerciseAnswers[hint];
+                    if (answer) {
+                        blank.innerHTML = answer + ' (' + hint + ')';
+                        blank.classList.add('filled');
+                    }
+                });
+                button.textContent = 'Скрыть ответы';
+                button.classList.add('success');
+            } else {
+                // Hide answers
+                blanks.forEach(blank => {
+                    const hint = blank.getAttribute('data-hint');
+                    blank.innerHTML = '_______ (' + hint + ')';
+                    blank.classList.remove('filled');
+                });
+                button.textContent = 'Показать ответы';
+                button.classList.remove('success');
+            }
+            
+            // Haptic feedback for mobile
+            if (navigator.vibrate && isTouchDevice) {
+                navigator.vibrate(15);
+            }
+            
+            // Reset processing flag
+            setTimeout(() => {
+                button.dataset.processing = 'false';
+            }, 300);
+        }
+        
+        // Initialize button handlers
+        document.addEventListener('DOMContentLoaded', function() {
+            const answerBtn = document.querySelector('.show-answer-btn');
+            
+            if (answerBtn) {
+                // Visual feedback for mobile
+                if (isTouchDevice) {
+                    answerBtn.addEventListener('touchstart', function() {
+                        this.style.transform = 'scale(0.98)';
+                        this.style.opacity = '0.9';
+                    });
+                    
+                    answerBtn.addEventListener('touchend', function() {
+                        setTimeout(() => {
+                            this.style.transform = 'scale(1)';
+                            this.style.opacity = '1';
+                        }, 100);
+                    });
+                }
+            }
+            
+            // Navigation buttons mobile support
+            const navBtns = document.querySelectorAll('.nav-btn');
+            navBtns.forEach(btn => {
+                if (isTouchDevice) {
+                    btn.addEventListener('touchstart', function() {
+                        this.style.transform = 'scale(0.98)';
+                    });
+                    
+                    btn.addEventListener('touchend', function() {
+                        this.style.transform = 'scale(1)';
+                    });
+                }
+            });
+        });
+        
+        // Prevent iOS double-tap zoom
+        if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
+            let lastTouchEnd = 0;
+            document.addEventListener('touchend', function(event) {
+                const now = Date.now();
+                if (now - lastTouchEnd <= 300) {
+                    event.preventDefault();
+                }
+                lastTouchEnd = now;
+            }, false);
+        }
+        </script>
+        
+    </div>
+    
+    <!-- JavaScript для копіювання уроку -->
+    <script>
+    function copyLesson() {
+        // Збір всіх даних уроку
+        let lessonContent = '';
+        
+        // Заголовок
+        const titleElement = document.querySelector('.scene-moment h1');
+        if (titleElement) {
+            lessonContent += '=== ' + titleElement.textContent + ' ===\n\n';
+        }
+        
+        // Цитата
+        const quoteElement = document.querySelector('.shakespeare-quote');
+        if (quoteElement) {
+            lessonContent += 'Цитата: ' + quoteElement.textContent + '\n\n';
+        }
+        
+        // Емоції
+        const emotionTags = document.querySelectorAll('.emotion-tag');
+        if (emotionTags.length > 0) {
+            lessonContent += 'Эмоции: ';
+            emotionTags.forEach((tag, index) => {
+                lessonContent += tag.textContent;
+                if (index < emotionTags.length - 1) lessonContent += ', ';
+            });
+            lessonContent += '\n\n';
+        }
+        
+        // Слова
+        lessonContent += '=== СЛОВА МОМЕНТА ===\n\n';
+        const wordCards = document.querySelectorAll('.word-card');
+        wordCards.forEach(card => {
+            const german = card.querySelector('.word-german');
+            const transcription = card.querySelector('.word-transcription');
+            const russian = card.querySelector('.word-russian');
+            const type = card.querySelector('.word-type');
+            
+            if (german) {
+                lessonContent += german.textContent;
+                if (transcription && transcription.textContent) {
+                    lessonContent += ' ' + transcription.textContent;
+                }
+                if (russian) {
+                    lessonContent += ' - ' + russian.textContent;
+                }
+                if (type && type.textContent) {
+                    lessonContent += ' (' + type.textContent + ')';
+                }
+                lessonContent += '\n';
+                
+                // Додаткова інформація
+                const characterVoice = card.querySelector('.character-voice');
+                if (characterVoice) {
+                    lessonContent += '  ' + characterVoice.textContent.replace(/\n/g, ' ').trim() + '\n';
+                }
+                
+                const gesture = card.querySelector('.gesture-anchor');
+                if (gesture) {
+                    lessonContent += '  ' + gesture.textContent.replace(/\n/g, ' ').trim() + '\n';
+                }
+                
+                lessonContent += '\n';
+            }
+        });
+        
+        // Театральний момент
+        const storyTitle = document.querySelector('.story-title');
+        const storyText = document.querySelector('.story-text');
+        if (storyTitle || storyText) {
+            lessonContent += '\n=== ТЕАТРАЛЬНЫЙ МОМЕНТ ===\n\n';
+            if (storyTitle) {
+                lessonContent += storyTitle.textContent + '\n\n';
+            }
+            if (storyText) {
+                lessonContent += storyText.textContent.trim() + '\n';
+            }
+            
+            const emotionalPeak = document.querySelector('.emotional-peak');
+            if (emotionalPeak) {
+                lessonContent += '\nЭмоциональный пик: ' + emotionalPeak.textContent.trim() + '\n';
+            }
+        }
+        
+        // Діалоги
+        const dialogues = document.querySelectorAll('.dialogue-line');
+        if (dialogues.length > 0) {
+            lessonContent += '\n=== ЖИВЫЕ ДИАЛОГИ ===\n\n';
+            dialogues.forEach(dialogue => {
+                const character = dialogue.querySelector('strong');
+                const germanText = dialogue.querySelector('.german');
+                const russianText = dialogue.querySelector('.russian');
+                const emotionText = dialogue.querySelector('.emotion');
+                
+                if (character) {
+                    lessonContent += character.textContent + '\n';
+                }
+                if (germanText) {
+                    lessonContent += germanText.textContent + '\n';
+                }
+                if (russianText) {
+                    lessonContent += russianText.textContent + '\n';
+                }
+                if (emotionText) {
+                    lessonContent += emotionText.textContent + '\n';
+                }
+                lessonContent += '\n';
+            });
+        }
+        
+        // Шпаргалка
+        const cheatSheetTable = document.querySelector('.cheat-sheet-table');
+        if (cheatSheetTable) {
+            lessonContent += '\n=== ЭМОЦИОНАЛЬНАЯ ШПАРГАЛКА ===\n\n';
+            const rows = cheatSheetTable.querySelectorAll('tbody tr');
+            rows.forEach(row => {
+                const cells = row.querySelectorAll('td');
+                if (cells.length >= 5) {
+                    lessonContent += cells[0].textContent + ' - ' + cells[1].textContent;
+                    lessonContent += ' | Эмоция: ' + cells[2].textContent;
+                    lessonContent += ' | Жест: ' + cells[3].textContent;
+                    lessonContent += ' | Персонаж: ' + cells[4].textContent + '\n';
+                }
+            });
+        }
+        
+        // Memory trick
+        const memoryTrick = document.querySelector('.memory-trick');
+        if (memoryTrick) {
+            lessonContent += '\n' + memoryTrick.textContent.trim() + '\n';
+        }
+        
+        // Функція копіювання з підтримкою iOS
+        function copyToClipboard(text) {
+            const btn = document.getElementById('copyLessonBtn');
+            const originalText = btn.textContent;
+            
+            // Спробуємо сучасний метод
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(text).then(() => {
+                    showSuccess();
+                }).catch(() => {
+                    fallbackCopy();
+                });
+            } else {
+                // Fallback для iOS та старих браузерів
+                fallbackCopy();
+            }
+            
+            function fallbackCopy() {
+                // Створюємо textarea
+                const textarea = document.createElement('textarea');
+                textarea.value = text;
+                textarea.style.position = 'fixed';
+                textarea.style.top = '0';
+                textarea.style.left = '0';
+                textarea.style.width = '2em';
+                textarea.style.height = '2em';
+                textarea.style.padding = '0';
+                textarea.style.border = 'none';
+                textarea.style.outline = 'none';
+                textarea.style.boxShadow = 'none';
+                textarea.style.background = 'transparent';
+                textarea.style.fontSize = '16px'; // Запобігає zoom на iOS
+                
+                document.body.appendChild(textarea);
+                
+                // Для iOS потрібен особливий підхід
+                if (navigator.userAgent.match(/ipad|iphone/i)) {
+                    const range = document.createRange();
+                    range.selectNodeContents(textarea);
+                    const selection = window.getSelection();
+                    selection.removeAllRanges();
+                    selection.addRange(range);
+                    textarea.setSelectionRange(0, 999999);
+                } else {
+                    textarea.select();
+                }
+                
+                try {
+                    const successful = document.execCommand('copy');
+                    if (successful) {
+                        showSuccess();
+                    } else {
+                        showManualCopy();
+                    }
+                } catch (err) {
+                    showManualCopy();
+                }
+                
+                document.body.removeChild(textarea);
+            }
+            
+            function showSuccess() {
+                btn.textContent = '✅ Скопировано!';
+                btn.classList.add('success');
+                setTimeout(() => {
+                    btn.textContent = originalText;
+                    btn.classList.remove('success');
+                }, 2000);
+            }
+            
+            function showManualCopy() {
+                // Показуємо текст для ручного копіювання
+                const modal = document.createElement('div');
+                modal.style.cssText = `
+                    position: fixed;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    background: white;
+                    padding: 20px;
+                    border-radius: 10px;
+                    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+                    z-index: 10000;
+                    max-width: 90%;
+                    max-height: 80vh;
+                `;
+                
+                modal.innerHTML = `
+                    <h3 style="margin-top: 0;">Выделите и скопируйте текст:</h3>
+                    <textarea readonly style="
+                        width: 100%;
+                        min-width: 300px;
+                        height: 300px;
+                        padding: 10px;
+                        border: 1px solid #ccc;
+                        border-radius: 5px;
+                        font-size: 14px;
+                        resize: vertical;
+                    ">${text.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</textarea>
+                    <button onclick="this.parentElement.remove()" style="
+                        margin-top: 10px;
+                        padding: 10px 20px;
+                        background: #764ba2;
+                        color: white;
+                        border: none;
+                        border-radius: 5px;
+                        cursor: pointer;
+                        font-size: 16px;
+                    ">Закрыть</button>
+                `;
+                
+                document.body.appendChild(modal);
+                
+                // Автоматично виділяємо текст
+                const textarea = modal.querySelector('textarea');
+                textarea.select();
+                textarea.setSelectionRange(0, 999999);
+            }
+        }
+        
+        copyToClipboard(lessonContent);
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,1397 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>🎭 АКТ II, СЦЕНА 1: ИНТРИГА ЭДМУНДА</title>
+    <style>
+        
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    font-family: 'Georgia', serif;
+    min-height: 100vh;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.scene-moment {
+    background: linear-gradient(135deg, #FFD700, #8B4513);
+    padding: 30px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.scene-moment::before {
+    content: '👑';
+    position: absolute;
+    font-size: 200px;
+    opacity: 0.1;
+    right: -50px;
+    top: -50px;
+    transform: rotate(-15deg);
+}
+
+.scene-moment h1 {
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    margin: 0 0 20px 0;
+    font-size: 2.5em;
+}
+
+.shakespeare-quote {
+    color: #fff;
+    font-style: italic;
+    font-size: 1.3em;
+    margin: 15px 0;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+.emotion-tags {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.emotion-tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.3);
+    padding: 5px 15px;
+    border-radius: 20px;
+    margin: 5px;
+    font-weight: bold;
+    color: white;
+    backdrop-filter: blur(5px);
+}
+
+.section {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.section-title {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.section-number {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.word-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 25px;
+}
+
+.word-card {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transform: translateY(0);
+    transition: transform 0.3s;
+}
+
+.word-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.word-german {
+    font-size: 2em;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    margin-bottom: 10px;
+}
+
+.word-transcription {
+    color: #fff;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    opacity: 0.9;
+}
+
+.word-russian {
+    color: #fff;
+    font-size: 1.3em;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.word-type {
+    display: inline-block;
+    background: rgba(255,255,255,0.3);
+    padding: 3px 10px;
+    border-radius: 10px;
+    color: white;
+    font-size: 0.9em;
+    margin-bottom: 15px;
+}
+
+.character-voice {
+    border-left: 5px solid #764ba2;
+    padding-left: 20px;
+    margin: 20px 0;
+    font-style: italic;
+    background: rgba(255,255,255,0.95);
+    padding: 20px;
+    border-radius: 10px;
+    color: #333;
+}
+
+.gesture-anchor {
+    background: #fff3cd;
+    border: 2px dashed #ffc107;
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 15px 0;
+    color: #333;
+}
+
+.gesture-icon {
+    font-size: 40px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.navigation {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.navigation a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
+    padding: 10px 20px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.navigation a:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+        
+        /* Додаткові стилі для нових розділів */
+        .story-container {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 5px solid #764ba2;
+        }
+        
+        .story-highlight {
+            background: #ffeaa7;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+        
+        .emotional-peak {
+            background: #ff6b6b;
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        
+        .dialogue-practice {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        
+        .dialogue-line {
+            margin-bottom: 25px;
+            padding: 15px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .dialogue-line strong {
+            color: #764ba2;
+            font-size: 1.1em;
+        }
+        
+        .dialogue-line .german {
+            font-size: 1.2em;
+            color: #2c3e50;
+            margin: 10px 0;
+        }
+        
+        .dialogue-line .russian {
+            color: #7f8c8d;
+            font-style: italic;
+        }
+        
+        .dialogue-line .emotion {
+            margin-top: 10px;
+            color: #e74c3c;
+        }
+        
+        .cheat-sheet-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        
+        .cheat-sheet-table th {
+            background: #764ba2;
+            color: white;
+            padding: 12px;
+            text-align: left;
+        }
+        
+        .cheat-sheet-table td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .memory-trick {
+            background: #fff3cd;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            border: 2px solid #ffc107;
+        }
+        
+        .story-title {
+            color: #764ba2;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+        
+        /* Стилі для кнопки копіювання */
+        .copy-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 15px 25px;
+            border-radius: 25px;
+            font-size: 1.1em;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            transition: all 0.3s;
+            z-index: 1000;
+            font-family: 'Georgia', serif;
+            -webkit-tap-highlight-color: transparent;
+            -webkit-touch-callout: none;
+            touch-action: manipulation;
+        }
+        
+        .copy-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 7px 20px rgba(0,0,0,0.4);
+        }
+        
+        .copy-button:active {
+            transform: scale(0.95);
+        }
+        
+        .copy-button.success {
+            background: linear-gradient(135deg, #00b894, #00cec9);
+        }
+        
+        /* Адаптація для мобільних */
+        @media (max-width: 768px) {
+            .copy-button {
+                top: 10px;
+                right: 10px;
+                padding: 12px 20px;
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Навігація -->
+        <div class="navigation">
+            <a href="../index.html">← К урокам B1</a>
+            <a href="../../index.html">🏠 На главную</a>
+        </div>
+        
+        <!-- Кнопка копіювання -->
+        <button id="copyLessonBtn" class="copy-button" onclick="copyLesson()">
+            📋 Копировать урок
+        </button>
+        
+        <!-- SCENE MOMENT -->
+        <div class="scene-moment">
+            <h1>🗡 🎭 АКТ II, СЦЕНА 1: ИНТРИГА ЭДМУНДА</h1>
+            <p class="shakespeare-quote">"Боги, встаньте за бастардов!"</p>
+            <div class="emotion-tags">
+                <span class="emotion-tag">🐍 ИНТРИГА</span>
+                <span class="emotion-tag">📜 ПОДЛОГ</span>
+                <span class="emotion-tag">🎭 МАНИПУЛЯЦИЯ</span>
+            </div>
+        </div>
+        
+        <!-- РОЗДІЛ 1: СЛОВА -->
+        <section class="section">
+            <h2 class="section-title">
+                <span class="section-number">1</span>
+                <span>📚 Слова момента</span>
+            </h2>
+            <div class="word-cards">
+                <div class="word-card">
+                    <div class="word-german">der Bastard</div>
+                    <div class="word-transcription">[дер БАС-тард]</div>
+                    <div class="word-russian">бастард</div>
+                    <div class="word-type">существительное</div>
+                    <div class="character-voice">
+                        <strong>Эдмунд:</strong><br/>
+                        "Der Bastard wird siegen!"<br/>
+                        (Бастард победит!)
+                    </div>
+                    <div class="gesture-anchor">
+                        <span class="gesture-icon">⚔️</span>
+                        <div>
+                            <strong>Жест-якорь:</strong> Сжатый кулак<br/>
+                            <strong>Эмоция:</strong> РЕШИМОСТЬ<br/>
+                            <strong>Ассоциация:</strong> Эдмунд-бастард жаждет власти и признания
+                        </div>
+                    </div>
+                </div>
+                <div class="word-card">
+                    <div class="word-german">die Intrige</div>
+                    <div class="word-transcription">[ди ин-ТРИ-ге]</div>
+                    <div class="word-russian">интрига</div>
+                    <div class="word-type">существительное</div>
+                    <div class="character-voice">
+                        <strong>Эдмунд:</strong><br/>
+                        "Meine Intrige ist perfekt!"<br/>
+                        (Моя интрига совершенна!)
+                    </div>
+                    <div class="gesture-anchor">
+                        <span class="gesture-icon">🕸</span>
+                        <div>
+                            <strong>Жест-якорь:</strong> Плетущие руки<br/>
+                            <strong>Эмоция:</strong> КОВАРСТВО<br/>
+                            <strong>Ассоциация:</strong> Эдмунд плетёт интригу против брата Эдгара
+                        </div>
+                    </div>
+                </div>
+                <div class="word-card">
+                    <div class="word-german">der Brief</div>
+                    <div class="word-transcription">[дер БРИФ]</div>
+                    <div class="word-russian">письмо</div>
+                    <div class="word-type">существительное</div>
+                    <div class="character-voice">
+                        <strong>Эдмунд:</strong><br/>
+                        "Dieser Brief beweist alles!"<br/>
+                        (Это письмо всё доказывает!)
+                    </div>
+                    <div class="gesture-anchor">
+                        <span class="gesture-icon">📜</span>
+                        <div>
+                            <strong>Жест-якорь:</strong> Показ письма<br/>
+                            <strong>Эмоция:</strong> ОБМАН<br/>
+                            <strong>Ассоциация:</strong> Эдмунд показывает отцу поддельное письмо Эдгара
+                        </div>
+                    </div>
+                </div>
+                <div class="word-card">
+                    <div class="word-german">fälschen</div>
+                    <div class="word-transcription">[ФЕЛЬ-шен]</div>
+                    <div class="word-russian">подделывать</div>
+                    <div class="word-type">глагол</div>
+                    <div class="character-voice">
+                        <strong>Эдмунд:</strong><br/>
+                        "Ich habe seine Schrift gefälscht"<br/>
+                        (Я подделал его почерк)
+                    </div>
+                    <div class="gesture-anchor">
+                        <span class="gesture-icon">✍️</span>
+                        <div>
+                            <strong>Жест-якорь:</strong> Пишущая рука<br/>
+                            <strong>Эмоция:</strong> ПОДЛОГ<br/>
+                            <strong>Ассоциация:</strong> Эдмунд подделывает подпись брата в письме
+                        </div>
+                    </div>
+                </div>
+                <div class="word-card">
+                    <div class="word-german">täuschen</div>
+                    <div class="word-transcription">[ТОЙ-шен]</div>
+                    <div class="word-russian">обманывать</div>
+                    <div class="word-type">глагол</div>
+                    <div class="character-voice">
+                        <strong>Эдмунд:</strong><br/>
+                        "Ich täusche meinen Vater"<br/>
+                        (Я обманываю отца)
+                    </div>
+                    <div class="gesture-anchor">
+                        <span class="gesture-icon">🎭</span>
+                        <div>
+                            <strong>Жест-якорь:</strong> Невинное лицо<br/>
+                            <strong>Эмоция:</strong> ПРИТВОРСТВО<br/>
+                            <strong>Ассоциация:</strong> Эдмунд притворяется любящим сыном перед Глостером
+                        </div>
+                    </div>
+                </div>
+                <div class="word-card">
+                    <div class="word-german">verraten</div>
+                    <div class="word-transcription">[фер-РА-тен]</div>
+                    <div class="word-russian">предавать</div>
+                    <div class="word-type">глагол</div>
+                    <div class="character-voice">
+                        <strong>Эдмунд:</strong><br/>
+                        "Ich verrate meinen Bruder"<br/>
+                        (Я предаю своего брата)
+                    </div>
+                    <div class="gesture-anchor">
+                        <span class="gesture-icon">🗡</span>
+                        <div>
+                            <strong>Жест-якорь:</strong> Удар в спину<br/>
+                            <strong>Эмоция:</strong> ПРЕДАТЕЛЬСТВО<br/>
+                            <strong>Ассоциация:</strong> Эдмунд предаёт брата Эдгара фальшивым письмом
+                        </div>
+                    </div>
+                </div>
+                <div class="word-card">
+                    <div class="word-german">die Natur</div>
+                    <div class="word-transcription">[ди на-ТУР]</div>
+                    <div class="word-russian">природа</div>
+                    <div class="word-type">существительное</div>
+                    <div class="character-voice">
+                        <strong>Эдмунд:</strong><br/>
+                        "Die Natur ist meine Göttin!"<br/>
+                        (Природа - моя богиня!)
+                    </div>
+                    <div class="gesture-anchor">
+                        <span class="gesture-icon">🌿</span>
+                        <div>
+                            <strong>Жест-якорь:</strong> Воздетые руки<br/>
+                            <strong>Эмоция:</strong> ВЫЗОВ<br/>
+                            <strong>Ассоциация:</strong> Эдмунд взывает к природе против законов общества
+                        </div>
+                    </div>
+                </div>
+                <div class="word-card">
+                    <div class="word-german">rechtmäßig</div>
+                    <div class="word-transcription">[РЕХТ-ме-сиг]</div>
+                    <div class="word-russian">законный</div>
+                    <div class="word-type">прилагательное</div>
+                    <div class="character-voice">
+                        <strong>Глостер:</strong><br/>
+                        "Edgar ist mein rechtmäßiger Sohn"<br/>
+                        (Эдгар - мой законный сын)
+                    </div>
+                    <div class="gesture-anchor">
+                        <span class="gesture-icon">⚖️</span>
+                        <div>
+                            <strong>Жест-якорь:</strong> Указание на старшего<br/>
+                            <strong>Эмоция:</strong> ПРАВО<br/>
+                            <strong>Ассоциация:</strong> Эдгар - законный наследник, а Эдмунд - бастард
+                        </div>
+                    </div>
+                </div>
+                <div class="word-card">
+                    <div class="word-german">der Bruder</div>
+                    <div class="word-transcription">[дер БРУ-дер]</div>
+                    <div class="word-russian">брат</div>
+                    <div class="word-type">существительное</div>
+                    <div class="character-voice">
+                        <strong>Эдмунд:</strong><br/>
+                        "Mein Bruder plant Verrat!"<br/>
+                        (Мой брат планирует измену!)
+                    </div>
+                    <div class="gesture-anchor">
+                        <span class="gesture-icon">👬</span>
+                        <div>
+                            <strong>Жест-якорь:</strong> Ложное сожаление<br/>
+                            <strong>Эмоция:</strong> ЗАВИСТЬ<br/>
+                            <strong>Ассоциация:</strong> Эдмунд завидует законному статусу брата
+                        </div>
+                    </div>
+                </div>
+                <div class="word-card">
+                    <div class="word-german">erben</div>
+                    <div class="word-transcription">[ЕР-бен]</div>
+                    <div class="word-russian">наследовать</div>
+                    <div class="word-type">глагол</div>
+                    <div class="character-voice">
+                        <strong>Эдмунд:</strong><br/>
+                        "Ich werde alles erben!"<br/>
+                        (Я унаследую всё!)
+                    </div>
+                    <div class="gesture-anchor">
+                        <span class="gesture-icon">👑</span>
+                        <div>
+                            <strong>Жест-якорь:</strong> Жадный взгляд<br/>
+                            <strong>Эмоция:</strong> АЛЧНОСТЬ<br/>
+                            <strong>Ассоциация:</strong> Эдмунд хочет наследовать титул и земли отца
+                        </div>
+                    </div>
+                </div>
+                <div class="word-card">
+                    <div class="word-german">glauben</div>
+                    <div class="word-transcription">[ГЛАУ-бен]</div>
+                    <div class="word-russian">верить</div>
+                    <div class="word-type">глагол</div>
+                    <div class="character-voice">
+                        <strong>Глостер:</strong><br/>
+                        "Ich glaube dir, Edmund"<br/>
+                        (Я верю тебе, Эдмунд)
+                    </div>
+                    <div class="gesture-anchor">
+                        <span class="gesture-icon">🙈</span>
+                        <div>
+                            <strong>Жест-якорь:</strong> Доверчивый кивок<br/>
+                            <strong>Эмоция:</strong> ДОВЕРИЕ<br/>
+                            <strong>Ассоциация:</strong> Глостер слепо верит лжи младшего сына
+                        </div>
+                    </div>
+                </div>
+                <div class="word-card">
+                    <div class="word-german">der Plan</div>
+                    <div class="word-transcription">[дер ПЛАН]</div>
+                    <div class="word-russian">план</div>
+                    <div class="word-type">существительное</div>
+                    <div class="character-voice">
+                        <strong>Эдмунд:</strong><br/>
+                        "Mein Plan funktioniert!"<br/>
+                        (Мой план работает!)
+                    </div>
+                    <div class="gesture-anchor">
+                        <span class="gesture-icon">📋</span>
+                        <div>
+                            <strong>Жест-якорь:</strong> Потирание рук<br/>
+                            <strong>Эмоция:</strong> ТРИУМФ<br/>
+                            <strong>Ассоциация:</strong> План Эдмунда по уничтожению брата успешен
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- РОЗДІЛ 2: ТЕАТРАЛЬНИЙ МОМЕНТ -->
+        <section class="section">
+            <h2 class="section-title">
+                <span class="section-number">2</span>
+                <span>🎭 Театральный момент</span>
+            </h2>
+            <div class="story-container">
+                <h3 class="story-title">ТЕАТРАЛЬНЫЙ МОМЕНТ</h3>
+                <div class="story-text"><p>Замок Глостера. <span class="story-highlight">Der Bastard</span> Эдмунд начинает свою <span class="story-highlight">die Intrige</span>. Он достаёт <span class="story-highlight">der Brief</span>, который сам же <span class="story-highlight">fälschen</span>.</p>
+<p>Эдмунд решает <span class="story-highlight">täuschen</span> отца и <span class="story-highlight">verraten</span> брата. Он взывает к <span class="story-highlight">die Natur</span> - почему <span class="story-highlight">rechtmäßig</span> сын должен всё получить?</p>
+<p><span class="story-highlight">Der Bruder</span> Эдгар ничего не подозревает. Эдмунд хочет <span class="story-highlight">erben</span> всё. Глостер <span class="story-highlight">glauben</span> младшему сыну. <span class="story-highlight">Der Plan</span> работает идеально!</p>
+                </div>
+                <div class="emotional-peak">
+                    «Природа, ты моя богиня! Твоим законам подчинена моя жизнь!»
+                </div>
+            </div>
+        </section>
+        
+        <!-- РОЗДІЛ 3: ДІАЛОГИ -->
+        <section class="section">
+            <h2 class="section-title">
+                <span class="section-number">3</span>
+                <span>💬 Живые диалоги сцены</span>
+            </h2>
+            <div class="dialogue-practice">
+                <div class="dialogue-line">
+                    <strong>ЭДМУНД:</strong>
+                    <p class="german">Ich, der BASTARD, werde durch INTRIGE siegen!</p>
+                    <p class="russian">(Я, БАСТАРД, победлю через ИНТРИГУ!)</p>
+                    <p class="emotion">🐍 [Решительно]</p>
+                </div>
+                <div class="dialogue-line">
+                    <strong>ЭДМУНД:</strong>
+                    <p class="german">Dieser BRIEF - ich habe ihn GEFÄLSCHT!</p>
+                    <p class="russian">(Это ПИСЬМО - я его ПОДДЕЛАЛ!)</p>
+                    <p class="emotion">📜 [Коварно]</p>
+                </div>
+                <div class="dialogue-line">
+                    <strong>ГЛОСТЕР:</strong>
+                    <p class="german">Edgar? Mein RECHTMÄSSIGER Sohn? Ich GLAUBE es nicht!</p>
+                    <p class="russian">(Эдгар? Мой ЗАКОННЫЙ сын? Я не ВЕРЮ!)</p>
+                    <p class="emotion">😱 [Потрясённо]</p>
+                </div>
+                <div class="dialogue-line">
+                    <strong>ЭДМУНД:</strong>
+                    <p class="german">Vater, ich muss Euch TÄUSCHEN... nein, ich meine, die Wahrheit sagen!</p>
+                    <p class="russian">(Отец, я должен вас ОБМАНУТЬ... нет, я хочу сказать правду!)</p>
+                    <p class="emotion">🎭 [Притворно]</p>
+                </div>
+                <div class="dialogue-line">
+                    <strong>ЭДМУНД:</strong>
+                    <p class="german">Die NATUR! Warum sollte mein BRUDER alles ERBEN?</p>
+                    <p class="russian">(ПРИРОДА! Почему мой БРАТ должен всё НАСЛЕДОВАТЬ?)</p>
+                    <p class="emotion">🔥 [С вызовом]</p>
+                </div>
+                <div class="dialogue-line">
+                    <strong>ГЛОСТЕР:</strong>
+                    <p class="german">Ich GLAUBE dir! Edgar hat mich VERRATEN!</p>
+                    <p class="russian">(Я ВЕРЮ тебе! Эдгар меня ПРЕДАЛ!)</p>
+                    <p class="emotion">💔 [С болью]</p>
+                </div>
+                <div class="dialogue-line">
+                    <strong>ЭДМУНД:</strong>
+                    <p class="german">Mein PLAN funktioniert! Die INTRIGE ist perfekt!</p>
+                    <p class="russian">(Мой ПЛАН работает! ИНТРИГА совершенна!)</p>
+                    <p class="emotion">😈 [Торжествующе]</p>
+                </div>
+                <div class="dialogue-line">
+                    <strong>ЭДМУНД:</strong>
+                    <p class="german">BRUDER gegen BRUDER - die NATUR siegt über Gesetze!</p>
+                    <p class="russian">(БРАТ против БРАТА - ПРИРОДА побеждает законы!)</p>
+                    <p class="emotion">⚔️ [Жестоко]</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- РОЗДІЛ 4: ШПАРГАЛКА -->
+        <section class="section">
+            <h2 class="section-title">
+                <span class="section-number">4</span>
+                <span>📌 Эмоциональная шпаргалка</span>
+            </h2>
+            <div class="cheat-sheet">
+                <h3>ЯКОРЯ ПАМЯТИ</h3>
+                <table class="cheat-sheet-table">
+                    <thead>
+                        <tr>
+                            <th>Немецкий</th>
+                            <th>Русский</th>
+                            <th>Эмоция момента</th>
+                            <th>Жест-якорь</th>
+                            <th>Персонаж</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>der Bastard</strong></td>
+                            <td>бастард</td>
+                            <td>РЕШИМОСТЬ</td>
+                            <td>⚔️ Сжатый кулак</td>
+                            <td>Эдмунд</td>
+                        </tr>
+                        <tr>
+                            <td><strong>die Intrige</strong></td>
+                            <td>интрига</td>
+                            <td>КОВАРСТВО</td>
+                            <td>🕸 Плетущие руки</td>
+                            <td>Эдмунд</td>
+                        </tr>
+                        <tr>
+                            <td><strong>der Brief</strong></td>
+                            <td>письмо</td>
+                            <td>ОБМАН</td>
+                            <td>📜 Показ письма</td>
+                            <td>Эдмунд</td>
+                        </tr>
+                        <tr>
+                            <td><strong>fälschen</strong></td>
+                            <td>подделывать</td>
+                            <td>ПОДЛОГ</td>
+                            <td>✍️ Пишущая рука</td>
+                            <td>Эдмунд</td>
+                        </tr>
+                        <tr>
+                            <td><strong>täuschen</strong></td>
+                            <td>обманывать</td>
+                            <td>ПРИТВОРСТВО</td>
+                            <td>🎭 Невинное лицо</td>
+                            <td>Эдмунд</td>
+                        </tr>
+                        <tr>
+                            <td><strong>verraten</strong></td>
+                            <td>предавать</td>
+                            <td>ПРЕДАТЕЛЬСТВО</td>
+                            <td>🗡 Удар в спину</td>
+                            <td>Эдмунд</td>
+                        </tr>
+                        <tr>
+                            <td><strong>die Natur</strong></td>
+                            <td>природа</td>
+                            <td>ВЫЗОВ</td>
+                            <td>🌿 Воздетые руки</td>
+                            <td>Эдмунд</td>
+                        </tr>
+                        <tr>
+                            <td><strong>rechtmäßig</strong></td>
+                            <td>законный</td>
+                            <td>ПРАВО</td>
+                            <td>⚖️ Указание на старшего</td>
+                            <td>Глостер</td>
+                        </tr>
+                        <tr>
+                            <td><strong>der Bruder</strong></td>
+                            <td>брат</td>
+                            <td>ЗАВИСТЬ</td>
+                            <td>👬 Ложное сожаление</td>
+                            <td>Эдмунд</td>
+                        </tr>
+                        <tr>
+                            <td><strong>erben</strong></td>
+                            <td>наследовать</td>
+                            <td>АЛЧНОСТЬ</td>
+                            <td>👑 Жадный взгляд</td>
+                            <td>Эдмунд</td>
+                        </tr>
+                        <tr>
+                            <td><strong>glauben</strong></td>
+                            <td>верить</td>
+                            <td>ДОВЕРИЕ</td>
+                            <td>🙈 Доверчивый кивок</td>
+                            <td>Глостер</td>
+                        </tr>
+                        <tr>
+                            <td><strong>der Plan</strong></td>
+                            <td>план</td>
+                            <td>ТРИУМФ</td>
+                            <td>📋 Потирание рук</td>
+                            <td>Эдмунд</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="memory-trick">
+                    💡 <strong>Мастер-трюк запоминания:</strong><br/>
+                    Представь БАСТАРДА Эдмунда с его ИНТРИГОЙ: поддельное ПИСЬМО, 
+                он ПОДДЕЛЫВАЕТ подпись, ОБМАНЫВАЕТ отца, ПРЕДАЁТ брата. 
+                Взывает к ПРИРОДЕ против ЗАКОННОГО наследника. 
+                БРАТ не подозревает, хочет НАСЛЕДОВАТЬ, отец ВЕРИТ, ПЛАН работает!<br/><br/>
+                    <strong>Цепочка эмоций:</strong> Зависть → Интрига → Подлог → Обман → Доверие → Предательство → Триумф<br/><br/>
+                    <strong>Ритуал:</strong> Сыграй Эдмунда: почувствуй зависть бастарда, коварство интригана, 
+                триумф манипулятора. Каждое слово - шаг к власти!
+                </div>
+            </div>
+        </section>
+        <!-- РОЗДІЛ 5: УПРАЖНЕННЯ -->
+        <section class="section">
+            <h2 class="section-title">
+                <span class="section-number">5</span>
+                <span>📝 🎭 Заповніть пропуски в театральній постановці</span>
+            </h2>
+            
+            <div class="exercise-container">
+                <div class="exercise-section">
+                    <div class="exercise-text">
+                        <p>Замок Глостера. <span class="story-highlight"><span class="blank" data-hint="бастард" data-answer="Der Bastard">_______ (бастард)</span></span> Эдмунд начинает свою <span class="story-highlight"><span class="blank" data-hint="интрига" data-answer="die Intrige">_______ (интрига)</span></span>. Он достаёт <span class="story-highlight"><span class="blank" data-hint="письмо" data-answer="der Brief">_______ (письмо)</span></span>, который сам же <span class="story-highlight"><span class="blank" data-hint="подделывать" data-answer="fälschen">_______ (подделывать)</span></span>.</p>
+<p>Эдмунд решает <span class="story-highlight"><span class="blank" data-hint="обманывать" data-answer="täuschen">_______ (обманывать)</span></span> отца и <span class="story-highlight"><span class="blank" data-hint="предавать" data-answer="verraten">_______ (предавать)</span></span> брата. Он взывает к <span class="story-highlight"><span class="blank" data-hint="природа" data-answer="die Natur">_______ (природа)</span></span> - почему <span class="story-highlight"><span class="blank" data-hint="законный" data-answer="rechtmäßig">_______ (законный)</span></span> сын должен всё получить?</p>
+<p><span class="story-highlight"><span class="blank" data-hint="брат" data-answer="Der Bruder">_______ (брат)</span></span> Эдгар ничего не подозревает. Эдмунд хочет <span class="story-highlight"><span class="blank" data-hint="наследовать" data-answer="erben">_______ (наследовать)</span></span> всё. Глостер <span class="story-highlight"><span class="blank" data-hint="верить" data-answer="glauben">_______ (верить)</span></span> младшему сыну. <span class="story-highlight"><span class="blank" data-hint="план" data-answer="Der Plan">_______ (план)</span></span> работает идеально!</p>
+                    </div>
+                    
+                    <button class="show-answer-btn" onclick="toggleAnswers(this)" type="button">
+                        Показать ответы
+                    </button>
+                </div>
+            </div>
+        </section>
+        
+        <script>
+            // Відповіді для вправи  
+            const exerciseAnswers = {"бастард": "Der Bastard", "интрига": "die Intrige", "письмо": "der Brief", "подделывать": "fälschen", "обманывать": "täuschen", "предавать": "verraten", "природа": "die Natur", "законный": "rechtmäßig", "брат": "Der Bruder", "наследовать": "erben", "верить": "glauben", "план": "Der Plan"};
+            
+            function toggleAnswers(button) {
+                const blanks = document.querySelectorAll('.blank');
+                const isShowing = button.textContent === 'Скрыть ответы';
+                
+                blanks.forEach(blank => {
+                    const hint = blank.dataset.hint;
+                    const answer = exerciseAnswers[hint];
+                    
+                    if (isShowing) {
+                        blank.innerHTML = `_______ (${hint})`;
+                        blank.classList.remove('filled');
+                    } else {
+                        if (answer) {
+                            blank.innerHTML = `<strong>${answer}</strong>`;
+                            blank.classList.add('filled');
+                        }
+                    }
+                });
+                
+                button.textContent = isShowing ? 'Показать ответы' : 'Скрыть ответы';
+                button.classList.toggle('success');
+            }
+        </script>
+        
+        <!-- НАВІГАЦІЯ ПІСЛЯ УПРАЖНЕННЯ -->
+        <div class="bottom-navigation">
+            <a href="../index.html" class="nav-btn">
+                <span class="nav-icon">📚</span>
+                <span>К урокам</span>
+            </a>
+            <a href="../../index.html" class="nav-btn nav-btn-home">
+                <span class="nav-icon">🏠</span>
+                <span>На главную</span>
+            </a>
+        </div>
+        
+        <style>
+            /* Стилі для упражнення */
+            .exercise-container {
+                margin-top: 30px;
+            }
+            
+            .exercise-section {
+                background: linear-gradient(135deg, #fff9e6 0%, #fff4d6 100%);
+                border: 2px solid #f6ad55;
+                padding: 30px;
+                border-radius: 15px;
+                position: relative;
+            }
+            
+            .exercise-text {
+                color: #4a5568;
+                font-size: 1.15em;
+                line-height: 1.9;
+                text-align: justify;
+                margin-bottom: 25px;
+            }
+            
+            .exercise-text .blank {
+                display: inline-block;
+                min-width: 100px;
+                border-bottom: 2px solid #f6ad55;
+                margin: 0 4px;
+                color: #a0aec0;
+                font-style: italic;
+                font-size: 0.9em;
+                padding: 0 4px;
+                transition: all 0.3s ease;
+            }
+            
+            .exercise-text .blank.filled {
+                color: #d97706;
+                font-weight: 600;
+                font-style: normal;
+                border-bottom-color: #22c55e;
+            }
+            
+            .show-answer-btn {
+                background: linear-gradient(135deg, #f6ad55 0%, #ed8936 100%);
+                color: white;
+                border: none;
+                padding: 18px 36px;
+                border-radius: 12px;
+                font-size: 1.15em;
+                font-weight: 600;
+                cursor: pointer;
+                margin: 0 auto;
+                display: block;
+                transition: all 0.3s ease;
+                box-shadow: 0 4px 12px rgba(237, 137, 54, 0.3);
+                touch-action: manipulation;
+                -webkit-tap-highlight-color: transparent;
+                -webkit-user-select: none;
+                user-select: none;
+                min-height: 56px;
+                min-width: 200px;
+                -webkit-appearance: none;
+                appearance: none;
+            }
+            
+            .show-answer-btn:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 6px 16px rgba(237, 137, 54, 0.4);
+            }
+            
+            .show-answer-btn:active {
+                transform: scale(0.98);
+                box-shadow: 0 2px 8px rgba(237, 137, 54, 0.3);
+            }
+            
+            .show-answer-btn.success {
+                background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+            }
+            
+            /* Навігація після упражнення */
+            .bottom-navigation {
+                margin-top: 50px;
+                padding: 30px 0;
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+                border-top: 2px solid #e2e8f0;
+            }
+            
+            .nav-btn {
+                display: inline-flex;
+                align-items: center;
+                gap: 10px;
+                padding: 15px 30px;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                color: white;
+                text-decoration: none;
+                border-radius: 25px;
+                font-size: 1.1em;
+                font-weight: 600;
+                transition: all 0.3s ease;
+                box-shadow: 0 4px 15px rgba(118, 75, 162, 0.3);
+                touch-action: manipulation;
+                -webkit-tap-highlight-color: transparent;
+                min-height: 56px;
+            }
+            
+            .nav-btn:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 6px 20px rgba(118, 75, 162, 0.4);
+            }
+            
+            .nav-btn:active {
+                transform: scale(0.98);
+            }
+            
+            .nav-btn-home {
+                background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+                box-shadow: 0 4px 15px rgba(245, 87, 108, 0.3);
+            }
+            
+            .nav-btn-home:hover {
+                box-shadow: 0 6px 20px rgba(245, 87, 108, 0.4);
+            }
+            
+            .nav-icon {
+                font-size: 1.3em;
+            }
+            
+            /* Mobile optimizations */
+            @media (max-width: 768px) {
+                .exercise-section {
+                    padding: 20px;
+                }
+                
+                .exercise-text {
+                    font-size: 1.05em;
+                }
+                
+                .exercise-text .blank {
+                    min-width: 80px;
+                }
+                
+                .show-answer-btn {
+                    width: 90%;
+                    max-width: 300px;
+                    padding: 16px 24px;
+                    font-size: 1.1em;
+                }
+                
+                .bottom-navigation {
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 15px;
+                    padding: 20px;
+                }
+                
+                .nav-btn {
+                    width: 90%;
+                    max-width: 300px;
+                    justify-content: center;
+                }
+            }
+            
+            /* iOS specific */
+            @supports (-webkit-touch-callout: none) {
+                .show-answer-btn,
+                .nav-btn {
+                    -webkit-appearance: none;
+                    appearance: none;
+                }
+            }
+        </style>
+        
+        <script>
+        // Device detection
+        const isTouchDevice = ('ontouchstart' in window) || 
+                              (navigator.maxTouchPoints > 0) || 
+                              (navigator.msMaxTouchPoints > 0);
+        
+        // Exercise answers data
+        const exerciseAnswers = {"бастард": "Der Bastard", "интрига": "die Intrige", "письмо": "der Brief", "подделывать": "fälschen", "обманывать": "täuschen", "предавать": "verraten", "природа": "die Natur", "законный": "rechtmäßig", "брат": "Der Bruder", "наследовать": "erben", "верить": "glauben", "план": "Der Plan"};
+        
+        // Function to toggle answers
+        function toggleAnswers(button) {
+            // Prevent double tap
+            if (button.dataset.processing === 'true') return;
+            button.dataset.processing = 'true';
+            
+            const exerciseText = button.parentElement.querySelector('.exercise-text');
+            const blanks = exerciseText.querySelectorAll('.blank');
+            
+            if (button.textContent === 'Показать ответы') {
+                // Show answers
+                blanks.forEach(blank => {
+                    const hint = blank.getAttribute('data-hint');
+                    const answer = exerciseAnswers[hint];
+                    if (answer) {
+                        blank.innerHTML = answer + ' (' + hint + ')';
+                        blank.classList.add('filled');
+                    }
+                });
+                button.textContent = 'Скрыть ответы';
+                button.classList.add('success');
+            } else {
+                // Hide answers
+                blanks.forEach(blank => {
+                    const hint = blank.getAttribute('data-hint');
+                    blank.innerHTML = '_______ (' + hint + ')';
+                    blank.classList.remove('filled');
+                });
+                button.textContent = 'Показать ответы';
+                button.classList.remove('success');
+            }
+            
+            // Haptic feedback for mobile
+            if (navigator.vibrate && isTouchDevice) {
+                navigator.vibrate(15);
+            }
+            
+            // Reset processing flag
+            setTimeout(() => {
+                button.dataset.processing = 'false';
+            }, 300);
+        }
+        
+        // Initialize button handlers
+        document.addEventListener('DOMContentLoaded', function() {
+            const answerBtn = document.querySelector('.show-answer-btn');
+            
+            if (answerBtn) {
+                // Visual feedback for mobile
+                if (isTouchDevice) {
+                    answerBtn.addEventListener('touchstart', function() {
+                        this.style.transform = 'scale(0.98)';
+                        this.style.opacity = '0.9';
+                    });
+                    
+                    answerBtn.addEventListener('touchend', function() {
+                        setTimeout(() => {
+                            this.style.transform = 'scale(1)';
+                            this.style.opacity = '1';
+                        }, 100);
+                    });
+                }
+            }
+            
+            // Navigation buttons mobile support
+            const navBtns = document.querySelectorAll('.nav-btn');
+            navBtns.forEach(btn => {
+                if (isTouchDevice) {
+                    btn.addEventListener('touchstart', function() {
+                        this.style.transform = 'scale(0.98)';
+                    });
+                    
+                    btn.addEventListener('touchend', function() {
+                        this.style.transform = 'scale(1)';
+                    });
+                }
+            });
+        });
+        
+        // Prevent iOS double-tap zoom
+        if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
+            let lastTouchEnd = 0;
+            document.addEventListener('touchend', function(event) {
+                const now = Date.now();
+                if (now - lastTouchEnd <= 300) {
+                    event.preventDefault();
+                }
+                lastTouchEnd = now;
+            }, false);
+        }
+        </script>
+        
+    </div>
+    
+    <!-- JavaScript для копіювання уроку -->
+    <script>
+    function copyLesson() {
+        // Збір всіх даних уроку
+        let lessonContent = '';
+        
+        // Заголовок
+        const titleElement = document.querySelector('.scene-moment h1');
+        if (titleElement) {
+            lessonContent += '=== ' + titleElement.textContent + ' ===\n\n';
+        }
+        
+        // Цитата
+        const quoteElement = document.querySelector('.shakespeare-quote');
+        if (quoteElement) {
+            lessonContent += 'Цитата: ' + quoteElement.textContent + '\n\n';
+        }
+        
+        // Емоції
+        const emotionTags = document.querySelectorAll('.emotion-tag');
+        if (emotionTags.length > 0) {
+            lessonContent += 'Эмоции: ';
+            emotionTags.forEach((tag, index) => {
+                lessonContent += tag.textContent;
+                if (index < emotionTags.length - 1) lessonContent += ', ';
+            });
+            lessonContent += '\n\n';
+        }
+        
+        // Слова
+        lessonContent += '=== СЛОВА МОМЕНТА ===\n\n';
+        const wordCards = document.querySelectorAll('.word-card');
+        wordCards.forEach(card => {
+            const german = card.querySelector('.word-german');
+            const transcription = card.querySelector('.word-transcription');
+            const russian = card.querySelector('.word-russian');
+            const type = card.querySelector('.word-type');
+            
+            if (german) {
+                lessonContent += german.textContent;
+                if (transcription && transcription.textContent) {
+                    lessonContent += ' ' + transcription.textContent;
+                }
+                if (russian) {
+                    lessonContent += ' - ' + russian.textContent;
+                }
+                if (type && type.textContent) {
+                    lessonContent += ' (' + type.textContent + ')';
+                }
+                lessonContent += '\n';
+                
+                // Додаткова інформація
+                const characterVoice = card.querySelector('.character-voice');
+                if (characterVoice) {
+                    lessonContent += '  ' + characterVoice.textContent.replace(/\n/g, ' ').trim() + '\n';
+                }
+                
+                const gesture = card.querySelector('.gesture-anchor');
+                if (gesture) {
+                    lessonContent += '  ' + gesture.textContent.replace(/\n/g, ' ').trim() + '\n';
+                }
+                
+                lessonContent += '\n';
+            }
+        });
+        
+        // Театральний момент
+        const storyTitle = document.querySelector('.story-title');
+        const storyText = document.querySelector('.story-text');
+        if (storyTitle || storyText) {
+            lessonContent += '\n=== ТЕАТРАЛЬНЫЙ МОМЕНТ ===\n\n';
+            if (storyTitle) {
+                lessonContent += storyTitle.textContent + '\n\n';
+            }
+            if (storyText) {
+                lessonContent += storyText.textContent.trim() + '\n';
+            }
+            
+            const emotionalPeak = document.querySelector('.emotional-peak');
+            if (emotionalPeak) {
+                lessonContent += '\nЭмоциональный пик: ' + emotionalPeak.textContent.trim() + '\n';
+            }
+        }
+        
+        // Діалоги
+        const dialogues = document.querySelectorAll('.dialogue-line');
+        if (dialogues.length > 0) {
+            lessonContent += '\n=== ЖИВЫЕ ДИАЛОГИ ===\n\n';
+            dialogues.forEach(dialogue => {
+                const character = dialogue.querySelector('strong');
+                const germanText = dialogue.querySelector('.german');
+                const russianText = dialogue.querySelector('.russian');
+                const emotionText = dialogue.querySelector('.emotion');
+                
+                if (character) {
+                    lessonContent += character.textContent + '\n';
+                }
+                if (germanText) {
+                    lessonContent += germanText.textContent + '\n';
+                }
+                if (russianText) {
+                    lessonContent += russianText.textContent + '\n';
+                }
+                if (emotionText) {
+                    lessonContent += emotionText.textContent + '\n';
+                }
+                lessonContent += '\n';
+            });
+        }
+        
+        // Шпаргалка
+        const cheatSheetTable = document.querySelector('.cheat-sheet-table');
+        if (cheatSheetTable) {
+            lessonContent += '\n=== ЭМОЦИОНАЛЬНАЯ ШПАРГАЛКА ===\n\n';
+            const rows = cheatSheetTable.querySelectorAll('tbody tr');
+            rows.forEach(row => {
+                const cells = row.querySelectorAll('td');
+                if (cells.length >= 5) {
+                    lessonContent += cells[0].textContent + ' - ' + cells[1].textContent;
+                    lessonContent += ' | Эмоция: ' + cells[2].textContent;
+                    lessonContent += ' | Жест: ' + cells[3].textContent;
+                    lessonContent += ' | Персонаж: ' + cells[4].textContent + '\n';
+                }
+            });
+        }
+        
+        // Memory trick
+        const memoryTrick = document.querySelector('.memory-trick');
+        if (memoryTrick) {
+            lessonContent += '\n' + memoryTrick.textContent.trim() + '\n';
+        }
+        
+        // Функція копіювання з підтримкою iOS
+        function copyToClipboard(text) {
+            const btn = document.getElementById('copyLessonBtn');
+            const originalText = btn.textContent;
+            
+            // Спробуємо сучасний метод
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(text).then(() => {
+                    showSuccess();
+                }).catch(() => {
+                    fallbackCopy();
+                });
+            } else {
+                // Fallback для iOS та старих браузерів
+                fallbackCopy();
+            }
+            
+            function fallbackCopy() {
+                // Створюємо textarea
+                const textarea = document.createElement('textarea');
+                textarea.value = text;
+                textarea.style.position = 'fixed';
+                textarea.style.top = '0';
+                textarea.style.left = '0';
+                textarea.style.width = '2em';
+                textarea.style.height = '2em';
+                textarea.style.padding = '0';
+                textarea.style.border = 'none';
+                textarea.style.outline = 'none';
+                textarea.style.boxShadow = 'none';
+                textarea.style.background = 'transparent';
+                textarea.style.fontSize = '16px'; // Запобігає zoom на iOS
+                
+                document.body.appendChild(textarea);
+                
+                // Для iOS потрібен особливий підхід
+                if (navigator.userAgent.match(/ipad|iphone/i)) {
+                    const range = document.createRange();
+                    range.selectNodeContents(textarea);
+                    const selection = window.getSelection();
+                    selection.removeAllRanges();
+                    selection.addRange(range);
+                    textarea.setSelectionRange(0, 999999);
+                } else {
+                    textarea.select();
+                }
+                
+                try {
+                    const successful = document.execCommand('copy');
+                    if (successful) {
+                        showSuccess();
+                    } else {
+                        showManualCopy();
+                    }
+                } catch (err) {
+                    showManualCopy();
+                }
+                
+                document.body.removeChild(textarea);
+            }
+            
+            function showSuccess() {
+                btn.textContent = '✅ Скопировано!';
+                btn.classList.add('success');
+                setTimeout(() => {
+                    btn.textContent = originalText;
+                    btn.classList.remove('success');
+                }, 2000);
+            }
+            
+            function showManualCopy() {
+                // Показуємо текст для ручного копіювання
+                const modal = document.createElement('div');
+                modal.style.cssText = `
+                    position: fixed;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    background: white;
+                    padding: 20px;
+                    border-radius: 10px;
+                    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+                    z-index: 10000;
+                    max-width: 90%;
+                    max-height: 80vh;
+                `;
+                
+                modal.innerHTML = `
+                    <h3 style="margin-top: 0;">Выделите и скопируйте текст:</h3>
+                    <textarea readonly style="
+                        width: 100%;
+                        min-width: 300px;
+                        height: 300px;
+                        padding: 10px;
+                        border: 1px solid #ccc;
+                        border-radius: 5px;
+                        font-size: 14px;
+                        resize: vertical;
+                    ">${text.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</textarea>
+                    <button onclick="this.parentElement.remove()" style="
+                        margin-top: 10px;
+                        padding: 10px 20px;
+                        background: #764ba2;
+                        color: white;
+                        border: none;
+                        border-radius: 5px;
+                        cursor: pointer;
+                        font-size: 16px;
+                    ">Закрыть</button>
+                `;
+                
+                document.body.appendChild(modal);
+                
+                // Автоматично виділяємо текст
+                const textarea = modal.querySelector('textarea');
+                textarea.select();
+                textarea.setSelectionRange(0, 999999);
+            }
+        }
+        
+        copyToClipboard(lessonContent);
+    }
+    </script>
+</body>
+</html>

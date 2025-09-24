@@ -11,6 +11,14 @@ from typing import Dict, List
 from src.generators.exercises_assets import ExercisesAssetsGenerator
 from src.generators.exercises_generator import ExercisesGenerator
 
+
+B1_TITLE_OVERRIDES = {
+    '04_Интрига_Эдмунда_B1.json': '🗡 🎭 АКТ II, СЦЕНА 4: ИНТРИГА ЭДМУНДА',
+    '13_Битва_B1.json': '⚔ 🎭 АКТ V, СЦЕНА 13: БИТВА',
+    '14_Дуэль_братьев_B1.json': '⚔ 🎭 АКТ V, СЦЕНА 14: ДУЭЛЬ БРАТЬЕВ',
+    '15_Смерть_Корделии_и_Лира_B1.json': '💔 🎭 АКТ V, СЦЕНА 15: СМЕРТЬ КОРДЕЛИИ И ЛИРА',
+}
+
 def transliterate_filename(text):
     """Транслітерує кириличну назву для безпечного URL"""
     translit_table = {
@@ -517,6 +525,7 @@ class JSONGenerator:
                             lesson['id'] = json_file.stem
                         # Додаємо safe_id одразу при завантаженні
                         lesson['safe_id'] = transliterate_filename(lesson['id'])
+                        self._apply_title_override(category, json_file.name, lesson)
                         lessons.append(lesson)
                 except Exception as e:
                     self.logger.error(f"Помилка читання {json_file}: {e}")
@@ -526,7 +535,45 @@ class JSONGenerator:
                 self.logger.info(f"Завантажено {len(lessons)} уроків з {category}")
         
         return all_lessons
-    
+
+    def _apply_title_override(self, category, filename, lesson):
+        """Перезаписати назву уроку, якщо існує маппінг для B1."""
+
+        if category != 'b1':
+            return
+
+        override = B1_TITLE_OVERRIDES.get(filename)
+        if override:
+            lesson['title'] = override
+
+    @staticmethod
+    def _strip_variation_selectors(value: str) -> str:
+        """Прибрати variation selectors для порівняння emoji."""
+
+        if not value:
+            return ''
+        return value.replace('\ufe0f', '')
+
+    def _compose_display_title(self, icon: str, title: str) -> str:
+        """Додати emoji-іконку до назви, уникаючи дублювання."""
+
+        icon = (icon or '').strip()
+        title = (title or '').strip()
+
+        if not icon:
+            return title
+        if not title:
+            return icon
+
+        normalized_icon = self._strip_variation_selectors(icon)
+        prefix_length = max(len(normalized_icon) * 2, 1)
+        normalized_prefix = self._strip_variation_selectors(title[:prefix_length])
+
+        if normalized_prefix.startswith(normalized_icon):
+            return title
+
+        return f"{icon} {title}".strip()
+
     def _get_category_groups(self, category, lessons):
         """Визначити групи для категорії"""
         
@@ -605,6 +652,7 @@ class JSONGenerator:
         # Дані з JSON
         title = lesson.get('title', 'Урок')
         icon = lesson.get('icon', '📚')
+        scene_title = self._compose_display_title(icon, title)
         quote = lesson.get('quote', '')
         emotions = lesson.get('emotions', [])
         vocabulary = lesson.get('vocabulary', [])
@@ -619,7 +667,7 @@ class JSONGenerator:
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>{title}</title>
+    <title>{scene_title}</title>
     <link rel="stylesheet" href="../../css/exercises.css"/>
     <style>
         {LESSON_STYLES}
@@ -775,7 +823,7 @@ class JSONGenerator:
         
         <!-- SCENE MOMENT -->
         <div class="scene-moment">
-            <h1>{icon} {title}</h1>
+            <h1>{scene_title}</h1>
             <p class="shakespeare-quote">"{quote}"</p>
             <div class="emotion-tags">'''
         
@@ -1297,11 +1345,16 @@ class JSONGenerator:
                 <div class="group-lessons">'''
             
             for i, lesson in enumerate(group_lessons, 1):
-                safe_id = lesson.get('safe_id', transliterate_filename(lesson.get('id', 'lesson')))
+                lesson_id = lesson.get('id', 'lesson')
+                safe_id = lesson.get('safe_id', transliterate_filename(lesson_id))
+                lesson_title = self._compose_display_title(
+                    lesson.get('icon', '📚'),
+                    lesson.get('title', lesson_id)
+                )
                 html += f'''
                     <a href="{group_name}/{safe_id}.html" class="lesson-card">
                         <div class="lesson-number">Урок {i}</div>
-                        <div class="lesson-title">{lesson.get('icon', '📚')} {lesson.get('title', lesson['id'])}</div>
+                        <div class="lesson-title">{lesson_title}</div>
                     </a>'''
             
             html += '''

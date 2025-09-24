@@ -4,6 +4,7 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>🎭 Сім'я через Короля Ліра</title>
+    <link rel="stylesheet" href="../../css/exercises.css"/>
     <style>
         
 body {
@@ -832,7 +833,460 @@ body {
                 button.classList.toggle('success');
             }
         </script>
+
         
+        <!-- РОЗДЕЛ: ИНТЕРАКТИВНЫЕ УПРАЖНЕНИЯ -->
+        <section class="exercises-section">
+            <h2 class="section-title">
+                <span class="icon">📚</span> Упражнения
+            </h2>
+            <div class="exercises-accordion">
+
+                <details class="exercise-accordion-item">
+                    <summary>🔗 Подбор слов</summary>
+                    <div class="exercise-content">
+                        
+            <div class="exercise-block" id="word-matching">
+                <h3 class="exercise-title">🔗 Подбор слов</h3>
+                <p class="exercise-intro">Соотнесите немецкие слова урока с русскими переводами.</p>
+                <div class="matching-container">
+                    <div class="words-column">
+
+                <div class="word-item" data-id="0" data-answer="розлучати">
+                    <span class="word-main">trennen</span>
+                    <small class="word-hint">[ТРЕН-нен]</small>
+                </div>
+                
+                <div class="word-item" data-id="1" data-answer="покоління">
+                    <span class="word-main">die Generation</span>
+                    <small class="word-hint">[ди ге-не-ра-ЦИ-он]</small>
+                </div>
+                
+                <div class="word-item" data-id="2" data-answer="сім&#x27;я">
+                    <span class="word-main">die Familie</span>
+                    <small class="word-hint">[ди фа-МИ-ли-е]</small>
+                </div>
+                
+                <div class="word-item" data-id="3" data-answer="ненавидіти">
+                    <span class="word-main">hassen</span>
+                    <small class="word-hint">[ХА-сен]</small>
+                </div>
+                
+                <div class="word-item" data-id="4" data-answer="любити">
+                    <span class="word-main">lieben</span>
+                    <small class="word-hint">[ЛИ-бен]</small>
+                </div>
+                
+                <div class="word-item" data-id="5" data-answer="батьки">
+                    <span class="word-main">die Eltern</span>
+                    <small class="word-hint">[ди ЕЛЬ-терн]</small>
+                </div>
+                
+                <div class="word-item" data-id="6" data-answer="спадок">
+                    <span class="word-main">das Erbe</span>
+                    <small class="word-hint">[дас ЕР-бе]</small>
+                </div>
+                
+                <div class="word-item" data-id="7" data-answer="діти">
+                    <span class="word-main">die Kinder</span>
+                    <small class="word-hint">[ди КИНД-ер]</small>
+                </div>
+                
+                    </div>
+                    <div class="translations-column">
+
+                <div class="translation-item" data-id="0" data-trans="спадок">
+                    спадок
+                </div>
+                
+                <div class="translation-item" data-id="1" data-trans="діти">
+                    діти
+                </div>
+                
+                <div class="translation-item" data-id="2" data-trans="батьки">
+                    батьки
+                </div>
+                
+                <div class="translation-item" data-id="3" data-trans="любити">
+                    любити
+                </div>
+                
+                <div class="translation-item" data-id="4" data-trans="розлучати">
+                    розлучати
+                </div>
+                
+                <div class="translation-item" data-id="5" data-trans="покоління">
+                    покоління
+                </div>
+                
+                <div class="translation-item" data-id="6" data-trans="ненавидіти">
+                    ненавидіти
+                </div>
+                
+                <div class="translation-item" data-id="7" data-trans="сім&#x27;я">
+                    сім&#x27;я
+                </div>
+                
+                    </div>
+                </div>
+                <button class="check-btn" data-action="check-matching" type="button">Проверить</button>
+            </div>
+            
+                    </div>
+                </details>
+                
+
+                <details class="exercise-accordion-item">
+                    <summary>🎯 Артикли и род</summary>
+                    <div class="exercise-content">
+                        
+            <div class="exercise-block" id="articles">
+                <h3 class="exercise-title">🎯 Артикли и род</h3>
+                <p class="exercise-intro">Выберите правильный артикль для существительных из урока.</p>
+                <div class="articles-grid">
+
+                <div class="article-item" data-correct="die">
+                    <div class="article-word">
+                        <span class="noun">Ahnen</span>
+                        <small>предки</small>
+                    </div>
+                    <div class="article-buttons">
+                        <button type="button" data-article="der">der</button>
+                        <button type="button" data-article="die">die</button>
+                        <button type="button" data-article="das">das</button>
+                    </div>
+                </div>
+                
+                <div class="article-item" data-correct="die">
+                    <div class="article-word">
+                        <span class="noun">Familie</span>
+                        <small>сім&#x27;я</small>
+                    </div>
+                    <div class="article-buttons">
+                        <button type="button" data-article="der">der</button>
+                        <button type="button" data-article="die">die</button>
+                        <button type="button" data-article="das">das</button>
+                    </div>
+                </div>
+                
+                <div class="article-item" data-correct="die">
+                    <div class="article-word">
+                        <span class="noun">Eltern</span>
+                        <small>батьки</small>
+                    </div>
+                    <div class="article-buttons">
+                        <button type="button" data-article="der">der</button>
+                        <button type="button" data-article="die">die</button>
+                        <button type="button" data-article="das">das</button>
+                    </div>
+                </div>
+                
+                <div class="article-item" data-correct="die">
+                    <div class="article-word">
+                        <span class="noun">Kinder</span>
+                        <small>діти</small>
+                    </div>
+                    <div class="article-buttons">
+                        <button type="button" data-article="der">der</button>
+                        <button type="button" data-article="die">die</button>
+                        <button type="button" data-article="das">das</button>
+                    </div>
+                </div>
+                
+                <div class="article-item" data-correct="die">
+                    <div class="article-word">
+                        <span class="noun">Generation</span>
+                        <small>покоління</small>
+                    </div>
+                    <div class="article-buttons">
+                        <button type="button" data-article="der">der</button>
+                        <button type="button" data-article="die">die</button>
+                        <button type="button" data-article="das">das</button>
+                    </div>
+                </div>
+                
+                <div class="article-item" data-correct="das">
+                    <div class="article-word">
+                        <span class="noun">Erbe</span>
+                        <small>спадок</small>
+                    </div>
+                    <div class="article-buttons">
+                        <button type="button" data-article="der">der</button>
+                        <button type="button" data-article="die">die</button>
+                        <button type="button" data-article="das">das</button>
+                    </div>
+                </div>
+                
+                </div>
+                <button class="check-btn" data-action="check-articles" type="button">Проверить</button>
+            </div>
+            
+                    </div>
+                </details>
+                
+
+                <details class="exercise-accordion-item">
+                    <summary>🌈 Синонимы и антонимы</summary>
+                    <div class="exercise-content">
+                        
+            <div class="exercise-block" id="synonyms">
+                <h3 class="exercise-title">🌈 Синонимы и антонимы</h3>
+                <p class="exercise-intro">Подберите синоним из урока и вспомните противоположное значение.</p>
+
+                <div class="synonym-item">
+                    <div class="word-center">
+                        <span class="word-main">trauen</span>
+                        <small>доверять</small>
+                    </div>
+                    <div class="options">
+                        <input type="text" placeholder="Синоним" data-correct="vertrauen" data-hint="доверять">
+                        <input type="text" placeholder="Антоним" data-correct="misstrauen" data-hint="не доверять">
+                    </div>
+                </div>
+                
+                <div class="synonym-item">
+                    <div class="word-center">
+                        <span class="word-main">vertrauen</span>
+                        <small>доверять</small>
+                    </div>
+                    <div class="options">
+                        <input type="text" placeholder="Синоним" data-correct="trauen" data-hint="доверять">
+                        <input type="text" placeholder="Антоним" data-correct="misstrauen" data-hint="не доверять">
+                    </div>
+                </div>
+                
+                <div class="synonym-item">
+                    <div class="word-center">
+                        <span class="word-main">der Friede</span>
+                        <small>мир</small>
+                    </div>
+                    <div class="options">
+                        <input type="text" placeholder="Синоним" data-correct="die Welt" data-hint="мир">
+                        <input type="text" placeholder="Антоним" data-correct="der Krieg" data-hint="война">
+                    </div>
+                </div>
+                
+                <button class="check-btn" data-action="check-synonyms" type="button">Проверить</button>
+            </div>
+            
+                    </div>
+                </details>
+                
+
+                <details class="exercise-accordion-item">
+                    <summary>🧠 Викторина по словам</summary>
+                    <div class="exercise-content">
+                        
+            <div class="exercise-block" id="quiz">
+                <h3 class="exercise-title">🧠 Викторина по словам</h3>
+
+                <div class="quiz-question" data-question="0">
+                    <p class="question">Как переводится: <strong>die Eltern</strong>?</p>
+                    <div class="quiz-options">
+                    
+                        <label>
+                            <input type="radio" name="quiz-0" data-correct="false">
+                            <span>разом</span>
+                        </label>
+                    
+                        <label>
+                            <input type="radio" name="quiz-0" data-correct="true">
+                            <span>батьки</span>
+                        </label>
+                    
+                        <label>
+                            <input type="radio" name="quiz-0" data-correct="false">
+                            <span>виховувати</span>
+                        </label>
+                    
+                        <label>
+                            <input type="radio" name="quiz-0" data-correct="false">
+                            <span>ненавидіти</span>
+                        </label>
+                    
+                    </div>
+                </div>
+                
+                <div class="quiz-question" data-question="1">
+                    <p class="question">Как переводится: <strong>zusammen</strong>?</p>
+                    <div class="quiz-options">
+                    
+                        <label>
+                            <input type="radio" name="quiz-1" data-correct="false">
+                            <span>предки</span>
+                        </label>
+                    
+                        <label>
+                            <input type="radio" name="quiz-1" data-correct="true">
+                            <span>разом</span>
+                        </label>
+                    
+                        <label>
+                            <input type="radio" name="quiz-1" data-correct="false">
+                            <span>об&#x27;єднувати</span>
+                        </label>
+                    
+                        <label>
+                            <input type="radio" name="quiz-1" data-correct="false">
+                            <span>діти</span>
+                        </label>
+                    
+                    </div>
+                </div>
+                
+                <div class="quiz-question" data-question="2">
+                    <p class="question">Как переводится: <strong>hassen</strong>?</p>
+                    <div class="quiz-options">
+                    
+                        <label>
+                            <input type="radio" name="quiz-2" data-correct="false">
+                            <span>розлучати</span>
+                        </label>
+                    
+                        <label>
+                            <input type="radio" name="quiz-2" data-correct="false">
+                            <span>об&#x27;єднувати</span>
+                        </label>
+                    
+                        <label>
+                            <input type="radio" name="quiz-2" data-correct="false">
+                            <span>сім&#x27;я</span>
+                        </label>
+                    
+                        <label>
+                            <input type="radio" name="quiz-2" data-correct="true">
+                            <span>ненавидіти</span>
+                        </label>
+                    
+                    </div>
+                </div>
+                
+                <div class="quiz-question" data-question="3">
+                    <p class="question">Как переводится: <strong>lieben</strong>?</p>
+                    <div class="quiz-options">
+                    
+                        <label>
+                            <input type="radio" name="quiz-3" data-correct="false">
+                            <span>діти</span>
+                        </label>
+                    
+                        <label>
+                            <input type="radio" name="quiz-3" data-correct="false">
+                            <span>об&#x27;єднувати</span>
+                        </label>
+                    
+                        <label>
+                            <input type="radio" name="quiz-3" data-correct="false">
+                            <span>разом</span>
+                        </label>
+                    
+                        <label>
+                            <input type="radio" name="quiz-3" data-correct="true">
+                            <span>любити</span>
+                        </label>
+                    
+                    </div>
+                </div>
+                
+                <div class="quiz-question" data-question="4">
+                    <p class="question">Как переводится: <strong>die Generation</strong>?</p>
+                    <div class="quiz-options">
+                    
+                        <label>
+                            <input type="radio" name="quiz-4" data-correct="false">
+                            <span>батьки</span>
+                        </label>
+                    
+                        <label>
+                            <input type="radio" name="quiz-4" data-correct="true">
+                            <span>покоління</span>
+                        </label>
+                    
+                        <label>
+                            <input type="radio" name="quiz-4" data-correct="false">
+                            <span>об&#x27;єднувати</span>
+                        </label>
+                    
+                        <label>
+                            <input type="radio" name="quiz-4" data-correct="false">
+                            <span>предки</span>
+                        </label>
+                    
+                    </div>
+                </div>
+                
+                <button class="check-btn" data-action="check-quiz" type="button">Проверить</button>
+            </div>
+            
+                    </div>
+                </details>
+                
+
+                <details class="exercise-accordion-item">
+                    <summary>📝 Контекстный перевод</summary>
+                    <div class="exercise-content">
+                        
+            <div class="exercise-block" id="context">
+                <h3 class="exercise-title">📝 Контекстный перевод</h3>
+
+                <div class="context-item">
+                    <p class="context-german">Meine _____ zerfällt</p>
+                    <p class="context-hint">Подсказка: Моя семья распадается</p>
+                    <input type="text" placeholder="Введите слово" data-correct="Familie">
+                </div>
+                
+                <div class="context-item">
+                    <p class="context-german">Die _____ sind alt</p>
+                    <p class="context-hint">Подсказка: Родители стары</p>
+                    <input type="text" placeholder="Введите слово" data-correct="Eltern">
+                </div>
+                
+                <div class="context-item">
+                    <p class="context-german">Meine _____ hassen mich</p>
+                    <p class="context-hint">Подсказка: Мои дети ненавидят меня</p>
+                    <input type="text" placeholder="Введите слово" data-correct="Kinder">
+                </div>
+                
+                <button class="check-btn" data-action="check-context" type="button">Проверить</button>
+            </div>
+            
+                    </div>
+                </details>
+                
+
+                <details class="exercise-accordion-item">
+                    <summary>🧩 Конструктор предложений</summary>
+                    <div class="exercise-content">
+                        
+            <div class="exercise-block" id="builder">
+                <h3 class="exercise-title">🧩 Конструктор предложений</h3>
+
+                <div class="sentence-builder">
+                    <p class="translation">Моя семья распадается на моих глазах</p>
+                    <div class="word-pool"><span class="draggable" draggable="true">Familie</span><span class="draggable" draggable="true">Meine</span><span class="draggable" draggable="true">meinen</span><span class="draggable" draggable="true">vor</span><span class="draggable" draggable="true">Augen</span><span class="draggable" draggable="true">zerfällt</span></div>
+                    <div class="drop-zone" data-correct="Meine Familie zerfällt vor meinen Augen">
+                        <span class="placeholder">Перетащите слова сюда</span>
+                    </div>
+                </div>
+                
+                <div class="sentence-builder">
+                    <p class="translation">Родители слишком стары и слабы</p>
+                    <div class="word-pool"><span class="draggable" draggable="true">alt</span><span class="draggable" draggable="true">sind</span><span class="draggable" draggable="true">Die</span><span class="draggable" draggable="true">Eltern</span><span class="draggable" draggable="true">und</span><span class="draggable" draggable="true">zu</span><span class="draggable" draggable="true">schwach</span></div>
+                    <div class="drop-zone" data-correct="Die Eltern sind zu alt und schwach">
+                        <span class="placeholder">Перетащите слова сюда</span>
+                    </div>
+                </div>
+                
+                <button class="check-btn" data-action="check-builder" type="button">Проверить</button>
+            </div>
+            
+                    </div>
+                </details>
+                
+            </div>
+        </section>
+        
+
         <!-- НАВІГАЦІЯ ПІСЛЯ УПРАЖНЕННЯ -->
         <div class="bottom-navigation">
             <a href="../index.html" class="nav-btn">
@@ -1120,7 +1574,9 @@ body {
         </script>
         
     </div>
-    
+
+    <script src="../../js/exercises.js" defer></script>
+
     <!-- JavaScript для копіювання уроку -->
     <script>
     function copyLesson() {

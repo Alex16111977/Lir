@@ -8,6 +8,9 @@ import re
 from pathlib import Path
 from typing import Dict, List
 
+from src.generators.exercises_assets import ExercisesAssetsGenerator
+from src.generators.exercises_generator import ExercisesGenerator
+
 def transliterate_filename(text):
     """Транслітерує кириличну назву для безпечного URL"""
     translit_table = {
@@ -53,6 +56,7 @@ class JSONGenerator:
         self.logger = logger
         self.files_generated = 0
         self.words_processed = 0
+        self.exercises_generator = ExercisesGenerator(logger)
     
     def _create_exercise_html(self, exercise_data):
         """
@@ -137,7 +141,9 @@ class JSONGenerator:
                 button.classList.toggle('success');
             }}
         </script>
-        
+
+        <!-- INTERACTIVE_EXERCISES_PLACEHOLDER -->
+
         <!-- НАВІГАЦІЯ ПІСЛЯ УПРАЖНЕННЯ -->
         <div class="bottom-navigation">
             <a href="../index.html" class="nav-btn">
@@ -614,6 +620,7 @@ class JSONGenerator:
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>{title}</title>
+    <link rel="stylesheet" href="../../css/exercises.css"/>
     <style>
         {LESSON_STYLES}
         
@@ -944,15 +951,32 @@ class JSONGenerator:
         html += '''
             </div>
         </section>'''
-        
+
+        exercises_html = ""
+        try:
+            exercise_bundle = self.exercises_generator.generate_all_exercises(lesson)
+            exercises_html = self.exercises_generator.create_exercises_section(exercise_bundle)
+        except Exception as exc:
+            if self.logger:
+                self.logger.warning(f"[Exercises] Помилка генерації інтерактивних вправ: {exc}")
+
         # Додаємо упражнення якщо є
         if exercise:
             exercise_html = self._create_exercise_html(exercise)
+            if exercises_html:
+                exercise_html = exercise_html.replace(
+                    "<!-- INTERACTIVE_EXERCISES_PLACEHOLDER -->",
+                    exercises_html,
+                )
             html += exercise_html
+        elif exercises_html:
+            html += exercises_html
         
         html += '''
     </div>
-    
+
+    <script src="../../js/exercises.js" defer></script>
+
     <!-- JavaScript для копіювання уроку -->
     <script>
     function copyLesson() {
@@ -1403,17 +1427,28 @@ class JSONGenerator:
     
     def _create_css_files(self, output_dir):
         """Створити CSS файли"""
-        
+
         from src.generators.original_styles import MAIN_PAGE_STYLES
-        
+
         css_dir = output_dir / "css"
         css_dir.mkdir(parents=True, exist_ok=True)
-        
+
         # Створити style.css для головної сторінки
         with open(css_dir / "style.css", 'w', encoding='utf-8') as f:
             f.write(MAIN_PAGE_STYLES)
-        
-        self.logger.info("CSS файли створено")
+
+        assets_generator = ExercisesAssetsGenerator()
+
+        with open(css_dir / "exercises.css", 'w', encoding='utf-8') as f:
+            f.write(assets_generator.generate_css())
+
+        js_dir = output_dir / "js"
+        js_dir.mkdir(parents=True, exist_ok=True)
+
+        with open(js_dir / "exercises.js", 'w', encoding='utf-8') as f:
+            f.write(assets_generator.generate_js())
+
+        self.logger.info("CSS та JS файли для вправ створено")
     
     def get_statistics(self):
         """Отримати статистику"""

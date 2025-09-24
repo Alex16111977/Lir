@@ -650,10 +650,7 @@ class ExercisesGenerator:
                 f"<span class=\"draggable\" draggable=\"true\">{escape(word)}</span>"
                 for word in shuffled
             )
-            # Підготовка підказки (перші 2 слова)
-            hint_words = sentence["parts"][:2]
-            hint_text = " ".join(hint_words) + "..."
-            
+
             blocks.append(
                 f"""
                 <div class=\"sentence-builder\" data-sentence-idx=\"{idx}\">
@@ -663,7 +660,7 @@ class ExercisesGenerator:
                         <span class=\"placeholder\">Перетащите слова сюда</span>
                     </div>
                     <div class=\"sentence-controls\">
-                        <button class=\"hint-btn\" onclick=\"showHint(this)\" data-sentence-idx=\"{idx}\" data-hint=\"{escape(hint_text)}\" type=\"button\">
+                        <button class=\"hint-btn\" onclick=\"showHint(this)\" data-sentence-idx=\"{idx}\" type=\"button\">
                             💡 Підказка
                         </button>
                         <button class=\"check-sentence-btn\" onclick=\"checkSentence(this)\" type=\"button\">
@@ -687,7 +684,7 @@ class ExercisesGenerator:
                     <div class=\"builder-progress-bar\">
                         <div class=\"builder-progress-fill\"></div>
                     </div>
-                    <div class=\"builder-stats\">Виконано: <span id=\"builder-correct\">0</span> з {total_sentences}</div>
+                    <div class=\"builder-stats\">Виконано: 0 з {total_sentences}</div>
                 </div>
                 """
             + "".join(blocks)

@@ -21,7 +21,7 @@ logs/
 *.log
 
 # Output (generated files)
-output/
+# output/  # Закомментировано - теперь output будет в репозитории
 
 # Backup
 backup/

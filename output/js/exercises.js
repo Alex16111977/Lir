@@ -14,6 +14,13 @@
     let selectedPrompt = null;
     let selectedMatch = null;
     let correctPairs = 0;
+
+    // Sentence builder state tracking
+    let sentenceStates = {};
+    let hintUsage = {};
+    let totalSentences = 0;
+    let correctSentences = 0;
+    let completionShown = false;
     
     window.handleWordClick = function(element, type) {
         // Якщо карточка вже правильна - ігнорувати
@@ -484,7 +491,7 @@
         showResult(`Правильно: ${correct} из ${inputs.length}`);
     }
 
-    // 6. Sentence builder
+    // 6. Sentence builder with individual controls
     document.addEventListener('dragstart', function(event) {
         const draggable = event.target.closest('.draggable');
         if (!draggable) {
@@ -535,35 +542,329 @@
         clone.classList.remove('dragging');
         dragging.remove();
         zone.appendChild(clone);
+
         const placeholder = zone.querySelector('.placeholder');
         if (placeholder) {
             placeholder.remove();
         }
+
+        zone.classList.remove('incorrect', 'correct', 'hint-active');
+
+        const builder = zone.closest('.sentence-builder');
+        if (builder) {
+            const feedback = builder.querySelector('.sentence-feedback');
+            if (feedback) {
+                feedback.textContent = '';
+                feedback.classList.remove('correct', 'incorrect');
+            }
+            const index = resolveBuilderIndex(builder);
+            if (sentenceStates[index]) {
+                return;
+            }
+            const checkBtn = builder.querySelector('.check-sentence-btn');
+            if (checkBtn) {
+                checkBtn.disabled = false;
+                checkBtn.textContent = '✓ Перевірити';
+            }
+        }
+    });
+
+    function resolveBuilderIndex(builder) {
+        if (!builder) {
+            return -1;
+        }
+        const dataIndex = builder.dataset.sentenceIdx;
+        const parsed = Number.parseInt(dataIndex || '', 10);
+        if (!Number.isNaN(parsed)) {
+            return parsed;
+        }
+        const builders = Array.from(document.querySelectorAll('.sentence-builder'));
+        return builders.indexOf(builder);
+    }
+
+    function initializeSentenceBuilder() {
+        const builders = document.querySelectorAll('.sentence-builder');
+        sentenceStates = {};
+        hintUsage = {};
+        totalSentences = builders.length;
+        correctSentences = 0;
+        completionShown = false;
+
+        builders.forEach((builder, idx) => {
+            sentenceStates[idx] = false;
+            hintUsage[idx] = 0;
+
+            const dropZone = builder.querySelector('.drop-zone');
+            if (dropZone) {
+                dropZone.classList.remove('correct', 'incorrect', 'hint-active');
+                dropZone.style.pointerEvents = '';
+                if (!dropZone.children.length) {
+                    const placeholder = document.createElement('span');
+                    placeholder.className = 'placeholder';
+                    placeholder.textContent = 'Перетащите слова сюда';
+                    dropZone.appendChild(placeholder);
+                }
+            }
+
+            const feedback = builder.querySelector('.sentence-feedback');
+            if (feedback) {
+                feedback.textContent = '';
+                feedback.classList.remove('correct', 'incorrect');
+            }
+
+            const hintBtn = builder.querySelector('.hint-btn');
+            if (hintBtn) {
+                hintBtn.disabled = false;
+                hintBtn.textContent = '💡 Підказка';
+            }
+
+            const checkBtn = builder.querySelector('.check-sentence-btn');
+            if (checkBtn) {
+                checkBtn.disabled = false;
+                checkBtn.textContent = '✓ Перевірити';
+            }
+        });
+
+        updateBuilderProgress();
+    }
+
+    function ensureProgressInfo() {
+        const container = document.querySelector('.sentence-builder-section');
+        if (!container) {
+            return null;
+        }
+        let progressInfo = container.querySelector('.progress-info');
+        if (!progressInfo) {
+            progressInfo = document.createElement('div');
+            progressInfo.className = 'progress-info';
+            progressInfo.style.cssText = `
+                margin: 20px 0;
+                padding: 15px;
+                background: rgba(139, 92, 246, 0.1);
+                border-radius: 12px;
+                text-align: center;
+                font-size: 16px;
+                font-weight: 600;
+                color: #8b5cf6;
+            `;
+            const progressBlock = container.querySelector('.builder-progress');
+            if (progressBlock) {
+                container.insertBefore(progressInfo, progressBlock);
+            } else {
+                container.insertBefore(progressInfo, container.firstChild);
+            }
+        }
+        return progressInfo;
+    }
+
+    function updateBuilderProgress() {
+        const percentage = totalSentences ? Math.round((correctSentences / totalSentences) * 100) : 0;
+        const progressFill = document.querySelector('.sentence-builder-section .builder-progress-fill');
+        if (progressFill) {
+            progressFill.style.width = `${percentage}%`;
+        }
+        const stats = document.querySelector('.sentence-builder-section .builder-stats');
+        if (stats) {
+            stats.textContent = `Виконано: ${correctSentences} з ${totalSentences}`;
+        }
+        const progressInfo = ensureProgressInfo();
+        if (progressInfo) {
+            progressInfo.innerHTML = `
+                📊 Прогрес: ${correctSentences} з ${totalSentences} речень (${percentage}%)
+                ${correctSentences === totalSentences && totalSentences > 0 ? '<br>🎉 Вітаємо! Всі речення виконано!' : ''}
+            `;
+        }
+        if (correctSentences === totalSentences && totalSentences > 0 && !completionShown) {
+            completionShown = true;
+            setTimeout(() => {
+                showCompletionMessage();
+            }, 500);
+        }
+    }
+
+    function getRandomBuilderMessage(type) {
+        const messages = {
+            correct: ['✅ Чудово!', '✅ Відмінно!', '✅ Супер!', '✅ Браво!', '✅ Молодець!'],
+            incorrect: ['❌ Спробуйте ще!', '❌ Майже!', '❌ Не здавайтеся!', '❌ Подумайте ще!']
+        };
+        const pool = messages[type] || [];
+        return pool[Math.floor(Math.random() * pool.length)] || '';
+    }
+
+    window.showHint = function(button) {
+        const builder = button.closest('.sentence-builder');
+        if (!builder) {
+            return;
+        }
+        const index = resolveBuilderIndex(builder);
+        if (index < 0) {
+            return;
+        }
+        const dropZone = builder.querySelector('.drop-zone');
+        if (!dropZone) {
+            return;
+        }
+        const correctAnswer = (dropZone.dataset.correct || '').trim();
+        if (!correctAnswer) {
+            return;
+        }
+
+        hintUsage[index] = (hintUsage[index] || 0) + 1;
+
+        const words = correctAnswer.split(new RegExp('\s+'));
+        let hintWords;
+        if (hintUsage[index] === 1) {
+            hintWords = words.slice(0, Math.min(2, words.length));
+        } else if (hintUsage[index] === 2) {
+            hintWords = words.slice(0, Math.ceil(words.length / 2));
+        } else {
+            hintWords = words.slice(0, Math.max(words.length - 1, 1));
+        }
+        const hintText = `${hintWords.join(' ')}...`;
+
+        dropZone.classList.add('hint-active');
+
+        const existingTooltip = button.querySelector('.hint-tooltip');
+        if (existingTooltip) {
+            existingTooltip.remove();
+        }
+
+        const tooltip = document.createElement('div');
+        tooltip.className = 'hint-tooltip';
+        tooltip.innerHTML = `
+            <strong>Підказка ${Math.min(hintUsage[index], 3)}/3:</strong><br>
+            "${hintText}"
+        `;
+
+        button.style.position = 'relative';
+        button.appendChild(tooltip);
+
+        setTimeout(() => {
+            tooltip.remove();
+            dropZone.classList.remove('hint-active');
+        }, 4000);
+
+        if (hintUsage[index] >= 3) {
+            button.disabled = true;
+            button.textContent = '💡 Використано';
+        }
+    };
+
+    window.checkSentence = function(button) {
+        const builder = button.closest('.sentence-builder');
+        if (!builder) {
+            return;
+        }
+        const dropZone = builder.querySelector('.drop-zone');
+        const feedback = builder.querySelector('.sentence-feedback');
+        if (!dropZone || !feedback) {
+            return;
+        }
+
+        const index = resolveBuilderIndex(builder);
+        if (!(index in sentenceStates)) {
+            sentenceStates[index] = false;
+        }
+
+        const droppedWords = Array.from(dropZone.querySelectorAll('.draggable'))
+            .map(item => (item.textContent || '').trim());
+        const assembled = droppedWords.join(' ').trim();
+        const correctAnswer = (dropZone.dataset.correct || '').trim();
+
+        dropZone.classList.remove('incorrect', 'correct', 'hint-active');
+        feedback.textContent = '';
+        feedback.classList.remove('correct', 'incorrect');
+
+        if (!correctAnswer) {
+            return;
+        }
+
+        if (assembled === correctAnswer) {
+            dropZone.classList.add('correct');
+            feedback.textContent = getRandomBuilderMessage('correct');
+            feedback.classList.add('correct');
+            sentenceStates[index] = true;
+            const hintBtn = builder.querySelector('.hint-btn');
+            if (hintBtn) {
+                hintBtn.disabled = true;
+            }
+            button.disabled = true;
+            button.textContent = '✓ Виконано';
+            dropZone.style.pointerEvents = 'none';
+        } else {
+            dropZone.classList.add('incorrect');
+            feedback.textContent = getRandomBuilderMessage('incorrect');
+            feedback.classList.add('incorrect');
+            sentenceStates[index] = false;
+
+            setTimeout(() => {
+                dropZone.classList.remove('incorrect');
+                if (!sentenceStates[index]) {
+                    feedback.textContent = '';
+                    feedback.classList.remove('incorrect');
+                }
+            }, 2000);
+        }
+
+        correctSentences = Object.values(sentenceStates).filter(Boolean).length;
+        updateBuilderProgress();
+    };
+
+    function showCompletionMessage() {
+        if (document.querySelector('.sentence-builder-complete')) {
+            return;
+        }
+        const modal = document.createElement('div');
+        modal.className = 'sentence-builder-complete';
+        modal.style.cssText = `
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: linear-gradient(135deg, #8b5cf6, #ec4899);
+            color: white;
+            padding: 30px;
+            border-radius: 20px;
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+            z-index: 10000;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            animation: bounceIn 0.5s;
+        `;
+        modal.innerHTML = `
+            🎉 Вітаємо! 🎉<br>
+            Ви успішно виконали всі завдання!<br>
+            <button class="close-modal" style="
+                margin-top: 20px;
+                padding: 10px 20px;
+                background: white;
+                color: #8b5cf6;
+                border: none;
+                border-radius: 10px;
+                font-size: 16px;
+                font-weight: bold;
+                cursor: pointer;
+            ">Закрити</button>
+        `;
+        const closeButton = modal.querySelector('.close-modal');
+        if (closeButton) {
+            closeButton.addEventListener('click', () => {
+                modal.remove();
+            });
+        }
+        document.body.appendChild(modal);
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        initializeSentenceBuilder();
     });
 
     function checkBuilder() {
-        const builders = document.querySelectorAll('.sentence-builder');
-        let correct = 0;
-        builders.forEach(builder => {
-            const zone = builder.querySelector('.drop-zone');
-            if (!zone) {
-                return;
-            }
-            const words = Array.from(zone.querySelectorAll('.draggable')).map(item => item.textContent || '');
-            const assembled = words.join(' ').trim();
-            const answer = (zone.dataset.correct || '').trim();
-            if (!answer) {
-                return;
-            }
-            if (assembled === answer) {
-                zone.classList.remove('incorrect');
-                zone.classList.add('correct');
-                correct += 1;
-            } else {
-                zone.classList.remove('correct');
-                zone.classList.add('incorrect');
+        document.querySelectorAll('.sentence-builder .check-sentence-btn').forEach(button => {
+            if (!button.disabled) {
+                window.checkSentence(button);
             }
         });
-        showResult(`Правильно: ${correct} из ${builders.length}`);
     }
 })();

@@ -1,0 +1,367 @@
+{
+  "title": "🎭 Влада і зрада через Короля Ліра",
+  "vocabulary": [
+    {
+      "german": "verraten",
+      "transcription": "[фер-РА-тен]",
+      "translation": "зраджувати",
+      "type": "дієслово",
+      "character_voice": {
+        "character": "Едмунд",
+        "german": "Ich verrate meinen Bruder",
+        "russian": "Я предаю своего брата"
+      },
+      "gesture": {
+        "icon": "🗡️",
+        "gesture": "ховає лист за спиною",
+        "emotion": "ПІДСТУПНІСТЬ",
+        "association": "Едмунд зраджує Едгара фальшивим листом"
+      }
+    },
+    {
+      "german": "der Verrat",
+      "transcription": "[дер фер-РАТ]",
+      "translation": "зрада",
+      "type": "іменник",
+      "character_voice": {
+        "character": "Глостер",
+        "german": "Der Verrat meines Sohnes!",
+        "russian": "Предательство моего сына!"
+      },
+      "gesture": {
+        "icon": "💔",
+        "gesture": "хапається за серце",
+        "emotion": "БІЛЬ",
+        "association": "Глостер вірить у зраду Едгара"
+      }
+    },
+    {
+      "german": "der Verräter",
+      "transcription": "[дер фер-РЕ-тер]",
+      "translation": "зрадник",
+      "type": "іменник",
+      "character_voice": {
+        "character": "Регана",
+        "german": "Ein Verräter verdient den Tod",
+        "russian": "Предатель заслуживает смерти"
+      },
+      "gesture": {
+        "icon": "⚔️",
+        "gesture": "вказує на ешафот",
+        "emotion": "ЖОРСТОКІСТЬ",
+        "association": "Регана засуджує Глостера"
+      }
+    },
+    {
+      "german": "loyal",
+      "transcription": "[ло-ЯЛЬ]",
+      "translation": "вірний",
+      "type": "прикметник",
+      "character_voice": {
+        "character": "Кент",
+        "german": "Ich bleibe loyal",
+        "russian": "Я остаюсь верным"
+      },
+      "gesture": {
+        "icon": "🛡️",
+        "gesture": "стає на коліно",
+        "emotion": "ВІДДАНІСТЬ",
+        "association": "Кент зберігає вірність Ліру"
+      }
+    },
+    {
+      "german": "die Treue",
+      "transcription": "[ди ТРОЙ-е]",
+      "translation": "вірність",
+      "type": "іменник",
+      "character_voice": {
+        "character": "Корделія",
+        "german": "Meine Treue ist echt",
+        "russian": "Моя верность истинна"
+      },
+      "gesture": {
+        "icon": "💎",
+        "gesture": "тримає руку на серці",
+        "emotion": "ЧИСТОТА",
+        "association": "Корделія залишається вірною батькові"
+      }
+    },
+    {
+      "german": "hintergehen",
+      "transcription": "[хин-тер-ГЕ-ен]",
+      "translation": "обманути",
+      "type": "дієслово",
+      "character_voice": {
+        "character": "Гонерілья",
+        "german": "Wir müssen ihn hintergehen",
+        "russian": "Мы должны его обмануть"
+      },
+      "gesture": {
+        "icon": "🎭",
+        "gesture": "шепоче змовницьки",
+        "emotion": "ЗМОВА",
+        "association": "Сестри змовляються проти батька"
+      }
+    },
+    {
+      "german": "das Komplott",
+      "transcription": "[дас ком-ПЛОТТ]",
+      "translation": "змова",
+      "type": "іменник",
+      "character_voice": {
+        "character": "Едмунд",
+        "german": "Mein Komplott gelingt",
+        "russian": "Мой заговор удается"
+      },
+      "gesture": {
+        "icon": "🕸️",
+        "gesture": "плете пальцями павутину",
+        "emotion": "ІНТРИГА",
+        "association": "Едмунд плете змову проти всіх"
+      }
+    },
+    {
+      "german": "verschwören",
+      "transcription": "[фер-ШВЁ-рен]",
+      "translation": "змовлятися",
+      "type": "дієслово",
+      "character_voice": {
+        "character": "Регана",
+        "german": "Wir verschwören uns",
+        "russian": "Мы сговариваемся"
+      },
+      "gesture": {
+        "icon": "🤝",
+        "gesture": "потискає руку таємно",
+        "emotion": "ТАЄМНИЦЯ",
+        "association": "Регана і Гонерілья у змові"
+      }
+    },
+    {
+      "german": "täuschen",
+      "transcription": "[ТОЙ-шен]",
+      "translation": "обдурити",
+      "type": "дієслово",
+      "character_voice": {
+        "character": "Едгар",
+        "german": "Ich muss alle täuschen",
+        "russian": "Я должен всех обмануть"
+      },
+      "gesture": {
+        "icon": "🎭",
+        "gesture": "надягає маску божевільного",
+        "emotion": "МАСКУВАННЯ",
+        "association": "Едгар вдає божевільного Тома"
+      }
+    },
+    {
+      "german": "die Intrige",
+      "transcription": "[ди ин-ТРИ-ге]",
+      "translation": "інтрига",
+      "type": "іменник",
+      "character_voice": {
+        "character": "Едмунд",
+        "german": "Die Intrige ist perfekt",
+        "russian": "Интрига совершенна"
+      },
+      "gesture": {
+        "icon": "♟️",
+        "gesture": "пересуває фігури на дошці",
+        "emotion": "РОЗРАХУНОК",
+        "association": "Едмунд маніпулює всіма як пішками"
+      }
+    },
+    {
+      "german": "untreu",
+      "transcription": "[ун-ТРОЙ]",
+      "translation": "невірний",
+      "type": "прикметник",
+      "character_voice": {
+        "character": "Лір",
+        "german": "Meine Töchter sind untreu",
+        "russian": "Мои дочери неверны"
+      },
+      "gesture": {
+        "icon": "💔",
+        "gesture": "б'є себе в груди",
+        "emotion": "РОЗЧАРУВАННЯ",
+        "association": "Лір усвідомлює зраду дочок"
+      }
+    },
+    {
+      "german": "die Verschwörung",
+      "transcription": "[ди фер-ШВЁ-рунг]",
+      "translation": "заколот",
+      "type": "іменник",
+      "character_voice": {
+        "character": "Олбані",
+        "german": "Die Verschwörung endet hier",
+        "russian": "Заговор кончается здесь"
+      },
+      "gesture": {
+        "icon": "⚖️",
+        "gesture": "піднімає меч правосуддя",
+        "emotion": "СПРАВЕДЛИВІСТЬ",
+        "association": "Олбані розкриває змову"
+      }
+    }
+  ],
+  "story": {
+    "content": "<p>Початок змови. Едмунд планує <span class=\"story-highlight\">verraten</span> - зрадити брата. <span class=\"story-highlight\">Das Komplott</span> починається з підробленого листа. Він майстерно <span class=\"story-highlight\">täuschen</span> - обдурює батька.</p><p>Павутина зради. <span class=\"story-highlight\">Die Intrige</span> розростається. Сестри <span class=\"story-highlight\">verschwören</span> - змовляються проти Ліра, <span class=\"story-highlight\">hintergehen</span> - обманюють його. <span class=\"story-highlight\">Der Verrat</span> стає нормою. Лише Кент залишається <span class=\"story-highlight\">loyal</span>.</p><p>Розплата. <span class=\"story-highlight\">Der Verräter</span> Едмунд гине від руки брата. <span class=\"story-highlight\">Untreu</span> дочки отруюють одна одну. <span class=\"story-highlight\">Die Verschwörung</span> руйнується. <span class=\"story-highlight\">Die Treue</span> Корделії сяє, але запізно.</p>",
+    "emotional_peak": "«Законний син убиває незаконного» - остання правда Едмунда перед смертю"
+  },
+  "dialogues": [
+    {
+      "character": "ЭДМУНД",
+      "german": "Ich verrate meinen Bruder für die Macht!",
+      "russian": "Я предаю своего брата ради власти!",
+      "emotion": "🗡️ [С холодным расчетом]"
+    },
+    {
+      "character": "ГЛОСТЕР",
+      "german": "Der Verrat meines Sohnes bricht mein Herz!",
+      "russian": "Предательство моего сына разбивает мое сердце!",
+      "emotion": "💔 [В отчаянии]"
+    },
+    {
+      "character": "РЕГАНА",
+      "german": "Der Verräter verdient keine Gnade!",
+      "russian": "Предатель не заслуживает пощады!",
+      "emotion": "⚔️ [Безжалостно]"
+    },
+    {
+      "character": "КЕНТ",
+      "german": "Ich bleibe loyal bis zum Ende!",
+      "russian": "Я остаюсь верным до конца!",
+      "emotion": "🛡️ [С достоинством]"
+    },
+    {
+      "character": "ГОНЕРИЛЬЯ",
+      "german": "Wir müssen ihn hintergehen, Schwester!",
+      "russian": "Мы должны его обмануть, сестра!",
+      "emotion": "🎭 [Заговорщицки]"
+    },
+    {
+      "character": "ЭДГАР",
+      "german": "Ich muss alle täuschen, um zu überleben!",
+      "russian": "Я должен всех обмануть, чтобы выжить!",
+      "emotion": "🎭 [В маске безумия]"
+    },
+    {
+      "character": "КОРОЛЬ ЛИР",
+      "german": "Meine Töchter sind untreu wie Schlangen!",
+      "russian": "Мои дочери неверны как змеи!",
+      "emotion": "💔 [В гневе и боли]"
+    },
+    {
+      "character": "ГЕРЦОГ АЛЬБАНСКИЙ",
+      "german": "Die Verschwörung endet hier und jetzt!",
+      "russian": "Заговор кончается здесь и сейчас!",
+      "emotion": "⚖️ [Решительно]"
+    }
+  ],
+  "cheat_sheet": [
+    {
+      "german": "verraten",
+      "russian": "зраджувати",
+      "emotion_moment": "ПІДСТУПНІСТЬ",
+      "gesture_anchor": "🗡️ ховає лист за спиною",
+      "character_moment": "Едмунд"
+    },
+    {
+      "german": "der Verrat",
+      "russian": "зрада",
+      "emotion_moment": "БІЛЬ",
+      "gesture_anchor": "💔 хапається за серце",
+      "character_moment": "Глостер"
+    },
+    {
+      "german": "der Verräter",
+      "russian": "зрадник",
+      "emotion_moment": "ЖОРСТОКІСТЬ",
+      "gesture_anchor": "⚔️ вказує на ешафот",
+      "character_moment": "Регана"
+    },
+    {
+      "german": "loyal",
+      "russian": "вірний",
+      "emotion_moment": "ВІДДАНІСТЬ",
+      "gesture_anchor": "🛡️ стає на коліно",
+      "character_moment": "Кент"
+    },
+    {
+      "german": "die Treue",
+      "russian": "вірність",
+      "emotion_moment": "ЧИСТОТА",
+      "gesture_anchor": "💎 тримає руку на серці",
+      "character_moment": "Корделія"
+    },
+    {
+      "german": "hintergehen",
+      "russian": "обманути",
+      "emotion_moment": "ЗМОВА",
+      "gesture_anchor": "🎭 шепоче змовницьки",
+      "character_moment": "Гонерілья"
+    },
+    {
+      "german": "das Komplott",
+      "russian": "змова",
+      "emotion_moment": "ІНТРИГА",
+      "gesture_anchor": "🕸️ плете пальцями павутину",
+      "character_moment": "Едмунд"
+    },
+    {
+      "german": "verschwören",
+      "russian": "змовлятися",
+      "emotion_moment": "ТАЄМНИЦЯ",
+      "gesture_anchor": "🤝 потискає руку таємно",
+      "character_moment": "Регана"
+    },
+    {
+      "german": "täuschen",
+      "russian": "обдурити",
+      "emotion_moment": "МАСКУВАННЯ",
+      "gesture_anchor": "🎭 надягає маску божевільного",
+      "character_moment": "Едгар"
+    },
+    {
+      "german": "die Intrige",
+      "russian": "інтрига",
+      "emotion_moment": "РОЗРАХУНОК",
+      "gesture_anchor": "♟️ пересуває фігури на дошці",
+      "character_moment": "Едмунд"
+    },
+    {
+      "german": "untreu",
+      "russian": "невірний",
+      "emotion_moment": "РОЗЧАРУВАННЯ",
+      "gesture_anchor": "💔 б'є себе в груди",
+      "character_moment": "Лір"
+    },
+    {
+      "german": "die Verschwörung",
+      "russian": "заколот",
+      "emotion_moment": "СПРАВЕДЛИВІСТЬ",
+      "gesture_anchor": "⚖️ піднімає меч правосуддя",
+      "character_moment": "Олбані"
+    }
+  ],
+  "exercise": {
+    "title": "🎭 Заповніть пропуски в театральній постановці",
+    "text": "<p>Початок змови. Едмунд планує <span class=\"story-highlight\">___ (зраджувати)</span> - зрадити брата. <span class=\"story-highlight\">Das ___ (змова)</span> починається з підробленого листа. Він майстерно <span class=\"story-highlight\">___ (обдурити)</span> - обдурює батька.</p><p>Павутина зради. <span class=\"story-highlight\">Die ___ (інтрига)</span> розростається. Сестри <span class=\"story-highlight\">___ (змовлятися)</span> - змовляються проти Ліра, <span class=\"story-highlight\">___ (обманути)</span> - обманюють його. <span class=\"story-highlight\">Der ___ (зрада)</span> стає нормою. Лише Кент залишається <span class=\"story-highlight\">___ (вірний)</span>.</p><p>Розплата. <span class=\"story-highlight\">Der ___ (зрадник)</span> Едмунд гине від руки брата. <span class=\"story-highlight\">___ (невірний)</span> дочки отруюють одна одну. <span class=\"story-highlight\">Die ___ (заколот)</span> руйнується. <span class=\"story-highlight\">Die ___ (вірність)</span> Корделії сяє, але запізно.</p>",
+    "answers": {
+      "зраджувати": "verraten",
+      "змова": "Komplott",
+      "обдурити": "täuschen",
+      "інтрига": "Intrige",
+      "змовлятися": "verschwören",
+      "обманути": "hintergehen",
+      "зрада": "Verrat",
+      "вірний": "loyal",
+      "зрадник": "Verräter",
+      "невірний": "untreu",
+      "заколот": "Verschwörung",
+      "вірність": "Treue"
+    }
+  }
+}

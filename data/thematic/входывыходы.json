@@ -1,0 +1,367 @@
+{
+  "title": "🎭 Входи і виходи через Короля Ліра",
+  "vocabulary": [
+    {
+      "german": "eintreten",
+      "transcription": "[АЙН-тре-тен]",
+      "translation": "входити",
+      "type": "дієслово",
+      "character_voice": {
+        "character": "Лір",
+        "german": "Ich trete ein als König",
+        "russian": "Я вхожу как король"
+      },
+      "gesture": {
+        "icon": "🚪",
+        "gesture": "відчиняє двері величаво",
+        "emotion": "ВЕЛИЧ",
+        "association": "Лір входить в тронний зал на початку"
+      }
+    },
+    {
+      "german": "verlassen",
+      "transcription": "[фер-ЛА-сен]",
+      "translation": "покидати",
+      "type": "дієслово",
+      "character_voice": {
+        "character": "Корделія",
+        "german": "Ich muss dich verlassen",
+        "russian": "Я должна тебя покинуть"
+      },
+      "gesture": {
+        "icon": "👋",
+        "gesture": "відвертається зі сльозами",
+        "emotion": "РОЗЛУКА",
+        "association": "Корделія покидає батьківщину"
+      }
+    },
+    {
+      "german": "die Tür",
+      "transcription": "[ди ТЮР]",
+      "translation": "двері",
+      "type": "іменник",
+      "character_voice": {
+        "character": "Гонерілья",
+        "german": "Schließt die Tür vor ihm!",
+        "russian": "Закройте дверь перед ним!"
+      },
+      "gesture": {
+        "icon": "🚪",
+        "gesture": "грюкає дверима",
+        "emotion": "ВІДМОВА",
+        "association": "Дочки зачиняють двері перед батьком"
+      }
+    },
+    {
+      "german": "das Tor",
+      "transcription": "[дас ТОР]",
+      "translation": "ворота",
+      "type": "іменник",
+      "character_voice": {
+        "character": "Лір",
+        "german": "Das Tor ist verschlossen",
+        "russian": "Ворота заперты"
+      },
+      "gesture": {
+        "icon": "🏰",
+        "gesture": "б'є в ворота кулаками",
+        "emotion": "ВІДЧАЙ",
+        "association": "Лір не може потрапити в замок"
+      }
+    },
+    {
+      "german": "hinausgehen",
+      "transcription": "[хин-АУС-ге-ен]",
+      "translation": "виходити",
+      "type": "дієслово",
+      "character_voice": {
+        "character": "Лір",
+        "german": "Ich gehe hinaus in den Sturm",
+        "russian": "Я выхожу в бурю"
+      },
+      "gesture": {
+        "icon": "🌪️",
+        "gesture": "йде в темряву",
+        "emotion": "БЕЗУМСТВО",
+        "association": "Лір виходить в бурю"
+      }
+    },
+    {
+      "german": "ankommen",
+      "transcription": "[АН-ком-мен]",
+      "translation": "прибувати",
+      "type": "дієслово",
+      "character_voice": {
+        "character": "Корделія",
+        "german": "Ich komme zurück an",
+        "russian": "Я возвращаюсь"
+      },
+      "gesture": {
+        "icon": "⚓",
+        "gesture": "ступає на берег",
+        "emotion": "ПОВЕРНЕННЯ",
+        "association": "Корделія прибуває з Францією"
+      }
+    },
+    {
+      "german": "fortgehen",
+      "transcription": "[ФОРТ-ге-ен]",
+      "translation": "йти геть",
+      "type": "дієслово",
+      "character_voice": {
+        "character": "Кент",
+        "german": "Ich muss fortgehen",
+        "russian": "Я должен уйти"
+      },
+      "gesture": {
+        "icon": "🎭",
+        "gesture": "накидає плащ",
+        "emotion": "ВИГНАННЯ",
+        "association": "Кент йде у вигнання"
+      }
+    },
+    {
+      "german": "der Eingang",
+      "transcription": "[дер АЙН-ганг]",
+      "translation": "вхід",
+      "type": "іменник",
+      "character_voice": {
+        "character": "Блазень",
+        "german": "Der Eingang zum Wahnsinn",
+        "russian": "Вход в безумие"
+      },
+      "gesture": {
+        "icon": "🌀",
+        "gesture": "вказує на голову",
+        "emotion": "ІРОНІЯ",
+        "association": "Блазень про вхід у божевілля"
+      }
+    },
+    {
+      "german": "der Ausgang",
+      "transcription": "[дер АУС-ганг]",
+      "translation": "вихід",
+      "type": "іменник",
+      "character_voice": {
+        "character": "Едгар",
+        "german": "Wo ist der Ausgang?",
+        "russian": "Где выход?"
+      },
+      "gesture": {
+        "icon": "🔍",
+        "gesture": "шукає вихід з безумства",
+        "emotion": "ПОШУК",
+        "association": "Едгар шукає вихід з ролі Тома"
+      }
+    },
+    {
+      "german": "fliehen",
+      "transcription": "[ФЛИ-ен]",
+      "translation": "тікати",
+      "type": "дієслово",
+      "character_voice": {
+        "character": "Едгар",
+        "german": "Ich muss fliehen",
+        "russian": "Я должен бежать"
+      },
+      "gesture": {
+        "icon": "🏃",
+        "gesture": "озирається в страху",
+        "emotion": "СТРАХ",
+        "association": "Едгар тікає від переслідування"
+      }
+    },
+    {
+      "german": "vertreiben",
+      "transcription": "[фер-ТРАЙ-бен]",
+      "translation": "виганяти",
+      "type": "дієслово",
+      "character_voice": {
+        "character": "Лір",
+        "german": "Ich vertreibe dich!",
+        "russian": "Я изгоняю тебя!"
+      },
+      "gesture": {
+        "icon": "⚡",
+        "gesture": "вказує на двері",
+        "emotion": "ГНІВ",
+        "association": "Лір виганяє Корделію"
+      }
+    },
+    {
+      "german": "zurückkehren",
+      "transcription": "[цу-РЮК-ке-рен]",
+      "translation": "повертатися",
+      "type": "дієслово",
+      "character_voice": {
+        "character": "Корделія",
+        "german": "Ich kehre zurück zu dir",
+        "russian": "Я возвращаюсь к тебе"
+      },
+      "gesture": {
+        "icon": "🕊️",
+        "gesture": "обіймає батька",
+        "emotion": "ПРОЩЕННЯ",
+        "association": "Корделія повертається до Ліра"
+      }
+    }
+  ],
+  "story": {
+    "content": "<p>Перший акт. Всі <span class=\"story-highlight\">eintreten</span> - входять в тронний зал через величні <span class=\"story-highlight\">die Tür</span>. Лір <span class=\"story-highlight\">vertreiben</span> - виганяє Корделію. Вона мусить <span class=\"story-highlight\">verlassen</span> - покинути батьківщину.</p><p>Буря. <span class=\"story-highlight\">Das Tor</span> замку зачинене. Лір <span class=\"story-highlight\">hinausgehen</span> - виходить у бурю. Едгар <span class=\"story-highlight\">fliehen</span> - тікає від смерті. Кент <span class=\"story-highlight\">fortgehen</span> - йде у вигнання.</p><p>Фінал. Корделія <span class=\"story-highlight\">ankommen</span> - прибуває з армією, <span class=\"story-highlight\">zurückkehren</span> - повертається до батька. Але <span class=\"story-highlight\">der Ausgang</span> з трагедії - лише смерть. <span class=\"story-highlight\">Der Eingang</span> в мир - через страждання.</p>",
+    "emotional_peak": "«Впусти мене!» - кричить Лір під дверима дочок, не розуміючи, що сам зачинив двері любові"
+  },
+  "dialogues": [
+    {
+      "character": "КОРОЛЬ ЛИР",
+      "german": "Ich trete ein als mächtiger König!",
+      "russian": "Я вхожу как могущественный король!",
+      "emotion": "👑 [С величием]"
+    },
+    {
+      "character": "КОРДЕЛИЯ",
+      "german": "Ich muss dich verlassen, Vater!",
+      "russian": "Я должна покинуть тебя, отец!",
+      "emotion": "💔 [Со слезами]"
+    },
+    {
+      "character": "ГОНЕРИЛЬЯ",
+      "german": "Schließt die Tür vor diesem Narren!",
+      "russian": "Закройте дверь перед этим безумцем!",
+      "emotion": "🚪 [Жестоко]"
+    },
+    {
+      "character": "КОРОЛЬ ЛИР",
+      "german": "Das Tor ist verschlossen! Lasst mich ein!",
+      "russian": "Ворота заперты! Впустите меня!",
+      "emotion": "🌪️ [В отчаянии]"
+    },
+    {
+      "character": "ЭДГАР",
+      "german": "Ich muss fliehen und mich verstecken!",
+      "russian": "Я должен бежать и скрыться!",
+      "emotion": "🏃 [В страхе]"
+    },
+    {
+      "character": "КЕНТ",
+      "german": "Ich muss fortgehen, aber ich kehre zurück!",
+      "russian": "Я должен уйти, но я вернусь!",
+      "emotion": "🎭 [С решимостью]"
+    },
+    {
+      "character": "ШУТ",
+      "german": "Der Eingang zum Wahnsinn ist weit offen!",
+      "russian": "Вход в безумие широко открыт!",
+      "emotion": "🃏 [С иронией]"
+    },
+    {
+      "character": "КОРДЕЛИЯ",
+      "german": "Ich kehre zurück zu dir, mein Vater!",
+      "russian": "Я возвращаюсь к тебе, отец мой!",
+      "emotion": "🕊️ [С любовью]"
+    }
+  ],
+  "cheat_sheet": [
+    {
+      "german": "eintreten",
+      "russian": "входити",
+      "emotion_moment": "ВЕЛИЧ",
+      "gesture_anchor": "🚪 відчиняє двері величаво",
+      "character_moment": "Лір"
+    },
+    {
+      "german": "verlassen",
+      "russian": "покидати",
+      "emotion_moment": "РОЗЛУКА",
+      "gesture_anchor": "👋 відвертається зі сльозами",
+      "character_moment": "Корделія"
+    },
+    {
+      "german": "die Tür",
+      "russian": "двері",
+      "emotion_moment": "ВІДМОВА",
+      "gesture_anchor": "🚪 грюкає дверима",
+      "character_moment": "Гонерілья"
+    },
+    {
+      "german": "das Tor",
+      "russian": "ворота",
+      "emotion_moment": "ВІДЧАЙ",
+      "gesture_anchor": "🏰 б'є в ворота кулаками",
+      "character_moment": "Лір"
+    },
+    {
+      "german": "hinausgehen",
+      "russian": "виходити",
+      "emotion_moment": "БЕЗУМСТВО",
+      "gesture_anchor": "🌪️ йде в темряву",
+      "character_moment": "Лір"
+    },
+    {
+      "german": "ankommen",
+      "russian": "прибувати",
+      "emotion_moment": "ПОВЕРНЕННЯ",
+      "gesture_anchor": "⚓ ступає на берег",
+      "character_moment": "Корделія"
+    },
+    {
+      "german": "fortgehen",
+      "russian": "йти геть",
+      "emotion_moment": "ВИГНАННЯ",
+      "gesture_anchor": "🎭 накидає плащ",
+      "character_moment": "Кент"
+    },
+    {
+      "german": "der Eingang",
+      "russian": "вхід",
+      "emotion_moment": "ІРОНІЯ",
+      "gesture_anchor": "🌀 вказує на голову",
+      "character_moment": "Блазень"
+    },
+    {
+      "german": "der Ausgang",
+      "russian": "вихід",
+      "emotion_moment": "ПОШУК",
+      "gesture_anchor": "🔍 шукає вихід з безумства",
+      "character_moment": "Едгар"
+    },
+    {
+      "german": "fliehen",
+      "russian": "тікати",
+      "emotion_moment": "СТРАХ",
+      "gesture_anchor": "🏃 озирається в страху",
+      "character_moment": "Едгар"
+    },
+    {
+      "german": "vertreiben",
+      "russian": "виганяти",
+      "emotion_moment": "ГНІВ",
+      "gesture_anchor": "⚡ вказує на двері",
+      "character_moment": "Лір"
+    },
+    {
+      "german": "zurückkehren",
+      "russian": "повертатися",
+      "emotion_moment": "ПРОЩЕННЯ",
+      "gesture_anchor": "🕊️ обіймає батька",
+      "character_moment": "Корделія"
+    }
+  ],
+  "exercise": {
+    "title": "🎭 Заповніть пропуски в театральній постановці",
+    "text": "<p>Перший акт. Всі <span class=\"story-highlight\">___ (входити)</span> - входять в тронний зал через величні <span class=\"story-highlight\">die ___ (двері)</span>. Лір <span class=\"story-highlight\">___ (виганяти)</span> - виганяє Корделію. Вона мусить <span class=\"story-highlight\">___ (покидати)</span> - покинути батьківщину.</p><p>Буря. <span class=\"story-highlight\">Das ___ (ворота)</span> замку зачинене. Лір <span class=\"story-highlight\">___ (виходити)</span> - виходить у бурю. Едгар <span class=\"story-highlight\">___ (тікати)</span> - тікає від смерті. Кент <span class=\"story-highlight\">___ (йти геть)</span> - йде у вигнання.</p><p>Фінал. Корделія <span class=\"story-highlight\">___ (прибувати)</span> - прибуває з армією, <span class=\"story-highlight\">___ (повертатися)</span> - повертається до батька. Але <span class=\"story-highlight\">der ___ (вихід)</span> з трагедії - лише смерть. <span class=\"story-highlight\">Der ___ (вхід)</span> в мир - через страждання.</p>",
+    "answers": {
+      "входити": "eintreten",
+      "двері": "Tür",
+      "виганяти": "vertreiben",
+      "покидати": "verlassen",
+      "ворота": "Tor",
+      "виходити": "hinausgehen",
+      "тікати": "fliehen",
+      "йти геть": "fortgehen",
+      "прибувати": "ankommen",
+      "повертатися": "zurückkehren",
+      "вихід": "Ausgang",
+      "вхід": "Eingang"
+    }
+  }
+}

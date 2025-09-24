@@ -1,0 +1,379 @@
+{
+  "title": "🎭 Шлях через Короля Ліра",
+  "vocabulary": [
+    {
+      "german": "der Pfad",
+      "transcription": "[дер ПФАД]",
+      "translation": "стежка",
+      "type": "іменник",
+      "character_voice": {
+        "character": "Едгар",
+        "german": "Der Pfad ist dunkel",
+        "russian": "Тропа темна"
+      },
+      "gesture": {
+        "icon": "🌿",
+        "gesture": "пробирається крізь хащі",
+        "emotion": "НЕВІДОМІСТЬ",
+        "association": "Едгар веде батька стежкою"
+      }
+    },
+    {
+      "german": "die Straße",
+      "transcription": "[ди ШТРА-се]",
+      "translation": "дорога",
+      "type": "іменник",
+      "character_voice": {
+        "character": "Лір",
+        "german": "Die Straße endet hier",
+        "russian": "Дорога кончается здесь"
+      },
+      "gesture": {
+        "icon": "🛣️",
+        "gesture": "дивиться вперед",
+        "emotion": "КІНЕЦЬ",
+        "association": "Лір на краю божевілля"
+      }
+    },
+    {
+      "german": "die Richtung",
+      "transcription": "[ди РИХ-тунг]",
+      "translation": "напрямок",
+      "type": "іменник",
+      "character_voice": {
+        "character": "Блазень",
+        "german": "Welche Richtung?",
+        "russian": "В каком направлении?"
+      },
+      "gesture": {
+        "icon": "🧭",
+        "gesture": "крутиться навколо",
+        "emotion": "РОЗГУБЛЕНІСТЬ",
+        "association": "Блазень не знає куди йти"
+      }
+    },
+    {
+      "german": "gehen",
+      "transcription": "[ГЕ-ен]",
+      "translation": "йти",
+      "type": "дієслово",
+      "character_voice": {
+        "character": "Кент",
+        "german": "Wir müssen gehen",
+        "russian": "Мы должны идти"
+      },
+      "gesture": {
+        "icon": "🚶",
+        "gesture": "робить крок",
+        "emotion": "РІШУЧІСТЬ",
+        "association": "Кент веде Ліра"
+      }
+    },
+    {
+      "german": "kommen",
+      "transcription": "[КО-мен]",
+      "translation": "приходити",
+      "type": "дієслово",
+      "character_voice": {
+        "character": "Корделія",
+        "german": "Ich komme zurück",
+        "russian": "Я возвращаюсь"
+      },
+      "gesture": {
+        "icon": "👑",
+        "gesture": "з'являється з армією",
+        "emotion": "ПОВЕРНЕННЯ",
+        "association": "Корделія приходить рятувати"
+      }
+    },
+    {
+      "german": "führen",
+      "transcription": "[ФЮ-рен]",
+      "translation": "вести",
+      "type": "дієслово",
+      "character_voice": {
+        "character": "Едгар",
+        "german": "Ich führe dich",
+        "russian": "Я веду тебя"
+      },
+      "gesture": {
+        "icon": "🤝",
+        "gesture": "тримає за руку",
+        "emotion": "ТУРБОТА",
+        "association": "Едгар веде сліпого батька"
+      }
+    },
+    {
+      "german": "der Schritt",
+      "transcription": "[дер ШРИТТ]",
+      "translation": "крок",
+      "type": "іменник",
+      "character_voice": {
+        "character": "Глостер",
+        "german": "Noch ein Schritt",
+        "russian": "Ещё один шаг"
+      },
+      "gesture": {
+        "icon": "👣",
+        "gesture": "ступає обережно",
+        "emotion": "СТРАХ",
+        "association": "Глостер на краю скелі"
+      }
+    },
+    {
+      "german": "vorwärts",
+      "transcription": "[ФОР-вертс]",
+      "translation": "вперед",
+      "type": "прислівник",
+      "character_voice": {
+        "character": "Едмунд",
+        "german": "Immer vorwärts!",
+        "russian": "Всегда вперёд!"
+      },
+      "gesture": {
+        "icon": "➡️",
+        "gesture": "вказує вперед",
+        "emotion": "АМБІЦІЯ",
+        "association": "Едмунд йде до влади"
+      }
+    },
+    {
+      "german": "zurück",
+      "transcription": "[цу-РЮК]",
+      "translation": "назад",
+      "type": "прислівник",
+      "character_voice": {
+        "character": "Лір",
+        "german": "Kein Weg zurück",
+        "russian": "Нет пути назад"
+      },
+      "gesture": {
+        "icon": "↩️",
+        "gesture": "озирається",
+        "emotion": "БЕЗПОВОРОТНІСТЬ",
+        "association": "Лір не може повернути минуле"
+      }
+    },
+    {
+      "german": "das Ziel",
+      "transcription": "[дас ЦИЛ]",
+      "translation": "мета",
+      "type": "іменник",
+      "character_voice": {
+        "character": "Едмунд",
+        "german": "Mein Ziel ist nah",
+        "russian": "Моя цель близка"
+      },
+      "gesture": {
+        "icon": "🎯",
+        "gesture": "дивиться на трон",
+        "emotion": "ЖАДОБА",
+        "association": "Едмунд близький до мети"
+      }
+    },
+    {
+      "german": "die Kreuzung",
+      "transcription": "[ди КРОЙЦ-унг]",
+      "translation": "перехрестя",
+      "type": "іменник",
+      "character_voice": {
+        "character": "Лір",
+        "german": "An der Kreuzung stehe ich",
+        "russian": "Я стою на перекрёстке"
+      },
+      "gesture": {
+        "icon": "🔀",
+        "gesture": "дивиться на всі боки",
+        "emotion": "ВИБІР",
+        "association": "Лір на перехресті доль"
+      }
+    },
+    {
+      "german": "die Spur",
+      "transcription": "[ди ШПУР]",
+      "translation": "слід",
+      "type": "іменник",
+      "character_voice": {
+        "character": "Кент",
+        "german": "Ich folge seiner Spur",
+        "russian": "Я следую по его следу"
+      },
+      "gesture": {
+        "icon": "🔍",
+        "gesture": "шукає сліди",
+        "emotion": "ВІРНІСТЬ",
+        "association": "Кент шукає сліди Ліра"
+      }
+    }
+  ],
+  "story": {
+    "content": "<p>Початок шляху. Лір на <span class=\"story-highlight\">die Kreuzung</span> - перехресті життя вибирає <span class=\"story-highlight\">die Richtung</span>. <span class=\"story-highlight\">Die Straße</span> здається ясною - розділити королівство. Але немає шляху <span class=\"story-highlight\">zurück</span>.</p><p>Блукання стежками. <span class=\"story-highlight\">Der Pfad</span> веде в темряву. Кожен <span class=\"story-highlight\">der Schritt</span> - крок у безодню. Едгар <span class=\"story-highlight\">führen</span> - веде сліпого батька. Всі <span class=\"story-highlight\">gehen</span> - йдуть <span class=\"story-highlight\">vorwärts</span> - вперед до трагедії.</p><p>Кінець дороги. Корделія <span class=\"story-highlight\">kommen</span> - приходить занадто пізно. <span class=\"story-highlight\">Das Ziel</span> виявляється міражем. <span class=\"story-highlight\">Die Spur</span> веде до смерті.</p>",
+    "emotional_peak": "«Ми йшли неправильною дорогою» - останнє прозріння Едмунда"
+  },
+  "dialogues": [
+    {
+      "character": "ЕДГАР",
+      "german": "Der Pfad ist dunkel",
+      "russian": "Тропа темна",
+      "emotion": "🌿 [НЕВІДОМІСТЬ]"
+    },
+    {
+      "character": "КОРОЛЬ ЛІР",
+      "german": "Die Straße endet hier",
+      "russian": "Дорога кончается здесь",
+      "emotion": "🛣️ [КІНЕЦЬ]"
+    },
+    {
+      "character": "ШУТ",
+      "german": "Welche Richtung?",
+      "russian": "В каком направлении?",
+      "emotion": "🧭 [РОЗГУБЛЕНІСТЬ]"
+    },
+    {
+      "character": "КЕНТ",
+      "german": "Wir müssen gehen",
+      "russian": "Мы должны идти",
+      "emotion": "🚶 [РІШУЧІСТЬ]"
+    },
+    {
+      "character": "КОРДЕЛІЯ",
+      "german": "Ich komme zurück",
+      "russian": "Я возвращаюсь",
+      "emotion": "👑 [ПОВЕРНЕННЯ]"
+    },
+    {
+      "character": "ЕДГАР",
+      "german": "Ich führe dich",
+      "russian": "Я веду тебя",
+      "emotion": "🤝 [ТУРБОТА]"
+    },
+    {
+      "character": "ГЛОСТЕР",
+      "german": "Noch ein Schritt",
+      "russian": "Ещё один шаг",
+      "emotion": "👣 [СТРАХ]"
+    },
+    {
+      "character": "КЕНТ",
+      "german": "Immer vorwärts!",
+      "russian": "Всегда вперёд!",
+      "emotion": "➡️ [АМБІЦІЯ]"
+    },
+    {
+      "character": "КОРОЛЬ ЛІР",
+      "german": "Kein Weg zurück",
+      "russian": "Нет пути назад",
+      "emotion": "↩️ [БЕЗПОВОРОТНІСТЬ]"
+    },
+    {
+      "character": "ОСВАЛЬД",
+      "german": "Mein Ziel ist nah",
+      "russian": "Моя цель близка",
+      "emotion": "🎯 [ЖАДОБА]"
+    }
+  ],
+  "cheat_sheet": [
+    {
+      "german": "der Pfad",
+      "russian": "стежка",
+      "emotion_moment": "НЕВІДОМІСТЬ",
+      "gesture_anchor": "🌿 пробирається крізь хащі",
+      "character_moment": "Едгар"
+    },
+    {
+      "german": "die Straße",
+      "russian": "дорога",
+      "emotion_moment": "КІНЕЦЬ",
+      "gesture_anchor": "🛣️ дивиться вперед",
+      "character_moment": "Лір"
+    },
+    {
+      "german": "die Richtung",
+      "russian": "напрямок",
+      "emotion_moment": "РОЗГУБЛЕНІСТЬ",
+      "gesture_anchor": "🧭 крутиться навколо",
+      "character_moment": "Блазень"
+    },
+    {
+      "german": "gehen",
+      "russian": "йти",
+      "emotion_moment": "РІШУЧІСТЬ",
+      "gesture_anchor": "🚶 робить крок",
+      "character_moment": "Кент"
+    },
+    {
+      "german": "kommen",
+      "russian": "приходити",
+      "emotion_moment": "ПОВЕРНЕННЯ",
+      "gesture_anchor": "👑 з'являється з армією",
+      "character_moment": "Корделія"
+    },
+    {
+      "german": "führen",
+      "russian": "вести",
+      "emotion_moment": "ТУРБОТА",
+      "gesture_anchor": "🤝 тримає за руку",
+      "character_moment": "Едгар"
+    },
+    {
+      "german": "der Schritt",
+      "russian": "крок",
+      "emotion_moment": "СТРАХ",
+      "gesture_anchor": "👣 ступає обережно",
+      "character_moment": "Глостер"
+    },
+    {
+      "german": "vorwärts",
+      "russian": "вперед",
+      "emotion_moment": "АМБІЦІЯ",
+      "gesture_anchor": "➡️ вказує вперед",
+      "character_moment": "Едмунд"
+    },
+    {
+      "german": "zurück",
+      "russian": "назад",
+      "emotion_moment": "БЕЗПОВОРОТНІСТЬ",
+      "gesture_anchor": "↩️ озирається",
+      "character_moment": "Лір"
+    },
+    {
+      "german": "das Ziel",
+      "russian": "мета",
+      "emotion_moment": "ЖАДОБА",
+      "gesture_anchor": "🎯 дивиться на трон",
+      "character_moment": "Едмунд"
+    },
+    {
+      "german": "die Kreuzung",
+      "russian": "перехрестя",
+      "emotion_moment": "ВИБІР",
+      "gesture_anchor": "🔀 дивиться на всі боки",
+      "character_moment": "Лір"
+    },
+    {
+      "german": "die Spur",
+      "russian": "слід",
+      "emotion_moment": "ВІРНІСТЬ",
+      "gesture_anchor": "🔍 шукає сліди",
+      "character_moment": "Кент"
+    }
+  ],
+  "exercise": {
+    "title": "🎭 Заповніть пропуски в театральній постановці",
+    "text": "<p>Початок шляху. Лір на <span class=\"story-highlight\">die ___ (перехрестя)</span> - перехресті життя вибирає <span class=\"story-highlight\">die ___ (напрямок)</span>. <span class=\"story-highlight\">Die ___ (дорога)</span> здається ясною - розділити королівство. Але немає шляху <span class=\"story-highlight\">___ (назад)</span>.</p><p>Блукання стежками. <span class=\"story-highlight\">Der ___ (стежка)</span> веде в темряву. Кожен <span class=\"story-highlight\">der ___ (крок)</span> - крок у безодню. Едгар <span class=\"story-highlight\">___ (вести)</span> - веде сліпого батька. Всі <span class=\"story-highlight\">___ (йти)</span> - йдуть <span class=\"story-highlight\">___ (вперед)</span> - вперед до трагедії.</p><p>Кінець дороги. Корделія <span class=\"story-highlight\">___ (приходити)</span> - приходить занадто пізно. <span class=\"story-highlight\">Das ___ (мета)</span> виявляється міражем. <span class=\"story-highlight\">Die ___ (слід)</span> веде до смерті.</p>",
+    "answers": {
+      "перехрестя": "Kreuzung",
+      "напрямок": "Richtung",
+      "дорога": "Straße",
+      "назад": "zurück",
+      "стежка": "Pfad",
+      "крок": "Schritt",
+      "вести": "führen",
+      "йти": "gehen",
+      "вперед": "vorwärts",
+      "приходити": "kommen",
+      "мета": "Ziel",
+      "слід": "Spur"
+    }
+  }
+}

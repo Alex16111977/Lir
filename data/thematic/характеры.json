@@ -1,0 +1,379 @@
+{
+  "title": "🎭 Характери через Короля Ліра",
+  "vocabulary": [
+    {
+      "german": "stolz",
+      "transcription": "[ШТОЛЬЦ]",
+      "translation": "гордий",
+      "type": "прикметник",
+      "character_voice": {
+        "character": "Лір",
+        "german": "Ich bin zu stolz",
+        "russian": "Я слишком горд"
+      },
+      "gesture": {
+        "icon": "👑",
+        "gesture": "піднімає підборіддя",
+        "emotion": "ГОРДІСТЬ",
+        "association": "Лір не може прийняти правду"
+      }
+    },
+    {
+      "german": "grausam",
+      "transcription": "[ГРАУ-зам]",
+      "translation": "жорстокий",
+      "type": "прикметник",
+      "character_voice": {
+        "character": "Регана",
+        "german": "Sei grausam!",
+        "russian": "Будь жестокой!"
+      },
+      "gesture": {
+        "icon": "😈",
+        "gesture": "стискає кулаки",
+        "emotion": "ЖОРСТОКІСТЬ",
+        "association": "Регана виколює очі Глостеру"
+      }
+    },
+    {
+      "german": "gütig",
+      "transcription": "[ГЮ-тиг]",
+      "translation": "добрий",
+      "type": "прикметник",
+      "character_voice": {
+        "character": "Корделія",
+        "german": "Ich bin gütig",
+        "russian": "Я добра"
+      },
+      "gesture": {
+        "icon": "😇",
+        "gesture": "усміхається ніжно",
+        "emotion": "ДОБРОТА",
+        "association": "Корделія прощає батька"
+      }
+    },
+    {
+      "german": "ehrlich",
+      "transcription": "[ЕР-лих]",
+      "translation": "чесний",
+      "type": "прикметник",
+      "character_voice": {
+        "character": "Кент",
+        "german": "Ich bin ehrlich",
+        "russian": "Я честен"
+      },
+      "gesture": {
+        "icon": "🛡️",
+        "gesture": "дивиться прямо",
+        "emotion": "ЧЕСНІСТЬ",
+        "association": "Кент говорить правду Ліру"
+      }
+    },
+    {
+      "german": "falsch",
+      "transcription": "[ФАЛЬШ]",
+      "translation": "фальшивий",
+      "type": "прикметник",
+      "character_voice": {
+        "character": "Гонерілья",
+        "german": "Meine Liebe ist falsch",
+        "russian": "Моя любовь фальшива"
+      },
+      "gesture": {
+        "icon": "🎭",
+        "gesture": "надягає маску",
+        "emotion": "ЛИЦЕМІРСТВО",
+        "association": "Гонерілья бреше про любов"
+      }
+    },
+    {
+      "german": "treu",
+      "transcription": "[ТРОЙ]",
+      "translation": "вірний",
+      "type": "прикметник",
+      "character_voice": {
+        "character": "Едгар",
+        "german": "Ich bleibe treu",
+        "russian": "Я остаюсь верным"
+      },
+      "gesture": {
+        "icon": "🤝",
+        "gesture": "тримає руку батька",
+        "emotion": "ВІРНІСТЬ",
+        "association": "Едгар вірний батькові"
+      }
+    },
+    {
+      "german": "wahnsinnig",
+      "transcription": "[ВАХН-зи-ниг]",
+      "translation": "божевільний",
+      "type": "прикметник",
+      "character_voice": {
+        "character": "Лір",
+        "german": "Ich werde wahnsinnig!",
+        "russian": "Я схожу с ума!"
+      },
+      "gesture": {
+        "icon": "🌪️",
+        "gesture": "хапається за голову",
+        "emotion": "БОЖЕВІЛЛЯ",
+        "association": "Лір втрачає розум"
+      }
+    },
+    {
+      "german": "weise",
+      "transcription": "[ВАЙ-зе]",
+      "translation": "мудрий",
+      "type": "прикметник",
+      "character_voice": {
+        "character": "Блазень",
+        "german": "Der Narr ist weise",
+        "russian": "Шут мудр"
+      },
+      "gesture": {
+        "icon": "🎭",
+        "gesture": "підморгує",
+        "emotion": "МУДРІСТЬ",
+        "association": "Блазень найрозумніший"
+      }
+    },
+    {
+      "german": "blind",
+      "transcription": "[БЛИНД]",
+      "translation": "сліпий",
+      "type": "прикметник",
+      "character_voice": {
+        "character": "Глостер",
+        "german": "Ich war blind",
+        "russian": "Я был слеп"
+      },
+      "gesture": {
+        "icon": "👁️",
+        "gesture": "торкається очей",
+        "emotion": "ПРОЗРІННЯ",
+        "association": "Глостер сліпий бачить правду"
+      }
+    },
+    {
+      "german": "edel",
+      "transcription": "[Е-дель]",
+      "translation": "благородний",
+      "type": "прикметник",
+      "character_voice": {
+        "character": "Олбані",
+        "german": "Sei edel!",
+        "russian": "Будь благородным!"
+      },
+      "gesture": {
+        "icon": "⚔️",
+        "gesture": "піднімає меч",
+        "emotion": "БЛАГОРОДСТВО",
+        "association": "Олбані відновлює справедливість"
+      }
+    },
+    {
+      "german": "böse",
+      "transcription": "[БЁ-зе]",
+      "translation": "злий",
+      "type": "прикметник",
+      "character_voice": {
+        "character": "Едмунд",
+        "german": "Ich bin böse geboren",
+        "russian": "Я рождён злым"
+      },
+      "gesture": {
+        "icon": "👿",
+        "gesture": "усміхається зловісно",
+        "emotion": "ЗЛО",
+        "association": "Едмунд втілення зла"
+      }
+    },
+    {
+      "german": "naiv",
+      "transcription": "[на-ИФ]",
+      "translation": "наївний",
+      "type": "прикметник",
+      "character_voice": {
+        "character": "Лір",
+        "german": "Ich war so naiv",
+        "russian": "Я был так наивен"
+      },
+      "gesture": {
+        "icon": "👶",
+        "gesture": "розводить руки",
+        "emotion": "НАЇВНІСТЬ",
+        "association": "Лір був наївний вірити лестощам"
+      }
+    }
+  ],
+  "story": {
+    "content": "<p>Палітра характерів. Лір <span class=\"story-highlight\">stolz</span> - гордий і <span class=\"story-highlight\">naiv</span> - наївний. Корделія <span class=\"story-highlight\">ehrlich</span> - чесна і <span class=\"story-highlight\">gütig</span> - добра. Гонерілья і Регана <span class=\"story-highlight\">falsch</span> - фальшиві і <span class=\"story-highlight\">grausam</span> - жорстокі.</p><p>Протистояння. <span class=\"story-highlight\">Treu</span> - вірний Кент проти <span class=\"story-highlight\">böse</span> - злого Едмунда. <span class=\"story-highlight\">Weise</span> - мудрий Блазень бачить все. <span class=\"story-highlight\">Edel</span> - благородний Едгар рятує <span class=\"story-highlight\">blind</span> - сліпого батька.</p><p>Божевілля і прозріння. Лір стає <span class=\"story-highlight\">wahnsinnig</span> - божевільним, але прозріває. Всі маски впали, характери оголені.</p>",
+    "emotional_peak": "«Я більше грішний, ніж грішник!» - каже Лір, усвідомлюючи свою гордість"
+  },
+  "dialogues": [
+    {
+      "character": "КОРОЛЬ ЛІР",
+      "german": "Ich bin zu stolz",
+      "russian": "Я слишком горд",
+      "emotion": "👑 [ГОРДІСТЬ]"
+    },
+    {
+      "character": "КОРДЕЛІЯ",
+      "german": "Sei grausam!",
+      "russian": "Будь жестокой!",
+      "emotion": "😈 [ЖОРСТОКІСТЬ]"
+    },
+    {
+      "character": "КОРДЕЛІЯ",
+      "german": "Ich bin gütig",
+      "russian": "Я добра",
+      "emotion": "😇 [ДОБРОТА]"
+    },
+    {
+      "character": "КЕНТ",
+      "german": "Ich bin ehrlich",
+      "russian": "Я честен",
+      "emotion": "🛡️ [ЧЕСНІСТЬ]"
+    },
+    {
+      "character": "ГЛОСТЕР",
+      "german": "Meine Liebe ist falsch",
+      "russian": "Моя любовь фальшива",
+      "emotion": "🎭 [ЛИЦЕМІРСТВО]"
+    },
+    {
+      "character": "ЕДГАР",
+      "german": "Ich bleibe treu",
+      "russian": "Я остаюсь верным",
+      "emotion": "🤝 [ВІРНІСТЬ]"
+    },
+    {
+      "character": "КОРОЛЬ ЛІР",
+      "german": "Ich werde wahnsinnig!",
+      "russian": "Я схожу с ума!",
+      "emotion": "🌪️ [БОЖЕВІЛЛЯ]"
+    },
+    {
+      "character": "ШУТ",
+      "german": "Der Narr ist weise",
+      "russian": "Шут мудр",
+      "emotion": "🎭 [МУДРІСТЬ]"
+    },
+    {
+      "character": "ГЛОСТЕР",
+      "german": "Ich war blind",
+      "russian": "Я был слеп",
+      "emotion": "👁️ [ПРОЗРІННЯ]"
+    },
+    {
+      "character": "ОСВАЛЬД",
+      "german": "Sei edel!",
+      "russian": "Будь благородным!",
+      "emotion": "⚔️ [БЛАГОРОДСТВО]"
+    }
+  ],
+  "cheat_sheet": [
+    {
+      "german": "stolz",
+      "russian": "гордий",
+      "emotion_moment": "ГОРДІСТЬ",
+      "gesture_anchor": "👑 піднімає підборіддя",
+      "character_moment": "Лір"
+    },
+    {
+      "german": "grausam",
+      "russian": "жорстокий",
+      "emotion_moment": "ЖОРСТОКІСТЬ",
+      "gesture_anchor": "😈 стискає кулаки",
+      "character_moment": "Регана"
+    },
+    {
+      "german": "gütig",
+      "russian": "добрий",
+      "emotion_moment": "ДОБРОТА",
+      "gesture_anchor": "😇 усміхається ніжно",
+      "character_moment": "Корделія"
+    },
+    {
+      "german": "ehrlich",
+      "russian": "чесний",
+      "emotion_moment": "ЧЕСНІСТЬ",
+      "gesture_anchor": "🛡️ дивиться прямо",
+      "character_moment": "Кент"
+    },
+    {
+      "german": "falsch",
+      "russian": "фальшивий",
+      "emotion_moment": "ЛИЦЕМІРСТВО",
+      "gesture_anchor": "🎭 надягає маску",
+      "character_moment": "Гонерілья"
+    },
+    {
+      "german": "treu",
+      "russian": "вірний",
+      "emotion_moment": "ВІРНІСТЬ",
+      "gesture_anchor": "🤝 тримає руку батька",
+      "character_moment": "Едгар"
+    },
+    {
+      "german": "wahnsinnig",
+      "russian": "божевільний",
+      "emotion_moment": "БОЖЕВІЛЛЯ",
+      "gesture_anchor": "🌪️ хапається за голову",
+      "character_moment": "Лір"
+    },
+    {
+      "german": "weise",
+      "russian": "мудрий",
+      "emotion_moment": "МУДРІСТЬ",
+      "gesture_anchor": "🎭 підморгує",
+      "character_moment": "Блазень"
+    },
+    {
+      "german": "blind",
+      "russian": "сліпий",
+      "emotion_moment": "ПРОЗРІННЯ",
+      "gesture_anchor": "👁️ торкається очей",
+      "character_moment": "Глостер"
+    },
+    {
+      "german": "edel",
+      "russian": "благородний",
+      "emotion_moment": "БЛАГОРОДСТВО",
+      "gesture_anchor": "⚔️ піднімає меч",
+      "character_moment": "Олбані"
+    },
+    {
+      "german": "böse",
+      "russian": "злий",
+      "emotion_moment": "ЗЛО",
+      "gesture_anchor": "👿 усміхається зловісно",
+      "character_moment": "Едмунд"
+    },
+    {
+      "german": "naiv",
+      "russian": "наївний",
+      "emotion_moment": "НАЇВНІСТЬ",
+      "gesture_anchor": "👶 розводить руки",
+      "character_moment": "Лір"
+    }
+  ],
+  "exercise": {
+    "title": "🎭 Заповніть пропуски в театральній постановці",
+    "text": "<p>Палітра характерів. Лір <span class=\"story-highlight\">___ (гордий)</span> - гордий і <span class=\"story-highlight\">___ (наївний)</span> - наївний. Корделія <span class=\"story-highlight\">___ (чесний)</span> - чесна і <span class=\"story-highlight\">___ (добрий)</span> - добра. Гонерілья і Регана <span class=\"story-highlight\">___ (фальшивий)</span> - фальшиві і <span class=\"story-highlight\">___ (жорстокий)</span> - жорстокі.</p><p>Протистояння. <span class=\"story-highlight\">___ (вірний)</span> - вірний Кент проти <span class=\"story-highlight\">___ (злий)</span> - злого Едмунда. <span class=\"story-highlight\">___ (мудрий)</span> - мудрий Блазень бачить все. <span class=\"story-highlight\">___ (благородний)</span> - благородний Едгар рятує <span class=\"story-highlight\">___ (сліпий)</span> - сліпого батька.</p><p>Божевілля і прозріння. Лір стає <span class=\"story-highlight\">___ (божевільний)</span> - божевільним, але прозріває. Всі маски впали, характери оголені.</p>",
+    "answers": {
+      "гордий": "stolz",
+      "наївний": "naiv",
+      "чесний": "ehrlich",
+      "добрий": "gütig",
+      "фальшивий": "falsch",
+      "жорстокий": "grausam",
+      "вірний": "treu",
+      "злий": "böse",
+      "мудрий": "weise",
+      "благородний": "edel",
+      "сліпий": "blind",
+      "божевільний": "wahnsinnig"
+    }
+  }
+}

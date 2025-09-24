@@ -1,0 +1,379 @@
+{
+  "title": "🎭 Емоції через Короля Ліра",
+  "vocabulary": [
+    {
+      "german": "der Zorn",
+      "transcription": "[дер ЦОРН]",
+      "translation": "гнів",
+      "type": "іменник",
+      "character_voice": {
+        "character": "Лір",
+        "german": "Mein Zorn brennt!",
+        "russian": "Мой гнев пылает!"
+      },
+      "gesture": {
+        "icon": "🔥",
+        "gesture": "потрясає кулаками",
+        "emotion": "ЛЮТЬ",
+        "association": "Лір в гніві проклинає дочок"
+      }
+    },
+    {
+      "german": "die Liebe",
+      "transcription": "[ди ЛИ-бе]",
+      "translation": "любов",
+      "type": "іменник",
+      "character_voice": {
+        "character": "Корделія",
+        "german": "Meine Liebe ist echt",
+        "russian": "Моя любовь истинна"
+      },
+      "gesture": {
+        "icon": "❤️",
+        "gesture": "притискає руку до серця",
+        "emotion": "ЩИРІСТЬ",
+        "association": "Корделія любить без лестощів"
+      }
+    },
+    {
+      "german": "der Hass",
+      "transcription": "[дер ХАС]",
+      "translation": "ненависть",
+      "type": "іменник",
+      "character_voice": {
+        "character": "Едмунд",
+        "german": "Der Hass treibt mich",
+        "russian": "Ненависть движет мной"
+      },
+      "gesture": {
+        "icon": "😠",
+        "gesture": "стискає зуби",
+        "emotion": "ЗЛОБА",
+        "association": "Едмунд ненавидить брата"
+      }
+    },
+    {
+      "german": "die Angst",
+      "transcription": "[ди АНГСТ]",
+      "translation": "страх",
+      "type": "іменник",
+      "character_voice": {
+        "character": "Едгар",
+        "german": "Die Angst verfolgt mich",
+        "russian": "Страх преследует меня"
+      },
+      "gesture": {
+        "icon": "😰",
+        "gesture": "озирається",
+        "emotion": "ТРИВОГА",
+        "association": "Едгар боїться за життя"
+      }
+    },
+    {
+      "german": "die Freude",
+      "transcription": "[ди ФРОЙ-де]",
+      "translation": "радість",
+      "type": "іменник",
+      "character_voice": {
+        "character": "Лір",
+        "german": "Wo ist die Freude?",
+        "russian": "Где радость?"
+      },
+      "gesture": {
+        "icon": "😊",
+        "gesture": "згадує минуле",
+        "emotion": "ВТРАТА",
+        "association": "Лір втратив всю радість"
+      }
+    },
+    {
+      "german": "die Trauer",
+      "transcription": "[ди ТРАУ-ер]",
+      "translation": "печаль",
+      "type": "іменник",
+      "character_voice": {
+        "character": "Глостер",
+        "german": "Die Trauer erstickt mich",
+        "russian": "Печаль душит меня"
+      },
+      "gesture": {
+        "icon": "😢",
+        "gesture": "схиляє голову",
+        "emotion": "СКОРБОТА",
+        "association": "Глостер в печалі за сином"
+      }
+    },
+    {
+      "german": "die Wut",
+      "transcription": "[ди ВУТ]",
+      "translation": "лють",
+      "type": "іменник",
+      "character_voice": {
+        "character": "Лір",
+        "german": "Die Wut zerstört mich",
+        "russian": "Ярость разрушает меня"
+      },
+      "gesture": {
+        "icon": "😡",
+        "gesture": "рве волосся",
+        "emotion": "ШАЛЕНСТВО",
+        "association": "Лір шаленіє від люті"
+      }
+    },
+    {
+      "german": "die Hoffnung",
+      "transcription": "[ди ХОФ-нунг]",
+      "translation": "надія",
+      "type": "іменник",
+      "character_voice": {
+        "character": "Корделія",
+        "german": "Die Hoffnung stirbt nie",
+        "russian": "Надежда не умирает"
+      },
+      "gesture": {
+        "icon": "🌟",
+        "gesture": "дивиться вгору",
+        "emotion": "ВІРА",
+        "association": "Корделія вірить у порятунок"
+      }
+    },
+    {
+      "german": "die Verzweiflung",
+      "transcription": "[ди фер-ЦВАЙ-флунг]",
+      "translation": "відчай",
+      "type": "іменник",
+      "character_voice": {
+        "character": "Глостер",
+        "german": "Die Verzweiflung überwältigt",
+        "russian": "Отчаяние одолевает"
+      },
+      "gesture": {
+        "icon": "💔",
+        "gesture": "падає на коліна",
+        "emotion": "БЕЗНАДІЯ",
+        "association": "Глостер у відчаї хоче вмерти"
+      }
+    },
+    {
+      "german": "die Reue",
+      "transcription": "[ди РОЙ-е]",
+      "translation": "каяття",
+      "type": "іменник",
+      "character_voice": {
+        "character": "Лір",
+        "german": "Die Reue quält mich",
+        "russian": "Раскаяние мучает меня"
+      },
+      "gesture": {
+        "icon": "🙏",
+        "gesture": "б'є себе в груди",
+        "emotion": "РОЗКАЯННЯ",
+        "association": "Лір кається перед Корделією"
+      }
+    },
+    {
+      "german": "die Eifersucht",
+      "transcription": "[ди АЙ-фер-зухт]",
+      "translation": "ревнощі",
+      "type": "іменник",
+      "character_voice": {
+        "character": "Гонерілья",
+        "german": "Die Eifersucht brennt",
+        "russian": "Ревность жжёт"
+      },
+      "gesture": {
+        "icon": "💚",
+        "gesture": "дивиться з заздрістю",
+        "emotion": "ЗАЗДРІСТЬ",
+        "association": "Гонерілья ревнує до Регани"
+      }
+    },
+    {
+      "german": "das Mitleid",
+      "transcription": "[дас МИТ-лайд]",
+      "translation": "співчуття",
+      "type": "іменник",
+      "character_voice": {
+        "character": "Едгар",
+        "german": "Das Mitleid bewegt mich",
+        "russian": "Сострадание движет мной"
+      },
+      "gesture": {
+        "icon": "💝",
+        "gesture": "простягає руку",
+        "emotion": "МИЛОСЕРДЯ",
+        "association": "Едгар співчуває батькові"
+      }
+    }
+  ],
+  "story": {
+    "content": "<p>Буря емоцій. <span class=\"story-highlight\">Der Zorn</span> Ліра вибухає, коли <span class=\"story-highlight\">die Liebe</span> Корделії здається холодною. <span class=\"story-highlight\">Der Hass</span> народжується між сестрами. <span class=\"story-highlight\">Die Angst</span> охоплює всіх.</p><p>Крах почуттів. <span class=\"story-highlight\">Die Freude</span> зникає, <span class=\"story-highlight\">die Trauer</span> заповнює серця. <span class=\"story-highlight\">Die Wut</span> руйнує розум. <span class=\"story-highlight\">Die Verzweiflung</span> веде до безодні. <span class=\"story-highlight\">Die Hoffnung</span> гасне.</p><p>Останні емоції. <span class=\"story-highlight\">Die Reue</span> приходить запізно. <span class=\"story-highlight\">Die Eifersucht</span> вбиває сестер. Лише <span class=\"story-highlight\">das Mitleid</span> залишається живим в серці Едгара.</p>",
+    "emotional_peak": "«Моє серце розривається!» - кричить Лір, відчуваючи всі емоції одночасно"
+  },
+  "dialogues": [
+    {
+      "character": "КОРОЛЬ ЛІР",
+      "german": "Mein Zorn brennt!",
+      "russian": "Мой гнев пылает!",
+      "emotion": "🔥 [ЛЮТЬ]"
+    },
+    {
+      "character": "КОРДЕЛІЯ",
+      "german": "Meine Liebe ist echt",
+      "russian": "Моя любовь истинна",
+      "emotion": "❤️ [ЩИРІСТЬ]"
+    },
+    {
+      "character": "ГОНЕРИЛЬЯ",
+      "german": "Der Hass treibt mich",
+      "russian": "Ненависть движет мной",
+      "emotion": "😠 [ЗЛОБА]"
+    },
+    {
+      "character": "ЕДГАР",
+      "german": "Die Angst verfolgt mich",
+      "russian": "Страх преследует меня",
+      "emotion": "😰 [ТРИВОГА]"
+    },
+    {
+      "character": "КОРОЛЬ ЛІР",
+      "german": "Wo ist die Freude?",
+      "russian": "Где радость?",
+      "emotion": "😊 [ВТРАТА]"
+    },
+    {
+      "character": "ГЛОСТЕР",
+      "german": "Die Trauer erstickt mich",
+      "russian": "Печаль душит меня",
+      "emotion": "😢 [СКОРБОТА]"
+    },
+    {
+      "character": "КОРОЛЬ ЛІР",
+      "german": "Die Wut zerstört mich",
+      "russian": "Ярость разрушает меня",
+      "emotion": "😡 [ШАЛЕНСТВО]"
+    },
+    {
+      "character": "КОРДЕЛІЯ",
+      "german": "Die Hoffnung stirbt nie",
+      "russian": "Надежда не умирает",
+      "emotion": "🌟 [ВІРА]"
+    },
+    {
+      "character": "ГЛОСТЕР",
+      "german": "Die Verzweiflung überwältigt",
+      "russian": "Отчаяние одолевает",
+      "emotion": "💔 [БЕЗНАДІЯ]"
+    },
+    {
+      "character": "КОРОЛЬ ЛІР",
+      "german": "Die Reue quält mich",
+      "russian": "Раскаяние мучает меня",
+      "emotion": "🙏 [РОЗКАЯННЯ]"
+    }
+  ],
+  "cheat_sheet": [
+    {
+      "german": "der Zorn",
+      "russian": "гнів",
+      "emotion_moment": "ЛЮТЬ",
+      "gesture_anchor": "🔥 потрясає кулаками",
+      "character_moment": "Лір"
+    },
+    {
+      "german": "die Liebe",
+      "russian": "любов",
+      "emotion_moment": "ЩИРІСТЬ",
+      "gesture_anchor": "❤️ притискає руку до серця",
+      "character_moment": "Корделія"
+    },
+    {
+      "german": "der Hass",
+      "russian": "ненависть",
+      "emotion_moment": "ЗЛОБА",
+      "gesture_anchor": "😠 стискає зуби",
+      "character_moment": "Едмунд"
+    },
+    {
+      "german": "die Angst",
+      "russian": "страх",
+      "emotion_moment": "ТРИВОГА",
+      "gesture_anchor": "😰 озирається",
+      "character_moment": "Едгар"
+    },
+    {
+      "german": "die Freude",
+      "russian": "радість",
+      "emotion_moment": "ВТРАТА",
+      "gesture_anchor": "😊 згадує минуле",
+      "character_moment": "Лір"
+    },
+    {
+      "german": "die Trauer",
+      "russian": "печаль",
+      "emotion_moment": "СКОРБОТА",
+      "gesture_anchor": "😢 схиляє голову",
+      "character_moment": "Глостер"
+    },
+    {
+      "german": "die Wut",
+      "russian": "лють",
+      "emotion_moment": "ШАЛЕНСТВО",
+      "gesture_anchor": "😡 рве волосся",
+      "character_moment": "Лір"
+    },
+    {
+      "german": "die Hoffnung",
+      "russian": "надія",
+      "emotion_moment": "ВІРА",
+      "gesture_anchor": "🌟 дивиться вгору",
+      "character_moment": "Корделія"
+    },
+    {
+      "german": "die Verzweiflung",
+      "russian": "відчай",
+      "emotion_moment": "БЕЗНАДІЯ",
+      "gesture_anchor": "💔 падає на коліна",
+      "character_moment": "Глостер"
+    },
+    {
+      "german": "die Reue",
+      "russian": "каяття",
+      "emotion_moment": "РОЗКАЯННЯ",
+      "gesture_anchor": "🙏 б'є себе в груди",
+      "character_moment": "Лір"
+    },
+    {
+      "german": "die Eifersucht",
+      "russian": "ревнощі",
+      "emotion_moment": "ЗАЗДРІСТЬ",
+      "gesture_anchor": "💚 дивиться з заздрістю",
+      "character_moment": "Гонерілья"
+    },
+    {
+      "german": "das Mitleid",
+      "russian": "співчуття",
+      "emotion_moment": "МИЛОСЕРДЯ",
+      "gesture_anchor": "💝 простягає руку",
+      "character_moment": "Едгар"
+    }
+  ],
+  "exercise": {
+    "title": "🎭 Заповніть пропуски в театральній постановці",
+    "text": "<p>Буря емоцій. <span class=\"story-highlight\">Der ___ (гнів)</span> Ліра вибухає, коли <span class=\"story-highlight\">die ___ (любов)</span> Корделії здається холодною. <span class=\"story-highlight\">Der ___ (ненависть)</span> народжується між сестрами. <span class=\"story-highlight\">Die ___ (страх)</span> охоплює всіх.</p><p>Крах почуттів. <span class=\"story-highlight\">Die ___ (радість)</span> зникає, <span class=\"story-highlight\">die ___ (печаль)</span> заповнює серця. <span class=\"story-highlight\">Die ___ (лють)</span> руйнує розум. <span class=\"story-highlight\">Die ___ (відчай)</span> веде до безодні. <span class=\"story-highlight\">Die ___ (надія)</span> гасне.</p><p>Останні емоції. <span class=\"story-highlight\">Die ___ (каяття)</span> приходить запізно. <span class=\"story-highlight\">Die ___ (ревнощі)</span> вбиває сестер. Лише <span class=\"story-highlight\">das ___ (співчуття)</span> залишається живим в серці Едгара.</p>",
+    "answers": {
+      "гнів": "Zorn",
+      "любов": "Liebe",
+      "ненависть": "Hass",
+      "страх": "Angst",
+      "радість": "Freude",
+      "печаль": "Trauer",
+      "лють": "Wut",
+      "відчай": "Verzweiflung",
+      "надія": "Hoffnung",
+      "каяття": "Reue",
+      "ревнощі": "Eifersucht",
+      "співчуття": "Mitleid"
+    }
+  }
+}

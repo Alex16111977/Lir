@@ -1,0 +1,379 @@
+{
+  "title": "🎭 Послання через Короля Ліра",
+  "vocabulary": [
+    {
+      "german": "der Brief",
+      "transcription": "[дер БРИФ]",
+      "translation": "лист",
+      "type": "іменник",
+      "character_voice": {
+        "character": "Едмунд",
+        "german": "Dieser Brief beweist alles",
+        "russian": "Это письмо доказывает всё"
+      },
+      "gesture": {
+        "icon": "📜",
+        "gesture": "показує підроблений лист",
+        "emotion": "ОБМАН",
+        "association": "Едмунд підробляє лист Едгара"
+      }
+    },
+    {
+      "german": "schreiben",
+      "transcription": "[ШРАЙ-бен]",
+      "translation": "писати",
+      "type": "дієслово",
+      "character_voice": {
+        "character": "Гонерілья",
+        "german": "Ich schreibe an Едмунд",
+        "russian": "Я пишу Эдмунду"
+      },
+      "gesture": {
+        "icon": "✍️",
+        "gesture": "пише таємно",
+        "emotion": "ЗМОВА",
+        "association": "Гонерілья пише любовні листи Едмунду"
+      }
+    },
+    {
+      "german": "die Nachricht",
+      "transcription": "[ди НАХ-рихт]",
+      "translation": "повідомлення",
+      "type": "іменник",
+      "character_voice": {
+        "character": "Посланець",
+        "german": "Eine Nachricht vom König",
+        "russian": "Сообщение от короля"
+      },
+      "gesture": {
+        "icon": "📯",
+        "gesture": "передає згорток",
+        "emotion": "ТЕРМІНОВІСТЬ",
+        "association": "Посланці приносять новини"
+      }
+    },
+    {
+      "german": "senden",
+      "transcription": "[ЗЕН-ден]",
+      "translation": "надсилати",
+      "type": "дієслово",
+      "character_voice": {
+        "character": "Корделія",
+        "german": "Ich sende Hilfe",
+        "russian": "Я посылаю помощь"
+      },
+      "gesture": {
+        "icon": "🕊️",
+        "gesture": "відправляє гінця",
+        "emotion": "ТУРБОТА",
+        "association": "Корделія шле допомогу батькові"
+      }
+    },
+    {
+      "german": "lesen",
+      "transcription": "[ЛЕ-зен]",
+      "translation": "читати",
+      "type": "дієслово",
+      "character_voice": {
+        "character": "Глостер",
+        "german": "Ich lese den Verrat",
+        "russian": "Я читаю предательство"
+      },
+      "gesture": {
+        "icon": "👓",
+        "gesture": "розгортає лист",
+        "emotion": "ШОК",
+        "association": "Глостер читає фальшивий лист"
+      }
+    },
+    {
+      "german": "das Siegel",
+      "transcription": "[дас ЗИ-гель]",
+      "translation": "печатка",
+      "type": "іменник",
+      "character_voice": {
+        "character": "Едмунд",
+        "german": "Das Siegel ist echt",
+        "russian": "Печать подлинная"
+      },
+      "gesture": {
+        "icon": "🔏",
+        "gesture": "показує печатку",
+        "emotion": "ПІДРОБКА",
+        "association": "Едмунд підробляє печатку брата"
+      }
+    },
+    {
+      "german": "der Bote",
+      "transcription": "[дер БО-те]",
+      "translation": "посланець",
+      "type": "іменник",
+      "character_voice": {
+        "character": "Освальд",
+        "german": "Ich bin der Bote",
+        "russian": "Я гонец"
+      },
+      "gesture": {
+        "icon": "🎭",
+        "gesture": "схиляється з листом",
+        "emotion": "СЛУЖІННЯ",
+        "association": "Освальд - посланець Гонерільї"
+      }
+    },
+    {
+      "german": "verkünden",
+      "transcription": "[фер-КЮН-ден]",
+      "translation": "оголошувати",
+      "type": "дієслово",
+      "character_voice": {
+        "character": "Лір",
+        "german": "Ich verkünde die Teilung",
+        "russian": "Я объявляю раздел"
+      },
+      "gesture": {
+        "icon": "📢",
+        "gesture": "промовляє урочисто",
+        "emotion": "ОФІЦІЙНІСТЬ",
+        "association": "Лір оголошує поділ королівства"
+      }
+    },
+    {
+      "german": "warnen",
+      "transcription": "[ВАР-нен]",
+      "translation": "попереджати",
+      "type": "дієслово",
+      "character_voice": {
+        "character": "Блазень",
+        "german": "Ich warne dich",
+        "russian": "Я предупреждаю тебя"
+      },
+      "gesture": {
+        "icon": "⚠️",
+        "gesture": "піднімає палець",
+        "emotion": "ПРОРОЦТВО",
+        "association": "Блазень попереджає Ліра"
+      }
+    },
+    {
+      "german": "verraten",
+      "transcription": "[фер-РА-тен]",
+      "translation": "видавати",
+      "type": "дієслово",
+      "character_voice": {
+        "character": "Едгар",
+        "german": "Der Brief verrät alles",
+        "russian": "Письмо выдаёт всё"
+      },
+      "gesture": {
+        "icon": "🔓",
+        "gesture": "відкриває правду",
+        "emotion": "ВИКРИТТЯ",
+        "association": "Едгар викриває змову листом"
+      }
+    },
+    {
+      "german": "flüstern",
+      "transcription": "[ФЛЮС-терн]",
+      "translation": "шепотіти",
+      "type": "дієслово",
+      "character_voice": {
+        "character": "Регана",
+        "german": "Ich flüstere Geheimnisse",
+        "russian": "Я шепчу секреты"
+      },
+      "gesture": {
+        "icon": "🤫",
+        "gesture": "нахиляється до вуха",
+        "emotion": "ТАЄМНИЦЯ",
+        "association": "Сестри шепочуть змови"
+      }
+    },
+    {
+      "german": "schweigen",
+      "transcription": "[ШВАЙ-ген]",
+      "translation": "мовчати",
+      "type": "дієслово",
+      "character_voice": {
+        "character": "Корделія",
+        "german": "Ich kann nicht schweigen",
+        "russian": "Я не могу молчать"
+      },
+      "gesture": {
+        "icon": "🤐",
+        "gesture": "відмовляється мовчати",
+        "emotion": "ПРАВДА",
+        "association": "Корделія не може мовчати про правду"
+      }
+    }
+  ],
+  "story": {
+    "content": "<p>Фальшиві послання. Едмунд підробляє <span class=\"story-highlight\">der Brief</span> від Едгара. Глостер <span class=\"story-highlight\">lesen</span> - читає його з жахом. <span class=\"story-highlight\">Das Siegel</span> здається справжнім. Обман через <span class=\"story-highlight\">schreiben</span> - написане.</p><p>Таємні листи. Гонерілья <span class=\"story-highlight\">senden</span> - надсилає любовні послання Едмунду. <span class=\"story-highlight\">Der Bote</span> Освальд носить їх. Сестри <span class=\"story-highlight\">flüstern</span> - шепочуть змови. Блазень <span class=\"story-highlight\">warnen</span> - попереджає марно.</p><p>Викриття. <span class=\"story-highlight\">Die Nachricht</span> про армію Корделії. Едгар знаходить лист, що <span class=\"story-highlight\">verraten</span> - видає змову. Лір <span class=\"story-highlight\">verkünden</span> - оголошує прощення. Корделія не може <span class=\"story-highlight\">schweigen</span> - мовчати про любов.</p>",
+    "emotional_peak": "«Читай!» - кричить Едмунд, підсовуючи фальшивий лист батькові"
+  },
+  "dialogues": [
+    {
+      "character": "КОРОЛЬ ЛІР",
+      "german": "Dieser Brief beweist alles",
+      "russian": "Это письмо доказывает всё",
+      "emotion": "📜 [ОБМАН]"
+    },
+    {
+      "character": "КОРДЕЛІЯ",
+      "german": "Ich schreibe an Едмунд",
+      "russian": "Я пишу Эдмунду",
+      "emotion": "✍️ [ЗМОВА]"
+    },
+    {
+      "character": "ГОНЕРИЛЬЯ",
+      "german": "Eine Nachricht vom König",
+      "russian": "Сообщение от короля",
+      "emotion": "📯 [ТЕРМІНОВІСТЬ]"
+    },
+    {
+      "character": "КОРДЕЛІЯ",
+      "german": "Ich sende Hilfe",
+      "russian": "Я посылаю помощь",
+      "emotion": "🕊️ [ТУРБОТА]"
+    },
+    {
+      "character": "ГЛОСТЕР",
+      "german": "Ich lese den Verrat",
+      "russian": "Я читаю предательство",
+      "emotion": "👓 [ШОК]"
+    },
+    {
+      "character": "ЕДГАР",
+      "german": "Das Siegel ist echt",
+      "russian": "Печать подлинная",
+      "emotion": "🔏 [ПІДРОБКА]"
+    },
+    {
+      "character": "ЕДМУНД",
+      "german": "Ich bin der Bote",
+      "russian": "Я гонец",
+      "emotion": "🎭 [СЛУЖІННЯ]"
+    },
+    {
+      "character": "КОРОЛЬ ЛІР",
+      "german": "Ich verkünde die Teilung",
+      "russian": "Я объявляю раздел",
+      "emotion": "📢 [ОФІЦІЙНІСТЬ]"
+    },
+    {
+      "character": "ШУТ",
+      "german": "Ich warne dich",
+      "russian": "Я предупреждаю тебя",
+      "emotion": "⚠️ [ПРОРОЦТВО]"
+    },
+    {
+      "character": "ЕДГАР",
+      "german": "Der Brief verrät alles",
+      "russian": "Письмо выдаёт всё",
+      "emotion": "🔓 [ВИКРИТТЯ]"
+    }
+  ],
+  "cheat_sheet": [
+    {
+      "german": "der Brief",
+      "russian": "лист",
+      "emotion_moment": "ОБМАН",
+      "gesture_anchor": "📜 показує підроблений лист",
+      "character_moment": "Едмунд"
+    },
+    {
+      "german": "schreiben",
+      "russian": "писати",
+      "emotion_moment": "ЗМОВА",
+      "gesture_anchor": "✍️ пише таємно",
+      "character_moment": "Гонерілья"
+    },
+    {
+      "german": "die Nachricht",
+      "russian": "повідомлення",
+      "emotion_moment": "ТЕРМІНОВІСТЬ",
+      "gesture_anchor": "📯 передає згорток",
+      "character_moment": "Посланець"
+    },
+    {
+      "german": "senden",
+      "russian": "надсилати",
+      "emotion_moment": "ТУРБОТА",
+      "gesture_anchor": "🕊️ відправляє гінця",
+      "character_moment": "Корделія"
+    },
+    {
+      "german": "lesen",
+      "russian": "читати",
+      "emotion_moment": "ШОК",
+      "gesture_anchor": "👓 розгортає лист",
+      "character_moment": "Глостер"
+    },
+    {
+      "german": "das Siegel",
+      "russian": "печатка",
+      "emotion_moment": "ПІДРОБКА",
+      "gesture_anchor": "🔏 показує печатку",
+      "character_moment": "Едмунд"
+    },
+    {
+      "german": "der Bote",
+      "russian": "посланець",
+      "emotion_moment": "СЛУЖІННЯ",
+      "gesture_anchor": "🎭 схиляється з листом",
+      "character_moment": "Освальд"
+    },
+    {
+      "german": "verkünden",
+      "russian": "оголошувати",
+      "emotion_moment": "ОФІЦІЙНІСТЬ",
+      "gesture_anchor": "📢 промовляє урочисто",
+      "character_moment": "Лір"
+    },
+    {
+      "german": "warnen",
+      "russian": "попереджати",
+      "emotion_moment": "ПРОРОЦТВО",
+      "gesture_anchor": "⚠️ піднімає палець",
+      "character_moment": "Блазень"
+    },
+    {
+      "german": "verraten",
+      "russian": "видавати",
+      "emotion_moment": "ВИКРИТТЯ",
+      "gesture_anchor": "🔓 відкриває правду",
+      "character_moment": "Едгар"
+    },
+    {
+      "german": "flüstern",
+      "russian": "шепотіти",
+      "emotion_moment": "ТАЄМНИЦЯ",
+      "gesture_anchor": "🤫 нахиляється до вуха",
+      "character_moment": "Регана"
+    },
+    {
+      "german": "schweigen",
+      "russian": "мовчати",
+      "emotion_moment": "ПРАВДА",
+      "gesture_anchor": "🤐 відмовляється мовчати",
+      "character_moment": "Корделія"
+    }
+  ],
+  "exercise": {
+    "title": "🎭 Заповніть пропуски в театральній постановці",
+    "text": "<p>Фальшиві послання. Едмунд підробляє <span class=\"story-highlight\">der ___ (лист)</span> від Едгара. Глостер <span class=\"story-highlight\">___ (читати)</span> - читає його з жахом. <span class=\"story-highlight\">Das ___ (печатка)</span> здається справжнім. Обман через <span class=\"story-highlight\">___ (писати)</span> - написане.</p><p>Таємні листи. Гонерілья <span class=\"story-highlight\">___ (надсилати)</span> - надсилає любовні послання Едмунду. <span class=\"story-highlight\">Der ___ (посланець)</span> Освальд носить їх. Сестри <span class=\"story-highlight\">___ (шепотіти)</span> - шепочуть змови. Блазень <span class=\"story-highlight\">___ (попереджати)</span> - попереджає марно.</p><p>Викриття. <span class=\"story-highlight\">Die ___ (повідомлення)</span> про армію Корделії. Едгар знаходить лист, що <span class=\"story-highlight\">___ (видавати)</span> - видає змову. Лір <span class=\"story-highlight\">___ (оголошувати)</span> - оголошує прощення. Корделія не може <span class=\"story-highlight\">___ (мовчати)</span> - мовчати про любов.</p>",
+    "answers": {
+      "лист": "Brief",
+      "читати": "lesen",
+      "печатка": "Siegel",
+      "писати": "schreiben",
+      "надсилати": "senden",
+      "посланець": "Bote",
+      "шепотіти": "flüstern",
+      "попереджати": "warnen",
+      "повідомлення": "Nachricht",
+      "видавати": "verraten",
+      "оголошувати": "verkünden",
+      "мовчати": "schweigen"
+    }
+  }
+}

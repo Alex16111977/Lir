@@ -1,0 +1,379 @@
+{
+  "title": "🎭 Фінал через Короля Ліра",
+  "vocabulary": [
+    {
+      "german": "das Ende",
+      "transcription": "[дас ЕН-де]",
+      "translation": "кінець",
+      "type": "іменник",
+      "character_voice": {
+        "character": "Едгар",
+        "german": "Das Ende ist gekommen",
+        "russian": "Конец пришёл"
+      },
+      "gesture": {
+        "icon": "🌑",
+        "gesture": "схиляє голову",
+        "emotion": "ЗАВЕРШЕННЯ",
+        "association": "Едгар оголошує кінець трагедії"
+      }
+    },
+    {
+      "german": "der Tod",
+      "transcription": "[дер ТОД]",
+      "translation": "смерть",
+      "type": "іменник",
+      "character_voice": {
+        "character": "Лір",
+        "german": "Der Tod ist Erlösung",
+        "russian": "Смерть - избавление"
+      },
+      "gesture": {
+        "icon": "💀",
+        "gesture": "закриває очі",
+        "emotion": "ЗВІЛЬНЕННЯ",
+        "association": "Лір приймає смерть"
+      }
+    },
+    {
+      "german": "sterben",
+      "transcription": "[ШТЕР-бен]",
+      "translation": "вмирати",
+      "type": "дієслово",
+      "character_voice": {
+        "character": "Корделія",
+        "german": "Ich sterbe unschuldig",
+        "russian": "Я умираю невинной"
+      },
+      "gesture": {
+        "icon": "🕊️",
+        "gesture": "лежить нерухомо",
+        "emotion": "НЕВИННІСТЬ",
+        "association": "Корделія вмирає в тюрмі"
+      }
+    },
+    {
+      "german": "die Leiche",
+      "transcription": "[ди ЛАЙ-хе]",
+      "translation": "труп",
+      "type": "іменник",
+      "character_voice": {
+        "character": "Олбані",
+        "german": "Drei Leichen liegen hier",
+        "russian": "Три трупа лежат здесь"
+      },
+      "gesture": {
+        "icon": "⚰️",
+        "gesture": "вказує на тіла",
+        "emotion": "ЖАХІТТЯ",
+        "association": "Тіла Гонерільї, Регани, Едмунда"
+      }
+    },
+    {
+      "german": "der Abschied",
+      "transcription": "[дер АБ-шид]",
+      "translation": "прощання",
+      "type": "іменник",
+      "character_voice": {
+        "character": "Кент",
+        "german": "Mein Abschied naht",
+        "russian": "Моё прощание близко"
+      },
+      "gesture": {
+        "icon": "👋",
+        "gesture": "знімає шолом",
+        "emotion": "ПРОЩАННЯ",
+        "association": "Кент готовий піти за королем"
+      }
+    },
+    {
+      "german": "die Träne",
+      "transcription": "[ди ТРЕ-не]",
+      "translation": "сльоза",
+      "type": "іменник",
+      "character_voice": {
+        "character": "Едгар",
+        "german": "Die Tränen fließen",
+        "russian": "Слёзы текут"
+      },
+      "gesture": {
+        "icon": "😢",
+        "gesture": "витирає очі",
+        "emotion": "СКОРБОТА",
+        "association": "Едгар оплакує всіх"
+      }
+    },
+    {
+      "german": "weinen",
+      "transcription": "[ВАЙ-нен]",
+      "translation": "плакати",
+      "type": "дієслово",
+      "character_voice": {
+        "character": "Лір",
+        "german": "Ich weine um dich",
+        "russian": "Я плачу о тебе"
+      },
+      "gesture": {
+        "icon": "😭",
+        "gesture": "схиляється над Корделією",
+        "emotion": "ГОРЕ",
+        "association": "Лір плаче над мертвою дочкою"
+      }
+    },
+    {
+      "german": "trauern",
+      "transcription": "[ТРАУ-ерн]",
+      "translation": "горювати",
+      "type": "дієслово",
+      "character_voice": {
+        "character": "Олбані",
+        "german": "Wir trauern alle",
+        "russian": "Мы все скорбим"
+      },
+      "gesture": {
+        "icon": "🖤",
+        "gesture": "стоїть в жалобі",
+        "emotion": "ЖАЛОБА",
+        "association": "Всі горюють над трагедією"
+      }
+    },
+    {
+      "german": "begraben",
+      "transcription": "[бе-ГРА-бен]",
+      "translation": "ховати",
+      "type": "дієслово",
+      "character_voice": {
+        "character": "Едгар",
+        "german": "Wir begraben Könige",
+        "russian": "Мы хороним королей"
+      },
+      "gesture": {
+        "icon": "⚱️",
+        "gesture": "несе труну",
+        "emotion": "ПОХОРОН",
+        "association": "Поховання королівської сім'ї"
+      }
+    },
+    {
+      "german": "die Rache",
+      "transcription": "[ди РА-хе]",
+      "translation": "помста",
+      "type": "іменник",
+      "character_voice": {
+        "character": "Едгар",
+        "german": "Die Rache ist vollbracht",
+        "russian": "Месть свершилась"
+      },
+      "gesture": {
+        "icon": "⚔️",
+        "gesture": "вкладає меч у піхви",
+        "emotion": "ВІДПЛАТА",
+        "association": "Едгар помстився Едмунду"
+      }
+    },
+    {
+      "german": "die Gerechtigkeit",
+      "transcription": "[ди ге-РЕХ-тиг-кайт]",
+      "translation": "справедливість",
+      "type": "іменник",
+      "character_voice": {
+        "character": "Олбані",
+        "german": "Gerechtigkeit siegt",
+        "russian": "Справедливость побеждает"
+      },
+      "gesture": {
+        "icon": "⚖️",
+        "gesture": "піднімає руку",
+        "emotion": "ПРАВОСУДДЯ",
+        "association": "Олбані відновлює порядок"
+      }
+    },
+    {
+      "german": "das Schicksal",
+      "transcription": "[дас ШИК-заль]",
+      "translation": "доля",
+      "type": "іменник",
+      "character_voice": {
+        "character": "Едгар",
+        "german": "Das Schicksal ist grausam",
+        "russian": "Судьба жестока"
+      },
+      "gesture": {
+        "icon": "🎭",
+        "gesture": "дивиться в небо",
+        "emotion": "ФАТУМ",
+        "association": "Едгар приймає долю"
+      }
+    }
+  ],
+  "story": {
+    "content": "<p>Смерть приходить. <span class=\"story-highlight\">Der Tod</span> забирає всіх. Корделія <span class=\"story-highlight\">sterben</span> - вмирає першою. Лір <span class=\"story-highlight\">weinen</span> - плаче над нею. <span class=\"story-highlight\">Die Träne</span> не можуть її повернути.</p><p>Розплата. <span class=\"story-highlight\">Die Rache</span> Едгара звершилась. <span class=\"story-highlight\">Die Leiche</span> лежать на сцені. <span class=\"story-highlight\">Die Gerechtigkeit</span> запізнилась. <span class=\"story-highlight\">Der Abschied</span> неминучий.</p><p>Кінець всього. <span class=\"story-highlight\">Das Ende</span> настало. Всі <span class=\"story-highlight\">trauern</span> - горюють, <span class=\"story-highlight\">begraben</span> - ховають мертвих. <span class=\"story-highlight\">Das Schicksal</span> звершилось.</p>",
+    "emotional_peak": "«Ніколи, ніколи, ніколи, ніколи, ніколи!» - останній крик Ліра"
+  },
+  "dialogues": [
+    {
+      "character": "ЕДГАР",
+      "german": "Das Ende ist gekommen",
+      "russian": "Конец пришёл",
+      "emotion": "🌑 [ЗАВЕРШЕННЯ]"
+    },
+    {
+      "character": "КОРОЛЬ ЛІР",
+      "german": "Der Tod ist Erlösung",
+      "russian": "Смерть - избавление",
+      "emotion": "💀 [ЗВІЛЬНЕННЯ]"
+    },
+    {
+      "character": "КОРДЕЛІЯ",
+      "german": "Ich sterbe unschuldig",
+      "russian": "Я умираю невинной",
+      "emotion": "🕊️ [НЕВИННІСТЬ]"
+    },
+    {
+      "character": "РЕГАНА",
+      "german": "Drei Leichen liegen hier",
+      "russian": "Три трупа лежат здесь",
+      "emotion": "⚰️ [ЖАХІТТЯ]"
+    },
+    {
+      "character": "КЕНТ",
+      "german": "Mein Abschied naht",
+      "russian": "Моё прощание близко",
+      "emotion": "👋 [ПРОЩАННЯ]"
+    },
+    {
+      "character": "ЕДГАР",
+      "german": "Die Tränen fließen",
+      "russian": "Слёзы текут",
+      "emotion": "😢 [СКОРБОТА]"
+    },
+    {
+      "character": "КОРОЛЬ ЛІР",
+      "german": "Ich weine um dich",
+      "russian": "Я плачу о тебе",
+      "emotion": "😭 [ГОРЕ]"
+    },
+    {
+      "character": "КЕНТ",
+      "german": "Wir trauern alle",
+      "russian": "Мы все скорбим",
+      "emotion": "🖤 [ЖАЛОБА]"
+    },
+    {
+      "character": "ЕДГАР",
+      "german": "Wir begraben Könige",
+      "russian": "Мы хороним королей",
+      "emotion": "⚱️ [ПОХОРОН]"
+    },
+    {
+      "character": "ЕДГАР",
+      "german": "Die Rache ist vollbracht",
+      "russian": "Месть свершилась",
+      "emotion": "⚔️ [ВІДПЛАТА]"
+    }
+  ],
+  "cheat_sheet": [
+    {
+      "german": "das Ende",
+      "russian": "кінець",
+      "emotion_moment": "ЗАВЕРШЕННЯ",
+      "gesture_anchor": "🌑 схиляє голову",
+      "character_moment": "Едгар"
+    },
+    {
+      "german": "der Tod",
+      "russian": "смерть",
+      "emotion_moment": "ЗВІЛЬНЕННЯ",
+      "gesture_anchor": "💀 закриває очі",
+      "character_moment": "Лір"
+    },
+    {
+      "german": "sterben",
+      "russian": "вмирати",
+      "emotion_moment": "НЕВИННІСТЬ",
+      "gesture_anchor": "🕊️ лежить нерухомо",
+      "character_moment": "Корделія"
+    },
+    {
+      "german": "die Leiche",
+      "russian": "труп",
+      "emotion_moment": "ЖАХІТТЯ",
+      "gesture_anchor": "⚰️ вказує на тіла",
+      "character_moment": "Олбані"
+    },
+    {
+      "german": "der Abschied",
+      "russian": "прощання",
+      "emotion_moment": "ПРОЩАННЯ",
+      "gesture_anchor": "👋 знімає шолом",
+      "character_moment": "Кент"
+    },
+    {
+      "german": "die Träne",
+      "russian": "сльоза",
+      "emotion_moment": "СКОРБОТА",
+      "gesture_anchor": "😢 витирає очі",
+      "character_moment": "Едгар"
+    },
+    {
+      "german": "weinen",
+      "russian": "плакати",
+      "emotion_moment": "ГОРЕ",
+      "gesture_anchor": "😭 схиляється над Корделією",
+      "character_moment": "Лір"
+    },
+    {
+      "german": "trauern",
+      "russian": "горювати",
+      "emotion_moment": "ЖАЛОБА",
+      "gesture_anchor": "🖤 стоїть в жалобі",
+      "character_moment": "Олбані"
+    },
+    {
+      "german": "begraben",
+      "russian": "ховати",
+      "emotion_moment": "ПОХОРОН",
+      "gesture_anchor": "⚱️ несе труну",
+      "character_moment": "Едгар"
+    },
+    {
+      "german": "die Rache",
+      "russian": "помста",
+      "emotion_moment": "ВІДПЛАТА",
+      "gesture_anchor": "⚔️ вкладає меч у піхви",
+      "character_moment": "Едгар"
+    },
+    {
+      "german": "die Gerechtigkeit",
+      "russian": "справедливість",
+      "emotion_moment": "ПРАВОСУДДЯ",
+      "gesture_anchor": "⚖️ піднімає руку",
+      "character_moment": "Олбані"
+    },
+    {
+      "german": "das Schicksal",
+      "russian": "доля",
+      "emotion_moment": "ФАТУМ",
+      "gesture_anchor": "🎭 дивиться в небо",
+      "character_moment": "Едгар"
+    }
+  ],
+  "exercise": {
+    "title": "🎭 Заповніть пропуски в театральній постановці",
+    "text": "<p>Смерть приходить. <span class=\"story-highlight\">Der ___ (смерть)</span> забирає всіх. Корделія <span class=\"story-highlight\">___ (вмирати)</span> - вмирає першою. Лір <span class=\"story-highlight\">___ (плакати)</span> - плаче над нею. <span class=\"story-highlight\">Die ___ (сльоза)</span> не можуть її повернути.</p><p>Розплата. <span class=\"story-highlight\">Die ___ (помста)</span> Едгара звершилась. <span class=\"story-highlight\">Die ___ (труп)</span> лежать на сцені. <span class=\"story-highlight\">Die ___ (справедливість)</span> запізнилась. <span class=\"story-highlight\">Der ___ (прощання)</span> неминучий.</p><p>Кінець всього. <span class=\"story-highlight\">Das ___ (кінець)</span> настало. Всі <span class=\"story-highlight\">___ (горювати)</span> - горюють, <span class=\"story-highlight\">___ (ховати)</span> - ховають мертвих. <span class=\"story-highlight\">Das ___ (доля)</span> звершилось.</p>",
+    "answers": {
+      "смерть": "Tod",
+      "вмирати": "sterben",
+      "плакати": "weinen",
+      "сльоза": "Träne",
+      "помста": "Rache",
+      "труп": "Leiche",
+      "справедливість": "Gerechtigkeit",
+      "прощання": "Abschied",
+      "кінець": "Ende",
+      "горювати": "trauern",
+      "ховати": "begraben",
+      "доля": "Schicksal"
+    }
+  }
+}

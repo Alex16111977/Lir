@@ -1,0 +1,367 @@
+{
+  "title": "🎭 Влада через Короля Ліра",
+  "vocabulary": [
+    {
+      "german": "die Macht",
+      "transcription": "[ди МАХТ]",
+      "translation": "влада",
+      "type": "іменник",
+      "character_voice": {
+        "character": "Лір",
+        "german": "Die Macht teile ich unter euch",
+        "russian": "Власть я делю между вами"
+      },
+      "gesture": {
+        "icon": "⚡",
+        "gesture": "піднімає скіпетр",
+        "emotion": "ВЕЛИЧ",
+        "association": "Лір роздає владу дочкам"
+      }
+    },
+    {
+      "german": "herrschen",
+      "transcription": "[ХЕР-шен]",
+      "translation": "правити",
+      "type": "дієслово",
+      "character_voice": {
+        "character": "Гонерілья",
+        "german": "Jetzt werde ich herrschen",
+        "russian": "Теперь я буду править"
+      },
+      "gesture": {
+        "icon": "👸",
+        "gesture": "випрямляє спину владно",
+        "emotion": "АМБІЦІЯ",
+        "association": "Дочки прагнуть абсолютної влади"
+      }
+    },
+    {
+      "german": "der Thron",
+      "transcription": "[дер ТРОН]",
+      "translation": "трон",
+      "type": "іменник",
+      "character_voice": {
+        "character": "Едмунд",
+        "german": "Der Thron wird mein sein",
+        "russian": "Трон будет моим"
+      },
+      "gesture": {
+        "icon": "👑",
+        "gesture": "дивиться на трон жадібно",
+        "emotion": "ЖАДОБА",
+        "association": "Едмунд мріє захопити трон"
+      }
+    },
+    {
+      "german": "befehlen",
+      "transcription": "[бе-ФЕ-лен]",
+      "translation": "наказувати",
+      "type": "дієслово",
+      "character_voice": {
+        "character": "Регана",
+        "german": "Ich befehle - gehorcht!",
+        "russian": "Я приказываю - повинуйтесь!"
+      },
+      "gesture": {
+        "icon": "☝️",
+        "gesture": "вказує перстом владно",
+        "emotion": "ДЕСПОТИЗМ",
+        "association": "Регана жорстоко наказує слугам"
+      }
+    },
+    {
+      "german": "gehorchen",
+      "transcription": "[ге-ХОР-хен]",
+      "translation": "підкорятися",
+      "type": "дієслово",
+      "character_voice": {
+        "character": "Кент",
+        "german": "Ich gehorche nur der Ehre",
+        "russian": "Я подчиняюсь только чести"
+      },
+      "gesture": {
+        "icon": "🛡️",
+        "gesture": "схиляє голову з гідністю",
+        "emotion": "ВІРНІСТЬ",
+        "association": "Кент відмовляється коритися несправедливості"
+      }
+    },
+    {
+      "german": "das Reich",
+      "transcription": "[дас РАЙХ]",
+      "translation": "королівство",
+      "type": "іменник",
+      "character_voice": {
+        "character": "Лір",
+        "german": "Mein Reich zerfällt",
+        "russian": "Мое королевство распадается"
+      },
+      "gesture": {
+        "icon": "🏰",
+        "gesture": "розводить руки безпорадно",
+        "emotion": "КРАХ",
+        "association": "Лір бачить розпад свого королівства"
+      }
+    },
+    {
+      "german": "der Herrscher",
+      "transcription": "[дер ХЕРРШ-ер]",
+      "translation": "правитель",
+      "type": "іменник",
+      "character_voice": {
+        "character": "Блазень",
+        "german": "Ein Herrscher ohne Land",
+        "russian": "Правитель без земли"
+      },
+      "gesture": {
+        "icon": "🎭",
+        "gesture": "показує порожні кишені",
+        "emotion": "ІРОНІЯ",
+        "association": "Блазень глузує з Ліра без влади"
+      }
+    },
+    {
+      "german": "die Krone",
+      "transcription": "[ди КРО-не]",
+      "translation": "корона",
+      "type": "іменник",
+      "character_voice": {
+        "character": "Лір",
+        "german": "Die Krone drückt schwer",
+        "russian": "Корона давит тяжело"
+      },
+      "gesture": {
+        "icon": "👑",
+        "gesture": "торкається голови стомлено",
+        "emotion": "ТЯГАР",
+        "association": "Лір відчуває тягар корони"
+      }
+    },
+    {
+      "german": "regieren",
+      "transcription": "[ре-ГИ-рен]",
+      "translation": "царювати",
+      "type": "дієслово",
+      "character_voice": {
+        "character": "Корделія",
+        "german": "Liebe sollte regieren",
+        "russian": "Любовь должна царствовать"
+      },
+      "gesture": {
+        "icon": "❤️",
+        "gesture": "притискає руку до серця",
+        "emotion": "МУДРІСТЬ",
+        "association": "Корделія вірить у владу любові"
+      }
+    },
+    {
+      "german": "unterwerfen",
+      "transcription": "[ун-тер-ВЕР-фен]",
+      "translation": "підкоряти",
+      "type": "дієслово",
+      "character_voice": {
+        "character": "Гонерілья",
+        "german": "Alle müssen sich unterwerfen",
+        "russian": "Все должны покориться"
+      },
+      "gesture": {
+        "icon": "⛓️",
+        "gesture": "стискає кулак",
+        "emotion": "ТИРАНІЯ",
+        "association": "Гонерілья хоче підкорити всіх"
+      }
+    },
+    {
+      "german": "die Herrschaft",
+      "transcription": "[ди ХЕРР-шафт]",
+      "translation": "панування",
+      "type": "іменник",
+      "character_voice": {
+        "character": "Едгар",
+        "german": "Die Herrschaft des Bösen endet",
+        "russian": "Господство зла кончается"
+      },
+      "gesture": {
+        "icon": "🌅",
+        "gesture": "дивиться на схід сонця",
+        "emotion": "НАДІЯ",
+        "association": "Едгар вірить у кінець тиранії"
+      }
+    },
+    {
+      "german": "abdanken",
+      "transcription": "[АБ-дан-кен]",
+      "translation": "зрікатися",
+      "type": "дієслово",
+      "character_voice": {
+        "character": "Лір",
+        "german": "Ich will abdanken",
+        "russian": "Я хочу отречься"
+      },
+      "gesture": {
+        "icon": "🎭",
+        "gesture": "знімає корону",
+        "emotion": "ВТОМА",
+        "association": "Лір зрікається престолу"
+      }
+    }
+  ],
+  "story": {
+    "content": "<p>Тронний зал. <span class=\"story-highlight\">Die Macht</span> ще в руках Ліра. Він хоче <span class=\"story-highlight\">abdanken</span> - зректися, розділити <span class=\"story-highlight\">das Reich</span> - королівство. <span class=\"story-highlight\">Die Krone</span> стала важкою.</p><p>Боротьба за владу. Дочки прагнуть <span class=\"story-highlight\">herrschen</span> - правити, <span class=\"story-highlight\">befehlen</span> - наказувати, <span class=\"story-highlight\">unterwerfen</span> - підкоряти. <span class=\"story-highlight\">Der Thron</span> стає об'єктом змов. Ніхто не хоче <span class=\"story-highlight\">gehorchen</span> - коритися.</p><p>Крах. <span class=\"story-highlight\">Der Herrscher</span> без влади блукає в бурі. <span class=\"story-highlight\">Die Herrschaft</span> зла руйнує все. Лише смерть зупиняє тих, хто прагнув <span class=\"story-highlight\">regieren</span> - царювати.</p>",
+    "emotional_peak": "«Хто я, якщо не король?» - питає божевільний Лір, не розуміючи, що влада без любові - ніщо"
+  },
+  "dialogues": [
+    {
+      "character": "КОРОЛЬ ЛИР",
+      "german": "Die MACHT teile ich! Ich will ABDANKEN! Die KRONE drückt schwer!",
+      "russian": "ВЛАСТЬ я делю! Я хочу ОТРЕЧЬСЯ! КОРОНА давит тяжело!",
+      "emotion": "😔 [Устало от власти]"
+    },
+    {
+      "character": "ГОНЕРИЛЬЯ",
+      "german": "Jetzt werde ich HERRSCHEN! Alle müssen sich UNTERWERFEN!",
+      "russian": "Теперь я буду ПРАВИТЬ! Все должны ПОКОРИТЬСЯ!",
+      "emotion": "😈 [Властолюбиво]"
+    },
+    {
+      "character": "РЕГАНА",
+      "german": "Ich BEFEHLE - GEHORCHT! Der THRON gehört uns!",
+      "russian": "Я ПРИКАЗЫВАЮ - ПОВИНУЙТЕСЬ! ТРОН принадлежит нам!",
+      "emotion": "🐍 [Деспотично]"
+    },
+    {
+      "character": "ЭДМУНД",
+      "german": "Der THRON wird mein sein! Ich will das REICH REGIEREN!",
+      "russian": "ТРОН будет моим! Я хочу ЦАРСТВОВАТЬ в КОРОЛЕВСТВЕ!",
+      "emotion": "⚔️ [Амбициозно]"
+    },
+    {
+      "character": "КЕНТ",
+      "german": "Ich GEHORCHE nur der Ehre! Ein HERRSCHER ohne Liebe ist nichts!",
+      "russian": "Я ПОДЧИНЯЮСЬ только чести! ПРАВИТЕЛЬ без любви - ничто!",
+      "emotion": "🛡️ [С достоинством]"
+    },
+    {
+      "character": "КОРДЕЛИЯ",
+      "german": "Liebe sollte REGIEREN, nicht die MACHT! Die HERRSCHAFT des Herzens!",
+      "russian": "Любовь должна ЦАРСТВОВАТЬ, не ВЛАСТЬ! ГОСПОДСТВО сердца!",
+      "emotion": "💝 [С мудростью]"
+    },
+    {
+      "character": "ШУТ",
+      "german": "Ein HERRSCHER ohne Land! Die KRONE auf einem leeren Kopf!",
+      "russian": "ПРАВИТЕЛЬ без земли! КОРОНА на пустой голове!",
+      "emotion": "🃏 [Горько-иронично]"
+    },
+    {
+      "character": "КОРОЛЬ ЛИР",
+      "german": "Mein REICH zerfällt! Wer bin ich ohne MACHT und THRON?",
+      "russian": "Моё КОРОЛЕВСТВО распадается! Кто я без ВЛАСТИ и ТРОНА?",
+      "emotion": "😢 [В отчаянии]"
+    }
+  ],
+  "cheat_sheet": [
+    {
+      "german": "die Macht",
+      "russian": "влада",
+      "emotion_moment": "ВЕЛИЧ",
+      "gesture_anchor": "⚡ піднімає скіпетр",
+      "character_moment": "Лір"
+    },
+    {
+      "german": "herrschen",
+      "russian": "правити",
+      "emotion_moment": "АМБІЦІЯ",
+      "gesture_anchor": "👸 випрямляє спину владно",
+      "character_moment": "Гонерілья"
+    },
+    {
+      "german": "der Thron",
+      "russian": "трон",
+      "emotion_moment": "ЖАДОБА",
+      "gesture_anchor": "👑 дивиться на трон жадібно",
+      "character_moment": "Едмунд"
+    },
+    {
+      "german": "befehlen",
+      "russian": "наказувати",
+      "emotion_moment": "ДЕСПОТИЗМ",
+      "gesture_anchor": "☝️ вказує перстом владно",
+      "character_moment": "Регана"
+    },
+    {
+      "german": "gehorchen",
+      "russian": "підкорятися",
+      "emotion_moment": "ВІРНІСТЬ",
+      "gesture_anchor": "🛡️ схиляє голову з гідністю",
+      "character_moment": "Кент"
+    },
+    {
+      "german": "das Reich",
+      "russian": "королівство",
+      "emotion_moment": "КРАХ",
+      "gesture_anchor": "🏰 розводить руки безпорадно",
+      "character_moment": "Лір"
+    },
+    {
+      "german": "der Herrscher",
+      "russian": "правитель",
+      "emotion_moment": "ІРОНІЯ",
+      "gesture_anchor": "🎭 показує порожні кишені",
+      "character_moment": "Блазень"
+    },
+    {
+      "german": "die Krone",
+      "russian": "корона",
+      "emotion_moment": "ТЯГАР",
+      "gesture_anchor": "👑 торкається голови стомлено",
+      "character_moment": "Лір"
+    },
+    {
+      "german": "regieren",
+      "russian": "царювати",
+      "emotion_moment": "МУДРІСТЬ",
+      "gesture_anchor": "❤️ притискає руку до серця",
+      "character_moment": "Корделія"
+    },
+    {
+      "german": "unterwerfen",
+      "russian": "підкоряти",
+      "emotion_moment": "ТИРАНІЯ",
+      "gesture_anchor": "⛓️ стискає кулак",
+      "character_moment": "Гонерілья"
+    },
+    {
+      "german": "die Herrschaft",
+      "russian": "панування",
+      "emotion_moment": "НАДІЯ",
+      "gesture_anchor": "🌅 дивиться на схід сонця",
+      "character_moment": "Едгар"
+    },
+    {
+      "german": "abdanken",
+      "russian": "зрікатися",
+      "emotion_moment": "ВТОМА",
+      "gesture_anchor": "🎭 знімає корону",
+      "character_moment": "Лір"
+    }
+  ],
+  "exercise": {
+    "title": "🎭 Заповніть пропуски в театральній постановці",
+    "text": "<p>Тронний зал. <span class=\"story-highlight\">Die ___ (влада)</span> ще в руках Ліра. Він хоче <span class=\"story-highlight\">___ (зрікатися)</span> - зректися, розділити <span class=\"story-highlight\">das ___ (королівство)</span> - королівство. <span class=\"story-highlight\">Die ___ (корона)</span> стала важкою.</p><p>Боротьба за владу. Дочки прагнуть <span class=\"story-highlight\">___ (правити)</span> - правити, <span class=\"story-highlight\">___ (наказувати)</span> - наказувати, <span class=\"story-highlight\">___ (підкоряти)</span> - підкоряти. <span class=\"story-highlight\">Der ___ (трон)</span> стає об'єктом змов. Ніхто не хоче <span class=\"story-highlight\">___ (підкорятися)</span> - коритися.</p><p>Крах. <span class=\"story-highlight\">Der ___ (правитель)</span> без влади блукає в бурі. <span class=\"story-highlight\">Die ___ (панування)</span> зла руйнує все. Лише смерть зупиняє тих, хто прагнув <span class=\"story-highlight\">___ (царювати)</span> - царювати.</p>",
+    "answers": {
+      "влада": "Macht",
+      "зрікатися": "abdanken",
+      "королівство": "Reich",
+      "корона": "Krone",
+      "правити": "herrschen",
+      "наказувати": "befehlen",
+      "підкоряти": "unterwerfen",
+      "трон": "Thron",
+      "підкорятися": "gehorchen",
+      "правитель": "Herrscher",
+      "панування": "Herrschaft",
+      "царювати": "regieren"
+    }
+  }
+}

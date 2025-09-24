@@ -1,0 +1,379 @@
+{
+  "title": "🎭 Життя і смерть через Короля Ліра",
+  "vocabulary": [
+    {
+      "german": "leben",
+      "transcription": "[ЛЕ-бен]",
+      "translation": "жити",
+      "type": "дієслово",
+      "character_voice": {
+        "character": "Лір",
+        "german": "Ich will mit dir leben",
+        "russian": "Я хочу жить с тобой"
+      },
+      "gesture": {
+        "icon": "💚",
+        "gesture": "обіймає Корделію",
+        "emotion": "НАДІЯ",
+        "association": "Лір мріє жити з Корделією в тюрмі"
+      }
+    },
+    {
+      "german": "sterben",
+      "transcription": "[ШТЕР-бен]",
+      "translation": "вмирати",
+      "type": "дієслово",
+      "character_voice": {
+        "character": "Лір",
+        "german": "Lass mich sterben",
+        "russian": "Дай мне умереть"
+      },
+      "gesture": {
+        "icon": "💀",
+        "gesture": "падає на коліна",
+        "emotion": "КІНЕЦЬ",
+        "association": "Лір вмирає від горя"
+      }
+    },
+    {
+      "german": "der Tod",
+      "transcription": "[дер ТОД]",
+      "translation": "смерть",
+      "type": "іменник",
+      "character_voice": {
+        "character": "Едмунд",
+        "german": "Der Tod kommt für alle",
+        "russian": "Смерть приходит за всеми"
+      },
+      "gesture": {
+        "icon": "⚰️",
+        "gesture": "закриває очі",
+        "emotion": "НЕМИНУЧІСТЬ",
+        "association": "Едмунд приймає смерть"
+      }
+    },
+    {
+      "german": "das Leben",
+      "transcription": "[дас ЛЕ-бен]",
+      "translation": "життя",
+      "type": "іменник",
+      "character_voice": {
+        "character": "Корделія",
+        "german": "Das Leben ist kostbar",
+        "russian": "Жизнь драгоценна"
+      },
+      "gesture": {
+        "icon": "🌺",
+        "gesture": "торкається серця",
+        "emotion": "ЦІННІСТЬ",
+        "association": "Корделія цінує життя"
+      }
+    },
+    {
+      "german": "töten",
+      "transcription": "[ТЁ-тен]",
+      "translation": "вбивати",
+      "type": "дієслово",
+      "character_voice": {
+        "character": "Едмунд",
+        "german": "Tötet Корделію!",
+        "russian": "Убейте Корделию!"
+      },
+      "gesture": {
+        "icon": "🗡️",
+        "gesture": "дає наказ катам",
+        "emotion": "ЖОРСТОКІСТЬ",
+        "association": "Едмунд наказує вбити Корделію"
+      }
+    },
+    {
+      "german": "gebären",
+      "transcription": "[ге-БЕ-рен]",
+      "translation": "народжувати",
+      "type": "дієслово",
+      "character_voice": {
+        "character": "Лір",
+        "german": "Wer hat dich geboren?",
+        "russian": "Кто тебя родил?"
+      },
+      "gesture": {
+        "icon": "👶",
+        "gesture": "дивиться на дочок",
+        "emotion": "ПИТАННЯ",
+        "association": "Лір не впізнає рідних дочок"
+      }
+    },
+    {
+      "german": "atmen",
+      "transcription": "[АТ-мен]",
+      "translation": "дихати",
+      "type": "дієслово",
+      "character_voice": {
+        "character": "Лір",
+        "german": "Atmet sie noch?",
+        "russian": "Она ещё дышит?"
+      },
+      "gesture": {
+        "icon": "💨",
+        "gesture": "підносить перо до губ Корделії",
+        "emotion": "ВІДЧАЙ",
+        "association": "Лір перевіряє дихання мертвої Корделії"
+      }
+    },
+    {
+      "german": "das Grab",
+      "transcription": "[дас ГРАБ]",
+      "translation": "могила",
+      "type": "іменник",
+      "character_voice": {
+        "character": "Едгар",
+        "german": "Das Grab wartet",
+        "russian": "Могила ждёт"
+      },
+      "gesture": {
+        "icon": "⚱️",
+        "gesture": "схиляє голову",
+        "emotion": "СКОРБОТА",
+        "association": "Едгар про смерті в фіналі"
+      }
+    },
+    {
+      "german": "lebendig",
+      "transcription": "[ле-БЕН-диг]",
+      "translation": "живий",
+      "type": "прикметник",
+      "character_voice": {
+        "character": "Глостер",
+        "german": "Ist mein Sohn lebendig?",
+        "russian": "Мой сын жив?"
+      },
+      "gesture": {
+        "icon": "❤️",
+        "gesture": "хапається за серце",
+        "emotion": "НАДІЯ",
+        "association": "Глостер дізнається що Едгар живий"
+      }
+    },
+    {
+      "german": "tot",
+      "transcription": "[ТОТ]",
+      "translation": "мертвий",
+      "type": "прикметник",
+      "character_voice": {
+        "character": "Лір",
+        "german": "Sie ist tot für immer",
+        "russian": "Она мертва навсегда"
+      },
+      "gesture": {
+        "icon": "⚰️",
+        "gesture": "тримає тіло Корделії",
+        "emotion": "ГОРЕ",
+        "association": "Лір над мертвою Корделією"
+      }
+    },
+    {
+      "german": "die Leiche",
+      "transcription": "[ди ЛАЙ-хе]",
+      "translation": "труп",
+      "type": "іменник",
+      "character_voice": {
+        "character": "Олбані",
+        "german": "Tragt die Leichen fort",
+        "russian": "Унесите трупы"
+      },
+      "gesture": {
+        "icon": "🖤",
+        "gesture": "вказує на тіла",
+        "emotion": "ФІНАЛ",
+        "association": "Олбані наказує забрати мертвих"
+      }
+    },
+    {
+      "german": "überleben",
+      "transcription": "[ю-бер-ЛЕ-бен]",
+      "translation": "вижити",
+      "type": "дієслово",
+      "character_voice": {
+        "character": "Едгар",
+        "german": "Wir müssen überleben",
+        "russian": "Мы должны выжить"
+      },
+      "gesture": {
+        "icon": "🌅",
+        "gesture": "дивиться вперед",
+        "emotion": "СТІЙКІСТЬ",
+        "association": "Едгар виживає і стає королем"
+      }
+    }
+  ],
+  "story": {
+    "content": "<p>Життя в розквіті. Всі <span class=\"story-highlight\">leben</span> - живуть, <span class=\"story-highlight\">lebendig</span> - живі. <span class=\"story-highlight\">Das Leben</span> здається вічним. Лір роздає королівство, не думаючи про <span class=\"story-highlight\">der Tod</span>.</p><p>Смерть наближається. Едмунд планує <span class=\"story-highlight\">töten</span> - вбивати. Глостер втрачає волю <span class=\"story-highlight\">atmen</span> - дихати. Лір питає хто <span class=\"story-highlight\">gebären</span> - народив таких жорстоких дочок.</p><p>Фінал смерті. Корделія <span class=\"story-highlight\">tot</span> - мертва. Лір <span class=\"story-highlight\">sterben</span> - вмирає. <span class=\"story-highlight\">Die Leiche</span> лежать на сцені. <span class=\"story-highlight\">Das Grab</span> чекає всіх. Лише Едгар <span class=\"story-highlight\">überleben</span> - виживає.</p>",
+    "emotional_peak": "«Подивіться на її губи!» - останні слова Ліра, що вірить у дихання мертвої дочки"
+  },
+  "dialogues": [
+    {
+      "character": "КОРОЛЬ ЛІР",
+      "german": "Ich will mit dir leben",
+      "russian": "Я хочу жить с тобой",
+      "emotion": "💚 [НАДІЯ]"
+    },
+    {
+      "character": "КОРОЛЬ ЛІР",
+      "german": "Lass mich sterben",
+      "russian": "Дай мне умереть",
+      "emotion": "💀 [КІНЕЦЬ]"
+    },
+    {
+      "character": "ГОНЕРИЛЬЯ",
+      "german": "Der Tod kommt für alle",
+      "russian": "Смерть приходит за всеми",
+      "emotion": "⚰️ [НЕМИНУЧІСТЬ]"
+    },
+    {
+      "character": "КОРДЕЛІЯ",
+      "german": "Das Leben ist kostbar",
+      "russian": "Жизнь драгоценна",
+      "emotion": "🌺 [ЦІННІСТЬ]"
+    },
+    {
+      "character": "ГЛОСТЕР",
+      "german": "Tötet Корделію!",
+      "russian": "Убейте Корделию!",
+      "emotion": "🗡️ [ЖОРСТОКІСТЬ]"
+    },
+    {
+      "character": "КОРОЛЬ ЛІР",
+      "german": "Wer hat dich geboren?",
+      "russian": "Кто тебя родил?",
+      "emotion": "👶 [ПИТАННЯ]"
+    },
+    {
+      "character": "КОРОЛЬ ЛІР",
+      "german": "Atmet sie noch?",
+      "russian": "Она ещё дышит?",
+      "emotion": "💨 [ВІДЧАЙ]"
+    },
+    {
+      "character": "ЕДГАР",
+      "german": "Das Grab wartet",
+      "russian": "Могила ждёт",
+      "emotion": "⚱️ [СКОРБОТА]"
+    },
+    {
+      "character": "ГЛОСТЕР",
+      "german": "Ist mein Sohn lebendig?",
+      "russian": "Мой сын жив?",
+      "emotion": "❤️ [НАДІЯ]"
+    },
+    {
+      "character": "КОРОЛЬ ЛІР",
+      "german": "Sie ist tot für immer",
+      "russian": "Она мертва навсегда",
+      "emotion": "⚰️ [ГОРЕ]"
+    }
+  ],
+  "cheat_sheet": [
+    {
+      "german": "leben",
+      "russian": "жити",
+      "emotion_moment": "НАДІЯ",
+      "gesture_anchor": "💚 обіймає Корделію",
+      "character_moment": "Лір"
+    },
+    {
+      "german": "sterben",
+      "russian": "вмирати",
+      "emotion_moment": "КІНЕЦЬ",
+      "gesture_anchor": "💀 падає на коліна",
+      "character_moment": "Лір"
+    },
+    {
+      "german": "der Tod",
+      "russian": "смерть",
+      "emotion_moment": "НЕМИНУЧІСТЬ",
+      "gesture_anchor": "⚰️ закриває очі",
+      "character_moment": "Едмунд"
+    },
+    {
+      "german": "das Leben",
+      "russian": "життя",
+      "emotion_moment": "ЦІННІСТЬ",
+      "gesture_anchor": "🌺 торкається серця",
+      "character_moment": "Корделія"
+    },
+    {
+      "german": "töten",
+      "russian": "вбивати",
+      "emotion_moment": "ЖОРСТОКІСТЬ",
+      "gesture_anchor": "🗡️ дає наказ катам",
+      "character_moment": "Едмунд"
+    },
+    {
+      "german": "gebären",
+      "russian": "народжувати",
+      "emotion_moment": "ПИТАННЯ",
+      "gesture_anchor": "👶 дивиться на дочок",
+      "character_moment": "Лір"
+    },
+    {
+      "german": "atmen",
+      "russian": "дихати",
+      "emotion_moment": "ВІДЧАЙ",
+      "gesture_anchor": "💨 підносить перо до губ Корделії",
+      "character_moment": "Лір"
+    },
+    {
+      "german": "das Grab",
+      "russian": "могила",
+      "emotion_moment": "СКОРБОТА",
+      "gesture_anchor": "⚱️ схиляє голову",
+      "character_moment": "Едгар"
+    },
+    {
+      "german": "lebendig",
+      "russian": "живий",
+      "emotion_moment": "НАДІЯ",
+      "gesture_anchor": "❤️ хапається за серце",
+      "character_moment": "Глостер"
+    },
+    {
+      "german": "tot",
+      "russian": "мертвий",
+      "emotion_moment": "ГОРЕ",
+      "gesture_anchor": "⚰️ тримає тіло Корделії",
+      "character_moment": "Лір"
+    },
+    {
+      "german": "die Leiche",
+      "russian": "труп",
+      "emotion_moment": "ФІНАЛ",
+      "gesture_anchor": "🖤 вказує на тіла",
+      "character_moment": "Олбані"
+    },
+    {
+      "german": "überleben",
+      "russian": "вижити",
+      "emotion_moment": "СТІЙКІСТЬ",
+      "gesture_anchor": "🌅 дивиться вперед",
+      "character_moment": "Едгар"
+    }
+  ],
+  "exercise": {
+    "title": "🎭 Заповніть пропуски в театральній постановці",
+    "text": "<p>Життя в розквіті. Всі <span class=\"story-highlight\">___ (жити)</span> - живуть, <span class=\"story-highlight\">___ (живий)</span> - живі. <span class=\"story-highlight\">Das ___ (життя)</span> здається вічним. Лір роздає королівство, не думаючи про <span class=\"story-highlight\">der ___ (смерть)</span>.</p><p>Смерть наближається. Едмунд планує <span class=\"story-highlight\">___ (вбивати)</span> - вбивати. Глостер втрачає волю <span class=\"story-highlight\">___ (дихати)</span> - дихати. Лір питає хто <span class=\"story-highlight\">___ (народжувати)</span> - народив таких жорстоких дочок.</p><p>Фінал смерті. Корделія <span class=\"story-highlight\">___ (мертвий)</span> - мертва. Лір <span class=\"story-highlight\">___ (вмирати)</span> - вмирає. <span class=\"story-highlight\">Die ___ (труп)</span> лежать на сцені. <span class=\"story-highlight\">Das ___ (могила)</span> чекає всіх. Лише Едгар <span class=\"story-highlight\">___ (вижити)</span> - виживає.</p>",
+    "answers": {
+      "жити": "leben",
+      "живий": "lebendig",
+      "життя": "Leben",
+      "смерть": "Tod",
+      "вбивати": "töten",
+      "дихати": "atmen",
+      "народжувати": "gebären",
+      "мертвий": "tot",
+      "вмирати": "sterben",
+      "труп": "Leiche",
+      "могила": "Grab",
+      "вижити": "überleben"
+    }
+  }
+}

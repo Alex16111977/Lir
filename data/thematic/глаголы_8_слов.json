@@ -1,0 +1,379 @@
+{
+  "title": "🎭 Дієслова долі через Короля Ліра",
+  "vocabulary": [
+    {
+      "german": "teilen",
+      "transcription": "[ТАЙ-лен]",
+      "translation": "ділити",
+      "type": "дієслово",
+      "character_voice": {
+        "character": "Лір",
+        "german": "Ich teile mein Reich",
+        "russian": "Я делю королевство"
+      },
+      "gesture": {
+        "icon": "✂️",
+        "gesture": "розриває карту",
+        "emotion": "ФАТАЛЬНІСТЬ",
+        "association": "Лір ділить королівство"
+      }
+    },
+    {
+      "german": "schwören",
+      "transcription": "[ШВЁ-рен]",
+      "translation": "клястися",
+      "type": "дієслово",
+      "character_voice": {
+        "character": "Кент",
+        "german": "Ich schwöre dir Treue",
+        "russian": "Я клянусь в верности"
+      },
+      "gesture": {
+        "icon": "🤚",
+        "gesture": "піднімає руку",
+        "emotion": "КЛЯТВА",
+        "association": "Кент клянеться у вірності"
+      }
+    },
+    {
+      "german": "verfluchen",
+      "transcription": "[фер-ФЛУ-хен]",
+      "translation": "проклинати",
+      "type": "дієслово",
+      "character_voice": {
+        "character": "Лір",
+        "german": "Ich verfluche dich!",
+        "russian": "Я проклинаю тебя!"
+      },
+      "gesture": {
+        "icon": "⚡",
+        "gesture": "простягає руку гнівно",
+        "emotion": "ПРОКЛЯТТЯ",
+        "association": "Лір проклинає дочок"
+      }
+    },
+    {
+      "german": "wandern",
+      "transcription": "[ВАН-дерн]",
+      "translation": "блукати",
+      "type": "дієслово",
+      "character_voice": {
+        "character": "Лір",
+        "german": "Ich wandere im Sturm",
+        "russian": "Я блуждаю в буре"
+      },
+      "gesture": {
+        "icon": "🌪️",
+        "gesture": "хитається безцільно",
+        "emotion": "БЛУКАННЯ",
+        "association": "Лір блукає в бурі"
+      }
+    },
+    {
+      "german": "sich verstecken",
+      "transcription": "[зих фер-ШТЕ-кен]",
+      "translation": "ховатися",
+      "type": "дієслово",
+      "character_voice": {
+        "character": "Едгар",
+        "german": "Ich verstecke mich",
+        "russian": "Я прячусь"
+      },
+      "gesture": {
+        "icon": "🎭",
+        "gesture": "накриває обличчя",
+        "emotion": "МАСКУВАННЯ",
+        "association": "Едгар ховається під маскою Тома"
+      }
+    },
+    {
+      "german": "betrügen",
+      "transcription": "[бе-ТРЮ-ген]",
+      "translation": "обманювати",
+      "type": "дієслово",
+      "character_voice": {
+        "character": "Едмунд",
+        "german": "Ich betrüge alle",
+        "russian": "Я обманываю всех"
+      },
+      "gesture": {
+        "icon": "🗡️",
+        "gesture": "ховає кинджал",
+        "emotion": "ПІДСТУП",
+        "association": "Едмунд обманює всіх"
+      }
+    },
+    {
+      "german": "retten",
+      "transcription": "[РЕ-тен]",
+      "translation": "рятувати",
+      "type": "дієслово",
+      "character_voice": {
+        "character": "Едгар",
+        "german": "Ich rette meinen Vater",
+        "russian": "Я спасаю отца"
+      },
+      "gesture": {
+        "icon": "🛡️",
+        "gesture": "підтримує батька",
+        "emotion": "ПОРЯТУНОК",
+        "association": "Едгар рятує Глостера від самогубства"
+      }
+    },
+    {
+      "german": "fallen",
+      "transcription": "[ФА-лен]",
+      "translation": "падати",
+      "type": "дієслово",
+      "character_voice": {
+        "character": "Глостер",
+        "german": "Ich will fallen",
+        "russian": "Я хочу упасть"
+      },
+      "gesture": {
+        "icon": "🏔️",
+        "gesture": "нахиляється вперед",
+        "emotion": "ВІДЧАЙ",
+        "association": "Глостер хоче впасти зі скелі"
+      }
+    },
+    {
+      "german": "erwachen",
+      "transcription": "[ер-ВА-хен]",
+      "translation": "прокидатися",
+      "type": "дієслово",
+      "character_voice": {
+        "character": "Лір",
+        "german": "Ich erwache aus dem Traum",
+        "russian": "Я пробуждаюсь от сна"
+      },
+      "gesture": {
+        "icon": "🌅",
+        "gesture": "відкриває очі повільно",
+        "emotion": "ПРОБУДЖЕННЯ",
+        "association": "Лір прокидається біля Корделії"
+      }
+    },
+    {
+      "german": "bereuen",
+      "transcription": "[бе-РОЙ-ен]",
+      "translation": "шкодувати",
+      "type": "дієслово",
+      "character_voice": {
+        "character": "Лір",
+        "german": "Ich bereue alles",
+        "russian": "Я сожалею обо всём"
+      },
+      "gesture": {
+        "icon": "💔",
+        "gesture": "б'є себе в груди",
+        "emotion": "КАЯТТЯ",
+        "association": "Лір кається перед Корделією"
+      }
+    },
+    {
+      "german": "rächen",
+      "transcription": "[РЕ-хен]",
+      "translation": "мстити",
+      "type": "дієслово",
+      "character_voice": {
+        "character": "Едгар",
+        "german": "Ich räche die Unschuld",
+        "russian": "Я мщу за невинность"
+      },
+      "gesture": {
+        "icon": "⚔️",
+        "gesture": "виймає меч",
+        "emotion": "ВІДПЛАТА",
+        "association": "Едгар мстить Едмунду"
+      }
+    },
+    {
+      "german": "enden",
+      "transcription": "[ЕН-ден]",
+      "translation": "закінчуватися",
+      "type": "дієслово",
+      "character_voice": {
+        "character": "Едгар",
+        "german": "Alles muss enden",
+        "russian": "Всё должно закончиться"
+      },
+      "gesture": {
+        "icon": "🌑",
+        "gesture": "схиляє голову",
+        "emotion": "ФІНАЛ",
+        "association": "Трагедія закінчується смертю"
+      }
+    }
+  ],
+  "story": {
+    "content": "<p>Початок. Лір <span class=\"story-highlight\">teilen</span> - ділить королівство. Кент <span class=\"story-highlight\">schwören</span> - клянеться у вірності. Лір <span class=\"story-highlight\">verfluchen</span> - проклинає тих, хто протестує.</p><p>Розвиток. Едмунд <span class=\"story-highlight\">betrügen</span> - обманює всіх. Едгар <span class=\"story-highlight\">sich verstecken</span> - ховається. Лір <span class=\"story-highlight\">wandern</span> - блукає в божевіллі. Глостер хоче <span class=\"story-highlight\">fallen</span> - впасти, але Едгар <span class=\"story-highlight\">retten</span> - рятує його.</p><p>Розв'язка. Лір <span class=\"story-highlight\">erwachen</span> - прокидається, <span class=\"story-highlight\">bereuen</span> - шкодує. Едгар <span class=\"story-highlight\">rächen</span> - мстить за зло. Все <span class=\"story-highlight\">enden</span> - закінчується трагічно.</p>",
+    "emotional_peak": "«Розділене королівство не встоїть» - пророцтво Блазня збувається"
+  },
+  "dialogues": [
+    {
+      "character": "КОРОЛЬ ЛІР",
+      "german": "Ich teile mein Reich",
+      "russian": "Я делю королевство",
+      "emotion": "✂️ [ФАТАЛЬНІСТЬ]"
+    },
+    {
+      "character": "КЕНТ",
+      "german": "Ich schwöre dir Treue",
+      "russian": "Я клянусь в верности",
+      "emotion": "🤚 [КЛЯТВА]"
+    },
+    {
+      "character": "КОРОЛЬ ЛІР",
+      "german": "Ich verfluche dich!",
+      "russian": "Я проклинаю тебя!",
+      "emotion": "⚡ [ПРОКЛЯТТЯ]"
+    },
+    {
+      "character": "КОРОЛЬ ЛІР",
+      "german": "Ich wandere im Sturm",
+      "russian": "Я блуждаю в буре",
+      "emotion": "🌪️ [БЛУКАННЯ]"
+    },
+    {
+      "character": "ЕДГАР",
+      "german": "Ich verstecke mich",
+      "russian": "Я прячусь",
+      "emotion": "🎭 [МАСКУВАННЯ]"
+    },
+    {
+      "character": "ЕДГАР",
+      "german": "Ich betrüge alle",
+      "russian": "Я обманываю всех",
+      "emotion": "🗡️ [ПІДСТУП]"
+    },
+    {
+      "character": "ЕДГАР",
+      "german": "Ich rette meinen Vater",
+      "russian": "Я спасаю отца",
+      "emotion": "🛡️ [ПОРЯТУНОК]"
+    },
+    {
+      "character": "ГЛОСТЕР",
+      "german": "Ich will fallen",
+      "russian": "Я хочу упасть",
+      "emotion": "🏔️ [ВІДЧАЙ]"
+    },
+    {
+      "character": "КОРОЛЬ ЛІР",
+      "german": "Ich erwache aus dem Traum",
+      "russian": "Я пробуждаюсь от сна",
+      "emotion": "🌅 [ПРОБУДЖЕННЯ]"
+    },
+    {
+      "character": "КОРОЛЬ ЛІР",
+      "german": "Ich bereue alles",
+      "russian": "Я сожалею обо всём",
+      "emotion": "💔 [КАЯТТЯ]"
+    }
+  ],
+  "cheat_sheet": [
+    {
+      "german": "teilen",
+      "russian": "ділити",
+      "emotion_moment": "ФАТАЛЬНІСТЬ",
+      "gesture_anchor": "✂️ розриває карту",
+      "character_moment": "Лір"
+    },
+    {
+      "german": "schwören",
+      "russian": "клястися",
+      "emotion_moment": "КЛЯТВА",
+      "gesture_anchor": "🤚 піднімає руку",
+      "character_moment": "Кент"
+    },
+    {
+      "german": "verfluchen",
+      "russian": "проклинати",
+      "emotion_moment": "ПРОКЛЯТТЯ",
+      "gesture_anchor": "⚡ простягає руку гнівно",
+      "character_moment": "Лір"
+    },
+    {
+      "german": "wandern",
+      "russian": "блукати",
+      "emotion_moment": "БЛУКАННЯ",
+      "gesture_anchor": "🌪️ хитається безцільно",
+      "character_moment": "Лір"
+    },
+    {
+      "german": "sich verstecken",
+      "russian": "ховатися",
+      "emotion_moment": "МАСКУВАННЯ",
+      "gesture_anchor": "🎭 накриває обличчя",
+      "character_moment": "Едгар"
+    },
+    {
+      "german": "betrügen",
+      "russian": "обманювати",
+      "emotion_moment": "ПІДСТУП",
+      "gesture_anchor": "🗡️ ховає кинджал",
+      "character_moment": "Едмунд"
+    },
+    {
+      "german": "retten",
+      "russian": "рятувати",
+      "emotion_moment": "ПОРЯТУНОК",
+      "gesture_anchor": "🛡️ підтримує батька",
+      "character_moment": "Едгар"
+    },
+    {
+      "german": "fallen",
+      "russian": "падати",
+      "emotion_moment": "ВІДЧАЙ",
+      "gesture_anchor": "🏔️ нахиляється вперед",
+      "character_moment": "Глостер"
+    },
+    {
+      "german": "erwachen",
+      "russian": "прокидатися",
+      "emotion_moment": "ПРОБУДЖЕННЯ",
+      "gesture_anchor": "🌅 відкриває очі повільно",
+      "character_moment": "Лір"
+    },
+    {
+      "german": "bereuen",
+      "russian": "шкодувати",
+      "emotion_moment": "КАЯТТЯ",
+      "gesture_anchor": "💔 б'є себе в груди",
+      "character_moment": "Лір"
+    },
+    {
+      "german": "rächen",
+      "russian": "мстити",
+      "emotion_moment": "ВІДПЛАТА",
+      "gesture_anchor": "⚔️ виймає меч",
+      "character_moment": "Едгар"
+    },
+    {
+      "german": "enden",
+      "russian": "закінчуватися",
+      "emotion_moment": "ФІНАЛ",
+      "gesture_anchor": "🌑 схиляє голову",
+      "character_moment": "Едгар"
+    }
+  ],
+  "exercise": {
+    "title": "🎭 Заповніть пропуски в театральній постановці",
+    "text": "<p>Початок. Лір <span class=\"story-highlight\">___ (ділити)</span> - ділить королівство. Кент <span class=\"story-highlight\">___ (клястися)</span> - клянеться у вірності. Лір <span class=\"story-highlight\">___ (проклинати)</span> - проклинає тих, хто протестує.</p><p>Розвиток. Едмунд <span class=\"story-highlight\">___ (обманювати)</span> - обманює всіх. Едгар <span class=\"story-highlight\">___ (ховатися)</span> - ховається. Лір <span class=\"story-highlight\">___ (блукати)</span> - блукає в божевіллі. Глостер хоче <span class=\"story-highlight\">___ (падати)</span> - впасти, але Едгар <span class=\"story-highlight\">___ (рятувати)</span> - рятує його.</p><p>Розв'язка. Лір <span class=\"story-highlight\">___ (прокидатися)</span> - прокидається, <span class=\"story-highlight\">___ (шкодувати)</span> - шкодує. Едгар <span class=\"story-highlight\">___ (мстити)</span> - мстить за зло. Все <span class=\"story-highlight\">___ (закінчуватися)</span> - закінчується трагічно.</p>",
+    "answers": {
+      "ділити": "teilen",
+      "клястися": "schwören",
+      "проклинати": "verfluchen",
+      "обманювати": "betrügen",
+      "ховатися": "sich verstecken",
+      "блукати": "wandern",
+      "падати": "fallen",
+      "рятувати": "retten",
+      "прокидатися": "erwachen",
+      "шкодувати": "bereuen",
+      "мстити": "rächen",
+      "закінчуватися": "enden"
+    }
+  }
+}

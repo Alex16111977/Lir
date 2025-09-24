@@ -1,0 +1,367 @@
+{
+  "title": "🎭 Ключові дієслова через Короля Ліра",
+  "vocabulary": [
+    {
+      "german": "lieben",
+      "transcription": "[ЛИ-бен]",
+      "translation": "любити",
+      "type": "дієслово",
+      "character_voice": {
+        "character": "Лір",
+        "german": "Wer liebt mich am meisten?",
+        "russian": "Кто любит меня больше всех?"
+      },
+      "gesture": {
+        "icon": "❤️",
+        "gesture": "розкриває обійми",
+        "emotion": "ОЧІКУВАННЯ",
+        "association": "Лір вимагає доказів любові"
+      }
+    },
+    {
+      "german": "lügen",
+      "transcription": "[ЛЮ-ген]",
+      "translation": "брехати",
+      "type": "дієслово",
+      "character_voice": {
+        "character": "Гонерілья",
+        "german": "Ich lüge nie, Vater",
+        "russian": "Я никогда не лгу, отец"
+      },
+      "gesture": {
+        "icon": "🎭",
+        "gesture": "приховує усмішку",
+        "emotion": "ЛИЦЕМІРСТВО",
+        "association": "Старші дочки брешуть про любов"
+      }
+    },
+    {
+      "german": "weinen",
+      "transcription": "[ВАЙ-нен]",
+      "translation": "плакати",
+      "type": "дієслово",
+      "character_voice": {
+        "character": "Корделія",
+        "german": "Ich weine um dich",
+        "russian": "Я плачу о тебе"
+      },
+      "gesture": {
+        "icon": "😢",
+        "gesture": "витирає сльози",
+        "emotion": "СКОРБОТА",
+        "association": "Корделія оплакує долю батька"
+      }
+    },
+    {
+      "german": "toben",
+      "transcription": "[ТО-бен]",
+      "translation": "лютувати",
+      "type": "дієслово",
+      "character_voice": {
+        "character": "Лір",
+        "german": "Ich tobe wie der Sturm!",
+        "russian": "Я бушую как буря!"
+      },
+      "gesture": {
+        "icon": "⚡",
+        "gesture": "потрясає кулаками",
+        "emotion": "ШАЛЕНСТВО",
+        "association": "Лір лютує в бурі"
+      }
+    },
+    {
+      "german": "erblinden",
+      "transcription": "[ер-БЛИН-ден]",
+      "translation": "осліпнути",
+      "type": "дієслово",
+      "character_voice": {
+        "character": "Глостер",
+        "german": "Ich erblinde durch Grausamkeit",
+        "russian": "Я слепну от жестокости"
+      },
+      "gesture": {
+        "icon": "👁️",
+        "gesture": "закриває очі руками",
+        "emotion": "ЖАХІТТЯ",
+        "association": "Глостера осліплюють"
+      }
+    },
+    {
+      "german": "erkennen",
+      "transcription": "[ер-КЕН-нен]",
+      "translation": "впізнавати",
+      "type": "дієслово",
+      "character_voice": {
+        "character": "Лір",
+        "german": "Ich erkenne dich, Tochter",
+        "russian": "Я узнаю тебя, дочь"
+      },
+      "gesture": {
+        "icon": "✨",
+        "gesture": "торкається обличчя",
+        "emotion": "ПРОЗРІННЯ",
+        "association": "Лір впізнає Корделію"
+      }
+    },
+    {
+      "german": "verzeihen",
+      "transcription": "[фер-ЦАЙ-ен]",
+      "translation": "прощати",
+      "type": "дієслово",
+      "character_voice": {
+        "character": "Корделія",
+        "german": "Ich verzeihe alles",
+        "russian": "Я прощаю всё"
+      },
+      "gesture": {
+        "icon": "🕊️",
+        "gesture": "обіймає ніжно",
+        "emotion": "МИЛОСЕРДЯ",
+        "association": "Корделія прощає батька"
+      }
+    },
+    {
+      "german": "sterben",
+      "transcription": "[ШТЕР-бен]",
+      "translation": "вмирати",
+      "type": "дієслово",
+      "character_voice": {
+        "character": "Лір",
+        "german": "Lass mich sterben",
+        "russian": "Дай мне умереть"
+      },
+      "gesture": {
+        "icon": "💀",
+        "gesture": "падає на коліна",
+        "emotion": "КІНЕЦЬ",
+        "association": "Лір вмирає від горя"
+      }
+    },
+    {
+      "german": "kämpfen",
+      "transcription": "[КЕМП-фен]",
+      "translation": "боротися",
+      "type": "дієслово",
+      "character_voice": {
+        "character": "Едгар",
+        "german": "Ich kämpfe für die Ehre",
+        "russian": "Я сражаюсь за честь"
+      },
+      "gesture": {
+        "icon": "⚔️",
+        "gesture": "піднімає меч",
+        "emotion": "ЧЕСТЬ",
+        "association": "Едгар б'ється з Едмундом"
+      }
+    },
+    {
+      "german": "leiden",
+      "transcription": "[ЛАЙ-ден]",
+      "translation": "страждати",
+      "type": "дієслово",
+      "character_voice": {
+        "character": "Лір",
+        "german": "Ich leide mehr als alle",
+        "russian": "Я страдаю больше всех"
+      },
+      "gesture": {
+        "icon": "😖",
+        "gesture": "хапається за голову",
+        "emotion": "МУКА",
+        "association": "Лір страждає від зради"
+      }
+    },
+    {
+      "german": "hoffen",
+      "transcription": "[ХО-фен]",
+      "translation": "сподіватися",
+      "type": "дієслово",
+      "character_voice": {
+        "character": "Едгар",
+        "german": "Ich hoffe auf Gerechtigkeit",
+        "russian": "Я надеюсь на справедливость"
+      },
+      "gesture": {
+        "icon": "🌅",
+        "gesture": "дивиться вгору",
+        "emotion": "НАДІЯ",
+        "association": "Едгар вірить у справедливість"
+      }
+    },
+    {
+      "german": "vergessen",
+      "transcription": "[фер-ГЕ-сен]",
+      "translation": "забувати",
+      "type": "дієслово",
+      "character_voice": {
+        "character": "Лір",
+        "german": "Ich vergesse wer ich bin",
+        "russian": "Я забываю кто я"
+      },
+      "gesture": {
+        "icon": "🌫️",
+        "gesture": "блукає поглядом",
+        "emotion": "ВТРАТА",
+        "association": "Лір втрачає пам'ять в божевіллі"
+      }
+    }
+  ],
+  "story": {
+    "content": "<p>Початок трагедії. Лір питає хто його <span class=\"story-highlight\">lieben</span> - любить. Дочки <span class=\"story-highlight\">lügen</span> - брешуть. Корделія <span class=\"story-highlight\">weinen</span> - плаче від несправедливості.</p><p>Розпад. Лір <span class=\"story-highlight\">toben</span> - лютує в бурі, починає <span class=\"story-highlight\">vergessen</span> - забувати себе. Глостер <span class=\"story-highlight\">erblinden</span> - сліпне. Всі <span class=\"story-highlight\">leiden</span> - страждають від наслідків зради.</p><p>Фінал. Едгар <span class=\"story-highlight\">kämpfen</span> - бореться за правду. Корделія <span class=\"story-highlight\">verzeihen</span> - прощає, Лір <span class=\"story-highlight\">erkennen</span> - впізнає її. Але надто пізно - всі <span class=\"story-highlight\">sterben</span> - вмирають. Лише Едгар <span class=\"story-highlight\">hoffen</span> - сподівається на краще.</p>",
+    "emotional_peak": "«Ніколи, ніколи, ніколи, ніколи, ніколи!» - останній крик Ліра над мертвою Корделією"
+  },
+  "dialogues": [
+    {
+      "character": "КОРОЛЬ ЛИР",
+      "german": "Wer von euch will mich lieben?",
+      "russian": "Кто из вас хочет меня любить?",
+      "emotion": "❤️ [С надеждой]"
+    },
+    {
+      "character": "ГОНЕРИЛЬЯ",
+      "german": "Ich lüge über meine Liebe!",
+      "russian": "Я лгу о своей любви!",
+      "emotion": "🎭 [Лицемерно]"
+    },
+    {
+      "character": "КОРДЕЛИЯ",
+      "german": "Ich muss weinen vor Schmerz!",
+      "russian": "Я должна плакать от боли!",
+      "emotion": "😢 [В слезах]"
+    },
+    {
+      "character": "КОРОЛЬ ЛИР",
+      "german": "Ich tobe im Sturm!",
+      "russian": "Я бушую в буре!",
+      "emotion": "🌪️ [В ярости]"
+    },
+    {
+      "character": "ГЛОСТЕР",
+      "german": "Ich erblinde durch Verrat!",
+      "russian": "Я слепну от предательства!",
+      "emotion": "👁️ [В агонии]"
+    },
+    {
+      "character": "ЭДГАР",
+      "german": "Ich kämpfe für die Wahrheit!",
+      "russian": "Я сражаюсь за правду!",
+      "emotion": "⚔️ [С решимостью]"
+    },
+    {
+      "character": "КОРДЕЛИЯ",
+      "german": "Ich verzeihe dir alles!",
+      "russian": "Я прощаю тебе все!",
+      "emotion": "🕊️ [С любовью]"
+    },
+    {
+      "character": "КОРОЛЬ ЛИР",
+      "german": "Ich erkenne dich endlich!",
+      "russian": "Я наконец узнаю тебя!",
+      "emotion": "👁️ [С прозрением]"
+    }
+  ],
+  "cheat_sheet": [
+    {
+      "german": "lieben",
+      "russian": "любити",
+      "emotion_moment": "ОЧІКУВАННЯ",
+      "gesture_anchor": "❤️ розкриває обійми",
+      "character_moment": "Лір"
+    },
+    {
+      "german": "lügen",
+      "russian": "брехати",
+      "emotion_moment": "ЛИЦЕМІРСТВО",
+      "gesture_anchor": "🎭 приховує усмішку",
+      "character_moment": "Гонерілья"
+    },
+    {
+      "german": "weinen",
+      "russian": "плакати",
+      "emotion_moment": "СКОРБОТА",
+      "gesture_anchor": "😢 витирає сльози",
+      "character_moment": "Корделія"
+    },
+    {
+      "german": "toben",
+      "russian": "лютувати",
+      "emotion_moment": "ШАЛЕНСТВО",
+      "gesture_anchor": "⚡ потрясає кулаками",
+      "character_moment": "Лір"
+    },
+    {
+      "german": "erblinden",
+      "russian": "осліпнути",
+      "emotion_moment": "ЖАХІТТЯ",
+      "gesture_anchor": "👁️ закриває очі руками",
+      "character_moment": "Глостер"
+    },
+    {
+      "german": "erkennen",
+      "russian": "впізнавати",
+      "emotion_moment": "ПРОЗРІННЯ",
+      "gesture_anchor": "✨ торкається обличчя",
+      "character_moment": "Лір"
+    },
+    {
+      "german": "verzeihen",
+      "russian": "прощати",
+      "emotion_moment": "МИЛОСЕРДЯ",
+      "gesture_anchor": "🕊️ обіймає ніжно",
+      "character_moment": "Корделія"
+    },
+    {
+      "german": "sterben",
+      "russian": "вмирати",
+      "emotion_moment": "КІНЕЦЬ",
+      "gesture_anchor": "💀 падає на коліна",
+      "character_moment": "Лір"
+    },
+    {
+      "german": "kämpfen",
+      "russian": "боротися",
+      "emotion_moment": "ЧЕСТЬ",
+      "gesture_anchor": "⚔️ піднімає меч",
+      "character_moment": "Едгар"
+    },
+    {
+      "german": "leiden",
+      "russian": "страждати",
+      "emotion_moment": "МУКА",
+      "gesture_anchor": "😖 хапається за голову",
+      "character_moment": "Лір"
+    },
+    {
+      "german": "hoffen",
+      "russian": "сподіватися",
+      "emotion_moment": "НАДІЯ",
+      "gesture_anchor": "🌅 дивиться вгору",
+      "character_moment": "Едгар"
+    },
+    {
+      "german": "vergessen",
+      "russian": "забувати",
+      "emotion_moment": "ВТРАТА",
+      "gesture_anchor": "🌫️ блукає поглядом",
+      "character_moment": "Лір"
+    }
+  ],
+  "exercise": {
+    "title": "🎭 Заповніть пропуски в театральній постановці",
+    "text": "<p>Початок трагедії. Лір питає хто його <span class=\"story-highlight\">___ (любити)</span> - любить. Дочки <span class=\"story-highlight\">___ (брехати)</span> - брешуть. Корделія <span class=\"story-highlight\">___ (плакати)</span> - плаче від несправедливості.</p><p>Розпад. Лір <span class=\"story-highlight\">___ (лютувати)</span> - лютує в бурі, починає <span class=\"story-highlight\">___ (забувати)</span> - забувати себе. Глостер <span class=\"story-highlight\">___ (осліпнути)</span> - сліпне. Всі <span class=\"story-highlight\">___ (страждати)</span> - страждають від наслідків зради.</p><p>Фінал. Едгар <span class=\"story-highlight\">___ (боротися)</span> - бореться за правду. Корделія <span class=\"story-highlight\">___ (прощати)</span> - прощає, Лір <span class=\"story-highlight\">___ (впізнавати)</span> - впізнає її. Але надто пізно - всі <span class=\"story-highlight\">___ (вмирати)</span> - вмирають. Лише Едгар <span class=\"story-highlight\">___ (сподіватися)</span> - сподівається на краще.</p>",
+    "answers": {
+      "любити": "lieben",
+      "брехати": "lügen",
+      "плакати": "weinen",
+      "лютувати": "toben",
+      "забувати": "vergessen",
+      "осліпнути": "erblinden",
+      "страждати": "leiden",
+      "боротися": "kämpfen",
+      "прощати": "verzeihen",
+      "впізнавати": "erkennen",
+      "вмирати": "sterben",
+      "сподіватися": "hoffen"
+    }
+  }
+}

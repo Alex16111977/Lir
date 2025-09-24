@@ -1,0 +1,379 @@
+{
+  "title": "🎭 Сімейні узи через Короля Ліра",
+  "vocabulary": [
+    {
+      "german": "der Vater",
+      "transcription": "[дер ФА-тер]",
+      "translation": "батько",
+      "type": "іменник",
+      "character_voice": {
+        "character": "Лір",
+        "german": "Ich bin euer Vater!",
+        "russian": "Я ваш отец!"
+      },
+      "gesture": {
+        "icon": "👨",
+        "gesture": "б'є себе в груди",
+        "emotion": "ВЛАДНІСТЬ",
+        "association": "Лір вимагає покори від дочок"
+      }
+    },
+    {
+      "german": "die Mutter",
+      "transcription": "[ди МУ-тер]",
+      "translation": "мати",
+      "type": "іменник",
+      "character_voice": {
+        "character": "Лір",
+        "german": "Eure Mutter war besser",
+        "russian": "Ваша мать была лучше"
+      },
+      "gesture": {
+        "icon": "👩",
+        "gesture": "згадує з болем",
+        "emotion": "СПОГАД",
+        "association": "Лір згадує померлу дружину"
+      }
+    },
+    {
+      "german": "die Tochter",
+      "transcription": "[ди ТОХ-тер]",
+      "translation": "дочка",
+      "type": "іменник",
+      "character_voice": {
+        "character": "Корделія",
+        "german": "Ich bin Ihre Tochter",
+        "russian": "Я ваша дочь"
+      },
+      "gesture": {
+        "icon": "👧",
+        "gesture": "схиляє голову",
+        "emotion": "ПОКОРА",
+        "association": "Корделія визнає батька"
+      }
+    },
+    {
+      "german": "der Sohn",
+      "transcription": "[дер ЗОН]",
+      "translation": "син",
+      "type": "іменник",
+      "character_voice": {
+        "character": "Глостер",
+        "german": "Mein Sohn Едгар",
+        "russian": "Мой сын Эдгар"
+      },
+      "gesture": {
+        "icon": "👦",
+        "gesture": "називає з гордістю",
+        "emotion": "БАТЬКІВСТВО",
+        "association": "Глостер про законного сина"
+      }
+    },
+    {
+      "german": "der Bruder",
+      "transcription": "[дер БРУ-дер]",
+      "translation": "брат",
+      "type": "іменник",
+      "character_voice": {
+        "character": "Едмунд",
+        "german": "Mein Bruder muss sterben",
+        "russian": "Мой брат должен умереть"
+      },
+      "gesture": {
+        "icon": "⚔️",
+        "gesture": "стискає кинджал",
+        "emotion": "ЗРАДА",
+        "association": "Едмунд зраджує Едгара"
+      }
+    },
+    {
+      "german": "die Schwester",
+      "transcription": "[ди ШВЕС-тер]",
+      "translation": "сестра",
+      "type": "іменник",
+      "character_voice": {
+        "character": "Гонерілья",
+        "german": "Meine Schwester ist Feindin",
+        "russian": "Сестра - мой враг"
+      },
+      "gesture": {
+        "icon": "🗡️",
+        "gesture": "дивиться з ненавистю",
+        "emotion": "ВОРОЖНЕЧА",
+        "association": "Сестри стають ворогами"
+      }
+    },
+    {
+      "german": "die Blutsbande",
+      "transcription": "[ди БЛУТС-бан-де]",
+      "translation": "кровні узи",
+      "type": "іменник",
+      "character_voice": {
+        "character": "Лір",
+        "german": "Die Blutsbande sind zerrissen",
+        "russian": "Кровные узы разорваны"
+      },
+      "gesture": {
+        "icon": "💔",
+        "gesture": "рве невидимі нитки",
+        "emotion": "РОЗРИВ",
+        "association": "Лір розриває зв'язки з Корделією"
+      }
+    },
+    {
+      "german": "verwandt",
+      "transcription": "[фер-ВАНДТ]",
+      "translation": "споріднений",
+      "type": "прикметник",
+      "character_voice": {
+        "character": "Едгар",
+        "german": "Wir sind verwandt",
+        "russian": "Мы родственники"
+      },
+      "gesture": {
+        "icon": "🤝",
+        "gesture": "простягає руку",
+        "emotion": "СПОРІДНЕНІСТЬ",
+        "association": "Едгар розкривається батькові"
+      }
+    },
+    {
+      "german": "die Erbschaft",
+      "transcription": "[ди ЕРБ-шафт]",
+      "translation": "спадщина",
+      "type": "іменник",
+      "character_voice": {
+        "character": "Регана",
+        "german": "Die Erbschaft gehört uns",
+        "russian": "Наследство наше"
+      },
+      "gesture": {
+        "icon": "💰",
+        "gesture": "хапає жадібно",
+        "emotion": "ЖАДІБНІСТЬ",
+        "association": "Дочки ділять спадок"
+      }
+    },
+    {
+      "german": "verstoßen",
+      "transcription": "[фер-ШТО-сен]",
+      "translation": "відректися",
+      "type": "дієслово",
+      "character_voice": {
+        "character": "Лір",
+        "german": "Ich verstoße dich!",
+        "russian": "Я отрекаюсь от тебя!"
+      },
+      "gesture": {
+        "icon": "🚫",
+        "gesture": "відвертається",
+        "emotion": "ВІДРЕЧЕННЯ",
+        "association": "Лір відрікається від Корделії"
+      }
+    },
+    {
+      "german": "die Treue",
+      "transcription": "[ди ТРОЙ-е]",
+      "translation": "вірність",
+      "type": "іменник",
+      "character_voice": {
+        "character": "Корделія",
+        "german": "Meine Treue bleibt",
+        "russian": "Моя верность остаётся"
+      },
+      "gesture": {
+        "icon": "💎",
+        "gesture": "тримає руку на серці",
+        "emotion": "ВІРНІСТЬ",
+        "association": "Корделія зберігає вірність"
+      }
+    },
+    {
+      "german": "der Stammbaum",
+      "transcription": "[дер ШТАММ-баум]",
+      "translation": "родовід",
+      "type": "іменник",
+      "character_voice": {
+        "character": "Едмунд",
+        "german": "Der Stammbaum endet hier",
+        "russian": "Родословная кончается"
+      },
+      "gesture": {
+        "icon": "🌳",
+        "gesture": "рубає повітря",
+        "emotion": "КІНЕЦЬ РОДУ",
+        "association": "Едмунд руйнує родову лінію"
+      }
+    }
+  ],
+  "story": {
+    "content": "<p>Сім'я на початку. <span class=\"story-highlight\">Der Vater</span> Лір має трьох <span class=\"story-highlight\">die Tochter</span> - дочок. <span class=\"story-highlight\">Die Blutsbande</span> здаються міцними. <span class=\"story-highlight\">Die Erbschaft</span> має об'єднати, але розділяє.</p><p>Розпад родини. Лір <span class=\"story-highlight\">verstoßen</span> - відрікається від Корделії. <span class=\"story-highlight\">Der Bruder</span> зраджує брата. <span class=\"story-highlight\">Die Schwester</span> стають ворогами. <span class=\"story-highlight\">Verwandt</span> - споріднені душі стають чужими.</p><p>Кінець роду. <span class=\"story-highlight\">Die Treue</span> Корделії марна. <span class=\"story-highlight\">Der Stammbaum</span> обривається. <span class=\"story-highlight\">Die Mutter</span> давно мертва, <span class=\"story-highlight\">der Sohn</span> вбиває брата.</p>",
+    "emotional_peak": "«Я дав вам життя!» - кричить Лір дочкам, що забрали в нього все"
+  },
+  "dialogues": [
+    {
+      "character": "КОРОЛЬ ЛІР",
+      "german": "Ich bin euer Vater!",
+      "russian": "Я ваш отец!",
+      "emotion": "👨 [ВЛАДНІСТЬ]"
+    },
+    {
+      "character": "КОРОЛЬ ЛІР",
+      "german": "Eure Mutter war besser",
+      "russian": "Ваша мать была лучше",
+      "emotion": "👩 [СПОГАД]"
+    },
+    {
+      "character": "КОРДЕЛІЯ",
+      "german": "Ich bin Ihre Tochter",
+      "russian": "Я ваша дочь",
+      "emotion": "👧 [ПОКОРА]"
+    },
+    {
+      "character": "ГЛОСТЕР",
+      "german": "Mein Sohn Едгар",
+      "russian": "Мой сын Эдгар",
+      "emotion": "👦 [БАТЬКІВСТВО]"
+    },
+    {
+      "character": "ГЛОСТЕР",
+      "german": "Mein Bruder muss sterben",
+      "russian": "Мой брат должен умереть",
+      "emotion": "⚔️ [ЗРАДА]"
+    },
+    {
+      "character": "ЕДГАР",
+      "german": "Meine Schwester ist Feindin",
+      "russian": "Сестра - мой враг",
+      "emotion": "🗡️ [ВОРОЖНЕЧА]"
+    },
+    {
+      "character": "КОРОЛЬ ЛІР",
+      "german": "Die Blutsbande sind zerrissen",
+      "russian": "Кровные узы разорваны",
+      "emotion": "💔 [РОЗРИВ]"
+    },
+    {
+      "character": "ЕДГАР",
+      "german": "Wir sind verwandt",
+      "russian": "Мы родственники",
+      "emotion": "🤝 [СПОРІДНЕНІСТЬ]"
+    },
+    {
+      "character": "ШУТ",
+      "german": "Die Erbschaft gehört uns",
+      "russian": "Наследство наше",
+      "emotion": "💰 [ЖАДІБНІСТЬ]"
+    },
+    {
+      "character": "КОРОЛЬ ЛІР",
+      "german": "Ich verstoße dich!",
+      "russian": "Я отрекаюсь от тебя!",
+      "emotion": "🚫 [ВІДРЕЧЕННЯ]"
+    }
+  ],
+  "cheat_sheet": [
+    {
+      "german": "der Vater",
+      "russian": "батько",
+      "emotion_moment": "ВЛАДНІСТЬ",
+      "gesture_anchor": "👨 б'є себе в груди",
+      "character_moment": "Лір"
+    },
+    {
+      "german": "die Mutter",
+      "russian": "мати",
+      "emotion_moment": "СПОГАД",
+      "gesture_anchor": "👩 згадує з болем",
+      "character_moment": "Лір"
+    },
+    {
+      "german": "die Tochter",
+      "russian": "дочка",
+      "emotion_moment": "ПОКОРА",
+      "gesture_anchor": "👧 схиляє голову",
+      "character_moment": "Корделія"
+    },
+    {
+      "german": "der Sohn",
+      "russian": "син",
+      "emotion_moment": "БАТЬКІВСТВО",
+      "gesture_anchor": "👦 називає з гордістю",
+      "character_moment": "Глостер"
+    },
+    {
+      "german": "der Bruder",
+      "russian": "брат",
+      "emotion_moment": "ЗРАДА",
+      "gesture_anchor": "⚔️ стискає кинджал",
+      "character_moment": "Едмунд"
+    },
+    {
+      "german": "die Schwester",
+      "russian": "сестра",
+      "emotion_moment": "ВОРОЖНЕЧА",
+      "gesture_anchor": "🗡️ дивиться з ненавистю",
+      "character_moment": "Гонерілья"
+    },
+    {
+      "german": "die Blutsbande",
+      "russian": "кровні узи",
+      "emotion_moment": "РОЗРИВ",
+      "gesture_anchor": "💔 рве невидимі нитки",
+      "character_moment": "Лір"
+    },
+    {
+      "german": "verwandt",
+      "russian": "споріднений",
+      "emotion_moment": "СПОРІДНЕНІСТЬ",
+      "gesture_anchor": "🤝 простягає руку",
+      "character_moment": "Едгар"
+    },
+    {
+      "german": "die Erbschaft",
+      "russian": "спадщина",
+      "emotion_moment": "ЖАДІБНІСТЬ",
+      "gesture_anchor": "💰 хапає жадібно",
+      "character_moment": "Регана"
+    },
+    {
+      "german": "verstoßen",
+      "russian": "відректися",
+      "emotion_moment": "ВІДРЕЧЕННЯ",
+      "gesture_anchor": "🚫 відвертається",
+      "character_moment": "Лір"
+    },
+    {
+      "german": "die Treue",
+      "russian": "вірність",
+      "emotion_moment": "ВІРНІСТЬ",
+      "gesture_anchor": "💎 тримає руку на серці",
+      "character_moment": "Корделія"
+    },
+    {
+      "german": "der Stammbaum",
+      "russian": "родовід",
+      "emotion_moment": "КІНЕЦЬ РОДУ",
+      "gesture_anchor": "🌳 рубає повітря",
+      "character_moment": "Едмунд"
+    }
+  ],
+  "exercise": {
+    "title": "🎭 Заповніть пропуски в театральній постановці",
+    "text": "<p>Сім'я на початку. <span class=\"story-highlight\">Der ___ (батько)</span> Лір має трьох <span class=\"story-highlight\">die ___ (дочка)</span> - дочок. <span class=\"story-highlight\">Die ___ (кровні узи)</span> здаються міцними. <span class=\"story-highlight\">Die ___ (спадщина)</span> має об'єднати, але розділяє.</p><p>Розпад родини. Лір <span class=\"story-highlight\">___ (відректися)</span> - відрікається від Корделії. <span class=\"story-highlight\">Der ___ (брат)</span> зраджує брата. <span class=\"story-highlight\">Die ___ (сестра)</span> стають ворогами. <span class=\"story-highlight\">___ (споріднений)</span> - споріднені душі стають чужими.</p><p>Кінець роду. <span class=\"story-highlight\">Die ___ (вірність)</span> Корделії марна. <span class=\"story-highlight\">Der ___ (родовід)</span> обривається. <span class=\"story-highlight\">Die ___ (мати)</span> давно мертва, <span class=\"story-highlight\">der ___ (син)</span> вбиває брата.</p>",
+    "answers": {
+      "батько": "Vater",
+      "дочка": "Tochter",
+      "кровні узи": "Blutsbande",
+      "спадщина": "Erbschaft",
+      "відректися": "verstoßen",
+      "брат": "Bruder",
+      "сестра": "Schwester",
+      "споріднений": "verwandt",
+      "вірність": "Treue",
+      "родовід": "Stammbaum",
+      "мати": "Mutter",
+      "син": "Sohn"
+    }
+  }
+}

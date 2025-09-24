@@ -1,0 +1,379 @@
+{
+  "title": "🎭 Природа і стихія через Короля Ліра",
+  "vocabulary": [
+    {
+      "german": "toben",
+      "transcription": "[ТО-бен]",
+      "translation": "лютувати",
+      "type": "дієслово",
+      "character_voice": {
+        "character": "Лір",
+        "german": "Lass die Stürme toben!",
+        "russian": "Пусть бури бушуют!"
+      },
+      "gesture": {
+        "icon": "🌪️",
+        "gesture": "розкидає руки",
+        "emotion": "ШАЛЕНСТВО",
+        "association": "Лір викликає бурю на себе"
+      }
+    },
+    {
+      "german": "zittern",
+      "transcription": "[ЦИТ-терн]",
+      "translation": "тремтіти",
+      "type": "дієслово",
+      "character_voice": {
+        "character": "Блазень",
+        "german": "Ich zittere vor Kälte",
+        "russian": "Я дрожу от холода"
+      },
+      "gesture": {
+        "icon": "🥶",
+        "gesture": "обіймає себе",
+        "emotion": "ХОЛОД",
+        "association": "Блазень мерзне в бурі"
+      }
+    },
+    {
+      "german": "donnern",
+      "transcription": "[ДОН-нерн]",
+      "translation": "гриміти",
+      "type": "дієслово",
+      "character_voice": {
+        "character": "Лір",
+        "german": "Es donnert in meinem Kopf",
+        "russian": "В голове гремит"
+      },
+      "gesture": {
+        "icon": "⚡",
+        "gesture": "хапається за голову",
+        "emotion": "БОЖЕВІЛЛЯ",
+        "association": "Грім у голові Ліра"
+      }
+    },
+    {
+      "german": "überfluten",
+      "transcription": "[ю-бер-ФЛУ-тен]",
+      "translation": "затоплювати",
+      "type": "дієслово",
+      "character_voice": {
+        "character": "Кент",
+        "german": "Der Regen überflutet alles",
+        "russian": "Дождь затопляет всё"
+      },
+      "gesture": {
+        "icon": "🌊",
+        "gesture": "показує на потоки",
+        "emotion": "ПОТОП",
+        "association": "Дощ заливає землю"
+      }
+    },
+    {
+      "german": "wüten",
+      "transcription": "[ВЮ-тен]",
+      "translation": "шаленіти",
+      "type": "дієслово",
+      "character_voice": {
+        "character": "Лір",
+        "german": "Die Elemente wüten",
+        "russian": "Стихии неистовствуют"
+      },
+      "gesture": {
+        "icon": "🌀",
+        "gesture": "кружляє в танці",
+        "emotion": "ХАОС",
+        "association": "Стихії шаленіють навколо"
+      }
+    },
+    {
+      "german": "die Finsternis",
+      "transcription": "[ди ФИН-стер-нис]",
+      "translation": "темрява",
+      "type": "іменник",
+      "character_voice": {
+        "character": "Едгар",
+        "german": "Die Finsternis kommt",
+        "russian": "Тьма наступает"
+      },
+      "gesture": {
+        "icon": "🌑",
+        "gesture": "закриває очі",
+        "emotion": "МРАК",
+        "association": "Темрява поглинає все"
+      }
+    },
+    {
+      "german": "das Unwetter",
+      "transcription": "[дас УН-вет-тер]",
+      "translation": "негода",
+      "type": "іменник",
+      "character_voice": {
+        "character": "Глостер",
+        "german": "Das Unwetter tötet",
+        "russian": "Непогода убивает"
+      },
+      "gesture": {
+        "icon": "⛈️",
+        "gesture": "дивиться на небо",
+        "emotion": "ЗАГРОЗА",
+        "association": "Негода як відображення хаосу"
+      }
+    },
+    {
+      "german": "erschüttern",
+      "transcription": "[ер-ШЮТ-терн]",
+      "translation": "потрясати",
+      "type": "дієслово",
+      "character_voice": {
+        "character": "Лір",
+        "german": "Erschüttert die Erde!",
+        "russian": "Сотрясите землю!"
+      },
+      "gesture": {
+        "icon": "🌋",
+        "gesture": "б'є ногою",
+        "emotion": "ПОТРЯСІННЯ",
+        "association": "Лір хоче потрясти світ"
+      }
+    },
+    {
+      "german": "der Abgrund",
+      "transcription": "[дер АБ-грунд]",
+      "translation": "безодня",
+      "type": "іменник",
+      "character_voice": {
+        "character": "Глостер",
+        "german": "Ich stehe am Abgrund",
+        "russian": "Я стою у бездны"
+      },
+      "gesture": {
+        "icon": "🕳️",
+        "gesture": "дивиться вниз",
+        "emotion": "ВІДЧАЙ",
+        "association": "Глостер на краю скелі"
+      }
+    },
+    {
+      "german": "vernichten",
+      "transcription": "[фер-НИХ-тен]",
+      "translation": "знищувати",
+      "type": "дієслово",
+      "character_voice": {
+        "character": "Лір",
+        "german": "Vernichtet alles!",
+        "russian": "Уничтожьте всё!"
+      },
+      "gesture": {
+        "icon": "💥",
+        "gesture": "махає кулаками",
+        "emotion": "РУЙНАЦІЯ",
+        "association": "Лір закликає до знищення"
+      }
+    },
+    {
+      "german": "die Kälte",
+      "transcription": "[ди КЕЛЬ-те]",
+      "translation": "холод",
+      "type": "іменник",
+      "character_voice": {
+        "character": "Едгар",
+        "german": "Die Kälte tötet",
+        "russian": "Холод убивает"
+      },
+      "gesture": {
+        "icon": "❄️",
+        "gesture": "дує на руки",
+        "emotion": "МОРОЗ",
+        "association": "Холод як символ самотності"
+      }
+    },
+    {
+      "german": "zerreißen",
+      "transcription": "[цер-РАЙ-сен]",
+      "translation": "розривати",
+      "type": "дієслово",
+      "character_voice": {
+        "character": "Лір",
+        "german": "Der Sturm zerreißt mich",
+        "russian": "Буря разрывает меня"
+      },
+      "gesture": {
+        "icon": "⚡",
+        "gesture": "рве одяг",
+        "emotion": "РОЗПАД",
+        "association": "Буря розриває Ліра зсередини"
+      }
+    }
+  ],
+  "story": {
+    "content": "<p>Стихія прокидається. Небо <span class=\"story-highlight\">toben</span> - лютує, <span class=\"story-highlight\">donnern</span> - гримить. <span class=\"story-highlight\">Das Unwetter</span> відображає внутрішню бурю Ліра. Всі <span class=\"story-highlight\">zittern</span> - тремтять від страху і холоду.</p><p>Апокаліпсис. Стихії <span class=\"story-highlight\">wüten</span> - шаленіють, <span class=\"story-highlight\">überfluten</span> - затоплюють світ. <span class=\"story-highlight\">Die Finsternis</span> поглинає все. Лір закликає <span class=\"story-highlight\">vernichten</span> - знищити, <span class=\"story-highlight\">erschüttern</span> - потрясти основи.</p><p>Холод безодні. <span class=\"story-highlight\">Die Kälte</span> пронизує душі. <span class=\"story-highlight\">Der Abgrund</span> чекає. Буря <span class=\"story-highlight\">zerreißen</span> - розриває останні зв'язки з реальністю.</p>",
+    "emotional_peak": "«Я ніколи не дам таким дочкам зробити мене божевільним!» - кричить Лір, вже божеволіючи в бурі"
+  },
+  "dialogues": [
+    {
+      "character": "КОРОЛЬ ЛІР",
+      "german": "Lass die Stürme toben!",
+      "russian": "Пусть бури бушуют!",
+      "emotion": "🌪️ [ШАЛЕНСТВО]"
+    },
+    {
+      "character": "ШУТ",
+      "german": "Ich zittere vor Kälte",
+      "russian": "Я дрожу от холода",
+      "emotion": "🥶 [ХОЛОД]"
+    },
+    {
+      "character": "КОРОЛЬ ЛІР",
+      "german": "Es donnert in meinem Kopf",
+      "russian": "В голове гремит",
+      "emotion": "⚡ [БОЖЕВІЛЛЯ]"
+    },
+    {
+      "character": "КЕНТ",
+      "german": "Der Regen überflutet alles",
+      "russian": "Дождь затопляет всё",
+      "emotion": "🌊 [ПОТОП]"
+    },
+    {
+      "character": "КОРОЛЬ ЛІР",
+      "german": "Die Elemente wüten",
+      "russian": "Стихии неистовствуют",
+      "emotion": "🌀 [ХАОС]"
+    },
+    {
+      "character": "ЕДГАР",
+      "german": "Die Finsternis kommt",
+      "russian": "Тьма наступает",
+      "emotion": "🌑 [МРАК]"
+    },
+    {
+      "character": "ГЛОСТЕР",
+      "german": "Das Unwetter tötet",
+      "russian": "Непогода убивает",
+      "emotion": "⛈️ [ЗАГРОЗА]"
+    },
+    {
+      "character": "КОРОЛЬ ЛІР",
+      "german": "Erschüttert die Erde!",
+      "russian": "Сотрясите землю!",
+      "emotion": "🌋 [ПОТРЯСІННЯ]"
+    },
+    {
+      "character": "ГЛОСТЕР",
+      "german": "Ich stehe am Abgrund",
+      "russian": "Я стою у бездны",
+      "emotion": "🕳️ [ВІДЧАЙ]"
+    },
+    {
+      "character": "КОРОЛЬ ЛІР",
+      "german": "Vernichtet alles!",
+      "russian": "Уничтожьте всё!",
+      "emotion": "💥 [РУЙНАЦІЯ]"
+    }
+  ],
+  "cheat_sheet": [
+    {
+      "german": "toben",
+      "russian": "лютувати",
+      "emotion_moment": "ШАЛЕНСТВО",
+      "gesture_anchor": "🌪️ розкидає руки",
+      "character_moment": "Лір"
+    },
+    {
+      "german": "zittern",
+      "russian": "тремтіти",
+      "emotion_moment": "ХОЛОД",
+      "gesture_anchor": "🥶 обіймає себе",
+      "character_moment": "Блазень"
+    },
+    {
+      "german": "donnern",
+      "russian": "гриміти",
+      "emotion_moment": "БОЖЕВІЛЛЯ",
+      "gesture_anchor": "⚡ хапається за голову",
+      "character_moment": "Лір"
+    },
+    {
+      "german": "überfluten",
+      "russian": "затоплювати",
+      "emotion_moment": "ПОТОП",
+      "gesture_anchor": "🌊 показує на потоки",
+      "character_moment": "Кент"
+    },
+    {
+      "german": "wüten",
+      "russian": "шаленіти",
+      "emotion_moment": "ХАОС",
+      "gesture_anchor": "🌀 кружляє в танці",
+      "character_moment": "Лір"
+    },
+    {
+      "german": "die Finsternis",
+      "russian": "темрява",
+      "emotion_moment": "МРАК",
+      "gesture_anchor": "🌑 закриває очі",
+      "character_moment": "Едгар"
+    },
+    {
+      "german": "das Unwetter",
+      "russian": "негода",
+      "emotion_moment": "ЗАГРОЗА",
+      "gesture_anchor": "⛈️ дивиться на небо",
+      "character_moment": "Глостер"
+    },
+    {
+      "german": "erschüttern",
+      "russian": "потрясати",
+      "emotion_moment": "ПОТРЯСІННЯ",
+      "gesture_anchor": "🌋 б'є ногою",
+      "character_moment": "Лір"
+    },
+    {
+      "german": "der Abgrund",
+      "russian": "безодня",
+      "emotion_moment": "ВІДЧАЙ",
+      "gesture_anchor": "🕳️ дивиться вниз",
+      "character_moment": "Глостер"
+    },
+    {
+      "german": "vernichten",
+      "russian": "знищувати",
+      "emotion_moment": "РУЙНАЦІЯ",
+      "gesture_anchor": "💥 махає кулаками",
+      "character_moment": "Лір"
+    },
+    {
+      "german": "die Kälte",
+      "russian": "холод",
+      "emotion_moment": "МОРОЗ",
+      "gesture_anchor": "❄️ дує на руки",
+      "character_moment": "Едгар"
+    },
+    {
+      "german": "zerreißen",
+      "russian": "розривати",
+      "emotion_moment": "РОЗПАД",
+      "gesture_anchor": "⚡ рве одяг",
+      "character_moment": "Лір"
+    }
+  ],
+  "exercise": {
+    "title": "🎭 Заповніть пропуски в театральній постановці",
+    "text": "<p>Стихія прокидається. Небо <span class=\"story-highlight\">___ (лютувати)</span> - лютує, <span class=\"story-highlight\">___ (гриміти)</span> - гримить. <span class=\"story-highlight\">Das ___ (негода)</span> відображає внутрішню бурю Ліра. Всі <span class=\"story-highlight\">___ (тремтіти)</span> - тремтять від страху і холоду.</p><p>Апокаліпсис. Стихії <span class=\"story-highlight\">___ (шаленіти)</span> - шаленіють, <span class=\"story-highlight\">___ (затоплювати)</span> - затоплюють світ. <span class=\"story-highlight\">Die ___ (темрява)</span> поглинає все. Лір закликає <span class=\"story-highlight\">___ (знищувати)</span> - знищити, <span class=\"story-highlight\">___ (потрясати)</span> - потрясти основи.</p><p>Холод безодні. <span class=\"story-highlight\">Die ___ (холод)</span> пронизує душі. <span class=\"story-highlight\">Der ___ (безодня)</span> чекає. Буря <span class=\"story-highlight\">___ (розривати)</span> - розриває останні зв'язки з реальністю.</p>",
+    "answers": {
+      "лютувати": "toben",
+      "гриміти": "donnern",
+      "негода": "Unwetter",
+      "тремтіти": "zittern",
+      "шаленіти": "wüten",
+      "затоплювати": "überfluten",
+      "темрява": "Finsternis",
+      "знищувати": "vernichten",
+      "потрясати": "erschüttern",
+      "холод": "Kälte",
+      "безодня": "Abgrund",
+      "розривати": "zerreißen"
+    }
+  }
+}

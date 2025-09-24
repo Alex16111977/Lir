@@ -1,0 +1,366 @@
+{
+  "title": "🎭 Багатство і злидні через Короля Ліра",
+  "vocabulary": [
+    {
+      "german": "reich",
+      "transcription": "[РАЙХ]",
+      "translation": "багатий",
+      "type": "прикметник",
+      "character_voice": {
+        "character": "Лір",
+        "german": "Ich war reich an Töchtern und Land",
+        "russian": "Я был богат дочерьми и землями"
+      },
+      "gesture": {
+        "icon": "💰",
+        "gesture": "розкидає уявні скарби",
+        "emotion": "ГОРДІСТЬ",
+        "association": "Лір ділить королівство в першій сцені"
+      }
+    },
+    {
+      "german": "arm",
+      "transcription": "[АРМ]",
+      "translation": "бідний",
+      "type": "прикметник",
+      "character_voice": {
+        "character": "Едгар",
+        "german": "Arm Tom ist nackt und friert",
+        "russian": "Бедный Том наг и замерзает"
+      },
+      "gesture": {
+        "icon": "🥶",
+        "gesture": "тремтить від холоду",
+        "emotion": "ЖАЛЮГІДНІСТЬ",
+        "association": "Едгар вдає божевільного жебрака"
+      }
+    },
+    {
+      "german": "das Gold",
+      "transcription": "[дас ГОЛД]",
+      "translation": "золото",
+      "type": "іменник",
+      "character_voice": {
+        "character": "Гонерілья",
+        "german": "Gold ist mehr wert als Liebe",
+        "russian": "Золото дороже любви"
+      },
+      "gesture": {
+        "icon": "🪙",
+        "gesture": "стискає уявні монети",
+        "emotion": "ЖАДІБНІСТЬ",
+        "association": "Сестри прагнуть багатства батька"
+      }
+    },
+    {
+      "german": "der Schatz",
+      "transcription": "[дер ШАТЦ]",
+      "translation": "скарб",
+      "type": "іменник",
+      "character_voice": {
+        "character": "Корделія",
+        "german": "Mein Schatz ist die Wahrheit",
+        "russian": "Мое сокровище - правда"
+      },
+      "gesture": {
+        "icon": "💎",
+        "gesture": "притискає руку до серця",
+        "emotion": "ЩИРІСТЬ",
+        "association": "Корделія відмовляється від багатства заради правди"
+      }
+    },
+    {
+      "german": "betteln",
+      "transcription": "[БЕТ-тельн]",
+      "translation": "жебракувати",
+      "type": "дієслово",
+      "character_voice": {
+        "character": "Лір",
+        "german": "Muss ich um Unterkunft betteln?",
+        "russian": "Должен ли я просить о крове?"
+      },
+      "gesture": {
+        "icon": "🤲",
+        "gesture": "простягає руки благально",
+        "emotion": "ПРИНИЖЕННЯ",
+        "association": "Лір просить притулку у дочок"
+      }
+    },
+    {
+      "german": "der Bettler",
+      "transcription": "[дер БЕТТ-лер]",
+      "translation": "жебрак",
+      "type": "іменник",
+      "character_voice": {
+        "character": "Глостер",
+        "german": "Ein Bettler hat mehr als ich",
+        "russian": "У нищего больше, чем у меня"
+      },
+      "gesture": {
+        "icon": "🧎",
+        "gesture": "схиляється в покорі",
+        "emotion": "РОЗПАЧ",
+        "association": "Глостер осліплений і вигнаний"
+      }
+    },
+    {
+      "german": "teilen",
+      "transcription": "[ТАЙ-лен]",
+      "translation": "ділити",
+      "type": "дієслово",
+      "character_voice": {
+        "character": "Лір",
+        "german": "Ich will mein Reich teilen",
+        "russian": "Я хочу разделить королевство"
+      },
+      "gesture": {
+        "icon": "✂️",
+        "gesture": "розриває уявну карту",
+        "emotion": "ФАТАЛЬНІСТЬ",
+        "association": "Лір ділить королівство між дочками"
+      }
+    },
+    {
+      "german": "das Eigentum",
+      "transcription": "[дас АЙ-ген-тум]",
+      "translation": "власність",
+      "type": "іменник",
+      "character_voice": {
+        "character": "Регана",
+        "german": "Sein Eigentum gehört uns",
+        "russian": "Его собственность принадлежит нам"
+      },
+      "gesture": {
+        "icon": "🏰",
+        "gesture": "хапає повітря жадібно",
+        "emotion": "ЗАХЛАННІСТЬ",
+        "association": "Дочки забирають все у батька"
+      }
+    },
+    {
+      "german": "verlieren",
+      "transcription": "[фер-ЛИ-рен]",
+      "translation": "втрачати",
+      "type": "дієслово",
+      "character_voice": {
+        "character": "Лір",
+        "german": "Ich verliere alles",
+        "russian": "Я теряю всё"
+      },
+      "gesture": {
+        "icon": "🍂",
+        "gesture": "розкриває порожні долоні",
+        "emotion": "СПУСТОШЕННЯ",
+        "association": "Лір втрачає все - владу, дім, розум"
+      }
+    },
+    {
+      "german": "besitzen",
+      "transcription": "[бе-ЗИ-цен]",
+      "translation": "володіти",
+      "type": "дієслово",
+      "character_voice": {
+        "character": "Едмунд",
+        "german": "Ich will alles besitzen",
+        "russian": "Я хочу владеть всем"
+      },
+      "gesture": {
+        "icon": "👑",
+        "gesture": "стискає кулаки владно",
+        "emotion": "АМБІЦІЯ",
+        "association": "Едмунд прагне забрати спадок Едгара"
+      }
+    },
+    {
+      "german": "die Armut",
+      "transcription": "[ди АР-мут]",
+      "translation": "бідність",
+      "type": "іменник",
+      "character_voice": {
+        "character": "Кент",
+        "german": "Armut lehrt Demut",
+        "russian": "Бедность учит смирению"
+      },
+      "gesture": {
+        "icon": "🕯️",
+        "gesture": "схиляє голову смиренно",
+        "emotion": "МУДРІСТЬ",
+        "association": "Кент у вигнанні зберігає вірність"
+      }
+    },
+    {
+      "german": "der Reichtum",
+      "transcription": "[дер РАЙХ-тум]",
+      "translation": "багатство",
+      "type": "іменник",
+      "character_voice": {
+        "character": "Блазень",
+        "german": "Reichtum macht blind",
+        "russian": "Богатство ослепляет"
+      },
+      "gesture": {
+        "icon": "🎭",
+        "gesture": "закриває очі руками",
+        "emotion": "ІРОНІЯ",
+        "association": "Блазень глузує з сліпоти багатих"
+      }
+    }
+  ],
+  "story": {
+    "content": "<p>Тронний зал. Король <span class=\"story-highlight\">reich</span> - багатий землями, владою, дочками. Він хоче <span class=\"story-highlight\">teilen</span> - поділити своє <span class=\"story-highlight\">das Eigentum</span> - власність між ними. Але замість любові отримує зраду.</p><p>Буря. Лір <span class=\"story-highlight\">verlieren</span> - втрачає все. Тепер він <span class=\"story-highlight\">arm</span> - бідний, мусить <span class=\"story-highlight\">betteln</span> - жебракувати. Поруч <span class=\"story-highlight\">der Bettler</span> - жебрак Едгар, що вдає божевілля.</p><p>Фінал. <span class=\"story-highlight\">Das Gold</span> і <span class=\"story-highlight\">der Schatz</span> не врятували нікого. <span class=\"story-highlight\">Der Reichtum</span> - багатство осліпило, <span class=\"story-highlight\">die Armut</span> - бідність прозріла. Лише Корделія знала справжню ціну любові.</p>",
+    "emotional_peak": "«Нічого не виходить з нічого» - каже Лір, не розуміючи, що втратив все, прагнучи володіти всім"
+  },
+  "dialogues": [
+    {
+      "character": "КОРОЛЬ ЛИР",
+      "german": "Ich war REICH an Land und Töchtern! Wo ist mein GOLD geblieben?",
+      "russian": "Я был БОГАТ землями и дочерьми! Где моё ЗОЛОТО?",
+      "emotion": "😢 [С горечью утраты]"
+    },
+    {
+      "character": "ГОНЕРИЛЬЯ",
+      "german": "Dein REICHTUM gehört jetzt uns! Du kannst BETTELN gehen!",
+      "russian": "Твоё БОГАТСТВО теперь наше! Можешь идти ПОБИРАТЬСЯ!",
+      "emotion": "😈 [Жестоко]"
+    },
+    {
+      "character": "ЭДГАР (как Том)",
+      "german": "ARM Tom ist ein BETTLER! Die ARMUT ist mein SCHATZ!",
+      "russian": "БЕДНЫЙ Том - НИЩИЙ! БЕДНОСТЬ - мой КЛАД!",
+      "emotion": "🎭 [Притворно безумно]"
+    },
+    {
+      "character": "КОРДЕЛИЯ",
+      "german": "Mein SCHATZ war immer die Wahrheit, nicht das EIGENTUM!",
+      "russian": "Моим СОКРОВИЩЕМ всегда была правда, не СОБСТВЕННОСТЬ!",
+      "emotion": "💝 [С достоинством]"
+    },
+    {
+      "character": "ШУТ",
+      "german": "Wer alles BESITZEN will, wird alles VERLIEREN!",
+      "russian": "Кто хочет всем ВЛАДЕТЬ, всё ПОТЕРЯЕТ!",
+      "emotion": "🃏 [Горько-мудро]"
+    },
+    {
+      "character": "РЕГАНА",
+      "german": "Wir TEILEN sein EIGENTUM! Er soll ARM sterben!",
+      "russian": "Мы ДЕЛИМ его СОБСТВЕННОСТЬ! Пусть умрёт БЕДНЫМ!",
+      "emotion": "🐍 [Алчно]"
+    },
+    {
+      "character": "ГЛОСТЕР",
+      "german": "Ein BETTLER hat mehr als ich - er hat noch Augen!",
+      "russian": "У НИЩЕГО больше чем у меня - у него есть глаза!",
+      "emotion": "😰 [В отчаянии]"
+    },
+    {
+      "character": "ЭДМУНД",
+      "german": "Ich will alles BESITZEN - GOLD, Land und Macht!",
+      "russian": "Я хочу всем ВЛАДЕТЬ - ЗОЛОТОМ, землёй и властью!",
+      "emotion": "⚔️ [Амбициозно]"
+    }
+  ],
+  "cheat_sheet": [
+    {
+      "german": "reich",
+      "russian": "багатий",
+      "emotion_moment": "ГОРДІСТЬ",
+      "gesture_anchor": "💰 розкидає уявні скарби",
+      "character_moment": "Лір"
+    },
+    {
+      "german": "arm",
+      "russian": "бідний",
+      "emotion_moment": "ЖАЛЮГІДНІСТЬ",
+      "gesture_anchor": "🥶 тремтить від холоду",
+      "character_moment": "Едгар"
+    },
+    {
+      "german": "das Gold",
+      "russian": "золото",
+      "emotion_moment": "ЖАДІБНІСТЬ",
+      "gesture_anchor": "🪙 стискає уявні монети",
+      "character_moment": "Гонерілья"
+    },
+    {
+      "german": "der Schatz",
+      "russian": "скарб",
+      "emotion_moment": "ЩИРІСТЬ",
+      "gesture_anchor": "💎 притискає руку до серця",
+      "character_moment": "Корделія"
+    },
+    {
+      "german": "betteln",
+      "russian": "жебракувати",
+      "emotion_moment": "ПРИНИЖЕННЯ",
+      "gesture_anchor": "🤲 простягає руки благально",
+      "character_moment": "Лір"
+    },
+    {
+      "german": "der Bettler",
+      "russian": "жебрак",
+      "emotion_moment": "РОЗПАЧ",
+      "gesture_anchor": "🧎 схиляється в покорі",
+      "character_moment": "Глостер"
+    },
+    {
+      "german": "teilen",
+      "russian": "ділити",
+      "emotion_moment": "ФАТАЛЬНІСТЬ",
+      "gesture_anchor": "✂️ розриває уявну карту",
+      "character_moment": "Лір"
+    },
+    {
+      "german": "das Eigentum",
+      "russian": "власність",
+      "emotion_moment": "ЗАХЛАННІСТЬ",
+      "gesture_anchor": "🏰 хапає повітря жадібно",
+      "character_moment": "Регана"
+    },
+    {
+      "german": "verlieren",
+      "russian": "втрачати",
+      "emotion_moment": "СПУСТОШЕННЯ",
+      "gesture_anchor": "🍂 розкриває порожні долоні",
+      "character_moment": "Лір"
+    },
+    {
+      "german": "besitzen",
+      "russian": "володіти",
+      "emotion_moment": "АМБІЦІЯ",
+      "gesture_anchor": "👑 стискає кулаки владно",
+      "character_moment": "Едмунд"
+    },
+    {
+      "german": "die Armut",
+      "russian": "бідність",
+      "emotion_moment": "МУДРІСТЬ",
+      "gesture_anchor": "🕯️ схиляє голову смиренно",
+      "character_moment": "Кент"
+    },
+    {
+      "german": "der Reichtum",
+      "russian": "багатство",
+      "emotion_moment": "ІРОНІЯ",
+      "gesture_anchor": "🎭 закриває очі руками",
+      "character_moment": "Блазень"
+    }
+  ],
+  "exercise": {
+    "title": "🎭 Заповніть пропуски в театральній постановці",
+    "text": "<p>Тронний зал. Король <span class=\"story-highlight\">___ (багатий)</span> - багатий землями, владою, дочками. Він хоче <span class=\"story-highlight\">___ (ділити)</span> - поділити своє <span class=\"story-highlight\">das ___ (власність)</span> - власність між ними. Але замість любові отримує зраду.</p><p>Буря. Лір <span class=\"story-highlight\">___ (втрачати)</span> - втрачає все. Тепер він <span class=\"story-highlight\">___ (бідний)</span> - бідний, мусить <span class=\"story-highlight\">___ (жебракувати)</span> - жебракувати. Поруч <span class=\"story-highlight\">der ___ (жебрак)</span> - жебрак Едгар, що вдає божевілля.</p><p>Фінал. <span class=\"story-highlight\">Das ___ (золото)</span> і <span class=\"story-highlight\">der ___ (скарб)</span> не врятували нікого. <span class=\"story-highlight\">Der ___ (багатство)</span> - багатство осліпило, <span class=\"story-highlight\">die ___ (бідність)</span> - бідність прозріла. Лише Корделія знала справжню ціну любові.</p>",
+    "answers": {
+      "багатий": "reich",
+      "ділити": "teilen",
+      "власність": "Eigentum",
+      "втрачати": "verlieren",
+      "бідний": "arm",
+      "жебракувати": "betteln",
+      "жебрак": "Bettler",
+      "золото": "Gold",
+      "скарб": "Schatz",
+      "багатство": "Reichtum",
+      "бідність": "Armut"
+    }
+  }
+}

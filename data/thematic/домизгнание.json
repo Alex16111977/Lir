@@ -1,0 +1,379 @@
+{
+  "title": "🎭 Дім і вигнання через Короля Ліра",
+  "vocabulary": [
+    {
+      "german": "das Zuhause",
+      "transcription": "[дас цу-ХАУ-зе]",
+      "translation": "дім",
+      "type": "іменник",
+      "character_voice": {
+        "character": "Лір",
+        "german": "Wo ist mein Zuhause?",
+        "russian": "Где мой дом?"
+      },
+      "gesture": {
+        "icon": "🏠",
+        "gesture": "озирається розгублено",
+        "emotion": "ВТРАТА",
+        "association": "Лір втратив дім"
+      }
+    },
+    {
+      "german": "verbannen",
+      "transcription": "[фер-БАН-нен]",
+      "translation": "вигнати",
+      "type": "дієслово",
+      "character_voice": {
+        "character": "Лір",
+        "german": "Ich verbanne dich!",
+        "russian": "Я изгоняю тебя!"
+      },
+      "gesture": {
+        "icon": "⚡",
+        "gesture": "вказує на вихід",
+        "emotion": "ГНІВ",
+        "association": "Лір виганяє Корделію і Кента"
+      }
+    },
+    {
+      "german": "die Heimat",
+      "transcription": "[ди ХАЙ-мат]",
+      "translation": "батьківщина",
+      "type": "іменник",
+      "character_voice": {
+        "character": "Корделія",
+        "german": "Ich verlasse meine Heimat",
+        "russian": "Я покидаю родину"
+      },
+      "gesture": {
+        "icon": "🌍",
+        "gesture": "дивиться на горизонт",
+        "emotion": "ТУГА",
+        "association": "Корделія покидає Британію"
+      }
+    },
+    {
+      "german": "obdachlos",
+      "transcription": "[ОБ-дах-лос]",
+      "translation": "бездомний",
+      "type": "прикметник",
+      "character_voice": {
+        "character": "Лір",
+        "german": "Ich bin obdachlos",
+        "russian": "Я бездомный"
+      },
+      "gesture": {
+        "icon": "🌧️",
+        "gesture": "стоїть під дощем",
+        "emotion": "БЕЗПРИТУЛЬНІСТЬ",
+        "association": "Лір без даху в бурі"
+      }
+    },
+    {
+      "german": "verstoßen",
+      "transcription": "[фер-ШТО-сен]",
+      "translation": "відкинути",
+      "type": "дієслово",
+      "character_voice": {
+        "character": "Глостер",
+        "german": "Mein Sohn ist verstoßen",
+        "russian": "Мой сын отвергнут"
+      },
+      "gesture": {
+        "icon": "💔",
+        "gesture": "відвертається з болем",
+        "emotion": "ВІДЧУЖЕННЯ",
+        "association": "Глостер відкидає Едгара"
+      }
+    },
+    {
+      "german": "das Exil",
+      "transcription": "[дас е-КСИЛ]",
+      "translation": "вигнання",
+      "type": "іменник",
+      "character_voice": {
+        "character": "Кент",
+        "german": "Ich gehe ins Exil",
+        "russian": "Я иду в изгнание"
+      },
+      "gesture": {
+        "icon": "🎭",
+        "gesture": "накидає плащ мандрівника",
+        "emotion": "ВИГНАННЯ",
+        "association": "Кент йде у вигнання"
+      }
+    },
+    {
+      "german": "wandern",
+      "transcription": "[ВАН-дерн]",
+      "translation": "блукати",
+      "type": "дієслово",
+      "character_voice": {
+        "character": "Едгар",
+        "german": "Ich wandere als Bettler",
+        "russian": "Я блуждаю как нищий"
+      },
+      "gesture": {
+        "icon": "👣",
+        "gesture": "йде босоніж",
+        "emotion": "СКИТАННЯ",
+        "association": "Едгар блукає як божевільний Том"
+      }
+    },
+    {
+      "german": "der Fremde",
+      "transcription": "[дер ФРЕМ-де]",
+      "translation": "чужинець",
+      "type": "іменник",
+      "character_voice": {
+        "character": "Кент",
+        "german": "Ich bin ein Fremder",
+        "russian": "Я чужой"
+      },
+      "gesture": {
+        "icon": "🎭",
+        "gesture": "ховає обличчя",
+        "emotion": "ЧУЖІСТЬ",
+        "association": "Кент повертається як чужинець Кай"
+      }
+    },
+    {
+      "german": "fortjagen",
+      "transcription": "[ФОРТ-я-ген]",
+      "translation": "прогнати",
+      "type": "дієслово",
+      "character_voice": {
+        "character": "Регана",
+        "german": "Jagt ihn fort!",
+        "russian": "Прогоните его!"
+      },
+      "gesture": {
+        "icon": "👉",
+        "gesture": "вказує на ворота",
+        "emotion": "ЖОРСТОКІСТЬ",
+        "association": "Дочки проганяють батька"
+      }
+    },
+    {
+      "german": "heimatlos",
+      "transcription": "[ХАЙ-мат-лос]",
+      "translation": "без дому",
+      "type": "прикметник",
+      "character_voice": {
+        "character": "Блазень",
+        "german": "Der König ist heimatlos",
+        "russian": "Король без дома"
+      },
+      "gesture": {
+        "icon": "🌪️",
+        "gesture": "показує на бурю",
+        "emotion": "ІРОНІЯ",
+        "association": "Блазень про бездомного короля"
+      }
+    },
+    {
+      "german": "die Verbannung",
+      "transcription": "[ди фер-БА-нунг]",
+      "translation": "заслання",
+      "type": "іменник",
+      "character_voice": {
+        "character": "Корделія",
+        "german": "Meine Verbannung endet",
+        "russian": "Моё изгнание кончается"
+      },
+      "gesture": {
+        "icon": "🕊️",
+        "gesture": "повертається з армією",
+        "emotion": "ПОВЕРНЕННЯ",
+        "association": "Корделія повертається з заслання"
+      }
+    },
+    {
+      "german": "das Asyl",
+      "transcription": "[дас а-ЗИЛ]",
+      "translation": "притулок",
+      "type": "іменник",
+      "character_voice": {
+        "character": "Лір",
+        "german": "Ich suche Asyl",
+        "russian": "Я ищу убежище"
+      },
+      "gesture": {
+        "icon": "🏚️",
+        "gesture": "стукає в двері",
+        "emotion": "ПОТРЕБА",
+        "association": "Лір шукає притулок у дочок"
+      }
+    }
+  ],
+  "story": {
+    "content": "<p>Початок вигнання. Лір <span class=\"story-highlight\">verbannen</span> - виганяє Корделію з <span class=\"story-highlight\">die Heimat</span>. Кент йде в <span class=\"story-highlight\">das Exil</span>. <span class=\"story-highlight\">Das Zuhause</span> розділене між старшими дочками.</p><p>Бездомність. Лір стає <span class=\"story-highlight\">obdachlos</span> і <span class=\"story-highlight\">heimatlos</span>. Дочки <span class=\"story-highlight\">fortjagen</span> - проганяють його. Едгар <span class=\"story-highlight\">verstoßen</span> - відкинутий, <span class=\"story-highlight\">wandern</span> - блукає як <span class=\"story-highlight\">der Fremde</span>.</p><p>Пошук притулку. Всі шукають <span class=\"story-highlight\">das Asyl</span> - притулок від бурі. <span class=\"story-highlight\">Die Verbannung</span> закінчується поверненням Корделії, але справжнього дому вже немає.</p>",
+    "emotional_peak": "«Я більше король, ніж ти дочка!» - кричить бездомний Лір дочкам, що забрали його дім"
+  },
+  "dialogues": [
+    {
+      "character": "КОРОЛЬ ЛІР",
+      "german": "Wo ist mein Zuhause?",
+      "russian": "Где мой дом?",
+      "emotion": "🏠 [ВТРАТА]"
+    },
+    {
+      "character": "КОРОЛЬ ЛІР",
+      "german": "Ich verbanne dich!",
+      "russian": "Я изгоняю тебя!",
+      "emotion": "⚡ [ГНІВ]"
+    },
+    {
+      "character": "КОРДЕЛІЯ",
+      "german": "Ich verlasse meine Heimat",
+      "russian": "Я покидаю родину",
+      "emotion": "🌍 [ТУГА]"
+    },
+    {
+      "character": "КОРОЛЬ ЛІР",
+      "german": "Ich bin obdachlos",
+      "russian": "Я бездомный",
+      "emotion": "🌧️ [БЕЗПРИТУЛЬНІСТЬ]"
+    },
+    {
+      "character": "ГЛОСТЕР",
+      "german": "Mein Sohn ist verstoßen",
+      "russian": "Мой сын отвергнут",
+      "emotion": "💔 [ВІДЧУЖЕННЯ]"
+    },
+    {
+      "character": "КЕНТ",
+      "german": "Ich gehe ins Exil",
+      "russian": "Я иду в изгнание",
+      "emotion": "🎭 [ВИГНАННЯ]"
+    },
+    {
+      "character": "ЕДГАР",
+      "german": "Ich wandere als Bettler",
+      "russian": "Я блуждаю как нищий",
+      "emotion": "👣 [СКИТАННЯ]"
+    },
+    {
+      "character": "КЕНТ",
+      "german": "Ich bin ein Fremder",
+      "russian": "Я чужой",
+      "emotion": "🎭 [ЧУЖІСТЬ]"
+    },
+    {
+      "character": "ШУТ",
+      "german": "Jagt ihn fort!",
+      "russian": "Прогоните его!",
+      "emotion": "👉 [ЖОРСТОКІСТЬ]"
+    },
+    {
+      "character": "ШУТ",
+      "german": "Der König ist heimatlos",
+      "russian": "Король без дома",
+      "emotion": "🌪️ [ІРОНІЯ]"
+    }
+  ],
+  "cheat_sheet": [
+    {
+      "german": "das Zuhause",
+      "russian": "дім",
+      "emotion_moment": "ВТРАТА",
+      "gesture_anchor": "🏠 озирається розгублено",
+      "character_moment": "Лір"
+    },
+    {
+      "german": "verbannen",
+      "russian": "вигнати",
+      "emotion_moment": "ГНІВ",
+      "gesture_anchor": "⚡ вказує на вихід",
+      "character_moment": "Лір"
+    },
+    {
+      "german": "die Heimat",
+      "russian": "батьківщина",
+      "emotion_moment": "ТУГА",
+      "gesture_anchor": "🌍 дивиться на горизонт",
+      "character_moment": "Корделія"
+    },
+    {
+      "german": "obdachlos",
+      "russian": "бездомний",
+      "emotion_moment": "БЕЗПРИТУЛЬНІСТЬ",
+      "gesture_anchor": "🌧️ стоїть під дощем",
+      "character_moment": "Лір"
+    },
+    {
+      "german": "verstoßen",
+      "russian": "відкинути",
+      "emotion_moment": "ВІДЧУЖЕННЯ",
+      "gesture_anchor": "💔 відвертається з болем",
+      "character_moment": "Глостер"
+    },
+    {
+      "german": "das Exil",
+      "russian": "вигнання",
+      "emotion_moment": "ВИГНАННЯ",
+      "gesture_anchor": "🎭 накидає плащ мандрівника",
+      "character_moment": "Кент"
+    },
+    {
+      "german": "wandern",
+      "russian": "блукати",
+      "emotion_moment": "СКИТАННЯ",
+      "gesture_anchor": "👣 йде босоніж",
+      "character_moment": "Едгар"
+    },
+    {
+      "german": "der Fremde",
+      "russian": "чужинець",
+      "emotion_moment": "ЧУЖІСТЬ",
+      "gesture_anchor": "🎭 ховає обличчя",
+      "character_moment": "Кент"
+    },
+    {
+      "german": "fortjagen",
+      "russian": "прогнати",
+      "emotion_moment": "ЖОРСТОКІСТЬ",
+      "gesture_anchor": "👉 вказує на ворота",
+      "character_moment": "Регана"
+    },
+    {
+      "german": "heimatlos",
+      "russian": "без дому",
+      "emotion_moment": "ІРОНІЯ",
+      "gesture_anchor": "🌪️ показує на бурю",
+      "character_moment": "Блазень"
+    },
+    {
+      "german": "die Verbannung",
+      "russian": "заслання",
+      "emotion_moment": "ПОВЕРНЕННЯ",
+      "gesture_anchor": "🕊️ повертається з армією",
+      "character_moment": "Корделія"
+    },
+    {
+      "german": "das Asyl",
+      "russian": "притулок",
+      "emotion_moment": "ПОТРЕБА",
+      "gesture_anchor": "🏚️ стукає в двері",
+      "character_moment": "Лір"
+    }
+  ],
+  "exercise": {
+    "title": "🎭 Заповніть пропуски в театральній постановці",
+    "text": "<p>Початок вигнання. Лір <span class=\"story-highlight\">___ (вигнати)</span> - виганяє Корделію з <span class=\"story-highlight\">die ___ (батьківщина)</span>. Кент йде в <span class=\"story-highlight\">das ___ (вигнання)</span>. <span class=\"story-highlight\">Das ___ (дім)</span> розділене між старшими дочками.</p><p>Бездомність. Лір стає <span class=\"story-highlight\">___ (бездомний)</span> і <span class=\"story-highlight\">___ (без дому)</span>. Дочки <span class=\"story-highlight\">___ (прогнати)</span> - проганяють його. Едгар <span class=\"story-highlight\">___ (відкинути)</span> - відкинутий, <span class=\"story-highlight\">___ (блукати)</span> - блукає як <span class=\"story-highlight\">der ___ (чужинець)</span>.</p><p>Пошук притулку. Всі шукають <span class=\"story-highlight\">das ___ (притулок)</span> - притулок від бурі. <span class=\"story-highlight\">Die ___ (заслання)</span> закінчується поверненням Корделії, але справжнього дому вже немає.</p>",
+    "answers": {
+      "вигнати": "verbannen",
+      "батьківщина": "Heimat",
+      "вигнання": "Exil",
+      "дім": "Zuhause",
+      "бездомний": "obdachlos",
+      "без дому": "heimatlos",
+      "прогнати": "fortjagen",
+      "відкинути": "verstoßen",
+      "блукати": "wandern",
+      "чужинець": "Fremde",
+      "притулок": "Asyl",
+      "заслання": "Verbannung"
+    }
+  }
+}

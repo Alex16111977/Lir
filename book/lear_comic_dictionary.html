@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>König Lear - Комикс-Словарь B1 | Немецкий через трагедию</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Comic Sans MS', 'Marker Felt', cursive;
+            background: #1a1a1a;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        /* ШАПКА КОМИКСА */
+        .comic-header {
+            background: linear-gradient(135deg, #2d1b69 0%, #0f0c29 100%);
+            padding: 40px;
+            text-align: center;
+            border-bottom: 5px solid #ffd700;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .comic-header::before {
+            content: "KÖNIG LEAR";
+            position: absolute;
+            font-size: 120px;
+            font-weight: bold;
+            opacity: 0.05;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-5deg);
+            white-space: nowrap;
+        }
+
+        .comic-title {
+            font-size: 48px;
+            font-weight: bold;
+            color: #ffd700;
+            text-shadow: 3px 3px 0 #000;
+            margin-bottom: 10px;
+            letter-spacing: 3px;
+        }
+
+        .comic-subtitle {
+            font-size: 20px;
+            color: #fff;
+            text-shadow: 2px 2px 0 #000;
+        }
+
+        /* НАВИГАЦИЯ ВЫПУСКОВ */
+        .issue-nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 30px;
+            background: #2a2a2a;
+            flex-wrap: wrap;
+        }
+
+        .issue-btn {
+            padding: 15px 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: 3px solid #000;
+            border-radius: 10px;
+            color: white;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 3px 3px 0 #000;
+        }
+
+        .issue-btn:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 5px 5px 0 #000;
+        }
+
+        .issue-btn.active {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            transform: scale(1.1);
+        }
+
+        /* КОНТЕЙНЕР КОМИКСА */
+        .comic-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* СТРАНИЦА КОМИКСА */
+        .comic-page {
+            background: white;
+            border: 5px solid #000;
+            border-radius: 10px;
+            margin: 20px auto;
+            box-shadow: 10px 10px 0 rgba(0,0,0,0.5);
+            display: none;
+        }
+
+        .comic-page.active {
+            display: block;
+        }
+
+        .page-header {
+            background: #ffd700;
+            padding: 15px;
+            border-bottom: 3px solid #000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .page-number {
+            font-size: 18px;
+            font-weight: bold;
+            color: #000;
+        }
+
+        .page-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #000;
+        }
+
+        /* ПАНЕЛИ КОМИКСА */
+        .panels-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3px;
+            background: #000;
+            padding: 3px;
+        }
+
+        .panel {
+            background: white;
+            position: relative;
+            min-height: 300px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .panel:hover {
+            transform: scale(1.02);
+            z-index: 10;
+            box-shadow: 0 0 20px rgba(255,215,0,0.8);
+        }
+
+        .panel.full-width {
+            grid-column: span 2;
+            min-height: 400px;
+        }
+
+        .panel.tall {
+            grid-row: span 2;
+            min-height: 600px;
+        }
+
+        /* СОДЕРЖИМОЕ ПАНЕЛИ */
+        .panel-content {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        /* ФОНЫ ПАНЕЛЕЙ ПО ФАЗАМ */
+        .panel.power {
+            background: linear-gradient(135deg, rgba(255,215,0,0.2), rgba(138,43,226,0.2));
+        }
+
+        .panel.madness {
+            background: linear-gradient(135deg, rgba(79,172,254,0.2), rgba(0,242,254,0.2));
+        }
+
+        .panel.wisdom {
+            background: linear-gradient(135deg, rgba(67,233,123,0.2), rgba(56,249,215,0.2));
+        }
+
+        /* ПЕРСОНАЖ В ПАНЕЛИ */
+        .character-icon {
+            position: absolute;
+            font-size: 80px;
+            opacity: 0.1;
+            right: 10px;
+            bottom: 10px;
+        }
+
+        /* РЕЧЕВЫЕ БАЛЛОНЫ */
+        .speech-bubble {
+            background: white;
+            border: 3px solid #000;
+            border-radius: 20px;
+            padding: 15px;
+            position: relative;
+            margin-bottom: 20px;
+            box-shadow: 2px 2px 0 rgba(0,0,0,0.3);
+        }
+
+        .speech-bubble::after {
+            content: "";
+            position: absolute;
+            bottom: -15px;
+            left: 30px;
+            width: 0;
+            height: 0;
+            border-left: 15px solid transparent;
+            border-right: 15px solid transparent;
+            border-top: 15px solid #000;
+        }
+
+        .speech-bubble::before {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 33px;
+            width: 0;
+            height: 0;
+            border-left: 12px solid transparent;
+            border-right: 12px solid transparent;
+            border-top: 12px solid white;
+            z-index: 1;
+        }
+
+        .thought-bubble {
+            background: white;
+            border: 3px solid #000;
+            border-radius: 30px;
+            padding: 15px;
+            position: relative;
+            margin-bottom: 20px;
+            border-style: dashed;
+        }
+
+        .thought-bubble::after {
+            content: "ooo";
+            position: absolute;
+            bottom: -20px;
+            left: 30px;
+            font-size: 20px;
+            color: #000;
+            letter-spacing: -5px;
+        }
+
+        /* НЕМЕЦКОЕ СЛОВО */
+        .word-german {
+            font-size: 32px;
+            font-weight: bold;
+            color: #000;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+
+        .word-transcription {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 10px;
+            font-style: italic;
+        }
+
+        .word-translation {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        /* КОНТЕКСТ */
+        .context-box {
+            background: #f0f0f0;
+            border: 2px solid #000;
+            border-radius: 10px;
+            padding: 10px;
+            margin-top: auto;
+        }
+
+        .context-german {
+            font-size: 16px;
+            color: #000;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .context-russian {
+            font-size: 14px;
+            color: #444;
+            font-style: italic;
+        }
+
+        /* ЭМОЦИЯ ПАНЕЛИ */
+        .panel-emotion {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 40px;
+            filter: drop-shadow(2px 2px 0 rgba(0,0,0,0.3));
+        }
+
+        /* ДЕЙСТВИЕ */
+        .action-text {
+            background: #ffd700;
+            border: 2px solid #000;
+            padding: 5px 10px;
+            display: inline-block;
+            margin: 10px 0;
+            font-weight: bold;
+            color: #000;
+            transform: rotate(-2deg);
+            box-shadow: 2px 2px 0 rgba(0,0,0,0.3);
+        }
+
+        /* ЗВУКОВЫЕ ЭФФЕКТЫ */
+        .sfx {
+            position: absolute;
+            font-size: 48px;
+            font-weight: bold;
+            color: #ff0000;
+            text-shadow: 3px 3px 0 #000;
+            transform: rotate(-15deg);
+            animation: shake 0.5s infinite;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: rotate(-15deg) scale(1); }
+            50% { transform: rotate(-15deg) scale(1.1); }
+        }
+
+        /* НАВИГАЦИЯ СТРАНИЦ */
+        .page-nav {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            background: #2a2a2a;
+            border-top: 3px solid #000;
+        }
+
+        .nav-btn {
+            padding: 10px 20px;
+            background: #ffd700;
+            border: 3px solid #000;
+            border-radius: 5px;
+            color: #000;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .nav-btn:hover {
+            background: #ffed4e;
+            transform: translateY(-2px);
+        }
+
+        .nav-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        /* СЧЕТЧИК СЛОВ */
+        .word-counter {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #ffd700;
+            border: 3px solid #000;
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 3px 3px 0 rgba(0,0,0,0.5);
+            z-index: 1000;
+        }
+
+        .word-count {
+            font-size: 24px;
+            font-weight: bold;
+            color: #000;
+        }
+
+        .word-label {
+            font-size: 12px;
+            color: #000;
+        }
+
+        /* МОДАЛЬНОЕ ОКНО СЛОВА */
+        .word-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.9);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .word-modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: white;
+            border: 5px solid #000;
+            border-radius: 20px;
+            padding: 30px;
+            max-width: 500px;
+            width: 90%;
+            box-shadow: 10px 10px 0 rgba(255,215,0,0.5);
+            position: relative;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 30px;
+            cursor: pointer;
+            color: #000;
+        }
+
+        /* АНИМАЦИЯ ПОЯВЛЕНИЯ */
+        @keyframes slideIn {
+            from { transform: translateX(-100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        .panel {
+            animation: slideIn 0.5s ease-out;
+        }
+
+        /* АДАПТИВ */
+        @media (max-width: 768px) {
+            .panels-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .panel.full-width {
+                grid-column: span 1;
+            }
+            
+            .word-german {
+                font-size: 24px;
+            }
+        }
+
+        /* ЭФФЕКТ КОМИКСА */
+        .comic-effect {
+            position: relative;
+        }
+
+        .comic-effect::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                rgba(255,255,255,0.03) 10px,
+                rgba(255,255,255,0.03) 20px
+            );
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- ШАПКА -->
+    <div class="comic-header">
+        <h1 class="comic-title">KÖNIG LEAR</h1>
+        <p class="comic-subtitle">Комикс-Словарь Немецкого B1</p>
+    </div>
+
+    <!-- НАВИГАЦИЯ ВЫПУСКОВ -->
+    <div class="issue-nav">
+        <button class="issue-btn active" onclick="showIssue(1)">
+            ВЫПУСК 1: ВЛАСТЬ
+        </button>
+        <button class="issue-btn" onclick="showIssue(2)">
+            ВЫПУСК 2: ИЗГНАНИЕ
+        </button>
+        <button class="issue-btn" onclick="showIssue(3)">
+            ВЫПУСК 3: БЕЗУМИЕ
+        </button>
+        <button class="issue-btn" onclick="showIssue(4)">
+            ВЫПУСК 4: ПРОЗРЕНИЕ
+        </button>
+    </div>
+
+    <!-- КОНТЕЙНЕР -->
+    <div class="comic-container">
+        
+        <!-- ВЫПУСК 1: ВЛАСТЬ -->
+        <div class="comic-page active" id="issue1">
+            <div class="page-header">
+                <span class="page-number">Страница 1</span>
+                <span class="page-title">ИСПЫТАНИЕ ЛЮБВИ</span>
+                <span class="page-number">Выпуск #1</span>
+            </div>
+
+            <div class="panels-grid">
+                <!-- ПАНЕЛЬ 1: Establishing shot -->
+                <div class="panel full-width power" onclick="showWord('herrschen')">
+                    <div class="panel-content">
+                        <div class="character-icon">👑</div>
+                        <div class="panel-emotion">👑</div>
+                        
+                        <div class="speech-bubble">
+                            <div class="word-german">HERRSCHEN</div>
+                            <div class="word-transcription">[ХЕР-шен]</div>
+                            <div class="word-translation">править, господствовать</div>
+                        </div>
+                        
+                        <div class="action-text">КОРОЛЬ ВОССЕДАЕТ НА ТРОНЕ</div>
+                        
+                        <div class="context-box">
+                            <div class="context-german">"Ich HERRSCHE über drei Königreiche!"</div>
+                            <div class="context-russian">"Я ПРАВЛЮ тремя королевствами!"</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ПАНЕЛЬ 2: Die Macht -->
+                <div class="panel power" onclick="showWord('macht')">
+                    <div class="panel-content">
+                        <div class="panel-emotion">💪</div>
+                        
+                        <div class="thought-bubble">
+                            <div class="word-german">DIE MACHT</div>
+                            <div class="word-transcription">[ди МАХТ]</div>
+                            <div class="word-translation">власть, мощь</div>
+                        </div>
+                        
+                        <div class="context-box">
+                            <div class="context-german">"Die MACHT gehört dem, der sie verdient!"</div>
+                            <div class="context-russian">"ВЛАСТЬ принадлежит тому, кто её заслужил!"</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ПАНЕЛЬ 3: Teilen -->
+                <div class="panel power" onclick="showWord('teilen')">
+                    <div class="panel-content">
+                        <div class="panel-emotion">✂️</div>
+                        
+                        <div class="speech-bubble">
+                            <div class="word-german">TEILEN</div>
+                            <div class="word-transcription">[ТАЙ-лен]</div>
+                            <div class="word-translation">делить, разделять</div>
+                        </div>
+                        
+                        <div class="sfx" style="top: 20px; right: 20px;">RIIIP!</div>
+                        
+                        <div class="context-box">
+                            <div class="context-german">"Ich will mein Reich TEILEN!"</div>
+                            <div class="context-russian">"Я хочу РАЗДЕЛИТЬ моё королевство!"</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ПАНЕЛЬ 4: Prüfung -->
+                <div class="panel power" onclick="showWord('pruefung')">
+                    <div class="panel-content">
+                        <div class="panel-emotion">📝</div>
+                        
+                        <div class="speech-bubble">
+                            <div class="word-german">DIE PRÜFUNG</div>
+                            <div class="word-transcription">[ди ПРЮ-фунг]</div>
+                            <div class="word-translation">испытание, экзамен</div>
+                        </div>
+                        
+                        <div class="context-box">
+                            <div class="context-german">"Eine PRÜFUNG der Liebe!"</div>
+                            <div class="context-russian">"ИСПЫТАНИЕ любви!"</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ПАНЕЛЬ 5: Lieben -->
+                <div class="panel power tall" onclick="showWord('lieben')">
+                    <div class="panel-content">
+                        <div class="panel-emotion">❤️</div>
+                        
+                        <div class="speech-bubble">
+                            <div class="word-german">LIEBEN</div>
+                            <div class="word-transcription">[ЛИ-бен]</div>
+                            <div class="word-translation">любить</div>
+                        </div>
+                        
+                        <div class="action-text">ГОНЕРИЛЬЯ ЛЖЁТ</div>
+                        
+                        <div class="context-box">
+                            <div class="context-german">"Ich LIEBE Euch mehr als Worte sagen können!"</div>
+                            <div class="context-russian">"Я ЛЮБЛЮ вас больше, чем могут сказать слова!"</div>
+                        </div>
+                        
+                        <div class="thought-bubble" style="margin-top: 20px;">
+                            <div class="context-german">"(Aber ich liebe nur die Macht...)"</div>
+                            <div class="context-russian">"(Но я люблю только власть...)"</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ПАНЕЛЬ 6: Lügen -->
+                <div class="panel power" onclick="showWord('luegen')">
+                    <div class="panel-content">
+                        <div class="panel-emotion">🎭</div>
+                        
+                        <div class="speech-bubble">
+                            <div class="word-german">LÜGEN</div>
+                            <div class="word-transcription">[ЛЮ-ген]</div>
+                            <div class="word-translation">лгать, врать</div>
+                        </div>
+                        
+                        <div class="sfx" style="bottom: 20px; left: 20px;">FAKE!</div>
+                        
+                        <div class="context-box">
+                            <div class="context-german">"Sie LÜGEN alle!"</div>
+                            <div class="context-russian">"Они все ЛГУТ!"</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ПАНЕЛЬ 7: Schweigen (Корделия) -->
+                <div class="panel full-width power" onclick="showWord('schweigen')">
+                    <div class="panel-content">
+                        <div class="character-icon">🤐</div>
+                        <div class="panel-emotion">🤐</div>
+                        
+                        <div class="thought-bubble">
+                            <div class="word-german">SCHWEIGEN</div>
+                            <div class="word-transcription">[ШВАЙ-ген]</div>
+                            <div class="word-translation">молчать</div>
+                        </div>
+                        
+                        <div class="action-text">КОРДЕЛИЯ МОЛЧИТ</div>
+                        
+                        <div class="context-box">
+                            <div class="context-german">"Ich werde SCHWEIGEN... Die Wahrheit braucht keine Worte."</div>
+                            <div class="context-russian">"Я буду МОЛЧАТЬ... Правде не нужны слова."</div>
+                        </div>
+                        
+                        <div class="sfx" style="top: 50%; left: 50%; transform: translate(-50%, -50%);">...</div>
+                    </div>
+                </div>
+
+                <!-- ПАНЕЛЬ 8: Verstoßen -->
+                <div class="panel full-width power" onclick="showWord('verstossen')">
+                    <div class="panel-content">
+                        <div class="character-icon">😤</div>
+                        <div class="panel-emotion">😤</div>
+                        
+                        <div class="speech-bubble">
+                            <div class="word-german">VERSTOSSEN</div>
+                            <div class="word-transcription">[фер-ШТО-сен]</div>
+                            <div class="word-translation">изгнать, отвергнуть</div>
+                        </div>
+                        
+                        <div class="sfx" style="top: 20px; right: 50px;">BOOM!</div>
+                        
+                        <div class="action-text">ЛИР В ЯРОСТИ!</div>
+                        
+                        <div class="context-box">
+                            <div class="context-german">"Ich VERSTOSSE dich! Du bist nicht mehr meine Tochter!"</div>
+                            <div class="context-russian">"Я ИЗГОНЯЮ тебя! Ты больше не моя дочь!"</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="page-nav">
+                <button class="nav-btn" disabled>← Назад</button>
+                <span style="color: white;">Страница 1 из 4</span>
+                <button class="nav-btn" onclick="nextPage()">Далее →</button>
+            </div>
+        </div>
+
+        <!-- ВЫПУСК 2: ИЗГНАНИЕ -->
+        <div class="comic-page" id="issue2">
+            <div class="page-header">
+                <span class="page-number">Страница 1</span>
+                <span class="page-title">У ДОЧЕРЕЙ</span>
+                <span class="page-number">Выпуск #2</span>
+            </div>
+
+            <div class="panels-grid">
+                <!-- ПАНЕЛЬ 1: Demütigen -->
+                <div class="panel full-width madness" onclick="showWord('demuetigen')">
+                    <div class="panel-content">
+                        <div class="character-icon">😔</div>
+                        <div class="panel-emotion">👎</div>
+                        
+                        <div class="speech-bubble">
+                            <div class="word-german">DEMÜTIGEN</div>
+                            <div class="word-transcription">[де-МЮ-ти-ген]</div>
+                            <div class="word-translation">унижать</div>
+                        </div>
+                        
+                        <div class="action-text">У ГОНЕРИЛЬИ</div>
+                        
+                        <div class="context-box">
+                            <div class="context-german">"Sie will mich DEMÜTIGEN!"</div>
+                            <div class="context-russian">"Она хочет меня УНИЗИТЬ!"</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ПАНЕЛЬ 2: Reduzieren -->
+                <div class="panel madness" onclick="showWord('reduzieren')">
+                    <div class="panel-content">
+                        <div class="panel-emotion">➖</div>
+                        
+                        <div class="speech-bubble">
+                            <div class="word-german">REDUZIEREN</div>
+                            <div class="word-transcription">[ре-ду-ЦИ-рен]</div>
+                            <div class="word-translation">сокращать</div>
+                        </div>
+                        
+                        <div class="context-box">
+                            <div class="context-german">"REDUZIERE deine Ritter!"</div>
+                            <div class="context-russian">"СОКРАТИ своих рыцарей!"</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ПАНЕЛЬ 3: Verlassen -->
+                <div class="panel madness" onclick="showWord('verlassen')">
+                    <div class="panel-content">
+                        <div class="panel-emotion">🚪</div>
+                        
+                        <div class="speech-bubble">
+                            <div class="word-german">VERLASSEN</div>
+                            <div class="word-transcription">[фер-ЛА-сен]</div>
+                            <div class="word-translation">покидать</div>
+                        </div>
+                        
+                        <div class="context-box">
+                            <div class="context-german">"Ich muss dieses Haus VERLASSEN!"</div>
+                            <div class="context-russian">"Я должен ПОКИНУТЬ этот дом!"</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ВЫПУСК 3: БЕЗУМИЕ -->
+        <div class="comic-page" id="issue3">
+            <div class="page-header">
+                <span class="page-number">Страница 1</span>
+                <span class="page-title">БУРЯ</span>
+                <span class="page-number">Выпуск #3</span>
+            </div>
+
+            <div class="panels-grid">
+                <!-- ПАНЕЛЬ 1: Der Sturm -->
+                <div class="panel full-width madness" onclick="showWord('sturm')">
+                    <div class="panel-content">
+                        <div class="character-icon">⛈️</div>
+                        <div class="panel-emotion">⛈️</div>
+                        
+                        <div class="sfx" style="top: 10px; left: 50px;">KRAAASH!</div>
+                        <div class="sfx" style="bottom: 30px; right: 40px;">BOOM!</div>
+                        
+                        <div class="speech-bubble">
+                            <div class="word-german">DER STURM</div>
+                            <div class="word-transcription">[дер ШТУРМ]</div>
+                            <div class="word-translation">буря, шторм</div>
+                        </div>
+                        
+                        <div class="action-text">БУРЯ БУШУЕТ!</div>
+                        
+                        <div class="context-box">
+                            <div class="context-german">"Der STURM in meinem Herzen ist stärker!"</div>
+                            <div class="context-russian">"БУРЯ в моём сердце сильнее!"</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ПАНЕЛЬ 2: Wahnsinnig -->
+                <div class="panel madness tall" onclick="showWord('wahnsinnig')">
+                    <div class="panel-content">
+                        <div class="panel-emotion">😵</div>
+                        
+                        <div class="thought-bubble">
+                            <div class="word-german">WAHNSINNIG</div>
+                            <div class="word-transcription">[ВАХН-зи-ниг]</div>
+                            <div class="word-translation">безумный, сумасшедший</div>
+                        </div>
+                        
+                        <div class="sfx" style="transform: rotate(45deg);">VERRÜCKT!</div>
+                        
+                        <div class="context-box">
+                            <div class="context-german">"Ich werde WAHNSINNIG!"</div>
+                            <div class="context-russian">"Я схожу с ума! Я становлюсь БЕЗУМНЫМ!"</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ПАНЕЛЬ 3: Toben -->
+                <div class="panel madness" onclick="showWord('toben')">
+                    <div class="panel-content">
+                        <div class="panel-emotion">🌪️</div>
+                        
+                        <div class="speech-bubble">
+                            <div class="word-german">TOBEN</div>
+                            <div class="word-transcription">[ТО-бен]</div>
+                            <div class="word-translation">бушевать, неистовствовать</div>
+                        </div>
+                        
+                        <div class="context-box">
+                            <div class="context-german">"Lass es TOBEN!"</div>
+                            <div class="context-russian">"Пусть БУШУЕТ!"</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ПАНЕЛЬ 4: Nackt -->
+                <div class="panel madness" onclick="showWord('nackt')">
+                    <div class="panel-content">
+                        <div class="panel-emotion">🤷</div>
+                        
+                        <div class="thought-bubble">
+                            <div class="word-german">NACKT</div>
+                            <div class="word-transcription">[НАКТ]</div>
+                            <div class="word-translation">голый, нагой</div>
+                        </div>
+                        
+                        <div class="context-box">
+                            <div class="context-german">"NACKT wie ein Tier..."</div>
+                            <div class="context-russian">"ГОЛЫЙ как животное..."</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ВЫПУСК 4: ПРОЗРЕНИЕ -->
+        <div class="comic-page" id="issue4">
+            <div class="page-header">
+                <span class="page-number">Страница 1</span>
+                <span class="page-title">ПРОЗРЕНИЕ</span>
+                <span class="page-number">Выпуск #4</span>
+            </div>
+
+            <div class="panels-grid">
+                <!-- ПАНЕЛЬ 1: Erkennen -->
+                <div class="panel full-width wisdom" onclick="showWord('erkennen')">
+                    <div class="panel-content">
+                        <div class="character-icon">👁️</div>
+                        <div class="panel-emotion">👁️</div>
+                        
+                        <div class="thought-bubble">
+                            <div class="word-german">ERKENNEN</div>
+                            <div class="word-transcription">[ер-КЕН-нен]</div>
+                            <div class="word-translation">признавать, осознавать</div>
+                        </div>
+                        
+                        <div class="action-text">ПРОЗРЕНИЕ!</div>
+                        
+                        <div class="context-box">
+                            <div class="context-german">"Jetzt ERKENNE ich die Wahrheit!"</div>
+                            <div class="context-russian">"Теперь я ОСОЗНАЮ правду!"</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ПАНЕЛЬ 2: Verzeihen -->
+                <div class="panel wisdom" onclick="showWord('verzeihen')">
+                    <div class="panel-content">
+                        <div class="panel-emotion">🙏</div>
+                        
+                        <div class="speech-bubble">
+                            <div class="word-german">VERZEIHEN</div>
+                            <div class="word-transcription">[фер-ЦАЙ-ен]</div>
+                            <div class="word-translation">прощать</div>
+                        </div>
+                        
+                        <div class="context-box">
+                            <div class="context-german">"Kannst du mir VERZEIHEN?"</div>
+                            <div class="context-russian">"Можешь ли ты меня ПРОСТИТЬ?"</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ПАНЕЛЬ 3: Verstehen -->
+                <div class="panel wisdom" onclick="showWord('verstehen')">
+                    <div class="panel-content">
+                        <div class="panel-emotion">💡</div>
+                        
+                        <div class="thought-bubble">
+                            <div class="word-german">VERSTEHEN</div>
+                            <div class="word-transcription">[фер-ШТЕ-ен]</div>
+                            <div class="word-translation">понимать</div>
+                        </div>
+                        
+                        <div class="context-box">
+                            <div class="context-german">"Endlich VERSTEHE ich!"</div>
+                            <div class="context-russian">"Наконец я ПОНИМАЮ!"</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ПАНЕЛЬ 4: Bereuen -->
+                <div class="panel wisdom" onclick="showWord('bereuen')">
+                    <div class="panel-content">
+                        <div class="panel-emotion">😢</div>
+                        
+                        <div class="speech-bubble">
+                            <div class="word-german">BEREUEN</div>
+                            <div class="word-transcription">[бе-РОЙ-ен]</div>
+                            <div class="word-translation">сожалеть, раскаиваться</div>
+                        </div>
+                        
+                        <div class="context-box">
+                            <div class="context-german">"Ich BEREUE alles!"</div>
+                            <div class="context-russian">"Я РАСКАИВАЮСЬ во всём!"</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ПАНЕЛЬ 5: Sterben (финал) -->
+                <div class="panel full-width wisdom" onclick="showWord('sterben')">
+                    <div class="panel-content">
+                        <div class="character-icon">🕊️</div>
+                        <div class="panel-emotion">😔</div>
+                        
+                        <div class="thought-bubble">
+                            <div class="word-german">STERBEN</div>
+                            <div class="word-transcription">[ШТЕР-бен]</div>
+                            <div class="word-translation">умирать</div>
+                        </div>
+                        
+                        <div class="action-text">ФИНАЛ</div>
+                        
+                        <div class="context-box">
+                            <div class="context-german">"Lass mich nicht allein STERBEN..."</div>
+                            <div class="context-russian">"Не дай мне УМЕРЕТЬ в одиночестве..."</div>
+                        </div>
+                        
+                        <div class="sfx" style="bottom: 20px; right: 50%; opacity: 0.3;">Ende...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- СЧЕТЧИК СЛОВ -->
+    <div class="word-counter">
+        <div class="word-count" id="wordCount">0</div>
+        <div class="word-label">слов</div>
+    </div>
+
+    <!-- МОДАЛЬНОЕ ОКНО -->
+    <div class="word-modal" id="wordModal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal()">×</span>
+            <h2 id="modalWord" style="color: #000; font-size: 32px; margin-bottom: 10px;">СЛОВО</h2>
+            <p id="modalTranscription" style="color: #666; font-size: 18px; margin-bottom: 10px;">Транскрипция</p>
+            <p id="modalTranslation" style="color: #333; font-size: 20px; margin-bottom: 20px;">Перевод</p>
+            
+            <div style="background: #f0f0f0; padding: 15px; border-radius: 10px; margin-bottom: 15px;">
+                <h3 style="color: #000; margin-bottom: 10px;">Контекст из комикса:</h3>
+                <p id="modalContext" style="color: #333; font-style: italic;"></p>
+            </div>
+            
+            <div style="background: #ffd700; padding: 15px; border-radius: 10px;">
+                <h3 style="color: #000; margin-bottom: 10px;">Запомни через образ:</h3>
+                <p id="modalMnemonic" style="color: #333;"></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // База слов с мнемоникой
+        const wordsDatabase = {
+            'herrschen': {
+                german: 'HERRSCHEN',
+                transcription: '[ХЕР-шен]',
+                translation: 'править, господствовать',
+                context: 'Лир правит королевством с троном и короной',
+                mnemonic: 'Представь Лира на троне с жезлом - он ХЕРР (господин) который правит',
+                learned: false
+            },
+            'macht': {
+                german: 'DIE MACHT',
+                transcription: '[ди МАХТ]',
+                translation: 'власть, мощь',
+                context: 'Власть в руках короля как молния',
+                mnemonic: 'МАХТ = МАХать скипетром, показывая власть',
+                learned: false
+            },
+            'teilen': {
+                german: 'TEILEN',
+                transcription: '[ТАЙ-лен]',
+                translation: 'делить',
+                context: 'Лир разрывает карту на три части',
+                mnemonic: 'ТАЙ-лен = ТАЙно делить (как пирог на части)',
+                learned: false
+            },
+            'verstossen': {
+                german: 'VERSTOSSEN',
+                transcription: '[фер-ШТО-сен]',
+                translation: 'изгнать',
+                context: 'Лир выгоняет Корделию из замка',
+                mnemonic: 'фер-ШТОСсен = ШТОСом (толчком) выгнать вон',
+                learned: false
+            },
+            'wahnsinnig': {
+                german: 'WAHNSINNIG',
+                transcription: '[ВАХН-зи-ниг]',
+                translation: 'безумный',
+                context: 'Лир в буре теряет разум',
+                mnemonic: 'ВАХН-зинниг = В АХе от безумия (ВАХ! Не в своём уме!)',
+                learned: false
+            },
+            'sturm': {
+                german: 'DER STURM',
+                transcription: '[дер ШТУРМ]',
+                translation: 'буря',
+                context: 'Буря снаружи и внутри Лира',
+                mnemonic: 'ШТУРМ = ШТУРМует небо молниями',
+                learned: false
+            },
+            'erkennen': {
+                german: 'ERKENNEN',
+                transcription: '[ер-КЕН-нен]',
+                translation: 'осознавать',
+                context: 'Лир прозревает и видит правду',
+                mnemonic: 'ер-КЕНнен = КЕН (can, мочь) наконец видеть правду',
+                learned: false
+            },
+            'verzeihen': {
+                german: 'VERZEIHEN',
+                transcription: '[фер-ЦАЙ-ен]',
+                translation: 'прощать',
+                context: 'Корделия прощает отца',
+                mnemonic: 'фер-ЦАЙен = ЦАЙ (чай) примирения - выпить чай и простить',
+                learned: false
+            }
+        };
+
+        let currentIssue = 1;
+        let learnedWords = new Set();
+
+        // Показать выпуск
+        function showIssue(issueNum) {
+            // Скрыть все страницы
+            document.querySelectorAll('.comic-page').forEach(page => {
+                page.classList.remove('active');
+            });
+            
+            // Показать выбранную
+            const selectedPage = document.getElementById('issue' + issueNum);
+            if (selectedPage) {
+                selectedPage.classList.add('active');
+            }
+            
+            // Обновить кнопки
+            document.querySelectorAll('.issue-btn').forEach((btn, index) => {
+                btn.classList.toggle('active', index + 1 === issueNum);
+            });
+            
+            currentIssue = issueNum;
+            
+            // Анимация появления панелей
+            animatePanels();
+        }
+
+        // Анимация панелей
+        function animatePanels() {
+            const panels = document.querySelectorAll('.comic-page.active .panel');
+            panels.forEach((panel, index) => {
+                panel.style.opacity = '0';
+                panel.style.transform = 'translateX(-50px)';
+                
+                setTimeout(() => {
+                    panel.style.transition = 'all 0.5s ease';
+                    panel.style.opacity = '1';
+                    panel.style.transform = 'translateX(0)';
+                }, index * 100);
+            });
+        }
+
+        // Показать слово в модальном окне
+        function showWord(wordKey) {
+            const word = wordsDatabase[wordKey];
+            if (!word) return;
+            
+            // Заполнить модальное окно
+            document.getElementById('modalWord').textContent = word.german;
+            document.getElementById('modalTranscription').textContent = word.transcription;
+            document.getElementById('modalTranslation').textContent = word.translation;
+            document.getElementById('modalContext').textContent = word.context;
+            document.getElementById('modalMnemonic').textContent = word.mnemonic;
+            
+            // Показать модальное окно
+            document.getElementById('wordModal').classList.add('active');
+            
+            // Добавить в изученные
+            if (!learnedWords.has(wordKey)) {
+                learnedWords.add(wordKey);
+                updateWordCounter();
+                
+                // Анимация слова
+                animateWordLearned(wordKey);
+            }
+        }
+
+        // Закрыть модальное окно
+        function closeModal() {
+            document.getElementById('wordModal').classList.remove('active');
+        }
+
+        // Обновить счетчик слов
+        function updateWordCounter() {
+            document.getElementById('wordCount').textContent = learnedWords.size;
+            
+            // Анимация счетчика
+            const counter = document.querySelector('.word-counter');
+            counter.style.transform = 'scale(1.2)';
+            setTimeout(() => {
+                counter.style.transform = 'scale(1)';
+            }, 300);
+        }
+
+        // Анимация изученного слова
+        function animateWordLearned(wordKey) {
+            // Найти панель с этим словом
+            const panels = document.querySelectorAll('.panel');
+            panels.forEach(panel => {
+                if (panel.getAttribute('onclick').includes(wordKey)) {
+                    // Добавить эффект "изучено"
+                    const star = document.createElement('div');
+                    star.textContent = '⭐';
+                    star.style.position = 'absolute';
+                    star.style.top = '10px';
+                    star.style.left = '10px';
+                    star.style.fontSize = '30px';
+                    star.style.animation = 'pulse 1s infinite';
+                    panel.appendChild(star);
+                }
+            });
+        }
+
+        // Следующая страница
+        function nextPage() {
+            if (currentIssue < 4) {
+                showIssue(currentIssue + 1);
+                window.scrollTo(0, 0);
+            }
+        }
+
+        // Предыдущая страница
+        function prevPage() {
+            if (currentIssue > 1) {
+                showIssue(currentIssue - 1);
+                window.scrollTo(0, 0);
+            }
+        }
+
+        // Инициализация при загрузке
+        window.addEventListener('load', () => {
+            animatePanels();
+            updateWordCounter();
+        });
+
+        // Закрытие модального окна по клику вне его
+        document.getElementById('wordModal').addEventListener('click', (e) => {
+            if (e.target === document.getElementById('wordModal')) {
+                closeModal();
+            }
+        });
+
+        // CSS анимация пульсации
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes pulse {
+                0%, 100% { transform: scale(1); }
+                50% { transform: scale(1.2); }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>

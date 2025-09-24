@@ -1,0 +1,367 @@
+{
+  "title": "🎭 Бачити і розуміти через Короля Ліра",
+  "vocabulary": [
+    {
+      "german": "sehen",
+      "transcription": "[ЗЕ-ен]",
+      "translation": "бачити",
+      "type": "дієслово",
+      "character_voice": {
+        "character": "Глостер",
+        "german": "Ich kann nicht mehr sehen",
+        "russian": "Я больше не могу видеть"
+      },
+      "gesture": {
+        "icon": "👁️",
+        "gesture": "торкається очей",
+        "emotion": "ЖАЛЬ",
+        "association": "Глостера осліплюють за вірність"
+      }
+    },
+    {
+      "german": "blind",
+      "transcription": "[БЛИНД]",
+      "translation": "сліпий",
+      "type": "прикметник",
+      "character_voice": {
+        "character": "Лір",
+        "german": "Ich war blind vor Stolz",
+        "russian": "Я был слеп от гордости"
+      },
+      "gesture": {
+        "icon": "🙈",
+        "gesture": "закриває очі руками",
+        "emotion": "ПРОЗРІННЯ",
+        "association": "Лір усвідомлює свою сліпоту до правди"
+      }
+    },
+    {
+      "german": "erkennen",
+      "transcription": "[ер-КЕН-нен]",
+      "translation": "розпізнавати",
+      "type": "дієслово",
+      "character_voice": {
+        "character": "Лір",
+        "german": "Jetzt erkenne ich dich, Корделія",
+        "russian": "Теперь я узнаю тебя, Корделия"
+      },
+      "gesture": {
+        "icon": "✨",
+        "gesture": "торкається обличчя дочки",
+        "emotion": "ПІЗНАННЯ",
+        "association": "Лір нарешті впізнає Корделію"
+      }
+    },
+    {
+      "german": "die Augen",
+      "transcription": "[ди АУ-ген]",
+      "translation": "очі",
+      "type": "іменник",
+      "character_voice": {
+        "character": "Регана",
+        "german": "Reiß ihm die Augen aus!",
+        "russian": "Вырви ему глаза!"
+      },
+      "gesture": {
+        "icon": "👀",
+        "gesture": "вказує на очі жорстоко",
+        "emotion": "ЖОРСТОКІСТЬ",
+        "association": "Регана наказує осліпити Глостера"
+      }
+    },
+    {
+      "german": "verstehen",
+      "transcription": "[фер-ШТЕ-ен]",
+      "translation": "розуміти",
+      "type": "дієслово",
+      "character_voice": {
+        "character": "Корделія",
+        "german": "Ihr werdet mich verstehen",
+        "russian": "Вы меня поймете"
+      },
+      "gesture": {
+        "icon": "💡",
+        "gesture": "притискає руку до серця",
+        "emotion": "НАДІЯ",
+        "association": "Корделія вірить, що її зрозуміють"
+      }
+    },
+    {
+      "german": "begreifen",
+      "transcription": "[бе-ГРАЙ-фен]",
+      "translation": "осягати",
+      "type": "дієслово",
+      "character_voice": {
+        "character": "Едгар",
+        "german": "Ich begreife die Tragödie",
+        "russian": "Я постигаю трагедию"
+      },
+      "gesture": {
+        "icon": "🤔",
+        "gesture": "торкається чола в роздумах",
+        "emotion": "УСВІДОМЛЕННЯ",
+        "association": "Едгар розуміє масштаб трагедії"
+      }
+    },
+    {
+      "german": "der Blick",
+      "transcription": "[дер БЛИК]",
+      "translation": "погляд",
+      "type": "іменник",
+      "character_voice": {
+        "character": "Кент",
+        "german": "Sein Blick ist leer",
+        "russian": "Его взгляд пуст"
+      },
+      "gesture": {
+        "icon": "👁️‍🗨️",
+        "gesture": "дивиться з тривогою",
+        "emotion": "ТРИВОГА",
+        "association": "Кент бачить божевілля в очах Ліра"
+      }
+    },
+    {
+      "german": "täuschen",
+      "transcription": "[ТОЙ-шен]",
+      "translation": "обманювати",
+      "type": "дієслово",
+      "character_voice": {
+        "character": "Гонерілья",
+        "german": "Worte können täuschen",
+        "russian": "Слова могут обманывать"
+      },
+      "gesture": {
+        "icon": "🎭",
+        "gesture": "усміхається фальшиво",
+        "emotion": "ЛИЦЕМІРСТВО",
+        "association": "Гонерілья обманює батька лестощами"
+      }
+    },
+    {
+      "german": "klar",
+      "transcription": "[КЛАР]",
+      "translation": "ясний",
+      "type": "прикметник",
+      "character_voice": {
+        "character": "Блазень",
+        "german": "Die Wahrheit ist klar",
+        "russian": "Правда ясна"
+      },
+      "gesture": {
+        "icon": "🔮",
+        "gesture": "показує відкритими долонями",
+        "emotion": "ЯСНІСТЬ",
+        "association": "Блазень бачить правду крізь безумство"
+      }
+    },
+    {
+      "german": "dunkel",
+      "transcription": "[ДУН-кель]",
+      "translation": "темний",
+      "type": "прикметник",
+      "character_voice": {
+        "character": "Едмунд",
+        "german": "Meine Pläne sind dunkel",
+        "russian": "Мои планы темны"
+      },
+      "gesture": {
+        "icon": "🌑",
+        "gesture": "ховає обличчя в тіні",
+        "emotion": "ПІДСТУПНІСТЬ",
+        "association": "Едмунд діє в темряві змови"
+      }
+    },
+    {
+      "german": "die Sicht",
+      "transcription": "[ди ЗИХТ]",
+      "translation": "зір",
+      "type": "іменник",
+      "character_voice": {
+        "character": "Глостер",
+        "german": "Ohne Sicht sehe ich mehr",
+        "russian": "Без зрения я вижу больше"
+      },
+      "gesture": {
+        "icon": "🌟",
+        "gesture": "дивиться всередину себе",
+        "emotion": "ВНУТРІШНЄ БАЧЕННЯ",
+        "association": "Глостер осліплений бачить правду"
+      }
+    },
+    {
+      "german": "enthüllen",
+      "transcription": "[ент-ХЮЛ-лен]",
+      "translation": "розкривати",
+      "type": "дієслово",
+      "character_voice": {
+        "character": "Едгар",
+        "german": "Ich muss mich enthüllen",
+        "russian": "Я должен открыться"
+      },
+      "gesture": {
+        "icon": "🎭",
+        "gesture": "знімає маску божевільного",
+        "emotion": "ВІДКРИТТЯ",
+        "association": "Едгар розкриває себе батькові"
+      }
+    }
+  ],
+  "story": {
+    "content": "<p>Початок трагедії. Лір не може <span class=\"story-highlight\">sehen</span> - бачити правду. Він <span class=\"story-highlight\">blind</span> - сліпий до щирості Корделії, не може <span class=\"story-highlight\">erkennen</span> - розпізнати лестощі від любові.</p><p>Кульмінація. <span class=\"story-highlight\">Die Augen</span> Глостера виколоті, але тепер він починає <span class=\"story-highlight\">verstehen</span> - розуміти і <span class=\"story-highlight\">begreifen</span> - осягати правду. <span class=\"story-highlight\">Der Blick</span> Ліра божевільний, але ясний.</p><p>Фінал. Всі маски впали. <span class=\"story-highlight\">Täuschen</span> - обман розкрито. Те, що було <span class=\"story-highlight\">dunkel</span> - темним, стало <span class=\"story-highlight\">klar</span> - ясним. <span class=\"story-highlight\">Die Sicht</span> втрачена, але істина <span class=\"story-highlight\">enthüllen</span> - розкрита.</p>",
+    "emotional_peak": "«Я бачив тебе краще, коли не мав очей» - каже Глостер, розуміючи, що справжнє бачення приходить через страждання"
+  },
+  "dialogues": [
+    {
+      "character": "КОРОЛЬ ЛИР",
+      "german": "Ich war BLIND vor Stolz! Jetzt kann ich SEHEN!",
+      "russian": "Я был СЛЕП от гордости! Теперь я могу ВИДЕТЬ!",
+      "emotion": "😢 [С прозрением]"
+    },
+    {
+      "character": "ГЛОСТЕР",
+      "german": "Ohne AUGEN SEHE ich mehr! Die SICHT ist verloren, aber ich VERSTEHE!",
+      "russian": "Без ГЛАЗ я ВИЖУ больше! ЗРЕНИЕ потеряно, но я ПОНИМАЮ!",
+      "emotion": "😰 [В страдании]"
+    },
+    {
+      "character": "РЕГАНА",
+      "german": "Reiß ihm die AUGEN aus! Er soll nie wieder SEHEN!",
+      "russian": "Вырви ему ГЛАЗА! Он никогда не должен больше ВИДЕТЬ!",
+      "emotion": "😈 [Жестоко]"
+    },
+    {
+      "character": "КОРДЕЛИЯ",
+      "german": "Vater, ERKENNE mich! VERSTEHE, dass ich dich liebe!",
+      "russian": "Отец, УЗНАЙ меня! ПОЙМИ, что я люблю тебя!",
+      "emotion": "💝 [С мольбой]"
+    },
+    {
+      "character": "ШУТ",
+      "german": "Die Wahrheit ist KLAR, aber alle sind BLIND! Der BLICK täuscht!",
+      "russian": "Правда ЯСНА, но все СЛЕПЫ! ВЗГЛЯД обманывает!",
+      "emotion": "🃏 [Мудро-горько]"
+    },
+    {
+      "character": "ЭДМУНД",
+      "german": "Meine Pläne sind DUNKEL! Ich werde alle TÄUSCHEN!",
+      "russian": "Мои планы ТЕМНЫ! Я буду всех ОБМАНЫВАТЬ!",
+      "emotion": "⚔️ [Коварно]"
+    },
+    {
+      "character": "ЭДГАР",
+      "german": "Ich muss mich ENTHÜLLEN! Ich BEGREIFE die Tragödie!",
+      "russian": "Я должен ОТКРЫТЬСЯ! Я ПОСТИГАЮ трагедию!",
+      "emotion": "🎭 [С болью]"
+    },
+    {
+      "character": "КЕНТ",
+      "german": "Sein BLICK ist leer! Er kann nicht mehr ERKENNEN und VERSTEHEN!",
+      "russian": "Его ВЗГЛЯД пуст! Он больше не может УЗНАВАТЬ и ПОНИМАТЬ!",
+      "emotion": "🛡️ [С тревогой]"
+    }
+  ],
+  "cheat_sheet": [
+    {
+      "german": "sehen",
+      "russian": "бачити",
+      "emotion_moment": "ЖАЛЬ",
+      "gesture_anchor": "👁️ торкається очей",
+      "character_moment": "Глостер"
+    },
+    {
+      "german": "blind",
+      "russian": "сліпий",
+      "emotion_moment": "ПРОЗРІННЯ",
+      "gesture_anchor": "🙈 закриває очі руками",
+      "character_moment": "Лір"
+    },
+    {
+      "german": "erkennen",
+      "russian": "розпізнавати",
+      "emotion_moment": "ПІЗНАННЯ",
+      "gesture_anchor": "✨ торкається обличчя дочки",
+      "character_moment": "Лір"
+    },
+    {
+      "german": "die Augen",
+      "russian": "очі",
+      "emotion_moment": "ЖОРСТОКІСТЬ",
+      "gesture_anchor": "👀 вказує на очі жорстоко",
+      "character_moment": "Регана"
+    },
+    {
+      "german": "verstehen",
+      "russian": "розуміти",
+      "emotion_moment": "НАДІЯ",
+      "gesture_anchor": "💡 притискає руку до серця",
+      "character_moment": "Корделія"
+    },
+    {
+      "german": "begreifen",
+      "russian": "осягати",
+      "emotion_moment": "УСВІДОМЛЕННЯ",
+      "gesture_anchor": "🤔 торкається чола в роздумах",
+      "character_moment": "Едгар"
+    },
+    {
+      "german": "der Blick",
+      "russian": "погляд",
+      "emotion_moment": "ТРИВОГА",
+      "gesture_anchor": "👁️‍🗨️ дивиться з тривогою",
+      "character_moment": "Кент"
+    },
+    {
+      "german": "täuschen",
+      "russian": "обманювати",
+      "emotion_moment": "ЛИЦЕМІРСТВО",
+      "gesture_anchor": "🎭 усміхається фальшиво",
+      "character_moment": "Гонерілья"
+    },
+    {
+      "german": "klar",
+      "russian": "ясний",
+      "emotion_moment": "ЯСНІСТЬ",
+      "gesture_anchor": "🔮 показує відкритими долонями",
+      "character_moment": "Блазень"
+    },
+    {
+      "german": "dunkel",
+      "russian": "темний",
+      "emotion_moment": "ПІДСТУПНІСТЬ",
+      "gesture_anchor": "🌑 ховає обличчя в тіні",
+      "character_moment": "Едмунд"
+    },
+    {
+      "german": "die Sicht",
+      "russian": "зір",
+      "emotion_moment": "ВНУТРІШНЄ БАЧЕННЯ",
+      "gesture_anchor": "🌟 дивиться всередину себе",
+      "character_moment": "Глостер"
+    },
+    {
+      "german": "enthüllen",
+      "russian": "розкривати",
+      "emotion_moment": "ВІДКРИТТЯ",
+      "gesture_anchor": "🎭 знімає маску божевільного",
+      "character_moment": "Едгар"
+    }
+  ],
+  "exercise": {
+    "title": "🎭 Заповніть пропуски в театральній постановці",
+    "text": "<p>Початок трагедії. Лір не може <span class=\"story-highlight\">___ (бачити)</span> - бачити правду. Він <span class=\"story-highlight\">___ (сліпий)</span> - сліпий до щирості Корделії, не може <span class=\"story-highlight\">___ (розпізнавати)</span> - розпізнати лестощі від любові.</p><p>Кульмінація. <span class=\"story-highlight\">Die ___ (очі)</span> Глостера виколоті, але тепер він починає <span class=\"story-highlight\">___ (розуміти)</span> - розуміти і <span class=\"story-highlight\">___ (осягати)</span> - осягати правду. <span class=\"story-highlight\">Der ___ (погляд)</span> Ліра божевільний, але ясний.</p><p>Фінал. Всі маски впали. <span class=\"story-highlight\">___ (обманювати)</span> - обман розкрито. Те, що було <span class=\"story-highlight\">___ (темний)</span> - темним, стало <span class=\"story-highlight\">___ (ясний)</span> - ясним. <span class=\"story-highlight\">Die ___ (зір)</span> втрачена, але істина <span class=\"story-highlight\">___ (розкривати)</span> - розкрита.</p>",
+    "answers": {
+      "бачити": "sehen",
+      "сліпий": "blind",
+      "розпізнавати": "erkennen",
+      "очі": "Augen",
+      "розуміти": "verstehen",
+      "осягати": "begreifen",
+      "погляд": "Blick",
+      "обманювати": "täuschen",
+      "темний": "dunkel",
+      "ясний": "klar",
+      "зір": "Sicht",
+      "розкривати": "enthüllen"
+    }
+  }
+}

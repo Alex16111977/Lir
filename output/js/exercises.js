@@ -258,136 +258,207 @@
         showResult(`Правильно: ${correct} из ${inputs.length}`);
     }
 
-    // 4. Interactive Quiz with instant feedback
+    // 4. Interactive Quiz with dual modes
     let currentQuestion = 0;
     let correctAnswers = 0;
-    let totalQuestions = 10;
+    let totalQuestions = 0;
     let answeredQuestions = [];
+    let deRuCorrect = 0;
+    let ruDeCorrect = 0;
+    let deRuTotal = 0;
+    let ruDeTotal = 0;
 
-    // Initialize quiz
-    window.checkQuizAnswer = function(button, isCorrect) {
-        // Prevent double clicking
-        if (button.classList.contains('disabled')) return;
-        
-        // Disable all buttons in current question
-        const allButtons = button.parentElement.querySelectorAll('.answer-btn');
-        allButtons.forEach(btn => {
-            btn.classList.add('disabled');
-            // Show correct answer
-            if (btn.dataset.correct === 'true') {
-                btn.classList.add('show-correct');
-            }
-        });
-        
-        // Highlight selected button
-        if (isCorrect) {
-            button.classList.add('correct');
-            correctAnswers++;
-        } else {
-            button.classList.add('incorrect');
-        }
-        
-        // Save answer
-        answeredQuestions.push({
-            question: currentQuestion,
-            correct: isCorrect
-        });
-        
-        // Update progress
-        updateQuizProgress();
-        
-        // Auto-advance after 1.5 seconds
-        setTimeout(() => {
-            if (currentQuestion < totalQuestions - 1) {
-                currentQuestion++;
-                showNextQuestion();
-            } else {
-                showQuizResults();
-            }
-        }, 1500);
-    };
-
-    function showNextQuestion() {
-        const questions = document.querySelectorAll('.quiz-question');
-        questions.forEach((q, i) => {
-            q.style.display = i === currentQuestion ? 'block' : 'none';
+    function showQuestion(index) {
+        const questions = document.querySelectorAll('#word-quiz .quiz-question');
+        questions.forEach((question, idx) => {
+            question.style.display = idx === index ? 'block' : 'none';
         });
     }
 
     function updateQuizProgress() {
         const progressFill = document.querySelector('#word-quiz .progress-fill');
         const correctCount = document.getElementById('correct-count');
-        const percentage = (answeredQuestions.length / totalQuestions) * 100;
-        
+        const answered = answeredQuestions.length;
+        const percentage = totalQuestions ? (answered / totalQuestions) * 100 : 0;
+
         if (progressFill) {
-            progressFill.style.width = percentage + '%';
+            progressFill.style.width = `${percentage}%`;
         }
         if (correctCount) {
             correctCount.textContent = correctAnswers;
         }
     }
 
-    function showQuizResults() {
-        const questionsDiv = document.getElementById('quiz-questions');
-        const resultDiv = document.getElementById('quiz-result');
-        const resultText = document.querySelector('.result-text');
-        
-        if (questionsDiv) questionsDiv.style.display = 'none';
-        if (resultDiv) resultDiv.style.display = 'block';
-        
-        const percentage = Math.round((correctAnswers / totalQuestions) * 100);
-        let message = '';
-        
-        if (percentage >= 80) {
-            message = `Чудово! Ви відповіли правильно на ${correctAnswers} з ${totalQuestions} питань (${percentage}%) 🎉`;
-        } else if (percentage >= 60) {
-            message = `Добре! Ви відповіли правильно на ${correctAnswers} з ${totalQuestions} питань (${percentage}%) 👍`;
-        } else {
-            message = `Спробуйте ще раз! Ви відповіли правильно на ${correctAnswers} з ${totalQuestions} питань (${percentage}%) 💪`;
+    function showResults() {
+        const questionsWrapper = document.getElementById('quiz-questions');
+        const resultWrapper = document.getElementById('quiz-result');
+        const resultText = resultWrapper ? resultWrapper.querySelector('.result-text') : null;
+
+        if (questionsWrapper) {
+            questionsWrapper.style.display = 'none';
         }
-        
+        if (resultWrapper) {
+            resultWrapper.style.display = 'block';
+        }
+
+        const percentage = totalQuestions ? Math.round((correctAnswers / totalQuestions) * 100) : 0;
+
+        let encouragement = '💪 Спробуйте ще раз! Практика - запорука успіху!';
+        if (percentage >= 80) {
+            encouragement = '🎉 Чудово! Ви відмінно знаєте слова!';
+        } else if (percentage >= 60) {
+            encouragement = '👍 Добре! Продовжуйте практикуватися!';
+        }
+
+        const message = `
+            <h3>Результати вікторини</h3>
+            <p>Загальний результат: ${correctAnswers} з ${totalQuestions} (${percentage}%)</p>
+            <div class="result-details">
+                <p>DE → RU: ${deRuCorrect} з ${deRuTotal}</p>
+                <p>RU → DE: ${ruDeCorrect} з ${ruDeTotal}</p>
+            </div>
+            <p class="result-emoji">${encouragement}</p>
+        `;
+
         if (resultText) {
-            resultText.textContent = message;
+            resultText.innerHTML = message;
         }
     }
 
-    window.restartQuiz = function() {
+    function initializeQuiz() {
+        const quizContainer = document.getElementById('word-quiz');
+        if (!quizContainer) {
+            return;
+        }
+
+        const questions = quizContainer.querySelectorAll('.quiz-question');
+        if (!questions.length) {
+            return;
+        }
+
         currentQuestion = 0;
         correctAnswers = 0;
+        deRuCorrect = 0;
+        ruDeCorrect = 0;
+        deRuTotal = 0;
+        ruDeTotal = 0;
         answeredQuestions = [];
-        
-        // Clear button states
-        document.querySelectorAll('.answer-btn').forEach(btn => {
-            btn.classList.remove('correct', 'incorrect', 'disabled', 'show-correct');
+        totalQuestions = questions.length;
+
+        questions.forEach((question, index) => {
+            const mode = question.dataset.mode;
+            if (mode === 'de-ru') {
+                deRuTotal += 1;
+            } else if (mode === 'ru-de') {
+                ruDeTotal += 1;
+            }
+
+            question.style.display = index === 0 ? 'block' : 'none';
+            question.classList.remove('completed');
+            question.querySelectorAll('.answer-btn').forEach(btn => {
+                btn.classList.remove('correct', 'incorrect', 'disabled');
+            });
         });
-        
-        // Reset progress
+
+        const totalCount = document.getElementById('total-count');
+        if (totalCount) {
+            totalCount.textContent = totalQuestions;
+        }
+
         const progressFill = document.querySelector('#word-quiz .progress-fill');
-        if (progressFill) progressFill.style.width = '0%';
-        
+        if (progressFill) {
+            progressFill.style.width = '0%';
+        }
+
         const correctCount = document.getElementById('correct-count');
-        if (correctCount) correctCount.textContent = '0';
-        
-        // Show first question
-        document.getElementById('quiz-result').style.display = 'none';
-        document.getElementById('quiz-questions').style.display = 'block';
-        showNextQuestion();
+        if (correctCount) {
+            correctCount.textContent = '0';
+        }
+
+        const resultWrapper = document.getElementById('quiz-result');
+        if (resultWrapper) {
+            resultWrapper.style.display = 'none';
+            const resultText = resultWrapper.querySelector('.result-text');
+            if (resultText) {
+                resultText.innerHTML = '';
+            }
+        }
+
+        const questionsWrapper = document.getElementById('quiz-questions');
+        if (questionsWrapper) {
+            questionsWrapper.style.display = 'block';
+        }
+
+        updateQuizProgress();
+    }
+
+    window.checkAnswer = function(button, isCorrect) {
+        if (!button) {
+            return;
+        }
+        if (button.classList.contains('disabled')) {
+            return;
+        }
+
+        const question = button.closest('.quiz-question');
+        if (!question || question.classList.contains('completed')) {
+            return;
+        }
+
+        const mode = question.dataset.mode || 'de-ru';
+        const buttons = question.querySelectorAll('.answer-btn');
+
+        buttons.forEach(btn => {
+            btn.classList.add('disabled');
+            if (btn.dataset.correct === 'true') {
+                btn.classList.add('correct');
+            }
+        });
+
+        if (isCorrect) {
+            button.classList.add('correct');
+            correctAnswers += 1;
+            if (mode === 'de-ru') {
+                deRuCorrect += 1;
+            } else if (mode === 'ru-de') {
+                ruDeCorrect += 1;
+            }
+        } else {
+            button.classList.add('incorrect');
+        }
+
+        answeredQuestions.push({
+            question: currentQuestion,
+            correct: Boolean(isCorrect),
+            mode: mode
+        });
+
+        question.classList.add('completed');
+        updateQuizProgress();
+
+        setTimeout(() => {
+            if (currentQuestion < totalQuestions - 1) {
+                currentQuestion += 1;
+                showQuestion(currentQuestion);
+            } else {
+                showResults();
+            }
+        }, 1500);
     };
 
-    // Initialize quiz on page load
+    window.checkQuizAnswer = window.checkAnswer;
+
+    window.restartQuiz = function() {
+        initializeQuiz();
+    };
+
     document.addEventListener('DOMContentLoaded', function() {
-        const quizContainer = document.getElementById('word-quiz');
-        if (quizContainer) {
-            const questions = document.querySelectorAll('.quiz-question');
-            totalQuestions = questions.length || 10;
-            const totalCount = document.getElementById('total-count');
-            if (totalCount) totalCount.textContent = totalQuestions;
+        if (document.getElementById('word-quiz')) {
+            initializeQuiz();
         }
     });
 
-    // Old checkQuiz for compatibility
     function checkQuiz() {
-        // Compatibility stub
         showResult('Використовуйте нову інтерактивну вікторину!');
     }
 

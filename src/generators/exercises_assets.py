@@ -452,52 +452,91 @@ class ExercisesAssetsGenerator:
     font-style: italic;
 }
 
-/* Answer Buttons */
+/* Answer Buttons - ГРАДІЄНТНИЙ ДИЗАЙН */
 .answer-buttons {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 16px;
-    margin-top: 28px;
+    gap: 15px;
+    margin: 30px auto;
+    max-width: 900px;
+}
+
+/* Адаптивна сітка для різних пристроїв */
+@media (max-width: 575px) {
+    .answer-buttons {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 991px) {
+    .answer-buttons {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 992px) {
+    .answer-buttons {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    /* Якщо тільки 2 варіанти */
+    .answer-buttons:has(.answer-btn:nth-child(2):last-child) {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 600px;
+    }
+    /* Якщо 3 варіанти */
+    .answer-buttons:has(.answer-btn:nth-child(3):last-child) {
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 750px;
+    }
 }
 
 .answer-btn {
-    padding: 18px 20px;
-    font-size: 18px;
-    border: 2px solid transparent;
-    border-radius: 14px;
-    background: #ffffff;
-    color: #1f2937;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 18px 24px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 500;
     cursor: pointer;
-    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, background 0.25s ease;
-    box-shadow: 0 12px 32px rgba(15, 23, 42, 0.08);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+    text-align: center;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.answer-btn:hover {
-    transform: translateY(-2px);
-    border-color: #c4b5fd;
-    background: #f8f5ff;
-    box-shadow: 0 18px 40px rgba(99, 102, 241, 0.18);
+.answer-btn:hover:not(.disabled) {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 6px 25px rgba(102, 126, 234, 0.6);
+    background: linear-gradient(135deg, #7c8ff0 0%, #8a5bb0 100%);
+}
+
+.answer-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 10px rgba(102, 126, 234, 0.4);
 }
 
 /* Correct/Incorrect States */
 .answer-btn.correct {
-    background: #e6f6ec;
-    border-color: #38a169;
-    color: #285943;
-    animation: pulse 0.5s;
+    background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+    animation: correctPulse 0.6s ease;
 }
 
 .answer-btn.incorrect {
-    background: #fde8e8;
-    border-color: #f87171;
-    color: #b91c1c;
-    animation: shake 0.5s;
+    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+    animation: shake 0.5s ease;
 }
 
 .answer-btn.disabled {
-    opacity: 0.65;
+    opacity: 0.6;
     cursor: not-allowed;
-    box-shadow: none;
+}
+
+@keyframes correctPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
 }
 
 /* Quiz Progress */
@@ -659,6 +698,153 @@ class ExercisesAssetsGenerator:
     padding: 20px;
     margin-bottom: 18px;
     box-shadow: 0 8px 18px rgba(148, 163, 184, 0.18);
+}
+
+/* Контроли для кожного речення */
+.sentence-controls {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+    align-items: center;
+    padding: 10px;
+    background: rgba(139, 92, 246, 0.05);
+    border-radius: 8px;
+}
+
+.hint-btn {
+    background: linear-gradient(135deg, #fbbf24, #f59e0b);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s;
+    box-shadow: 0 2px 8px rgba(251, 191, 36, 0.3);
+}
+
+.hint-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(251, 191, 36, 0.4);
+}
+
+.hint-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background: #9ca3af;
+}
+
+.check-sentence-btn {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s;
+    box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+}
+
+.check-sentence-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+}
+
+.check-sentence-btn:disabled {
+    background: #6b7280;
+    cursor: not-allowed;
+}
+
+.sentence-feedback {
+    margin-left: auto;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 4px 12px;
+    border-radius: 6px;
+    min-width: 120px;
+    text-align: center;
+}
+
+.sentence-feedback.correct {
+    color: #10b981;
+    background: rgba(16, 185, 129, 0.1);
+}
+
+.sentence-feedback.incorrect {
+    color: #ef4444;
+    background: rgba(239, 68, 68, 0.1);
+}
+
+/* Стани drop-zone */
+.drop-zone.hint-active {
+    background: linear-gradient(135deg, rgba(254, 243, 199, 0.2), rgba(251, 191, 36, 0.1));
+    border: 2px solid #f59e0b;
+    box-shadow: 0 0 20px rgba(245, 158, 11, 0.3);
+}
+
+/* Підказка tooltip */
+.hint-tooltip {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, #fbbf24, #f59e0b);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    z-index: 1000;
+    white-space: nowrap;
+    animation: fadeIn 0.3s;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    margin-bottom: 5px;
+}
+
+.hint-tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-top-color: #f59e0b;
+}
+
+/* Прогрес для конструктора */
+.builder-progress {
+    margin-bottom: 25px;
+    padding: 20px;
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(236, 72, 153, 0.05));
+    border-radius: 12px;
+    border: 1px solid rgba(139, 92, 246, 0.2);
+}
+
+.builder-progress-bar {
+    height: 12px;
+    background: #e2e8f0;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.builder-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #8b5cf6, #ec4899);
+    transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    width: 0%;
+    box-shadow: 0 2px 8px rgba(139, 92, 246, 0.4);
+}
+
+.builder-stats {
+    text-align: center;
+    margin-top: 12px;
+    color: #6b7280;
+    font-size: 14px;
+    font-weight: 600;
 }
 
 .sentence-builder .translation {

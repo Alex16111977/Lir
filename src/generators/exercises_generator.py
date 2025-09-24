@@ -1,4 +1,4 @@
-"""Interactive exercises generator for lesson pages."""
+"""Interactive exercises generator for lesson pages - FIXED VERSION."""
 
 from __future__ import annotations
 
@@ -211,11 +211,13 @@ class ExercisesGenerator:
     # Individual exercise generators
     # ------------------------------------------------------------------
     def _generate_word_matching(self, vocabulary: List[Dict[str, Any]]) -> str:
+        """[FIXED] Використовує ВСІ слова з уроку для підбору."""
         selectable = [word for word in vocabulary if word.get("german") and word.get("translation")]
         if not selectable:
             return ""
 
-        sample = random.sample(selectable, min(8, len(selectable)))
+        # Використовуємо ВСІ слова або максимум 20 (для дуже великих уроків)
+        sample = selectable if len(selectable) <= 20 else random.sample(selectable, 20)
         translations = [escape(word.get("translation", "")) for word in sample]
         random.shuffle(translations)
 
@@ -250,6 +252,7 @@ class ExercisesGenerator:
         return f"""\n            <div class=\"exercise-block\" id=\"word-matching\">\n                <h3 class=\"exercise-title\">🔗 Подбор слов</h3>\n                <p class=\"exercise-intro\">Нажмите на немецкое слово, затем на его русский перевод. При правильном ответе пара станет зелёной.</p>\n                \n                <!-- Прогрес-бар -->\n                <div class=\"matching-progress\">\n                    <div class=\"progress-track\">\n                        <div class=\"progress-fill\" style=\"width: 0%\"></div>\n                    </div>\n                    <div class=\"progress-text\">0 з {total_pairs}</div>\n                </div>\n                \n                <div class=\"matching-container\">\n                    <div class=\"words-column\">\n{"".join(words_html)}\n                    </div>\n                    <div class=\"translations-column\">\n{"".join(translations_html)}\n                    </div>\n                </div>\n                <!-- Кнопка видалена - миттєва перевірка! -->\n            </div>\n            """
 
     def _generate_articles(self, vocabulary: List[Dict[str, Any]]) -> str:
+        """[FIXED] Використовує ВСІ іменники з артиклями."""
         nouns = []
         for word in vocabulary:
             german = word.get("german", "")
@@ -268,7 +271,8 @@ class ExercisesGenerator:
         if not nouns:
             return ""
 
-        sample = random.sample(nouns, min(9, len(nouns)))
+        # Використовуємо ВСІ іменники або максимум 18 
+        sample = nouns if len(nouns) <= 18 else random.sample(nouns, 18)
         cards_html = []
         for item in sample:
             cards_html.append(
@@ -342,7 +346,10 @@ class ExercisesGenerator:
         )
 
     def _generate_vocabulary_quiz(self, vocabulary: List[Dict[str, Any]]) -> str:
-        """Generate a bidirectional quiz for German and Russian vocabulary."""
+        """
+        [ГОЛОВНЕ ВИПРАВЛЕННЯ] Генерує вікторину по ВСІХ словах з уроку, 
+        а не тільки по 10 випадкових!
+        """
 
         selectable = [
             word
@@ -352,8 +359,27 @@ class ExercisesGenerator:
         if not selectable:
             return ""
 
-        random.shuffle(selectable)
+        # [FIXED] Кожне слово перевіряється двічі: DE→RU та RU→DE
+        # Створюємо копії для незалежного перемішування
+        de_ru_words = selectable[:]  # ВСІ слова для DE→RU
+        ru_de_words = selectable[:]  # ВСІ слова для RU→DE
+        
+        # Перемішуємо для різноманітності порядку
+        random.shuffle(de_ru_words)
+        random.shuffle(ru_de_words)
+        
+        # Обмеження тільки для ДУЖЕ великих уроків (>50 слів)
+        max_questions_per_direction = 50
+        if len(de_ru_words) > max_questions_per_direction:
+            de_ru_words = de_ru_words[:max_questions_per_direction]
+        if len(ru_de_words) > max_questions_per_direction:
+            ru_de_words = ru_de_words[:max_questions_per_direction]
 
+        total_questions = len(de_ru_words) + len(ru_de_words)
+        if not total_questions:
+            return ""
+
+        # Створюємо пули варіантів відповідей
         translation_pool = [
             entry.get("translation", "")
             for entry in selectable
@@ -365,21 +391,10 @@ class ExercisesGenerator:
             if entry.get("german")
         ]
 
-        de_ru_words = selectable[:]
-        random.shuffle(de_ru_words)
-        de_ru_words = de_ru_words[: min(5, len(de_ru_words))]
-
-        ru_de_words = selectable[:]
-        random.shuffle(ru_de_words)
-        ru_de_words = ru_de_words[: min(5, len(ru_de_words))]
-
-        total_questions = len(de_ru_words) + len(ru_de_words)
-        if not total_questions:
-            return ""
-
         questions_html: List[str] = []
         question_index = 0
 
+        # Генеруємо питання DE→RU
         for word in de_ru_words:
             questions_html.append(
                 self._render_de_ru_question(
@@ -392,6 +407,7 @@ class ExercisesGenerator:
             )
             question_index += 1
 
+        # Генеруємо питання RU→DE
         for word in ru_de_words:
             questions_html.append(
                 self._render_ru_de_question(
@@ -410,6 +426,7 @@ class ExercisesGenerator:
             f"""
             <div class="exercise-block quiz-container" id="word-quiz">
                 <h3 class="exercise-title">🧠 Викторина по словам</h3>
+                <p class="exercise-intro">Перевірте знання всіх {len(selectable)} слів у двох напрямках ({total_questions} питань)</p>
 
                 <div class="quiz-progress">
                     <div class="progress-bar">
@@ -425,7 +442,13 @@ class ExercisesGenerator:
                 </div>
 
                 <div id="quiz-result" class="quiz-results" style="display: none;">
+                    <h3>Результати вікторини</h3>
                     <div class="result-text"></div>
+                    <div class="result-stats">
+                        <div>Загальний результат: <span id="final-score"></span></div>
+                        <div>DE → RU: <span id="de-ru-score"></span></div>
+                        <div>RU → DE: <span id="ru-de-score"></span></div>
+                    </div>
                     <button onclick="restartQuiz()" class="restart-btn" type="button">Спробувати знову</button>
                 </div>
             </div>
@@ -561,6 +584,7 @@ class ExercisesGenerator:
         return options
 
     def _generate_context_translation(self, vocabulary: List[Dict[str, Any]]) -> str:
+        """[FIXED] Використовує більше слів для контекстного перекладу."""
         contexts = []
         for word in vocabulary:
             voice = word.get("character_voice") or {}
@@ -580,7 +604,8 @@ class ExercisesGenerator:
                     "hint": russian_text,
                 }
             )
-            if len(contexts) >= 3:
+            # Збільшуємо до 5 контекстів замість 3
+            if len(contexts) >= 5:
                 break
 
         if not contexts:
@@ -609,38 +634,64 @@ class ExercisesGenerator:
     def _generate_sentence_builder(
         self, dialogues: Iterable[Dict[str, Any]], story: Optional[Dict[str, Any]]
     ) -> str:
+        """[FIXED] Генерує більше речень для конструктора з індивідуальними кнопками."""
         sentences = self._collect_dialogue_sentences(dialogues)
         if not sentences and story:
             sentences = self._collect_story_sentences(story)
         if not sentences:
             return ""
 
+        # Збільшуємо до 3-4 речень замість 2
         blocks = []
-        for sentence in sentences[:2]:
+        for idx, sentence in enumerate(sentences[:4]):
             shuffled = sentence["parts"][:]
             random.shuffle(shuffled)
             word_pool = "".join(
                 f"<span class=\"draggable\" draggable=\"true\">{escape(word)}</span>"
                 for word in shuffled
             )
+            # Підготовка підказки (перші 2 слова)
+            hint_words = sentence["parts"][:2]
+            hint_text = " ".join(hint_words) + "..."
+            
             blocks.append(
                 f"""
-                <div class=\"sentence-builder\">
+                <div class=\"sentence-builder\" data-sentence-idx=\"{idx}\">
                     <p class=\"translation\">{escape(sentence['translation'])}</p>
                     <div class=\"word-pool\">{word_pool}</div>
                     <div class=\"drop-zone\" data-correct=\"{escape(' '.join(sentence['parts']))}\">
                         <span class=\"placeholder\">Перетащите слова сюда</span>
                     </div>
+                    <div class=\"sentence-controls\">
+                        <button class=\"hint-btn\" onclick=\"showHint(this)\" data-sentence-idx=\"{idx}\" data-hint=\"{escape(hint_text)}\" type=\"button\">
+                            💡 Підказка
+                        </button>
+                        <button class=\"check-sentence-btn\" onclick=\"checkSentence(this)\" type=\"button\">
+                            ✓ Перевірити
+                        </button>
+                        <span class=\"sentence-feedback\"></span>
+                    </div>
                 </div>
                 """
             )
 
+        total_sentences = len(blocks)
+        
         return (
-            "\n            <div class=\"exercise-block\" id=\"builder\">\n"
-            "                <h3 class=\"exercise-title\">🧩 Конструктор предложений</h3>\n"
+            f"""\n            <div class=\"exercise-block sentence-builder-section\" id=\"builder\">
+                <h3 class=\"exercise-title\">🧩 Конструктор предложений</h3>
+                
+                <!-- Прогрес-бар -->
+                <div class=\"builder-progress\">
+                    <h4 style=\"margin-bottom: 10px; color: #6b7280;\">📊 Загальний прогрес</h4>
+                    <div class=\"builder-progress-bar\">
+                        <div class=\"builder-progress-fill\"></div>
+                    </div>
+                    <div class=\"builder-stats\">Виконано: <span id=\"builder-correct\">0</span> з {total_sentences}</div>
+                </div>
+                """
             + "".join(blocks)
-            + "\n                <button class=\"check-btn\" data-action=\"check-builder\" type=\"button\">Проверить</button>\n"
-            "            </div>\n            "
+            + """\n            </div>\n            """
         )
 
     # ------------------------------------------------------------------
@@ -730,7 +781,7 @@ class ExercisesGenerator:
                     continue
                 translation = russian_parts[idx] if idx < len(russian_parts) else russian
                 sentences.append({"parts": tokens, "translation": translation})
-                if len(sentences) >= 3:
+                if len(sentences) >= 5:  # Збільшено з 3 до 5
                     return sentences
         return sentences
 
@@ -749,7 +800,7 @@ class ExercisesGenerator:
             if len(tokens) < 3:
                 continue
             sentences.append({"parts": tokens, "translation": fragment})
-            if len(sentences) >= 2:
+            if len(sentences) >= 4:  # Збільшено з 2 до 4
                 break
         return sentences
 

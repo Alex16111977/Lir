@@ -962,39 +962,14 @@ body {
                     </div>
                     <div class="translations-column">
 
-                <div class="translation-item match" data-pair-id="5" 
-                     data-type="match" onclick="handleWordClick(this, 'match')">
-                    проигрывать
-                </div>
-                
-                <div class="translation-item match" data-pair-id="10" 
-                     data-type="match" onclick="handleWordClick(this, 'match')">
-                    победа
-                </div>
-                
-                <div class="translation-item match" data-pair-id="4" 
-                     data-type="match" onclick="handleWordClick(this, 'match')">
-                    побеждать
-                </div>
-                
-                <div class="translation-item match" data-pair-id="11" 
-                     data-type="match" onclick="handleWordClick(this, 'match')">
-                    поражение
-                </div>
-                
-                <div class="translation-item match" data-pair-id="9" 
-                     data-type="match" onclick="handleWordClick(this, 'match')">
-                    пасть
-                </div>
-                
-                <div class="translation-item match" data-pair-id="8" 
-                     data-type="match" onclick="handleWordClick(this, 'match')">
-                    защищать
-                </div>
-                
                 <div class="translation-item match" data-pair-id="1" 
                      data-type="match" onclick="handleWordClick(this, 'match')">
                     меч
+                </div>
+                
+                <div class="translation-item match" data-pair-id="7" 
+                     data-type="match" onclick="handleWordClick(this, 'match')">
+                    атаковать
                 </div>
                 
                 <div class="translation-item match" data-pair-id="2" 
@@ -1002,9 +977,9 @@ body {
                     война
                 </div>
                 
-                <div class="translation-item match" data-pair-id="3" 
+                <div class="translation-item match" data-pair-id="4" 
                      data-type="match" onclick="handleWordClick(this, 'match')">
-                    битва
+                    побеждать
                 </div>
                 
                 <div class="translation-item match" data-pair-id="6" 
@@ -1012,14 +987,39 @@ body {
                     армия
                 </div>
                 
+                <div class="translation-item match" data-pair-id="8" 
+                     data-type="match" onclick="handleWordClick(this, 'match')">
+                    защищать
+                </div>
+                
+                <div class="translation-item match" data-pair-id="5" 
+                     data-type="match" onclick="handleWordClick(this, 'match')">
+                    проигрывать
+                </div>
+                
+                <div class="translation-item match" data-pair-id="9" 
+                     data-type="match" onclick="handleWordClick(this, 'match')">
+                    пасть
+                </div>
+                
+                <div class="translation-item match" data-pair-id="3" 
+                     data-type="match" onclick="handleWordClick(this, 'match')">
+                    битва
+                </div>
+                
                 <div class="translation-item match" data-pair-id="0" 
                      data-type="match" onclick="handleWordClick(this, 'match')">
                     сражаться
                 </div>
                 
-                <div class="translation-item match" data-pair-id="7" 
+                <div class="translation-item match" data-pair-id="11" 
                      data-type="match" onclick="handleWordClick(this, 'match')">
-                    атаковать
+                    поражение
+                </div>
+                
+                <div class="translation-item match" data-pair-id="10" 
+                     data-type="match" onclick="handleWordClick(this, 'match')">
+                    победа
                 </div>
                 
                     </div>
@@ -1140,6 +1140,17 @@ body {
 
                 <div class="synonym-item">
                     <div class="word-center">
+                        <span class="word-main">vertrauen</span>
+                        <small>доверять</small>
+                    </div>
+                    <div class="options">
+                        <input type="text" placeholder="Синоним" data-correct="trauen" data-hint="доверять">
+                        <input type="text" placeholder="Антоним" data-correct="misstrauen" data-hint="не доверять">
+                    </div>
+                </div>
+                
+                <div class="synonym-item">
+                    <div class="word-center">
                         <span class="word-main">die Welt</span>
                         <small>мир</small>
                     </div>
@@ -1151,23 +1162,12 @@ body {
                 
                 <div class="synonym-item">
                     <div class="word-center">
-                        <span class="word-main">trauen</span>
-                        <small>доверять</small>
+                        <span class="word-main">der Friede</span>
+                        <small>мир</small>
                     </div>
                     <div class="options">
-                        <input type="text" placeholder="Синоним" data-correct="vertrauen" data-hint="доверять">
-                        <input type="text" placeholder="Антоним" data-correct="misstrauen" data-hint="не доверять">
-                    </div>
-                </div>
-                
-                <div class="synonym-item">
-                    <div class="word-center">
-                        <span class="word-main">vertrauen</span>
-                        <small>доверять</small>
-                    </div>
-                    <div class="options">
-                        <input type="text" placeholder="Синоним" data-correct="trauen" data-hint="доверять">
-                        <input type="text" placeholder="Антоним" data-correct="misstrauen" data-hint="не доверять">
+                        <input type="text" placeholder="Синоним" data-correct="die Welt" data-hint="мир">
+                        <input type="text" placeholder="Антоним" data-correct="der Krieg" data-hint="война">
                     </div>
                 </div>
                 
@@ -1207,15 +1207,15 @@ body {
                 <h3>Що означає німецьке слово?</h3>
 
                 <div class="word-display">
-                    <span class="german-word">die Schlacht</span>
-                    <span class="transcription">[ди ШЛАХТ]</span>
+                    <span class="german-word">angreifen</span>
+                    <span class="transcription">[АН-грай-фен]</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">победа</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">пасть</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">битва</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">атаковать</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">побеждать</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">проигрывать</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">война</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">атаковать</button>
                 </div>
             </div>
         </div>
@@ -1231,15 +1231,15 @@ body {
                 <h3>Що означає німецьке слово?</h3>
 
                 <div class="word-display">
-                    <span class="german-word">der Krieg</span>
-                    <span class="transcription">[дер КРИГ]</span>
+                    <span class="german-word">siegen</span>
+                    <span class="transcription">[ЗИ-ген]</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">сражаться</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">меч</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">побеждать</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">война</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">победа</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">атаковать</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">побеждать</button>
                 </div>
             </div>
         </div>
@@ -1255,15 +1255,15 @@ body {
                 <h3>Що означає німецьке слово?</h3>
 
                 <div class="word-display">
-                    <span class="german-word">fallen</span>
-                    <span class="transcription">[ФА-лен]</span>
+                    <span class="german-word">verlieren</span>
+                    <span class="transcription">[фер-ЛИ-рен]</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">пасть</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">сражаться</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">проигрывать</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">поражение</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">побеждать</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">битва</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">война</button>
                 </div>
             </div>
         </div>
@@ -1279,15 +1279,15 @@ body {
                 <h3>Що означає німецьке слово?</h3>
 
                 <div class="word-display">
-                    <span class="german-word">die Armee</span>
-                    <span class="transcription">[ди ар-МЕ]</span>
+                    <span class="german-word">die Niederlage</span>
+                    <span class="transcription">[ди НИ-дер-ла-ге]</span>
                 </div>
 
                 <div class="answer-buttons">
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">поражение</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">победа</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">атаковать</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">сражаться</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">защищать</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">армия</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">война</button>
                 </div>
             </div>
         </div>
@@ -1303,15 +1303,15 @@ body {
                 <h3>Що означає німецьке слово?</h3>
 
                 <div class="word-display">
-                    <span class="german-word">siegen</span>
-                    <span class="transcription">[ЗИ-ген]</span>
+                    <span class="german-word">der Krieg</span>
+                    <span class="transcription">[дер КРИГ]</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">меч</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">поражение</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">победа</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">побеждать</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">сражаться</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">защищать</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">война</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">проигрывать</button>
                 </div>
             </div>
         </div>
@@ -1327,15 +1327,15 @@ body {
                 <h3>Що означає німецьке слово?</h3>
 
                 <div class="word-display">
-                    <span class="german-word">die Niederlage</span>
-                    <span class="transcription">[ди НИ-дер-ла-ге]</span>
+                    <span class="german-word">die Schlacht</span>
+                    <span class="transcription">[ди ШЛАХТ]</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">поражение</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">побеждать</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">армия</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">битва</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">защищать</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">война</button>
                 </div>
             </div>
         </div>
@@ -1351,15 +1351,15 @@ body {
                 <h3>Що означає німецьке слово?</h3>
 
                 <div class="word-display">
-                    <span class="german-word">der Sieg</span>
-                    <span class="transcription">[дер ЗИГ]</span>
+                    <span class="german-word">die Armee</span>
+                    <span class="transcription">[ди ар-МЕ]</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">победа</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">война</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">пасть</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">атаковать</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">проигрывать</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">армия</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">меч</button>
                 </div>
             </div>
         </div>
@@ -1375,15 +1375,15 @@ body {
                 <h3>Що означає німецьке слово?</h3>
 
                 <div class="word-display">
-                    <span class="german-word">verlieren</span>
-                    <span class="transcription">[фер-ЛИ-рен]</span>
+                    <span class="german-word">kämpfen</span>
+                    <span class="transcription">[КЕМП-фен]</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">сражаться</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">битва</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">проигрывать</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">победа</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">атаковать</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">армия</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">сражаться</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">проигрывать</button>
                 </div>
             </div>
         </div>
@@ -1399,15 +1399,15 @@ body {
                 <h3>Що означає німецьке слово?</h3>
 
                 <div class="word-display">
-                    <span class="german-word">angreifen</span>
-                    <span class="transcription">[АН-грай-фен]</span>
+                    <span class="german-word">verteidigen</span>
+                    <span class="transcription">[фер-ТАЙ-ди-ген]</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">атаковать</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">защищать</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">война</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">проигрывать</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">поражение</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">атаковать</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">защищать</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">меч</button>
                 </div>
             </div>
         </div>
@@ -1423,15 +1423,15 @@ body {
                 <h3>Що означає німецьке слово?</h3>
 
                 <div class="word-display">
-                    <span class="german-word">verteidigen</span>
-                    <span class="transcription">[фер-ТАЙ-ди-ген]</span>
+                    <span class="german-word">das Schwert</span>
+                    <span class="transcription">[дас ШВЕРТ]</span>
                 </div>
 
                 <div class="answer-buttons">
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">защищать</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">победа</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">побеждать</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">защищать</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">атаковать</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">армия</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">меч</button>
                 </div>
             </div>
         </div>
@@ -1447,15 +1447,15 @@ body {
                 <h3>Що означає німецьке слово?</h3>
 
                 <div class="word-display">
-                    <span class="german-word">das Schwert</span>
-                    <span class="transcription">[дас ШВЕРТ]</span>
+                    <span class="german-word">fallen</span>
+                    <span class="transcription">[ФА-лен]</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">война</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">защищать</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">меч</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">проигрывать</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">битва</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">пасть</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">сражаться</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">армия</button>
                 </div>
             </div>
         </div>
@@ -1471,15 +1471,15 @@ body {
                 <h3>Що означає німецьке слово?</h3>
 
                 <div class="word-display">
-                    <span class="german-word">kämpfen</span>
-                    <span class="transcription">[КЕМП-фен]</span>
+                    <span class="german-word">der Sieg</span>
+                    <span class="transcription">[дер ЗИГ]</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">сражаться</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">армия</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">побеждать</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">меч</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">битва</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">война</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">поражение</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">победа</button>
                 </div>
             </div>
         </div>
@@ -1495,14 +1495,14 @@ body {
                 <h3>Як німецькою буде:</h3>
 
                 <div class="word-display">
-                    <span class="russian-word">проигрывать</span>
+                    <span class="russian-word">защищать</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">verlieren</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">verteidigen</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">siegen</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">der Krieg</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Niederlage</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">das Schwert</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">verteidigen</button>
                 </div>
             </div>
         </div>
@@ -1518,14 +1518,14 @@ body {
                 <h3>Як німецькою буде:</h3>
 
                 <div class="word-display">
-                    <span class="russian-word">поражение</span>
+                    <span class="russian-word">армия</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">siegen</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">verteidigen</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">kämpfen</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">die Niederlage</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">siegen</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">der Krieg</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">die Armee</button>
                 </div>
             </div>
         </div>
@@ -1541,13 +1541,13 @@ body {
                 <h3>Як німецькою буде:</h3>
 
                 <div class="word-display">
-                    <span class="russian-word">армия</span>
+                    <span class="russian-word">проигрывать</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">die Armee</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">verlieren</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Schlacht</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">verlieren</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">der Krieg</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">der Sieg</button>
                 </div>
             </div>
@@ -1564,14 +1564,14 @@ body {
                 <h3>Як німецькою буде:</h3>
 
                 <div class="word-display">
-                    <span class="russian-word">меч</span>
+                    <span class="russian-word">поражение</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Schlacht</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">verlieren</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">das Schwert</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Niederlage</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">verteidigen</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Armee</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">kämpfen</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">die Niederlage</button>
                 </div>
             </div>
         </div>
@@ -1587,14 +1587,14 @@ body {
                 <h3>Як німецькою буде:</h3>
 
                 <div class="word-display">
-                    <span class="russian-word">война</span>
+                    <span class="russian-word">победа</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">der Krieg</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Niederlage</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Armee</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">der Sieg</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">fallen</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">verlieren</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">der Sieg</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">das Schwert</button>
                 </div>
             </div>
         </div>
@@ -1610,14 +1610,14 @@ body {
                 <h3>Як німецькою буде:</h3>
 
                 <div class="word-display">
-                    <span class="russian-word">пасть</span>
+                    <span class="russian-word">атаковать</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">der Sieg</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">fallen</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">verlieren</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Armee</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">angreifen</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">verteidigen</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Niederlage</button>
                 </div>
             </div>
         </div>
@@ -1633,14 +1633,14 @@ body {
                 <h3>Як німецькою буде:</h3>
 
                 <div class="word-display">
-                    <span class="russian-word">побеждать</span>
+                    <span class="russian-word">сражаться</span>
                 </div>
 
                 <div class="answer-buttons">
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">das Schwert</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">angreifen</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">siegen</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Niederlage</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">siegen</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">kämpfen</button>
                 </div>
             </div>
         </div>
@@ -1656,14 +1656,14 @@ body {
                 <h3>Як німецькою буде:</h3>
 
                 <div class="word-display">
-                    <span class="russian-word">победа</span>
+                    <span class="russian-word">побеждать</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">der Sieg</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">das Schwert</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">angreifen</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">kämpfen</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">der Krieg</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">siegen</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">verteidigen</button>
                 </div>
             </div>
         </div>
@@ -1679,14 +1679,14 @@ body {
                 <h3>Як німецькою буде:</h3>
 
                 <div class="word-display">
-                    <span class="russian-word">защищать</span>
+                    <span class="russian-word">пасть</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">verteidigen</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">das Schwert</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Armee</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">siegen</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">kämpfen</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">fallen</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">verlieren</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Niederlage</button>
                 </div>
             </div>
         </div>
@@ -1706,10 +1706,10 @@ body {
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">siegen</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">kämpfen</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">das Schwert</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">angreifen</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">verteidigen</button>
                     <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">die Schlacht</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">der Sieg</button>
                 </div>
             </div>
         </div>
@@ -1725,14 +1725,14 @@ body {
                 <h3>Як німецькою буде:</h3>
 
                 <div class="word-display">
-                    <span class="russian-word">атаковать</span>
+                    <span class="russian-word">война</span>
                 </div>
 
                 <div class="answer-buttons">
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">siegen</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">verlieren</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">angreifen</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">verteidigen</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">der Krieg</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">angreifen</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">kämpfen</button>
                 </div>
             </div>
         </div>
@@ -1748,14 +1748,14 @@ body {
                 <h3>Як німецькою буде:</h3>
 
                 <div class="word-display">
-                    <span class="russian-word">сражаться</span>
+                    <span class="russian-word">меч</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">kämpfen</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">der Krieg</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Niederlage</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Armee</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">kämpfen</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">das Schwert</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">verteidigen</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">fallen</button>
                 </div>
             </div>
         </div>
@@ -1840,7 +1840,7 @@ body {
                 
                 <div class="sentence-builder" data-sentence-idx="0">
                     <p class="translation">Мы должны сражаться за справедливость!</p>
-                    <div class="word-pool"><span class="draggable" draggable="true">Gerechtigkeit</span><span class="draggable" draggable="true">Wir</span><span class="draggable" draggable="true">kämpfen</span><span class="draggable" draggable="true">für</span><span class="draggable" draggable="true">müssen</span></div>
+                    <div class="word-pool"><span class="draggable" draggable="true">für</span><span class="draggable" draggable="true">kämpfen</span><span class="draggable" draggable="true">müssen</span><span class="draggable" draggable="true">Wir</span><span class="draggable" draggable="true">Gerechtigkeit</span></div>
                     <div class="drop-zone" data-correct="Wir müssen kämpfen für Gerechtigkeit">
                         <span class="placeholder">Перетащите слова сюда</span>
                     </div>
@@ -1857,7 +1857,7 @@ body {
                 
                 <div class="sentence-builder" data-sentence-idx="1">
                     <p class="translation">Мой меч за короля!</p>
-                    <div class="word-pool"><span class="draggable" draggable="true">für</span><span class="draggable" draggable="true">den</span><span class="draggable" draggable="true">König</span><span class="draggable" draggable="true">Mein</span><span class="draggable" draggable="true">Schwert</span></div>
+                    <div class="word-pool"><span class="draggable" draggable="true">für</span><span class="draggable" draggable="true">Schwert</span><span class="draggable" draggable="true">den</span><span class="draggable" draggable="true">Mein</span><span class="draggable" draggable="true">König</span></div>
                     <div class="drop-zone" data-correct="Mein Schwert für den König">
                         <span class="placeholder">Перетащите слова сюда</span>
                     </div>
@@ -1874,7 +1874,7 @@ body {
                 
                 <div class="sentence-builder" data-sentence-idx="2">
                     <p class="translation">Война решает всё</p>
-                    <div class="word-pool"><span class="draggable" draggable="true">entscheidet</span><span class="draggable" draggable="true">Krieg</span><span class="draggable" draggable="true">alles</span><span class="draggable" draggable="true">Der</span></div>
+                    <div class="word-pool"><span class="draggable" draggable="true">entscheidet</span><span class="draggable" draggable="true">alles</span><span class="draggable" draggable="true">Krieg</span><span class="draggable" draggable="true">Der</span></div>
                     <div class="drop-zone" data-correct="Der Krieg entscheidet alles">
                         <span class="placeholder">Перетащите слова сюда</span>
                     </div>
@@ -1891,7 +1891,7 @@ body {
                 
                 <div class="sentence-builder" data-sentence-idx="3">
                     <p class="translation">Битва начнётся на рассвете</p>
-                    <div class="word-pool"><span class="draggable" draggable="true">Morgengrauen</span><span class="draggable" draggable="true">beginnt</span><span class="draggable" draggable="true">im</span><span class="draggable" draggable="true">Schlacht</span><span class="draggable" draggable="true">Die</span></div>
+                    <div class="word-pool"><span class="draggable" draggable="true">Die</span><span class="draggable" draggable="true">Morgengrauen</span><span class="draggable" draggable="true">im</span><span class="draggable" draggable="true">Schlacht</span><span class="draggable" draggable="true">beginnt</span></div>
                     <div class="drop-zone" data-correct="Die Schlacht beginnt im Morgengrauen">
                         <span class="placeholder">Перетащите слова сюда</span>
                     </div>
@@ -1908,7 +1908,7 @@ body {
                 
                 <div class="sentence-builder" data-sentence-idx="4">
                     <p class="translation">Мы победим!</p>
-                    <div class="word-pool"><span class="draggable" draggable="true">Wir</span><span class="draggable" draggable="true">siegen</span><span class="draggable" draggable="true">werden</span></div>
+                    <div class="word-pool"><span class="draggable" draggable="true">werden</span><span class="draggable" draggable="true">siegen</span><span class="draggable" draggable="true">Wir</span></div>
                     <div class="drop-zone" data-correct="Wir werden siegen">
                         <span class="placeholder">Перетащите слова сюда</span>
                     </div>
@@ -1925,7 +1925,7 @@ body {
                 
                 <div class="sentence-builder" data-sentence-idx="5">
                     <p class="translation">Мы не должны проиграть</p>
-                    <div class="word-pool"><span class="draggable" draggable="true">nicht</span><span class="draggable" draggable="true">dürfen</span><span class="draggable" draggable="true">Wir</span><span class="draggable" draggable="true">verlieren</span></div>
+                    <div class="word-pool"><span class="draggable" draggable="true">verlieren</span><span class="draggable" draggable="true">dürfen</span><span class="draggable" draggable="true">Wir</span><span class="draggable" draggable="true">nicht</span></div>
                     <div class="drop-zone" data-correct="Wir dürfen nicht verlieren">
                         <span class="placeholder">Перетащите слова сюда</span>
                     </div>
@@ -1942,7 +1942,7 @@ body {
                 
                 <div class="sentence-builder" data-sentence-idx="6">
                     <p class="translation">Наша армия готова</p>
-                    <div class="word-pool"><span class="draggable" draggable="true">ist</span><span class="draggable" draggable="true">bereit</span><span class="draggable" draggable="true">Armee</span><span class="draggable" draggable="true">Unsere</span></div>
+                    <div class="word-pool"><span class="draggable" draggable="true">Unsere</span><span class="draggable" draggable="true">ist</span><span class="draggable" draggable="true">bereit</span><span class="draggable" draggable="true">Armee</span></div>
                     <div class="drop-zone" data-correct="Unsere Armee ist bereit">
                         <span class="placeholder">Перетащите слова сюда</span>
                     </div>
@@ -1959,7 +1959,7 @@ body {
                 
                 <div class="sentence-builder" data-sentence-idx="7">
                     <p class="translation">Атаковать! Никакой пощады!</p>
-                    <div class="word-pool"><span class="draggable" draggable="true">Keine</span><span class="draggable" draggable="true">Gnade</span></div>
+                    <div class="word-pool"><span class="draggable" draggable="true">Gnade</span><span class="draggable" draggable="true">Keine</span></div>
                     <div class="drop-zone" data-correct="Keine Gnade">
                         <span class="placeholder">Перетащите слова сюда</span>
                     </div>
@@ -1976,7 +1976,7 @@ body {
                 
                 <div class="sentence-builder" data-sentence-idx="8">
                     <p class="translation">Мы защищаем короля!</p>
-                    <div class="word-pool"><span class="draggable" draggable="true">Wir</span><span class="draggable" draggable="true">König</span><span class="draggable" draggable="true">verteidigen</span><span class="draggable" draggable="true">den</span></div>
+                    <div class="word-pool"><span class="draggable" draggable="true">König</span><span class="draggable" draggable="true">Wir</span><span class="draggable" draggable="true">den</span><span class="draggable" draggable="true">verteidigen</span></div>
                     <div class="drop-zone" data-correct="Wir verteidigen den König">
                         <span class="placeholder">Перетащите слова сюда</span>
                     </div>
@@ -1993,7 +1993,7 @@ body {
                 
                 <div class="sentence-builder" data-sentence-idx="9">
                     <p class="translation">Многие падут</p>
-                    <div class="word-pool"><span class="draggable" draggable="true">Viele</span><span class="draggable" draggable="true">fallen</span><span class="draggable" draggable="true">werden</span></div>
+                    <div class="word-pool"><span class="draggable" draggable="true">Viele</span><span class="draggable" draggable="true">werden</span><span class="draggable" draggable="true">fallen</span></div>
                     <div class="drop-zone" data-correct="Viele werden fallen">
                         <span class="placeholder">Перетащите слова сюда</span>
                     </div>
@@ -2010,7 +2010,7 @@ body {
                 
                 <div class="sentence-builder" data-sentence-idx="10">
                     <p class="translation">Победа за нами!</p>
-                    <div class="word-pool"><span class="draggable" draggable="true">ist</span><span class="draggable" draggable="true">unser</span><span class="draggable" draggable="true">Der</span><span class="draggable" draggable="true">Sieg</span></div>
+                    <div class="word-pool"><span class="draggable" draggable="true">ist</span><span class="draggable" draggable="true">Sieg</span><span class="draggable" draggable="true">Der</span><span class="draggable" draggable="true">unser</span></div>
                     <div class="drop-zone" data-correct="Der Sieg ist unser">
                         <span class="placeholder">Перетащите слова сюда</span>
                     </div>
@@ -2027,7 +2027,7 @@ body {
                 
                 <div class="sentence-builder" data-sentence-idx="11">
                     <p class="translation">Поражение горько</p>
-                    <div class="word-pool"><span class="draggable" draggable="true">bitter</span><span class="draggable" draggable="true">ist</span><span class="draggable" draggable="true">Niederlage</span><span class="draggable" draggable="true">Die</span></div>
+                    <div class="word-pool"><span class="draggable" draggable="true">ist</span><span class="draggable" draggable="true">Niederlage</span><span class="draggable" draggable="true">Die</span><span class="draggable" draggable="true">bitter</span></div>
                     <div class="drop-zone" data-correct="Die Niederlage ist bitter">
                         <span class="placeholder">Перетащите слова сюда</span>
                     </div>

@@ -936,19 +936,9 @@ body {
                     </div>
                     <div class="translations-column">
 
-                <div class="translation-item match" data-pair-id="11" 
+                <div class="translation-item match" data-pair-id="1" 
                      data-type="match" onclick="handleWordClick(this, 'match')">
-                    багатство
-                </div>
-                
-                <div class="translation-item match" data-pair-id="6" 
-                     data-type="match" onclick="handleWordClick(this, 'match')">
-                    ділити
-                </div>
-                
-                <div class="translation-item match" data-pair-id="9" 
-                     data-type="match" onclick="handleWordClick(this, 'match')">
-                    володіти
+                    бідний
                 </div>
                 
                 <div class="translation-item match" data-pair-id="5" 
@@ -956,14 +946,14 @@ body {
                     жебрак
                 </div>
                 
-                <div class="translation-item match" data-pair-id="1" 
+                <div class="translation-item match" data-pair-id="6" 
                      data-type="match" onclick="handleWordClick(this, 'match')">
-                    бідний
+                    ділити
                 </div>
                 
-                <div class="translation-item match" data-pair-id="8" 
+                <div class="translation-item match" data-pair-id="7" 
                      data-type="match" onclick="handleWordClick(this, 'match')">
-                    втрачати
+                    власність
                 </div>
                 
                 <div class="translation-item match" data-pair-id="10" 
@@ -976,9 +966,24 @@ body {
                     скарб
                 </div>
                 
+                <div class="translation-item match" data-pair-id="11" 
+                     data-type="match" onclick="handleWordClick(this, 'match')">
+                    багатство
+                </div>
+                
                 <div class="translation-item match" data-pair-id="4" 
                      data-type="match" onclick="handleWordClick(this, 'match')">
                     жебракувати
+                </div>
+                
+                <div class="translation-item match" data-pair-id="9" 
+                     data-type="match" onclick="handleWordClick(this, 'match')">
+                    володіти
+                </div>
+                
+                <div class="translation-item match" data-pair-id="2" 
+                     data-type="match" onclick="handleWordClick(this, 'match')">
+                    золото
                 </div>
                 
                 <div class="translation-item match" data-pair-id="0" 
@@ -986,14 +991,9 @@ body {
                     багатий
                 </div>
                 
-                <div class="translation-item match" data-pair-id="7" 
+                <div class="translation-item match" data-pair-id="8" 
                      data-type="match" onclick="handleWordClick(this, 'match')">
-                    власність
-                </div>
-                
-                <div class="translation-item match" data-pair-id="2" 
-                     data-type="match" onclick="handleWordClick(this, 'match')">
-                    золото
+                    втрачати
                 </div>
                 
                     </div>
@@ -1114,6 +1114,17 @@ body {
 
                 <div class="synonym-item">
                     <div class="word-center">
+                        <span class="word-main">der Friede</span>
+                        <small>мир</small>
+                    </div>
+                    <div class="options">
+                        <input type="text" placeholder="Синоним" data-correct="die Welt" data-hint="мир">
+                        <input type="text" placeholder="Антоним" data-correct="der Krieg" data-hint="война">
+                    </div>
+                </div>
+                
+                <div class="synonym-item">
+                    <div class="word-center">
                         <span class="word-main">vertrauen</span>
                         <small>доверять</small>
                     </div>
@@ -1131,17 +1142,6 @@ body {
                     <div class="options">
                         <input type="text" placeholder="Синоним" data-correct="vertrauen" data-hint="доверять">
                         <input type="text" placeholder="Антоним" data-correct="misstrauen" data-hint="не доверять">
-                    </div>
-                </div>
-                
-                <div class="synonym-item">
-                    <div class="word-center">
-                        <span class="word-main">die Welt</span>
-                        <small>мир</small>
-                    </div>
-                    <div class="options">
-                        <input type="text" placeholder="Синоним" data-correct="der Friede" data-hint="мир">
-                        <input type="text" placeholder="Антоним" data-correct="der Krieg" data-hint="война">
                     </div>
                 </div>
                 
@@ -1181,15 +1181,15 @@ body {
                 <h3>Що означає німецьке слово?</h3>
 
                 <div class="word-display">
-                    <span class="german-word">verlieren</span>
-                    <span class="transcription">[фер-ЛИ-рен]</span>
+                    <span class="german-word">der Reichtum</span>
+                    <span class="transcription">[дер РАЙХ-тум]</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">бідний</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">втрачати</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">скарб</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">володіти</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">жебракувати</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">бідність</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">багатство</button>
                 </div>
             </div>
         </div>
@@ -1210,10 +1210,10 @@ body {
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">бідний</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">бідність</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">скарб</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">жебракувати</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">золото</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">багатий</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">скарб</button>
                 </div>
             </div>
         </div>
@@ -1229,15 +1229,15 @@ body {
                 <h3>Що означає німецьке слово?</h3>
 
                 <div class="word-display">
-                    <span class="german-word">die Armut</span>
-                    <span class="transcription">[ди АР-мут]</span>
+                    <span class="german-word">reich</span>
+                    <span class="transcription">[РАЙХ]</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">власність</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">ділити</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">багатство</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">бідність</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">скарб</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">бідний</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">багатий</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">бідність</button>
                 </div>
             </div>
         </div>
@@ -1253,15 +1253,15 @@ body {
                 <h3>Що означає німецьке слово?</h3>
 
                 <div class="word-display">
-                    <span class="german-word">das Eigentum</span>
-                    <span class="transcription">[дас АЙ-ген-тум]</span>
+                    <span class="german-word">besitzen</span>
+                    <span class="transcription">[бе-ЗИ-цен]</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">бідність</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">жебракувати</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">власність</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">володіти</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">бідний</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">багатий</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">скарб</button>
                 </div>
             </div>
         </div>
@@ -1277,15 +1277,15 @@ body {
                 <h3>Що означає німецьке слово?</h3>
 
                 <div class="word-display">
-                    <span class="german-word">arm</span>
-                    <span class="transcription">[АРМ]</span>
+                    <span class="german-word">der Bettler</span>
+                    <span class="transcription">[дер БЕТТ-лер]</span>
                 </div>
 
                 <div class="answer-buttons">
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">золото</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">бідний</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">жебракувати</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">ділити</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">жебрак</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">багатий</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">скарб</button>
                 </div>
             </div>
         </div>
@@ -1301,15 +1301,15 @@ body {
                 <h3>Що означає німецьке слово?</h3>
 
                 <div class="word-display">
-                    <span class="german-word">reich</span>
-                    <span class="transcription">[РАЙХ]</span>
+                    <span class="german-word">teilen</span>
+                    <span class="transcription">[ТАЙ-лен]</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">золото</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">ділити</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">багатство</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">власність</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">багатий</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">володіти</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">скарб</button>
                 </div>
             </div>
         </div>
@@ -1325,15 +1325,15 @@ body {
                 <h3>Що означає німецьке слово?</h3>
 
                 <div class="word-display">
-                    <span class="german-word">der Reichtum</span>
-                    <span class="transcription">[дер РАЙХ-тум]</span>
+                    <span class="german-word">das Gold</span>
+                    <span class="transcription">[дас ГОЛД]</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">скарб</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">багатство</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">втрачати</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">багатий</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">золото</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">багатство</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">бідний</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">володіти</button>
                 </div>
             </div>
         </div>
@@ -1349,15 +1349,15 @@ body {
                 <h3>Що означає німецьке слово?</h3>
 
                 <div class="word-display">
-                    <span class="german-word">besitzen</span>
-                    <span class="transcription">[бе-ЗИ-цен]</span>
+                    <span class="german-word">betteln</span>
+                    <span class="transcription">[БЕТ-тельн]</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">бідність</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">володіти</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">скарб</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">золото</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">бідний</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">власність</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">володіти</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">жебракувати</button>
                 </div>
             </div>
         </div>
@@ -1373,15 +1373,15 @@ body {
                 <h3>Що означає німецьке слово?</h3>
 
                 <div class="word-display">
-                    <span class="german-word">das Gold</span>
-                    <span class="transcription">[дас ГОЛД]</span>
+                    <span class="german-word">verlieren</span>
+                    <span class="transcription">[фер-ЛИ-рен]</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">ділити</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">жебракувати</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">бідний</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">золото</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">втрачати</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">володіти</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">бідність</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">багатство</button>
                 </div>
             </div>
         </div>
@@ -1397,15 +1397,15 @@ body {
                 <h3>Що означає німецьке слово?</h3>
 
                 <div class="word-display">
-                    <span class="german-word">teilen</span>
-                    <span class="transcription">[ТАЙ-лен]</span>
+                    <span class="german-word">die Armut</span>
+                    <span class="transcription">[ди АР-мут]</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">скарб</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">власність</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">втрачати</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">ділити</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">золото</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">володіти</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">бідність</button>
                 </div>
             </div>
         </div>
@@ -1421,15 +1421,15 @@ body {
                 <h3>Що означає німецьке слово?</h3>
 
                 <div class="word-display">
-                    <span class="german-word">betteln</span>
-                    <span class="transcription">[БЕТ-тельн]</span>
+                    <span class="german-word">das Eigentum</span>
+                    <span class="transcription">[дас АЙ-ген-тум]</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">володіти</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">жебракувати</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">ділити</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">багатий</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">бідність</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">жебракувати</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">власність</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">багатство</button>
                 </div>
             </div>
         </div>
@@ -1445,15 +1445,15 @@ body {
                 <h3>Що означає німецьке слово?</h3>
 
                 <div class="word-display">
-                    <span class="german-word">der Bettler</span>
-                    <span class="transcription">[дер БЕТТ-лер]</span>
+                    <span class="german-word">arm</span>
+                    <span class="transcription">[АРМ]</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">жебрак</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">втрачати</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">ділити</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">жебракувати</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">золото</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">багатий</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">бідний</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">володіти</button>
                 </div>
             </div>
         </div>
@@ -1469,14 +1469,14 @@ body {
                 <h3>Як німецькою буде:</h3>
 
                 <div class="word-display">
-                    <span class="russian-word">бідний</span>
+                    <span class="russian-word">скарб</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">arm</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">das Eigentum</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">betteln</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Armut</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">der Reichtum</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">der Schatz</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">der Bettler</button>
                 </div>
             </div>
         </div>
@@ -1496,10 +1496,10 @@ body {
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">der Bettler</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">betteln</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Armut</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">der Reichtum</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">besitzen</button>
                     <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">das Gold</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">reich</button>
                 </div>
             </div>
         </div>
@@ -1515,13 +1515,13 @@ body {
                 <h3>Як німецькою буде:</h3>
 
                 <div class="word-display">
-                    <span class="russian-word">скарб</span>
+                    <span class="russian-word">жебракувати</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">der Schatz</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">verlieren</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">betteln</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">der Reichtum</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">besitzen</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">das Eigentum</button>
                 </div>
             </div>
@@ -1538,14 +1538,14 @@ body {
                 <h3>Як німецькою буде:</h3>
 
                 <div class="word-display">
-                    <span class="russian-word">ділити</span>
+                    <span class="russian-word">втрачати</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">das Gold</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">teilen</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">der Bettler</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">verlieren</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">reich</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">teilen</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">der Schatz</button>
                 </div>
             </div>
         </div>
@@ -1561,14 +1561,14 @@ body {
                 <h3>Як німецькою буде:</h3>
 
                 <div class="word-display">
-                    <span class="russian-word">жебрак</span>
+                    <span class="russian-word">бідний</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">der Schatz</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Armut</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">der Bettler</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">verlieren</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">arm</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">das Gold</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">der Bettler</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">reich</button>
                 </div>
             </div>
         </div>
@@ -1588,10 +1588,10 @@ body {
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">der Reichtum</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">reich</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Armut</button>
                     <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">das Eigentum</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">betteln</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">besitzen</button>
                 </div>
             </div>
         </div>
@@ -1607,14 +1607,14 @@ body {
                 <h3>Як німецькою буде:</h3>
 
                 <div class="word-display">
-                    <span class="russian-word">бідність</span>
+                    <span class="russian-word">володіти</span>
                 </div>
 
                 <div class="answer-buttons">
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">besitzen</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">reich</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">der Bettler</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">der Schatz</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">die Armut</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">besitzen</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">teilen</button>
                 </div>
             </div>
         </div>
@@ -1630,14 +1630,14 @@ body {
                 <h3>Як німецькою буде:</h3>
 
                 <div class="word-display">
-                    <span class="russian-word">жебракувати</span>
+                    <span class="russian-word">жебрак</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">der Schatz</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">besitzen</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">teilen</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">betteln</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">reich</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">der Bettler</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">arm</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Armut</button>
                 </div>
             </div>
         </div>
@@ -1657,10 +1657,10 @@ body {
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">das Eigentum</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">teilen</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">verlieren</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">das Gold</button>
                     <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">reich</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">besitzen</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">der Reichtum</button>
                 </div>
             </div>
         </div>
@@ -1676,14 +1676,14 @@ body {
                 <h3>Як німецькою буде:</h3>
 
                 <div class="word-display">
-                    <span class="russian-word">володіти</span>
+                    <span class="russian-word">багатство</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">das Gold</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">teilen</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">der Schatz</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">der Reichtum</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">das Eigentum</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">besitzen</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Armut</button>
                 </div>
             </div>
         </div>
@@ -1699,14 +1699,14 @@ body {
                 <h3>Як німецькою буде:</h3>
 
                 <div class="word-display">
-                    <span class="russian-word">багатство</span>
+                    <span class="russian-word">бідність</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">teilen</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">der Reichtum</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">die Armut</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">das Eigentum</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">besitzen</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">arm</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">verlieren</button>
                 </div>
             </div>
         </div>
@@ -1722,13 +1722,13 @@ body {
                 <h3>Як німецькою буде:</h3>
 
                 <div class="word-display">
-                    <span class="russian-word">втрачати</span>
+                    <span class="russian-word">ділити</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">verlieren</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">betteln</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">teilen</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">teilen</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">reich</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">arm</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Armut</button>
                 </div>
             </div>
@@ -1814,7 +1814,7 @@ body {
                 
                 <div class="sentence-builder" data-sentence-idx="0">
                     <p class="translation">Я был богат дочерьми и землями</p>
-                    <div class="word-pool"><span class="draggable" draggable="true">war</span><span class="draggable" draggable="true">Töchtern</span><span class="draggable" draggable="true">und</span><span class="draggable" draggable="true">an</span><span class="draggable" draggable="true">Ich</span><span class="draggable" draggable="true">Land</span><span class="draggable" draggable="true">reich</span></div>
+                    <div class="word-pool"><span class="draggable" draggable="true">Töchtern</span><span class="draggable" draggable="true">an</span><span class="draggable" draggable="true">und</span><span class="draggable" draggable="true">Land</span><span class="draggable" draggable="true">war</span><span class="draggable" draggable="true">Ich</span><span class="draggable" draggable="true">reich</span></div>
                     <div class="drop-zone" data-correct="Ich war reich an Töchtern und Land">
                         <span class="placeholder">Перетащите слова сюда</span>
                     </div>
@@ -1831,7 +1831,7 @@ body {
                 
                 <div class="sentence-builder" data-sentence-idx="1">
                     <p class="translation">Бедный Том наг и замерзает</p>
-                    <div class="word-pool"><span class="draggable" draggable="true">friert</span><span class="draggable" draggable="true">nackt</span><span class="draggable" draggable="true">Tom</span><span class="draggable" draggable="true">Arm</span><span class="draggable" draggable="true">ist</span><span class="draggable" draggable="true">und</span></div>
+                    <div class="word-pool"><span class="draggable" draggable="true">und</span><span class="draggable" draggable="true">Tom</span><span class="draggable" draggable="true">friert</span><span class="draggable" draggable="true">nackt</span><span class="draggable" draggable="true">Arm</span><span class="draggable" draggable="true">ist</span></div>
                     <div class="drop-zone" data-correct="Arm Tom ist nackt und friert">
                         <span class="placeholder">Перетащите слова сюда</span>
                     </div>
@@ -1848,7 +1848,7 @@ body {
                 
                 <div class="sentence-builder" data-sentence-idx="2">
                     <p class="translation">Золото дороже любви</p>
-                    <div class="word-pool"><span class="draggable" draggable="true">ist</span><span class="draggable" draggable="true">wert</span><span class="draggable" draggable="true">Liebe</span><span class="draggable" draggable="true">Gold</span><span class="draggable" draggable="true">mehr</span><span class="draggable" draggable="true">als</span></div>
+                    <div class="word-pool"><span class="draggable" draggable="true">mehr</span><span class="draggable" draggable="true">Gold</span><span class="draggable" draggable="true">ist</span><span class="draggable" draggable="true">Liebe</span><span class="draggable" draggable="true">als</span><span class="draggable" draggable="true">wert</span></div>
                     <div class="drop-zone" data-correct="Gold ist mehr wert als Liebe">
                         <span class="placeholder">Перетащите слова сюда</span>
                     </div>
@@ -1865,7 +1865,7 @@ body {
                 
                 <div class="sentence-builder" data-sentence-idx="3">
                     <p class="translation">Мое сокровище - правда</p>
-                    <div class="word-pool"><span class="draggable" draggable="true">Schatz</span><span class="draggable" draggable="true">Mein</span><span class="draggable" draggable="true">Wahrheit</span><span class="draggable" draggable="true">ist</span><span class="draggable" draggable="true">die</span></div>
+                    <div class="word-pool"><span class="draggable" draggable="true">ist</span><span class="draggable" draggable="true">Mein</span><span class="draggable" draggable="true">die</span><span class="draggable" draggable="true">Wahrheit</span><span class="draggable" draggable="true">Schatz</span></div>
                     <div class="drop-zone" data-correct="Mein Schatz ist die Wahrheit">
                         <span class="placeholder">Перетащите слова сюда</span>
                     </div>
@@ -1882,7 +1882,7 @@ body {
                 
                 <div class="sentence-builder" data-sentence-idx="4">
                     <p class="translation">Должен ли я просить о крове?</p>
-                    <div class="word-pool"><span class="draggable" draggable="true">ich</span><span class="draggable" draggable="true">um</span><span class="draggable" draggable="true">Muss</span><span class="draggable" draggable="true">betteln</span><span class="draggable" draggable="true">Unterkunft</span></div>
+                    <div class="word-pool"><span class="draggable" draggable="true">ich</span><span class="draggable" draggable="true">Muss</span><span class="draggable" draggable="true">betteln</span><span class="draggable" draggable="true">um</span><span class="draggable" draggable="true">Unterkunft</span></div>
                     <div class="drop-zone" data-correct="Muss ich um Unterkunft betteln">
                         <span class="placeholder">Перетащите слова сюда</span>
                     </div>
@@ -1899,7 +1899,7 @@ body {
                 
                 <div class="sentence-builder" data-sentence-idx="5">
                     <p class="translation">У нищего больше, чем у меня</p>
-                    <div class="word-pool"><span class="draggable" draggable="true">Ein</span><span class="draggable" draggable="true">als</span><span class="draggable" draggable="true">Bettler</span><span class="draggable" draggable="true">mehr</span><span class="draggable" draggable="true">hat</span><span class="draggable" draggable="true">ich</span></div>
+                    <div class="word-pool"><span class="draggable" draggable="true">hat</span><span class="draggable" draggable="true">mehr</span><span class="draggable" draggable="true">Ein</span><span class="draggable" draggable="true">Bettler</span><span class="draggable" draggable="true">ich</span><span class="draggable" draggable="true">als</span></div>
                     <div class="drop-zone" data-correct="Ein Bettler hat mehr als ich">
                         <span class="placeholder">Перетащите слова сюда</span>
                     </div>
@@ -1916,7 +1916,7 @@ body {
                 
                 <div class="sentence-builder" data-sentence-idx="6">
                     <p class="translation">Я хочу разделить королевство</p>
-                    <div class="word-pool"><span class="draggable" draggable="true">Reich</span><span class="draggable" draggable="true">teilen</span><span class="draggable" draggable="true">Ich</span><span class="draggable" draggable="true">will</span><span class="draggable" draggable="true">mein</span></div>
+                    <div class="word-pool"><span class="draggable" draggable="true">will</span><span class="draggable" draggable="true">Reich</span><span class="draggable" draggable="true">teilen</span><span class="draggable" draggable="true">mein</span><span class="draggable" draggable="true">Ich</span></div>
                     <div class="drop-zone" data-correct="Ich will mein Reich teilen">
                         <span class="placeholder">Перетащите слова сюда</span>
                     </div>
@@ -1933,7 +1933,7 @@ body {
                 
                 <div class="sentence-builder" data-sentence-idx="7">
                     <p class="translation">Его собственность принадлежит нам</p>
-                    <div class="word-pool"><span class="draggable" draggable="true">Eigentum</span><span class="draggable" draggable="true">uns</span><span class="draggable" draggable="true">Sein</span><span class="draggable" draggable="true">gehört</span></div>
+                    <div class="word-pool"><span class="draggable" draggable="true">Sein</span><span class="draggable" draggable="true">uns</span><span class="draggable" draggable="true">Eigentum</span><span class="draggable" draggable="true">gehört</span></div>
                     <div class="drop-zone" data-correct="Sein Eigentum gehört uns">
                         <span class="placeholder">Перетащите слова сюда</span>
                     </div>
@@ -1950,7 +1950,7 @@ body {
                 
                 <div class="sentence-builder" data-sentence-idx="8">
                     <p class="translation">Я теряю всё</p>
-                    <div class="word-pool"><span class="draggable" draggable="true">verliere</span><span class="draggable" draggable="true">alles</span><span class="draggable" draggable="true">Ich</span></div>
+                    <div class="word-pool"><span class="draggable" draggable="true">Ich</span><span class="draggable" draggable="true">verliere</span><span class="draggable" draggable="true">alles</span></div>
                     <div class="drop-zone" data-correct="Ich verliere alles">
                         <span class="placeholder">Перетащите слова сюда</span>
                     </div>
@@ -1967,7 +1967,7 @@ body {
                 
                 <div class="sentence-builder" data-sentence-idx="9">
                     <p class="translation">Я хочу владеть всем</p>
-                    <div class="word-pool"><span class="draggable" draggable="true">besitzen</span><span class="draggable" draggable="true">alles</span><span class="draggable" draggable="true">will</span><span class="draggable" draggable="true">Ich</span></div>
+                    <div class="word-pool"><span class="draggable" draggable="true">Ich</span><span class="draggable" draggable="true">besitzen</span><span class="draggable" draggable="true">will</span><span class="draggable" draggable="true">alles</span></div>
                     <div class="drop-zone" data-correct="Ich will alles besitzen">
                         <span class="placeholder">Перетащите слова сюда</span>
                     </div>
@@ -1984,7 +1984,7 @@ body {
                 
                 <div class="sentence-builder" data-sentence-idx="10">
                     <p class="translation">Бедность учит смирению</p>
-                    <div class="word-pool"><span class="draggable" draggable="true">Demut</span><span class="draggable" draggable="true">Armut</span><span class="draggable" draggable="true">lehrt</span></div>
+                    <div class="word-pool"><span class="draggable" draggable="true">Armut</span><span class="draggable" draggable="true">lehrt</span><span class="draggable" draggable="true">Demut</span></div>
                     <div class="drop-zone" data-correct="Armut lehrt Demut">
                         <span class="placeholder">Перетащите слова сюда</span>
                     </div>
@@ -2001,7 +2001,7 @@ body {
                 
                 <div class="sentence-builder" data-sentence-idx="11">
                     <p class="translation">Богатство ослепляет</p>
-                    <div class="word-pool"><span class="draggable" draggable="true">macht</span><span class="draggable" draggable="true">blind</span><span class="draggable" draggable="true">Reichtum</span></div>
+                    <div class="word-pool"><span class="draggable" draggable="true">macht</span><span class="draggable" draggable="true">Reichtum</span><span class="draggable" draggable="true">blind</span></div>
                     <div class="drop-zone" data-correct="Reichtum macht blind">
                         <span class="placeholder">Перетащите слова сюда</span>
                     </div>

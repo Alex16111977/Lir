@@ -126,6 +126,7 @@ class ExercisesAssetsGenerator:
     display: flex;
     gap: 24px;
     flex-wrap: wrap;
+    align-items: flex-start;
 }
 
 .words-column,
@@ -942,12 +943,19 @@ class ExercisesAssetsGenerator:
         width: 100%;
     }
 
+    .word-pool {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 640px) {
     .matching-container {
         flex-direction: column;
     }
 
-    .word-pool {
-        justify-content: center;
+    .words-column,
+    .translations-column {
+        min-width: 100%;
     }
 }
 """

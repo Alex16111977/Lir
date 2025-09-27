@@ -8,8 +8,8 @@ import re
 from pathlib import Path
 from typing import Dict, List
 
-from src.generators.exercises_assets import ExercisesAssetsGenerator
-from src.generators.exercises_generator import ExercisesGenerator
+from .exercises_assets import ExercisesAssetsGenerator
+from .exercises_generator import ExercisesGenerator
 
 def transliterate_filename(text):
     """Транслітерує кириличну назву для безпечного URL"""
@@ -795,14 +795,48 @@ class JSONGenerator:
             </h2>
             <div class="word-cards">'''
         
-        # Генерація карточок слів
+        # Генерація карточок слів з новою мнемотехнікою
         for word in vocabulary:
             if not word.get('german'):
                 continue
+            
+            # Визначаємо рід за артиклем
+            german_word = word.get('german', '')
+            gender = ''
+            article_class = ''
+            gender_icon = ''
+            
+            if german_word.startswith('der '):
+                gender = 'masculine'
+                article_class = 'article-der'
+                gender_icon = '♂'
+            elif german_word.startswith('die '):
+                gender = 'feminine'
+                article_class = 'article-die'
+                gender_icon = '♀'
+            elif german_word.startswith('das '):
+                gender = 'neutral'
+                article_class = 'article-das'
+                gender_icon = '⚪'
+            
+            # Додаємо data-gender до картки
+            gender_attr = f'data-gender="{gender}"' if gender else ''
+            
+            # Розділяємо артикль та слово для окремого стилювання
+            if ' ' in german_word and german_word.split()[0] in ['der', 'die', 'das']:
+                parts = german_word.split(' ', 1)
+                article = parts[0]
+                rest = parts[1] if len(parts) > 1 else ''
+                german_display = f'<span class="{article_class}">{article}</span> {rest}'
+                # Додаємо іконку роду якщо є
+                if gender_icon:
+                    german_display += f' <span class="gender-icon">{gender_icon}</span>'
+            else:
+                german_display = german_word
                 
             html += f'''
-                <div class="word-card">
-                    <div class="word-german">{word.get('german', '')}</div>
+                <div class="word-card" {gender_attr}>
+                    <div class="word-german">{german_display}</div>
                     <div class="word-transcription">{word.get('transcription', '')}</div>
                     <div class="word-russian">{word.get('translation', '')}</div>'''
             

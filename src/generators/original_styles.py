@@ -219,87 +219,385 @@ body {
 
 .word-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
 }
 
 .word-card {
-    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%); /* Базовий градієнт */
     border-radius: 15px;
     padding: 20px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     transform: translateY(0);
-    transition: transform 0.3s;
+    transition: all 0.3s;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-all;
+    min-width: 0;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid transparent;
 }
 
 .word-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* Градієнтний фон для чоловічого роду */
+.word-card[data-gender="masculine"] {
+    background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); /* Світло-блакитний градієнт */
+    border: 1px solid #93c5fd;
+}
+
+.word-card[data-gender="masculine"]:hover {
+    background: linear-gradient(135deg, #bfdbfe 0%, #93c5fd 100%);
+    box-shadow: 0 10px 30px rgba(43, 108, 176, 0.3);
+}
+
+/* Градієнтний фон для жіночого роду */
+.word-card[data-gender="feminine"] {
+    background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%); /* Світло-рожевий градієнт */
+    border: 1px solid #fca5a5;
+}
+
+.word-card[data-gender="feminine"]:hover {
+    background: linear-gradient(135deg, #fecaca 0%, #fca5a5 100%);
+    box-shadow: 0 10px 30px rgba(220, 38, 38, 0.3);
+}
+
+/* Градієнтний фон для середнього роду */
+.word-card[data-gender="neutral"] {
+    background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%); /* Світло-зелений градієнт */
+    border: 1px solid #6ee7b7;
+}
+
+.word-card[data-gender="neutral"]:hover {
+    background: linear-gradient(135deg, #a7f3d0 0%, #6ee7b7 100%);
+    box-shadow: 0 10px 30px rgba(22, 163, 74, 0.3);
 }
 
 .word-german {
-    font-size: 2em;
+    font-size: 1.4em;
     font-weight: bold;
-    color: white;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    color: #111827; /* Дуже темний текст для контрасту */
     margin-bottom: 10px;
+    word-break: break-all;
+    hyphens: auto;
+    overflow-wrap: break-word;
+    line-height: 1.3;
+    max-width: 100%;
+    text-shadow: 0 1px 2px rgba(255,255,255,0.8); /* Легка біла тінь для читабельності */
 }
 
 .word-transcription {
-    color: #fff;
-    font-size: 1.2em;
+    color: #4b5563; /* Темно-сірий текст */
+    font-size: 1em;
     margin-bottom: 10px;
-    opacity: 0.9;
+    font-style: italic;
+    word-break: break-all;
+    overflow-wrap: break-word;
+    max-width: 100%;
 }
 
 .word-russian {
-    color: #fff;
-    font-size: 1.3em;
+    color: #1f2937; /* Темний текст */
+    font-size: 1.2em;
     font-weight: 500;
     margin-bottom: 10px;
+    word-break: break-word;
+    overflow-wrap: break-word;
 }
 
 .word-type {
     display: inline-block;
-    background: rgba(255,255,255,0.3);
+    background: rgba(255, 255, 255, 0.7); /* Напівпрозорий білий фон */
+    backdrop-filter: blur(5px);
     padding: 3px 10px;
     border-radius: 10px;
-    color: white;
+    color: #374151;
     font-size: 0.9em;
     margin-bottom: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    font-weight: 600;
 }
 
 .character-voice {
     border-left: 5px solid #764ba2;
-    padding-left: 20px;
-    margin: 20px 0;
+    padding-left: 15px;
+    margin: 15px 0;
     font-style: italic;
     background: rgba(255,255,255,0.95);
-    padding: 20px;
+    padding: 15px;
     border-radius: 10px;
     color: #333;
+    word-break: break-word;
 }
 
 .gesture-anchor {
     background: #fff3cd;
     border: 2px dashed #ffc107;
-    padding: 15px;
+    padding: 12px;
     border-radius: 10px;
     display: flex;
-    align-items: center;
-    gap: 15px;
+    align-items: flex-start;
+    gap: 10px;
     margin: 15px 0;
     color: #333;
+    word-break: break-word;
+    flex-wrap: wrap;
 }
 
 .gesture-icon {
-    font-size: 40px;
+    font-size: 36px;
     animation: pulse 2s infinite;
+    flex-shrink: 0;
 }
 
 @keyframes pulse {
     0%, 100% { transform: scale(1); }
     50% { transform: scale(1.1); }
+}
+
+/* Кольорові артиклі - оновлена палітра */
+.article-der {
+    color: #2B6CB0; /* Синій для der */
+    font-weight: 700;
+    font-size: 1.1em;
+    display: inline-block;
+    margin-right: 4px;
+}
+
+.article-die {
+    color: #DC2626; /* Червоний для die */
+    font-weight: 700;
+    font-size: 1.1em;
+    display: inline-block;
+    margin-right: 4px;
+}
+
+.article-das {
+    color: #16A34A; /* Зелений для das (замість жовтого) */
+    font-weight: 700;
+    font-size: 1.1em;
+    display: inline-block;
+    margin-right: 4px;
+}
+
+/* Маленькі іконки роду */
+.gender-icon {
+    font-size: 0.9em;
+    opacity: 0.6;
+    margin-left: 8px;
+    display: inline-block;
+}
+
+.word-card[data-gender="masculine"] .gender-icon {
+    color: #2B6CB0;
+}
+
+.word-card[data-gender="feminine"] .gender-icon {
+    color: #DC2626;
+}
+
+.word-card[data-gender="neutral"] .gender-icon {
+    color: #16A34A;
+}
+
+/* Легенда артиклів */
+.article-legend {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin: 20px 0;
+    padding: 16px;
+    background: #f9fafb;
+    border-radius: 12px;
+}
+
+/* Кольорова легенда для вправ */
+.article-color-legend {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 12px;
+    background: #f9fafb;
+    border-radius: 8px;
+    margin-bottom: 16px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 600;
+    font-size: 0.95em;
+}
+
+.legend-item.masculine {
+    color: #2B6CB0;
+}
+
+.legend-item.feminine {
+    color: #DC2626;
+}
+
+.legend-item.neutral {
+    color: #16A34A;
+}
+
+.legend-card {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.legend-color {
+    width: 24px;
+    height: 24px;
+    border-radius: 6px;
+}
+
+.legend-color.masculine {
+    background: #2B6CB0;
+}
+
+.legend-color.feminine {
+    background: #DC2626;
+}
+
+.legend-color.neutral {
+    background: #16A34A;
+}
+
+/* Кнопки артиклів у вправах */
+.article-buttons button {
+    background: white !important;
+    border: 2px solid #e0e0e0;
+    transition: all 0.3s;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 600;
+}
+
+.article-buttons button[data-article="der"] {
+    border-color: #2B6CB0;
+    color: #2B6CB0;
+}
+
+.article-buttons button[data-article="die"] {
+    border-color: #DC2626;
+    color: #DC2626;
+}
+
+.article-buttons button[data-article="das"] {
+    border-color: #16A34A;
+    color: #16A34A;
+}
+
+/* Hover - легке заповнення */
+.article-buttons button[data-article="der"]:hover {
+    background: rgba(43, 108, 176, 0.1) !important;
+}
+
+.article-buttons button[data-article="die"]:hover {
+    background: rgba(220, 38, 38, 0.1) !important;
+}
+
+.article-buttons button[data-article="das"]:hover {
+    background: rgba(22, 163, 74, 0.1) !important;
+}
+
+/* Правильна відповідь */
+.article-buttons button.correct {
+    color: white !important;
+}
+
+.article-buttons button[data-article="der"].correct {
+    background: #2B6CB0 !important;
+}
+
+.article-buttons button[data-article="die"].correct {
+    background: #DC2626 !important;
+}
+
+.article-buttons button[data-article="das"].correct {
+    background: #16A34A !important;
+    color: white !important;
+}
+
+/* Адаптивные стили для мобильных устройств */
+@media (max-width: 768px) {
+    .word-cards {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .word-card {
+        padding: 15px;
+        max-width: 100%;
+    }
+    
+    .word-german {
+        font-size: 1.2em;
+    }
+    
+    .word-transcription {
+        font-size: 0.9em;
+    }
+    
+    .word-russian {
+        font-size: 1em;
+    }
+    
+    .gesture-anchor {
+        flex-direction: column;
+        gap: 8px;
+        padding: 10px;
+    }
+    
+    .character-voice {
+        padding: 12px;
+        padding-left: 12px;
+    }
+}
+
+@media (max-width: 500px) {
+    .word-cards {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    
+    .word-card {
+        padding: 12px;
+        min-width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .word-german {
+        font-size: 1.1em;
+        word-break: break-all;
+    }
+    
+    .word-transcription {
+        font-size: 0.85em;
+    }
+    
+    .word-russian {
+        font-size: 0.9em;
+    }
+    
+    .word-type {
+        font-size: 0.8em;
+    }
+    
+    .article-der,
+    .article-die,
+    .article-das {
+        font-size: 0.9em;
+    }
 }
 
 .navigation {

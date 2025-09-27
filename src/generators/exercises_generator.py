@@ -247,7 +247,7 @@ class ExercisesGenerator:
                 f"""
                 <button class=\"word-item russian-word\" data-pair-id=\"{idx}\"
                         onclick=\"handleWordPairClick(this, {idx}, 'russian')\" type=\"button\">
-                    {escape(word.get('translation', ''))}
+                    <span class=\"word-main\">{escape(word.get('translation', ''))}</span>
                 </button>
                 """
             )
@@ -288,9 +288,9 @@ class ExercisesGenerator:
                         <small>{escape(item['translation'])}</small>
                     </div>
                     <div class=\"article-buttons\">
-                        <button type=\"button\" data-article=\"der\" onclick=\"checkArticleInstant(this, 'der')\">der</button>
-                        <button type=\"button\" data-article=\"die\" onclick=\"checkArticleInstant(this, 'die')\">die</button>
-                        <button type=\"button\" data-article=\"das\" onclick=\"checkArticleInstant(this, 'das')\">das</button>
+                        <button type=\"button\" data-article=\"der\" data-gender=\"masculine\" onclick=\"checkArticleInstant(this, 'der')\">der</button>
+                        <button type=\"button\" data-article=\"die\" data-gender=\"feminine\" onclick=\"checkArticleInstant(this, 'die')\">die</button>
+                        <button type=\"button\" data-article=\"das\" data-gender=\"neutral\" onclick=\"checkArticleInstant(this, 'das')\">das</button>
                     </div>
                 </div>
                 """
@@ -303,6 +303,13 @@ class ExercisesGenerator:
             "                <h3 class=\"exercise-title\">🎯 Артикли и род</h3>\n"
             "                <p class=\"exercise-intro\">Выберите правильный артикль для существительных из урока.</p>\n"
             f"""                
+                <!-- Кольорова легенда -->
+                <div class=\"article-color-legend\">
+                    <span class=\"legend-item masculine\">🔷 der = чоловічий</span>
+                    <span class=\"legend-item feminine\">🔴 die = жіночий</span>
+                    <span class=\"legend-item neutral\">\u2705 das = середній</span>
+                </div>
+                
                 <!-- Прогрес-бар -->
                 <div class=\"articles-progress\">
                     <div class=\"progress-track\">

@@ -1,870 +1,546 @@
+// LIR Exercise System JavaScript
+// Generated from modular structure
 
-/* ===== JAVASCRIPT ДЛЯ ИНТЕРАКТИВНЫХ УПРАЖНЕНИЙ ===== */
 
-(function() {
-    'use strict';
-
-    function showResult(message) {
-        if (typeof window !== 'undefined') {
-            window.alert(message);
+// Base Exercise JavaScript
+class ExerciseBase {
+    constructor(container) {
+        this.container = container;
+        this.score = 0;
+        this.total = 0;
+    }
+    
+    updateScore() {
+        const scoreDisplay = this.container.querySelector('.score');
+        if (scoreDisplay) {
+            scoreDisplay.textContent = `Score: ${this.score}/${this.total}`;
         }
     }
+}
 
-    // 1. Word matching with instant feedback
-    let selectedPrompt = null;
-    let selectedMatch = null;
-    let correctPairs = 0;
 
-    // Sentence builder state tracking
-    let sentenceStates = {};
-    let hintUsage = {};
-    let totalSentences = 0;
-    let correctSentences = 0;
-    let completionShown = false;
+// Drag and Drop Exercise Handler
+class DragDropExercise {
+    constructor(container) {
+        this.container = container;
+        this.score = 0;
+        this.total = 0;
+        this.init();
+    }
     
-    window.handleWordClick = function(element, type) {
-        // Якщо карточка вже правильна - ігнорувати
-        if (element.classList.contains('correct')) return;
-        
-        // Видалити попередній вибір того ж типу
-        document.querySelectorAll(`.word-item.${type}.selected`)
-            .forEach(el => el.classList.remove('selected'));
-        
-        element.classList.add('selected');
-        
-        if (type === 'prompt') {
-            selectedPrompt = element;
-            if (selectedMatch && !selectedMatch.classList.contains('correct')) {
-                checkMatch(selectedPrompt, selectedMatch);
-            }
-        } else {
-            selectedMatch = element;
-            if (selectedPrompt && !selectedPrompt.classList.contains('correct')) {
-                checkMatch(selectedPrompt, selectedMatch);
-            }
-        }
-    };
+    init() {
+        this.setupDragElements();
+        this.setupDropZones();
+        this.attachEventListeners();
+    }
     
-    function checkMatch(promptCard, matchCard) {
-        const isCorrect = promptCard.dataset.pairId === matchCard.dataset.pairId;
+    setupDragElements() {
+        const draggables = this.container.querySelectorAll('.draggable');
+        draggables.forEach(elem => {
+            elem.draggable = true;
+            elem.addEventListener('dragstart', this.handleDragStart.bind(this));
+            elem.addEventListener('dragend', this.handleDragEnd.bind(this));
+        });
+        this.total = draggables.length;
+    }
+    
+    setupDropZones() {
+        const dropZones = this.container.querySelectorAll('.drop-zone');
+        dropZones.forEach(zone => {
+            zone.addEventListener('dragover', this.handleDragOver.bind(this));
+            zone.addEventListener('drop', this.handleDrop.bind(this));
+            zone.addEventListener('dragleave', this.handleDragLeave.bind(this));
+        });
+    }
+    
+    handleDragStart(e) {
+        e.dataTransfer.effectAllowed = 'move';
+        e.dataTransfer.setData('text/html', e.target.innerHTML);
+        e.dataTransfer.setData('answer', e.target.dataset.answer);
+        e.target.classList.add('dragging');
+    }
+    
+    handleDragEnd(e) {
+        e.target.classList.remove('dragging');
+    }
+    
+    handleDragOver(e) {
+        if (e.preventDefault) e.preventDefault();
+        e.dataTransfer.dropEffect = 'move';
+        e.target.classList.add('drag-over');
+        return false;
+    }
+    
+    handleDragLeave(e) {
+        e.target.classList.remove('drag-over');
+    }
+    
+    handleDrop(e) {
+        if (e.stopPropagation) e.stopPropagation();
+        e.target.classList.remove('drag-over');
         
-        if (isCorrect) {
-            // Правильна відповідь
-            promptCard.classList.add('correct');
-            matchCard.classList.add('correct');
-            promptCard.classList.remove('selected');
-            matchCard.classList.remove('selected');
-            
-            correctPairs++;
-            updateProgress();
-            
-            // Перевірка завершення
-            const totalPairs = document.querySelectorAll('#word-matching .word-item.prompt').length;
-            if (correctPairs === totalPairs) {
-                setTimeout(() => {
-                    showResult('Вітаємо! Ви виконали вправу!');
-                }, 500);
-            }
+        const answer = e.dataTransfer.getData('answer');
+        const expected = e.target.dataset.expected;
+        
+        if (answer === expected) {
+            e.target.classList.add('correct');
+            e.target.innerHTML = e.dataTransfer.getData('text/html');
+            this.score++;
+            this.updateScore();
         } else {
-            // Неправильна відповідь
-            promptCard.classList.add('incorrect');
-            matchCard.classList.add('incorrect');
-            
+            e.target.classList.add('incorrect');
             setTimeout(() => {
-                promptCard.classList.remove('incorrect', 'selected');
-                matchCard.classList.remove('incorrect', 'selected');
-            }, 500);
+                e.target.classList.remove('incorrect');
+            }, 1000);
         }
         
-        selectedPrompt = null;
-        selectedMatch = null;
+        return false;
     }
     
-    function updateProgress() {
-        const progressFill = document.querySelector('#word-matching .progress-fill');
-        const progressText = document.querySelector('#word-matching .progress-text');
-        const totalPairs = document.querySelectorAll('#word-matching .word-item.prompt').length;
+    updateScore() {
+        const scoreDisplay = this.container.querySelector('.score');
+        if (scoreDisplay) {
+            scoreDisplay.textContent = `Score: ${this.score}/${this.total}`;
+        }
         
-        if (progressFill) {
-            progressFill.style.width = `${(correctPairs/totalPairs)*100}%`;
-        }
-        if (progressText) {
-            progressText.textContent = `${correctPairs} з ${totalPairs}`;
+        if (this.score === this.total) {
+            this.showSuccess();
         }
     }
-
-    document.addEventListener('click', function(event) {
-        const action = event.target.closest('[data-action]');
-        if (!action) {
-            return;
-        }
-
-        switch (action.dataset.action) {
-            case 'check-matching':
-                checkMatching();
-                break;
-            case 'check-articles':
-                checkArticles();
-                break;
-            case 'check-synonyms':
-                checkSynonyms();
-                break;
-            case 'check-quiz':
-                checkQuiz();
-                break;
-            case 'check-context':
-                checkContext();
-                break;
-            case 'check-builder':
-                checkBuilder();
-                break;
-            default:
-                break;
-        }
-    });
-
-    function resetClasses(selector) {
-        document.querySelectorAll(selector).forEach(element => {
-            element.classList.remove('correct', 'incorrect');
-        });
-    }
-
-    function checkMatching() {
-        resetClasses('.word-item');
-        resetClasses('.translation-item');
-        const words = document.querySelectorAll('.word-item');
-        let correct = 0;
-
-        words.forEach(word => {
-            const selected = word.dataset.selected;
-            const answer = word.dataset.answer;
-            const translationId = word.dataset.selectedId;
-            if (!selected || !answer) {
-                return;
-            }
-            const translationItem = translationId ? document.querySelector(`.translation-item[data-id="${translationId}"]`) : null;
-            const isCorrect = selected === answer;
-            if (isCorrect) {
-                word.classList.add('correct');
-                if (translationItem) {
-                    translationItem.classList.add('correct');
-                }
-                correct += 1;
-            } else {
-                word.classList.add('incorrect');
-                if (translationItem) {
-                    translationItem.classList.add('incorrect');
-                }
-            }
-        });
-
-        showResult(`Правильно: ${correct} из ${words.length}`);
-    }
-
-    // 2. Articles - Миттєва перевірка артиклів
-    let articlesAnswered = 0;
-    let articlesTotal = 0;
     
-    // Ініціалізація при завантаженні
-    document.addEventListener('DOMContentLoaded', function() {
-        const items = document.querySelectorAll('.article-item');
-        articlesTotal = items.length;
-        const totalElement = document.getElementById('articles-total');
-        if (totalElement) {
-            totalElement.textContent = articlesTotal;
-        }
-    });
+    showSuccess() {
+        const message = document.createElement('div');
+        message.className = 'success-message';
+        message.innerHTML = 'Excellent! All correct!';
+        this.container.appendChild(message);
+    }
     
-    window.checkArticleInstant = function(button, selectedArticle) {
-        // Отримуємо батьківські елементи
-        const buttonsContainer = button.parentElement;
-        const articleItem = buttonsContainer.parentElement;
-        const correctArticle = articleItem.getAttribute('data-correct');
-        
-        // Перевіряємо чи вже відповідали
-        if (articleItem.classList.contains('completed')) {
-            return;
+    attachEventListeners() {
+        const resetBtn = this.container.querySelector('.reset-btn');
+        if (resetBtn) {
+            resetBtn.addEventListener('click', () => this.reset());
         }
-        
-        // Видаляємо попередні класи з кнопок
-        buttonsContainer.querySelectorAll('button').forEach(btn => {
-            btn.classList.remove('correct', 'incorrect');
+    }
+    
+    reset() {
+        this.score = 0;
+        const dropZones = this.container.querySelectorAll('.drop-zone');
+        dropZones.forEach(zone => {
+            zone.innerHTML = '';
+            zone.classList.remove('correct', 'incorrect');
         });
         
-        if (selectedArticle === correctArticle) {
-            // Правильна відповідь
-            button.classList.add('correct');
-            articleItem.classList.add('completed');
-            articlesAnswered++;
+        const successMsg = this.container.querySelector('.success-message');
+        if (successMsg) successMsg.remove();
+        
+        this.updateScore();
+    }
+}
+
+// Initialize all drag-drop exercises on page
+document.addEventListener('DOMContentLoaded', () => {
+    const exercises = document.querySelectorAll('.drag-drop-exercise');
+    exercises.forEach(ex => new DragDropExercise(ex));
+});
+
+
+// Flashcards Exercise Handler
+class FlashcardsExercise {
+    constructor(container) {
+        this.container = container;
+        this.currentCard = 0;
+        this.cards = [];
+        this.init();
+    }
+    
+    init() {
+        this.setupCards();
+        this.attachEventListeners();
+    }
+    
+    setupCards() {
+        const cardElements = this.container.querySelectorAll('.flashcard');
+        cardElements.forEach(card => {
+            card.addEventListener('click', () => this.flipCard(card));
+            this.cards.push(card);
+        });
+    }
+    
+    flipCard(card) {
+        card.classList.toggle('flipped');
+    }
+    
+    attachEventListeners() {
+        const nextBtn = this.container.querySelector('.next-card');
+        const prevBtn = this.container.querySelector('.prev-card');
+        
+        if (nextBtn) {
+            nextBtn.addEventListener('click', () => this.nextCard());
+        }
+        
+        if (prevBtn) {
+            prevBtn.addEventListener('click', () => this.prevCard());
+        }
+    }
+    
+    nextCard() {
+        if (this.currentCard < this.cards.length - 1) {
+            this.cards[this.currentCard].style.display = 'none';
+            this.currentCard++;
+            this.cards[this.currentCard].style.display = 'block';
+        }
+    }
+    
+    prevCard() {
+        if (this.currentCard > 0) {
+            this.cards[this.currentCard].style.display = 'none';
+            this.currentCard--;
+            this.cards[this.currentCard].style.display = 'block';
+        }
+    }
+}
+
+// Initialize flashcards
+document.addEventListener('DOMContentLoaded', () => {
+    const containers = document.querySelectorAll('.flashcards-container');
+    containers.forEach(container => new FlashcardsExercise(container));
+});
+
+
+// Fill in the Blanks Exercise Handler
+class FillBlanksExercise {
+    constructor(container) {
+        this.container = container;
+        this.blanks = [];
+        this.answers = {};
+        this.init();
+    }
+    
+    init() {
+        this.setupBlanks();
+        this.attachEventListeners();
+    }
+    
+    setupBlanks() {
+        const inputs = this.container.querySelectorAll('.blank-input');
+        inputs.forEach((input, index) => {
+            this.blanks.push(input);
+            this.answers[index] = input.dataset.answer;
             
-            // Блокуємо всі кнопки для цього слова
-            buttonsContainer.querySelectorAll('button').forEach(btn => {
-                btn.disabled = true;
+            input.addEventListener('input', () => {
+                input.classList.remove('correct', 'incorrect');
             });
-            
-            // Оновлюємо прогрес
-            updateArticlesProgress();
-            
-            // Перевірка завершення
-            if (articlesAnswered === articlesTotal) {
-                setTimeout(() => {
-                    showResult('Вітаємо! Ви правильно визначили всі артиклі! 🎉');
-                }, 500);
-            }
-        } else {
-            // Неправильна відповідь
-            button.classList.add('incorrect');
-            
-            // Прибираємо червоний колір через 500мс
-            setTimeout(() => {
-                button.classList.remove('incorrect');
-            }, 500);
-        }
-    };
+        });
+    }
     
-    function updateArticlesProgress() {
-        // Оновлюємо лічильник
-        const correctElement = document.getElementById('articles-correct');
-        if (correctElement) {
-            correctElement.textContent = articlesAnswered;
+    attachEventListeners() {
+        const checkBtn = this.container.querySelector('.check-button');
+        if (checkBtn) {
+            checkBtn.addEventListener('click', () => this.checkAnswers());
         }
         
-        // Оновлюємо прогрес-бар
-        const progressFill = document.querySelector('.articles-progress .progress-fill');
-        if (progressFill) {
-            const percentage = articlesTotal > 0 ? (articlesAnswered / articlesTotal) * 100 : 0;
-            progressFill.style.width = percentage + '%';
+        const resetBtn = this.container.querySelector('.reset-button');
+        if (resetBtn) {
+            resetBtn.addEventListener('click', () => this.reset());
         }
     }
-
-    // Стара функція checkArticles більше не потрібна
-    function checkArticles() {
-        // Залишено для сумісності, якщо хтось викличе старий спосіб
-        showResult('Миттєва перевірка вже включена!');
-    }
-
-    // 3. Synonyms & Antonyms
-    function checkSynonyms() {
-        const inputs = document.querySelectorAll('#synonyms input');
+    
+    checkAnswers() {
         let correct = 0;
-        inputs.forEach(input => {
-            const expected = (input.dataset.correct || '').trim().toLowerCase();
-            const value = (input.value || '').trim().toLowerCase();
-            if (!expected) {
-                return;
-            }
-            if (value === expected) {
+        let total = this.blanks.length;
+        
+        this.blanks.forEach((input, index) => {
+            const userAnswer = input.value.trim().toLowerCase();
+            const correctAnswer = this.answers[index].toLowerCase();
+            
+            if (userAnswer === correctAnswer) {
                 input.classList.add('correct');
                 input.classList.remove('incorrect');
-                correct += 1;
+                correct++;
             } else {
                 input.classList.add('incorrect');
                 input.classList.remove('correct');
             }
         });
-        showResult(`Правильно: ${correct} из ${inputs.length}`);
+        
+        this.showResult(correct, total);
     }
+    
+    showResult(correct, total) {
+        const existingResult = this.container.querySelector('.fill-blanks-result');
+        if (existingResult) {
+            existingResult.remove();
+        }
+        
+        const result = document.createElement('div');
+        result.className = 'fill-blanks-result';
+        
+        if (correct === total) {
+            result.className += ' success';
+            result.textContent = 'Perfect! All answers are correct!';
+        } else {
+            result.className += ' partial';
+            result.textContent = `You got ${correct} out of ${total} correct. Try again!`;
+        }
+        
+        this.container.appendChild(result);
+    }
+    
+    reset() {
+        this.blanks.forEach(input => {
+            input.value = '';
+            input.classList.remove('correct', 'incorrect');
+        });
+        
+        const result = this.container.querySelector('.fill-blanks-result');
+        if (result) {
+            result.remove();
+        }
+    }
+}
 
-    // 4. Interactive Quiz with dual modes
-    let currentQuestion = 0;
-    let correctAnswers = 0;
-    let totalQuestions = 0;
-    let answeredQuestions = [];
-    let deRuCorrect = 0;
-    let ruDeCorrect = 0;
-    let deRuTotal = 0;
-    let ruDeTotal = 0;
+// Initialize fill blanks exercises
+document.addEventListener('DOMContentLoaded', () => {
+    const exercises = document.querySelectorAll('.fill-blanks-exercise');
+    exercises.forEach(ex => new FillBlanksExercise(ex));
+});
 
-    function showQuestion(index) {
-        const questions = document.querySelectorAll('#word-quiz .quiz-question');
-        questions.forEach((question, idx) => {
-            question.style.display = idx === index ? 'block' : 'none';
+
+// Matching Exercise Handler
+class MatchingExercise {
+    constructor(container) {
+        this.container = container;
+        this.selectedItem = null;
+        this.matches = new Map();
+        this.score = 0;
+        this.total = 0;
+        this.init();
+    }
+    
+    init() {
+        this.setupItems();
+        this.calculateTotal();
+    }
+    
+    setupItems() {
+        const leftItems = this.container.querySelectorAll('.matching-column:first-child .matching-item');
+        const rightItems = this.container.querySelectorAll('.matching-column:last-child .matching-item');
+        
+        leftItems.forEach(item => {
+            item.addEventListener('click', () => this.selectItem(item, 'left'));
+        });
+        
+        rightItems.forEach(item => {
+            item.addEventListener('click', () => this.selectItem(item, 'right'));
         });
     }
-
-    function updateQuizProgress() {
-        const progressFill = document.querySelector('#word-quiz .progress-fill');
-        const correctCount = document.getElementById('correct-count');
-        const answered = answeredQuestions.length;
-        const percentage = totalQuestions ? (answered / totalQuestions) * 100 : 0;
-
-        if (progressFill) {
-            progressFill.style.width = `${percentage}%`;
-        }
-        if (correctCount) {
-            correctCount.textContent = correctAnswers;
-        }
+    
+    calculateTotal() {
+        const leftItems = this.container.querySelectorAll('.matching-column:first-child .matching-item');
+        this.total = leftItems.length;
     }
-
-    function showResults() {
-        const questionsWrapper = document.getElementById('quiz-questions');
-        const resultWrapper = document.getElementById('quiz-result');
-        const resultText = resultWrapper ? resultWrapper.querySelector('.result-text') : null;
-
-        if (questionsWrapper) {
-            questionsWrapper.style.display = 'none';
-        }
-        if (resultWrapper) {
-            resultWrapper.style.display = 'block';
-        }
-
-        const percentage = totalQuestions ? Math.round((correctAnswers / totalQuestions) * 100) : 0;
-
-        let encouragement = '💪 Спробуйте ще раз! Практика - запорука успіху!';
-        if (percentage >= 80) {
-            encouragement = '🎉 Чудово! Ви відмінно знаєте слова!';
-        } else if (percentage >= 60) {
-            encouragement = '👍 Добре! Продовжуйте практикуватися!';
-        }
-
-        const message = `
-            <h3>Результати вікторини</h3>
-            <p>Загальний результат: ${correctAnswers} з ${totalQuestions} (${percentage}%)</p>
-            <div class="result-details">
-                <p>DE → RU: ${deRuCorrect} з ${deRuTotal}</p>
-                <p>RU → DE: ${ruDeCorrect} з ${ruDeTotal}</p>
-            </div>
-            <p class="result-emoji">${encouragement}</p>
-        `;
-
-        if (resultText) {
-            resultText.innerHTML = message;
-        }
-    }
-
-    function initializeQuiz() {
-        const quizContainer = document.getElementById('word-quiz');
-        if (!quizContainer) {
+    
+    selectItem(item, side) {
+        if (item.classList.contains('matched')) {
             return;
         }
-
-        const questions = quizContainer.querySelectorAll('.quiz-question');
-        if (!questions.length) {
-            return;
-        }
-
-        currentQuestion = 0;
-        correctAnswers = 0;
-        deRuCorrect = 0;
-        ruDeCorrect = 0;
-        deRuTotal = 0;
-        ruDeTotal = 0;
-        answeredQuestions = [];
-        totalQuestions = questions.length;
-
-        questions.forEach((question, index) => {
-            const mode = question.dataset.mode;
-            if (mode === 'de-ru') {
-                deRuTotal += 1;
-            } else if (mode === 'ru-de') {
-                ruDeTotal += 1;
+        
+        if (!this.selectedItem) {
+            // First selection
+            this.selectedItem = { element: item, side: side };
+            item.classList.add('selected');
+        } else {
+            // Second selection
+            if (this.selectedItem.side === side) {
+                // Same side - deselect and select new
+                this.selectedItem.element.classList.remove('selected');
+                this.selectedItem = { element: item, side: side };
+                item.classList.add('selected');
+            } else {
+                // Different sides - check match
+                this.checkMatch(this.selectedItem.element, item);
+                this.selectedItem.element.classList.remove('selected');
+                this.selectedItem = null;
             }
+        }
+    }
+    
+    checkMatch(item1, item2) {
+        const match1 = item1.dataset.match;
+        const match2 = item2.dataset.match;
+        
+        if (match1 === match2) {
+            item1.classList.add('matched');
+            item2.classList.add('matched');
+            this.matches.set(match1, true);
+            this.score++;
+            this.drawLine(item1, item2);
+            this.updateScore();
+        } else {
+            // Wrong match animation
+            item1.classList.add('incorrect');
+            item2.classList.add('incorrect');
+            setTimeout(() => {
+                item1.classList.remove('incorrect');
+                item2.classList.remove('incorrect');
+            }, 1000);
+        }
+    }
+    
+    drawLine(item1, item2) {
+        // Simple visual feedback - could be enhanced with actual line drawing
+        const line = document.createElement('div');
+        line.className = 'matching-line';
+        // Line drawing logic would go here
+    }
+    
+    updateScore() {
+        const scoreElement = this.container.querySelector('.matching-score');
+        if (scoreElement) {
+            scoreElement.textContent = `Score: ${this.score}/${this.total}`;
+        }
+        
+        if (this.score === this.total) {
+            this.showSuccess();
+        }
+    }
+    
+    showSuccess() {
+        const message = document.createElement('div');
+        message.className = 'success-message';
+        message.textContent = 'Perfect! All pairs matched!';
+        this.container.appendChild(message);
+    }
+}
 
-            question.style.display = index === 0 ? 'block' : 'none';
-            question.classList.remove('completed');
-            question.querySelectorAll('.answer-btn').forEach(btn => {
-                btn.classList.remove('correct', 'incorrect', 'disabled');
+// Initialize matching exercises
+document.addEventListener('DOMContentLoaded', () => {
+    const exercises = document.querySelectorAll('.matching-exercise');
+    exercises.forEach(ex => new MatchingExercise(ex));
+});
+
+
+// Quiz Exercise Handler
+class QuizExercise {
+    constructor(container) {
+        this.container = container;
+        this.questions = [];
+        this.answers = {};
+        this.score = 0;
+        this.init();
+    }
+    
+    init() {
+        this.setupQuestions();
+        this.attachEventListeners();
+    }
+    
+    setupQuestions() {
+        const questionElements = this.container.querySelectorAll('.quiz-question');
+        questionElements.forEach((question, index) => {
+            const options = question.querySelectorAll('.quiz-option');
+            this.questions.push({
+                element: question,
+                options: options,
+                correctAnswer: question.dataset.correct
+            });
+            
+            options.forEach(option => {
+                option.addEventListener('click', () => this.selectOption(index, option));
             });
         });
-
-        const totalCount = document.getElementById('total-count');
-        if (totalCount) {
-            totalCount.textContent = totalQuestions;
-        }
-
-        const progressFill = document.querySelector('#word-quiz .progress-fill');
-        if (progressFill) {
-            progressFill.style.width = '0%';
-        }
-
-        const correctCount = document.getElementById('correct-count');
-        if (correctCount) {
-            correctCount.textContent = '0';
-        }
-
-        const resultWrapper = document.getElementById('quiz-result');
-        if (resultWrapper) {
-            resultWrapper.style.display = 'none';
-            const resultText = resultWrapper.querySelector('.result-text');
-            if (resultText) {
-                resultText.innerHTML = '';
-            }
-        }
-
-        const questionsWrapper = document.getElementById('quiz-questions');
-        if (questionsWrapper) {
-            questionsWrapper.style.display = 'block';
-        }
-
-        updateQuizProgress();
     }
-
-    window.checkAnswer = function(button, isCorrect) {
-        if (!button) {
-            return;
-        }
-        if (button.classList.contains('disabled')) {
-            return;
-        }
-
-        const question = button.closest('.quiz-question');
-        if (!question || question.classList.contains('completed')) {
-            return;
-        }
-
-        const mode = question.dataset.mode || 'de-ru';
-        const buttons = question.querySelectorAll('.answer-btn');
-
-        buttons.forEach(btn => {
-            btn.classList.add('disabled');
-            if (btn.dataset.correct === 'true') {
-                btn.classList.add('correct');
-            }
+    
+    selectOption(questionIndex, option) {
+        // Clear previous selection for this question
+        this.questions[questionIndex].options.forEach(opt => {
+            opt.classList.remove('selected');
         });
-
-        if (isCorrect) {
-            button.classList.add('correct');
-            correctAnswers += 1;
-            if (mode === 'de-ru') {
-                deRuCorrect += 1;
-            } else if (mode === 'ru-de') {
-                ruDeCorrect += 1;
-            }
-        } else {
-            button.classList.add('incorrect');
-        }
-
-        answeredQuestions.push({
-            question: currentQuestion,
-            correct: Boolean(isCorrect),
-            mode: mode
-        });
-
-        question.classList.add('completed');
-        updateQuizProgress();
-
-        setTimeout(() => {
-            if (currentQuestion < totalQuestions - 1) {
-                currentQuestion += 1;
-                showQuestion(currentQuestion);
-            } else {
-                showResults();
-            }
-        }, 1500);
-    };
-
-    window.checkQuizAnswer = window.checkAnswer;
-
-    window.restartQuiz = function() {
-        initializeQuiz();
-    };
-
-    document.addEventListener('DOMContentLoaded', function() {
-        if (document.getElementById('word-quiz')) {
-            initializeQuiz();
-        }
-    });
-
-    function checkQuiz() {
-        showResult('Використовуйте нову інтерактивну вікторину!');
+        
+        // Select new option
+        option.classList.add('selected');
+        this.answers[questionIndex] = option.dataset.value;
     }
-
-    // 5. Context
-    function checkContext() {
-        const inputs = document.querySelectorAll('#context input');
-        let correct = 0;
-        inputs.forEach(input => {
-            const expected = (input.dataset.correct || '').trim().toLowerCase();
-            const value = (input.value || '').trim().toLowerCase();
-            if (!expected) {
-                return;
-            }
-            if (value === expected) {
-                input.classList.add('correct');
-                input.classList.remove('incorrect');
-                correct += 1;
-            } else {
-                input.classList.add('incorrect');
-                input.classList.remove('correct');
-            }
-        });
-        showResult(`Правильно: ${correct} из ${inputs.length}`);
+    
+    attachEventListeners() {
+        const submitBtn = this.container.querySelector('.quiz-submit');
+        if (submitBtn) {
+            submitBtn.addEventListener('click', () => this.submitQuiz());
+        }
+        
+        const resetBtn = this.container.querySelector('.quiz-reset');
+        if (resetBtn) {
+            resetBtn.addEventListener('click', () => this.resetQuiz());
+        }
     }
-
-    // 6. Sentence builder with individual controls
-    document.addEventListener('dragstart', function(event) {
-        const draggable = event.target.closest('.draggable');
-        if (!draggable) {
-            return;
-        }
-        event.dataTransfer.effectAllowed = 'move';
-        event.dataTransfer.setData('text/plain', draggable.textContent || '');
-        draggable.classList.add('dragging');
-    });
-
-    document.addEventListener('dragend', function(event) {
-        const draggable = event.target.closest('.draggable');
-        if (!draggable) {
-            return;
-        }
-        draggable.classList.remove('dragging');
-    });
-
-    document.addEventListener('dragover', function(event) {
-        const zone = event.target.closest('.drop-zone');
-        if (!zone) {
-            return;
-        }
-        event.preventDefault();
-        zone.classList.add('drag-over');
-    });
-
-    document.addEventListener('dragleave', function(event) {
-        const zone = event.target.closest('.drop-zone');
-        if (!zone) {
-            return;
-        }
-        zone.classList.remove('drag-over');
-    });
-
-    document.addEventListener('drop', function(event) {
-        const zone = event.target.closest('.drop-zone');
-        if (!zone) {
-            return;
-        }
-        event.preventDefault();
-        zone.classList.remove('drag-over');
-        const dragging = document.querySelector('.draggable.dragging');
-        if (!dragging) {
-            return;
-        }
-        const clone = dragging.cloneNode(true);
-        clone.classList.remove('dragging');
-        dragging.remove();
-        zone.appendChild(clone);
-
-        const placeholder = zone.querySelector('.placeholder');
-        if (placeholder) {
-            placeholder.remove();
-        }
-
-        zone.classList.remove('incorrect', 'correct', 'hint-active');
-
-        const builder = zone.closest('.sentence-builder');
-        if (builder) {
-            const feedback = builder.querySelector('.sentence-feedback');
-            if (feedback) {
-                feedback.textContent = '';
-                feedback.classList.remove('correct', 'incorrect');
-            }
-            const index = resolveBuilderIndex(builder);
-            if (sentenceStates[index]) {
-                return;
-            }
-            const checkBtn = builder.querySelector('.check-sentence-btn');
-            if (checkBtn) {
-                checkBtn.disabled = false;
-                checkBtn.textContent = '✓ Перевірити';
-            }
-        }
-    });
-
-    function resolveBuilderIndex(builder) {
-        if (!builder) {
-            return -1;
-        }
-        const dataIndex = builder.dataset.sentenceIdx;
-        const parsed = Number.parseInt(dataIndex || '', 10);
-        if (!Number.isNaN(parsed)) {
-            return parsed;
-        }
-        const builders = Array.from(document.querySelectorAll('.sentence-builder'));
-        return builders.indexOf(builder);
-    }
-
-    function initializeSentenceBuilder() {
-        const builders = document.querySelectorAll('.sentence-builder');
-        sentenceStates = {};
-        hintUsage = {};
-        totalSentences = builders.length;
-        correctSentences = 0;
-        completionShown = false;
-
-        builders.forEach((builder, idx) => {
-            sentenceStates[idx] = false;
-            hintUsage[idx] = 0;
-
-            const dropZone = builder.querySelector('.drop-zone');
-            if (dropZone) {
-                dropZone.classList.remove('correct', 'incorrect', 'hint-active');
-                dropZone.style.pointerEvents = '';
-                if (!dropZone.children.length) {
-                    const placeholder = document.createElement('span');
-                    placeholder.className = 'placeholder';
-                    placeholder.textContent = 'Перетащите слова сюда';
-                    dropZone.appendChild(placeholder);
+    
+    submitQuiz() {
+        this.score = 0;
+        
+        this.questions.forEach((question, index) => {
+            const userAnswer = this.answers[index];
+            const correctAnswer = question.correctAnswer;
+            
+            question.options.forEach(option => {
+                if (option.dataset.value === correctAnswer) {
+                    option.classList.add('correct');
+                } else if (option.classList.contains('selected') && option.dataset.value !== correctAnswer) {
+                    option.classList.add('incorrect');
                 }
-            }
-
-            const feedback = builder.querySelector('.sentence-feedback');
-            if (feedback) {
-                feedback.textContent = '';
-                feedback.classList.remove('correct', 'incorrect');
-            }
-
-            const hintBtn = builder.querySelector('.hint-btn');
-            if (hintBtn) {
-                hintBtn.disabled = false;
-                hintBtn.textContent = '💡 Підказка';
-            }
-
-            const checkBtn = builder.querySelector('.check-sentence-btn');
-            if (checkBtn) {
-                checkBtn.disabled = false;
-                checkBtn.textContent = '✓ Перевірити';
-            }
-        });
-
-        updateBuilderProgress();
-    }
-
-    function ensureProgressInfo() {
-        const container = document.querySelector('.sentence-builder-section');
-        if (!container) {
-            return null;
-        }
-        let progressInfo = container.querySelector('.progress-info');
-        if (!progressInfo) {
-            progressInfo = document.createElement('div');
-            progressInfo.className = 'progress-info';
-            progressInfo.style.cssText = `
-                margin: 20px 0;
-                padding: 15px;
-                background: rgba(139, 92, 246, 0.1);
-                border-radius: 12px;
-                text-align: center;
-                font-size: 16px;
-                font-weight: 600;
-                color: #8b5cf6;
-            `;
-            const progressBlock = container.querySelector('.builder-progress');
-            if (progressBlock) {
-                container.insertBefore(progressInfo, progressBlock);
-            } else {
-                container.insertBefore(progressInfo, container.firstChild);
-            }
-        }
-        return progressInfo;
-    }
-
-    function updateBuilderProgress() {
-        const percentage = totalSentences ? Math.round((correctSentences / totalSentences) * 100) : 0;
-        const progressFill = document.querySelector('.sentence-builder-section .builder-progress-fill');
-        if (progressFill) {
-            progressFill.style.width = `${percentage}%`;
-        }
-        const stats = document.querySelector('.sentence-builder-section .builder-stats');
-        if (stats) {
-            stats.textContent = `Виконано: ${correctSentences} з ${totalSentences}`;
-        }
-        const progressInfo = ensureProgressInfo();
-        if (progressInfo) {
-            progressInfo.innerHTML = `
-                📊 Прогрес: ${correctSentences} з ${totalSentences} речень (${percentage}%)
-                ${correctSentences === totalSentences && totalSentences > 0 ? '<br>🎉 Вітаємо! Всі речення виконано!' : ''}
-            `;
-        }
-        if (correctSentences === totalSentences && totalSentences > 0 && !completionShown) {
-            completionShown = true;
-            setTimeout(() => {
-                showCompletionMessage();
-            }, 500);
-        }
-    }
-
-    function getRandomBuilderMessage(type) {
-        const messages = {
-            correct: ['✅ Чудово!', '✅ Відмінно!', '✅ Супер!', '✅ Браво!', '✅ Молодець!'],
-            incorrect: ['❌ Спробуйте ще!', '❌ Майже!', '❌ Не здавайтеся!', '❌ Подумайте ще!']
-        };
-        const pool = messages[type] || [];
-        return pool[Math.floor(Math.random() * pool.length)] || '';
-    }
-
-    window.showHint = function(button) {
-        const builder = button.closest('.sentence-builder');
-        if (!builder) {
-            return;
-        }
-        const index = resolveBuilderIndex(builder);
-        if (index < 0) {
-            return;
-        }
-        const dropZone = builder.querySelector('.drop-zone');
-        if (!dropZone) {
-            return;
-        }
-        const correctAnswer = (dropZone.dataset.correct || '').trim();
-        if (!correctAnswer) {
-            return;
-        }
-
-        hintUsage[index] = (hintUsage[index] || 0) + 1;
-
-        const words = correctAnswer.split(new RegExp('\s+'));
-        let hintWords;
-        if (hintUsage[index] === 1) {
-            hintWords = words.slice(0, Math.min(2, words.length));
-        } else if (hintUsage[index] === 2) {
-            hintWords = words.slice(0, Math.ceil(words.length / 2));
-        } else {
-            hintWords = words.slice(0, Math.max(words.length - 1, 1));
-        }
-        const hintText = `${hintWords.join(' ')}...`;
-
-        dropZone.classList.add('hint-active');
-
-        const existingTooltip = button.querySelector('.hint-tooltip');
-        if (existingTooltip) {
-            existingTooltip.remove();
-        }
-
-        const tooltip = document.createElement('div');
-        tooltip.className = 'hint-tooltip';
-        tooltip.innerHTML = `
-            <strong>Підказка ${Math.min(hintUsage[index], 3)}/3:</strong><br>
-            "${hintText}"
-        `;
-
-        button.style.position = 'relative';
-        button.appendChild(tooltip);
-
-        setTimeout(() => {
-            tooltip.remove();
-            dropZone.classList.remove('hint-active');
-        }, 4000);
-
-        if (hintUsage[index] >= 3) {
-            button.disabled = true;
-            button.textContent = '💡 Використано';
-        }
-    };
-
-    window.checkSentence = function(button) {
-        const builder = button.closest('.sentence-builder');
-        if (!builder) {
-            return;
-        }
-        const dropZone = builder.querySelector('.drop-zone');
-        const feedback = builder.querySelector('.sentence-feedback');
-        if (!dropZone || !feedback) {
-            return;
-        }
-
-        const index = resolveBuilderIndex(builder);
-        if (!(index in sentenceStates)) {
-            sentenceStates[index] = false;
-        }
-
-        const droppedWords = Array.from(dropZone.querySelectorAll('.draggable'))
-            .map(item => (item.textContent || '').trim());
-        const assembled = droppedWords.join(' ').trim();
-        const correctAnswer = (dropZone.dataset.correct || '').trim();
-
-        dropZone.classList.remove('incorrect', 'correct', 'hint-active');
-        feedback.textContent = '';
-        feedback.classList.remove('correct', 'incorrect');
-
-        if (!correctAnswer) {
-            return;
-        }
-
-        if (assembled === correctAnswer) {
-            dropZone.classList.add('correct');
-            feedback.textContent = getRandomBuilderMessage('correct');
-            feedback.classList.add('correct');
-            sentenceStates[index] = true;
-            const hintBtn = builder.querySelector('.hint-btn');
-            if (hintBtn) {
-                hintBtn.disabled = true;
-            }
-            button.disabled = true;
-            button.textContent = '✓ Виконано';
-            dropZone.style.pointerEvents = 'none';
-        } else {
-            dropZone.classList.add('incorrect');
-            feedback.textContent = getRandomBuilderMessage('incorrect');
-            feedback.classList.add('incorrect');
-            sentenceStates[index] = false;
-
-            setTimeout(() => {
-                dropZone.classList.remove('incorrect');
-                if (!sentenceStates[index]) {
-                    feedback.textContent = '';
-                    feedback.classList.remove('incorrect');
-                }
-            }, 2000);
-        }
-
-        correctSentences = Object.values(sentenceStates).filter(Boolean).length;
-        updateBuilderProgress();
-    };
-
-    function showCompletionMessage() {
-        if (document.querySelector('.sentence-builder-complete')) {
-            return;
-        }
-        const modal = document.createElement('div');
-        modal.className = 'sentence-builder-complete';
-        modal.style.cssText = `
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: linear-gradient(135deg, #8b5cf6, #ec4899);
-            color: white;
-            padding: 30px;
-            border-radius: 20px;
-            font-size: 20px;
-            font-weight: bold;
-            text-align: center;
-            z-index: 10000;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-            animation: bounceIn 0.5s;
-        `;
-        modal.innerHTML = `
-            🎉 Вітаємо! 🎉<br>
-            Ви успішно виконали всі завдання!<br>
-            <button class="close-modal" style="
-                margin-top: 20px;
-                padding: 10px 20px;
-                background: white;
-                color: #8b5cf6;
-                border: none;
-                border-radius: 10px;
-                font-size: 16px;
-                font-weight: bold;
-                cursor: pointer;
-            ">Закрити</button>
-        `;
-        const closeButton = modal.querySelector('.close-modal');
-        if (closeButton) {
-            closeButton.addEventListener('click', () => {
-                modal.remove();
             });
-        }
-        document.body.appendChild(modal);
-    }
-
-    document.addEventListener('DOMContentLoaded', function() {
-        initializeSentenceBuilder();
-    });
-
-    function checkBuilder() {
-        document.querySelectorAll('.sentence-builder .check-sentence-btn').forEach(button => {
-            if (!button.disabled) {
-                window.checkSentence(button);
+            
+            if (userAnswer === correctAnswer) {
+                this.score++;
             }
         });
+        
+        this.showResult();
     }
-})();
+    
+    showResult() {
+        const existingResult = this.container.querySelector('.quiz-result');
+        if (existingResult) {
+            existingResult.remove();
+        }
+        
+        const result = document.createElement('div');
+        result.className = 'quiz-result';
+        
+        const percentage = (this.score / this.questions.length) * 100;
+        
+        if (percentage === 100) {
+            result.className += ' perfect';
+            result.textContent = 'Perfect score! Excellent work!';
+        } else if (percentage >= 70) {
+            result.className += ' good';
+            result.textContent = `Good job! You got ${this.score} out of ${this.questions.length} correct!`;
+        } else {
+            result.className += ' needs-improvement';
+            result.textContent = `You got ${this.score} out of ${this.questions.length}. Keep practicing!`;
+        }
+        
+        this.container.appendChild(result);
+    }
+    
+    resetQuiz() {
+        this.answers = {};
+        this.score = 0;
+        
+        this.questions.forEach(question => {
+            question.options.forEach(option => {
+                option.classList.remove('selected', 'correct', 'incorrect');
+            });
+        });
+        
+        const result = this.container.querySelector('.quiz-result');
+        if (result) {
+            result.remove();
+        }
+    }
+}
+
+// Initialize quiz exercises
+document.addEventListener('DOMContentLoaded', () => {
+    const quizzes = document.querySelectorAll('.quiz-exercise');
+    quizzes.forEach(quiz => new QuizExercise(quiz));
+});

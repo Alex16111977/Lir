@@ -106,87 +106,385 @@ body {
 
 .word-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
 }
 
 .word-card {
-    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%); /* Базовий градієнт */
     border-radius: 15px;
     padding: 20px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     transform: translateY(0);
-    transition: transform 0.3s;
+    transition: all 0.3s;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-all;
+    min-width: 0;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid transparent;
 }
 
 .word-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* Градієнтний фон для чоловічого роду */
+.word-card[data-gender="masculine"] {
+    background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); /* Світло-блакитний градієнт */
+    border: 1px solid #93c5fd;
+}
+
+.word-card[data-gender="masculine"]:hover {
+    background: linear-gradient(135deg, #bfdbfe 0%, #93c5fd 100%);
+    box-shadow: 0 10px 30px rgba(43, 108, 176, 0.3);
+}
+
+/* Градієнтний фон для жіночого роду */
+.word-card[data-gender="feminine"] {
+    background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%); /* Світло-рожевий градієнт */
+    border: 1px solid #fca5a5;
+}
+
+.word-card[data-gender="feminine"]:hover {
+    background: linear-gradient(135deg, #fecaca 0%, #fca5a5 100%);
+    box-shadow: 0 10px 30px rgba(220, 38, 38, 0.3);
+}
+
+/* Градієнтний фон для середнього роду */
+.word-card[data-gender="neutral"] {
+    background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%); /* Світло-зелений градієнт */
+    border: 1px solid #6ee7b7;
+}
+
+.word-card[data-gender="neutral"]:hover {
+    background: linear-gradient(135deg, #a7f3d0 0%, #6ee7b7 100%);
+    box-shadow: 0 10px 30px rgba(22, 163, 74, 0.3);
 }
 
 .word-german {
-    font-size: 2em;
+    font-size: 1.4em;
     font-weight: bold;
-    color: white;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    color: #111827; /* Дуже темний текст для контрасту */
     margin-bottom: 10px;
+    word-break: break-all;
+    hyphens: auto;
+    overflow-wrap: break-word;
+    line-height: 1.3;
+    max-width: 100%;
+    text-shadow: 0 1px 2px rgba(255,255,255,0.8); /* Легка біла тінь для читабельності */
 }
 
 .word-transcription {
-    color: #fff;
-    font-size: 1.2em;
+    color: #4b5563; /* Темно-сірий текст */
+    font-size: 1em;
     margin-bottom: 10px;
-    opacity: 0.9;
+    font-style: italic;
+    word-break: break-all;
+    overflow-wrap: break-word;
+    max-width: 100%;
 }
 
 .word-russian {
-    color: #fff;
-    font-size: 1.3em;
+    color: #1f2937; /* Темний текст */
+    font-size: 1.2em;
     font-weight: 500;
     margin-bottom: 10px;
+    word-break: break-word;
+    overflow-wrap: break-word;
 }
 
 .word-type {
     display: inline-block;
-    background: rgba(255,255,255,0.3);
+    background: rgba(255, 255, 255, 0.7); /* Напівпрозорий білий фон */
+    backdrop-filter: blur(5px);
     padding: 3px 10px;
     border-radius: 10px;
-    color: white;
+    color: #374151;
     font-size: 0.9em;
     margin-bottom: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    font-weight: 600;
 }
 
 .character-voice {
     border-left: 5px solid #764ba2;
-    padding-left: 20px;
-    margin: 20px 0;
+    padding-left: 15px;
+    margin: 15px 0;
     font-style: italic;
     background: rgba(255,255,255,0.95);
-    padding: 20px;
+    padding: 15px;
     border-radius: 10px;
     color: #333;
+    word-break: break-word;
 }
 
 .gesture-anchor {
     background: #fff3cd;
     border: 2px dashed #ffc107;
-    padding: 15px;
+    padding: 12px;
     border-radius: 10px;
     display: flex;
-    align-items: center;
-    gap: 15px;
+    align-items: flex-start;
+    gap: 10px;
     margin: 15px 0;
     color: #333;
+    word-break: break-word;
+    flex-wrap: wrap;
 }
 
 .gesture-icon {
-    font-size: 40px;
+    font-size: 36px;
     animation: pulse 2s infinite;
+    flex-shrink: 0;
 }
 
 @keyframes pulse {
     0%, 100% { transform: scale(1); }
     50% { transform: scale(1.1); }
+}
+
+/* Кольорові артиклі - оновлена палітра */
+.article-der {
+    color: #2B6CB0; /* Синій для der */
+    font-weight: 700;
+    font-size: 1.1em;
+    display: inline-block;
+    margin-right: 4px;
+}
+
+.article-die {
+    color: #DC2626; /* Червоний для die */
+    font-weight: 700;
+    font-size: 1.1em;
+    display: inline-block;
+    margin-right: 4px;
+}
+
+.article-das {
+    color: #16A34A; /* Зелений для das (замість жовтого) */
+    font-weight: 700;
+    font-size: 1.1em;
+    display: inline-block;
+    margin-right: 4px;
+}
+
+/* Маленькі іконки роду */
+.gender-icon {
+    font-size: 0.9em;
+    opacity: 0.6;
+    margin-left: 8px;
+    display: inline-block;
+}
+
+.word-card[data-gender="masculine"] .gender-icon {
+    color: #2B6CB0;
+}
+
+.word-card[data-gender="feminine"] .gender-icon {
+    color: #DC2626;
+}
+
+.word-card[data-gender="neutral"] .gender-icon {
+    color: #16A34A;
+}
+
+/* Легенда артиклів */
+.article-legend {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin: 20px 0;
+    padding: 16px;
+    background: #f9fafb;
+    border-radius: 12px;
+}
+
+/* Кольорова легенда для вправ */
+.article-color-legend {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 12px;
+    background: #f9fafb;
+    border-radius: 8px;
+    margin-bottom: 16px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 600;
+    font-size: 0.95em;
+}
+
+.legend-item.masculine {
+    color: #2B6CB0;
+}
+
+.legend-item.feminine {
+    color: #DC2626;
+}
+
+.legend-item.neutral {
+    color: #16A34A;
+}
+
+.legend-card {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.legend-color {
+    width: 24px;
+    height: 24px;
+    border-radius: 6px;
+}
+
+.legend-color.masculine {
+    background: #2B6CB0;
+}
+
+.legend-color.feminine {
+    background: #DC2626;
+}
+
+.legend-color.neutral {
+    background: #16A34A;
+}
+
+/* Кнопки артиклів у вправах */
+.article-buttons button {
+    background: white !important;
+    border: 2px solid #e0e0e0;
+    transition: all 0.3s;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 600;
+}
+
+.article-buttons button[data-article="der"] {
+    border-color: #2B6CB0;
+    color: #2B6CB0;
+}
+
+.article-buttons button[data-article="die"] {
+    border-color: #DC2626;
+    color: #DC2626;
+}
+
+.article-buttons button[data-article="das"] {
+    border-color: #16A34A;
+    color: #16A34A;
+}
+
+/* Hover - легке заповнення */
+.article-buttons button[data-article="der"]:hover {
+    background: rgba(43, 108, 176, 0.1) !important;
+}
+
+.article-buttons button[data-article="die"]:hover {
+    background: rgba(220, 38, 38, 0.1) !important;
+}
+
+.article-buttons button[data-article="das"]:hover {
+    background: rgba(22, 163, 74, 0.1) !important;
+}
+
+/* Правильна відповідь */
+.article-buttons button.correct {
+    color: white !important;
+}
+
+.article-buttons button[data-article="der"].correct {
+    background: #2B6CB0 !important;
+}
+
+.article-buttons button[data-article="die"].correct {
+    background: #DC2626 !important;
+}
+
+.article-buttons button[data-article="das"].correct {
+    background: #16A34A !important;
+    color: white !important;
+}
+
+/* Адаптивные стили для мобильных устройств */
+@media (max-width: 768px) {
+    .word-cards {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .word-card {
+        padding: 15px;
+        max-width: 100%;
+    }
+    
+    .word-german {
+        font-size: 1.2em;
+    }
+    
+    .word-transcription {
+        font-size: 0.9em;
+    }
+    
+    .word-russian {
+        font-size: 1em;
+    }
+    
+    .gesture-anchor {
+        flex-direction: column;
+        gap: 8px;
+        padding: 10px;
+    }
+    
+    .character-voice {
+        padding: 12px;
+        padding-left: 12px;
+    }
+}
+
+@media (max-width: 500px) {
+    .word-cards {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    
+    .word-card {
+        padding: 12px;
+        min-width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .word-german {
+        font-size: 1.1em;
+        word-break: break-all;
+    }
+    
+    .word-transcription {
+        font-size: 0.85em;
+    }
+    
+    .word-russian {
+        font-size: 0.9em;
+    }
+    
+    .word-type {
+        font-size: 0.8em;
+    }
+    
+    .article-der,
+    .article-die,
+    .article-das {
+        font-size: 0.9em;
+    }
 }
 
 .navigation {
@@ -377,8 +675,8 @@ body {
                 <span>📚 Слова момента</span>
             </h2>
             <div class="word-cards">
-                <div class="word-card">
-                    <div class="word-german">der Bettler</div>
+                <div class="word-card" data-gender="masculine">
+                    <div class="word-german"><span class="article-der">der</span> Bettler <span class="gender-icon">♂</span></div>
                     <div class="word-transcription">[дер БЕТТ-лер]</div>
                     <div class="word-russian">нищий</div>
                     <div class="word-type">существительное</div>
@@ -396,8 +694,8 @@ body {
                         </div>
                     </div>
                 </div>
-                <div class="word-card">
-                    <div class="word-german">der Wahnsinn</div>
+                <div class="word-card" data-gender="masculine">
+                    <div class="word-german"><span class="article-der">der</span> Wahnsinn <span class="gender-icon">♂</span></div>
                     <div class="word-transcription">[дер ВАХН-зин]</div>
                     <div class="word-russian">безумие</div>
                     <div class="word-type">существительное</div>
@@ -415,8 +713,8 @@ body {
                         </div>
                     </div>
                 </div>
-                <div class="word-card">
-                    <div class="word-german">die Dämonen</div>
+                <div class="word-card" data-gender="feminine">
+                    <div class="word-german"><span class="article-die">die</span> Dämonen <span class="gender-icon">♀</span></div>
                     <div class="word-transcription">[ди де-МО-нен]</div>
                     <div class="word-russian">демоны</div>
                     <div class="word-type">существительное</div>
@@ -434,7 +732,7 @@ body {
                         </div>
                     </div>
                 </div>
-                <div class="word-card">
+                <div class="word-card" >
                     <div class="word-german">verstellen</div>
                     <div class="word-transcription">[фер-ШТЕ-лен]</div>
                     <div class="word-russian">притворяться</div>
@@ -453,8 +751,8 @@ body {
                         </div>
                     </div>
                 </div>
-                <div class="word-card">
-                    <div class="word-german">die Lumpen</div>
+                <div class="word-card" data-gender="feminine">
+                    <div class="word-german"><span class="article-die">die</span> Lumpen <span class="gender-icon">♀</span></div>
                     <div class="word-transcription">[ди ЛУМ-пен]</div>
                     <div class="word-russian">лохмотья</div>
                     <div class="word-type">существительное</div>
@@ -472,7 +770,7 @@ body {
                         </div>
                     </div>
                 </div>
-                <div class="word-card">
+                <div class="word-card" >
                     <div class="word-german">erkennen</div>
                     <div class="word-transcription">[ер-КЕН-нен]</div>
                     <div class="word-russian">узнавать</div>
@@ -491,8 +789,8 @@ body {
                         </div>
                     </div>
                 </div>
-                <div class="word-card">
-                    <div class="word-german">der Philosoph</div>
+                <div class="word-card" data-gender="masculine">
+                    <div class="word-german"><span class="article-der">der</span> Philosoph <span class="gender-icon">♂</span></div>
                     <div class="word-transcription">[дер фи-ло-ЗОФ]</div>
                     <div class="word-russian">философ</div>
                     <div class="word-type">существительное</div>
@@ -510,7 +808,7 @@ body {
                         </div>
                     </div>
                 </div>
-                <div class="word-card">
+                <div class="word-card" >
                     <div class="word-german">zittern</div>
                     <div class="word-transcription">[ЦИТ-терн]</div>
                     <div class="word-russian">дрожать</div>
@@ -529,7 +827,7 @@ body {
                         </div>
                     </div>
                 </div>
-                <div class="word-card">
+                <div class="word-card" >
                     <div class="word-german">flüstern</div>
                     <div class="word-transcription">[ФЛЮС-терн]</div>
                     <div class="word-russian">шептать</div>
@@ -548,8 +846,8 @@ body {
                         </div>
                     </div>
                 </div>
-                <div class="word-card">
-                    <div class="word-german">der Verstand</div>
+                <div class="word-card" data-gender="masculine">
+                    <div class="word-german"><span class="article-der">der</span> Verstand <span class="gender-icon">♂</span></div>
                     <div class="word-transcription">[дер фер-ШТАНД]</div>
                     <div class="word-russian">разум</div>
                     <div class="word-type">существительное</div>
@@ -567,8 +865,8 @@ body {
                         </div>
                     </div>
                 </div>
-                <div class="word-card">
-                    <div class="word-german">die Finsternis</div>
+                <div class="word-card" data-gender="feminine">
+                    <div class="word-german"><span class="article-die">die</span> Finsternis <span class="gender-icon">♀</span></div>
                     <div class="word-transcription">[ди ФИН-стер-нис]</div>
                     <div class="word-russian">тьма, мрак</div>
                     <div class="word-type">существительное</div>
@@ -586,7 +884,7 @@ body {
                         </div>
                     </div>
                 </div>
-                <div class="word-card">
+                <div class="word-card" >
                     <div class="word-german">weinen</div>
                     <div class="word-transcription">[ВАЙ-нен]</div>
                     <div class="word-russian">плакать</div>
@@ -863,157 +1161,164 @@ body {
                         
             <div class="exercise-block" id="word-matching">
                 <h3 class="exercise-title">🔗 Подбор слов</h3>
-                <p class="exercise-intro">Нажмите на немецкое слово, затем на его русский перевод. При правильном ответе пара станет зелёной.</p>
+                <p class="exercise-intro">Выберите немецкое слово слева и его русский перевод справа</p>
                 
-                <!-- Прогрес-бар -->
+                <!-- Прогресс-бар -->
                 <div class="matching-progress">
                     <div class="progress-track">
                         <div class="progress-fill" style="width: 0%"></div>
                     </div>
-                    <div class="progress-text">0 з 12</div>
+                    <div class="progress-text">0 из 12</div>
                 </div>
                 
-                <div class="matching-container">
-                    <div class="words-column">
+                <div class="word-selection-container">
+                    <div class="word-columns">
+                        <div class="word-column german-words">
+                            <h4>НЕМЕЦКИЕ</h4>
+                            <div class="word-list">
 
-                <div class="word-item prompt" data-pair-id="0" data-type="prompt" 
-                     onclick="handleWordClick(this, 'prompt')">
+                <button class="word-item german-word" data-pair-id="0" 
+                        onclick="handleWordPairClick(this, 0, 'german')" type="button">
                     <span class="word-main">der Bettler</span>
-                    <small class="word-hint">[дер БЕТТ-лер]</small>
-                </div>
+                    <small class="transcription">[дер БЕТТ-лер]</small>
+                </button>
                 
-                <div class="word-item prompt" data-pair-id="1" data-type="prompt" 
-                     onclick="handleWordClick(this, 'prompt')">
+                <button class="word-item german-word" data-pair-id="1" 
+                        onclick="handleWordPairClick(this, 1, 'german')" type="button">
                     <span class="word-main">der Wahnsinn</span>
-                    <small class="word-hint">[дер ВАХН-зин]</small>
-                </div>
+                    <small class="transcription">[дер ВАХН-зин]</small>
+                </button>
                 
-                <div class="word-item prompt" data-pair-id="2" data-type="prompt" 
-                     onclick="handleWordClick(this, 'prompt')">
+                <button class="word-item german-word" data-pair-id="2" 
+                        onclick="handleWordPairClick(this, 2, 'german')" type="button">
                     <span class="word-main">die Dämonen</span>
-                    <small class="word-hint">[ди де-МО-нен]</small>
-                </div>
+                    <small class="transcription">[ди де-МО-нен]</small>
+                </button>
                 
-                <div class="word-item prompt" data-pair-id="3" data-type="prompt" 
-                     onclick="handleWordClick(this, 'prompt')">
+                <button class="word-item german-word" data-pair-id="3" 
+                        onclick="handleWordPairClick(this, 3, 'german')" type="button">
                     <span class="word-main">verstellen</span>
-                    <small class="word-hint">[фер-ШТЕ-лен]</small>
-                </div>
+                    <small class="transcription">[фер-ШТЕ-лен]</small>
+                </button>
                 
-                <div class="word-item prompt" data-pair-id="4" data-type="prompt" 
-                     onclick="handleWordClick(this, 'prompt')">
+                <button class="word-item german-word" data-pair-id="4" 
+                        onclick="handleWordPairClick(this, 4, 'german')" type="button">
                     <span class="word-main">die Lumpen</span>
-                    <small class="word-hint">[ди ЛУМ-пен]</small>
-                </div>
+                    <small class="transcription">[ди ЛУМ-пен]</small>
+                </button>
                 
-                <div class="word-item prompt" data-pair-id="5" data-type="prompt" 
-                     onclick="handleWordClick(this, 'prompt')">
+                <button class="word-item german-word" data-pair-id="5" 
+                        onclick="handleWordPairClick(this, 5, 'german')" type="button">
                     <span class="word-main">erkennen</span>
-                    <small class="word-hint">[ер-КЕН-нен]</small>
-                </div>
+                    <small class="transcription">[ер-КЕН-нен]</small>
+                </button>
                 
-                <div class="word-item prompt" data-pair-id="6" data-type="prompt" 
-                     onclick="handleWordClick(this, 'prompt')">
+                <button class="word-item german-word" data-pair-id="6" 
+                        onclick="handleWordPairClick(this, 6, 'german')" type="button">
                     <span class="word-main">der Philosoph</span>
-                    <small class="word-hint">[дер фи-ло-ЗОФ]</small>
-                </div>
+                    <small class="transcription">[дер фи-ло-ЗОФ]</small>
+                </button>
                 
-                <div class="word-item prompt" data-pair-id="7" data-type="prompt" 
-                     onclick="handleWordClick(this, 'prompt')">
+                <button class="word-item german-word" data-pair-id="7" 
+                        onclick="handleWordPairClick(this, 7, 'german')" type="button">
                     <span class="word-main">zittern</span>
-                    <small class="word-hint">[ЦИТ-терн]</small>
-                </div>
+                    <small class="transcription">[ЦИТ-терн]</small>
+                </button>
                 
-                <div class="word-item prompt" data-pair-id="8" data-type="prompt" 
-                     onclick="handleWordClick(this, 'prompt')">
+                <button class="word-item german-word" data-pair-id="8" 
+                        onclick="handleWordPairClick(this, 8, 'german')" type="button">
                     <span class="word-main">flüstern</span>
-                    <small class="word-hint">[ФЛЮС-терн]</small>
-                </div>
+                    <small class="transcription">[ФЛЮС-терн]</small>
+                </button>
                 
-                <div class="word-item prompt" data-pair-id="9" data-type="prompt" 
-                     onclick="handleWordClick(this, 'prompt')">
+                <button class="word-item german-word" data-pair-id="9" 
+                        onclick="handleWordPairClick(this, 9, 'german')" type="button">
                     <span class="word-main">der Verstand</span>
-                    <small class="word-hint">[дер фер-ШТАНД]</small>
-                </div>
+                    <small class="transcription">[дер фер-ШТАНД]</small>
+                </button>
                 
-                <div class="word-item prompt" data-pair-id="10" data-type="prompt" 
-                     onclick="handleWordClick(this, 'prompt')">
+                <button class="word-item german-word" data-pair-id="10" 
+                        onclick="handleWordPairClick(this, 10, 'german')" type="button">
                     <span class="word-main">die Finsternis</span>
-                    <small class="word-hint">[ди ФИН-стер-нис]</small>
-                </div>
+                    <small class="transcription">[ди ФИН-стер-нис]</small>
+                </button>
                 
-                <div class="word-item prompt" data-pair-id="11" data-type="prompt" 
-                     onclick="handleWordClick(this, 'prompt')">
+                <button class="word-item german-word" data-pair-id="11" 
+                        onclick="handleWordPairClick(this, 11, 'german')" type="button">
                     <span class="word-main">weinen</span>
-                    <small class="word-hint">[ВАЙ-нен]</small>
-                </div>
+                    <small class="transcription">[ВАЙ-нен]</small>
+                </button>
                 
-                    </div>
-                    <div class="translations-column">
+                            </div>
+                        </div>
+                        <div class="word-column russian-words">
+                            <h4>РУССКИЕ</h4>
+                            <div class="word-list">
 
-                <div class="translation-item match" data-pair-id="8" 
-                     data-type="match" onclick="handleWordClick(this, 'match')">
-                    шептать
-                </div>
+                <button class="word-item russian-word" data-pair-id="5"
+                        onclick="handleWordPairClick(this, 5, 'russian')" type="button">
+                    <span class="word-main">узнавать</span>
+                </button>
                 
-                <div class="translation-item match" data-pair-id="2" 
-                     data-type="match" onclick="handleWordClick(this, 'match')">
-                    демоны
-                </div>
+                <button class="word-item russian-word" data-pair-id="7"
+                        onclick="handleWordPairClick(this, 7, 'russian')" type="button">
+                    <span class="word-main">дрожать</span>
+                </button>
                 
-                <div class="translation-item match" data-pair-id="1" 
-                     data-type="match" onclick="handleWordClick(this, 'match')">
-                    безумие
-                </div>
+                <button class="word-item russian-word" data-pair-id="10"
+                        onclick="handleWordPairClick(this, 10, 'russian')" type="button">
+                    <span class="word-main">тьма, мрак</span>
+                </button>
                 
-                <div class="translation-item match" data-pair-id="6" 
-                     data-type="match" onclick="handleWordClick(this, 'match')">
-                    философ
-                </div>
+                <button class="word-item russian-word" data-pair-id="6"
+                        onclick="handleWordPairClick(this, 6, 'russian')" type="button">
+                    <span class="word-main">философ</span>
+                </button>
                 
-                <div class="translation-item match" data-pair-id="5" 
-                     data-type="match" onclick="handleWordClick(this, 'match')">
-                    узнавать
-                </div>
+                <button class="word-item russian-word" data-pair-id="0"
+                        onclick="handleWordPairClick(this, 0, 'russian')" type="button">
+                    <span class="word-main">нищий</span>
+                </button>
                 
-                <div class="translation-item match" data-pair-id="0" 
-                     data-type="match" onclick="handleWordClick(this, 'match')">
-                    нищий
-                </div>
+                <button class="word-item russian-word" data-pair-id="1"
+                        onclick="handleWordPairClick(this, 1, 'russian')" type="button">
+                    <span class="word-main">безумие</span>
+                </button>
                 
-                <div class="translation-item match" data-pair-id="10" 
-                     data-type="match" onclick="handleWordClick(this, 'match')">
-                    тьма, мрак
-                </div>
+                <button class="word-item russian-word" data-pair-id="3"
+                        onclick="handleWordPairClick(this, 3, 'russian')" type="button">
+                    <span class="word-main">притворяться</span>
+                </button>
                 
-                <div class="translation-item match" data-pair-id="3" 
-                     data-type="match" onclick="handleWordClick(this, 'match')">
-                    притворяться
-                </div>
+                <button class="word-item russian-word" data-pair-id="9"
+                        onclick="handleWordPairClick(this, 9, 'russian')" type="button">
+                    <span class="word-main">разум</span>
+                </button>
                 
-                <div class="translation-item match" data-pair-id="11" 
-                     data-type="match" onclick="handleWordClick(this, 'match')">
-                    плакать
-                </div>
+                <button class="word-item russian-word" data-pair-id="8"
+                        onclick="handleWordPairClick(this, 8, 'russian')" type="button">
+                    <span class="word-main">шептать</span>
+                </button>
                 
-                <div class="translation-item match" data-pair-id="9" 
-                     data-type="match" onclick="handleWordClick(this, 'match')">
-                    разум
-                </div>
+                <button class="word-item russian-word" data-pair-id="4"
+                        onclick="handleWordPairClick(this, 4, 'russian')" type="button">
+                    <span class="word-main">лохмотья</span>
+                </button>
                 
-                <div class="translation-item match" data-pair-id="7" 
-                     data-type="match" onclick="handleWordClick(this, 'match')">
-                    дрожать
-                </div>
+                <button class="word-item russian-word" data-pair-id="2"
+                        onclick="handleWordPairClick(this, 2, 'russian')" type="button">
+                    <span class="word-main">демоны</span>
+                </button>
                 
-                <div class="translation-item match" data-pair-id="4" 
-                     data-type="match" onclick="handleWordClick(this, 'match')">
-                    лохмотья
-                </div>
+                <button class="word-item russian-word" data-pair-id="11"
+                        onclick="handleWordPairClick(this, 11, 'russian')" type="button">
+                    <span class="word-main">плакать</span>
+                </button>
                 
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <!-- Кнопка видалена - миттєва перевірка! -->
             </div>
             
                     </div>
@@ -1027,6 +1332,13 @@ body {
             <div class="exercise-block" id="articles">
                 <h3 class="exercise-title">🎯 Артикли и род</h3>
                 <p class="exercise-intro">Выберите правильный артикль для существительных из урока.</p>
+                
+                <!-- Кольорова легенда -->
+                <div class="article-color-legend">
+                    <span class="legend-item masculine">🔷 der = чоловічий</span>
+                    <span class="legend-item feminine">🔴 die = жіночий</span>
+                    <span class="legend-item neutral">✅ das = середній</span>
+                </div>
                 
                 <!-- Прогрес-бар -->
                 <div class="articles-progress">
@@ -1045,9 +1357,9 @@ body {
                         <small>нищий</small>
                     </div>
                     <div class="article-buttons">
-                        <button type="button" data-article="der" onclick="checkArticleInstant(this, 'der')">der</button>
-                        <button type="button" data-article="die" onclick="checkArticleInstant(this, 'die')">die</button>
-                        <button type="button" data-article="das" onclick="checkArticleInstant(this, 'das')">das</button>
+                        <button type="button" data-article="der" data-gender="masculine" onclick="checkArticleInstant(this, 'der')">der</button>
+                        <button type="button" data-article="die" data-gender="feminine" onclick="checkArticleInstant(this, 'die')">die</button>
+                        <button type="button" data-article="das" data-gender="neutral" onclick="checkArticleInstant(this, 'das')">das</button>
                     </div>
                 </div>
                 
@@ -1057,9 +1369,9 @@ body {
                         <small>безумие</small>
                     </div>
                     <div class="article-buttons">
-                        <button type="button" data-article="der" onclick="checkArticleInstant(this, 'der')">der</button>
-                        <button type="button" data-article="die" onclick="checkArticleInstant(this, 'die')">die</button>
-                        <button type="button" data-article="das" onclick="checkArticleInstant(this, 'das')">das</button>
+                        <button type="button" data-article="der" data-gender="masculine" onclick="checkArticleInstant(this, 'der')">der</button>
+                        <button type="button" data-article="die" data-gender="feminine" onclick="checkArticleInstant(this, 'die')">die</button>
+                        <button type="button" data-article="das" data-gender="neutral" onclick="checkArticleInstant(this, 'das')">das</button>
                     </div>
                 </div>
                 
@@ -1069,9 +1381,9 @@ body {
                         <small>демоны</small>
                     </div>
                     <div class="article-buttons">
-                        <button type="button" data-article="der" onclick="checkArticleInstant(this, 'der')">der</button>
-                        <button type="button" data-article="die" onclick="checkArticleInstant(this, 'die')">die</button>
-                        <button type="button" data-article="das" onclick="checkArticleInstant(this, 'das')">das</button>
+                        <button type="button" data-article="der" data-gender="masculine" onclick="checkArticleInstant(this, 'der')">der</button>
+                        <button type="button" data-article="die" data-gender="feminine" onclick="checkArticleInstant(this, 'die')">die</button>
+                        <button type="button" data-article="das" data-gender="neutral" onclick="checkArticleInstant(this, 'das')">das</button>
                     </div>
                 </div>
                 
@@ -1081,9 +1393,9 @@ body {
                         <small>лохмотья</small>
                     </div>
                     <div class="article-buttons">
-                        <button type="button" data-article="der" onclick="checkArticleInstant(this, 'der')">der</button>
-                        <button type="button" data-article="die" onclick="checkArticleInstant(this, 'die')">die</button>
-                        <button type="button" data-article="das" onclick="checkArticleInstant(this, 'das')">das</button>
+                        <button type="button" data-article="der" data-gender="masculine" onclick="checkArticleInstant(this, 'der')">der</button>
+                        <button type="button" data-article="die" data-gender="feminine" onclick="checkArticleInstant(this, 'die')">die</button>
+                        <button type="button" data-article="das" data-gender="neutral" onclick="checkArticleInstant(this, 'das')">das</button>
                     </div>
                 </div>
                 
@@ -1093,9 +1405,9 @@ body {
                         <small>философ</small>
                     </div>
                     <div class="article-buttons">
-                        <button type="button" data-article="der" onclick="checkArticleInstant(this, 'der')">der</button>
-                        <button type="button" data-article="die" onclick="checkArticleInstant(this, 'die')">die</button>
-                        <button type="button" data-article="das" onclick="checkArticleInstant(this, 'das')">das</button>
+                        <button type="button" data-article="der" data-gender="masculine" onclick="checkArticleInstant(this, 'der')">der</button>
+                        <button type="button" data-article="die" data-gender="feminine" onclick="checkArticleInstant(this, 'die')">die</button>
+                        <button type="button" data-article="das" data-gender="neutral" onclick="checkArticleInstant(this, 'das')">das</button>
                     </div>
                 </div>
                 
@@ -1105,9 +1417,9 @@ body {
                         <small>разум</small>
                     </div>
                     <div class="article-buttons">
-                        <button type="button" data-article="der" onclick="checkArticleInstant(this, 'der')">der</button>
-                        <button type="button" data-article="die" onclick="checkArticleInstant(this, 'die')">die</button>
-                        <button type="button" data-article="das" onclick="checkArticleInstant(this, 'das')">das</button>
+                        <button type="button" data-article="der" data-gender="masculine" onclick="checkArticleInstant(this, 'der')">der</button>
+                        <button type="button" data-article="die" data-gender="feminine" onclick="checkArticleInstant(this, 'die')">die</button>
+                        <button type="button" data-article="das" data-gender="neutral" onclick="checkArticleInstant(this, 'das')">das</button>
                     </div>
                 </div>
                 
@@ -1117,9 +1429,9 @@ body {
                         <small>тьма, мрак</small>
                     </div>
                     <div class="article-buttons">
-                        <button type="button" data-article="der" onclick="checkArticleInstant(this, 'der')">der</button>
-                        <button type="button" data-article="die" onclick="checkArticleInstant(this, 'die')">die</button>
-                        <button type="button" data-article="das" onclick="checkArticleInstant(this, 'das')">das</button>
+                        <button type="button" data-article="der" data-gender="masculine" onclick="checkArticleInstant(this, 'der')">der</button>
+                        <button type="button" data-article="die" data-gender="feminine" onclick="checkArticleInstant(this, 'die')">die</button>
+                        <button type="button" data-article="das" data-gender="neutral" onclick="checkArticleInstant(this, 'das')">das</button>
                     </div>
                 </div>
                 
@@ -1141,11 +1453,22 @@ body {
 
                 <div class="synonym-item">
                     <div class="word-center">
-                        <span class="word-main">vertrauen</span>
+                        <span class="word-main">die Welt</span>
+                        <small>мир</small>
+                    </div>
+                    <div class="options">
+                        <input type="text" placeholder="Синоним" data-correct="der Friede" data-hint="мир">
+                        <input type="text" placeholder="Антоним" data-correct="der Krieg" data-hint="война">
+                    </div>
+                </div>
+                
+                <div class="synonym-item">
+                    <div class="word-center">
+                        <span class="word-main">trauen</span>
                         <small>доверять</small>
                     </div>
                     <div class="options">
-                        <input type="text" placeholder="Синоним" data-correct="trauen" data-hint="доверять">
+                        <input type="text" placeholder="Синоним" data-correct="vertrauen" data-hint="доверять">
                         <input type="text" placeholder="Антоним" data-correct="misstrauen" data-hint="не доверять">
                     </div>
                 </div>
@@ -1157,17 +1480,6 @@ body {
                     </div>
                     <div class="options">
                         <input type="text" placeholder="Синоним" data-correct="die Welt" data-hint="мир">
-                        <input type="text" placeholder="Антоним" data-correct="der Krieg" data-hint="война">
-                    </div>
-                </div>
-                
-                <div class="synonym-item">
-                    <div class="word-center">
-                        <span class="word-main">die Welt</span>
-                        <small>мир</small>
-                    </div>
-                    <div class="options">
-                        <input type="text" placeholder="Синоним" data-correct="der Friede" data-hint="мир">
                         <input type="text" placeholder="Антоним" data-correct="der Krieg" data-hint="война">
                     </div>
                 </div>
@@ -1208,15 +1520,15 @@ body {
                 <h3>Що означає німецьке слово?</h3>
 
                 <div class="word-display">
-                    <span class="german-word">die Finsternis</span>
-                    <span class="transcription">[ди ФИН-стер-нис]</span>
+                    <span class="german-word">zittern</span>
+                    <span class="transcription">[ЦИТ-терн]</span>
                 </div>
 
                 <div class="answer-buttons">
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">разум</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">лохмотья</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">нищий</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">шептать</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">тьма, мрак</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">притворяться</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">дрожать</button>
                 </div>
             </div>
         </div>
@@ -1232,15 +1544,15 @@ body {
                 <h3>Що означає німецьке слово?</h3>
 
                 <div class="word-display">
-                    <span class="german-word">der Wahnsinn</span>
-                    <span class="transcription">[дер ВАХН-зин]</span>
+                    <span class="german-word">flüstern</span>
+                    <span class="transcription">[ФЛЮС-терн]</span>
                 </div>
 
                 <div class="answer-buttons">
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">шептать</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">тьма, мрак</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">притворяться</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">нищий</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">безумие</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">философ</button>
                 </div>
             </div>
         </div>
@@ -1256,15 +1568,15 @@ body {
                 <h3>Що означає німецьке слово?</h3>
 
                 <div class="word-display">
-                    <span class="german-word">erkennen</span>
-                    <span class="transcription">[ер-КЕН-нен]</span>
+                    <span class="german-word">die Lumpen</span>
+                    <span class="transcription">[ди ЛУМ-пен]</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">притворяться</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">узнавать</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">безумие</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">демоны</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">лохмотья</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">дрожать</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">философ</button>
                 </div>
             </div>
         </div>
@@ -1280,15 +1592,15 @@ body {
                 <h3>Що означає німецьке слово?</h3>
 
                 <div class="word-display">
-                    <span class="german-word">weinen</span>
-                    <span class="transcription">[ВАЙ-нен]</span>
+                    <span class="german-word">der Philosoph</span>
+                    <span class="transcription">[дер фи-ло-ЗОФ]</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">плакать</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">тьма, мрак</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">нищий</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">притворяться</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">разум</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">философ</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">плакать</button>
                 </div>
             </div>
         </div>
@@ -1310,9 +1622,9 @@ body {
 
                 <div class="answer-buttons">
                     <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">разум</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">лохмотья</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">шептать</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">дрожать</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">тьма, мрак</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">нищий</button>
                 </div>
             </div>
         </div>
@@ -1328,15 +1640,15 @@ body {
                 <h3>Що означає німецьке слово?</h3>
 
                 <div class="word-display">
-                    <span class="german-word">der Bettler</span>
-                    <span class="transcription">[дер БЕТТ-лер]</span>
+                    <span class="german-word">die Dämonen</span>
+                    <span class="transcription">[ди де-МО-нен]</span>
                 </div>
 
                 <div class="answer-buttons">
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">демоны</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">лохмотья</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">нищий</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">тьма, мрак</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">нищий</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">дрожать</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">философ</button>
                 </div>
             </div>
         </div>
@@ -1352,15 +1664,15 @@ body {
                 <h3>Що означає німецьке слово?</h3>
 
                 <div class="word-display">
-                    <span class="german-word">die Dämonen</span>
-                    <span class="transcription">[ди де-МО-нен]</span>
+                    <span class="german-word">verstellen</span>
+                    <span class="transcription">[фер-ШТЕ-лен]</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">нищий</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">разум</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">притворяться</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">демоны</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">плакать</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">философ</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">притворяться</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">узнавать</button>
                 </div>
             </div>
         </div>
@@ -1376,15 +1688,15 @@ body {
                 <h3>Що означає німецьке слово?</h3>
 
                 <div class="word-display">
-                    <span class="german-word">verstellen</span>
-                    <span class="transcription">[фер-ШТЕ-лен]</span>
+                    <span class="german-word">der Bettler</span>
+                    <span class="transcription">[дер БЕТТ-лер]</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">нищий</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">дрожать</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">безумие</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">притворяться</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">нищий</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">шептать</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">демоны</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">лохмотья</button>
                 </div>
             </div>
         </div>
@@ -1400,15 +1712,15 @@ body {
                 <h3>Що означає німецьке слово?</h3>
 
                 <div class="word-display">
-                    <span class="german-word">flüstern</span>
-                    <span class="transcription">[ФЛЮС-терн]</span>
+                    <span class="german-word">die Finsternis</span>
+                    <span class="transcription">[ди ФИН-стер-нис]</span>
                 </div>
 
                 <div class="answer-buttons">
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">демоны</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">лохмотья</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">узнавать</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">шептать</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">разум</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">тьма, мрак</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">дрожать</button>
                 </div>
             </div>
         </div>
@@ -1424,15 +1736,15 @@ body {
                 <h3>Що означає німецьке слово?</h3>
 
                 <div class="word-display">
-                    <span class="german-word">die Lumpen</span>
-                    <span class="transcription">[ди ЛУМ-пен]</span>
+                    <span class="german-word">weinen</span>
+                    <span class="transcription">[ВАЙ-нен]</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">дрожать</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">демоны</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">лохмотья</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">притворяться</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">шептать</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">плакать</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">нищий</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">лохмотья</button>
                 </div>
             </div>
         </div>
@@ -1448,15 +1760,15 @@ body {
                 <h3>Що означає німецьке слово?</h3>
 
                 <div class="word-display">
-                    <span class="german-word">der Philosoph</span>
-                    <span class="transcription">[дер фи-ло-ЗОФ]</span>
+                    <span class="german-word">der Wahnsinn</span>
+                    <span class="transcription">[дер ВАХН-зин]</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">безумие</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">философ</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">тьма, мрак</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">притворяться</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">лохмотья</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">философ</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">узнавать</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">безумие</button>
                 </div>
             </div>
         </div>
@@ -1472,15 +1784,15 @@ body {
                 <h3>Що означає німецьке слово?</h3>
 
                 <div class="word-display">
-                    <span class="german-word">zittern</span>
-                    <span class="transcription">[ЦИТ-терн]</span>
+                    <span class="german-word">erkennen</span>
+                    <span class="transcription">[ер-КЕН-нен]</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">демоны</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">безумие</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">шептать</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">дрожать</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">притворяться</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">лохмотья</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">плакать</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">узнавать</button>
                 </div>
             </div>
         </div>
@@ -1496,14 +1808,14 @@ body {
                 <h3>Як німецькою буде:</h3>
 
                 <div class="word-display">
-                    <span class="russian-word">тьма, мрак</span>
+                    <span class="russian-word">плакать</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">flüstern</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">die Finsternis</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">weinen</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">erkennen</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">zittern</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">weinen</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">der Bettler</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">der Verstand</button>
                 </div>
             </div>
         </div>
@@ -1519,14 +1831,14 @@ body {
                 <h3>Як німецькою буде:</h3>
 
                 <div class="word-display">
-                    <span class="russian-word">нищий</span>
+                    <span class="russian-word">демоны</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">erkennen</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Finsternis</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">der Bettler</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">verstellen</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">die Dämonen</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">weinen</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Finsternis</button>
                 </div>
             </div>
         </div>
@@ -1542,14 +1854,14 @@ body {
                 <h3>Як німецькою буде:</h3>
 
                 <div class="word-display">
-                    <span class="russian-word">философ</span>
+                    <span class="russian-word">шептать</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">flüstern</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">der Bettler</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">der Verstand</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">der Philosoph</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Finsternis</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">flüstern</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">der Philosoph</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">weinen</button>
                 </div>
             </div>
         </div>
@@ -1565,14 +1877,14 @@ body {
                 <h3>Як німецькою буде:</h3>
 
                 <div class="word-display">
-                    <span class="russian-word">плакать</span>
+                    <span class="russian-word">лохмотья</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">der Philosoph</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">flüstern</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">der Verstand</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">weinen</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">erkennen</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">die Lumpen</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Dämonen</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">weinen</button>
                 </div>
             </div>
         </div>
@@ -1588,14 +1900,14 @@ body {
                 <h3>Як німецькою буде:</h3>
 
                 <div class="word-display">
-                    <span class="russian-word">притворяться</span>
+                    <span class="russian-word">дрожать</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">der Verstand</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">der Wahnsinn</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">verstellen</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">weinen</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">flüstern</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Dämonen</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">zittern</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">erkennen</button>
                 </div>
             </div>
         </div>
@@ -1616,9 +1928,9 @@ body {
 
                 <div class="answer-buttons">
                     <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">erkennen</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">der Verstand</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Dämonen</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Lumpen</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Finsternis</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">der Philosoph</button>
                 </div>
             </div>
         </div>
@@ -1634,14 +1946,14 @@ body {
                 <h3>Як німецькою буде:</h3>
 
                 <div class="word-display">
-                    <span class="russian-word">безумие</span>
+                    <span class="russian-word">нищий</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">der Wahnsinn</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">verstellen</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">der Bettler</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">der Wahnsinn</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Finsternis</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Dämonen</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Lumpen</button>
                 </div>
             </div>
         </div>
@@ -1657,14 +1969,14 @@ body {
                 <h3>Як німецькою буде:</h3>
 
                 <div class="word-display">
-                    <span class="russian-word">дрожать</span>
+                    <span class="russian-word">безумие</span>
                 </div>
 
                 <div class="answer-buttons">
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Lumpen</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">der Wahnsinn</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">der Bettler</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Dämonen</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">weinen</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">der Wahnsinn</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">zittern</button>
                 </div>
             </div>
         </div>
@@ -1680,14 +1992,14 @@ body {
                 <h3>Як німецькою буде:</h3>
 
                 <div class="word-display">
-                    <span class="russian-word">шептать</span>
+                    <span class="russian-word">притворяться</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">verstellen</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">weinen</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">der Philosoph</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">flüstern</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">verstellen</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Lumpen</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">flüstern</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">zittern</button>
                 </div>
             </div>
         </div>
@@ -1703,14 +2015,14 @@ body {
                 <h3>Як німецькою буде:</h3>
 
                 <div class="word-display">
-                    <span class="russian-word">демоны</span>
+                    <span class="russian-word">разум</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Finsternis</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Lumpen</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">der Verstand</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">weinen</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">der Philosoph</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">flüstern</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">die Dämonen</button>
                 </div>
             </div>
         </div>
@@ -1726,14 +2038,14 @@ body {
                 <h3>Як німецькою буде:</h3>
 
                 <div class="word-display">
-                    <span class="russian-word">лохмотья</span>
+                    <span class="russian-word">тьма, мрак</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Finsternis</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">verstellen</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">die Lumpen</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">der Verstand</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Dämonen</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">die Finsternis</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Lumpen</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">erkennen</button>
                 </div>
             </div>
         </div>
@@ -1749,14 +2061,14 @@ body {
                 <h3>Як німецькою буде:</h3>
 
                 <div class="word-display">
-                    <span class="russian-word">разум</span>
+                    <span class="russian-word">философ</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Lumpen</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">flüstern</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">verstellen</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">der Verstand</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">der Wahnsinn</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Finsternis</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">der Philosoph</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">der Bettler</button>
                 </div>
             </div>
         </div>
@@ -1841,7 +2153,7 @@ body {
                 
                 <div class="sentence-builder" data-sentence-idx="0">
                     <p class="translation">Том - бедный нищий!</p>
-                    <div class="word-pool"><span class="draggable" draggable="true">Tom</span><span class="draggable" draggable="true">Bettler</span><span class="draggable" draggable="true">ein</span><span class="draggable" draggable="true">armer</span><span class="draggable" draggable="true">ist</span></div>
+                    <div class="word-pool"><span class="draggable" draggable="true">Bettler</span><span class="draggable" draggable="true">ein</span><span class="draggable" draggable="true">Tom</span><span class="draggable" draggable="true">ist</span><span class="draggable" draggable="true">armer</span></div>
                     <div class="drop-zone" data-correct="Tom ist ein armer Bettler">
                         <span class="placeholder">Перетащите слова сюда</span>
                     </div>
@@ -1858,7 +2170,7 @@ body {
                 
                 <div class="sentence-builder" data-sentence-idx="1">
                     <p class="translation">Это ли безумие?</p>
-                    <div class="word-pool"><span class="draggable" draggable="true">das</span><span class="draggable" draggable="true">Wahnsinn</span><span class="draggable" draggable="true">Ist</span><span class="draggable" draggable="true">der</span></div>
+                    <div class="word-pool"><span class="draggable" draggable="true">Wahnsinn</span><span class="draggable" draggable="true">Ist</span><span class="draggable" draggable="true">das</span><span class="draggable" draggable="true">der</span></div>
                     <div class="drop-zone" data-correct="Ist das der Wahnsinn">
                         <span class="placeholder">Перетащите слова сюда</span>
                     </div>
@@ -1875,7 +2187,7 @@ body {
                 
                 <div class="sentence-builder" data-sentence-idx="2">
                     <p class="translation">Демоны преследуют меня!</p>
-                    <div class="word-pool"><span class="draggable" draggable="true">Die</span><span class="draggable" draggable="true">Dämonen</span><span class="draggable" draggable="true">mich</span><span class="draggable" draggable="true">verfolgen</span></div>
+                    <div class="word-pool"><span class="draggable" draggable="true">verfolgen</span><span class="draggable" draggable="true">Die</span><span class="draggable" draggable="true">Dämonen</span><span class="draggable" draggable="true">mich</span></div>
                     <div class="drop-zone" data-correct="Die Dämonen verfolgen mich">
                         <span class="placeholder">Перетащите слова сюда</span>
                     </div>
@@ -1892,7 +2204,7 @@ body {
                 
                 <div class="sentence-builder" data-sentence-idx="3">
                     <p class="translation">Я должен притворяться</p>
-                    <div class="word-pool"><span class="draggable" draggable="true">Ich</span><span class="draggable" draggable="true">muss</span><span class="draggable" draggable="true">mich</span><span class="draggable" draggable="true">verstellen</span></div>
+                    <div class="word-pool"><span class="draggable" draggable="true">muss</span><span class="draggable" draggable="true">verstellen</span><span class="draggable" draggable="true">mich</span><span class="draggable" draggable="true">Ich</span></div>
                     <div class="drop-zone" data-correct="Ich muss mich verstellen">
                         <span class="placeholder">Перетащите слова сюда</span>
                     </div>
@@ -1909,7 +2221,7 @@ body {
                 
                 <div class="sentence-builder" data-sentence-idx="4">
                     <p class="translation">Том носит лишь лохмотья!</p>
-                    <div class="word-pool"><span class="draggable" draggable="true">nur</span><span class="draggable" draggable="true">Tom</span><span class="draggable" draggable="true">trägt</span><span class="draggable" draggable="true">Lumpen</span></div>
+                    <div class="word-pool"><span class="draggable" draggable="true">trägt</span><span class="draggable" draggable="true">Lumpen</span><span class="draggable" draggable="true">Tom</span><span class="draggable" draggable="true">nur</span></div>
                     <div class="drop-zone" data-correct="Tom trägt nur Lumpen">
                         <span class="placeholder">Перетащите слова сюда</span>
                     </div>
@@ -1926,7 +2238,7 @@ body {
                 
                 <div class="sentence-builder" data-sentence-idx="5">
                     <p class="translation">Я не узнаю его</p>
-                    <div class="word-pool"><span class="draggable" draggable="true">nicht</span><span class="draggable" draggable="true">ihn</span><span class="draggable" draggable="true">Ich</span><span class="draggable" draggable="true">erkenne</span></div>
+                    <div class="word-pool"><span class="draggable" draggable="true">ihn</span><span class="draggable" draggable="true">nicht</span><span class="draggable" draggable="true">erkenne</span><span class="draggable" draggable="true">Ich</span></div>
                     <div class="drop-zone" data-correct="Ich erkenne ihn nicht">
                         <span class="placeholder">Перетащите слова сюда</span>
                     </div>
@@ -1943,7 +2255,7 @@ body {
                 
                 <div class="sentence-builder" data-sentence-idx="6">
                     <p class="translation">Мой философ! Что есть человек?</p>
-                    <div class="word-pool"><span class="draggable" draggable="true">Philosoph</span><span class="draggable" draggable="true">Mein</span></div>
+                    <div class="word-pool"><span class="draggable" draggable="true">Mein</span><span class="draggable" draggable="true">Philosoph</span></div>
                     <div class="drop-zone" data-correct="Mein Philosoph">
                         <span class="placeholder">Перетащите слова сюда</span>
                     </div>
@@ -1960,7 +2272,7 @@ body {
                 
                 <div class="sentence-builder" data-sentence-idx="7">
                     <p class="translation">Том дрожит от холода!</p>
-                    <div class="word-pool"><span class="draggable" draggable="true">Kälte</span><span class="draggable" draggable="true">Tom</span><span class="draggable" draggable="true">vor</span><span class="draggable" draggable="true">zittert</span></div>
+                    <div class="word-pool"><span class="draggable" draggable="true">vor</span><span class="draggable" draggable="true">zittert</span><span class="draggable" draggable="true">Kälte</span><span class="draggable" draggable="true">Tom</span></div>
                     <div class="drop-zone" data-correct="Tom zittert vor Kälte">
                         <span class="placeholder">Перетащите слова сюда</span>
                     </div>
@@ -1977,7 +2289,7 @@ body {
                 
                 <div class="sentence-builder" data-sentence-idx="8">
                     <p class="translation">Том шепчет тайны</p>
-                    <div class="word-pool"><span class="draggable" draggable="true">Geheimnisse</span><span class="draggable" draggable="true">Tom</span><span class="draggable" draggable="true">flüstert</span></div>
+                    <div class="word-pool"><span class="draggable" draggable="true">flüstert</span><span class="draggable" draggable="true">Tom</span><span class="draggable" draggable="true">Geheimnisse</span></div>
                     <div class="drop-zone" data-correct="Tom flüstert Geheimnisse">
                         <span class="placeholder">Перетащите слова сюда</span>
                     </div>
@@ -1994,7 +2306,7 @@ body {
                 
                 <div class="sentence-builder" data-sentence-idx="9">
                     <p class="translation">Мой разум покидает меня</p>
-                    <div class="word-pool"><span class="draggable" draggable="true">Mein</span><span class="draggable" draggable="true">verlässt</span><span class="draggable" draggable="true">Verstand</span><span class="draggable" draggable="true">mich</span></div>
+                    <div class="word-pool"><span class="draggable" draggable="true">verlässt</span><span class="draggable" draggable="true">Mein</span><span class="draggable" draggable="true">mich</span><span class="draggable" draggable="true">Verstand</span></div>
                     <div class="drop-zone" data-correct="Mein Verstand verlässt mich">
                         <span class="placeholder">Перетащите слова сюда</span>
                     </div>
@@ -2011,7 +2323,7 @@ body {
                 
                 <div class="sentence-builder" data-sentence-idx="10">
                     <p class="translation">Во тьме они подстерегают!</p>
-                    <div class="word-pool"><span class="draggable" draggable="true">sie</span><span class="draggable" draggable="true">Finsternis</span><span class="draggable" draggable="true">lauern</span><span class="draggable" draggable="true">der</span><span class="draggable" draggable="true">In</span></div>
+                    <div class="word-pool"><span class="draggable" draggable="true">In</span><span class="draggable" draggable="true">Finsternis</span><span class="draggable" draggable="true">der</span><span class="draggable" draggable="true">lauern</span><span class="draggable" draggable="true">sie</span></div>
                     <div class="drop-zone" data-correct="In der Finsternis lauern sie">
                         <span class="placeholder">Перетащите слова сюда</span>
                     </div>
@@ -2028,7 +2340,7 @@ body {
                 
                 <div class="sentence-builder" data-sentence-idx="11">
                     <p class="translation">Я мог бы плакать</p>
-                    <div class="word-pool"><span class="draggable" draggable="true">Ich</span><span class="draggable" draggable="true">weinen</span><span class="draggable" draggable="true">könnte</span></div>
+                    <div class="word-pool"><span class="draggable" draggable="true">könnte</span><span class="draggable" draggable="true">Ich</span><span class="draggable" draggable="true">weinen</span></div>
                     <div class="drop-zone" data-correct="Ich könnte weinen">
                         <span class="placeholder">Перетащите слова сюда</span>
                     </div>

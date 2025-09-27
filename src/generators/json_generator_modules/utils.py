@@ -1,63 +1,51 @@
-"""
-Generator Utils - допоміжні функції
-"""
+"""Utility mixin with data loading helpers for the JSON generator."""
 
-import re
-from typing import Dict, List, Any
+from __future__ import annotations
+
+from collections import defaultdict
+from pathlib import Path
+from typing import Dict, Iterable, List
+
+from .base import LessonContext, transliterate_filename
 
 
 class GeneratorUtils:
-    """Утиліти для генератора."""
-    
-    @staticmethod
-    def count_words(vocabulary: List[Dict[str, Any]]) -> int:
-        """Підрахунок слів у словнику."""
-        return len([w for w in vocabulary if w.get('german')])
-        
-    @staticmethod
-    def sanitize_filename(text: str) -> str:
-        """Очищення назви файлу."""
-        # Видалення спеціальних символів
-        text = re.sub(r'[^\w\s-]', '', text)
-        # Заміна пробілів на підкреслення
-        text = re.sub(r'[-\s]+', '_', text)
-        return text.lower()
-        
-    @staticmethod
-    def format_level(level: str) -> str:
-        """Форматування рівня."""
-        levels = {
-            'a1': 'A1 - Початківець',
-            'a2': 'A2 - Елементарний',
-            'b1': 'B1 - Середній',
-            'b2': 'B2 - Вище середнього',
-            'c1': 'C1 - Просунутий',
-            'c2': 'C2 - Професійний'
-        }
-        return levels.get(level.lower(), level.upper())
-        
-    @staticmethod
-    def get_gradient_by_index(index: int) -> str:
-        """Отримати градієнт за індексом."""
-        gradients = [
-            'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-            'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
-            'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
-            'linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)',
-            'linear-gradient(135deg, #fa709a 0%, #fee140 100%)',
-            'linear-gradient(135deg, #30cfd0 0%, #330867 100%)'
-        ]
-        return gradients[index % len(gradients)]
-        
-    @staticmethod
-    def group_lessons_by_category(lessons: List[Dict]) -> Dict[str, List]:
-        """Групування уроків за категоріями."""
-        grouped = {}
-        
-        for lesson in lessons:
-            level = lesson.get('level', 'other')
-            if level not in grouped:
-                grouped[level] = []
-            grouped[level].append(lesson)
-            
+    """Utility helpers mixed into the main generator."""
+
+    def _collect_lessons(self, data_dir: Path) -> Dict[str, List[LessonContext]]:
+        """Load all JSON lessons grouped by category."""
+
+        lessons: Dict[str, List[LessonContext]] = {cat: [] for cat in self.categories}
+
+        for category in self.categories:
+            category_dir = data_dir / category
+            if not category_dir.exists():
+                self._log("warning", f"[JSON] Категорія {category} відсутня")
+                continue
+
+            for json_file in sorted(category_dir.glob("*.json")):
+                lesson_data = self._load_json(json_file)
+                if not lesson_data:
+                    continue
+
+                lesson_id = lesson_data.get("id") or json_file.stem
+                safe_id = lesson_data.get("safe_id") or transliterate_filename(lesson_id)
+                group = lesson_data.get("group", "ungrouped")
+
+                lessons[category].append(
+                    LessonContext(
+                        data=lesson_data,
+                        category=category,
+                        group=group,
+                        source=json_file,
+                        safe_id=safe_id,
+                    )
+                )
+
+        return lessons
+
+    def _group_by(self, lessons: Iterable[LessonContext]) -> Dict[str, List[LessonContext]]:
+        grouped: Dict[str, List[LessonContext]] = defaultdict(list)
+        for ctx in lessons:
+            grouped[ctx.group or "ungrouped"].append(ctx)
         return grouped

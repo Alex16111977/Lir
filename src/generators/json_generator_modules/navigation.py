@@ -1,77 +1,43 @@
-"""
-Navigation Generator - генерація навігації
-"""
+"""Navigation helpers for the JSON lesson pages."""
 
-from typing import Dict, List
+from __future__ import annotations
+
+from typing import Dict, List, Optional
+
+from .base import LessonContext
 
 
 class NavigationGenerator:
-    """Генерація навігаційних елементів."""
-    
-    def generate_breadcrumb(self, path_items: List[Dict[str, str]]) -> str:
-        """Генерація хлібних крихт."""
-        items = []
-        for item in path_items:
-            if item.get('url'):
-                items.append(f'<a href="{item["url"]}">{item["title"]}</a>')
-            else:
-                items.append(f'<span>{item["title"]}</span>')
-                
+    """Build navigation blocks for lesson pages."""
+
+    def _build_navigation(self, lessons: List[LessonContext], index: int) -> Dict[str, Optional[LessonContext]]:
+        prev_ctx = lessons[index - 1] if index > 0 else None
+        next_ctx = lessons[index + 1] if index + 1 < len(lessons) else None
+        return {"prev": prev_ctx, "next": next_ctx}
+
+    def _navigation_html(self, navigation: Dict[str, Optional[LessonContext]]) -> str:
+        links = []
+        prev_ctx = navigation.get("prev")
+        next_ctx = navigation.get("next")
+
+        if prev_ctx:
+            links.append(
+                f'<a class="nav-btn prev" href="{prev_ctx.safe_id}.html">← {prev_ctx.data.get("title", "Попередній урок")}</a>'
+            )
+        else:
+            links.append('<span class="nav-btn prev disabled">← Немає</span>')
+
+        links.append('<a class="nav-btn index" href="../index.html">Список уроків</a>')
+
+        if next_ctx:
+            links.append(
+                f'<a class="nav-btn next" href="{next_ctx.safe_id}.html">{next_ctx.data.get("title", "Наступний урок")} →</a>'
+            )
+        else:
+            links.append('<span class="nav-btn next disabled">Немає →</span>')
+
         return f"""
-        <nav class="breadcrumb">
-            {' / '.join(items)}
+        <nav class="lesson-navigation">
+            {' '.join(links)}
         </nav>
-        """
-        
-    def generate_sidebar(self, lessons: List[Dict], current_lesson: str = None) -> str:
-        """Генерація бічної панелі з уроками."""
-        items = []
-        
-        for lesson in lessons:
-            title = lesson.get('title', '')
-            url = lesson.get('url', '#')
-            is_current = 'current' if title == current_lesson else ''
-            
-            items.append(f"""
-                <li class="sidebar-item {is_current}">
-                    <a href="{url}">{self._escape_html(title)}</a>
-                </li>
-            """)
-            
-        return f"""
-        <aside class="sidebar">
-            <h3>Уроки</h3>
-            <ul class="sidebar-list">
-                {''.join(items)}
-            </ul>
-        </aside>
-        """
-        
-    def generate_pagination(self, current: int, total: int, base_url: str) -> str:
-        """Генерація пагінації."""
-        if total <= 1:
-            return ""
-            
-        pages = []
-        
-        for i in range(1, total + 1):
-            if i == current:
-                pages.append(f'<span class="page current">{i}</span>')
-            else:
-                pages.append(f'<a href="{base_url}?page={i}" class="page">{i}</a>')
-                
-        prev_link = ""
-        next_link = ""
-        
-        if current > 1:
-            prev_link = f'<a href="{base_url}?page={current-1}" class="prev">←</a>'
-        if current < total:
-            next_link = f'<a href="{base_url}?page={current+1}" class="next">→</a>'
-            
-        return f"""
-        <div class="pagination">
-            {prev_link}
-            {' '.join(pages)}
-            {next_link}
-        </div>
         """

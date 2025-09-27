@@ -121,70 +121,204 @@ class ExercisesAssetsGenerator:
     transform: translateY(0);
 }
 
-/* Word Matching */
-.matching-container {
-    display: flex;
-    gap: 24px;
-    flex-wrap: wrap;
-    align-items: flex-start;
+/* Word Matching - OPTIMIZED FOR TABLET WITHOUT SCROLL */
+.word-selection-container {
+    margin-top: 15px;
 }
 
-.words-column,
-.translations-column {
-    flex: 1;
-    min-width: 260px;
+.word-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    /* Auto height to fit all 12 words without scroll */
+    min-height: auto;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 12px;
+    padding: 15px;
+}
+
+.word-column {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    /* No overflow - all words visible */
 }
 
-.word-item,
-.translation-item {
+.word-column h4 {
+    text-align: center;
+    color: #4b5563;
+    font-weight: 700;
+    font-size: 15px;
+    margin: 0 0 10px 0;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #e2e8f0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.word-list {
+    /* No scroll - all items visible */
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 5px;
+}
+
+/* Word buttons optimized for tablet */
+.word-item {
     background: white;
+    border: 2px solid #e2e8f0;
     border-radius: 10px;
-    padding: 14px 16px;
-    border: 2px solid transparent;
+    /* Optimized padding for 12 words */
+    padding: 10px 14px;
     cursor: pointer;
-    transition: all 0.2s ease;
-    box-shadow: 0 8px 20px rgba(148, 163, 184, 0.25);
+    transition: all 0.3s ease;
+    text-align: left;
+    /* Optimized font size for tablet */
+    font-size: 14px;
+    min-height: 45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    /* Remove default button styles */
+    font-family: inherit;
 }
 
-.word-item:hover,
-.translation-item:hover {
-    border-color: #c7d2fe;
+.word-item:hover:not(.correct):not(.disabled) {
+    border-color: #a78bfa;
+    background: linear-gradient(135deg, #faf5ff, #f3e8ff);
+    transform: translateX(2px);
+    box-shadow: 0 4px 12px rgba(167, 139, 250, 0.25);
 }
 
-.word-item.selected,
-.word-item.paired,
-.translation-item.selected {
-    border-color: #6366f1;
-    background: #eef2ff;
+.word-item.selected {
+    background: linear-gradient(135deg, #eef2ff, #ddd6fe);
+    border-color: #7c3aed;
+    transform: scale(1.02);
+    box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
 }
 
-/* Миттєва візуальна реакція */
-.word-item.correct,
-.translation-item.correct {
+.word-item.correct {
     background: linear-gradient(135deg, #22c55e, #16a34a) !important;
     color: white !important;
-    transform: scale(0.95);
-    opacity: 0.9;
+    border-color: #16a34a;
+    transform: scale(0.96);
+    opacity: 0.85;
     pointer-events: none;
-    border-color: #10b981;
-    transition: all 0.3s ease;
 }
 
-.word-item.incorrect,
-.translation-item.incorrect {
+.word-item.incorrect {
     background: linear-gradient(135deg, #ef4444, #dc2626) !important;
-    animation: shake 0.5s;
     color: white !important;
-    border-color: #ef4444;
+    animation: shake 0.5s;
+    border-color: #dc2626;
+}
+
+.word-item .word-main {
+    font-weight: 600;
+    display: block;
+    font-size: 14px;
+    line-height: 1.3;
+}
+
+.word-item .transcription {
+    font-size: 12px;
+    color: #6b7280;
+    margin-top: 3px;
+    font-style: italic;
+    opacity: 0.8;
+}
+
+.word-item.correct .transcription {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+/* Russian words column */
+.russian-word {
+    /* Slightly smaller font for Russian */
+    font-size: 13px;
+    font-weight: 500;
+}
+
+/* Tablet specific optimizations */
+@media (min-width: 600px) and (max-width: 1024px) {
+    .word-columns {
+        gap: 16px;
+        padding: 12px;
+    }
+    
+    .word-item {
+        padding: 9px 12px;
+        min-height: 42px;
+        font-size: 13px;
+    }
+    
+    .word-item .word-main {
+        font-size: 13px;
+    }
+    
+    .word-item .transcription {
+        font-size: 11px;
+    }
+    
+    .word-list {
+        gap: 6px;
+    }
+}
+
+/* Mobile adaptation */
+@media (max-width: 599px) {
+    .word-columns {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .word-column + .word-column {
+        margin-top: 15px;
+        padding-top: 15px;
+        border-top: 2px solid #e2e8f0;
+    }
+    
+    .word-item {
+        padding: 11px 14px;
+        min-height: 46px;
+        font-size: 14px;
+    }
+    
+    .word-list {
+        gap: 7px;
+    }
+}
+
+/* Large screens */
+@media (min-width: 1025px) {
+    .word-columns {
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+    
+    .word-item {
+        padding: 11px 16px;
+        font-size: 15px;
+    }
+    
+    .word-item .word-main {
+        font-size: 15px;
+    }
 }
 
 @keyframes shake {
     0%, 100% { transform: translateX(0); }
     25% { transform: translateX(-5px); }
     75% { transform: translateX(5px); }
+}
+
+/* Animation for correct pair */
+@keyframes correctPair {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(0.96); }
 }
 
 /* Прогрес-бар */

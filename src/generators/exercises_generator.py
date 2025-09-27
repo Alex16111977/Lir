@@ -213,45 +213,48 @@ class ExercisesGenerator:
     # Individual exercise generators
     # ------------------------------------------------------------------
     def _generate_word_matching(self, vocabulary: List[Dict[str, Any]]) -> str:
-        """[FIXED] Використовує ВСІ слова з уроку для підбору."""
+        """[OPTIMIZED] Двухколоночный вид для планшетов без прокрутки."""
         selectable = [word for word in vocabulary if word.get("german") and word.get("translation")]
         if not selectable:
             return ""
 
-        # Використовуємо ВСІ слова або максимум 20 (для дуже великих уроків)
+        # Используем ВСЕ слова (обычно 12 в уроке)
         sample = selectable if len(selectable) <= 20 else random.sample(selectable, 20)
-        translations = [escape(word.get("translation", "")) for word in sample]
-        random.shuffle(translations)
-
-        words_html = []
+        
+        # Разделяем на две колонки
+        german_words_html = []
+        russian_words_html = []
+        
+        # Немецкие слова в левую колонку
         for idx, word in enumerate(sample):
-            words_html.append(
+            german_words_html.append(
                 f"""
-                <div class=\"word-item prompt\" data-pair-id=\"{idx}\" data-type=\"prompt\" 
-                     onclick=\"handleWordClick(this, 'prompt')\">
+                <button class=\"word-item german-word\" data-pair-id=\"{idx}\" 
+                        onclick=\"handleWordPairClick(this, {idx}, 'german')\" type=\"button\">
                     <span class=\"word-main\">{escape(word.get('german', ''))}</span>
-                    <small class=\"word-hint\">{escape(word.get('transcription', ''))}</small>
-                </div>
+                    <small class=\"transcription\">{escape(word.get('transcription', ''))}</small>
+                </button>
                 """
             )
-
-        translations_html = []
-        for idx, translation in enumerate(translations):
-            # Знайдемо правильний pair-id для цього перекладу
-            correct_pair_id = next((i for i, word in enumerate(sample) 
-                                   if escape(word.get('translation', '')) == translation), 0)
-            translations_html.append(
+        
+        # Перемешиваем переводы для правой колонки
+        shuffled_pairs = [(idx, word) for idx, word in enumerate(sample)]
+        random.shuffle(shuffled_pairs)
+        
+        for idx, word in shuffled_pairs:
+            # Русские переводы в правую колонку
+            russian_words_html.append(
                 f"""
-                <div class=\"translation-item match\" data-pair-id=\"{correct_pair_id}\" 
-                     data-type=\"match\" onclick=\"handleWordClick(this, 'match')\">
-                    {translation}
-                </div>
+                <button class=\"word-item russian-word\" data-pair-id=\"{idx}\"
+                        onclick=\"handleWordPairClick(this, {idx}, 'russian')\" type=\"button\">
+                    {escape(word.get('translation', ''))}
+                </button>
                 """
             )
-
+        
         total_pairs = len(sample)
 
-        return f"""\n            <div class=\"exercise-block\" id=\"word-matching\">\n                <h3 class=\"exercise-title\">🔗 Подбор слов</h3>\n                <p class=\"exercise-intro\">Нажмите на немецкое слово, затем на его русский перевод. При правильном ответе пара станет зелёной.</p>\n                \n                <!-- Прогрес-бар -->\n                <div class=\"matching-progress\">\n                    <div class=\"progress-track\">\n                        <div class=\"progress-fill\" style=\"width: 0%\"></div>\n                    </div>\n                    <div class=\"progress-text\">0 з {total_pairs}</div>\n                </div>\n                \n                <div class=\"matching-container\">\n                    <div class=\"words-column\">\n{"".join(words_html)}\n                    </div>\n                    <div class=\"translations-column\">\n{"".join(translations_html)}\n                    </div>\n                </div>\n                <!-- Кнопка видалена - миттєва перевірка! -->\n            </div>\n            """
+        return f"""\n            <div class=\"exercise-block\" id=\"word-matching\">\n                <h3 class=\"exercise-title\">🔗 Подбор слов</h3>\n                <p class=\"exercise-intro\">Выберите немецкое слово слева и его русский перевод справа</p>\n                \n                <!-- Прогресс-бар -->\n                <div class=\"matching-progress\">\n                    <div class=\"progress-track\">\n                        <div class=\"progress-fill\" style=\"width: 0%\"></div>\n                    </div>\n                    <div class=\"progress-text\">0 из {total_pairs}</div>\n                </div>\n                \n                <div class=\"word-selection-container\">\n                    <div class=\"word-columns\">\n                        <div class=\"word-column german-words\">\n                            <h4>НЕМЕЦКИЕ</h4>\n                            <div class=\"word-list\">\n{"".join(german_words_html)}\n                            </div>\n                        </div>\n                        <div class=\"word-column russian-words\">\n                            <h4>РУССКИЕ</h4>\n                            <div class=\"word-list\">\n{"".join(russian_words_html)}\n                            </div>\n                        </div>\n                    </div>\n                </div>\n            </div>\n            """
 
     def _generate_articles(self, vocabulary: List[Dict[str, Any]]) -> str:
         """[FIXED] Використовує ВСІ іменники з артиклями."""

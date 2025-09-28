@@ -106,87 +106,385 @@ body {
 
 .word-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
 }
 
 .word-card {
-    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%); /* Базовий градієнт */
     border-radius: 15px;
     padding: 20px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     transform: translateY(0);
-    transition: transform 0.3s;
+    transition: all 0.3s;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-all;
+    min-width: 0;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid transparent;
 }
 
 .word-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* Градієнтний фон для чоловічого роду */
+.word-card[data-gender="masculine"] {
+    background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); /* Світло-блакитний градієнт */
+    border: 1px solid #93c5fd;
+}
+
+.word-card[data-gender="masculine"]:hover {
+    background: linear-gradient(135deg, #bfdbfe 0%, #93c5fd 100%);
+    box-shadow: 0 10px 30px rgba(43, 108, 176, 0.3);
+}
+
+/* Градієнтний фон для жіночого роду */
+.word-card[data-gender="feminine"] {
+    background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%); /* Світло-рожевий градієнт */
+    border: 1px solid #fca5a5;
+}
+
+.word-card[data-gender="feminine"]:hover {
+    background: linear-gradient(135deg, #fecaca 0%, #fca5a5 100%);
+    box-shadow: 0 10px 30px rgba(220, 38, 38, 0.3);
+}
+
+/* Градієнтний фон для середнього роду */
+.word-card[data-gender="neutral"] {
+    background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%); /* Світло-зелений градієнт */
+    border: 1px solid #6ee7b7;
+}
+
+.word-card[data-gender="neutral"]:hover {
+    background: linear-gradient(135deg, #a7f3d0 0%, #6ee7b7 100%);
+    box-shadow: 0 10px 30px rgba(22, 163, 74, 0.3);
 }
 
 .word-german {
-    font-size: 2em;
+    font-size: 1.4em;
     font-weight: bold;
-    color: white;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    color: #111827; /* Дуже темний текст для контрасту */
     margin-bottom: 10px;
+    word-break: break-all;
+    hyphens: auto;
+    overflow-wrap: break-word;
+    line-height: 1.3;
+    max-width: 100%;
+    text-shadow: 0 1px 2px rgba(255,255,255,0.8); /* Легка біла тінь для читабельності */
 }
 
 .word-transcription {
-    color: #fff;
-    font-size: 1.2em;
+    color: #4b5563; /* Темно-сірий текст */
+    font-size: 1em;
     margin-bottom: 10px;
-    opacity: 0.9;
+    font-style: italic;
+    word-break: break-all;
+    overflow-wrap: break-word;
+    max-width: 100%;
 }
 
 .word-russian {
-    color: #fff;
-    font-size: 1.3em;
+    color: #1f2937; /* Темний текст */
+    font-size: 1.2em;
     font-weight: 500;
     margin-bottom: 10px;
+    word-break: break-word;
+    overflow-wrap: break-word;
 }
 
 .word-type {
     display: inline-block;
-    background: rgba(255,255,255,0.3);
+    background: rgba(255, 255, 255, 0.7); /* Напівпрозорий білий фон */
+    backdrop-filter: blur(5px);
     padding: 3px 10px;
     border-radius: 10px;
-    color: white;
+    color: #374151;
     font-size: 0.9em;
     margin-bottom: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    font-weight: 600;
 }
 
 .character-voice {
     border-left: 5px solid #764ba2;
-    padding-left: 20px;
-    margin: 20px 0;
+    padding-left: 15px;
+    margin: 15px 0;
     font-style: italic;
     background: rgba(255,255,255,0.95);
-    padding: 20px;
+    padding: 15px;
     border-radius: 10px;
     color: #333;
+    word-break: break-word;
 }
 
 .gesture-anchor {
     background: #fff3cd;
     border: 2px dashed #ffc107;
-    padding: 15px;
+    padding: 12px;
     border-radius: 10px;
     display: flex;
-    align-items: center;
-    gap: 15px;
+    align-items: flex-start;
+    gap: 10px;
     margin: 15px 0;
     color: #333;
+    word-break: break-word;
+    flex-wrap: wrap;
 }
 
 .gesture-icon {
-    font-size: 40px;
+    font-size: 36px;
     animation: pulse 2s infinite;
+    flex-shrink: 0;
 }
 
 @keyframes pulse {
     0%, 100% { transform: scale(1); }
     50% { transform: scale(1.1); }
+}
+
+/* Кольорові артиклі - оновлена палітра */
+.article-der {
+    color: #2B6CB0; /* Синій для der */
+    font-weight: 700;
+    font-size: 1.1em;
+    display: inline-block;
+    margin-right: 4px;
+}
+
+.article-die {
+    color: #DC2626; /* Червоний для die */
+    font-weight: 700;
+    font-size: 1.1em;
+    display: inline-block;
+    margin-right: 4px;
+}
+
+.article-das {
+    color: #16A34A; /* Зелений для das (замість жовтого) */
+    font-weight: 700;
+    font-size: 1.1em;
+    display: inline-block;
+    margin-right: 4px;
+}
+
+/* Маленькі іконки роду */
+.gender-icon {
+    font-size: 0.9em;
+    opacity: 0.6;
+    margin-left: 8px;
+    display: inline-block;
+}
+
+.word-card[data-gender="masculine"] .gender-icon {
+    color: #2B6CB0;
+}
+
+.word-card[data-gender="feminine"] .gender-icon {
+    color: #DC2626;
+}
+
+.word-card[data-gender="neutral"] .gender-icon {
+    color: #16A34A;
+}
+
+/* Легенда артиклів */
+.article-legend {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin: 20px 0;
+    padding: 16px;
+    background: #f9fafb;
+    border-radius: 12px;
+}
+
+/* Кольорова легенда для вправ */
+.article-color-legend {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 12px;
+    background: #f9fafb;
+    border-radius: 8px;
+    margin-bottom: 16px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 600;
+    font-size: 0.95em;
+}
+
+.legend-item.masculine {
+    color: #2B6CB0;
+}
+
+.legend-item.feminine {
+    color: #DC2626;
+}
+
+.legend-item.neutral {
+    color: #16A34A;
+}
+
+.legend-card {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.legend-color {
+    width: 24px;
+    height: 24px;
+    border-radius: 6px;
+}
+
+.legend-color.masculine {
+    background: #2B6CB0;
+}
+
+.legend-color.feminine {
+    background: #DC2626;
+}
+
+.legend-color.neutral {
+    background: #16A34A;
+}
+
+/* Кнопки артиклів у вправах */
+.article-buttons button {
+    background: white !important;
+    border: 2px solid #e0e0e0;
+    transition: all 0.3s;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 600;
+}
+
+.article-buttons button[data-article="der"] {
+    border-color: #2B6CB0;
+    color: #2B6CB0;
+}
+
+.article-buttons button[data-article="die"] {
+    border-color: #DC2626;
+    color: #DC2626;
+}
+
+.article-buttons button[data-article="das"] {
+    border-color: #16A34A;
+    color: #16A34A;
+}
+
+/* Hover - легке заповнення */
+.article-buttons button[data-article="der"]:hover {
+    background: rgba(43, 108, 176, 0.1) !important;
+}
+
+.article-buttons button[data-article="die"]:hover {
+    background: rgba(220, 38, 38, 0.1) !important;
+}
+
+.article-buttons button[data-article="das"]:hover {
+    background: rgba(22, 163, 74, 0.1) !important;
+}
+
+/* Правильна відповідь */
+.article-buttons button.correct {
+    color: white !important;
+}
+
+.article-buttons button[data-article="der"].correct {
+    background: #2B6CB0 !important;
+}
+
+.article-buttons button[data-article="die"].correct {
+    background: #DC2626 !important;
+}
+
+.article-buttons button[data-article="das"].correct {
+    background: #16A34A !important;
+    color: white !important;
+}
+
+/* Адаптивные стили для мобильных устройств */
+@media (max-width: 768px) {
+    .word-cards {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .word-card {
+        padding: 15px;
+        max-width: 100%;
+    }
+    
+    .word-german {
+        font-size: 1.2em;
+    }
+    
+    .word-transcription {
+        font-size: 0.9em;
+    }
+    
+    .word-russian {
+        font-size: 1em;
+    }
+    
+    .gesture-anchor {
+        flex-direction: column;
+        gap: 8px;
+        padding: 10px;
+    }
+    
+    .character-voice {
+        padding: 12px;
+        padding-left: 12px;
+    }
+}
+
+@media (max-width: 500px) {
+    .word-cards {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    
+    .word-card {
+        padding: 12px;
+        min-width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .word-german {
+        font-size: 1.1em;
+        word-break: break-all;
+    }
+    
+    .word-transcription {
+        font-size: 0.85em;
+    }
+    
+    .word-russian {
+        font-size: 0.9em;
+    }
+    
+    .word-type {
+        font-size: 0.8em;
+    }
+    
+    .article-der,
+    .article-die,
+    .article-das {
+        font-size: 0.9em;
+    }
 }
 
 .navigation {
@@ -374,8 +672,8 @@ body {
                 <span>📚 Слова момента</span>
             </h2>
             <div class="word-cards">
-                <div class="word-card">
-                    <div class="word-german">der Pfad</div>
+                <div class="word-card" data-gender="masculine">
+                    <div class="word-german"><span class="article-der">der</span> Pfad <span class="gender-icon">♂</span></div>
                     <div class="word-transcription">[дер ПФАД]</div>
                     <div class="word-russian">стежка</div>
                     <div class="word-type">іменник</div>
@@ -393,8 +691,8 @@ body {
                         </div>
                     </div>
                 </div>
-                <div class="word-card">
-                    <div class="word-german">die Straße</div>
+                <div class="word-card" data-gender="feminine">
+                    <div class="word-german"><span class="article-die">die</span> Straße <span class="gender-icon">♀</span></div>
                     <div class="word-transcription">[ди ШТРА-се]</div>
                     <div class="word-russian">дорога</div>
                     <div class="word-type">іменник</div>
@@ -412,8 +710,8 @@ body {
                         </div>
                     </div>
                 </div>
-                <div class="word-card">
-                    <div class="word-german">die Richtung</div>
+                <div class="word-card" data-gender="feminine">
+                    <div class="word-german"><span class="article-die">die</span> Richtung <span class="gender-icon">♀</span></div>
                     <div class="word-transcription">[ди РИХ-тунг]</div>
                     <div class="word-russian">напрямок</div>
                     <div class="word-type">іменник</div>
@@ -431,7 +729,7 @@ body {
                         </div>
                     </div>
                 </div>
-                <div class="word-card">
+                <div class="word-card" >
                     <div class="word-german">gehen</div>
                     <div class="word-transcription">[ГЕ-ен]</div>
                     <div class="word-russian">йти</div>
@@ -450,7 +748,7 @@ body {
                         </div>
                     </div>
                 </div>
-                <div class="word-card">
+                <div class="word-card" >
                     <div class="word-german">kommen</div>
                     <div class="word-transcription">[КО-мен]</div>
                     <div class="word-russian">приходити</div>
@@ -469,7 +767,7 @@ body {
                         </div>
                     </div>
                 </div>
-                <div class="word-card">
+                <div class="word-card" >
                     <div class="word-german">führen</div>
                     <div class="word-transcription">[ФЮ-рен]</div>
                     <div class="word-russian">вести</div>
@@ -488,8 +786,8 @@ body {
                         </div>
                     </div>
                 </div>
-                <div class="word-card">
-                    <div class="word-german">der Schritt</div>
+                <div class="word-card" data-gender="masculine">
+                    <div class="word-german"><span class="article-der">der</span> Schritt <span class="gender-icon">♂</span></div>
                     <div class="word-transcription">[дер ШРИТТ]</div>
                     <div class="word-russian">крок</div>
                     <div class="word-type">іменник</div>
@@ -507,7 +805,7 @@ body {
                         </div>
                     </div>
                 </div>
-                <div class="word-card">
+                <div class="word-card" >
                     <div class="word-german">vorwärts</div>
                     <div class="word-transcription">[ФОР-вертс]</div>
                     <div class="word-russian">вперед</div>
@@ -526,7 +824,7 @@ body {
                         </div>
                     </div>
                 </div>
-                <div class="word-card">
+                <div class="word-card" >
                     <div class="word-german">zurück</div>
                     <div class="word-transcription">[цу-РЮК]</div>
                     <div class="word-russian">назад</div>
@@ -545,8 +843,8 @@ body {
                         </div>
                     </div>
                 </div>
-                <div class="word-card">
-                    <div class="word-german">das Ziel</div>
+                <div class="word-card" data-gender="neutral">
+                    <div class="word-german"><span class="article-das">das</span> Ziel <span class="gender-icon">⚪</span></div>
                     <div class="word-transcription">[дас ЦИЛ]</div>
                     <div class="word-russian">мета</div>
                     <div class="word-type">іменник</div>
@@ -564,8 +862,8 @@ body {
                         </div>
                     </div>
                 </div>
-                <div class="word-card">
-                    <div class="word-german">die Kreuzung</div>
+                <div class="word-card" data-gender="feminine">
+                    <div class="word-german"><span class="article-die">die</span> Kreuzung <span class="gender-icon">♀</span></div>
                     <div class="word-transcription">[ди КРОЙЦ-унг]</div>
                     <div class="word-russian">перехрестя</div>
                     <div class="word-type">іменник</div>
@@ -583,8 +881,8 @@ body {
                         </div>
                     </div>
                 </div>
-                <div class="word-card">
-                    <div class="word-german">die Spur</div>
+                <div class="word-card" data-gender="feminine">
+                    <div class="word-german"><span class="article-die">die</span> Spur <span class="gender-icon">♀</span></div>
                     <div class="word-transcription">[ди ШПУР]</div>
                     <div class="word-russian">слід</div>
                     <div class="word-type">іменник</div>
@@ -860,157 +1158,164 @@ body {
                         
             <div class="exercise-block" id="word-matching">
                 <h3 class="exercise-title">🔗 Подбор слов</h3>
-                <p class="exercise-intro">Нажмите на немецкое слово, затем на его русский перевод. При правильном ответе пара станет зелёной.</p>
+                <p class="exercise-intro">Выберите немецкое слово слева и его русский перевод справа</p>
                 
-                <!-- Прогрес-бар -->
+                <!-- Прогресс-бар -->
                 <div class="matching-progress">
                     <div class="progress-track">
                         <div class="progress-fill" style="width: 0%"></div>
                     </div>
-                    <div class="progress-text">0 з 12</div>
+                    <div class="progress-text">0 из 12</div>
                 </div>
                 
-                <div class="matching-container">
-                    <div class="words-column">
+                <div class="word-selection-container">
+                    <div class="word-columns">
+                        <div class="word-column german-words">
+                            <h4>НЕМЕЦКИЕ</h4>
+                            <div class="word-list">
 
-                <div class="word-item prompt" data-pair-id="0" data-type="prompt" 
-                     onclick="handleWordClick(this, 'prompt')">
+                <button class="word-item german-word" data-pair-id="0" 
+                        onclick="handleWordPairClick(this, 0, 'german')" type="button">
                     <span class="word-main">der Pfad</span>
-                    <small class="word-hint">[дер ПФАД]</small>
-                </div>
+                    <small class="transcription">[дер ПФАД]</small>
+                </button>
                 
-                <div class="word-item prompt" data-pair-id="1" data-type="prompt" 
-                     onclick="handleWordClick(this, 'prompt')">
+                <button class="word-item german-word" data-pair-id="1" 
+                        onclick="handleWordPairClick(this, 1, 'german')" type="button">
                     <span class="word-main">die Straße</span>
-                    <small class="word-hint">[ди ШТРА-се]</small>
-                </div>
+                    <small class="transcription">[ди ШТРА-се]</small>
+                </button>
                 
-                <div class="word-item prompt" data-pair-id="2" data-type="prompt" 
-                     onclick="handleWordClick(this, 'prompt')">
+                <button class="word-item german-word" data-pair-id="2" 
+                        onclick="handleWordPairClick(this, 2, 'german')" type="button">
                     <span class="word-main">die Richtung</span>
-                    <small class="word-hint">[ди РИХ-тунг]</small>
-                </div>
+                    <small class="transcription">[ди РИХ-тунг]</small>
+                </button>
                 
-                <div class="word-item prompt" data-pair-id="3" data-type="prompt" 
-                     onclick="handleWordClick(this, 'prompt')">
+                <button class="word-item german-word" data-pair-id="3" 
+                        onclick="handleWordPairClick(this, 3, 'german')" type="button">
                     <span class="word-main">gehen</span>
-                    <small class="word-hint">[ГЕ-ен]</small>
-                </div>
+                    <small class="transcription">[ГЕ-ен]</small>
+                </button>
                 
-                <div class="word-item prompt" data-pair-id="4" data-type="prompt" 
-                     onclick="handleWordClick(this, 'prompt')">
+                <button class="word-item german-word" data-pair-id="4" 
+                        onclick="handleWordPairClick(this, 4, 'german')" type="button">
                     <span class="word-main">kommen</span>
-                    <small class="word-hint">[КО-мен]</small>
-                </div>
+                    <small class="transcription">[КО-мен]</small>
+                </button>
                 
-                <div class="word-item prompt" data-pair-id="5" data-type="prompt" 
-                     onclick="handleWordClick(this, 'prompt')">
+                <button class="word-item german-word" data-pair-id="5" 
+                        onclick="handleWordPairClick(this, 5, 'german')" type="button">
                     <span class="word-main">führen</span>
-                    <small class="word-hint">[ФЮ-рен]</small>
-                </div>
+                    <small class="transcription">[ФЮ-рен]</small>
+                </button>
                 
-                <div class="word-item prompt" data-pair-id="6" data-type="prompt" 
-                     onclick="handleWordClick(this, 'prompt')">
+                <button class="word-item german-word" data-pair-id="6" 
+                        onclick="handleWordPairClick(this, 6, 'german')" type="button">
                     <span class="word-main">der Schritt</span>
-                    <small class="word-hint">[дер ШРИТТ]</small>
-                </div>
+                    <small class="transcription">[дер ШРИТТ]</small>
+                </button>
                 
-                <div class="word-item prompt" data-pair-id="7" data-type="prompt" 
-                     onclick="handleWordClick(this, 'prompt')">
+                <button class="word-item german-word" data-pair-id="7" 
+                        onclick="handleWordPairClick(this, 7, 'german')" type="button">
                     <span class="word-main">vorwärts</span>
-                    <small class="word-hint">[ФОР-вертс]</small>
-                </div>
+                    <small class="transcription">[ФОР-вертс]</small>
+                </button>
                 
-                <div class="word-item prompt" data-pair-id="8" data-type="prompt" 
-                     onclick="handleWordClick(this, 'prompt')">
+                <button class="word-item german-word" data-pair-id="8" 
+                        onclick="handleWordPairClick(this, 8, 'german')" type="button">
                     <span class="word-main">zurück</span>
-                    <small class="word-hint">[цу-РЮК]</small>
-                </div>
+                    <small class="transcription">[цу-РЮК]</small>
+                </button>
                 
-                <div class="word-item prompt" data-pair-id="9" data-type="prompt" 
-                     onclick="handleWordClick(this, 'prompt')">
+                <button class="word-item german-word" data-pair-id="9" 
+                        onclick="handleWordPairClick(this, 9, 'german')" type="button">
                     <span class="word-main">das Ziel</span>
-                    <small class="word-hint">[дас ЦИЛ]</small>
-                </div>
+                    <small class="transcription">[дас ЦИЛ]</small>
+                </button>
                 
-                <div class="word-item prompt" data-pair-id="10" data-type="prompt" 
-                     onclick="handleWordClick(this, 'prompt')">
+                <button class="word-item german-word" data-pair-id="10" 
+                        onclick="handleWordPairClick(this, 10, 'german')" type="button">
                     <span class="word-main">die Kreuzung</span>
-                    <small class="word-hint">[ди КРОЙЦ-унг]</small>
-                </div>
+                    <small class="transcription">[ди КРОЙЦ-унг]</small>
+                </button>
                 
-                <div class="word-item prompt" data-pair-id="11" data-type="prompt" 
-                     onclick="handleWordClick(this, 'prompt')">
+                <button class="word-item german-word" data-pair-id="11" 
+                        onclick="handleWordPairClick(this, 11, 'german')" type="button">
                     <span class="word-main">die Spur</span>
-                    <small class="word-hint">[ди ШПУР]</small>
-                </div>
+                    <small class="transcription">[ди ШПУР]</small>
+                </button>
                 
-                    </div>
-                    <div class="translations-column">
+                            </div>
+                        </div>
+                        <div class="word-column russian-words">
+                            <h4>РУССКИЕ</h4>
+                            <div class="word-list">
 
-                <div class="translation-item match" data-pair-id="8" 
-                     data-type="match" onclick="handleWordClick(this, 'match')">
-                    назад
-                </div>
+                <button class="word-item russian-word" data-pair-id="11"
+                        onclick="handleWordPairClick(this, 11, 'russian')" type="button">
+                    <span class="word-main">слід</span>
+                </button>
                 
-                <div class="translation-item match" data-pair-id="10" 
-                     data-type="match" onclick="handleWordClick(this, 'match')">
-                    перехрестя
-                </div>
+                <button class="word-item russian-word" data-pair-id="10"
+                        onclick="handleWordPairClick(this, 10, 'russian')" type="button">
+                    <span class="word-main">перехрестя</span>
+                </button>
                 
-                <div class="translation-item match" data-pair-id="9" 
-                     data-type="match" onclick="handleWordClick(this, 'match')">
-                    мета
-                </div>
+                <button class="word-item russian-word" data-pair-id="0"
+                        onclick="handleWordPairClick(this, 0, 'russian')" type="button">
+                    <span class="word-main">стежка</span>
+                </button>
                 
-                <div class="translation-item match" data-pair-id="11" 
-                     data-type="match" onclick="handleWordClick(this, 'match')">
-                    слід
-                </div>
+                <button class="word-item russian-word" data-pair-id="2"
+                        onclick="handleWordPairClick(this, 2, 'russian')" type="button">
+                    <span class="word-main">напрямок</span>
+                </button>
                 
-                <div class="translation-item match" data-pair-id="7" 
-                     data-type="match" onclick="handleWordClick(this, 'match')">
-                    вперед
-                </div>
+                <button class="word-item russian-word" data-pair-id="9"
+                        onclick="handleWordPairClick(this, 9, 'russian')" type="button">
+                    <span class="word-main">мета</span>
+                </button>
                 
-                <div class="translation-item match" data-pair-id="5" 
-                     data-type="match" onclick="handleWordClick(this, 'match')">
-                    вести
-                </div>
+                <button class="word-item russian-word" data-pair-id="6"
+                        onclick="handleWordPairClick(this, 6, 'russian')" type="button">
+                    <span class="word-main">крок</span>
+                </button>
                 
-                <div class="translation-item match" data-pair-id="1" 
-                     data-type="match" onclick="handleWordClick(this, 'match')">
-                    дорога
-                </div>
+                <button class="word-item russian-word" data-pair-id="7"
+                        onclick="handleWordPairClick(this, 7, 'russian')" type="button">
+                    <span class="word-main">вперед</span>
+                </button>
                 
-                <div class="translation-item match" data-pair-id="4" 
-                     data-type="match" onclick="handleWordClick(this, 'match')">
-                    приходити
-                </div>
+                <button class="word-item russian-word" data-pair-id="8"
+                        onclick="handleWordPairClick(this, 8, 'russian')" type="button">
+                    <span class="word-main">назад</span>
+                </button>
                 
-                <div class="translation-item match" data-pair-id="6" 
-                     data-type="match" onclick="handleWordClick(this, 'match')">
-                    крок
-                </div>
+                <button class="word-item russian-word" data-pair-id="4"
+                        onclick="handleWordPairClick(this, 4, 'russian')" type="button">
+                    <span class="word-main">приходити</span>
+                </button>
                 
-                <div class="translation-item match" data-pair-id="0" 
-                     data-type="match" onclick="handleWordClick(this, 'match')">
-                    стежка
-                </div>
+                <button class="word-item russian-word" data-pair-id="3"
+                        onclick="handleWordPairClick(this, 3, 'russian')" type="button">
+                    <span class="word-main">йти</span>
+                </button>
                 
-                <div class="translation-item match" data-pair-id="2" 
-                     data-type="match" onclick="handleWordClick(this, 'match')">
-                    напрямок
-                </div>
+                <button class="word-item russian-word" data-pair-id="5"
+                        onclick="handleWordPairClick(this, 5, 'russian')" type="button">
+                    <span class="word-main">вести</span>
+                </button>
                 
-                <div class="translation-item match" data-pair-id="3" 
-                     data-type="match" onclick="handleWordClick(this, 'match')">
-                    йти
-                </div>
+                <button class="word-item russian-word" data-pair-id="1"
+                        onclick="handleWordPairClick(this, 1, 'russian')" type="button">
+                    <span class="word-main">дорога</span>
+                </button>
                 
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <!-- Кнопка видалена - миттєва перевірка! -->
             </div>
             
                     </div>
@@ -1024,6 +1329,13 @@ body {
             <div class="exercise-block" id="articles">
                 <h3 class="exercise-title">🎯 Артикли и род</h3>
                 <p class="exercise-intro">Выберите правильный артикль для существительных из урока.</p>
+                
+                <!-- Кольорова легенда -->
+                <div class="article-color-legend">
+                    <span class="legend-item masculine">🔷 der = чоловічий</span>
+                    <span class="legend-item feminine">🔴 die = жіночий</span>
+                    <span class="legend-item neutral">✅ das = середній</span>
+                </div>
                 
                 <!-- Прогрес-бар -->
                 <div class="articles-progress">
@@ -1042,9 +1354,9 @@ body {
                         <small>стежка</small>
                     </div>
                     <div class="article-buttons">
-                        <button type="button" data-article="der" onclick="checkArticleInstant(this, 'der')">der</button>
-                        <button type="button" data-article="die" onclick="checkArticleInstant(this, 'die')">die</button>
-                        <button type="button" data-article="das" onclick="checkArticleInstant(this, 'das')">das</button>
+                        <button type="button" data-article="der" data-gender="masculine" onclick="checkArticleInstant(this, 'der')">der</button>
+                        <button type="button" data-article="die" data-gender="feminine" onclick="checkArticleInstant(this, 'die')">die</button>
+                        <button type="button" data-article="das" data-gender="neutral" onclick="checkArticleInstant(this, 'das')">das</button>
                     </div>
                 </div>
                 
@@ -1054,9 +1366,9 @@ body {
                         <small>дорога</small>
                     </div>
                     <div class="article-buttons">
-                        <button type="button" data-article="der" onclick="checkArticleInstant(this, 'der')">der</button>
-                        <button type="button" data-article="die" onclick="checkArticleInstant(this, 'die')">die</button>
-                        <button type="button" data-article="das" onclick="checkArticleInstant(this, 'das')">das</button>
+                        <button type="button" data-article="der" data-gender="masculine" onclick="checkArticleInstant(this, 'der')">der</button>
+                        <button type="button" data-article="die" data-gender="feminine" onclick="checkArticleInstant(this, 'die')">die</button>
+                        <button type="button" data-article="das" data-gender="neutral" onclick="checkArticleInstant(this, 'das')">das</button>
                     </div>
                 </div>
                 
@@ -1066,9 +1378,9 @@ body {
                         <small>напрямок</small>
                     </div>
                     <div class="article-buttons">
-                        <button type="button" data-article="der" onclick="checkArticleInstant(this, 'der')">der</button>
-                        <button type="button" data-article="die" onclick="checkArticleInstant(this, 'die')">die</button>
-                        <button type="button" data-article="das" onclick="checkArticleInstant(this, 'das')">das</button>
+                        <button type="button" data-article="der" data-gender="masculine" onclick="checkArticleInstant(this, 'der')">der</button>
+                        <button type="button" data-article="die" data-gender="feminine" onclick="checkArticleInstant(this, 'die')">die</button>
+                        <button type="button" data-article="das" data-gender="neutral" onclick="checkArticleInstant(this, 'das')">das</button>
                     </div>
                 </div>
                 
@@ -1078,9 +1390,9 @@ body {
                         <small>крок</small>
                     </div>
                     <div class="article-buttons">
-                        <button type="button" data-article="der" onclick="checkArticleInstant(this, 'der')">der</button>
-                        <button type="button" data-article="die" onclick="checkArticleInstant(this, 'die')">die</button>
-                        <button type="button" data-article="das" onclick="checkArticleInstant(this, 'das')">das</button>
+                        <button type="button" data-article="der" data-gender="masculine" onclick="checkArticleInstant(this, 'der')">der</button>
+                        <button type="button" data-article="die" data-gender="feminine" onclick="checkArticleInstant(this, 'die')">die</button>
+                        <button type="button" data-article="das" data-gender="neutral" onclick="checkArticleInstant(this, 'das')">das</button>
                     </div>
                 </div>
                 
@@ -1090,9 +1402,9 @@ body {
                         <small>мета</small>
                     </div>
                     <div class="article-buttons">
-                        <button type="button" data-article="der" onclick="checkArticleInstant(this, 'der')">der</button>
-                        <button type="button" data-article="die" onclick="checkArticleInstant(this, 'die')">die</button>
-                        <button type="button" data-article="das" onclick="checkArticleInstant(this, 'das')">das</button>
+                        <button type="button" data-article="der" data-gender="masculine" onclick="checkArticleInstant(this, 'der')">der</button>
+                        <button type="button" data-article="die" data-gender="feminine" onclick="checkArticleInstant(this, 'die')">die</button>
+                        <button type="button" data-article="das" data-gender="neutral" onclick="checkArticleInstant(this, 'das')">das</button>
                     </div>
                 </div>
                 
@@ -1102,9 +1414,9 @@ body {
                         <small>перехрестя</small>
                     </div>
                     <div class="article-buttons">
-                        <button type="button" data-article="der" onclick="checkArticleInstant(this, 'der')">der</button>
-                        <button type="button" data-article="die" onclick="checkArticleInstant(this, 'die')">die</button>
-                        <button type="button" data-article="das" onclick="checkArticleInstant(this, 'das')">das</button>
+                        <button type="button" data-article="der" data-gender="masculine" onclick="checkArticleInstant(this, 'der')">der</button>
+                        <button type="button" data-article="die" data-gender="feminine" onclick="checkArticleInstant(this, 'die')">die</button>
+                        <button type="button" data-article="das" data-gender="neutral" onclick="checkArticleInstant(this, 'das')">das</button>
                     </div>
                 </div>
                 
@@ -1114,9 +1426,9 @@ body {
                         <small>слід</small>
                     </div>
                     <div class="article-buttons">
-                        <button type="button" data-article="der" onclick="checkArticleInstant(this, 'der')">der</button>
-                        <button type="button" data-article="die" onclick="checkArticleInstant(this, 'die')">die</button>
-                        <button type="button" data-article="das" onclick="checkArticleInstant(this, 'das')">das</button>
+                        <button type="button" data-article="der" data-gender="masculine" onclick="checkArticleInstant(this, 'der')">der</button>
+                        <button type="button" data-article="die" data-gender="feminine" onclick="checkArticleInstant(this, 'die')">die</button>
+                        <button type="button" data-article="das" data-gender="neutral" onclick="checkArticleInstant(this, 'das')">das</button>
                     </div>
                 </div>
                 
@@ -1138,22 +1450,22 @@ body {
 
                 <div class="synonym-item">
                     <div class="word-center">
-                        <span class="word-main">der Friede</span>
-                        <small>мир</small>
-                    </div>
-                    <div class="options">
-                        <input type="text" placeholder="Синоним" data-correct="die Welt" data-hint="мир">
-                        <input type="text" placeholder="Антоним" data-correct="der Krieg" data-hint="война">
-                    </div>
-                </div>
-                
-                <div class="synonym-item">
-                    <div class="word-center">
                         <span class="word-main">vertrauen</span>
                         <small>доверять</small>
                     </div>
                     <div class="options">
                         <input type="text" placeholder="Синоним" data-correct="trauen" data-hint="доверять">
+                        <input type="text" placeholder="Антоним" data-correct="misstrauen" data-hint="не доверять">
+                    </div>
+                </div>
+                
+                <div class="synonym-item">
+                    <div class="word-center">
+                        <span class="word-main">trauen</span>
+                        <small>доверять</small>
+                    </div>
+                    <div class="options">
+                        <input type="text" placeholder="Синоним" data-correct="vertrauen" data-hint="доверять">
                         <input type="text" placeholder="Антоним" data-correct="misstrauen" data-hint="не доверять">
                     </div>
                 </div>
@@ -1205,15 +1517,15 @@ body {
                 <h3>Що означає німецьке слово?</h3>
 
                 <div class="word-display">
-                    <span class="german-word">zurück</span>
-                    <span class="transcription">[цу-РЮК]</span>
+                    <span class="german-word">das Ziel</span>
+                    <span class="transcription">[дас ЦИЛ]</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">назад</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">слід</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">приходити</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">вести</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">перехрестя</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">мета</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">назад</button>
                 </div>
             </div>
         </div>
@@ -1229,15 +1541,15 @@ body {
                 <h3>Що означає німецьке слово?</h3>
 
                 <div class="word-display">
-                    <span class="german-word">führen</span>
-                    <span class="transcription">[ФЮ-рен]</span>
+                    <span class="german-word">die Spur</span>
+                    <span class="transcription">[ди ШПУР]</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">вести</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">напрямок</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">перехрестя</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">йти</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">мета</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">назад</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">слід</button>
                 </div>
             </div>
         </div>
@@ -1253,15 +1565,15 @@ body {
                 <h3>Що означає німецьке слово?</h3>
 
                 <div class="word-display">
-                    <span class="german-word">die Kreuzung</span>
-                    <span class="transcription">[ди КРОЙЦ-унг]</span>
+                    <span class="german-word">der Pfad</span>
+                    <span class="transcription">[дер ПФАД]</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">напрямок</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">слід</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">перехрестя</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">йти</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">дорога</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">стежка</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">перехрестя</button>
                 </div>
             </div>
         </div>
@@ -1277,15 +1589,15 @@ body {
                 <h3>Що означає німецьке слово?</h3>
 
                 <div class="word-display">
-                    <span class="german-word">der Pfad</span>
-                    <span class="transcription">[дер ПФАД]</span>
+                    <span class="german-word">zurück</span>
+                    <span class="transcription">[цу-РЮК]</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">слід</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">приходити</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">дорога</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">мета</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">стежка</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">назад</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">вперед</button>
                 </div>
             </div>
         </div>
@@ -1306,10 +1618,10 @@ body {
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">йти</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">слід</button>
                     <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">крок</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">перехрестя</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">напрямок</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">вести</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">назад</button>
                 </div>
             </div>
         </div>
@@ -1325,15 +1637,15 @@ body {
                 <h3>Що означає німецьке слово?</h3>
 
                 <div class="word-display">
-                    <span class="german-word">kommen</span>
-                    <span class="transcription">[КО-мен]</span>
+                    <span class="german-word">die Richtung</span>
+                    <span class="transcription">[ди РИХ-тунг]</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">перехрестя</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">дорога</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">приходити</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">вести</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">мета</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">напрямок</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">стежка</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">йти</button>
                 </div>
             </div>
         </div>
@@ -1349,15 +1661,15 @@ body {
                 <h3>Що означає німецьке слово?</h3>
 
                 <div class="word-display">
-                    <span class="german-word">die Spur</span>
-                    <span class="transcription">[ди ШПУР]</span>
+                    <span class="german-word">führen</span>
+                    <span class="transcription">[ФЮ-рен]</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">перехрестя</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">мета</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">слід</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">стежка</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">вести</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">крок</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">слід</button>
                 </div>
             </div>
         </div>
@@ -1373,15 +1685,15 @@ body {
                 <h3>Що означає німецьке слово?</h3>
 
                 <div class="word-display">
-                    <span class="german-word">das Ziel</span>
-                    <span class="transcription">[дас ЦИЛ]</span>
+                    <span class="german-word">die Kreuzung</span>
+                    <span class="transcription">[ди КРОЙЦ-унг]</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">мета</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">дорога</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">приходити</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">вперед</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">назад</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">перехрестя</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">приходити</button>
                 </div>
             </div>
         </div>
@@ -1397,15 +1709,15 @@ body {
                 <h3>Що означає німецьке слово?</h3>
 
                 <div class="word-display">
-                    <span class="german-word">gehen</span>
-                    <span class="transcription">[ГЕ-ен]</span>
+                    <span class="german-word">vorwärts</span>
+                    <span class="transcription">[ФОР-вертс]</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">вести</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">мета</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">слід</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">йти</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">вперед</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">дорога</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">назад</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">перехрестя</button>
                 </div>
             </div>
         </div>
@@ -1421,15 +1733,15 @@ body {
                 <h3>Що означає німецьке слово?</h3>
 
                 <div class="word-display">
-                    <span class="german-word">die Richtung</span>
-                    <span class="transcription">[ди РИХ-тунг]</span>
+                    <span class="german-word">kommen</span>
+                    <span class="transcription">[КО-мен]</span>
                 </div>
 
                 <div class="answer-buttons">
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">стежка</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">слід</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">вести</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">напрямок</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">перехрестя</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">напрямок</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">приходити</button>
                 </div>
             </div>
         </div>
@@ -1445,15 +1757,15 @@ body {
                 <h3>Що означає німецьке слово?</h3>
 
                 <div class="word-display">
-                    <span class="german-word">vorwärts</span>
-                    <span class="transcription">[ФОР-вертс]</span>
+                    <span class="german-word">die Straße</span>
+                    <span class="transcription">[ди ШТРА-се]</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">назад</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">вперед</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">крок</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">напрямок</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">йти</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">дорога</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">вперед</button>
                 </div>
             </div>
         </div>
@@ -1469,15 +1781,15 @@ body {
                 <h3>Що означає німецьке слово?</h3>
 
                 <div class="word-display">
-                    <span class="german-word">die Straße</span>
-                    <span class="transcription">[ди ШТРА-се]</span>
+                    <span class="german-word">gehen</span>
+                    <span class="transcription">[ГЕ-ен]</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">вести</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">дорога</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">йти</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">напрямок</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">приходити</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">мета</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">слід</button>
                 </div>
             </div>
         </div>
@@ -1493,14 +1805,14 @@ body {
                 <h3>Як німецькою буде:</h3>
 
                 <div class="word-display">
-                    <span class="russian-word">дорога</span>
+                    <span class="russian-word">напрямок</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Richtung</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">gehen</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Spur</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">die Straße</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">die Richtung</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">vorwärts</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">kommen</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">das Ziel</button>
                 </div>
             </div>
         </div>
@@ -1516,14 +1828,14 @@ body {
                 <h3>Як німецькою буде:</h3>
 
                 <div class="word-display">
-                    <span class="russian-word">вперед</span>
+                    <span class="russian-word">приходити</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">kommen</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">vorwärts</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Kreuzung</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">gehen</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">führen</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Spur</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">der Pfad</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">kommen</button>
                 </div>
             </div>
         </div>
@@ -1539,14 +1851,14 @@ body {
                 <h3>Як німецькою буде:</h3>
 
                 <div class="word-display">
-                    <span class="russian-word">напрямок</span>
+                    <span class="russian-word">вперед</span>
                 </div>
 
                 <div class="answer-buttons">
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">das Ziel</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">die Richtung</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">gehen</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">der Pfad</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">kommen</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Straße</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">vorwärts</button>
                 </div>
             </div>
         </div>
@@ -1562,14 +1874,14 @@ body {
                 <h3>Як німецькою буде:</h3>
 
                 <div class="word-display">
-                    <span class="russian-word">приходити</span>
+                    <span class="russian-word">йти</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Richtung</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">gehen</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Spur</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">kommen</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Kreuzung</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">der Schritt</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Straße</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">gehen</button>
                 </div>
             </div>
         </div>
@@ -1585,14 +1897,14 @@ body {
                 <h3>Як німецькою буде:</h3>
 
                 <div class="word-display">
-                    <span class="russian-word">крок</span>
+                    <span class="russian-word">мета</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Richtung</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Straße</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">der Schritt</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">der Schritt</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Spur</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">führen</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">das Ziel</button>
                 </div>
             </div>
         </div>
@@ -1608,14 +1920,14 @@ body {
                 <h3>Як німецькою буде:</h3>
 
                 <div class="word-display">
-                    <span class="russian-word">стежка</span>
+                    <span class="russian-word">назад</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">führen</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">der Pfad</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Richtung</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Straße</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">zurück</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">vorwärts</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Spur</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">der Schritt</button>
                 </div>
             </div>
         </div>
@@ -1631,14 +1943,14 @@ body {
                 <h3>Як німецькою буде:</h3>
 
                 <div class="word-display">
-                    <span class="russian-word">мета</span>
+                    <span class="russian-word">дорога</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">vorwärts</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Straße</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">das Ziel</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Kreuzung</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">zurück</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">führen</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">die Straße</button>
                 </div>
             </div>
         </div>
@@ -1654,14 +1966,14 @@ body {
                 <h3>Як німецькою буде:</h3>
 
                 <div class="word-display">
-                    <span class="russian-word">вести</span>
+                    <span class="russian-word">перехрестя</span>
                 </div>
 
                 <div class="answer-buttons">
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">vorwärts</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">zurück</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">der Schritt</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">kommen</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">führen</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">das Ziel</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">die Kreuzung</button>
                 </div>
             </div>
         </div>
@@ -1677,14 +1989,14 @@ body {
                 <h3>Як німецькою буде:</h3>
 
                 <div class="word-display">
-                    <span class="russian-word">назад</span>
+                    <span class="russian-word">вести</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">der Pfad</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">das Ziel</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Spur</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">zurück</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">führen</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Straße</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">kommen</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Richtung</button>
                 </div>
             </div>
         </div>
@@ -1700,14 +2012,14 @@ body {
                 <h3>Як німецькою буде:</h3>
 
                 <div class="word-display">
-                    <span class="russian-word">йти</span>
+                    <span class="russian-word">слід</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Straße</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">der Schritt</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">die Spur</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Richtung</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">das Ziel</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">gehen</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">kommen</button>
                 </div>
             </div>
         </div>
@@ -1723,14 +2035,14 @@ body {
                 <h3>Як німецькою буде:</h3>
 
                 <div class="word-display">
-                    <span class="russian-word">перехрестя</span>
+                    <span class="russian-word">крок</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Straße</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">die Kreuzung</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">das Ziel</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">der Schritt</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">gehen</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">zurück</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">der Schritt</button>
                 </div>
             </div>
         </div>
@@ -1746,13 +2058,13 @@ body {
                 <h3>Як німецькою буде:</h3>
 
                 <div class="word-display">
-                    <span class="russian-word">слід</span>
+                    <span class="russian-word">стежка</span>
                 </div>
 
                 <div class="answer-buttons">
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">der Pfad</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Kreuzung</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">die Spur</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">zurück</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Spur</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">vorwärts</button>
                 </div>
             </div>
@@ -1838,7 +2150,7 @@ body {
                 
                 <div class="sentence-builder" data-sentence-idx="0">
                     <p class="translation">Тропа темна</p>
-                    <div class="word-pool"><span class="draggable" draggable="true">ist</span><span class="draggable" draggable="true">dunkel</span><span class="draggable" draggable="true">Pfad</span><span class="draggable" draggable="true">Der</span></div>
+                    <div class="word-pool"><span class="draggable" draggable="true">ist</span><span class="draggable" draggable="true">Der</span><span class="draggable" draggable="true">dunkel</span><span class="draggable" draggable="true">Pfad</span></div>
                     <div class="drop-zone" data-correct="Der Pfad ist dunkel">
                         <span class="placeholder">Перетащите слова сюда</span>
                     </div>
@@ -1855,7 +2167,7 @@ body {
                 
                 <div class="sentence-builder" data-sentence-idx="1">
                     <p class="translation">Дорога кончается здесь</p>
-                    <div class="word-pool"><span class="draggable" draggable="true">endet</span><span class="draggable" draggable="true">Straße</span><span class="draggable" draggable="true">Die</span><span class="draggable" draggable="true">hier</span></div>
+                    <div class="word-pool"><span class="draggable" draggable="true">hier</span><span class="draggable" draggable="true">Straße</span><span class="draggable" draggable="true">endet</span><span class="draggable" draggable="true">Die</span></div>
                     <div class="drop-zone" data-correct="Die Straße endet hier">
                         <span class="placeholder">Перетащите слова сюда</span>
                     </div>
@@ -1889,7 +2201,7 @@ body {
                 
                 <div class="sentence-builder" data-sentence-idx="3">
                     <p class="translation">Мы должны идти</p>
-                    <div class="word-pool"><span class="draggable" draggable="true">müssen</span><span class="draggable" draggable="true">Wir</span><span class="draggable" draggable="true">gehen</span></div>
+                    <div class="word-pool"><span class="draggable" draggable="true">gehen</span><span class="draggable" draggable="true">Wir</span><span class="draggable" draggable="true">müssen</span></div>
                     <div class="drop-zone" data-correct="Wir müssen gehen">
                         <span class="placeholder">Перетащите слова сюда</span>
                     </div>
@@ -1906,7 +2218,7 @@ body {
                 
                 <div class="sentence-builder" data-sentence-idx="4">
                     <p class="translation">Я возвращаюсь</p>
-                    <div class="word-pool"><span class="draggable" draggable="true">zurück</span><span class="draggable" draggable="true">Ich</span><span class="draggable" draggable="true">komme</span></div>
+                    <div class="word-pool"><span class="draggable" draggable="true">Ich</span><span class="draggable" draggable="true">zurück</span><span class="draggable" draggable="true">komme</span></div>
                     <div class="drop-zone" data-correct="Ich komme zurück">
                         <span class="placeholder">Перетащите слова сюда</span>
                     </div>
@@ -1940,7 +2252,7 @@ body {
                 
                 <div class="sentence-builder" data-sentence-idx="6">
                     <p class="translation">Ещё один шаг</p>
-                    <div class="word-pool"><span class="draggable" draggable="true">Noch</span><span class="draggable" draggable="true">Schritt</span><span class="draggable" draggable="true">ein</span></div>
+                    <div class="word-pool"><span class="draggable" draggable="true">ein</span><span class="draggable" draggable="true">Noch</span><span class="draggable" draggable="true">Schritt</span></div>
                     <div class="drop-zone" data-correct="Noch ein Schritt">
                         <span class="placeholder">Перетащите слова сюда</span>
                     </div>
@@ -1957,7 +2269,7 @@ body {
                 
                 <div class="sentence-builder" data-sentence-idx="7">
                     <p class="translation">Всегда вперёд!</p>
-                    <div class="word-pool"><span class="draggable" draggable="true">Immer</span><span class="draggable" draggable="true">vorwärts</span></div>
+                    <div class="word-pool"><span class="draggable" draggable="true">vorwärts</span><span class="draggable" draggable="true">Immer</span></div>
                     <div class="drop-zone" data-correct="Immer vorwärts">
                         <span class="placeholder">Перетащите слова сюда</span>
                     </div>
@@ -1974,7 +2286,7 @@ body {
                 
                 <div class="sentence-builder" data-sentence-idx="8">
                     <p class="translation">Нет пути назад</p>
-                    <div class="word-pool"><span class="draggable" draggable="true">Weg</span><span class="draggable" draggable="true">zurück</span><span class="draggable" draggable="true">Kein</span></div>
+                    <div class="word-pool"><span class="draggable" draggable="true">zurück</span><span class="draggable" draggable="true">Weg</span><span class="draggable" draggable="true">Kein</span></div>
                     <div class="drop-zone" data-correct="Kein Weg zurück">
                         <span class="placeholder">Перетащите слова сюда</span>
                     </div>
@@ -1991,7 +2303,7 @@ body {
                 
                 <div class="sentence-builder" data-sentence-idx="9">
                     <p class="translation">Моя цель близка</p>
-                    <div class="word-pool"><span class="draggable" draggable="true">nah</span><span class="draggable" draggable="true">Mein</span><span class="draggable" draggable="true">ist</span><span class="draggable" draggable="true">Ziel</span></div>
+                    <div class="word-pool"><span class="draggable" draggable="true">Mein</span><span class="draggable" draggable="true">Ziel</span><span class="draggable" draggable="true">nah</span><span class="draggable" draggable="true">ist</span></div>
                     <div class="drop-zone" data-correct="Mein Ziel ist nah">
                         <span class="placeholder">Перетащите слова сюда</span>
                     </div>
@@ -2008,7 +2320,7 @@ body {
                 
                 <div class="sentence-builder" data-sentence-idx="10">
                     <p class="translation">Я стою на перекрёстке</p>
-                    <div class="word-pool"><span class="draggable" draggable="true">ich</span><span class="draggable" draggable="true">stehe</span><span class="draggable" draggable="true">An</span><span class="draggable" draggable="true">Kreuzung</span><span class="draggable" draggable="true">der</span></div>
+                    <div class="word-pool"><span class="draggable" draggable="true">An</span><span class="draggable" draggable="true">stehe</span><span class="draggable" draggable="true">Kreuzung</span><span class="draggable" draggable="true">ich</span><span class="draggable" draggable="true">der</span></div>
                     <div class="drop-zone" data-correct="An der Kreuzung stehe ich">
                         <span class="placeholder">Перетащите слова сюда</span>
                     </div>
@@ -2025,7 +2337,7 @@ body {
                 
                 <div class="sentence-builder" data-sentence-idx="11">
                     <p class="translation">Я следую по его следу</p>
-                    <div class="word-pool"><span class="draggable" draggable="true">Spur</span><span class="draggable" draggable="true">seiner</span><span class="draggable" draggable="true">folge</span><span class="draggable" draggable="true">Ich</span></div>
+                    <div class="word-pool"><span class="draggable" draggable="true">seiner</span><span class="draggable" draggable="true">Spur</span><span class="draggable" draggable="true">Ich</span><span class="draggable" draggable="true">folge</span></div>
                     <div class="drop-zone" data-correct="Ich folge seiner Spur">
                         <span class="placeholder">Перетащите слова сюда</span>
                     </div>

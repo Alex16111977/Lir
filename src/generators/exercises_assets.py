@@ -121,90 +121,84 @@ class ExercisesAssetsGenerator:
     transform: translateY(0);
 }
 
-/* Word Matching - OPTIMIZED FOR TABLET WITHOUT SCROLL */
+/* Word Matching - FULL HEIGHT WITHOUT SCROLL */
 .word-selection-container {
-    margin-top: 15px;
+    margin-top: 16px;
 }
 
 .word-columns {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    /* Auto height to fit all 12 words without scroll */
-    min-height: auto;
-    background: rgba(255, 255, 255, 0.4);
+    gap: 24px;  /* Увеличить gap с 20px до 24px */
+    /* КРИТИЧНО: Увеличить высоту для размещения всех 12 слов */
+    min-height: 680px;  /* Изменить с height: 520px на min-height: 680px */
+    background: rgba(255, 255, 255, 0.5);
     border-radius: 12px;
-    padding: 15px;
+    padding: 20px;  /* Увеличить padding с 16px до 20px */
 }
 
 .word-column {
     display: flex;
     flex-direction: column;
-    /* No overflow - all words visible */
+    height: 100%;  /* Изменить с overflow: hidden на height: 100% */
 }
 
 .word-column h4 {
     text-align: center;
     color: #4b5563;
-    font-weight: 700;
-    font-size: 15px;
-    margin: 0 0 10px 0;
-    padding-bottom: 8px;
+    font-weight: 600;
+    margin: 0 0 14px 0;  /* Увеличить margin с 12px до 14px */
+    padding-bottom: 10px;  /* Увеличить с 8px до 10px */
     border-bottom: 2px solid #e2e8f0;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+    font-size: 14px;  /* Увеличить с 13px до 14px */
+    flex-shrink: 0;  /* Добавить flex-shrink: 0 */
 }
 
 .word-list {
-    /* No scroll - all items visible */
+    /* БЕЗ скролла - все слова должны быть видимы */
+    flex: 1;
+    padding: 6px;  /* Увеличить с 4px до 6px */
     display: flex;
     flex-direction: column;
-    gap: 8px;
-    padding: 5px;
+    gap: 8px;  /* Увеличить gap с 6px до 8px для лучшего spacing */
+    overflow: visible;  /* Оставить visible - без прокрутки */
 }
 
-/* Word buttons optimized for tablet */
+/* Компактные но читаемые размеры слов */
 .word-item {
     background: white;
     border: 2px solid #e2e8f0;
-    border-radius: 10px;
-    /* Optimized padding for 12 words */
-    padding: 10px 14px;
+    border-radius: 8px;
+    padding: 10px 14px;  /* Увеличить padding с 8px 12px до 10px 14px */
     cursor: pointer;
     transition: all 0.3s ease;
     text-align: left;
-    /* Optimized font size for tablet */
     font-size: 14px;
-    min-height: 45px;
+    min-height: 44px;  /* Увеличить с 38px до 44px */
     display: flex;
     flex-direction: column;
     justify-content: center;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-    width: 100%;
-    /* Remove default button styles */
-    font-family: inherit;
+    flex-shrink: 0;  /* Добавить flex-shrink: 0 чтобы элементы не сжимались */
 }
 
 .word-item:hover:not(.correct):not(.disabled) {
     border-color: #a78bfa;
-    background: linear-gradient(135deg, #faf5ff, #f3e8ff);
+    background: #f9fafb;
     transform: translateX(2px);
-    box-shadow: 0 4px 12px rgba(167, 139, 250, 0.25);
 }
 
 .word-item.selected {
-    background: linear-gradient(135deg, #eef2ff, #ddd6fe);
-    border-color: #7c3aed;
-    transform: scale(1.02);
-    box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
+    background: linear-gradient(135deg, #eef2ff, #e0e7ff);
+    border-color: #6366f1;
+    transform: scale(1.01);
 }
 
 .word-item.correct {
     background: linear-gradient(135deg, #22c55e, #16a34a) !important;
     color: white !important;
     border-color: #16a34a;
-    transform: scale(0.96);
-    opacity: 0.85;
+    transform: scale(0.97);
+    opacity: 0.9;
     pointer-events: none;
 }
 
@@ -212,50 +206,42 @@ class ExercisesAssetsGenerator:
     background: linear-gradient(135deg, #ef4444, #dc2626) !important;
     color: white !important;
     animation: shake 0.5s;
-    border-color: #dc2626;
 }
 
 .word-item .word-main {
     font-weight: 600;
     display: block;
-    font-size: 14px;
-    line-height: 1.3;
+    font-size: 15px;  /* Увеличить с 14px до 15px */
+    line-height: 1.3;  /* Увеличить с 1.2 до 1.3 */
 }
 
 .word-item .transcription {
-    font-size: 12px;
+    font-size: 12px;  /* Увеличить с 11px до 12px */
     color: #6b7280;
-    margin-top: 3px;
+    margin-top: 3px;  /* Увеличить с 2px до 3px */
     font-style: italic;
-    opacity: 0.8;
+    opacity: 0.85;  /* Добавить opacity для лучшей читаемости */
 }
 
 .word-item.correct .transcription {
-    color: rgba(255, 255, 255, 0.85);
+    color: rgba(255, 255, 255, 0.9);
 }
 
-/* Russian words column */
-.russian-word {
-    /* Slightly smaller font for Russian */
-    font-size: 13px;
-    font-weight: 500;
-}
-
-/* Tablet specific optimizations */
-@media (min-width: 600px) and (max-width: 1024px) {
+/* Responsive для Word Matching */
+@media (max-width: 1024px) {
     .word-columns {
-        gap: 16px;
-        padding: 12px;
+        min-height: 600px;  /* Уменьшить высоту для планшетов */
+        padding: 16px;
+        gap: 20px;
     }
     
     .word-item {
-        padding: 9px 12px;
-        min-height: 42px;
-        font-size: 13px;
+        padding: 8px 12px;
+        min-height: 40px;
     }
     
     .word-item .word-main {
-        font-size: 13px;
+        font-size: 14px;
     }
     
     .word-item .transcription {
@@ -267,87 +253,160 @@ class ExercisesAssetsGenerator:
     }
 }
 
-/* Mobile adaptation */
-@media (max-width: 599px) {
+/* Responsive для мобильных */
+@media (max-width: 640px) {
+    /* На мобильных - одна колонка с прокруткой */
     .word-columns {
         grid-template-columns: 1fr;
-        gap: 15px;
+        min-height: auto;
+        max-height: 650px;
+        overflow-y: auto;  /* Добавить скролл только на мобильных */
     }
     
-    .word-column + .word-column {
-        margin-top: 15px;
-        padding-top: 15px;
-        border-top: 2px solid #e2e8f0;
+    .word-column {
+        max-height: none;
     }
     
-    .word-item {
-        padding: 11px 14px;
-        min-height: 46px;
-        font-size: 14px;
+    .word-column:first-child {
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+        border-bottom: 2px solid #e2e8f0;
     }
     
     .word-list {
-        gap: 7px;
+        gap: 10px;
     }
 }
 
-/* Large screens */
-@media (min-width: 1025px) {
-    .word-columns {
-        max-width: 1000px;
-        margin: 0 auto;
-    }
-    
-    .word-item {
-        padding: 11px 16px;
-        font-size: 15px;
+/* Кастомный скролл для мобильных */
+@media (max-width: 640px) {
+    .word-columns::-webkit-scrollbar {
+        width: 6px;
     }
     
-    .word-item .word-main {
-        font-size: 15px;
+    .word-columns::-webkit-scrollbar-track {
+        background: #f1f5f9;
+        border-radius: 3px;
     }
-}
-
-@keyframes shake {
-    0%, 100% { transform: translateX(0); }
-    25% { transform: translateX(-5px); }
-    75% { transform: translateX(5px); }
-}
-
-/* Animation for correct pair */
-@keyframes correctPair {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(0.96); }
-}
-
-/* Прогрес-бар */
-.matching-progress {
-    margin: 20px 0;
-    text-align: center;
-}
-
-.progress-track {
-    height: 8px;
-    background: #e2e8f0;
-    border-radius: 4px;
-    overflow: hidden;
-    margin: 10px 0;
-}
-
-.progress-fill {
-    height: 100%;
-    background: linear-gradient(90deg, #8b5cf6, #ec4899);
-    transition: width 0.3s ease;
-}
-
-.progress-text {
-    font-weight: 600;
-    color: #4b5563;
-    font-size: 14px;
+    
+    .word-columns::-webkit-scrollbar-thumb {
+        background: #a78bfa;
+        border-radius: 3px;
+    }
 }
 
 /* Articles */
+
+/* Кольорова система для родів */
+.article-color-legend {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+}
+
+.legend-item {
+    font-size: 14px;
+    font-weight: 600;
+    padding: 5px 10px;
+    border-radius: 6px;
+}
+
+.legend-item.masculine {
+    color: #2B6CB0;
+    background: rgba(43, 108, 176, 0.1);
+}
+
+.legend-item.feminine {
+    color: #C53030;
+    background: rgba(197, 48, 48, 0.1);
+}
+
+.legend-item.neutral {
+    color: #D69E2E;
+    background: rgba(236, 201, 75, 0.1);
+}
+
+/* Кольорові кнопки артиклів */
+.article-buttons button[data-article="der"] {
+    border-color: #2B6CB0;
+    color: #2B6CB0;
+}
+
+.article-buttons button[data-article="die"] {
+    border-color: #C53030;
+    color: #C53030;
+}
+
+.article-buttons button[data-article="das"] {
+    border-color: #D69E2E;
+    color: #D69E2E;
+}
+
+.article-buttons button[data-article="der"]:hover {
+    background: #2B6CB0;
+    color: white;
+}
+
+.article-buttons button[data-article="die"]:hover {
+    background: #C53030;
+    color: white;
+}
+
+.article-buttons button[data-article="das"]:hover {
+    background: #ECC94B;
+    color: #333;
+}
+
+/* Правильна відповідь */
+.article-buttons button[data-article="der"].correct {
+    background: #2B6CB0 !important;
+    color: white !important;
+}
+
+.article-buttons button[data-article="die"].correct {
+    background: #C53030 !important;
+    color: white !important;
+}
+
+.article-buttons button[data-article="das"].correct {
+    background: #ECC94B !important;
+    color: #333 !important;
+}
+
+/* Кольорові артиклі у словнику */
+.word-german .article-der {
+    color: #2B6CB0;
+    font-weight: bold;
+}
+
+.word-german .article-die {
+    color: #C53030;
+    font-weight: bold;
+}
+
+.word-german .article-das {
+    color: #D69E2E;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+/* Тонка кольорова лінія зліва від картки */
+.word-card[data-gender="masculine"] {
+    border-left: 3px solid #2B6CB0;
+}
+
+.word-card[data-gender="feminine"] {
+    border-left: 3px solid #C53030;
+}
+
+.word-card[data-gender="neutral"] {
+    border-left: 3px solid #ECC94B;
+}
+
 .articles-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -1109,74 +1168,77 @@ class ExercisesAssetsGenerator:
         }
     }
 
-    // 1. Word matching with instant feedback
-    let selectedPrompt = null;
-    let selectedMatch = null;
+        // 1. Word matching with two columns
+    let selectedGerman = null;
+    let selectedRussian = null;
     let correctPairs = 0;
+    let matchedPairs = new Set();
 
-    // Sentence builder state tracking
-    let sentenceStates = {};
-    let hintUsage = {};
-    let totalSentences = 0;
-    let correctSentences = 0;
-    let completionShown = false;
-    
-    window.handleWordClick = function(element, type) {
-        // Якщо карточка вже правильна - ігнорувати
+    window.handleWordPairClick = function(element, pairId, type) {
+        // Проверяем, не выбрана ли уже эта пара
         if (element.classList.contains('correct')) return;
+        if (matchedPairs.has(pairId)) return;
         
-        // Видалити попередній вибір того ж типу
-        document.querySelectorAll(`.word-item.${type}.selected`)
+        // Убираем предыдущий выбор того же типа
+        document.querySelectorAll(`.word-item.${type}-word.selected`)
             .forEach(el => el.classList.remove('selected'));
         
         element.classList.add('selected');
         
-        if (type === 'prompt') {
-            selectedPrompt = element;
-            if (selectedMatch && !selectedMatch.classList.contains('correct')) {
-                checkMatch(selectedPrompt, selectedMatch);
+        if (type === 'german') {
+            selectedGerman = element;
+            // Если уже выбран русский перевод - проверяем
+            if (selectedRussian && !selectedRussian.classList.contains('correct')) {
+                checkWordMatch();
             }
         } else {
-            selectedMatch = element;
-            if (selectedPrompt && !selectedPrompt.classList.contains('correct')) {
-                checkMatch(selectedPrompt, selectedMatch);
+            selectedRussian = element;
+            // Если уже выбрано немецкое слово - проверяем
+            if (selectedGerman && !selectedGerman.classList.contains('correct')) {
+                checkWordMatch();
             }
         }
     };
     
-    function checkMatch(promptCard, matchCard) {
-        const isCorrect = promptCard.dataset.pairId === matchCard.dataset.pairId;
+    function checkWordMatch() {
+        if (!selectedGerman || !selectedRussian) return;
         
-        if (isCorrect) {
-            // Правильна відповідь
-            promptCard.classList.add('correct');
-            matchCard.classList.add('correct');
-            promptCard.classList.remove('selected');
-            matchCard.classList.remove('selected');
+        const germanPairId = selectedGerman.dataset.pairId;
+        const russianPairId = selectedRussian.dataset.pairId;
+        
+        if (germanPairId === russianPairId) {
+            // Правильная пара
+            selectedGerman.classList.add('correct');
+            selectedRussian.classList.add('correct');
+            selectedGerman.classList.remove('selected');
+            selectedRussian.classList.remove('selected');
             
+            matchedPairs.add(parseInt(germanPairId));
             correctPairs++;
-            updateProgress();
             
-            // Перевірка завершення
-            const totalPairs = document.querySelectorAll('#word-matching .word-item.prompt').length;
+            updateMatchingProgress();
+            
+            // Проверка завершения
+            const totalPairs = document.querySelectorAll('#word-matching .german-word').length;
             if (correctPairs === totalPairs) {
                 setTimeout(() => {
-                    showResult('Вітаємо! Ви виконали вправу!');
+                    showResult('🎉 Отлично! Все пары найдены правильно!');
                 }, 500);
             }
         } else {
-            // Неправильна відповідь
-            promptCard.classList.add('incorrect');
-            matchCard.classList.add('incorrect');
+            // Неправильная пара
+            selectedGerman.classList.add('incorrect');
+            selectedRussian.classList.add('incorrect');
             
             setTimeout(() => {
-                promptCard.classList.remove('incorrect', 'selected');
-                matchCard.classList.remove('incorrect', 'selected');
-            }, 500);
+                selectedGerman.classList.remove('incorrect', 'selected');
+                selectedRussian.classList.remove('incorrect', 'selected');
+            }, 600);
         }
         
-        selectedPrompt = null;
-        selectedMatch = null;
+        // Сбрасываем выбор
+        selectedGerman = null;
+        selectedRussian = null;
     }
     
     function updateProgress() {

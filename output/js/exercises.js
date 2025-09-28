@@ -10,74 +10,77 @@
         }
     }
 
-    // 1. Word matching with instant feedback
-    let selectedPrompt = null;
-    let selectedMatch = null;
+        // 1. Word matching with two columns
+    let selectedGerman = null;
+    let selectedRussian = null;
     let correctPairs = 0;
+    let matchedPairs = new Set();
 
-    // Sentence builder state tracking
-    let sentenceStates = {};
-    let hintUsage = {};
-    let totalSentences = 0;
-    let correctSentences = 0;
-    let completionShown = false;
-    
-    window.handleWordClick = function(element, type) {
-        // Якщо карточка вже правильна - ігнорувати
+    window.handleWordPairClick = function(element, pairId, type) {
+        // Проверяем, не выбрана ли уже эта пара
         if (element.classList.contains('correct')) return;
+        if (matchedPairs.has(pairId)) return;
         
-        // Видалити попередній вибір того ж типу
-        document.querySelectorAll(`.word-item.${type}.selected`)
+        // Убираем предыдущий выбор того же типа
+        document.querySelectorAll(`.word-item.${type}-word.selected`)
             .forEach(el => el.classList.remove('selected'));
         
         element.classList.add('selected');
         
-        if (type === 'prompt') {
-            selectedPrompt = element;
-            if (selectedMatch && !selectedMatch.classList.contains('correct')) {
-                checkMatch(selectedPrompt, selectedMatch);
+        if (type === 'german') {
+            selectedGerman = element;
+            // Если уже выбран русский перевод - проверяем
+            if (selectedRussian && !selectedRussian.classList.contains('correct')) {
+                checkWordMatch();
             }
         } else {
-            selectedMatch = element;
-            if (selectedPrompt && !selectedPrompt.classList.contains('correct')) {
-                checkMatch(selectedPrompt, selectedMatch);
+            selectedRussian = element;
+            // Если уже выбрано немецкое слово - проверяем
+            if (selectedGerman && !selectedGerman.classList.contains('correct')) {
+                checkWordMatch();
             }
         }
     };
     
-    function checkMatch(promptCard, matchCard) {
-        const isCorrect = promptCard.dataset.pairId === matchCard.dataset.pairId;
+    function checkWordMatch() {
+        if (!selectedGerman || !selectedRussian) return;
         
-        if (isCorrect) {
-            // Правильна відповідь
-            promptCard.classList.add('correct');
-            matchCard.classList.add('correct');
-            promptCard.classList.remove('selected');
-            matchCard.classList.remove('selected');
+        const germanPairId = selectedGerman.dataset.pairId;
+        const russianPairId = selectedRussian.dataset.pairId;
+        
+        if (germanPairId === russianPairId) {
+            // Правильная пара
+            selectedGerman.classList.add('correct');
+            selectedRussian.classList.add('correct');
+            selectedGerman.classList.remove('selected');
+            selectedRussian.classList.remove('selected');
             
+            matchedPairs.add(parseInt(germanPairId));
             correctPairs++;
-            updateProgress();
             
-            // Перевірка завершення
-            const totalPairs = document.querySelectorAll('#word-matching .word-item.prompt').length;
+            updateMatchingProgress();
+            
+            // Проверка завершения
+            const totalPairs = document.querySelectorAll('#word-matching .german-word').length;
             if (correctPairs === totalPairs) {
                 setTimeout(() => {
-                    showResult('Вітаємо! Ви виконали вправу!');
+                    showResult('🎉 Отлично! Все пары найдены правильно!');
                 }, 500);
             }
         } else {
-            // Неправильна відповідь
-            promptCard.classList.add('incorrect');
-            matchCard.classList.add('incorrect');
+            // Неправильная пара
+            selectedGerman.classList.add('incorrect');
+            selectedRussian.classList.add('incorrect');
             
             setTimeout(() => {
-                promptCard.classList.remove('incorrect', 'selected');
-                matchCard.classList.remove('incorrect', 'selected');
-            }, 500);
+                selectedGerman.classList.remove('incorrect', 'selected');
+                selectedRussian.classList.remove('incorrect', 'selected');
+            }, 600);
         }
         
-        selectedPrompt = null;
-        selectedMatch = null;
+        // Сбрасываем выбор
+        selectedGerman = null;
+        selectedRussian = null;
     }
     
     function updateProgress() {

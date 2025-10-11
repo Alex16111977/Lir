@@ -1,0 +1,1322 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Немецкий тематический словарь - Группа 1</title>
+    <style>
+        /* === ГЛОБАЛЬНЫЕ СТИЛИ === */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-gradient: linear-gradient(135deg, #87CEEB 0%, #E0F6FF 100%);
+            --text-dark: #2C3E50;
+            --text-light: #7f8c8d;
+            --link-color: #3498DB;
+            --link-hover: #2980B9;
+            --shadow: 0 4px 6px rgba(0,0,0,0.1);
+            --shadow-hover: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            background: var(--primary-gradient);
+            color: var(--text-dark);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        /* === ЛИПКАЯ НАВИГАЦИЯ === */
+        .sticky-nav {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow);
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-container h1 {
+            font-size: 1.8rem;
+            color: var(--text-dark);
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .nav-buttons button {
+            padding: 0.75rem 1.5rem;
+            background: var(--link-color);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .nav-buttons button:hover {
+            background: var(--link-hover);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        /* === ОСНОВНОЙ КОНТЕНТ === */
+        .main-content {
+            max-width: 1400px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+
+        .section-header {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #34495E;
+        }
+
+        .stats {
+            font-size: 1.2rem;
+            color: var(--text-light);
+        }
+
+        /* === КАРТОЧКИ ТЕКСТОВ === */
+        .text-card {
+            background: white;
+            margin: 2rem 0;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            border-left: 6px solid var(--link-color);
+            transition: all 0.3s ease;
+        }
+
+        .text-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .text-card:target {
+            animation: highlight 2s ease;
+            border-left-width: 10px;
+        }
+
+        @keyframes highlight {
+            0%, 100% { background: white; }
+            50% { background: #fff9e6; }
+        }
+
+        .text-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #ecf0f1;
+        }
+
+        .text-header h3 {
+            font-size: 1.8rem;
+            color: var(--text-dark);
+        }
+
+        .text-number {
+            padding: 0.5rem 1rem;
+            background: var(--link-color);
+            color: white;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .text-content {
+            line-height: 1.8;
+            font-size: 1.05rem;
+            color: var(--text-dark);
+        }
+
+        .text-content p {
+            margin: 1rem 0;
+        }
+
+        .text-footer {
+            margin-top: 1.5rem;
+            padding-top: 1rem;
+            border-top: 1px solid #e0e0e0;
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-link {
+            padding: 0.5rem 1rem;
+            background: var(--link-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 0.95rem;
+        }
+
+        .footer-link:hover {
+            background: var(--link-hover);
+            transform: translateY(-2px);
+        }
+
+        /* === ПЛАВАЮЩИЕ ЭЛЕМЕНТЫ === */
+        .floating-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--link-color);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: var(--shadow-hover);
+            display: none;
+            z-index: 999;
+            transition: all 0.3s ease;
+        }
+
+        .floating-btn:hover {
+            background: var(--link-hover);
+            transform: scale(1.1);
+        }
+
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            width: 0%;
+            z-index: 1001;
+            transition: width 0.3s ease;
+        }
+
+        /* === АДАПТИВНОСТЬ === */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .nav-container h1 {
+                font-size: 1.3rem;
+                text-align: center;
+            }
+            
+            .nav-buttons {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .text-card {
+                padding: 1.5rem;
+            }
+            
+            .text-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ЛИПКАЯ НАВИГАЦИЯ -->
+    <nav id="main-nav" class="sticky-nav">
+        <div class="nav-container">
+            <h1>🇩🇪 Немецкие тексты - Группа 1</h1>
+            <div class="nav-buttons">
+                <button onclick="scrollToTop()">⬆ Наверх</button>
+                <button onclick="scrollToElement('texts-section')">📖 К текстам</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ОСНОВНОЙ КОНТЕНТ -->
+    <div class="main-content">
+        <div class="section-header">
+            <h2>📚 Коллекция немецких текстов</h2>
+            <p class="stats">
+                Всего текстов: <strong>61</strong> | 
+                Уровень: <strong>A2-B1</strong>
+            </p>
+        </div>
+
+        <!-- РАЗДЕЛ С ТЕКСТАМИ -->
+        <section id="texts-section">
+
+            <article id="text-pumpkin" class="text-card">
+                <div class="text-header">
+                    <h3>📄 Der Pumpkin Spice Latte ist ein beliebtes Getränk...</h3>
+                    <span class="text-number">#1</span>
+                </div>
+                
+                <div class="text-content">
+                    <p>Der Pumpkin Spice Latte ist ein beliebtes Getränk im Herbst. Es schmeckt nach Zimt und Muskat, ähnlich wie Kürbiskuchen. Viele Cafés in Nordamerika und Europa bieten dieses Getränk an. Diese Industrie macht jährlich ungefähr 500 Millionen Dollar damit. Der Pumpkin Spice Latte ist mehr als nur ein Getränk. Er symbolisiert den Übergang vom Sommer zum Herbst. Viele Menschen denken, dass besonders weiße Frauen diesen Tee lieben. Einige Leute sagen aber, dass sie ihn nicht mögen, weil er zu süß ist.</p>
+                </div>
+                
+                <div class="text-footer">
+                    <button onclick="scrollToTop()" class="footer-link">⬆ Наверх</button>
+                    <a href="#main-nav" class="footer-link">📑 К началу</a>
+                </div>
+            </article>
+
+            <article id="text-telefonieren" class="text-card">
+                <div class="text-header">
+                    <h3>📄 Eine neue Studie hat gezeigt, dass junge Leute nic...</h3>
+                    <span class="text-number">#26</span>
+                </div>
+                
+                <div class="text-content">
+                    <p>Eine neue Studie hat gezeigt, dass junge Leute nicht gerne telefonieren. 70 % der Personen zwischen 18 und 34 Jahren schreiben lieber Nachrichten. 25 % dieser Personen ignorieren Anrufe. Sie antworten lieber mit einer Nachricht. Manche jungen Leute haben Angst vor dem Telefonieren. Viele denken, ein Anruf bringt wichtige oder schlechte Nachrichten. Die Studie zeigt, dass 37 % der jungen Leute lieber Sprachnachrichten schicken. Jemand hat online gesagt: „Ich rede lieber im Videochat, wenn wir schon sprechen müssen.“</p>
+                </div>
+                
+                <div class="text-footer">
+                    <button onclick="scrollToTop()" class="footer-link">⬆ Наверх</button>
+                    <a href="#main-nav" class="footer-link">📑 К началу</a>
+                </div>
+            </article>
+
+            <article id="text-ampeln" class="text-card">
+                <div class="text-header">
+                    <h3>📄 Ampeln sind überall auf der Welt rot, gelb und grü...</h3>
+                    <span class="text-number">#3</span>
+                </div>
+                
+                <div class="text-content">
+                    <p>Ampeln sind überall auf der Welt rot, gelb und grün. Sie sehen schon seit fast 100 Jahren so aus. Jetzt überlegen die Menschen, wie selbstfahrende Autos Ampeln verstehen können. Ein Professor an einer Universität arbeitet an einer neuen Art von Ampel. Er denkt, man sollte ein weißes Licht hinzufügen. Das weiße Licht soll den Autos sagen, dass sie weiterfahren müssen, bis sie eine neue Anweisung bekommen. Viele Leute im Internet glauben, dass es noch lange dauert, bis wir selbstfahrende Autos haben. Es ist also erst ein Problem in weiter Zukunft.</p>
+                </div>
+                
+                <div class="text-footer">
+                    <button onclick="scrollToTop()" class="footer-link">⬆ Наверх</button>
+                    <a href="#main-nav" class="footer-link">📑 К началу</a>
+                </div>
+            </article>
+
+            <article id="text-baba" class="text-card">
+                <div class="text-header">
+                    <h3>📄 Baba au Rhum ist ein süßes französisches Dessert....</h3>
+                    <span class="text-number">#4</span>
+                </div>
+                
+                <div class="text-content">
+                    <p>Baba au Rhum ist ein süßes französisches Dessert. Es stammt aus dem 18. Jahrhundert. Viele französische Restaurants sind bekannt für dieses Dessert. Man kann es aber auch zu Hause machen. Es ist ein Kuchen, der viel Rum hat. Normalerweise wird der Kuchen mit Sahne serviert. Die ersten Bäcker, die Baba au Rhum gemacht haben, kommen aus Polen. Ein polnischer König isst es mit Wein. Seine Tochter zieht später nach Versailles und nimmt ihren Konditor mit. Der Konditor heißt Nicolas Stohrer. Er macht den Baba au Rhum. Seitdem ist das Dessert in ganz Frankreich berühmt. Seine Konditorei gibt es immer noch. Sie ist die älteste in Paris.</p>
+                </div>
+                
+                <div class="text-footer">
+                    <button onclick="scrollToTop()" class="footer-link">⬆ Наверх</button>
+                    <a href="#main-nav" class="footer-link">📑 К началу</a>
+                </div>
+            </article>
+
+            <article id="text-museum-british" class="text-card">
+                <div class="text-header">
+                    <h3>📄 Ein Künstler aus Brasilien hat im Britischen Museu...</h3>
+                    <span class="text-number">#5</span>
+                </div>
+                
+                <div class="text-content">
+                    <p>Ein Künstler aus Brasilien hat im Britischen Museum etwas Außergewöhnliches gemacht. Er hat eine alte britische Münze gegen eine falsche ausgetauscht. Das passierte, nachdem jemand im Museum ihm erlaubt hatte, eine historische Münze zu halten. Später brachte der Künstler die echte Münze zurück. Er legte sie in eine Box im Museum. In einem Video erzählte er seine Geschichte für seine Studien. Er wollte über das Museum sprechen, weil es Sachen aus anderen Ländern hat, die gestohlen wurden. Er findet das nicht richtig.</p>
+                </div>
+                
+                <div class="text-footer">
+                    <button onclick="scrollToTop()" class="footer-link">⬆ Наверх</button>
+                    <a href="#main-nav" class="footer-link">📑 К началу</a>
+                </div>
+            </article>
+
+            <article id="text-serbisch" class="text-card">
+                <div class="text-header">
+                    <h3>📄 Über 9 Millionen Menschen auf der Welt sprechen Se...</h3>
+                    <span class="text-number">#6</span>
+                </div>
+                
+                <div class="text-content">
+                    <p>Über 9 Millionen Menschen auf der Welt sprechen Serbisch. Es ist die 63. meistgesprochene Sprache der Welt. Die serbische Sprache hat zwei Schriften: Latein und Kyrillisch. Serbisch ist besonders, weil jeder Buchstabe einen Klang hat. Die Wörter werden genau so geschrieben, wie sie ausgesprochen werden. Es gibt ein schönes serbisches Wort, das schwer in andere Sprachen übersetzt werden kann. Dieses Wort heißt „merak“. Es beschreibt ein glückliches Gefühl und die Verbindung zur Welt durch einfache Freuden. Online sagt jemand, es bedeutet „Lust und Freude an den einfachen Dingen im Leben“.</p>
+                </div>
+                
+                <div class="text-footer">
+                    <button onclick="scrollToTop()" class="footer-link">⬆ Наверх</button>
+                    <a href="#main-nav" class="footer-link">📑 К началу</a>
+                </div>
+            </article>
+
+            <article id="text-nigeria-artist" class="text-card">
+                <div class="text-header">
+                    <h3>📄 Der nigerianische Künstler Fola David möchte einen...</h3>
+                    <span class="text-number">#7</span>
+                </div>
+                
+                <div class="text-content">
+                    <p>Der nigerianische Künstler Fola David möchte einen Weltrekord aufstellen. Er will das größte Gemälde von nur einem Maler machen. Er hat sechs Tage lang in einem Stadion in Lagos an seinem Kunstwerk gearbeitet. David hat eine 1.050 Quadratmeter große Zeichnung gemacht. Sie heißt „Einheit in Vielfalt“. Auf dem Bild sind zwei große Hände zu sehen. Sie halten eine Karte von Nigeria. Sein Ziel ist es, die Kultur und Geschichte Nigerias zu zeigen. David hofft, dass die Menschen Vielfalt als Chance sehen, das Land zu vereinen. Es war immer sein Traum, sein Talent zu zeigen und sein Land zu vertreten.</p>
+                </div>
+                
+                <div class="text-footer">
+                    <button onclick="scrollToTop()" class="footer-link">⬆ Наверх</button>
+                    <a href="#main-nav" class="footer-link">📑 К началу</a>
+                </div>
+            </article>
+
+            <article id="text-8" class="text-card">
+                <div class="text-header">
+                    <h3>📄 „Prozvonit“ ist ein tschechisches Wort. Es bedeute...</h3>
+                    <span class="text-number">#8</span>
+                </div>
+                
+                <div class="text-content">
+                    <p>„Prozvonit“ ist ein tschechisches Wort. Es bedeutet, jemanden anzurufen und sofort aufzulegen, bevor die Person antworten kann. Auf Deutsch nennt man das „anklingeln“. So weiß die andere Person, dass du sie angerufen hast. Um den Grund für den Anruf zu erfahren, muss man zurückrufen. Viele Menschen machen das, um Geld zu sparen. Denn die Person, die zurückruft, zahlt den Anruf. Es kann nervig sein, aber viele Tschechen machen es sehr oft so.</p>
+                </div>
+                
+                <div class="text-footer">
+                    <button onclick="scrollToTop()" class="footer-link">⬆ Наверх</button>
+                    <a href="#main-nav" class="footer-link">📑 К началу</a>
+                </div>
+            </article>
+
+            <article id="text-ukraine-band" class="text-card">
+                <div class="text-header">
+                    <h3>📄 Eine Rockband aus der Ukraine will Orchesterklänge...</h3>
+                    <span class="text-number">#10</span>
+                </div>
+                
+                <div class="text-content">
+                    <p>Eine Rockband aus der Ukraine will Orchesterklänge in ihrer Musik verwenden. Sie haben ein altes Klavier bekommen. Sie haben 20 andere Instrumente wie ein Cello, eine Geige und ein Schlagzeug am Klavier befestigt. Sie haben jedes Instrument einzeln befestigt und viele Dinge ausprobiert. Jetzt können sie die Klänge jedes Instruments spielen. Dafür benutzen sie die Tasten und Pedalen des alten Klaviers. Sie haben ein Video von einem Lied gemacht und es in sozialen Medien geteilt. Es hat über 2 Millionen Aufrufe bekommen. Viele Fans finden es schön.</p>
+                </div>
+                
+                <div class="text-footer">
+                    <button onclick="scrollToTop()" class="footer-link">⬆ Наверх</button>
+                    <a href="#main-nav" class="footer-link">📑 К началу</a>
+                </div>
+            </article>
+
+            <article id="text-bukchon" class="text-card">
+                <div class="text-header">
+                    <h3>📄 Das Bukchon Hanok Dorf ist in Südkorea. Es ist für...</h3>
+                    <span class="text-number">#11</span>
+                </div>
+                
+                <div class="text-content">
+                    <p>Das Bukchon Hanok Dorf ist in Südkorea. Es ist für seine traditionellen koreanischen Häuser bekannt. Dort leben nur 6.100 Menschen. Letztes Jahr haben etwa sechs Millionen Menschen das Dorf besucht. Viele Touristen verursachen Lärm und Unordnung. Die Stadtverwaltung möchte eine neue Regel einführen. Sie wollen, dass Touristen nur sieben Stunden bleiben dürfen. Wenn Touristen die Regel nicht einhalten, müssen sie eine Geldstrafe zahlen. Die neue Regel gilt ab November. Es ist schwierig, ausländische Touristen über die neue Regel zu informieren.
+Camembert ist ein französischer Käse. Er ist weich und hat einen intensiven Geschmack. Er wird in der Normandie in Frankreich gemacht. Ein spezieller Pilz gibt dem Käse seinen besonderen Geschmack und seine weiße Farbe. Aber Wissenschaftler haben ein Problem mit diesem Pilz gefunden. Es gibt nicht genug von diesem Pilz, um weiter Camembert herzustellen. Viele Menschen machen sich Sorgen um die Zukunft dieses leckeren Käses. Aber die Käsemacher nicht. Sie sagen, dass sie schon oft Probleme hatten. Bisher haben sie immer einen Weg gefunden, um mehr Camembert zu machen.</p>
+                </div>
+                
+                <div class="text-footer">
+                    <button onclick="scrollToTop()" class="footer-link">⬆ Наверх</button>
+                    <a href="#main-nav" class="footer-link">📑 К началу</a>
+                </div>
+            </article>
+
+            <article id="text-gewuerze" class="text-card">
+                <div class="text-header">
+                    <h3>📄 Gewürze wie Chili, Senf und Ingwer sind weltweit s...</h3>
+                    <span class="text-number">#12</span>
+                </div>
+                
+                <div class="text-content">
+                    <p>Gewürze wie Chili, Senf und Ingwer sind weltweit sehr beliebt. Wer gerne scharf isst, sollte folgende Gerichte probieren. In Nigeria mögen die Leute die Egusi Suppe. Sie ist eine scharfe Suppe aus Melonenkernen und scharfen Chilischoten. In China genießen die Menschen gerne den Sichuan Hotpot. Man kocht Gemüse und Fleisch in einer scharfen Brühe. Die Sichuan-Pfefferkörner machen es besonders scharf. In Italien ist Penne all’arrabbiata ein beliebtes Gericht. Diese Pasta wird mit Tomatensauce und roten Chilis zubereitet.</p>
+                </div>
+                
+                <div class="text-footer">
+                    <button onclick="scrollToTop()" class="footer-link">⬆ Наверх</button>
+                    <a href="#main-nav" class="footer-link">📑 К началу</a>
+                </div>
+            </article>
+
+            <article id="text-griechenland" class="text-card">
+                <div class="text-header">
+                    <h3>📄 In Griechenland wollen die Menschen kostenlos an d...</h3>
+                    <span class="text-number">#13</span>
+                </div>
+                
+                <div class="text-content">
+                    <p>In Griechenland wollen die Menschen kostenlos an den Strand gehen. Aber die Benutzung von vielen Stränden kostet jetzt Geld. Das gefällt den Leuten nicht. Auf der Insel Paros begannen Proteste, weil die Einheimischen für den Strand bezahlen mussten. Eine Gruppe von Naturliebhabern protestierte. Sie zeigen im Internet, wie Leute für die Strände bezahlen müssen. Jetzt gibt es diese Proteste auch an anderen Orten in Griechenland und sogar in der Türkei. Die Leute denken, dass alle Strände kostenlos sein sollten. Strände sollen nicht nur für reiche Menschen sein. Durch diese Proteste sind heute einige Strände für alle kostenlos.</p>
+                </div>
+                
+                <div class="text-footer">
+                    <button onclick="scrollToTop()" class="footer-link">⬆ Наверх</button>
+                    <a href="#main-nav" class="footer-link">📑 К началу</a>
+                </div>
+            </article>
+
+            <article id="text-hepburn" class="text-card">
+                <div class="text-header">
+                    <h3>📄 Katharine Hepburn war eine berühmte amerikanische...</h3>
+                    <span class="text-number">#14</span>
+                </div>
+                
+                <div class="text-content">
+                    <p>Katharine Hepburn war eine berühmte amerikanische Schauspielerin. Sie mochte es, Hosen zu tragen. Heute ist das normal, aber in den 1930er Jahren war es sehr ungewöhnlich. Einige Männer und Frauen waren nicht einverstanden mit ihrer Wahl. Die Leute dachten, Frauen sollten Kleider oder Röcke tragen, keine Männerkleidung. Die Leute in ihrem Filmstudio haben sogar versucht, ihre Hosen zu verstecken. Im Jahr 1933 sagte sie, dass sie ihr Leben nach ihren eigenen Entscheidungen lebt. Das macht sie auch, wenn sie manchmal Angst hat. Sie wollte ihre Art zu leben nicht ändern.</p>
+                </div>
+                
+                <div class="text-footer">
+                    <button onclick="scrollToTop()" class="footer-link">⬆ Наверх</button>
+                    <a href="#main-nav" class="footer-link">📑 К началу</a>
+                </div>
+            </article>
+
+            <article id="text-venedig" class="text-card">
+                <div class="text-header">
+                    <h3>📄 Es gibt viele Nachrichten über Leute in einigen St...</h3>
+                    <span class="text-number">#15</span>
+                </div>
+                
+                <div class="text-content">
+                    <p>Es gibt viele Nachrichten über Leute in einigen Städten in Europa, die nicht glücklich über Touristen sind. Das ist so, weil es an manchen Orten zu viele Touristen gibt. Das macht das Leben für die Menschen vor Ort schwer. Venedig war die erste Stadt, die Menschen für einen Besuch zahlen ließ. Jetzt gibt es sogar noch mehr Regeln. Touristengruppen dürfen nur aus 25 Personen bestehen. Reiseführer dürfen auch keine Lautsprecher benutzen. Viele Anwohner von Venedig sind mit dieser Änderung zufrieden. Einige Touristen finden auch, dass diese neuen Regeln den Besuch von Orten wie der Basilika St. Markus besser machen.</p>
+                </div>
+                
+                <div class="text-footer">
+                    <button onclick="scrollToTop()" class="footer-link">⬆ Наверх</button>
+                    <a href="#main-nav" class="footer-link">📑 К началу</a>
+                </div>
+            </article>
+
+            <article id="text-mars" class="text-card">
+                <div class="text-header">
+                    <h3>📄 Um auf dem Mars zu leben, müssen Menschen ihr eige...</h3>
+                    <span class="text-number">#16</span>
+                </div>
+                
+                <div class="text-content">
+                    <p>Um auf dem Mars zu leben, müssen Menschen ihr eigenes Essen anbauen. Wissenschaftler in den Niederlanden testen jetzt eine Methode namens „Mischkultur“. Dabei pflanzen sie verschiedene Pflanzen wie Tomaten, Erbsen und Karotten zusammen. Das hilft den Tomaten, besser zu wachsen. Andere Pflanzen machen es nicht so gut. Diese Forschung ist neu und wichtig. Damit kann man herausfinden, wie man auf dem Mars am besten Pflanzen anbaut. Viele Leute finden das interessant. Manche denken aber, dass Menschen nie auf dem Mars leben.</p>
+                </div>
+                
+                <div class="text-footer">
+                    <button onclick="scrollToTop()" class="footer-link">⬆ Наверх</button>
+                    <a href="#main-nav" class="footer-link">📑 К началу</a>
+                </div>
+            </article>
+
+            <article id="text-seine" class="text-card">
+                <div class="text-header">
+                    <h3>📄 Menschen arbeiten daran, den Fluss Seine in Paris...</h3>
+                    <span class="text-number">#17</span>
+                </div>
+                
+                <div class="text-content">
+                    <p>Menschen arbeiten daran, den Fluss Seine in Paris zu reinigen. Das soll 1,4 Milliarden Euro kosten. Das letzte Mal konnte man 1923 in der Seine schwimmen. Zu dem Zeitpunkt fanden die Olympischen Spiele dort statt. Danach wurde das Schwimmen unsicher, weil das Wasser zu schmutzig war. Es gab viele Boote und viel Müll im Wasser. Es war sogar zu schmutzig für Fische. Jetzt will die Stadt den Fluss wieder sauber machen. Sie wollen dafür sorgen, dass schmutziges Wasser nicht mehr in die Seine gelangt. Einige Leute finden das eine gute Idee, andere glauben nicht daran.</p>
+                </div>
+                
+                <div class="text-footer">
+                    <button onclick="scrollToTop()" class="footer-link">⬆ Наверх</button>
+                    <a href="#main-nav" class="footer-link">📑 К началу</a>
+                </div>
+            </article>
+
+            <article id="text-bamberg" class="text-card">
+                <div class="text-header">
+                    <h3>📄 Viele Leute mögen das Oktoberfest. Das Oktoberfest...</h3>
+                    <span class="text-number">#18</span>
+                </div>
+                
+                <div class="text-content">
+                    <p>Viele Leute mögen das Oktoberfest. Das Oktoberfest ist ein großes Bierfest. Viele Besucher fahren dafür nach München und in andere deutsche Städte. Aber es gibt auch einen geheimen Ort: Bamberg. Bamberg wird oft als „Bierhauptstadt der Welt“ bezeichnet. Menschen im Internet sagen, dass Bamberg ein schöner Ort zum Besuchen oder Wohnen ist. In Bamberg gibt es viele Familienbetriebe, die viele verschiedene Biere herstellen. Ein berühmtes Bierhaus in der Stadt ist für sein rauchiges Bier bekannt. Dieser besondere Geschmack entsteht durch eine alte Braumethode.</p>
+                </div>
+                
+                <div class="text-footer">
+                    <button onclick="scrollToTop()" class="footer-link">⬆ Наверх</button>
+                    <a href="#main-nav" class="footer-link">📑 К началу</a>
+                </div>
+            </article>
+
+            <article id="text-shizo" class="text-card">
+                <div class="text-header">
+                    <h3>📄 Shizo ist Japaner und ist berühmt für einen besond...</h3>
+                    <span class="text-number">#19</span>
+                </div>
+                
+                <div class="text-content">
+                    <p>Shizo ist Japaner und ist berühmt für einen besonderen Marathon. Er startete ihn im Jahr 1912 und beendete ihn erst 54 Jahre später! Mit 20 Jahren nahm er an den Olympischen Spielen 1912 in Stockholm teil. Das Rennen fand bei großer Hitze statt. Nach ungefähr 25 Kilometern musste Shizo aufhören zu laufen, weil es zu heiß war. Viele Teilnehmer konnten das Rennen nicht beenden. Im Jahr 1967 holte ihn ein schwedischer Fernsehsender nach Stockholm zurück, damit er seinen Marathon von 1912 zu Ende laufen konnte. Seine Gesamtzeit betrug 54 Jahre, 8 Monate, 6 Tage, 5 Stunden, 32 Minuten und 20,3 Sekunden. Viele Menschen im Internet finden diese Geschichte lustig.</p>
+                </div>
+                
+                <div class="text-footer">
+                    <button onclick="scrollToTop()" class="footer-link">⬆ Наверх</button>
+                    <a href="#main-nav" class="footer-link">📑 К началу</a>
+                </div>
+            </article>
+
+            <article id="text-rose" class="text-card">
+                <div class="text-header">
+                    <h3>📄 Rosé ist ein sehr beliebter Wein, besonders im Som...</h3>
+                    <span class="text-number">#20</span>
+                </div>
+                
+                <div class="text-content">
+                    <p>Rosé ist ein sehr beliebter Wein, besonders im Sommer. Viele Menschen fragen sich, ob man Eiswürfel in den Rosé geben sollte. Einige denken, dass Eis den Wein weniger stark macht und den Geschmack verändert. Andere finden, dass Eis den Rosé kühl hält, ohne den Geschmack zu beeinflussen. Viele Franzosen sagen im Internet, dass es für sie okay ist, Eis in den Rosé zu tun. Sie nennen das „piscine“. Das bedeutet Pool, weil die Eiswürfel im großen Weinglas schwimmen wie in einem Pool.</p>
+                </div>
+                
+                <div class="text-footer">
+                    <button onclick="scrollToTop()" class="footer-link">⬆ Наверх</button>
+                    <a href="#main-nav" class="footer-link">📑 К началу</a>
+                </div>
+            </article>
+
+            <article id="text-nanas" class="text-card">
+                <div class="text-header">
+                    <h3>📄 Es gibt eine Gruppe von neun Frauen, die “9 Nanas”...</h3>
+                    <span class="text-number">#21</span>
+                </div>
+                
+                <div class="text-content">
+                    <p>Es gibt eine Gruppe von neun Frauen, die “9 Nanas” heißen. Sie sind zwischen 54 und 72 Jahre alt. Vor 35 Jahren haben sie angefangen, Geld zu sparen. Mit diesem Geld helfen sie alleinstehenden Müttern und anderen Frauen. Sie bezahlen Rechnungen, kaufen Kleidung und backen Kuchen. Sie stehen um 4 Uhr morgens auf, um die Kuchen zu backen. Dann bringen sie die Kuchen mit einer netten Notiz zu den Menschen. Bis jetzt haben die 9 Nanas fast 900.000 Dollar in ihre Region gespendet. Viele Leute im Internet finden sie toll und heldenhaft.</p>
+                </div>
+                
+                <div class="text-footer">
+                    <button onclick="scrollToTop()" class="footer-link">⬆ Наверх</button>
+                    <a href="#main-nav" class="footer-link">📑 К началу</a>
+                </div>
+            </article>
+
+            <article id="text-bikepolo" class="text-card">
+                <div class="text-header">
+                    <h3>📄 Bike-Polo ist ein lustiger Sport. Er verbindet Hoc...</h3>
+                    <span class="text-number">#22</span>
+                </div>
+                
+                <div class="text-content">
+                    <p>Bike-Polo ist ein lustiger Sport. Er verbindet Hockey und Fahrradfahren. Die Spieler fahren spezielle Fahrräder. Sie sind nur für Bike-Polo gemacht. Sie benutzen einen speziellen Stock. Das ist nicht der normale Hockeystock. Mit einem Teil des Stocks kontrollieren sie den Ball. Mit dem anderen Teil schießen sie. Punkte gibt es nur, wenn der Ball mit der Schussseite getroffen wird. Viele Leute im Internet sagen, der Sport macht viel Spaß. Er ist aber auch gefährlich auf dem Fahrrad.</p>
+                </div>
+                
+                <div class="text-footer">
+                    <button onclick="scrollToTop()" class="footer-link">⬆ Наверх</button>
+                    <a href="#main-nav" class="footer-link">📑 К началу</a>
+                </div>
+            </article>
+
+            <article id="text-moschee" class="text-card">
+                <div class="text-header">
+                    <h3>📄 Jedes Jahr besuchen viele Menschen eine berühmte M...</h3>
+                    <span class="text-number">#23</span>
+                </div>
+                
+                <div class="text-content">
+                    <p>Jedes Jahr besuchen viele Menschen eine berühmte Moschee in Saudi-Arabien. Die meisten kommen im kühlen Herbst oder Winter. Aber jetzt kommen auch mehr Menschen im heißen Sommer, weil sich der Mondkalender verändert hat. Es ist jetzt wichtig, einen Platz im Schatten zu finden. Deshalb hat eine Firma einen neuen, speziellen Stoff entwickelt. Dieser Stoff ist sehr stabil und flexibel. Er schützt vor Sonne und dem starken Wind. Heute gibt es 250 Sonnenschirme rund um die Moschee. Sie öffnen und schließen in nur drei Minuten und senken die Temperatur um mindestens acht Grad Celsius. Viele Leute im Internet finden, dass die Sonnenschirme sehr beeindruckend aussehen.</p>
+                </div>
+                
+                <div class="text-footer">
+                    <button onclick="scrollToTop()" class="footer-link">⬆ Наверх</button>
+                    <a href="#main-nav" class="footer-link">📑 К началу</a>
+                </div>
+            </article>
+
+            <article id="text-sport" class="text-card">
+                <div class="text-header">
+                    <h3>📄 Einige Menschen machen unter der Woche Sport, ande...</h3>
+                    <span class="text-number">#24</span>
+                </div>
+                
+                <div class="text-content">
+                    <p>Einige Menschen machen unter der Woche Sport, andere nur am Wochenende. Wissenschaftler wollten herausfinden, ob eine dieser Arten besser ist. Sie haben eine Studie mit etwa 90.000 Menschen in Großbritannien gemacht. Die Studie zeigt, dass beide Arten von Sport gut sind und helfen können, Krankheiten zu verhindern. Wichtig ist nicht, wann man Sport macht, sondern wie oft. Als nächstes wollen die Forscher prüfen, ob es gesünder ist, viel Sport auf einmal zu machen.</p>
+                </div>
+                
+                <div class="text-footer">
+                    <button onclick="scrollToTop()" class="footer-link">⬆ Наверх</button>
+                    <a href="#main-nav" class="footer-link">📑 К началу</a>
+                </div>
+            </article>
+
+            <article id="text-adam" class="text-card">
+                <div class="text-header">
+                    <h3>📄 Adam liebt Kunst, besonders alte Kunst. Er hat ein...</h3>
+                    <span class="text-number">#25</span>
+                </div>
+                
+                <div class="text-content">
+                    <p>Adam liebt Kunst, besonders alte Kunst. Er hat ein Bild von König Heinrich VIII. in einem seltsamen Ort gefunden: in sozialen Medien. Er sieht das Foto in einem Beitrag von jemandem, der für die britische Regierung arbeitet. Das Bild ist an einer Wand eines Palastes im englischen Warwickshire. Adam fragt sich, ob es wichtig ist. Er hat recht! Das Bild ist sehr alt und stammt aus dem 16. Jahrhundert. Es gibt nur wenige Gemälde wie dieses. Die Leute in dem Beitrag wissen nicht, wie wichtig es ist. Erst als Adam es sieht, erkennen sie es. Das Foto wird fast 40 000 Mal online angesehen, weil die Leute die Geschichte interessant finden.</p>
+                </div>
+                
+                <div class="text-footer">
+                    <button onclick="scrollToTop()" class="footer-link">⬆ Наверх</button>
+                    <a href="#main-nav" class="footer-link">📑 К началу</a>
+                </div>
+            </article>
+
+            <article id="text-leben" class="text-card">
+                <div class="text-header">
+                    <h3>📄 Viele Menschen wollen wissen, wie man ein langes u...</h3>
+                    <span class="text-number">#35</span>
+                </div>
+                
+                <div class="text-content">
+                    <p>Viele Menschen wollen wissen, wie man ein langes und glückliches Leben führen kann. Eine Journalistin hat Menschen gefunden, die 100 Jahre alt oder älter sind. Sie hat sie gefragt, was ihr Geheimnis ist. Viele von den alten Menschen haben ähnliche Dinge geantwortet: Man soll sich ein Ziel setzen und den Verstand nutzen, um es zu erreichen. Beschäftigung hält den Geist frisch. Man sollte viel Zeit mit Familie und Freunden verbringen. Man sollte eine Gruppe von Menschen haben, die einen lieben und unterstützen. Mit anderen zu lachen, macht glücklicher. Tägliche körperliche Betätigung ist wichtig. Ein Spaziergang kann dabei helfen, dass sich Körper und Geist besser fühlen und länger durchhalten.</p>
+                </div>
+                
+                <div class="text-footer">
+                    <button onclick="scrollToTop()" class="footer-link">⬆ Наверх</button>
+                    <a href="#main-nav" class="footer-link">📑 К началу</a>
+                </div>
+            </article>
+
+            <article id="text-leuchttuerme" class="text-card">
+                <div class="text-header">
+                    <h3>📄 An den Küsten der USA gibt es viele Leuchttürme. S...</h3>
+                    <span class="text-number">#28</span>
+                </div>
+                
+                <div class="text-content">
+                    <p>An den Küsten der USA gibt es viele Leuchttürme. Sie sind nicht mehr in Verwendung. Heute gibt es bessere Technologien, um Boote ans Ufer zu leiten. Dennoch sind die Leuchttürme ein wichtiger Teil der Geschichte. Jedes Jahr verschenkt man sechs Leuchttürme, damit sie erhalten bleiben. Bald verkauft die Regierung noch vier weitere Leuchttürme. Das Programm stammt aus dem Jahr 2000. Die Eigentümer müssen sich um die Leuchttürme kümmern. Menschen dürfen die Leuchttürme besichtigen. Viele Leuchttürme sind so gerettet worden.</p>
+                </div>
+                
+                <div class="text-footer">
+                    <button onclick="scrollToTop()" class="footer-link">⬆ Наверх</button>
+                    <a href="#main-nav" class="footer-link">📑 К началу</a>
+                </div>
+            </article>
+
+            <article id="text-pizza" class="text-card">
+                <div class="text-header">
+                    <h3>📄 Es gibt einen neuen Weltrekord für die Pizza mit d...</h3>
+                    <span class="text-number">#29</span>
+                </div>
+                
+                <div class="text-content">
+                    <p>Es gibt einen neuen Weltrekord für die Pizza mit den meisten Käsesorten. Zuvor war der Rekord bei 111 Käsesorten auf einer Pizza. Der neue Rekord wurde von einem australischen Koch namens Johnny aufgestellt. Nach dem Erfolg seiner Pizza mit 99 Käsesorten stellt Johnny einen neuen Rekord auf. Er macht eine Pizza mit 154 Käsesorten. Jeder Käse hat eine andere Geschmacksrichtung. Zusammen schmecken die Käsesorten sehr gut. Johnny schickt diese Käsesorten an seine anderen Restaurants. Dort wurde die Pizza dann auch so gemacht. Die Kunden in Australien mögen die besondere Pizza. Sie war innerhalb von fünf Tagen ausverkauft.</p>
+                </div>
+                
+                <div class="text-footer">
+                    <button onclick="scrollToTop()" class="footer-link">⬆ Наверх</button>
+                    <a href="#main-nav" class="footer-link">📑 К началу</a>
+                </div>
+            </article>
+
+            <article id="text-suedafrika" class="text-card">
+                <div class="text-header">
+                    <h3>📄 Südafrika ist ein schönes Land für Urlaub. Es ist...</h3>
+                    <span class="text-number">#30</span>
+                </div>
+                
+                <div class="text-content">
+                    <p>Südafrika ist ein schönes Land für Urlaub. Es ist gut für Autoreisen. Die Garden Route ist 200 km lang. Sie beginnt in Mossel Bay und endet in Port Elizabeth. Entlang dieser Route sieht man Strände, Lagunen und Wälder. Die Whale Coast Route ist auch gut. Man kann dort Wale sehen und schöne Aussichten haben. Leute im Internet sagen, dass jeder Südafrika besuchen sollte. Es gibt guten Wein, niedrige Preise und schöne Natur.</p>
+                </div>
+                
+                <div class="text-footer">
+                    <button onclick="scrollToTop()" class="footer-link">⬆ Наверх</button>
+                    <a href="#main-nav" class="footer-link">📑 К началу</a>
+                </div>
+            </article>
+
+            <article id="text-dublin" class="text-card">
+                <div class="text-header">
+                    <h3>📄 In Dublin gibt es einen neuen Supermarkt. Eine Fir...</h3>
+                    <span class="text-number">#31</span>
+                </div>
+                
+                <div class="text-content">
+                    <p>In Dublin gibt es einen neuen Supermarkt. Eine Firma hat ihn auf den Ruinen alter Gebäude gebaut. Früher stand dort ein Haus mit Treppe, in dem Wikinger lebten. Neben der Treppe gab es auch runde Türen, die zu einem Theater gehörten. Im neuen Supermarkt sind jetzt Glasböden. Die Besucher können durch die Glasböden die alten Teile des Gebäudes sehen. Im Laden gibt es viele Schilder, die Informationen über die alten Gebäude bieten. Leute sagen online, dass es lustig ist.</p>
+                </div>
+                
+                <div class="text-footer">
+                    <button onclick="scrollToTop()" class="footer-link">⬆ Наверх</button>
+                    <a href="#main-nav" class="footer-link">📑 К началу</a>
+                </div>
+            </article>
+
+            <article id="text-china" class="text-card">
+                <div class="text-header">
+                    <h3>📄 In China gibt es viele verschiedene Gerichte. Jede...</h3>
+                    <span class="text-number">#32</span>
+                </div>
+                
+                <div class="text-content">
+                    <p>In China gibt es viele verschiedene Gerichte. Jede Region hat ihr eigenes Essen. Ein bekanntes Gericht ist die Peking-Ente. Es ist eine geröstete Ente mit knuspriger Haut. Die Menschen essen sie in einem Pfannkuchen mit süßer Sauce. Ein anderes Gericht ist süß-saures Schweinefleisch. Das Schweinefleisch ist in einer dicken Sauce mit Ananas. Xiaolongbao sind beliebte Teigtaschen. Sie kommen manchmal in einer Suppe oder sind mit Krabben gefüllt. Sie sind sehr lecker, aber manchmal schwer zu essen. Viele Menschen mögen diese Teigtaschen am liebsten.</p>
+                </div>
+                
+                <div class="text-footer">
+                    <button onclick="scrollToTop()" class="footer-link">⬆ Наверх</button>
+                    <a href="#main-nav" class="footer-link">📑 К началу</a>
+                </div>
+            </article>
+
+            <article id="text-seeungeheuer" class="text-card">
+                <div class="text-header">
+                    <h3>📄 Früher zeigten viele Landkarten seltsame Tiere und...</h3>
+                    <span class="text-number">#33</span>
+                </div>
+                
+                <div class="text-content">
+                    <p>Früher zeigten viele Landkarten seltsame Tiere und Monster. Eine alte Karte von 1516 zeigt, wie der König von Portugal auf einem großen Meeres¬tier reitet. Eine andere Karte von 1570 hat ein komisches Tier, das wie zwei Wale zusammen aussieht. Diese Bilder waren nicht nur Kunst. Sie zeigten den Seefahrern, wo das Meer gefährlich sein könnte. Manchmal wollten die Bilder auch mehr über das Meer erzählen. Die Künstler mussten sich vorstellen, wie diese Tiere aussehen.</p>
+                </div>
+                
+                <div class="text-footer">
+                    <button onclick="scrollToTop()" class="footer-link">⬆ Наверх</button>
+                    <a href="#main-nav" class="footer-link">📑 К началу</a>
+                </div>
+            </article>
+
+            <article id="text-roboter" class="text-card">
+                <div class="text-header">
+                    <h3>📄 Eine behinderte Person hat Gesundheitsprobleme und...</h3>
+                    <span class="text-number">#34</span>
+                </div>
+                
+                <div class="text-content">
+                    <p>Eine behinderte Person hat Gesundheitsprobleme und kann sich manchmal nicht gut bewegen. Es ist oft schwer für sie, eine Arbeit zu finden. In Japan gibt es ein spezielles Café mit Robotern, die Kaffee machen und servieren. Menschen mit Behinderungen steuern diese Roboter von zu Hause aus. Die Roboter können sogar mit den Gästen sprechen. Viele Leute finden das Café großartig und sagen, es sei eine gute Idee. Ein Kunde sagte: "Es ist wirklich ein tolles Erlebnis, wenn man sich in Tokio befindet."</p>
+                </div>
+                
+                <div class="text-footer">
+                    <button onclick="scrollToTop()" class="footer-link">⬆ Наверх</button>
+                    <a href="#main-nav" class="footer-link">📑 К началу</a>
+                </div>
+            </article>
+
+            <article id="text-honig" class="text-card">
+                <div class="text-header">
+                    <h3>📄 Die meisten Bienen in der Welt sind westliche Honi...</h3>
+                    <span class="text-number">#36</span>
+                </div>
+                
+                <div class="text-content">
+                    <p>Die meisten Bienen in der Welt sind westliche Honigbienen. Auf den Koshiki-Inseln gibt es aber auch japanische Honigbienen. Diese Bienen machen besonderen Honig. Der Honig schmeckt anders, weil es dort besondere Pflanzen wie Mispeln und japanische Pflaumen gibt. Die Menschen sammeln den Honig nur einmal im Jahr. Koshiki Honig ist sehr gut und hilft den Inseln. Er bringt Arbeit und Touristen. Die Menschen, die mit den Bienen arbeiten, möchten sie schützen. Viele Leute sagen, dass die Inseln schön sind. Deshalb ist es wichtig, die Natur zu schützen.</p>
+                </div>
+                
+                <div class="text-footer">
+                    <button onclick="scrollToTop()" class="footer-link">⬆ Наверх</button>
+                    <a href="#main-nav" class="footer-link">📑 К началу</a>
+                </div>
+            </article>
+
+            <article id="text-produktivitaet" class="text-card">
+                <div class="text-header">
+                    <h3>📄 Produktiv zu sein bedeutet, Dinge abzuarbeiten und...</h3>
+                    <span class="text-number">#37</span>
+                </div>
+                
+                <div class="text-content">
+                    <p>Produktiv zu sein bedeutet, Dinge abzuarbeiten und gut zu machen. Man muss den Tag gut planen und die wichtigsten Aufgaben auswählen. Man kann nicht immer alles schaffen. Daher soll man ein paar wichtige Ziele auswählen. Man erstellt eine Liste. Unbedeutende Aufgaben soll man dabei verschieben. Manche Leute empfehlen auch, mit einer kleineren Aufgabe zu beginnen.</p>
+                </div>
+                
+                <div class="text-footer">
+                    <button onclick="scrollToTop()" class="footer-link">⬆ Наверх</button>
+                    <a href="#main-nav" class="footer-link">📑 К началу</a>
+                </div>
+            </article>
+
+            <article id="text-sansibar" class="text-card">
+                <div class="text-header">
+                    <h3>📄 Sansibar ist ein Ort, den jeder in seine Reiselist...</h3>
+                    <span class="text-number">#38</span>
+                </div>
+                
+                <div class="text-content">
+                    <p>Sansibar ist ein Ort, den jeder in seine Reiseliste aufnehmen sollte. Die wunderschönen weißen Sandstrände und das klare blaue Wasser machen es so besonders. Es gibt viele spannende Orte zu besuchen. Stone Town ist besonders gut, um mehr über die Swahili-Kunst und die Gebäude zu erfahren. Sofern man gerne isst, wird man einen Spaziergang über die Gewürzmärkte genießen. Viele Besucher von Sansibar haben großartige Erfahrungen gemacht. Sie teilen oft Bilder von den beeindruckenden Tieren und der Natur vor Ort.</p>
+                </div>
+                
+                <div class="text-footer">
+                    <button onclick="scrollToTop()" class="footer-link">⬆ Наверх</button>
+                    <a href="#main-nav" class="footer-link">📑 К началу</a>
+                </div>
+            </article>
+
+            <article id="text-lala" class="text-card">
+                <div class="text-header">
+                    <h3>📄 LaLa war ein Pinguin aus Japan. Er lebte in den 19...</h3>
+                    <span class="text-number">#39</span>
+                </div>
+                
+                <div class="text-content">
+                    <p>LaLa war ein Pinguin aus Japan. Er lebte in den 1990ern. Eine Familie half LaLa, weil er verletzt war. LaLa mochte seine neue Familie sehr. Er blieb lange bei ihnen. LaLa ging gerne mit der Familie zum Markt. Später ging LaLa alleine zum Markt. Er kaufte Fisch. Viele Menschen kennen LaLas Geschichte. Es gibt einen Film über LaLa. LaLa ist sehr beliebt. Eine Straße hat jetzt seinen Namen.</p>
+                </div>
+                
+                <div class="text-footer">
+                    <button onclick="scrollToTop()" class="footer-link">⬆ Наверх</button>
+                    <a href="#main-nav" class="footer-link">📑 К началу</a>
+                </div>
+            </article>
+
+            <article id="text-aeltere" class="text-card">
+                <div class="text-header">
+                    <h3>📄 Viele ältere Menschen in Europa leben in spezielle...</h3>
+                    <span class="text-number">#40</span>
+                </div>
+                
+                <div class="text-content">
+                    <p>Viele ältere Menschen in Europa leben in speziellen Heimen. Dort gibt es einige Aktivitäten, aber oft sind sie nicht sehr interessant. Viele ältere Menschen sind noch gesund und fühlen sich gelangweilt oder einsam. Ein Mann namens Youssef hat deshalb eine spezielle Gruppe gegründet. Diese Gruppe organisiert spannende Aktivitäten für die älteren Menschen. Jeanine ist 79 Jahre alt. Sie geht mit 10 anderen älteren Leuten in den größten Nachtclub in Brüssel. Sie bleiben dort bis 3 Uhr morgens. Viele Leute im Internet finden, dass es mehr solche Möglichkeiten für ältere Menschen geben sollte. Spaß haben ist wichtig für alle Menschen, egal wie alt sie sind.
+Viele Leute mögen es, sich zu gruseln. Sie schauen Horrorfilme oder lesen Gruselgeschichten. Einige besuchen sogar Orte, die gruselig sind. Jeder, der solche Orte mag, sollte nach Kanada reisen. Es gibt ein Hotel in dem Ort Banff. Dort soll es Geister geben. Ein Geist ist zum Beispiel eine Braut, die eine Marmortreppe heruntergefallen ist. In der Stadt Victoria in der Provinz British Colombia gibt es ein Schloss. Dort soll ein Klavier von alleine spielen. In Kanada kann man viele gruselige Orte finden.</p>
+                </div>
+                
+                <div class="text-footer">
+                    <button onclick="scrollToTop()" class="footer-link">⬆ Наверх</button>
+                    <a href="#main-nav" class="footer-link">📑 К началу</a>
+                </div>
+            </article>
+
+            <article id="text-azenhas" class="text-card">
+                <div class="text-header">
+                    <h3>📄 Azenhas do Mar ist ein schönes Dorf in Portugal, i...</h3>
+                    <span class="text-number">#41</span>
+                </div>
+                
+                <div class="text-content">
+                    <p>Azenhas do Mar ist ein schönes Dorf in Portugal, in der Nähe von Sintra und Lissabon. Das Dorf hat einen Wettbewerb gewonnen. Es ist bekannt für seine schöne Sicht auf das Meer und alte Häuser. Azenhas do Mar heißt Wassermühlen des Meeres. Touristen mögen das Dorf sehr. Sie können das Meer und das Dorf sehen. Wenn das Meer ruhig ist, schwimmen sie in natürlichen Teichen. Sie gehen auch an Strände und probieren Wein.</p>
+                </div>
+                
+                <div class="text-footer">
+                    <button onclick="scrollToTop()" class="footer-link">⬆ Наверх</button>
+                    <a href="#main-nav" class="footer-link">📑 К началу</a>
+                </div>
+            </article>
+
+            <article id="text-glueck" class="text-card">
+                <div class="text-header">
+                    <h3>📄 Der Weltglücksbericht ist eine Liste, die jedes Ja...</h3>
+                    <span class="text-number">#42</span>
+                </div>
+                
+                <div class="text-content">
+                    <p>Der Weltglücksbericht ist eine Liste, die jedes Jahr erscheint. Länder wie Finnland und Dänemark sind oft ganz oben auf der Liste. Aber dieses Jahr sind andere Länder wie Tschechien, Litauen und Rumänien eine Überraschung. Tschechien ist jetzt unter den Top 20. Es ist sogar vor Deutschland, Spanien und Italien. Rumänien ist von Platz 90 auf Platz 32 gestiegen. Dieser Zuspruch kommt besonders von jungen Menschen unter 30 Jahren. Sie sagen, dass sie in diesen Ländern sehr glücklich sind. Sie mögen die Kultur und die schöne Natur dort.
+Im Druk Amitabha Kloster in Nepal trainieren Nonnen Kung-Fu. Kürzlich zeigten sie ihre Kampfkünste der Öffentlichkeit. Das geschah zu einer Feier zur Wiedereröffnung ihres Klosters. Das Kloster war fünf Jahre lang geschlossen, jetzt hat es wieder geöffnet. Im Kloster leben 300 Mitglieder aus Nepal, Indien und Bhutan. Die Nonnen folgen einer alten buddhistischen Tradition, die Männer und Frauen gleichstellt. Diese Nonnen sind besonders, da sie Kung-Fu für ihre Fitness und für ihr spirituelles Wachstum lernen. Sie setzen Kung-Fu ein, um stärker zu werden und um die Gleichheit zu bewahren. Sie wandern und fahren Fahrrad im Himalaya, womit sie Geld für gute Zwecke sammeln. Die Nonnen betonen ihr großes Verlangen, Mädchen resilienter zu machen. Sie haben eine große Leidenschaft – sie möchten anderen Menschen helfen.</p>
+                </div>
+                
+                <div class="text-footer">
+                    <button onclick="scrollToTop()" class="footer-link">⬆ Наверх</button>
+                    <a href="#main-nav" class="footer-link">📑 К началу</a>
+                </div>
+            </article>
+
+            <article id="text-rekorde" class="text-card">
+                <div class="text-header">
+                    <h3>📄 Persönliche Rekorde zu erreichen wird immer belieb...</h3>
+                    <span class="text-number">#43</span>
+                </div>
+                
+                <div class="text-content">
+                    <p>Persönliche Rekorde zu erreichen wird immer beliebter. Viele Menschen, die gern Sport machen, versuchen, neue Ziele zu setzen. Sie machen das, ohne mit anderen Personen zu konkurrieren. Studien zeigen, dass ein neuer persönlicher Rekord motivieren kann. Dadurch, dass man für einen neuen persönlichen Rekord trainiert, fällt es einem leichter, auch andere Ziele zu erreichen. Menschen können Ziele finden, die zu ihren eigenen Fähigkeiten passen. Sie konzentrieren sich auf ihren eigenen Fortschritt und denken nicht an die Leistungen von anderen. Wenn die Fähigkeiten unterschiedlich sind, kann Wettbewerb frustrieren. Aber ein persönlicher Rekord ist nicht gut, wenn er Stress macht. Es ist wichtig, eine Übung zu wählen, die man gern macht und ein sinnvolles Ziel hat. Menschen in den sozialen Medien sagen, dass ein persönlicher Rekord hilft, viele kleine Ziele zu erreichen.</p>
+                </div>
+                
+                <div class="text-footer">
+                    <button onclick="scrollToTop()" class="footer-link">⬆ Наверх</button>
+                    <a href="#main-nav" class="footer-link">📑 К началу</a>
+                </div>
+            </article>
+
+            <article id="text-scheunen" class="text-card">
+                <div class="text-header">
+                    <h3>📄 Hast du schon einmal an eine Scheune gedacht, wenn...</h3>
+                    <span class="text-number">#44</span>
+                </div>
+                
+                <div class="text-content">
+                    <p>Hast du schon einmal an eine Scheune gedacht, wenn du das Wort „Party“ hörst? In ländlichen Gegenden des Vereinigten Königreichs ist es bei reichen Leuten beliebt, eine Party-Scheune zu haben. Alte Scheunen werden zu Orten für Feiern oder andere soziale Veranstaltungen umgebaut. Diese Scheunen liegen getrennt vom Hauptgebäude. Der Trend begann, als viele Menschen während der Pandemie aus den Städten aufs Land zogen. Sie renovierten die Scheunen, um mehr Platz für Gäste zu haben oder den Raum als Büro oder Fitnessraum nutzen zu können. Deshalb verkaufen sich Landhäuser mit Scheunen heute leichter. Aber der Umbau einer Scheune ist sehr teuer und kann mehr als 180.000 Euro kosten. Allerdings sagen viele Menschen in den sozialen Medien, dass das Leben auf dem Land im Vereinigten Königreich teuer ist</p>
+                </div>
+                
+                <div class="text-footer">
+                    <button onclick="scrollToTop()" class="footer-link">⬆ Наверх</button>
+                    <a href="#main-nav" class="footer-link">📑 К началу</a>
+                </div>
+            </article>
+
+            <article id="text-sushi" class="text-card">
+                <div class="text-header">
+                    <h3>📄 Ein Sushi-Restaurant in Taiwan hat eine besondere...</h3>
+                    <span class="text-number">#45</span>
+                </div>
+                
+                <div class="text-content">
+                    <p>Ein Sushi-Restaurant in Taiwan hat eine besondere Aktion. Menschen mit dem chinesischen Wort für „Lachs“ im Namen essen gratis. Deshalb ändern mehr als 300 Menschen ihren Namen. Aber dann gibt es ein Problem. Das Gesetz erlaubt nur drei Namensänderungen. Einige Menschen können ihren alten Namen nicht zurückbekommen. Jetzt wollen Politiker diese Regel ändern. Viele Menschen in den sozialen Medien finden das sehr lustig.</p>
+                </div>
+                
+                <div class="text-footer">
+                    <button onclick="scrollToTop()" class="footer-link">⬆ Наверх</button>
+                    <a href="#main-nav" class="footer-link">📑 К началу</a>
+                </div>
+            </article>
+
+            <article id="text-vampir" class="text-card">
+                <div class="text-header">
+                    <h3>📄 Hättest du Angst vor einem Vampir? Einer soll vor...</h3>
+                    <span class="text-number">#46</span>
+                </div>
+                
+                <div class="text-content">
+                    <p>Hättest du Angst vor einem Vampir? Einer soll vor über 300 Jahren gelebt haben. Sie wurde auf einem Friedhof in Polen gefunden. Die Leute vor Ort nennen sie „Zosia“. Als sie begraben wurde, legten die Menschen ein Schloss an ihr Bein und eine Metallsichel an ihren Hals, sodass Zosia nicht als Vampir zurückkehrt. Damals glaubten die Menschen, dass solche Dinge einen Vampir stoppen könnten. Heute haben Wissenschaftler ein Modell ihres Gesichts gemacht. Sie benutzten dafür 3D-Druck und Ton. Die Wissenschaftler sagen, dass das Modell sehr wichtig für ihre Arbeit war. Sie fanden Zosias Geschichte traurig. Deshalb wollten sie sie als junge Frau zeigen. Sie waren sicher, dass sie kein Monster war.</p>
+                </div>
+                
+                <div class="text-footer">
+                    <button onclick="scrollToTop()" class="footer-link">⬆ Наверх</button>
+                    <a href="#main-nav" class="footer-link">📑 К началу</a>
+                </div>
+            </article>
+
+            <article id="text-trinken" class="text-card">
+                <div class="text-header">
+                    <h3>📄 Die Trinkgewohnheiten in Südkorea ändern sich. Vie...</h3>
+                    <span class="text-number">#47</span>
+                </div>
+                
+                <div class="text-content">
+                    <p>Die Trinkgewohnheiten in Südkorea ändern sich. Viele Kneipen und kleine Bars sind jetzt nicht mehr voll. Das hat verschiedene Gründe. Arbeitskollegen trinken nicht mehr oft zusammen. Früher haben sie das oft gemacht. Mit den neuen Regeln darf ein Chef seine Mitarbeiter nicht mehr zum Trinken einladen. Auch junge Frauen trinken nicht gerne mit Kollegen. Außerdem werden die Lebenshaltungskosten höher. Deshalb haben die Leute weniger Geld. Die Meinung in der Gesellschaft ändert sich auch. Junge Leute achten mehr auf ihre Gesundheit. Kennst du jemanden, der nicht gerne trinkt?</p>
+                </div>
+                
+                <div class="text-footer">
+                    <button onclick="scrollToTop()" class="footer-link">⬆ Наверх</button>
+                    <a href="#main-nav" class="footer-link">📑 К началу</a>
+                </div>
+            </article>
+
+            <article id="text-kneecap" class="text-card">
+                <div class="text-header">
+                    <h3>📄 Die irische Rap-Band Kneecap kommt aus Belfast. Di...</h3>
+                    <span class="text-number">#48</span>
+                </div>
+                
+                <div class="text-content">
+                    <p>Die irische Rap-Band Kneecap kommt aus Belfast. Die Band gewann vor kurzem einen Gerichtsprozess gegen die britische Regierung. Sie zeigt vor Gericht, dass sie einen Kunstzuschuss bekommen soll. Die frühere Regierung will kein Geld geben an Personen, die ihre Meinung nicht unterstützen. Kneecap ist bekannt für politische Botschaften, die anders sind als die der Regierung. Die Band möchte auch, dass Nordirland und die Republik Irland wieder zusammengehören. Aus diesen Gründen gibt die Regierung ihnen kein Geld. Allerdings entscheidet das Gericht in Belfast, dass Kneecap 14.250 Pfund bekommt. Das ist genau der Betrag, den sie ursprünglich als Zuschuss beantragt haben. Kneecap sagt, dass sie das Geld an Hilfsorganisationen für junge Menschen in Belfast spenden möchten.</p>
+                </div>
+                
+                <div class="text-footer">
+                    <button onclick="scrollToTop()" class="footer-link">⬆ Наверх</button>
+                    <a href="#main-nav" class="footer-link">📑 К началу</a>
+                </div>
+            </article>
+
+            <article id="text-banane" class="text-card">
+                <div class="text-header">
+                    <h3>📄 Maurizio ist ein Künstler aus Italien. Er macht ei...</h3>
+                    <span class="text-number">#65</span>
+                </div>
+                
+                <div class="text-content">
+                    <p>Maurizio ist ein Künstler aus Italien. Er macht ein besonderes Kunstwerk. Er klebt eine Banane an eine Wand. Er nennt das Kunstwerk „Komiker“. Er verkauft das Kunstwerk für sehr viel Geld – über 6 Millionen Dollar! Die Leute fragen: Warum ist eine Banane so teuer? Maurizio macht oft lustige, aber besondere Kunst. Mit dem Bananen-Kunstwerk will er zeigen: Kunst kann zum Nachdenken anregen. Er möchte, dass die Menschen über den Wert von Kunst nachdenken. Kunst kann Spaß machen, einfach sein und eine Botschaft haben.</p>
+                </div>
+                
+                <div class="text-footer">
+                    <button onclick="scrollToTop()" class="footer-link">⬆ Наверх</button>
+                    <a href="#main-nav" class="footer-link">📑 К началу</a>
+                </div>
+            </article>
+
+            <article id="text-emojis" class="text-card">
+                <div class="text-header">
+                    <h3>📄 Es gibt neue Emojis, die verschiedene Haartypen da...</h3>
+                    <span class="text-number">#51</span>
+                </div>
+                
+                <div class="text-content">
+                    <p>Es gibt neue Emojis, die verschiedene Haartypen darstellen. Einige junge Menschen haben gemeinsam daran gearbeitet, sie zu entwickeln. Die Emojis zeigen Haare von Menschen mit schwarzer Hautfarbe und mehrfach ethnischer Herkunft. Sie haben Zöpfe und Afro-Haare. Diese Emojis sind wichtig, weil manche Menschen Afro-Haare nicht verstehen. Die Emojis zeigen allen, dass sie schön sind. Emojis können Menschen glücklich machen. Deshalb sollte jeder Emojis haben, die ihm ähneln. Manchmal können schon kleine Veränderungen wichtig sein.</p>
+                </div>
+                
+                <div class="text-footer">
+                    <button onclick="scrollToTop()" class="footer-link">⬆ Наверх</button>
+                    <a href="#main-nav" class="footer-link">📑 К началу</a>
+                </div>
+            </article>
+
+            <article id="text-reisepass" class="text-card">
+                <div class="text-header">
+                    <h3>📄 Kennst du den neuen belgischen Reisepass? Es ist e...</h3>
+                    <span class="text-number">#52</span>
+                </div>
+                
+                <div class="text-content">
+                    <p>Kennst du den neuen belgischen Reisepass? Es ist ein sehr besonderer Reisepass. Viele Menschen sagen, es ist der lustigste Reisepass der Welt. Er hat interessante Zeichnungen. Die Zeichnungen zeigen Personen in Geschichten. Sie sind in Belgien sehr bekannt. Die Zeichnungen machen den Reisepass spezieller. Er ist nicht nur zum Reisen. Er ist jetzt etwas Schönes für Reisende zum Sammeln. Die Leute sagen, die Bilder wecken Erinnerungen an die Vergangenheit. Sie sind sehr stolz auf ihren neuen Reisepass.</p>
+                </div>
+                
+                <div class="text-footer">
+                    <button onclick="scrollToTop()" class="footer-link">⬆ Наверх</button>
+                    <a href="#main-nav" class="footer-link">📑 К началу</a>
+                </div>
+            </article>
+
+            <article id="text-kairo" class="text-card">
+                <div class="text-header">
+                    <h3>📄 Kairo hat ein altes Museum mit vielen Schätzen. Es...</h3>
+                    <span class="text-number">#53</span>
+                </div>
+                
+                <div class="text-content">
+                    <p>Kairo hat ein altes Museum mit vielen Schätzen. Es ist sehr beliebt bei Fans der ägyptischen Geschichte. Aber es ist zu klein für alle Besucher. Deshalb entschied ein ehemaliger Präsident von Ägypten, ein neues Museum zu eröffnen. Jetzt ist es fertig und offen. Es hat große Statuen von alten Pharaonen. Die Objekte im Museum sind von alt bis neu geordnet. Die Ausstellungen zeigen die ganze Geschichte des alten Ägyptens. Die Leute glauben, dass das neue Museum sehr besonders ist. Das Gebäude ist auch sehr schön. Viele Menschen auf der ganzen Welt sagen, dass sie das neue Museum besuchen möchten.</p>
+                </div>
+                
+                <div class="text-footer">
+                    <button onclick="scrollToTop()" class="footer-link">⬆ Наверх</button>
+                    <a href="#main-nav" class="footer-link">📑 К началу</a>
+                </div>
+            </article>
+
+            <article id="text-honu" class="text-card">
+                <div class="text-header">
+                    <h3>📄 Die Honu ist eine Art von Schildkröte aus Hawaii....</h3>
+                    <span class="text-number">#54</span>
+                </div>
+                
+                <div class="text-content">
+                    <p>Die Honu ist eine Art von Schildkröte aus Hawaii. Viele Bilder dieser Schildkröten werden online geteilt. Die Leute sagen, dass sie niedlich sind. Im Gegensatz zu anderen Meeresschildkröten liebt sie es, sich zu sonnen. Auf Hawaii repräsentiert diese Schildkröte ein langes Leben. Sie ist ein wichtiger Bestandteil der hawaiianischen Kunst und Kultur. Eine ausgewachsene Honu kann rund 90 Kilogramm wiegen und ist erst im Alter von 25 Jahren erwachsen. Sie legen lange Strecken von 1300 Kilometern zurück, um ihre Eier dort zu legen, wo sie geboren wurden. Im Jahr 1978 gab es Befürchtungen, dass diese Schildkröte aussterben könnte. Aber dank vieler Bemühungen hat ihre Zahl wieder zugenommen. Falls du Hawaii besuchst und diese erstaunlichen Kreaturen sehen möchtest, solltest du an Folgendes denken: Abstand halten, ruhig sein und kein Blitzlicht beim Fotografieren verwenden.</p>
+                </div>
+                
+                <div class="text-footer">
+                    <button onclick="scrollToTop()" class="footer-link">⬆ Наверх</button>
+                    <a href="#main-nav" class="footer-link">📑 К началу</a>
+                </div>
+            </article>
+
+            <article id="text-coober" class="text-card">
+                <div class="text-header">
+                    <h3>📄 In der kleinen Stadt Coober Pedy in Australien leb...</h3>
+                    <span class="text-number">#66</span>
+                </div>
+                
+                <div class="text-content">
+                    <p>In der kleinen Stadt Coober Pedy in Australien leben etwa 25.000 Menschen. Das Wetter ist in dieser Region sehr schwierig. Die Temperaturen können am Tag bis zu 52 Grad erreichen und nachts auf 3 Grad sinken. Aus diesem Grund leben die meisten Menschen dort unter der Erde. Die meisten Häuser befinden sich in Felsen. Man erkennt die Häuser nur durch Luftlöcher und etwas Erde am Eingang. Man kann Häuser leicht in einen Felsen bauen. Ein paar Leute leben in großen Häusern mit Schwimmbecken und viel Luxus. Die Stadt hat sogar ein unterirdisches Hotel, ein Restaurant und eine Kirche.</p>
+                </div>
+                
+                <div class="text-footer">
+                    <button onclick="scrollToTop()" class="footer-link">⬆ Наверх</button>
+                    <a href="#main-nav" class="footer-link">📑 К началу</a>
+                </div>
+            </article>
+
+            <article id="text-schatz" class="text-card">
+                <div class="text-header">
+                    <h3>📄 Warst du schon mal auf Schatzsuche? Ein Mann verst...</h3>
+                    <span class="text-number">#57</span>
+                </div>
+                
+                <div class="text-content">
+                    <p>Warst du schon mal auf Schatzsuche? Ein Mann versteckt fünf Kisten in Amerika. Er möchte eine lustige und persönliche Schatzsuche machen. Er sagt niemandem, wo die Kisten sind. Selbst seine Frau weiß es nicht. Er schreibt über die Schatzsuche in seinem neuen Buch. In den Büchern stehen viele Hinweise, wo die Kisten sind. Zusammen ist der Schatz mehr als 2 Millionen Dollar wert. Der Schatz enthält seltene Spielkarten, Gold und Dinge von berühmten Personen. Die Leute im Internet freuen sich. Sie möchten die Bücher lesen. Würdest du versuchen, den Schatz zu finden?</p>
+                </div>
+                
+                <div class="text-footer">
+                    <button onclick="scrollToTop()" class="footer-link">⬆ Наверх</button>
+                    <a href="#main-nav" class="footer-link">📑 К началу</a>
+                </div>
+            </article>
+
+            <article id="text-erwaermung" class="text-card">
+                <div class="text-header">
+                    <h3>📄 Die globale Erwärmung lässt Gletscher schmelzen. D...</h3>
+                    <span class="text-number">#58</span>
+                </div>
+                
+                <div class="text-content">
+                    <p>Die globale Erwärmung lässt Gletscher schmelzen. Dies zwingt die Schweiz und Italien dazu, ihre Grenzen in den Alpen neu festzulegen. Das gilt besonders für die Region in der Nähe des Matterhorns. Früher wurden die Grenzen zwischen den beiden Ländern durch Gletscher und Schneeflächen bestimmt. Jetzt, da die Gletscher schmelzen, müssen jene natürlichen Grenzen angepasst werden. Untersuchungen zeigen, dass die Schweizer Gletscher besonders schnell schrumpfen. Das ist auf viele heiße Sommer und wenig Schneefall zurückzuführen. Die schmelzenden Gletscher sind ein deutliches Zeichen für die Auswirkungen der globalen Erwärmung. Menschen aus der Region sind traurig über diese Veränderungen.</p>
+                </div>
+                
+                <div class="text-footer">
+                    <button onclick="scrollToTop()" class="footer-link">⬆ Наверх</button>
+                    <a href="#main-nav" class="footer-link">📑 К началу</a>
+                </div>
+            </article>
+
+            <article id="text-mond" class="text-card">
+                <div class="text-header">
+                    <h3>📄 Ungefähr zwei Monate lang hatte die Erde einen zus...</h3>
+                    <span class="text-number">#59</span>
+                </div>
+                
+                <div class="text-content">
+                    <p>Ungefähr zwei Monate lang hatte die Erde einen zusätzlichen Mond. Dies geschah, als der Asteroid 2024 PT5 in unsere Erdumlaufbahn geriet. Spanische Astronomen nutzten ein starkes Teleskop in Südafrika. So entdeckten sie diesen temporären Mond als Erste. Solche kleinen Monde oder winzige Asteroiden können die Erde nur für kurze Zeit umkreisen. Sie werden von der Erdgravitation angezogen, wenn sie nahe genug kommen. Diese Mini-Monde bleiben normalerweise nicht lange. Meist bleiben sie nur ein paar Wochen oder Monate, bevor sie sich wieder lösen und ihre eigene Umlaufbahn um die Sonne fortsetzen. Wissenschaftler finden solche kurzzeitigen Begleiter der Erde sehr interessant. Sie geben uns die Möglichkeit, nahe Objekte im Weltraum genauer zu untersuchen. Dadurch können wir unser Sonnensystem besser verstehen.</p>
+                </div>
+                
+                <div class="text-footer">
+                    <button onclick="scrollToTop()" class="footer-link">⬆ Наверх</button>
+                    <a href="#main-nav" class="footer-link">📑 К началу</a>
+                </div>
+            </article>
+
+            <article id="text-tea-coffee" class="text-card">
+                <div class="text-header">
+                    <h3>📄 Tee und Kaffee sind weltweit beliebte Getränke. Je...</h3>
+                    <span class="text-number">#60</span>
+                </div>
+                
+                <div class="text-content">
+                    <p>Tee und Kaffee sind weltweit beliebte Getränke. Jedoch sollten wir unseren Konsum überdenken, da ihre Produktion der Umwelt schaden kann. Dieser Schaden entsteht durch die Herstellung, Verpackung und den Transport. Zum Beispiel: Für Kaffeeanbau werden viele Bäume gefällt. Außerdem sind Erntemaschinen für Kaffeebohnen schlecht für die Umwelt. Kaffee benötigt zudem viel Wasser und Energie. Im Vergleich dazu erzeugt die Herstellung von Tee weniger Emissionen. Man braucht pro Getränk weniger Tee als Kaffee. In der Zukunft könnte es somit weniger Kaffeeanbau geben. Deshalb sollten Menschen mehr Tee trinken, wenn sie die Umwelt schützen und die Zukunft des Kaffees sichern wollen.</p>
+                </div>
+                
+                <div class="text-footer">
+                    <button onclick="scrollToTop()" class="footer-link">⬆ Наверх</button>
+                    <a href="#main-nav" class="footer-link">📑 К началу</a>
+                </div>
+            </article>
+
+            <article id="text-wurm" class="text-card">
+                <div class="text-header">
+                    <h3>📄 Nutzer im Internet sind optimistisch wegen einer E...</h3>
+                    <span class="text-number">#61</span>
+                </div>
+                
+                <div class="text-content">
+                    <p>Nutzer im Internet sind optimistisch wegen einer Entdeckung: Ein kleiner Wurm, der Polystyrol fressen kann. Dieser Wurm könnte eine gute Lösung für das weltweite Problem mit Plastikmüll sein. Dieses Plastik ist schwer zu entsorgen und wird oft für Verpackungen benutzt. Normalerweise ist es teuer und schlecht für die Umwelt, diesen Müll zu entsorgen. Deshalb macht ein Team von Wissenschaftlern Tests mit einer Art Wurm, dem Mehlwurm. Diese Würmer haben die richtigen Bakterien, um Polystyrol zu verdauen. So könnten sie in Regionen mit viel Plastikmüll, wie Afrika, sehr nützlich sein. Wissenschaftler machen weiter Tests und hoffen, einen Weg zu finden, die Bakterien der Mehlwürmer gut zu nutzen.</p>
+                </div>
+                
+                <div class="text-footer">
+                    <button onclick="scrollToTop()" class="footer-link">⬆ Наверх</button>
+                    <a href="#main-nav" class="footer-link">📑 К началу</a>
+                </div>
+            </article>
+
+            <article id="text-kastanien" class="text-card">
+                <div class="text-header">
+                    <h3>📄 Soriano nel Cimino ist eine Stadt in Italien. Sie...</h3>
+                    <span class="text-number">#62</span>
+                </div>
+                
+                <div class="text-content">
+                    <p>Soriano nel Cimino ist eine Stadt in Italien. Sie ist für ihre Kastanien bekannt. Jeden Oktober findet dort das Kastanienfest statt. Für zwei Wochen sieht die Stadt dann aus wie in alten Zeiten. Viele Leute besuchen das Fest. Sie wollen Musik hören, Theater sehen, leckeres Essen probieren und schöne Sachen kaufen. Die Menschen tragen alte Kleidung, kochen viel und machen Musik. Nach dem Festival ist die Stadt wieder normal. Besucher aus verschiedenen Ländern kommen gerne zu dem Fest. Online-Bewertungen sagen, dass die Stadt während des Festivals besonders schön ist.</p>
+                </div>
+                
+                <div class="text-footer">
+                    <button onclick="scrollToTop()" class="footer-link">⬆ Наверх</button>
+                    <a href="#main-nav" class="footer-link">📑 К началу</a>
+                </div>
+            </article>
+
+            <article id="text-rehe" class="text-card">
+                <div class="text-header">
+                    <h3>📄 Wusstest du, dass Rehe gefährlich sein können? Jed...</h3>
+                    <span class="text-number">#63</span>
+                </div>
+                
+                <div class="text-content">
+                    <p>Wusstest du, dass Rehe gefährlich sein können? Jedes Jahr passieren viele Autounfälle wegen Rehen. Diese Unfälle kosten viel Geld und viele Menschen verletzen sich dabei. Manche Menschen sterben sogar bei diesen Unfällen. Rehe sind manchmal gefährlicher als andere Tiere. Dieses Problem gibt es in vielen Ländern. Ein Experte erklärt, dass Rehe oft bei Sonnenaufgang und Sonnenuntergang aktiv sind. Die meisten Unfälle mit Rehen passieren im Frühling und Herbst. Experten raten, vorsichtig zu sein, besonders wenn Rehe in der Nähe sind. Im Internet steht auch, dass man langsamer fahren soll, wenn man Rehe auf der Straße sieht.</p>
+                </div>
+                
+                <div class="text-footer">
+                    <button onclick="scrollToTop()" class="footer-link">⬆ Наверх</button>
+                    <a href="#main-nav" class="footer-link">📑 К началу</a>
+                </div>
+            </article>
+
+            <article id="text-hochzeit" class="text-card">
+                <div class="text-header">
+                    <h3>📄 Hochzeiten in Südkorea können wie Geschäfte ausseh...</h3>
+                    <span class="text-number">#64</span>
+                </div>
+                
+                <div class="text-content">
+                    <p>Hochzeiten in Südkorea können wie Geschäfte aussehen. Es ist üblich, dass Gäste dem Brautpaar Geld schenken. Wenn das Paar nicht genug Geld bekommt, können sie traurig sein. Sie denken vielleicht, dass die Person sie nicht mag. Manche Gäste geben aber nicht gerne viel Geld, wenn sie das Paar nicht gut kennen. Die Hochzeiten sind schön, aber auch teuer. Das Brautpaar fühlt sich oft unter Druck. Außerdem sind die Hochzeiten sehr schnell, was Gäste aus anderen Ländern oft überrascht.</p>
+                </div>
+                
+                <div class="text-footer">
+                    <button onclick="scrollToTop()" class="footer-link">⬆ Наверх</button>
+                    <a href="#main-nav" class="footer-link">📑 К началу</a>
+                </div>
+            </article>
+
+            <article id="text-tokio" class="text-card">
+                <div class="text-header">
+                    <h3>📄 Ein Museum in Tokio zeigt alte Technik, die nieman...</h3>
+                    <span class="text-number">#67</span>
+                </div>
+                
+                <div class="text-content">
+                    <p>Ein Museum in Tokio zeigt alte Technik, die niemand mehr benutzt. Man sieht dort viele Dinge, zum Beispiel Disketten und alte Kameras. Man kann die Technik nicht nur sehen, sondern auch anfassen und benutzen. Manche Menschen mögen alte Technik und denken gern daran. Barbara arbeitet im Museum und sammelt die Technik. Sie denkt, dass alle Technik mit der Zeit alt wird. Dann benutzen die Menschen sie nicht mehr. Das Museum bekommt die Technik als Spende. Ein Ticket kostet ungefähr zehn Euro. Wenn man etwas spendet, bezahlt man nur etwa fünf Euro.</p>
+                </div>
+                
+                <div class="text-footer">
+                    <button onclick="scrollToTop()" class="footer-link">⬆ Наверх</button>
+                    <a href="#main-nav" class="footer-link">📑 К началу</a>
+                </div>
+            </article>
+
+            <article id="text-sake" class="text-card">
+                <div class="text-header">
+                    <h3>📄 Hast du schon einmal von Sake gehört? Das ist ein...</h3>
+                    <span class="text-number">#68</span>
+                </div>
+                
+                <div class="text-content">
+                    <p>Hast du schon einmal von Sake gehört? Das ist ein traditioneller Reiswein aus Japan. Er ist fermentiert. Eine Weltorganisation trifft jetzt eine Entscheidung über Sake. Sie sagt: Die alte Herstellungsart von Sake ist sehr wichtig. Diese Art ist wichtig für Kulturen der Welt. Die Sake-Hersteller hoffen, dass sich jetzt mehr Menschen für Sake interessieren. In Japan trinken immer weniger Menschen Sake. Aber Menschen aus anderen Ländern mögen ihn mehr. Man kann Sake heiß oder kalt trinken. Viele trinken ihn bei traditionellen Festen. Aber man kann ihn auch zu Hause trinken.</p>
+                </div>
+                
+                <div class="text-footer">
+                    <button onclick="scrollToTop()" class="footer-link">⬆ Наверх</button>
+                    <a href="#main-nav" class="footer-link">📑 К началу</a>
+                </div>
+            </article>
+
+        </section>
+    </div>
+
+    <!-- ПЛАВАЮЩИЕ ЭЛЕМЕНТЫ -->
+    <button id="scroll-top-btn" class="floating-btn" onclick="scrollToTop()">↑</button>
+    <div id="reading-progress" class="progress-bar"></div>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // === ПЛАВНАЯ ПРОКРУТКА ===
+        function scrollToElement(id) {
+            const element = document.getElementById(id);
+            if (element) {
+                element.scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        }
+
+        function scrollToTop() {
+            window.scrollTo({ 
+                top: 0, 
+                behavior: 'smooth' 
+            });
+        }
+
+        // === ПОКАЗ/СКРЫТИЕ КНОПКИ "НАВЕРХ" ===
+        window.addEventListener('scroll', function() {
+            const btn = document.getElementById('scroll-top-btn');
+            const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (scrollPosition > 300) {
+                btn.style.display = 'block';
+            } else {
+                btn.style.display = 'none';
+            }
+            
+            // === ПРОГРЕСС БАР ===
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById("reading-progress").style.width = scrolled + "%";
+        });
+
+        // === ПОДСВЕТКА ПРИ TARGET ===
+        window.addEventListener('hashchange', function() {
+            const targetId = window.location.hash.substring(1);
+            if (targetId) {
+                const element = document.getElementById(targetId);
+                if (element) {
+                    element.classList.add('just-targeted');
+                    setTimeout(() => {
+                        element.classList.remove('just-targeted');
+                    }, 2000);
+                }
+            }
+        });
+
+        // === СТАТИСТИКА ===
+        console.log('[OK] Всего текстов:', document.querySelectorAll('.text-card').length);
+    </script>
+</body>
+</html>

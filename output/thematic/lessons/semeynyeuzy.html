@@ -1252,9 +1252,34 @@ body {
                             <h4>РУССКИЕ</h4>
                             <div class="word-list">
 
+                <button class="word-item russian-word" data-pair-id="3"
+                        onclick="handleWordPairClick(this, 3, 'russian')" type="button">
+                    <span class="word-main">син</span>
+                </button>
+                
+                <button class="word-item russian-word" data-pair-id="0"
+                        onclick="handleWordPairClick(this, 0, 'russian')" type="button">
+                    <span class="word-main">батько</span>
+                </button>
+                
                 <button class="word-item russian-word" data-pair-id="9"
                         onclick="handleWordPairClick(this, 9, 'russian')" type="button">
                     <span class="word-main">відректися</span>
+                </button>
+                
+                <button class="word-item russian-word" data-pair-id="5"
+                        onclick="handleWordPairClick(this, 5, 'russian')" type="button">
+                    <span class="word-main">сестра</span>
+                </button>
+                
+                <button class="word-item russian-word" data-pair-id="6"
+                        onclick="handleWordPairClick(this, 6, 'russian')" type="button">
+                    <span class="word-main">кровні узи</span>
+                </button>
+                
+                <button class="word-item russian-word" data-pair-id="7"
+                        onclick="handleWordPairClick(this, 7, 'russian')" type="button">
+                    <span class="word-main">споріднений</span>
                 </button>
                 
                 <button class="word-item russian-word" data-pair-id="2"
@@ -1262,9 +1287,14 @@ body {
                     <span class="word-main">дочка</span>
                 </button>
                 
-                <button class="word-item russian-word" data-pair-id="11"
-                        onclick="handleWordPairClick(this, 11, 'russian')" type="button">
-                    <span class="word-main">родовід</span>
+                <button class="word-item russian-word" data-pair-id="10"
+                        onclick="handleWordPairClick(this, 10, 'russian')" type="button">
+                    <span class="word-main">вірність</span>
+                </button>
+                
+                <button class="word-item russian-word" data-pair-id="1"
+                        onclick="handleWordPairClick(this, 1, 'russian')" type="button">
+                    <span class="word-main">мати</span>
                 </button>
                 
                 <button class="word-item russian-word" data-pair-id="4"
@@ -1277,39 +1307,9 @@ body {
                     <span class="word-main">спадщина</span>
                 </button>
                 
-                <button class="word-item russian-word" data-pair-id="0"
-                        onclick="handleWordPairClick(this, 0, 'russian')" type="button">
-                    <span class="word-main">батько</span>
-                </button>
-                
-                <button class="word-item russian-word" data-pair-id="5"
-                        onclick="handleWordPairClick(this, 5, 'russian')" type="button">
-                    <span class="word-main">сестра</span>
-                </button>
-                
-                <button class="word-item russian-word" data-pair-id="1"
-                        onclick="handleWordPairClick(this, 1, 'russian')" type="button">
-                    <span class="word-main">мати</span>
-                </button>
-                
-                <button class="word-item russian-word" data-pair-id="7"
-                        onclick="handleWordPairClick(this, 7, 'russian')" type="button">
-                    <span class="word-main">споріднений</span>
-                </button>
-                
-                <button class="word-item russian-word" data-pair-id="3"
-                        onclick="handleWordPairClick(this, 3, 'russian')" type="button">
-                    <span class="word-main">син</span>
-                </button>
-                
-                <button class="word-item russian-word" data-pair-id="6"
-                        onclick="handleWordPairClick(this, 6, 'russian')" type="button">
-                    <span class="word-main">кровні узи</span>
-                </button>
-                
-                <button class="word-item russian-word" data-pair-id="10"
-                        onclick="handleWordPairClick(this, 10, 'russian')" type="button">
-                    <span class="word-main">вірність</span>
+                <button class="word-item russian-word" data-pair-id="11"
+                        onclick="handleWordPairClick(this, 11, 'russian')" type="button">
+                    <span class="word-main">родовід</span>
                 </button>
                 
                             </div>
@@ -1477,54 +1477,6 @@ body {
                 
 
                 <details class="exercise-accordion-item">
-                    <summary>🌈 Синонимы и антонимы</summary>
-                    <div class="exercise-content">
-                        
-            <div class="exercise-block" id="synonyms">
-                <h3 class="exercise-title">🌈 Синонимы и антонимы</h3>
-                <p class="exercise-intro">Подберите синоним из урока и вспомните противоположное значение.</p>
-
-                <div class="synonym-item">
-                    <div class="word-center">
-                        <span class="word-main">der Friede</span>
-                        <small>мир</small>
-                    </div>
-                    <div class="options">
-                        <input type="text" placeholder="Синоним" data-correct="die Welt" data-hint="мир">
-                        <input type="text" placeholder="Антоним" data-correct="der Krieg" data-hint="война">
-                    </div>
-                </div>
-                
-                <div class="synonym-item">
-                    <div class="word-center">
-                        <span class="word-main">die Welt</span>
-                        <small>мир</small>
-                    </div>
-                    <div class="options">
-                        <input type="text" placeholder="Синоним" data-correct="der Friede" data-hint="мир">
-                        <input type="text" placeholder="Антоним" data-correct="der Krieg" data-hint="война">
-                    </div>
-                </div>
-                
-                <div class="synonym-item">
-                    <div class="word-center">
-                        <span class="word-main">trauen</span>
-                        <small>доверять</small>
-                    </div>
-                    <div class="options">
-                        <input type="text" placeholder="Синоним" data-correct="vertrauen" data-hint="доверять">
-                        <input type="text" placeholder="Антоним" data-correct="misstrauen" data-hint="не доверять">
-                    </div>
-                </div>
-                
-                <button class="check-btn" data-action="check-synonyms" type="button">Проверить</button>
-            </div>
-            
-                    </div>
-                </details>
-                
-
-                <details class="exercise-accordion-item">
                     <summary>🧠 Викторина по словам</summary>
                     <div class="exercise-content">
                         
@@ -1553,15 +1505,15 @@ body {
                 <h3>Що означає німецьке слово?</h3>
 
                 <div class="word-display">
-                    <span class="german-word">der Bruder</span>
-                    <span class="transcription">[дер БРУ-дер]</span>
+                    <span class="german-word">der Sohn</span>
+                    <span class="transcription">[дер ЗОН]</span>
                 </div>
 
                 <div class="answer-buttons">
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">син</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">сестра</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">відректися</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">брат</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">кровні узи</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">мати</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">родовід</button>
                 </div>
             </div>
         </div>
@@ -1577,15 +1529,15 @@ body {
                 <h3>Що означає німецьке слово?</h3>
 
                 <div class="word-display">
-                    <span class="german-word">der Vater</span>
-                    <span class="transcription">[дер ФА-тер]</span>
+                    <span class="german-word">die Erbschaft</span>
+                    <span class="transcription">[ди ЕРБ-шафт]</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">споріднений</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">вірність</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">батько</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">син</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">батько</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">мати</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">спадщина</button>
                 </div>
             </div>
         </div>
@@ -1606,10 +1558,10 @@ body {
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">дочка</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">мати</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">батько</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">споріднений</button>
                     <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">сестра</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">спадщина</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">мати</button>
                 </div>
             </div>
         </div>
@@ -1625,15 +1577,15 @@ body {
                 <h3>Що означає німецьке слово?</h3>
 
                 <div class="word-display">
-                    <span class="german-word">die Erbschaft</span>
-                    <span class="transcription">[ди ЕРБ-шафт]</span>
+                    <span class="german-word">die Treue</span>
+                    <span class="transcription">[ди ТРОЙ-е]</span>
                 </div>
 
                 <div class="answer-buttons">
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">відректися</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">спадщина</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">батько</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">спадщина</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">дочка</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">сестра</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">вірність</button>
                 </div>
             </div>
         </div>
@@ -1649,15 +1601,15 @@ body {
                 <h3>Що означає німецьке слово?</h3>
 
                 <div class="word-display">
-                    <span class="german-word">der Sohn</span>
-                    <span class="transcription">[дер ЗОН]</span>
+                    <span class="german-word">der Vater</span>
+                    <span class="transcription">[дер ФА-тер]</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">спадщина</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">вірність</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">син</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">мати</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">кровні узи</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">батько</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">відректися</button>
                 </div>
             </div>
         </div>
@@ -1673,15 +1625,15 @@ body {
                 <h3>Що означає німецьке слово?</h3>
 
                 <div class="word-display">
-                    <span class="german-word">verstoßen</span>
-                    <span class="transcription">[фер-ШТО-сен]</span>
+                    <span class="german-word">die Blutsbande</span>
+                    <span class="transcription">[ди БЛУТС-бан-де]</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">вірність</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">дочка</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">кровні узи</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">син</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">мати</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">відректися</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">брат</button>
                 </div>
             </div>
         </div>
@@ -1697,15 +1649,15 @@ body {
                 <h3>Що означає німецьке слово?</h3>
 
                 <div class="word-display">
-                    <span class="german-word">die Treue</span>
-                    <span class="transcription">[ди ТРОЙ-е]</span>
+                    <span class="german-word">verstoßen</span>
+                    <span class="transcription">[фер-ШТО-сен]</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">вірність</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">сестра</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">батько</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">мати</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">відректися</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">спадщина</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">споріднений</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">кровні узи</button>
                 </div>
             </div>
         </div>
@@ -1721,15 +1673,15 @@ body {
                 <h3>Що означає німецьке слово?</h3>
 
                 <div class="word-display">
-                    <span class="german-word">verwandt</span>
-                    <span class="transcription">[фер-ВАНДТ]</span>
+                    <span class="german-word">der Bruder</span>
+                    <span class="transcription">[дер БРУ-дер]</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">споріднений</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">мати</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">батько</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">спадщина</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">кровні узи</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">сестра</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">брат</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">відректися</button>
                 </div>
             </div>
         </div>
@@ -1745,15 +1697,15 @@ body {
                 <h3>Що означає німецьке слово?</h3>
 
                 <div class="word-display">
-                    <span class="german-word">die Mutter</span>
-                    <span class="transcription">[ди МУ-тер]</span>
+                    <span class="german-word">verwandt</span>
+                    <span class="transcription">[фер-ВАНДТ]</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">сестра</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">споріднений</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">кровні узи</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">родовід</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">дочка</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">мати</button>
                 </div>
             </div>
         </div>
@@ -1769,15 +1721,15 @@ body {
                 <h3>Що означає німецьке слово?</h3>
 
                 <div class="word-display">
-                    <span class="german-word">die Tochter</span>
-                    <span class="transcription">[ди ТОХ-тер]</span>
+                    <span class="german-word">die Mutter</span>
+                    <span class="transcription">[ди МУ-тер]</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">сестра</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">спадщина</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">родовід</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">дочка</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">спадщина</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">сестра</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">мати</button>
                 </div>
             </div>
         </div>
@@ -1793,15 +1745,15 @@ body {
                 <h3>Що означає німецьке слово?</h3>
 
                 <div class="word-display">
-                    <span class="german-word">der Stammbaum</span>
-                    <span class="transcription">[дер ШТАММ-баум]</span>
+                    <span class="german-word">die Tochter</span>
+                    <span class="transcription">[ди ТОХ-тер]</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">дочка</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">родовід</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">спадщина</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">батько</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">сестра</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">споріднений</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">син</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">дочка</button>
                 </div>
             </div>
         </div>
@@ -1817,15 +1769,15 @@ body {
                 <h3>Що означає німецьке слово?</h3>
 
                 <div class="word-display">
-                    <span class="german-word">die Blutsbande</span>
-                    <span class="transcription">[ди БЛУТС-бан-де]</span>
+                    <span class="german-word">der Stammbaum</span>
+                    <span class="transcription">[дер ШТАММ-баум]</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">родовід</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">вірність</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">родовід</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">дочка</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">кровні узи</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">відректися</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">брат</button>
                 </div>
             </div>
         </div>
@@ -1841,14 +1793,14 @@ body {
                 <h3>Як німецькою буде:</h3>
 
                 <div class="word-display">
-                    <span class="russian-word">вірність</span>
+                    <span class="russian-word">брат</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Erbschaft</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">der Bruder</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">der Vater</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">die Treue</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">der Bruder</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">verwandt</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Schwester</button>
                 </div>
             </div>
         </div>
@@ -1864,14 +1816,14 @@ body {
                 <h3>Як німецькою буде:</h3>
 
                 <div class="word-display">
-                    <span class="russian-word">родовід</span>
+                    <span class="russian-word">сестра</span>
                 </div>
 
                 <div class="answer-buttons">
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Erbschaft</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">verwandt</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">die Schwester</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Mutter</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">der Stammbaum</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Blutsbande</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Treue</button>
                 </div>
             </div>
         </div>
@@ -1887,14 +1839,14 @@ body {
                 <h3>Як німецькою буде:</h3>
 
                 <div class="word-display">
-                    <span class="russian-word">дочка</span>
+                    <span class="russian-word">батько</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Blutsbande</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">die Tochter</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">der Vater</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Schwester</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">der Bruder</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Tochter</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">der Vater</button>
                 </div>
             </div>
         </div>
@@ -1910,14 +1862,14 @@ body {
                 <h3>Як німецькою буде:</h3>
 
                 <div class="word-display">
-                    <span class="russian-word">батько</span>
+                    <span class="russian-word">син</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">der Vater</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Tochter</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">der Sohn</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Treue</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Mutter</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">der Bruder</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Erbschaft</button>
                 </div>
             </div>
         </div>
@@ -1933,14 +1885,14 @@ body {
                 <h3>Як німецькою буде:</h3>
 
                 <div class="word-display">
-                    <span class="russian-word">споріднений</span>
+                    <span class="russian-word">вірність</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Treue</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">verwandt</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">der Stammbaum</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">der Bruder</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">verstoßen</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Tochter</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">die Treue</button>
                 </div>
             </div>
         </div>
@@ -1956,14 +1908,14 @@ body {
                 <h3>Як німецькою буде:</h3>
 
                 <div class="word-display">
-                    <span class="russian-word">син</span>
+                    <span class="russian-word">родовід</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">der Sohn</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Mutter</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Schwester</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Erbschaft</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">der Vater</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">der Stammbaum</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Treue</button>
                 </div>
             </div>
         </div>
@@ -1979,14 +1931,14 @@ body {
                 <h3>Як німецькою буде:</h3>
 
                 <div class="word-display">
-                    <span class="russian-word">брат</span>
+                    <span class="russian-word">мати</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Blutsbande</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">der Bruder</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Erbschaft</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">der Stammbaum</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">der Vater</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">die Mutter</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">verwandt</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Schwester</button>
                 </div>
             </div>
         </div>
@@ -2002,14 +1954,14 @@ body {
                 <h3>Як німецькою буде:</h3>
 
                 <div class="word-display">
-                    <span class="russian-word">мати</span>
+                    <span class="russian-word">кровні узи</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">die Mutter</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">der Sohn</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">der Bruder</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">die Blutsbande</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Schwester</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">verwandt</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Treue</button>
                 </div>
             </div>
         </div>
@@ -2025,14 +1977,14 @@ body {
                 <h3>Як німецькою буде:</h3>
 
                 <div class="word-display">
-                    <span class="russian-word">кровні узи</span>
+                    <span class="russian-word">спадщина</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">der Stammbaum</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Tochter</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Erbschaft</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">die Blutsbande</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Treue</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">verwandt</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">die Erbschaft</button>
                 </div>
             </div>
         </div>
@@ -2048,14 +2000,14 @@ body {
                 <h3>Як німецькою буде:</h3>
 
                 <div class="word-display">
-                    <span class="russian-word">спадщина</span>
+                    <span class="russian-word">відректися</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Blutsbande</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Schwester</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Tochter</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">die Erbschaft</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">der Bruder</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">verwandt</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">verstoßen</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Treue</button>
                 </div>
             </div>
         </div>
@@ -2071,14 +2023,14 @@ body {
                 <h3>Як німецькою буде:</h3>
 
                 <div class="word-display">
-                    <span class="russian-word">відректися</span>
+                    <span class="russian-word">дочка</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Erbschaft</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">der Vater</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">verstoßen</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">der Stammbaum</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">der Vater</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">die Tochter</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">der Sohn</button>
                 </div>
             </div>
         </div>
@@ -2094,14 +2046,14 @@ body {
                 <h3>Як німецькою буде:</h3>
 
                 <div class="word-display">
-                    <span class="russian-word">сестра</span>
+                    <span class="russian-word">споріднений</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Erbschaft</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">verwandt</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">verstoßen</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">die Schwester</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">verwandt</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">der Sohn</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">der Bruder</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Mutter</button>
                 </div>
             </div>
         </div>
@@ -2186,7 +2138,7 @@ body {
                 
                 <div class="sentence-builder" data-sentence-idx="0">
                     <p class="translation">Я ваш отец!</p>
-                    <div class="word-pool"><span class="draggable" draggable="true">bin</span><span class="draggable" draggable="true">Ich</span><span class="draggable" draggable="true">euer</span><span class="draggable" draggable="true">Vater</span></div>
+                    <div class="word-pool"><span class="draggable" draggable="true">bin</span><span class="draggable" draggable="true">Vater</span><span class="draggable" draggable="true">euer</span><span class="draggable" draggable="true">Ich</span></div>
                     <div class="drop-zone" data-correct="Ich bin euer Vater">
                         <span class="placeholder">Перетащите слова сюда</span>
                     </div>
@@ -2203,7 +2155,7 @@ body {
                 
                 <div class="sentence-builder" data-sentence-idx="1">
                     <p class="translation">Ваша мать была лучше</p>
-                    <div class="word-pool"><span class="draggable" draggable="true">Eure</span><span class="draggable" draggable="true">war</span><span class="draggable" draggable="true">besser</span><span class="draggable" draggable="true">Mutter</span></div>
+                    <div class="word-pool"><span class="draggable" draggable="true">besser</span><span class="draggable" draggable="true">Mutter</span><span class="draggable" draggable="true">Eure</span><span class="draggable" draggable="true">war</span></div>
                     <div class="drop-zone" data-correct="Eure Mutter war besser">
                         <span class="placeholder">Перетащите слова сюда</span>
                     </div>
@@ -2220,7 +2172,7 @@ body {
                 
                 <div class="sentence-builder" data-sentence-idx="2">
                     <p class="translation">Я ваша дочь</p>
-                    <div class="word-pool"><span class="draggable" draggable="true">Tochter</span><span class="draggable" draggable="true">Ich</span><span class="draggable" draggable="true">bin</span><span class="draggable" draggable="true">Ihre</span></div>
+                    <div class="word-pool"><span class="draggable" draggable="true">Ihre</span><span class="draggable" draggable="true">Tochter</span><span class="draggable" draggable="true">Ich</span><span class="draggable" draggable="true">bin</span></div>
                     <div class="drop-zone" data-correct="Ich bin Ihre Tochter">
                         <span class="placeholder">Перетащите слова сюда</span>
                     </div>
@@ -2237,7 +2189,7 @@ body {
                 
                 <div class="sentence-builder" data-sentence-idx="3">
                     <p class="translation">Мой сын Эдгар</p>
-                    <div class="word-pool"><span class="draggable" draggable="true">Sohn</span><span class="draggable" draggable="true">Mein</span></div>
+                    <div class="word-pool"><span class="draggable" draggable="true">Mein</span><span class="draggable" draggable="true">Sohn</span></div>
                     <div class="drop-zone" data-correct="Mein Sohn">
                         <span class="placeholder">Перетащите слова сюда</span>
                     </div>
@@ -2254,7 +2206,7 @@ body {
                 
                 <div class="sentence-builder" data-sentence-idx="4">
                     <p class="translation">Мой брат должен умереть</p>
-                    <div class="word-pool"><span class="draggable" draggable="true">Mein</span><span class="draggable" draggable="true">muss</span><span class="draggable" draggable="true">Bruder</span><span class="draggable" draggable="true">sterben</span></div>
+                    <div class="word-pool"><span class="draggable" draggable="true">Bruder</span><span class="draggable" draggable="true">muss</span><span class="draggable" draggable="true">sterben</span><span class="draggable" draggable="true">Mein</span></div>
                     <div class="drop-zone" data-correct="Mein Bruder muss sterben">
                         <span class="placeholder">Перетащите слова сюда</span>
                     </div>
@@ -2271,7 +2223,7 @@ body {
                 
                 <div class="sentence-builder" data-sentence-idx="5">
                     <p class="translation">Сестра - мой враг</p>
-                    <div class="word-pool"><span class="draggable" draggable="true">Schwester</span><span class="draggable" draggable="true">ist</span><span class="draggable" draggable="true">Feindin</span><span class="draggable" draggable="true">Meine</span></div>
+                    <div class="word-pool"><span class="draggable" draggable="true">ist</span><span class="draggable" draggable="true">Schwester</span><span class="draggable" draggable="true">Feindin</span><span class="draggable" draggable="true">Meine</span></div>
                     <div class="drop-zone" data-correct="Meine Schwester ist Feindin">
                         <span class="placeholder">Перетащите слова сюда</span>
                     </div>
@@ -2288,7 +2240,7 @@ body {
                 
                 <div class="sentence-builder" data-sentence-idx="6">
                     <p class="translation">Кровные узы разорваны</p>
-                    <div class="word-pool"><span class="draggable" draggable="true">zerrissen</span><span class="draggable" draggable="true">Die</span><span class="draggable" draggable="true">sind</span><span class="draggable" draggable="true">Blutsbande</span></div>
+                    <div class="word-pool"><span class="draggable" draggable="true">Die</span><span class="draggable" draggable="true">zerrissen</span><span class="draggable" draggable="true">Blutsbande</span><span class="draggable" draggable="true">sind</span></div>
                     <div class="drop-zone" data-correct="Die Blutsbande sind zerrissen">
                         <span class="placeholder">Перетащите слова сюда</span>
                     </div>
@@ -2305,7 +2257,7 @@ body {
                 
                 <div class="sentence-builder" data-sentence-idx="7">
                     <p class="translation">Мы родственники</p>
-                    <div class="word-pool"><span class="draggable" draggable="true">sind</span><span class="draggable" draggable="true">Wir</span><span class="draggable" draggable="true">verwandt</span></div>
+                    <div class="word-pool"><span class="draggable" draggable="true">verwandt</span><span class="draggable" draggable="true">sind</span><span class="draggable" draggable="true">Wir</span></div>
                     <div class="drop-zone" data-correct="Wir sind verwandt">
                         <span class="placeholder">Перетащите слова сюда</span>
                     </div>
@@ -2322,7 +2274,7 @@ body {
                 
                 <div class="sentence-builder" data-sentence-idx="8">
                     <p class="translation">Наследство наше</p>
-                    <div class="word-pool"><span class="draggable" draggable="true">Die</span><span class="draggable" draggable="true">Erbschaft</span><span class="draggable" draggable="true">gehört</span><span class="draggable" draggable="true">uns</span></div>
+                    <div class="word-pool"><span class="draggable" draggable="true">Die</span><span class="draggable" draggable="true">gehört</span><span class="draggable" draggable="true">Erbschaft</span><span class="draggable" draggable="true">uns</span></div>
                     <div class="drop-zone" data-correct="Die Erbschaft gehört uns">
                         <span class="placeholder">Перетащите слова сюда</span>
                     </div>
@@ -2356,7 +2308,7 @@ body {
                 
                 <div class="sentence-builder" data-sentence-idx="10">
                     <p class="translation">Моя верность остаётся</p>
-                    <div class="word-pool"><span class="draggable" draggable="true">bleibt</span><span class="draggable" draggable="true">Meine</span><span class="draggable" draggable="true">Treue</span></div>
+                    <div class="word-pool"><span class="draggable" draggable="true">Meine</span><span class="draggable" draggable="true">Treue</span><span class="draggable" draggable="true">bleibt</span></div>
                     <div class="drop-zone" data-correct="Meine Treue bleibt">
                         <span class="placeholder">Перетащите слова сюда</span>
                     </div>
@@ -2373,7 +2325,7 @@ body {
                 
                 <div class="sentence-builder" data-sentence-idx="11">
                     <p class="translation">Родословная кончается</p>
-                    <div class="word-pool"><span class="draggable" draggable="true">endet</span><span class="draggable" draggable="true">Stammbaum</span><span class="draggable" draggable="true">hier</span><span class="draggable" draggable="true">Der</span></div>
+                    <div class="word-pool"><span class="draggable" draggable="true">endet</span><span class="draggable" draggable="true">Der</span><span class="draggable" draggable="true">Stammbaum</span><span class="draggable" draggable="true">hier</span></div>
                     <div class="drop-zone" data-correct="Der Stammbaum endet hier">
                         <span class="placeholder">Перетащите слова сюда</span>
                     </div>

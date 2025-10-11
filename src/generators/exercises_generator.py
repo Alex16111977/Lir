@@ -107,17 +107,14 @@ class ExercisesGenerator:
     def _load_global_vocabulary(self) -> List[Dict[str, Any]]:
         if not self.GLOBAL_VOCAB_PATH.exists():
             if self.logger:
-                self.logger.warning(
-                    "[Exercises] Не знайдено словник для синонимів: %s",
-                    self.GLOBAL_VOCAB_PATH,
-                )
+                self.logger.warning(f"[Exercises] Не знайдено словник для синонимів: {self.GLOBAL_VOCAB_PATH}")
             return []
 
         try:
             data = json.loads(self.GLOBAL_VOCAB_PATH.read_text(encoding="utf-8"))
         except json.JSONDecodeError as exc:
             if self.logger:
-                self.logger.error("[Exercises] Неможливо прочитати словник: %s", exc)
+                self.logger.error(f"[Exercises] Неможливо прочитати словник: {exc}")
             return []
 
         vocabulary = data.get("vocabulary", [])

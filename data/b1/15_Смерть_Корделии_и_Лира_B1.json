@@ -214,9 +214,9 @@
     }
   ],
   "story": {
-    "title": "ФІНАЛЬНА ТРАГЕДІЯ",
-    "content": "<p>🎭 В'язниця. <span class=\"story-highlight\">DIE EILE (поспіх)</span> - але вже пізно. Едмунд кричить: \"Зупиніть <span class=\"story-highlight\">DIE HINRICHTUNG (страту)</span>!\" Всі біжать, але <span class=\"story-highlight\">DAS SCHICKSAL (доля)</span> вже вирішена. Лір входить, несучи мертву Корделію на руках. <span class=\"story-highlight\">DER TOD (смерть)</span> забрав найчистішу душу.</p>\n\n<p>\"Вийте! Вийте! Вийте!\" - кричить Лір. \"Ви всі камені! Якби ваші очі та язики могли <span class=\"story-highlight\">WEINEN (плакати)</span>, небо б розкололось!\" Він кладе її тіло на землю. \"<span class=\"story-highlight\">ATMEN (дихати)</span>? Ні? Чому собака, кінь, щур мають життя, а ти - ні?\"</p>\n\n<p>Кент підходить: \"Це кінець світу?\" Олбані шепоче: \"<span class=\"story-highlight\">DIE TRAGÖDIE (трагедія)</span> завершена.\" Лір дивиться на Корделію: \"Дивіться! Її губи! Дивіться!\" - його <span class=\"story-highlight\">DAS HERZ (серце)</span> не витримує. <span class=\"story-highlight\">ZERBRECHEN (розбиватися)</span> - останнє, що він відчуває.</p>\n\n<p>Король падає поруч з дочкою. <span class=\"story-highlight\">VEREINT (об'єднані)</span> в смерті, як не змогли в житті. Едгар промовляє: \"Ми повинні <span class=\"story-highlight\">TRAGEN (нести)</span> тягар цього сумного часу.\" <span class=\"story-highlight\">DIE STILLE (тиша)</span> опускається на сцену. Трагедія завершена.</p>",
-    "emotional_peak": "🎭 ЕМОЦІЙНИЙ ПІК: Лір тримає мертву Корделію і божеволіє від горя!\n\"Перо! Дзеркало! Якщо воно затуманиться - вона жива! Ні? \nВона пішла назавжди! Я знаю, коли хтось мертвий, а коли живий!\nВона мертва, як земля!\" Він хитається, серце розривається:\n\"Розстебніть тут... Дякую... Бачите? Її губи... дивіться...\"\nЛір падає мертвий на тіло Корделії. Кент: \"Нехай його дух відійде. \nВін ненавидів би той світ, що розтягнув його на тортурах!\""
+    "title": "ФИНАЛЬНАЯ ТРАГЕДИЯ",
+    "content": "<p>🎭 Тюрьма. Эдмунд кричит: <span class=\"story-highlight\">\"zu spät (слишком поздно)!</span> Остановите её!\" Но <span class=\"story-highlight\">der Tod (смерть)</span> уже забрала Корделию - они <span class=\"story-highlight\">erhängten (повесили)</span> её в темнице.</p>\n\n<p>Лир входит, неся <span class=\"story-highlight\">die Leiche (труп)</span> своей дочери. \"Она не может <span class=\"story-highlight\">hauchen (дышать)</span>! Смотрите - перо у губ не шевелится! Она <span class=\"story-highlight\">gestorben (умерла)</span>!\"</p>\n\n<p>Его <span class=\"story-highlight\">das Herz (сердце)</span> начинает <span class=\"story-highlight\">brechen (разбиваться)</span> от <span class=\"story-highlight\">der Schmerz (боли)</span>. \"Это <span class=\"story-highlight\">das Ende (конец)</span>! Это моё последнее <span class=\"story-highlight\">der Abschied (прощание)</span> с ней!\"</p>\n\n<p><span class=\"story-highlight\">Die Trauer (скорбь)</span> охватывает всех. Лир падает мёртвым возле Корделии. Кент плачет: \"Его <span class=\"story-highlight\">das Herz (сердце)</span> разбилось от горя. <span class=\"story-highlight\">Das Ende (конец)</span> настал для обоих.\"</p>",
+    "emotional_peak": "🎭 ЭМОЦИОНАЛЬНЫЙ ПИК: Лир несёт die Leiche (труп) Корделии!\n\"Она не может hauchen (дышать)! Смотрите - перо не шевелится!\nDas Herz bricht (сердце разбивается)! Der Schmerz (боль) убивает меня!\"\nОн качается: \"Zu spät (слишком поздно)! Это наше der Abschied (прощание)!\"\nЛир падает мёртвым. \"Sein Herz ist gebrochen (его сердце разбилось)\", - плачет Кент.\nDer Tod (смерть) забрал обоих. Die Trauer (скорбь) накрывает всех."
   },
   "dialogues": [
     {
@@ -242,44 +242,44 @@
     },
     {
       "character": "ЭДМУНД",
-      "german": "Schnell! Stoppt die Hinrichtung!",
-      "russian": "Быстро! Остановите казнь!",
+      "german": "Zu spät! Sie haben sie erhängt!",
+      "russian": "СЛИШКОМ ПОЗДНО! Они её ПОВЕСИЛИ!",
       "emotion": "ПАНИКА",
       "emotion_icon": "😱"
     },
     {
-      "character": "ОЛБАНИ",
-      "german": "Lauft um ihr Leben!",
-      "russian": "Бегите спасать её!",
-      "emotion": "СРОЧНОСТЬ",
-      "emotion_icon": "🏃"
-    },
-    {
       "character": "ЛИР",
-      "german": "Mein armes Kind!",
-      "russian": "Моё бедное дитя!",
-      "emotion": "СКОРБЬ",
+      "german": "Sie kann nicht mehr hauchen! Sie ist gestorben!",
+      "russian": "Она больше не может ДЫШАТЬ! Она УМЕРЛА!",
+      "emotion": "ОТЧАЯНИЕ",
       "emotion_icon": "💔"
     },
     {
-      "character": "КЕНТ",
-      "german": "Lasst ihn sterben in Frieden",
-      "russian": "Дайте ему умереть в покое",
-      "emotion": "МИЛОСЕРДИЕ",
+      "character": "ЛИР",
+      "german": "Mein Herz bricht vor Schmerz!",
+      "russian": "Моё СЕРДЦЕ РАЗБИВАЕТСЯ от БОЛИ!",
+      "emotion": "АГОНИЯ",
+      "emotion_icon": "😖"
+    },
+    {
+      "character": "ЛИР",
+      "german": "Das ist unser letzter Abschied! Das Ende!",
+      "russian": "Это наше последнее ПРОЩАНИЕ! КОНЕЦ!",
+      "emotion": "ФИНАЛЬНОСТЬ",
       "emotion_icon": "🕊️"
     },
     {
-      "character": "ЭДГАР",
-      "german": "Wir müssen die Last tragen",
-      "russian": "Мы должны нести это бремя",
-      "emotion": "ТЯЖЕСТЬ",
+      "character": "КЕНТ",
+      "german": "Die Trauer überwältigt uns alle. Sein Herz ist gebrochen.",
+      "russian": "СКОРБЬ охватывает всех. Его СЕРДЦЕ РАЗБИТО.",
+      "emotion": "ГОРЕ",
       "emotion_icon": "😔"
     }
   ],
   "memory_trick": {
     "master_trick": "Запомни трагический финал: смерть, последнее дыхание, разбитые сердца. Каждое слово — часть великой скорби Шекспира.",
     "emotion_chain": "ФИНАЛЬНОСТЬ → УТРАТА → ТЯЖЕСТЬ → УЖАС",
-    "ritual": "Встань і зіграй сцену! Використай жести для кожного слова. Відчуй емоції персонажів!"
+    "ritual": "Встань и сыграй сцену! Используй жесты для каждого слова. Почувствуй эмоции персонажей!"
   },
   "level": "b1",
   "group": "akt_5_finale",
@@ -371,21 +371,21 @@
     }
   ],
   "exercise": {
-    "title": "🎭 Заповніть пропуски в театральній постановці",
-    "text": "<p>🎭 В'язниця. <span class=\"story-highlight\">___ (поспіх)</span> - але вже пізно. Едмунд кричить: \"Зупиніть <span class=\"story-highlight\">___ (страту)</span>!\" Всі біжать, але <span class=\"story-highlight\">___ (доля)</span> вже вирішена. Лір входить, несучи мертву Корделію на руках. <span class=\"story-highlight\">___ (смерть)</span> забрав найчистішу душу.</p> <p>\"Вийте! Вийте! Вийте!\" - кричить Лір. \"Ви всі камені! Якби ваші очі та язики могли <span class=\"story-highlight\">___ (плакати)</span>, небо б розкололось!\" Він кладе її тіло на землю. \"<span class=\"story-highlight\">___ (дихати)</span>? Ні? Чому собака, кінь, щур мають життя, а ти - ні?\"</p> <p>Кент підходить: \"Це кінець світу?\" Олбані шепоче: \"<span class=\"story-highlight\">___ (трагедія)</span> завершена.\" Лір дивиться на Корделію: \"Дивіться! Її губи! Дивіться!\" - його <span class=\"story-highlight\">___ (серце)</span> не витримує. <span class=\"story-highlight\">___ (розбиватися)</span> - останнє, що він відчуває.</p> <p>Король падає поруч з дочкою. <span class=\"story-highlight\">___ (об'єднані)</span> в смерті, як не змогли в житті. Едгар промовляє: \"Ми повинні <span class=\"story-highlight\">___ (нести)</span> тягар цього сумного часу.\" <span class=\"story-highlight\">___ (тиша)</span> опускається на сцену. Трагедія завершена.</p>",
+    "title": "🎭 Заполните пропуски в театральной постановке",
+    "text": "<p>🎭 Тюрьма. Эдмунд кричит: <span class=\"story-highlight\">\"___ ___ (слишком поздно)!</span> Остановите её!\" Но <span class=\"story-highlight\">___ ___ (смерть)</span> уже забрала Корделию - они <span class=\"story-highlight\">___ (повесили)</span> её в темнице.</p> <p>Лир входит, неся <span class=\"story-highlight\">___ ___ (труп)</span> своей дочери. \"Она не может <span class=\"story-highlight\">___ (дышать)</span>! Смотрите - перо у губ не шевелится! Она <span class=\"story-highlight\">___ (умерла)</span>!\"</p> <p>Его <span class=\"story-highlight\">___ ___ (сердце)</span> начинает <span class=\"story-highlight\">___ (разбиваться)</span> от <span class=\"story-highlight\">___ ___ (боли)</span>. \"Это <span class=\"story-highlight\">___ ___ (конец)</span>! Это моё последнее <span class=\"story-highlight\">___ ___ (прощание)</span> с ней!\"</p> <p><span class=\"story-highlight\">___ ___ (скорбь)</span> охватывает всех. Лир падает мёртвым возле Корделии. Кент плачет: \"Его <span class=\"story-highlight\">___ ___ (сердце)</span> разбилось от горя. <span class=\"story-highlight\">___ ___ (конец)</span> настал для обоих.\"</p>",
     "answers": {
-      "поспіх": "DIE EILE",
-      "страту": "DIE HINRICHTUNG",
-      "доля": "DAS SCHICKSAL",
-      "смерть": "DER TOD",
-      "плакати": "WEINEN",
-      "дихати": "ATMEN",
-      "трагедія": "DIE TRAGÖDIE",
-      "серце": "DAS HERZ",
-      "розбиватися": "ZERBRECHEN",
-      "об'єднані": "VEREINT",
-      "нести": "TRAGEN",
-      "тиша": "DIE STILLE"
+      "слишком поздно": "zu spät",
+      "смерть": "der Tod",
+      "повесили": "erhängten",
+      "труп": "die Leiche",
+      "дышать": "hauchen",
+      "умерла": "gestorben",
+      "сердце": "das Herz",
+      "разбиваться": "brechen",
+      "боли": "der Schmerz",
+      "конец": "das Ende",
+      "прощание": "der Abschied",
+      "скорбь": "die Trauer"
     }
   }
 }

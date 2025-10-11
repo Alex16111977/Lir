@@ -1252,26 +1252,6 @@ body {
                             <h4>РУССКИЕ</h4>
                             <div class="word-list">
 
-                <button class="word-item russian-word" data-pair-id="9"
-                        onclick="handleWordPairClick(this, 9, 'russian')" type="button">
-                    <span class="word-main">без дому</span>
-                </button>
-                
-                <button class="word-item russian-word" data-pair-id="6"
-                        onclick="handleWordPairClick(this, 6, 'russian')" type="button">
-                    <span class="word-main">блукати</span>
-                </button>
-                
-                <button class="word-item russian-word" data-pair-id="8"
-                        onclick="handleWordPairClick(this, 8, 'russian')" type="button">
-                    <span class="word-main">прогнати</span>
-                </button>
-                
-                <button class="word-item russian-word" data-pair-id="4"
-                        onclick="handleWordPairClick(this, 4, 'russian')" type="button">
-                    <span class="word-main">відкинути</span>
-                </button>
-                
                 <button class="word-item russian-word" data-pair-id="11"
                         onclick="handleWordPairClick(this, 11, 'russian')" type="button">
                     <span class="word-main">притулок</span>
@@ -1280,11 +1260,6 @@ body {
                 <button class="word-item russian-word" data-pair-id="3"
                         onclick="handleWordPairClick(this, 3, 'russian')" type="button">
                     <span class="word-main">бездомний</span>
-                </button>
-                
-                <button class="word-item russian-word" data-pair-id="7"
-                        onclick="handleWordPairClick(this, 7, 'russian')" type="button">
-                    <span class="word-main">чужинець</span>
                 </button>
                 
                 <button class="word-item russian-word" data-pair-id="10"
@@ -1307,9 +1282,34 @@ body {
                     <span class="word-main">дім</span>
                 </button>
                 
+                <button class="word-item russian-word" data-pair-id="7"
+                        onclick="handleWordPairClick(this, 7, 'russian')" type="button">
+                    <span class="word-main">чужинець</span>
+                </button>
+                
                 <button class="word-item russian-word" data-pair-id="5"
                         onclick="handleWordPairClick(this, 5, 'russian')" type="button">
                     <span class="word-main">вигнання</span>
+                </button>
+                
+                <button class="word-item russian-word" data-pair-id="4"
+                        onclick="handleWordPairClick(this, 4, 'russian')" type="button">
+                    <span class="word-main">відкинути</span>
+                </button>
+                
+                <button class="word-item russian-word" data-pair-id="6"
+                        onclick="handleWordPairClick(this, 6, 'russian')" type="button">
+                    <span class="word-main">блукати</span>
+                </button>
+                
+                <button class="word-item russian-word" data-pair-id="8"
+                        onclick="handleWordPairClick(this, 8, 'russian')" type="button">
+                    <span class="word-main">прогнати</span>
+                </button>
+                
+                <button class="word-item russian-word" data-pair-id="9"
+                        onclick="handleWordPairClick(this, 9, 'russian')" type="button">
+                    <span class="word-main">без дому</span>
                 </button>
                 
                             </div>
@@ -1429,54 +1429,6 @@ body {
                 
 
                 <details class="exercise-accordion-item">
-                    <summary>🌈 Синонимы и антонимы</summary>
-                    <div class="exercise-content">
-                        
-            <div class="exercise-block" id="synonyms">
-                <h3 class="exercise-title">🌈 Синонимы и антонимы</h3>
-                <p class="exercise-intro">Подберите синоним из урока и вспомните противоположное значение.</p>
-
-                <div class="synonym-item">
-                    <div class="word-center">
-                        <span class="word-main">der Friede</span>
-                        <small>мир</small>
-                    </div>
-                    <div class="options">
-                        <input type="text" placeholder="Синоним" data-correct="die Welt" data-hint="мир">
-                        <input type="text" placeholder="Антоним" data-correct="der Krieg" data-hint="война">
-                    </div>
-                </div>
-                
-                <div class="synonym-item">
-                    <div class="word-center">
-                        <span class="word-main">vertrauen</span>
-                        <small>доверять</small>
-                    </div>
-                    <div class="options">
-                        <input type="text" placeholder="Синоним" data-correct="trauen" data-hint="доверять">
-                        <input type="text" placeholder="Антоним" data-correct="misstrauen" data-hint="не доверять">
-                    </div>
-                </div>
-                
-                <div class="synonym-item">
-                    <div class="word-center">
-                        <span class="word-main">die Welt</span>
-                        <small>мир</small>
-                    </div>
-                    <div class="options">
-                        <input type="text" placeholder="Синоним" data-correct="der Friede" data-hint="мир">
-                        <input type="text" placeholder="Антоним" data-correct="der Krieg" data-hint="война">
-                    </div>
-                </div>
-                
-                <button class="check-btn" data-action="check-synonyms" type="button">Проверить</button>
-            </div>
-            
-                    </div>
-                </details>
-                
-
-                <details class="exercise-accordion-item">
                     <summary>🧠 Викторина по словам</summary>
                     <div class="exercise-content">
                         
@@ -1505,15 +1457,15 @@ body {
                 <h3>Що означає німецьке слово?</h3>
 
                 <div class="word-display">
-                    <span class="german-word">obdachlos</span>
-                    <span class="transcription">[ОБ-дах-лос]</span>
+                    <span class="german-word">wandern</span>
+                    <span class="transcription">[ВАН-дерн]</span>
                 </div>
 
                 <div class="answer-buttons">
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">відкинути</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">блукати</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">бездомний</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">батьківщина</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">чужинець</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">бездомний</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">притулок</button>
                 </div>
             </div>
         </div>
@@ -1529,15 +1481,15 @@ body {
                 <h3>Що означає німецьке слово?</h3>
 
                 <div class="word-display">
-                    <span class="german-word">wandern</span>
-                    <span class="transcription">[ВАН-дерн]</span>
+                    <span class="german-word">fortjagen</span>
+                    <span class="transcription">[ФОРТ-я-ген]</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">без дому</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">прогнати</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">блукати</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">бездомний</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">блукати</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">батьківщина</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">прогнати</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">вигнати</button>
                 </div>
             </div>
         </div>
@@ -1553,15 +1505,15 @@ body {
                 <h3>Що означає німецьке слово?</h3>
 
                 <div class="word-display">
-                    <span class="german-word">verstoßen</span>
-                    <span class="transcription">[фер-ШТО-сен]</span>
+                    <span class="german-word">der Fremde</span>
+                    <span class="transcription">[дер ФРЕМ-де]</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">відкинути</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">притулок</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">дім</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">без дому</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">чужинець</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">притулок</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">вигнання</button>
                 </div>
             </div>
         </div>
@@ -1577,15 +1529,15 @@ body {
                 <h3>Що означає німецьке слово?</h3>
 
                 <div class="word-display">
-                    <span class="german-word">die Heimat</span>
-                    <span class="transcription">[ди ХАЙ-мат]</span>
+                    <span class="german-word">das Asyl</span>
+                    <span class="transcription">[дас а-ЗИЛ]</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">бездомний</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">вигнання</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">батьківщина</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">притулок</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">дім</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">без дому</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">відкинути</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">притулок</button>
                 </div>
             </div>
         </div>
@@ -1601,15 +1553,15 @@ body {
                 <h3>Що означає німецьке слово?</h3>
 
                 <div class="word-display">
-                    <span class="german-word">das Exil</span>
-                    <span class="transcription">[дас е-КСИЛ]</span>
+                    <span class="german-word">verstoßen</span>
+                    <span class="transcription">[фер-ШТО-сен]</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">вигнання</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">блукати</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">бездомний</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">відкинути</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">відкинути</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">батьківщина</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">прогнати</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">чужинець</button>
                 </div>
             </div>
         </div>
@@ -1630,10 +1582,10 @@ body {
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">вигнання</button>
                     <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">заслання</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">бездомний</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">без дому</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">батьківщина</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">відкинути</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">блукати</button>
                 </div>
             </div>
         </div>
@@ -1649,15 +1601,15 @@ body {
                 <h3>Що означає німецьке слово?</h3>
 
                 <div class="word-display">
-                    <span class="german-word">verbannen</span>
-                    <span class="transcription">[фер-БАН-нен]</span>
+                    <span class="german-word">obdachlos</span>
+                    <span class="transcription">[ОБ-дах-лос]</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">вигнати</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">батьківщина</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">заслання</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">притулок</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">вигнати</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">бездомний</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">відкинути</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">блукати</button>
                 </div>
             </div>
         </div>
@@ -1673,15 +1625,15 @@ body {
                 <h3>Що означає німецьке слово?</h3>
 
                 <div class="word-display">
-                    <span class="german-word">der Fremde</span>
-                    <span class="transcription">[дер ФРЕМ-де]</span>
+                    <span class="german-word">verbannen</span>
+                    <span class="transcription">[фер-БАН-нен]</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">прогнати</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">без дому</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">блукати</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">чужинець</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">батьківщина</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">відкинути</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">вигнати</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">бездомний</button>
                 </div>
             </div>
         </div>
@@ -1702,10 +1654,10 @@ body {
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">заслання</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">бездомний</button>
                     <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">без дому</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">вигнати</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">дім</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">бездомний</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">батьківщина</button>
                 </div>
             </div>
         </div>
@@ -1721,15 +1673,15 @@ body {
                 <h3>Що означає німецьке слово?</h3>
 
                 <div class="word-display">
-                    <span class="german-word">fortjagen</span>
-                    <span class="transcription">[ФОРТ-я-ген]</span>
+                    <span class="german-word">das Exil</span>
+                    <span class="transcription">[дас е-КСИЛ]</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">вигнання</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">вигнати</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">прогнати</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">бездомний</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">відкинути</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">вигнання</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">прогнати</button>
                 </div>
             </div>
         </div>
@@ -1745,15 +1697,15 @@ body {
                 <h3>Що означає німецьке слово?</h3>
 
                 <div class="word-display">
-                    <span class="german-word">das Asyl</span>
-                    <span class="transcription">[дас а-ЗИЛ]</span>
+                    <span class="german-word">das Zuhause</span>
+                    <span class="transcription">[дас цу-ХАУ-зе]</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">вигнання</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">притулок</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">заслання</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">вигнати</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">прогнати</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">дім</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">відкинути</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">батьківщина</button>
                 </div>
             </div>
         </div>
@@ -1769,15 +1721,15 @@ body {
                 <h3>Що означає німецьке слово?</h3>
 
                 <div class="word-display">
-                    <span class="german-word">das Zuhause</span>
-                    <span class="transcription">[дас цу-ХАУ-зе]</span>
+                    <span class="german-word">die Heimat</span>
+                    <span class="transcription">[ди ХАЙ-мат]</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">блукати</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">вигнати</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">батьківщина</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">дім</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">відкинути</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">заслання</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">батьківщина</button>
                 </div>
             </div>
         </div>
@@ -1793,14 +1745,14 @@ body {
                 <h3>Як німецькою буде:</h3>
 
                 <div class="word-display">
-                    <span class="russian-word">бездомний</span>
+                    <span class="russian-word">дім</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">das Exil</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">der Fremde</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">obdachlos</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">verbannen</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">obdachlos</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">verstoßen</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">das Zuhause</button>
                 </div>
             </div>
         </div>
@@ -1816,14 +1768,14 @@ body {
                 <h3>Як німецькою буде:</h3>
 
                 <div class="word-display">
-                    <span class="russian-word">заслання</span>
+                    <span class="russian-word">прогнати</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">das Exil</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Heimat</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">die Verbannung</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">verstoßen</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">der Fremde</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">fortjagen</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">das Zuhause</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Verbannung</button>
                 </div>
             </div>
         </div>
@@ -1839,14 +1791,14 @@ body {
                 <h3>Як німецькою буде:</h3>
 
                 <div class="word-display">
-                    <span class="russian-word">чужинець</span>
+                    <span class="russian-word">відкинути</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">wandern</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">das Zuhause</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">fortjagen</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">der Fremde</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Verbannung</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">das Asyl</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">verstoßen</button>
                 </div>
             </div>
         </div>
@@ -1862,14 +1814,14 @@ body {
                 <h3>Як німецькою буде:</h3>
 
                 <div class="word-display">
-                    <span class="russian-word">прогнати</span>
+                    <span class="russian-word">заслання</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">fortjagen</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">obdachlos</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">das Zuhause</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">wandern</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">die Verbannung</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">der Fremde</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">verstoßen</button>
                 </div>
             </div>
         </div>
@@ -1885,14 +1837,14 @@ body {
                 <h3>Як німецькою буде:</h3>
 
                 <div class="word-display">
-                    <span class="russian-word">вигнати</span>
+                    <span class="russian-word">бездомний</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">verstoßen</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">verbannen</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">fortjagen</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">obdachlos</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">wandern</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">obdachlos</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">das Exil</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">verbannen</button>
                 </div>
             </div>
         </div>
@@ -1908,13 +1860,13 @@ body {
                 <h3>Як німецькою буде:</h3>
 
                 <div class="word-display">
-                    <span class="russian-word">без дому</span>
+                    <span class="russian-word">батьківщина</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">der Fremde</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Heimat</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">heimatlos</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">wandern</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">das Exil</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">die Heimat</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Verbannung</button>
                 </div>
             </div>
@@ -1931,14 +1883,14 @@ body {
                 <h3>Як німецькою буде:</h3>
 
                 <div class="word-display">
-                    <span class="russian-word">вигнання</span>
+                    <span class="russian-word">без дому</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">das Exil</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">wandern</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Verbannung</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">verstoßen</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">heimatlos</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">verbannen</button>
                 </div>
             </div>
         </div>
@@ -1954,14 +1906,14 @@ body {
                 <h3>Як німецькою буде:</h3>
 
                 <div class="word-display">
-                    <span class="russian-word">батьківщина</span>
+                    <span class="russian-word">притулок</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">das Exil</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">fortjagen</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">die Heimat</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">der Fremde</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">heimatlos</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">das Asyl</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">das Zuhause</button>
                 </div>
             </div>
         </div>
@@ -1977,14 +1929,14 @@ body {
                 <h3>Як німецькою буде:</h3>
 
                 <div class="word-display">
-                    <span class="russian-word">відкинути</span>
+                    <span class="russian-word">вигнати</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">das Zuhause</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">heimatlos</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">verstoßen</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">das Exil</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">verstoßen</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">das Asyl</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">verbannen</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">fortjagen</button>
                 </div>
             </div>
         </div>
@@ -2004,10 +1956,10 @@ body {
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">fortjagen</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">der Fremde</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">das Zuhause</button>
                     <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">wandern</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">das Asyl</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">verstoßen</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">heimatlos</button>
                 </div>
             </div>
         </div>
@@ -2023,14 +1975,14 @@ body {
                 <h3>Як німецькою буде:</h3>
 
                 <div class="word-display">
-                    <span class="russian-word">дім</span>
+                    <span class="russian-word">вигнання</span>
                 </div>
 
                 <div class="answer-buttons">
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">fortjagen</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">das Exil</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">das Asyl</button>
                     <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">verbannen</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">das Zuhause</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">das Exil</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Verbannung</button>
                 </div>
             </div>
         </div>
@@ -2046,14 +1998,14 @@ body {
                 <h3>Як німецькою буде:</h3>
 
                 <div class="word-display">
-                    <span class="russian-word">притулок</span>
+                    <span class="russian-word">чужинець</span>
                 </div>
 
                 <div class="answer-buttons">
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">heimatlos</button>
-                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">das Asyl</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">der Fremde</button>
-                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Heimat</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">obdachlos</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">die Verbannung</button>
+                    <button class="answer-btn" data-correct="true" onclick="checkAnswer(this, true)">der Fremde</button>
+                    <button class="answer-btn" data-correct="false" onclick="checkAnswer(this, false)">wandern</button>
                 </div>
             </div>
         </div>
@@ -2138,7 +2090,7 @@ body {
                 
                 <div class="sentence-builder" data-sentence-idx="0">
                     <p class="translation">Где мой дом?</p>
-                    <div class="word-pool"><span class="draggable" draggable="true">mein</span><span class="draggable" draggable="true">Zuhause</span><span class="draggable" draggable="true">Wo</span><span class="draggable" draggable="true">ist</span></div>
+                    <div class="word-pool"><span class="draggable" draggable="true">Wo</span><span class="draggable" draggable="true">Zuhause</span><span class="draggable" draggable="true">ist</span><span class="draggable" draggable="true">mein</span></div>
                     <div class="drop-zone" data-correct="Wo ist mein Zuhause">
                         <span class="placeholder">Перетащите слова сюда</span>
                     </div>
@@ -2155,7 +2107,7 @@ body {
                 
                 <div class="sentence-builder" data-sentence-idx="1">
                     <p class="translation">Я изгоняю тебя!</p>
-                    <div class="word-pool"><span class="draggable" draggable="true">dich</span><span class="draggable" draggable="true">verbanne</span><span class="draggable" draggable="true">Ich</span></div>
+                    <div class="word-pool"><span class="draggable" draggable="true">verbanne</span><span class="draggable" draggable="true">Ich</span><span class="draggable" draggable="true">dich</span></div>
                     <div class="drop-zone" data-correct="Ich verbanne dich">
                         <span class="placeholder">Перетащите слова сюда</span>
                     </div>
@@ -2172,7 +2124,7 @@ body {
                 
                 <div class="sentence-builder" data-sentence-idx="2">
                     <p class="translation">Я покидаю родину</p>
-                    <div class="word-pool"><span class="draggable" draggable="true">Heimat</span><span class="draggable" draggable="true">Ich</span><span class="draggable" draggable="true">verlasse</span><span class="draggable" draggable="true">meine</span></div>
+                    <div class="word-pool"><span class="draggable" draggable="true">Ich</span><span class="draggable" draggable="true">meine</span><span class="draggable" draggable="true">Heimat</span><span class="draggable" draggable="true">verlasse</span></div>
                     <div class="drop-zone" data-correct="Ich verlasse meine Heimat">
                         <span class="placeholder">Перетащите слова сюда</span>
                     </div>
@@ -2189,7 +2141,7 @@ body {
                 
                 <div class="sentence-builder" data-sentence-idx="3">
                     <p class="translation">Я бездомный</p>
-                    <div class="word-pool"><span class="draggable" draggable="true">obdachlos</span><span class="draggable" draggable="true">Ich</span><span class="draggable" draggable="true">bin</span></div>
+                    <div class="word-pool"><span class="draggable" draggable="true">Ich</span><span class="draggable" draggable="true">bin</span><span class="draggable" draggable="true">obdachlos</span></div>
                     <div class="drop-zone" data-correct="Ich bin obdachlos">
                         <span class="placeholder">Перетащите слова сюда</span>
                     </div>
@@ -2206,7 +2158,7 @@ body {
                 
                 <div class="sentence-builder" data-sentence-idx="4">
                     <p class="translation">Мой сын отвергнут</p>
-                    <div class="word-pool"><span class="draggable" draggable="true">Mein</span><span class="draggable" draggable="true">verstoßen</span><span class="draggable" draggable="true">ist</span><span class="draggable" draggable="true">Sohn</span></div>
+                    <div class="word-pool"><span class="draggable" draggable="true">verstoßen</span><span class="draggable" draggable="true">Sohn</span><span class="draggable" draggable="true">ist</span><span class="draggable" draggable="true">Mein</span></div>
                     <div class="drop-zone" data-correct="Mein Sohn ist verstoßen">
                         <span class="placeholder">Перетащите слова сюда</span>
                     </div>
@@ -2223,7 +2175,7 @@ body {
                 
                 <div class="sentence-builder" data-sentence-idx="5">
                     <p class="translation">Я иду в изгнание</p>
-                    <div class="word-pool"><span class="draggable" draggable="true">Exil</span><span class="draggable" draggable="true">Ich</span><span class="draggable" draggable="true">ins</span><span class="draggable" draggable="true">gehe</span></div>
+                    <div class="word-pool"><span class="draggable" draggable="true">ins</span><span class="draggable" draggable="true">Ich</span><span class="draggable" draggable="true">gehe</span><span class="draggable" draggable="true">Exil</span></div>
                     <div class="drop-zone" data-correct="Ich gehe ins Exil">
                         <span class="placeholder">Перетащите слова сюда</span>
                     </div>
@@ -2240,7 +2192,7 @@ body {
                 
                 <div class="sentence-builder" data-sentence-idx="6">
                     <p class="translation">Я блуждаю как нищий</p>
-                    <div class="word-pool"><span class="draggable" draggable="true">wandere</span><span class="draggable" draggable="true">Bettler</span><span class="draggable" draggable="true">Ich</span><span class="draggable" draggable="true">als</span></div>
+                    <div class="word-pool"><span class="draggable" draggable="true">Ich</span><span class="draggable" draggable="true">wandere</span><span class="draggable" draggable="true">Bettler</span><span class="draggable" draggable="true">als</span></div>
                     <div class="drop-zone" data-correct="Ich wandere als Bettler">
                         <span class="placeholder">Перетащите слова сюда</span>
                     </div>
@@ -2257,7 +2209,7 @@ body {
                 
                 <div class="sentence-builder" data-sentence-idx="7">
                     <p class="translation">Я чужой</p>
-                    <div class="word-pool"><span class="draggable" draggable="true">ein</span><span class="draggable" draggable="true">bin</span><span class="draggable" draggable="true">Fremder</span><span class="draggable" draggable="true">Ich</span></div>
+                    <div class="word-pool"><span class="draggable" draggable="true">bin</span><span class="draggable" draggable="true">Fremder</span><span class="draggable" draggable="true">Ich</span><span class="draggable" draggable="true">ein</span></div>
                     <div class="drop-zone" data-correct="Ich bin ein Fremder">
                         <span class="placeholder">Перетащите слова сюда</span>
                     </div>
@@ -2274,7 +2226,7 @@ body {
                 
                 <div class="sentence-builder" data-sentence-idx="8">
                     <p class="translation">Прогоните его!</p>
-                    <div class="word-pool"><span class="draggable" draggable="true">ihn</span><span class="draggable" draggable="true">Jagt</span><span class="draggable" draggable="true">fort</span></div>
+                    <div class="word-pool"><span class="draggable" draggable="true">Jagt</span><span class="draggable" draggable="true">fort</span><span class="draggable" draggable="true">ihn</span></div>
                     <div class="drop-zone" data-correct="Jagt ihn fort">
                         <span class="placeholder">Перетащите слова сюда</span>
                     </div>
@@ -2291,7 +2243,7 @@ body {
                 
                 <div class="sentence-builder" data-sentence-idx="9">
                     <p class="translation">Король без дома</p>
-                    <div class="word-pool"><span class="draggable" draggable="true">König</span><span class="draggable" draggable="true">Der</span><span class="draggable" draggable="true">heimatlos</span><span class="draggable" draggable="true">ist</span></div>
+                    <div class="word-pool"><span class="draggable" draggable="true">ist</span><span class="draggable" draggable="true">heimatlos</span><span class="draggable" draggable="true">Der</span><span class="draggable" draggable="true">König</span></div>
                     <div class="drop-zone" data-correct="Der König ist heimatlos">
                         <span class="placeholder">Перетащите слова сюда</span>
                     </div>
@@ -2308,7 +2260,7 @@ body {
                 
                 <div class="sentence-builder" data-sentence-idx="10">
                     <p class="translation">Моё изгнание кончается</p>
-                    <div class="word-pool"><span class="draggable" draggable="true">Meine</span><span class="draggable" draggable="true">Verbannung</span><span class="draggable" draggable="true">endet</span></div>
+                    <div class="word-pool"><span class="draggable" draggable="true">endet</span><span class="draggable" draggable="true">Verbannung</span><span class="draggable" draggable="true">Meine</span></div>
                     <div class="drop-zone" data-correct="Meine Verbannung endet">
                         <span class="placeholder">Перетащите слова сюда</span>
                     </div>
@@ -2325,7 +2277,7 @@ body {
                 
                 <div class="sentence-builder" data-sentence-idx="11">
                     <p class="translation">Я ищу убежище</p>
-                    <div class="word-pool"><span class="draggable" draggable="true">suche</span><span class="draggable" draggable="true">Ich</span><span class="draggable" draggable="true">Asyl</span></div>
+                    <div class="word-pool"><span class="draggable" draggable="true">Ich</span><span class="draggable" draggable="true">suche</span><span class="draggable" draggable="true">Asyl</span></div>
                     <div class="drop-zone" data-correct="Ich suche Asyl">
                         <span class="placeholder">Перетащите слова сюда</span>
                     </div>
